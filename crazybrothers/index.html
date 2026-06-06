@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Brothers — бургеры, пицца, доставка · Нижний Новгород</title>
+  <meta name="description" content="Crazy Brothers — сумасшедшие бургеры, бургер-пиццы, кавказская кухня и десерты с доставкой по Нижнему Новгороду.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-cart-key="crazybrothers">
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">CRAZY<span>BROTHERS</span></a>
+      <nav class="nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Доставка</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn">Корзина <span id="cartCount" class="cart-count" hidden>0</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('images/menu/98835b00d945.jpg')"></div>
+    <div class="hero__veil"></div>
+    <div class="container hero__inner">
+      <span class="hero__eyebrow">🔥 Доставка по Нижнему Новгороду</span>
+      <h1>Сумасшедшие<br><em>бургеры</em></h1>
+      <p>Сочные бургеры, фирменные бургер-пиццы с чиз-пуллом, кавказская кухня и десерты. Готовим дерзко, доставляем быстро.</p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--yellow">Открыть меню</a>
+        <a href="#contacts" class="btn btn--ghost">Условия доставки</a>
+      </div>
+      <div class="hero__stats">
+        <div><b>47</b><span>позиций в меню</span></div>
+        <div><b>🍔</b><span>фирменные бургер-пиццы</span></div>
+        <div><b>NN</b><span>доставка по городу</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="menu" class="section">
+      <div class="section-head"><span class="section-eyebrow">Меню</span><h2 class="section-title">Выбирай и заказывай</h2></div>
+      <div id="filters" class="filters"></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about__text">
+        <span class="section-eyebrow">О нас</span>
+        <h2 class="section-title">Еда без правил</h2>
+        <p>Crazy Brothers — это про дерзкую и сытную еду. Мы смешиваем бургеры с пиццей, добавляем кавказского огонька и не боимся экспериментов. Каждое блюдо — с характером.</p>
+        <p>Свежие ингредиенты, большие порции и доставка, которая привозит всё горячим.</p>
+      </div>
+      <div class="about__facts">
+        <div class="fact"><b>5</b><span>разделов меню</span></div>
+        <div class="fact"><b>🍕</b><span>бургер + пицца в одном</span></div>
+        <div class="fact"><b>🌶</b><span>кавказская кухня</span></div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="section-head"><span class="section-eyebrow">Доставка</span><h2 class="section-title">Как заказать</h2></div>
+      <div class="contacts">
+        <div class="contact-card"><span>Телефон</span><b>+7 (831) 000-00-00</b><i>приём заказов ежедневно</i></div>
+        <div class="contact-card"><span>Доставка</span><b>по Нижнему Новгороду</b><i>горячей едой к двери</i></div>
+        <div class="contact-card"><span>Самовывоз</span><b>из заведения</b><i>заберите быстрее</i></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2025 Crazy Brothers · бургеры и доставка · Нижний Новгород</span>
+      <span class="footer__demo">Демо-редизайн · данные с nn.crazybrothers.ru</span>
+    </div>
+  </footer>
+
+  <div id="overlay" class="overlay"></div>
+  <aside id="cart" class="cart-panel">
+    <div class="cart-panel__head"><span class="cart-panel__title">Корзина</span><button id="cartClose" class="close-btn">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-panel__foot">
+      <div class="cart-total-row"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <button id="checkoutBtn" disabled>Оформить заказ</button>
+    </div>
+  </aside>
+
+  <div id="orderModal" class="modal">
+    <div class="modal__inner">
+      <div class="modal__head"><h2>Оформление заказа</h2><button id="orderClose" class="close-btn">✕</button></div>
+      <form id="orderForm">
+        <div class="order-total-row"><span>Сумма заказа</span><strong id="orderTotal">0 ₽</strong></div>
+        <div class="form-group"><label>Имя *</label><input name="name" required placeholder="Ваше имя"></div>
+        <div class="form-group"><label>Телефон *</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div>
+        <div class="form-group"><label>Адрес доставки</label><input name="address" placeholder="улица, дом, квартира"></div>
+        <div class="form-group"><label>Комментарий</label><textarea name="comment" placeholder="Пожелания к заказу"></textarea></div>
+        <button type="submit" class="submit-btn">Подтвердить заказ</button>
+      </form>
+      <div id="orderSuccess" class="order-success" hidden>
+        <div class="order-success__icon">🔥</div>
+        <h3>Заказ принят!</h3>
+        <p>Спасибо! Уже готовим. Мы перезвоним для подтверждения.</p>
+        <button id="successClose" class="btn btn--yellow">Огонь!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
