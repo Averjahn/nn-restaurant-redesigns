@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Демо-редизайны заведений · Нижний Новгород</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Inter",system-ui,sans-serif;background:#0e0e10;color:#f0ece4;line-height:1.6;padding:60px 5%}
+    .wrap{max-width:1100px;margin:0 auto}
+    h1{font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-.02em}
+    .sub{color:#8a8a8a;margin:12px 0 44px;max-width:640px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+    .card{display:block;background:#18181b;border:1px solid #2a2a2e;border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-6px)}
+    .card__top{height:140px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;text-align:center;padding:0 16px}
+    .m{background:linear-gradient(135deg,#15110e,#211b16);color:#e2641e}
+    .s{background:linear-gradient(135deg,#e11d2a,#a8121d);color:#fff}
+    .v{background:linear-gradient(135deg,#f2a900,#c8321f);color:#fff}
+    .p{background:linear-gradient(135deg,#f7ece8,#e8b4b8);color:#7a5c54}
+    .card:hover.m{border-color:#e2641e}.card:hover.s{border-color:#e11d2a}.card:hover.v{border-color:#f2a900}.card:hover.p{border-color:#e08aa0}
+    .card__body{padding:18px}
+    .card__body h3{font-size:18px;font-weight:700}
+    .card__body p{color:#8a8a8a;font-size:13px;margin-top:4px}
+    .card__body em{display:inline-block;margin-top:12px;color:#e8541a;font-style:normal;font-weight:600;font-size:14px}
+    a{text-decoration:none;color:inherit}
+    .note{margin-top:44px;color:#6a6a6a;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Демо-редизайны заведений</h1>
+    <p class="sub">Концепты современных сайтов для заведений Нижнего Новгорода со <b>старыми сайтами</b>. Данные, цены и фото — спарсены с их оригинальных сайтов. Каждому — свой дизайн.</p>
+    <div class="grid">
+      <a class="card" href="migmig/">
+        <div class="card__top m">МИГ-МИГ</div>
+        <div class="card__body"><h3>Миг-Миг</h3><p>Шашлык на углях · тёмный «мангал»</p><em>Открыть демо →</em></div>
+      </a>
+      <a class="card" href="shashlyk52/">
+        <div class="card__top s">Шашлык52</div>
+        <div class="card__body"><h3>Шашлык52</h3><p>Доставка шашлыка · светлый красный</p><em>Открыть демо →</em></div>
+      </a>
+      <a class="card" href="vypechka/">
+        <div class="card__top v">Русская Выпечка</div>
+        <div class="card__body"><h3>Русская Выпечка</h3><p>Фастфуд-доставка · тёплый янтарь</p><em>Открыть демо →</em></div>
+      </a>
+      <a class="card" href="ps/">
+        <div class="card__top p">P.S.</div>
+        <div class="card__body"><h3>P.S.</h3><p>Кондитерская · нежная пастель</p><em>Открыть демо →</em></div>
+      </a>
+    </div>
+    <p class="note">⚠️ Демонстрация дизайна. Фото и тексты меню принадлежат заведениям; используются как концепт для презентации владельцам, не для публикации.</p>
+  </div>
+</body>
+</html>

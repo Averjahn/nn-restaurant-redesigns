@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P.S. — кондитерская и кофейня · Нижний Новгород</title>
+  <meta name="description" content="P.S. — авторская кондитерская и кофейня в Нижнем Новгороде. Торты, эклеры, чизкейки, кофе. Ул. Маслякова, 2. Рейтинг 5.0.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-cart-key="ps">
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">P<span>.</span>S<span>.</span> <em>кондитерская</em></a>
+      <nav class="nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn">
+        Корзина <span id="cartCount" class="cart-count" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="hero__eyebrow">✦ авторская кондитерская · с любовью</span>
+        <h1>Десерты, которые <em>обнимают</em></h1>
+        <p>Муссовые торты, тянущиеся эклеры, нежные чизкейки и ароматный кофе. Каждый десерт — маленький постскриптум к вашему дню.</p>
+        <div class="hero__actions">
+          <a href="#menu" class="btn btn--rose">Выбрать десерт</a>
+          <a href="#contacts" class="btn btn--soft">Где попробовать</a>
+        </div>
+        <div class="hero__chips">
+          <span>★ 5.0 на Яндексе</span>
+          <span>🎂 торты на заказ</span>
+          <span>☕ свежий кофе</span>
+        </div>
+      </div>
+      <div class="hero__photos">
+        <div class="hero__photo hp1" style="background-image:url('images/menu/a76c8deb34ff.jpg')"></div>
+        <div class="hero__photo hp2" style="background-image:url('images/menu/bcd8e03538c6.jpg')"></div>
+        <div class="hero__photo hp3" style="background-image:url('images/menu/ea1cef7f2c39.jpg')"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="menu" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Наше меню</span>
+        <h2 class="section-title">Сладкая витрина</h2>
+      </div>
+      <div id="filters" class="filters"></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about__text">
+        <span class="section-eyebrow">О нас</span>
+        <h2 class="section-title">Маленькая кондитерская с большим сердцем</h2>
+        <p>P.S. — это место, куда приходят за уютом и десертом «как у мамы, только лучше». Мы готовим небольшими партиями каждый день, используем натуральные сливки, бельгийский шоколад и сезонные ягоды.</p>
+        <p>Торты на заказ, кофе навынос и уголок, где хочется задержаться подольше.</p>
+      </div>
+      <div class="about__facts">
+        <div class="fact"><b>5.0</b><span>рейтинг на Яндекс.Картах</span></div>
+        <div class="fact"><b>14</b><span>видов десертов</span></div>
+        <div class="fact"><b>100%</b><span>натуральные ингредиенты</span></div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="section-head">
+        <span class="section-eyebrow">Контакты</span>
+        <h2 class="section-title">Заходите на чашечку</h2>
+      </div>
+      <div class="contacts">
+        <div class="contact-card"><span>Адрес</span><b>ул. Маслякова, 2</b><i>Нижний Новгород</i></div>
+        <div class="contact-card"><span>Часы</span><b>09:00 – 21:00</b><i>ежедневно</i></div>
+        <div class="contact-card"><span>Торты на заказ</span><b>+7 (831) 000-00-00</b><i>за 2 дня</i></div>
+      </div>
+      <div class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=43.998500%2C56.314500&z=16&pt=43.998500%2C56.314500%2Cpm2rdm" width="100%" height="400" frameborder="0" loading="lazy" title="P.S. на карте"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2025 Кондитерская «P.S.» · Нижний Новгород, ул. Маслякова, 2</span>
+      <span class="footer__demo">Демо-редизайн · данные с Яндекс.Карт</span>
+    </div>
+  </footer>
+
+  <div id="overlay" class="overlay"></div>
+
+  <aside id="cart" class="cart-panel">
+    <div class="cart-panel__head">
+      <span class="cart-panel__title">Корзинка</span>
+      <button id="cartClose" class="close-btn">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-panel__foot">
+      <div class="cart-total-row"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <button id="checkoutBtn" disabled>Оформить заказ</button>
+    </div>
+  </aside>
+
+  <div id="orderModal" class="modal">
+    <div class="modal__inner">
+      <div class="modal__head"><h2>Оформление заказа</h2><button id="orderClose" class="close-btn">✕</button></div>
+      <form id="orderForm">
+        <div class="order-total-row"><span>Сумма заказа</span><strong id="orderTotal">0 ₽</strong></div>
+        <div class="form-group"><label>Имя *</label><input name="name" required placeholder="Ваше имя"></div>
+        <div class="form-group"><label>Телефон *</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div>
+        <div class="form-group"><label>Адрес доставки</label><input name="address" placeholder="улица, дом, квартира"></div>
+        <div class="form-group"><label>Комментарий</label><textarea name="comment" placeholder="Например: свечка на торт 🎂"></textarea></div>
+        <button type="submit" class="submit-btn">Подтвердить заказ</button>
+      </form>
+      <div id="orderSuccess" class="order-success" hidden>
+        <div class="order-success__icon">🧁</div>
+        <h3>Заказ принят!</h3>
+        <p>Спасибо! Мы свяжемся с вами для подтверждения.</p>
+        <button id="successClose" class="btn btn--rose">Ура!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
