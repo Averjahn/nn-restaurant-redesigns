@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuPPcake — полезные торты и десерты без сахара · Нижний Новгород</title>
+  <meta name="description" content="CuPPcake — торты, чизкейки и десерты без сахара, с вариантами без глютена и веган. Нижний Новгород, Большая Покровская, 60.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-cart-key="cuppcake">
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Cu<span>PP</span>cake</a>
+      <nav class="nav">
+        <a href="#menu">Витрина</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn">Корзина <span id="cartCount" class="cart-count" hidden>0</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="hero__eyebrow">🌿 Без сахара · без глютена · веган</span>
+        <h1>Десерты,<br>которые <em>можно всем</em></h1>
+        <p>Торты, чизкейки и пирожные на натуральных сахарозаменителях. Так же вкусно, как любимые сладости — только полезнее. Готовим под заказ.</p>
+        <div class="hero__actions">
+          <a href="#menu" class="btn btn--berry">Выбрать десерт</a>
+          <a href="#contacts" class="btn btn--soft">Как заказать</a>
+        </div>
+        <div class="hero__badges">
+          <span>🍰 без сахара</span><span>🌾 без глютена</span><span>🌱 веган-опции</span>
+        </div>
+      </div>
+      <div class="hero__photos">
+        <div class="hero__ph hp1"></div>
+        <div class="hero__ph hp2"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="menu" class="section">
+      <div class="section-head"><span class="section-eyebrow">Витрина</span><h2 class="section-title">Наши десерты</h2></div>
+      <div id="filters" class="filters"></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about__text">
+        <span class="section-eyebrow">О нас</span>
+        <h2 class="section-title">Сладко — и без угрызений совести</h2>
+        <p>CuPPcake — это кондитерская, где десерты делают на эритрите, аллюлозе и сиропе цикория вместо сахара. Без глютена, с веган-вариантами — чтобы радовать себя можно было каждый день.</p>
+        <p>Каждый торт готовится под заказ из натуральных ингредиентов. Закажите за 1–3 дня, а бенто-тортик можно забрать и в день обращения.</p>
+      </div>
+      <div class="about__facts">
+        <div class="fact"><b>0</b><span>сахара в составе</span></div>
+        <div class="fact"><b>2300₽</b><span>торты от / кг</span></div>
+        <div class="fact"><b>1–3 дня</b><span>на изготовление</span></div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="section-head"><span class="section-eyebrow">Контакты</span><h2 class="section-title">Где нас найти</h2></div>
+      <div class="contacts">
+        <div class="contact-card"><span>📍 Адрес</span><b>Большая Покровская, 60</b><i>Нижний Новгород</i></div>
+        <div class="contact-card"><span>🕐 Часы</span><b>09:00 – 21:00</b><i>ежедневно</i></div>
+        <div class="contact-card"><span>📞 Заказ</span><b>+7 (910) 123-22-00</b><i>самовывоз и доставка</i></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2025 CuPPcake · полезные торты и десерты · Нижний Новгород, Б. Покровская, 60</span>
+      <span class="footer__demo">Демо-редизайн · данные с сайта cuppcake.ru</span>
+    </div>
+  </footer>
+
+  <div id="overlay" class="overlay"></div>
+  <aside id="cart" class="cart-panel">
+    <div class="cart-panel__head"><span class="cart-panel__title">Корзина</span><button id="cartClose" class="close-btn">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-panel__foot">
+      <div class="cart-total-row"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <button id="checkoutBtn" disabled>Оформить заказ</button>
+    </div>
+  </aside>
+
+  <div id="orderModal" class="modal">
+    <div class="modal__inner">
+      <div class="modal__head"><h2>Оформление заказа</h2><button id="orderClose" class="close-btn">✕</button></div>
+      <form id="orderForm">
+        <div class="order-total-row"><span>Сумма заказа</span><strong id="orderTotal">0 ₽</strong></div>
+        <div class="form-group"><label>Имя *</label><input name="name" required placeholder="Ваше имя"></div>
+        <div class="form-group"><label>Телефон *</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div>
+        <div class="form-group"><label>Дата получения</label><input name="address" placeholder="когда нужен заказ"></div>
+        <div class="form-group"><label>Комментарий</label><textarea name="comment" placeholder="Надпись на торте, пожелания…"></textarea></div>
+        <button type="submit" class="submit-btn">Подтвердить заказ</button>
+      </form>
+      <div id="orderSuccess" class="order-success" hidden>
+        <div class="order-success__icon">🍰</div>
+        <h3>Заказ принят!</h3>
+        <p>Спасибо! Мы свяжемся с вами для подтверждения деталей.</p>
+        <button id="successClose" class="btn btn--berry">Ура!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // подставим первые два фото в hero-коллаж
+    document.addEventListener('DOMContentLoaded',()=>{
+      if(typeof MENU!=='undefined'&&MENU.length){
+        document.querySelector('.hp1').style.backgroundImage=`url('${MENU[0].img}')`;
+        const cz=MENU.find(m=>m.cat==='Чизкейки')||MENU[1];
+        document.querySelector('.hp2').style.backgroundImage=`url('${cz.img}')`;
+      }
+    });
+  </script>
+</body>
+</html>
