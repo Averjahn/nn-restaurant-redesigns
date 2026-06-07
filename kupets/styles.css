@@ -74,7 +74,7 @@ h1,h2,h3,.logo{font-family:"Playfair Display",Georgia,serif;font-weight:600;lett
 .where__row b{display:block;font-family:"Playfair Display",serif;font-size:21px;margin:6px 0 2px;color:#fff}
 .where__row i{font-style:normal;font-size:13px;color:rgba(247,241,231,.55)}
 .where__map{line-height:0}
-.where__map iframe{height:100%;min-height:440px;filter:sepia(.2) saturate(1.1) brightness(.96)}
+.where__map iframe{height:100%;min-height:440px;display:block;border:0}
 
 .footer{padding:28px 0;border-top:1px solid var(--line)}
 .footer__inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}

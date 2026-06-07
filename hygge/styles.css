@@ -79,7 +79,7 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 .point b{font-family:"Cormorant Garamond",serif;font-size:20px;display:block;margin-bottom:4px}
 .point span{font-size:13px;color:var(--muted)}
 .map{border:7px solid #fff;border-radius:24px;overflow:hidden;line-height:0;box-shadow:var(--shadow)}
-.map iframe{filter:sepia(.12) saturate(1.05)}
+.map iframe{display:block;border:0}
 
 /* footer */
 .footer{padding:28px 0;border-top:1px solid var(--line)}
