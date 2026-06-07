@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карамель — кондитерское кафе в Нижнем Новгороде</title>
+  <meta name="description" content="Карамель — любимая городская кондитерская в Нижнем Новгороде. Торты, пирожные, эклеры, десерты, кофе и какао. Сладко, уютно, по-домашнему. Алексеевская, 10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ░░░ ХЕДЕР ░░░ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <span class="logo__mark">❀</span>
+        <span class="logo__name">Карамель</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#map">Как найти</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#contacts" class="btn btn--solid header__cta">Забронировать стол</a>
+    </div>
+  </header>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section class="hero" id="top">
+    <div class="hero__media" role="img" aria-label="Молочный шоколад крупным планом"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__inner">
+      <span class="hero__eyebrow">кондитерское кафе · с 2009 года</span>
+      <h1 class="hero__title">Сладко,&nbsp;уютно,<br><em>по-домашнему</em></h1>
+      <p class="hero__sub">Любимая городская кондитерская, где пахнет тёплой карамелью и свежим бисквитом. Торты, пирожные, эклеры и какао — как в детстве, только лучше.</p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--solid">Смотреть меню</a>
+        <a href="#about" class="btn btn--ghost">Наша история</a>
+      </div>
+      <ul class="hero__markers">
+        <li><span class="stars">★★★★★</span> 4.9 — рейтинг гостей</li>
+        <li><span class="dot">•</span> с 2009 · десерты &amp; кофе</li>
+        <li><span class="dot">•</span> Алексеевская, 10 · Нижний Новгород</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ░░░ МЕНЮ ░░░ -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__eyebrow">наше меню</span>
+        <h2 class="section__title">Меню-борд кондитерской</h2>
+        <p class="section__lead">Всё печём сами каждое утро — на сливочном масле, натуральном шоколаде и сезонных ягодах.</p>
+      </header>
+
+      <div class="menu__grid">
+
+        <!-- Торты -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Торты</span><span class="menu-card__unit">за кусок · целиком</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">«Карамель»</span><span class="menu-item__dots"></span><span class="menu-item__price">320&nbsp;₽</span></div>
+              <p class="menu-item__desc">Медовые коржи, солёная карамель и крем-чиз — фирменный, наш самый любимый.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Молочный шоколад</span><span class="menu-item__dots"></span><span class="menu-item__price">340&nbsp;₽</span></div>
+              <p class="menu-item__desc">Нежный бисквит, мусс из бельгийского шоколада и ганаш.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Красный бархат</span><span class="menu-item__dots"></span><span class="menu-item__price">310&nbsp;₽</span></div>
+              <p class="menu-item__desc">Бархатные коржи и облако сливочного крема.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Морковный</span><span class="menu-item__dots"></span><span class="menu-item__price">290&nbsp;₽</span></div>
+              <p class="menu-item__desc">С грецким орехом, корицей и крем-чизом — по-домашнему.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Ягодный «Павлова»</span><span class="menu-item__dots"></span><span class="menu-item__price">330&nbsp;₽</span></div>
+              <p class="menu-item__desc">Хрустящая меренга, сливки и сезонные ягоды.</p>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Пирожные -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Пирожные</span><span class="menu-card__unit">за штуку</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Картошка</span><span class="menu-item__dots"></span><span class="menu-item__price">180&nbsp;₽</span></div>
+              <p class="menu-item__desc">Классика на бисквитной крошке с ромовой ноткой.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Тарт с лимоном</span><span class="menu-item__dots"></span><span class="menu-item__price">220&nbsp;₽</span></div>
+              <p class="menu-item__desc">Песочная корзинка, лимонный курд и подпечённая меренга.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Чизкейк</span><span class="menu-item__dots"></span><span class="menu-item__price">240&nbsp;₽</span></div>
+              <p class="menu-item__desc">Нью-Йорк на песочной основе с ягодным соусом.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Профитроль</span><span class="menu-item__dots"></span><span class="menu-item__price">90&nbsp;₽</span></div>
+              <p class="menu-item__desc">Заварной пухляш с ванильным кремом и шоколадом.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Брауни</span><span class="menu-item__dots"></span><span class="menu-item__price">170&nbsp;₽</span></div>
+              <p class="menu-item__desc">Плотный шоколадный, тёплый — с орехами пекан.</p>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Эклеры -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Эклеры</span><span class="menu-card__unit">за штуку</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Солёная карамель</span><span class="menu-item__dots"></span><span class="menu-item__price">160&nbsp;₽</span></div>
+              <p class="menu-item__desc">Хрустящий кракелин и крем из карамели с морской солью.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Ваниль &amp; Мадагаскар</span><span class="menu-item__dots"></span><span class="menu-item__price">150&nbsp;₽</span></div>
+              <p class="menu-item__desc">Заварной крем на стручке настоящей ванили.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Фисташка</span><span class="menu-item__dots"></span><span class="menu-item__price">180&nbsp;₽</span></div>
+              <p class="menu-item__desc">Нежный фисташковый крем и зелёный кракелин.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Малина-роза</span><span class="menu-item__dots"></span><span class="menu-item__price">170&nbsp;₽</span></div>
+              <p class="menu-item__desc">Лёгкий крем с розой и кислинкой свежей малины.</p>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Десерты к чаю -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Десерты к чаю</span><span class="menu-card__unit">за порцию</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Тёплый штрудель</span><span class="menu-item__dots"></span><span class="menu-item__price">240&nbsp;₽</span></div>
+              <p class="menu-item__desc">Яблоки, корица и шарик пломбира.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Сырники со сметаной</span><span class="menu-item__dots"></span><span class="menu-item__price">260&nbsp;₽</span></div>
+              <p class="menu-item__desc">Пышные, румяные, с ягодным вареньем.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Панна-котта</span><span class="menu-item__dots"></span><span class="menu-item__price">210&nbsp;₽</span></div>
+              <p class="menu-item__desc">Сливочная, дрожащая, с карамельным зеркалом.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Макарони (3 шт.)</span><span class="menu-item__dots"></span><span class="menu-item__price">270&nbsp;₽</span></div>
+              <p class="menu-item__desc">Ассорти вкусов дня на ваш выбор.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Маршмеллоу-печенье</span><span class="menu-item__dots"></span><span class="menu-item__price">130&nbsp;₽</span></div>
+              <p class="menu-item__desc">Тёплое печенье с тянущимся зефиром.</p>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Кофе -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Кофе</span><span class="menu-card__unit">250 / 350 мл</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Эспрессо</span><span class="menu-item__dots"></span><span class="menu-item__price">130&nbsp;₽</span></div>
+              <p class="menu-item__desc">Плотный, с карамельным послевкусием.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Капучино</span><span class="menu-item__dots"></span><span class="menu-item__price">190&nbsp;₽</span></div>
+              <p class="menu-item__desc">Бархатная пенка и рисунок на молоке.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Раф «Карамель»</span><span class="menu-item__dots"></span><span class="menu-item__price">230&nbsp;₽</span></div>
+              <p class="menu-item__desc">Сливочный раф с домашним карамельным сиропом.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Латте</span><span class="menu-item__dots"></span><span class="menu-item__price">210&nbsp;₽</span></div>
+              <p class="menu-item__desc">Мягкий, на выбор с миндальным молоком.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Флэт уайт</span><span class="menu-item__dots"></span><span class="menu-item__price">200&nbsp;₽</span></div>
+              <p class="menu-item__desc">Двойной эспрессо и тонкое молоко.</p>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Какао и чай -->
+        <article class="menu-card">
+          <h3 class="menu-card__title"><span>Какао &amp; чай</span><span class="menu-card__unit">за чашку</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Горячий шоколад</span><span class="menu-item__dots"></span><span class="menu-item__price">240&nbsp;₽</span></div>
+              <p class="menu-item__desc">Густой, из растопленного молочного шоколада.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Какао с зефиром</span><span class="menu-item__dots"></span><span class="menu-item__price">190&nbsp;₽</span></div>
+              <p class="menu-item__desc">Как в детстве — с облаком маршмеллоу.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Чай листовой</span><span class="menu-item__dots"></span><span class="menu-item__price">160&nbsp;₽</span></div>
+              <p class="menu-item__desc">Чёрный, зелёный или травяной — целый чайник.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__main"><span class="menu-item__name">Облепиховый чай</span><span class="menu-item__dots"></span><span class="menu-item__price">210&nbsp;₽</span></div>
+              <p class="menu-item__desc">Тёплый, с мёдом, имбирём и апельсином.</p>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ О МЕСТЕ ░░░ -->
+  <section class="section about" id="about">
+    <div class="container about__inner">
+      <div class="about__text">
+        <span class="section__eyebrow">о месте</span>
+        <h2 class="section__title">Кондитерская, в которую возвращаются</h2>
+        <p>«Карамель» началась с маленькой кухни и большой любви к выпечке. Здесь хотелось воссоздать ту самую тёплую кондитерскую из детства — где витрина блестит глазурью, в воздухе висит запах ванили, а к чаю обязательно достанут что-нибудь только из печи.</p>
+        <p>Мы оставили эту ностальгичную душу, но взглянули на неё свежо: лёгкие кремы, натуральный шоколад, сезонные ягоды и кофе на совесть. Каждое утро мы печём заново — потому что вкусно бывает только то, что сделано сегодня и с теплом.</p>
+        <ul class="about__facts">
+          <li><strong>15 лет</strong><span>дарим сладкое настроение</span></li>
+          <li><strong>40+</strong><span>десертов в витрине</span></li>
+          <li><strong>каждое утро</strong><span>свежая выпечка</span></li>
+        </ul>
+        <a href="#contacts" class="btn btn--solid">Прийти в гости</a>
+      </div>
+      <div class="about__gallery">
+        <figure class="about__photo about__photo--tall">
+          <img src="images/p2.jpg" alt="Витрина кондитерской Карамель" loading="lazy">
+        </figure>
+        <figure class="about__photo">
+          <img src="images/p3.jpg" alt="Уютный зал кафе Карамель" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ ОТЗЫВЫ ░░░ -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__eyebrow">отзывы гостей</span>
+        <h2 class="section__title">Что говорят гости</h2>
+      </header>
+      <div class="reviews__grid">
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">«Торт „Карамель“ — это любовь с первого кусочка. Заказываю на каждый день рождения уже третий год, гости всегда в восторге.»</p>
+          <footer class="review-card__author">Анна К.</footer>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">«Уютно так, что не хочется уходить. Раф с карамелью и тёплый штрудель — мой идеальный вечер в центре города.»</p>
+          <footer class="review-card__author">Дмитрий П.</footer>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">«Эклеры с солёной карамелью просто волшебные. Чувствуется, что всё свежее и сделано с душой. Спасибо за атмосферу детства!»</p>
+          <footer class="review-card__author">Марина С.</footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ КАРТА ░░░ -->
+  <section class="section map" id="map">
+    <div class="container map__inner">
+      <div class="map__text">
+        <span class="section__eyebrow">как найти</span>
+        <h2 class="section__title">Мы в самом центре</h2>
+        <p class="map__address">Алексеевская, 10<br><span>Нижний Новгород</span></p>
+        <p class="map__note">В двух шагах от площади Минина — заходите на запах ванили.</p>
+        <a href="#contacts" class="btn btn--ghost">Часы и контакты</a>
+      </div>
+      <div class="map__frame">
+        <iframe src="https://maps.google.com/maps?q=56.3200,44.0041&z=16&hl=ru&output=embed" width="100%" height="380" loading="lazy" style="border:0;display:block" title="Карта — Карамель, Алексеевская 10"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ КОНТАКТЫ ░░░ -->
+  <section class="section contacts" id="contacts">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__eyebrow">контакты</span>
+        <h2 class="section__title">Будем рады вам</h2>
+      </header>
+      <div class="contacts__grid">
+        <div class="contact-box">
+          <h3>Адрес</h3>
+          <p>Алексеевская, 10<br>Нижний Новгород</p>
+        </div>
+        <div class="contact-box">
+          <h3>Телефон</h3>
+          <p><a href="tel:+78312405510">+7 831 240-55-10</a></p>
+        </div>
+        <div class="contact-box">
+          <h3>Часы работы</h3>
+          <p>Пн–Пт · 9:00–22:00<br>Сб–Вс · 10:00–23:00</p>
+        </div>
+        <div class="contact-box">
+          <h3>Бронь и заказ тортов</h3>
+          <p><a href="tel:+78312405510">+7 831 240-55-10</a><br>hello@karamel-nn.ru</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ ФУТЕР ░░░ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark">❀</span>
+        <span class="logo__name">Карамель</span>
+        <p>Сладко, уютно, по-домашнему. Нижний Новгород.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <p class="footer__note">© 2026 «Карамель» · Алексеевская, 10 · Нижний Новгород<br><span class="footer__badge">Концепт-редизайн</span></p>
+    </div>
+  </footer>
+
+</body>
+</html>

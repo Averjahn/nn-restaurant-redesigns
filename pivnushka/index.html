@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пивнушка — пивной бар и кухня · Нижний Новгород</title>
+  <meta name="description" content="Пивнушка — дерзкое возрождение душевного пивного места на Рождественской, 20. Крафтовое и традиционное пиво, колбаски, рёбра на гриле." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ХЕДЕР -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">
+        <span class="logo__mark">🍺</span>
+        <span class="logo__text">Пивнушка</span>
+      </a>
+      <nav class="nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#map">Как найти</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#contacts" class="btn btn--amber header__cta">Забронировать стол</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <span class="hero__eyebrow">Пивной бар &amp; кухня · с 2014 года</span>
+      <h1 class="hero__title">Душевно.<br />По-мужски.<br /><span class="accent">Крафтово.</span></h1>
+      <p class="hero__subtitle">
+        Дерзкое возрождение настоящей пивнушки. Свежий крафт, гриль на углях,
+        ребра до косточки и колбаски, которые помнишь утром. Рождественская, 20.
+      </p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--amber">Смотреть меню</a>
+        <a href="#contacts" class="btn btn--ghost">Бронь стола</a>
+      </div>
+      <ul class="hero__markers">
+        <li><span class="marker__val">★ 4.9</span><span class="marker__cap">рейтинг гостей</span></li>
+        <li><span class="marker__val">2014</span><span class="marker__cap">год рождения</span></li>
+        <li><span class="marker__val">Гриль&nbsp;&amp;&nbsp;Крафт</span><span class="marker__cap">наша кухня</span></li>
+      </ul>
+    </div>
+    <a href="#menu" class="hero__scroll" aria-label="Вниз">↓</a>
+  </section>
+
+  <!-- МЕНЮ -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__kicker">Что на доске</span>
+        <h2 class="section__title">Меню-борд</h2>
+        <p class="section__lead">Пишем мелом, жарим на углях, наливаем по-честному. Цены — без сюрпризов.</p>
+      </div>
+
+      <div class="menu__grid">
+
+        <!-- Колонка 1 -->
+        <div class="menu__col">
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Крафтовое на кранах</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Янтарный эль «Рождественский»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">320&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Карамельный солод, медовая горчинка. Фирменный, варим под нас. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">IPA «Дерзкий»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">360&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Хмельная горечь, цитрус и хвоя. Для тех, кто любит характер. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Стаут «Уголь»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">340&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Плотный, кофе и горький шоколад, бархатная пена. 0,4 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Пшеничное «Светлое утро»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">300&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Мягкое, банан и гвоздика, нефильтрованное. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Сидр «Грушевый медь»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">330&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Полусухой, ароматный, для лёгкого вечера. 0,5 л</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Традиционное разливное</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Чешский лагер</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">260&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Классика жанра, чистый солодовый вкус. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Немецкое тёмное</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">280&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Хлебная корочка и сухофрукты. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Светлое живое «Местное»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">230&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Просто и душевно, как любили деды. 0,5 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Пивная башня 3 л</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">1&nbsp;290&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Любое разливное на компанию, со своим краном на столе.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Гриль на углях</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Свиные рёбра в медовой глазури</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">690&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Томлёные 6 часов, потом на угли. Мясо сходит с кости. 400 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Колбаски-гриль ассорти</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">540&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Баварская, охотничья и острая чили с тушёной капустой. 3 шт</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Куриные крылья BBQ</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">420&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Дымные, липкие, в фирменном соусе. 8 шт</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Стейк из свиной шеи</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">610&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Сочный, с перечной корочкой и печёным луком. 280 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Рулька по-баварски</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">890&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Хрустящая корочка, нежное мясо, тушёная капуста и горчица. 600 г</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="menu__col">
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Закуски к пиву</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Сырные палочки в панировке</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">340&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Тянущийся сыр, хрустящая корочка, соус барбекю. 6 шт</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Сухарики ржаные с чесноком</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">190&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Те самые, под пенное. С сырным соусом. 150 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Луковые кольца</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">260&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Хрустящие, золотые, с острым соусом. 200 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Креветки в чесночном масле</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">490&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Обжаренные на сковороде, с лимоном и багетом. 200 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Картошка по-деревенски</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">230&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">С розмарином и крупной солью, два соуса. 250 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Гренки с салом и чесноком</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">210&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">По-домашнему, как у бабушки в деревне. 180 г</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Сырная &amp; мясная доска</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Большая пивная доска</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">1&nbsp;190&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Колбаски, крылья, сухарики, сыр и соусы. На компанию 3–4 человек.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Мясная нарезка</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">560&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Вяленая колбаса, сыровялёная вырезка, бастурма. 220 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Сырное ассорти</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">520&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Четыре сорта, мёд, грецкий орех. 200 г</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Брецель с горчицей</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">180&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Тёплый баварский крендель с зернистой горчицей. 1 шт</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Не пивом единым</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Лимонад «Облепиха–имбирь»</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">240&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Домашний, бодрящий, со льдом. 0,4 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Морс клюквенный</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">190&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Кисло-сладкий, как надо. 0,4 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Чай облепиховый в чайнике</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">320&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Горячий, с мёдом и апельсином. 0,7 л</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item__row">
+                  <span class="menu-item__name">Настойка медовая на травах</span>
+                  <span class="menu-item__dots"></span>
+                  <span class="menu-item__price">280&nbsp;₽</span>
+                </div>
+                <p class="menu-item__desc">Фирменная, для согрева. 50 мл</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- О МЕСТЕ -->
+  <section class="section about" id="about">
+    <div class="container about__inner">
+      <div class="about__text">
+        <span class="section__kicker">О месте</span>
+        <h2 class="section__title">Старая душа,<br />новый характер</h2>
+        <p>
+          «Пивнушка» начиналась как обещание: вернуть то самое место, куда заходишь
+          после смены, садишься у деревянной стойки и понимаешь — здесь свои. Мы взяли
+          душевность старых пивных и пересобрали её заново: медь, тёплый янтарь, гул
+          разговоров и запах углей с гриля.
+        </p>
+        <p>
+          Никакого пафоса. Честное пиво из своих кранов, мясо на живом огне и закуски,
+          под которые вечер длится дольше, чем планировал. Мы на Рождественской, 20 —
+          в самом сердце Нижнего, где история улицы встречается с дерзостью крафта.
+        </p>
+        <ul class="about__facts">
+          <li><strong>12</strong><span>кранов с пивом</span></li>
+          <li><strong>6&nbsp;ч</strong><span>томим рёбра</span></li>
+          <li><strong>100%</strong><span>живой огонь</span></li>
+        </ul>
+      </div>
+      <div class="about__gallery">
+        <figure class="frame frame--big">
+          <img src="images/p2.jpg" alt="Интерьер пивного бара Пивнушка" loading="lazy" />
+        </figure>
+        <figure class="frame frame--small">
+          <img src="images/p3.jpg" alt="Гриль и закуски в баре Пивнушка" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__kicker">Отзывы гостей</span>
+        <h2 class="section__title">Что говорят свои</h2>
+      </div>
+      <div class="reviews__grid">
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">
+            «Рёбра — это что-то нереальное, мясо реально сходит с кости. Крафт свой,
+            не магазинный. Сидели до закрытия и не заметили, как пролетело время.»
+          </p>
+          <div class="review__author">
+            <span class="review__name">Андрей К.</span>
+            <span class="review__when">был на прошлой неделе</span>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">
+            «Атмосфера топ — тепло, по-домашнему, но стильно. Колбаски ассорти и тёмное
+            немецкое — идеальная пара. Уже наше постоянное место по пятницам.»
+          </p>
+          <div class="review__author">
+            <span class="review__name">Марина С.</span>
+            <span class="review__when">была две недели назад</span>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">
+            «Брали большую пивную доску на четверых — наелись от души. IPA «Дерзкий»
+            действительно дерзкий. Персонал свой в доску, всё по-честному.»
+          </p>
+          <div class="review__author">
+            <span class="review__name">Игорь В.</span>
+            <span class="review__when">был в этом месяце</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАРТА -->
+  <section class="section map" id="map">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__kicker">Как найти</span>
+        <h2 class="section__title">Мы тут, заходи</h2>
+        <p class="section__lead">Рождественская, 20 · Нижний Новгород</p>
+      </div>
+      <div class="map__frame">
+        <iframe src="https://maps.google.com/maps?q=56.3290,43.9970&z=16&hl=ru&output=embed" width="100%" height="380" loading="lazy" style="border:0;display:block" title="Карта — Пивнушка на Рождественской, 20"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="section contacts" id="contacts">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__kicker">Контакты</span>
+        <h2 class="section__title">Бронь &amp; связь</h2>
+      </div>
+      <div class="contacts__grid">
+        <div class="contact-card">
+          <span class="contact-card__icon">📍</span>
+          <h3>Адрес</h3>
+          <p>Рождественская, 20<br />Нижний Новгород</p>
+        </div>
+        <div class="contact-card">
+          <span class="contact-card__icon">📞</span>
+          <h3>Телефон</h3>
+          <p><a href="tel:+78312402014">+7 831 240-20-14</a><br />Бронь стола и компаний</p>
+        </div>
+        <div class="contact-card">
+          <span class="contact-card__icon">🕗</span>
+          <h3>Часы работы</h3>
+          <p>Пн–Чт &nbsp;12:00 – 00:00<br />Пт–Сб &nbsp;12:00 – 02:00<br />Вс &nbsp;12:00 – 00:00</p>
+        </div>
+      </div>
+      <div class="contacts__cta">
+        <a href="tel:+78312402014" class="btn btn--amber btn--lg">Позвонить и забронировать</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark">🍺</span>
+        <span class="logo__text">Пивнушка</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <p class="footer__addr">Рождественская, 20 · Нижний Новгород · +7 831 240-20-14</p>
+      <p class="footer__note">Концепт-редизайн. Бренд реальный, меню и данные придуманы для демонстрации. © 2026 Пивнушка</p>
+    </div>
+  </footer>
+
+</body>
+</html>
