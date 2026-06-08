@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ресторан 19 — локальная кухня на открытом огне · Нижний Новгород</title>
+  <meta name="description" content="Ресторан 19 — премиальная локальная кухня на открытом огне по рецептам XIX века. Нижний Новгород, ул. Ошарская, 19.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="brand">
+        <span class="brand__mark">19</span>
+        <span class="brand__name">Ресторан&nbsp;19</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#map">Как найти</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#contacts" class="btn btn--header">Забронировать</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__media" role="img" aria-label="Атмосфера ресторана"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__inner">
+      <span class="eyebrow eyebrow--light">Локальная кухня на открытом огне</span>
+      <h1 class="hero__title">Вкус, рождённый<br>в живом пламени</h1>
+      <p class="hero__sub">Премиальный ресторан в сердце Нижнего Новгорода. Готовим на углях и дровах по рецептам XIX века — медленно, честно, с характером.</p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--fire">Смотреть меню</a>
+        <a href="#contacts" class="btn btn--ghost">Бронь стола</a>
+      </div>
+      <ul class="hero__markers">
+        <li><span class="stars">★★★★★</span> 4.9 · 320 отзывов</li>
+        <li class="dot">•</li>
+        <li>Огонь · уголь · дым</li>
+        <li class="dot">•</li>
+        <li>Ошарская, 19</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="section section--menu" id="menu">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Меню очага</span>
+        <h2 class="section__title">Карта блюд с огня</h2>
+        <p class="section__lead">Сезонные продукты местных хозяйств, открытый огонь и старые губернские рецепты. Цены указаны в рублях.</p>
+      </div>
+
+      <div class="board">
+
+        <!-- col 1 -->
+        <div class="board__col">
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">С углей · закуски</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Печёная свёкла с копчёной сметаной</span><span class="item__dots"></span><span class="item__price">520&nbsp;₽</span></div>
+                <p class="item__desc">Корнеплод томлёный в золе, хрен, грецкий орех, масло из укропа.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Грузди солёные по-нижегородски</span><span class="item__dots"></span><span class="item__price">640&nbsp;₽</span></div>
+                <p class="item__desc">Бочковой посол, лук-шалот, постное масло, ржаные гренки.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Строганина из муксуна</span><span class="item__dots"></span><span class="item__price">890&nbsp;₽</span></div>
+                <p class="item__desc">Подмёрзлая речная рыба, перец, соль крупного помола, лимон.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Паштет из печени на углях</span><span class="item__dots"></span><span class="item__price">560&nbsp;₽</span></div>
+                <p class="item__desc">Куриная печень, топлёное масло, брусничный конфитюр, тосты.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Из печи · супы</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Уха из волжского судака на костре</span><span class="item__dots"></span><span class="item__price">720&nbsp;₽</span></div>
+                <p class="item__desc">Тройной навар, дымок, картофель, зелёное масло, рюмка под неё.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Щи суточные в чугунке</span><span class="item__dots"></span><span class="item__price">580&nbsp;₽</span></div>
+                <p class="item__desc">Квашеная капуста, говяжья грудинка, томление в дровяной печи.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Грибной крем-суп с боровиками</span><span class="item__dots"></span><span class="item__price">540&nbsp;₽</span></div>
+                <p class="item__desc">Лесные грибы, сливки, трюфельное масло, обжаренные сухари.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Гороховый с копчёным окороком</span><span class="item__dots"></span><span class="item__price">490&nbsp;₽</span></div>
+                <p class="item__desc">Густой, наваристый, с домашними ржаными гренками.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Дары Волги · рыба</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Судак на берёзовых углях</span><span class="item__dots"></span><span class="item__price">1290&nbsp;₽</span></div>
+                <p class="item__desc">Филе на решётке, печёный лимон, соус на белом вине.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Стерлядь целиком на вертеле</span><span class="item__dots"></span><span class="item__price">2480&nbsp;₽</span></div>
+                <p class="item__desc">Медленный обжиг на открытом пламени, травы, топлёное масло.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Щука фаршированная по-старинному</span><span class="item__dots"></span><span class="item__price">1180&nbsp;₽</span></div>
+                <p class="item__desc">Рецепт XIX века, ржаной хлеб, лук, запекание в углях.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Форель горячего копчения</span><span class="item__dots"></span><span class="item__price">1340&nbsp;₽</span></div>
+                <p class="item__desc">Ольховый дым, печёный картофель, соус из хрена и сметаны.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- col 2 -->
+        <div class="board__col">
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">Большой огонь · мясо</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Рёбра телёнка медленного огня</span><span class="item__dots"></span><span class="item__price">1690&nbsp;₽</span></div>
+                <p class="item__desc">Восемь часов над углями, глазурь на тёмном пиве, печёный лук.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Стейк рибай сухого вызревания</span><span class="item__dots"></span><span class="item__price">2390&nbsp;₽</span></div>
+                <p class="item__desc">Зреет 28 дней, обжиг на дубовых углях, соль, перец, костный жир.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Гусь, томлёный в русской печи</span><span class="item__dots"></span><span class="item__price">1980&nbsp;₽</span></div>
+                <p class="item__desc">Антоновка, чернослив, мочёная брусника. На двоих.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Бефстроганов губернский</span><span class="item__dots"></span><span class="item__price">1140&nbsp;₽</span></div>
+                <p class="item__desc">Говяжья вырезка, сливочно-грибной соус, картофельное пюре.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Каре ягнёнка на травах</span><span class="item__dots"></span><span class="item__price">1860&nbsp;₽</span></div>
+                <p class="item__desc">Розмарин, чеснок, угли, демиглас на красном вине.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">К огню · гарниры</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Картофель, печённый в золе</span><span class="item__dots"></span><span class="item__price">340&nbsp;₽</span></div>
+                <p class="item__desc">Молодой картофель, морская соль, зелёное масло, сметана.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Овощи с гриля</span><span class="item__dots"></span><span class="item__price">420&nbsp;₽</span></div>
+                <p class="item__desc">Сезонные корнеплоды, оливковое масло, тимьян, дымок.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Гречка с белыми грибами</span><span class="item__dots"></span><span class="item__price">390&nbsp;₽</span></div>
+                <p class="item__desc">Томлёная в чугунке, лук, топлёное масло, боровики.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Капуста, запечённая на углях</span><span class="item__dots"></span><span class="item__price">360&nbsp;₽</span></div>
+                <p class="item__desc">Карамельная корочка, тмин, копчёное масло.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-cat">
+            <h3 class="menu-cat__title">На сладкое · десерты</h3>
+            <ul class="menu-list">
+              <li class="item">
+                <div class="item__row"><span class="item__name">Печёное яблоко с мёдом и орехом</span><span class="item__dots"></span><span class="item__price">390&nbsp;₽</span></div>
+                <p class="item__desc">Антоновка, мёд, грецкий орех, сливочное мороженое.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Гурьевская каша</span><span class="item__dots"></span><span class="item__price">440&nbsp;₽</span></div>
+                <p class="item__desc">Манная пенка, лесные орехи, варенье — десерт XIX века.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Медовик на томлёном мёде</span><span class="item__dots"></span><span class="item__price">410&nbsp;₽</span></div>
+                <p class="item__desc">Тонкие коржи, заварной крем, карамельная нота огня.</p>
+              </li>
+              <li class="item">
+                <div class="item__row"><span class="item__name">Сбитень с пряностями</span><span class="item__dots"></span><span class="item__price">280&nbsp;₽</span></div>
+                <p class="item__desc">Горячий медовый напиток, гвоздика, имбирь, корица.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section section--about" id="about">
+    <div class="container about__grid">
+      <div class="about__text">
+        <span class="eyebrow">О месте</span>
+        <h2 class="section__title">Дом огня на Ошарской</h2>
+        <p>Ресторан 19 родился из простой идеи: вернуть вкус, который знали в губернском Нижнем Новгороде XIX века. Тогда лучшее готовили на живом огне — в русских печах, на углях и вертелах. Мы собрали старые рецепты, переосмыслили их и поставили в центр зала большой очаг.</p>
+        <p>Здесь нет случайных продуктов: рыбу берём с Волги, дичь и овощи — у местных хозяйств, хлеб печём сами. Графит стен, медь светильников и дыхание пламени создают атмосферу, в которой ужин превращается в неспешный ритуал.</p>
+        <ul class="about__facts">
+          <li><strong>XIX</strong><span>век рецептов</span></li>
+          <li><strong>100%</strong><span>живой огонь</span></li>
+          <li><strong>12</strong><span>лет на Ошарской</span></li>
+        </ul>
+      </div>
+      <div class="about__gallery">
+        <figure class="about__fig about__fig--tall">
+          <div class="ph" style="background-image:url('images/p2.jpg')" role="img" aria-label="Интерьер ресторана"></div>
+        </figure>
+        <figure class="about__fig">
+          <div class="ph" style="background-image:url('images/p3.jpg')" role="img" aria-label="Атмосфера у очага"></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="section section--reviews" id="reviews">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Отзывы гостей</span>
+        <h2 class="section__title">Что говорят о нас</h2>
+      </div>
+      <div class="reviews">
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>«Стерлядь на вертеле — это что-то невероятное. Дым, нежное мясо, идеальная подача. За такой ужин не жалко вернуться через весь город.»</blockquote>
+          <figcaption>— Анна К.</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>«Атмосфера премиум, но без снобизма. Очаг в центре зала, тёплый свет, внимательные официанты. Уха из судака — лучшая в Нижнем.»</blockquote>
+          <figcaption>— Дмитрий В.</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>«Отмечали годовщину. Гусь из печи, сбитень, медовик — будто попали в старую губернию. Очень атмосферно и по-настоящему вкусно.»</blockquote>
+          <figcaption>— Марина и Сергей</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <section class="section section--map" id="map">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Как найти</span>
+        <h2 class="section__title">Мы в центре города</h2>
+        <p class="section__lead">Нижний Новгород, ул. Ошарская, 19 — в нескольких минутах от площади Свободы.</p>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=56.3175,44.003&z=16&hl=ru&output=embed" width="100%" height="380" loading="lazy" style="border:0;display:block" title="Карта — ул. Ошарская, 19"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS ===== -->
+  <section class="section section--contacts" id="contacts">
+    <div class="container contacts__grid">
+      <div class="contacts__card">
+        <span class="eyebrow">Адрес</span>
+        <h3>Где мы</h3>
+        <p>Нижний Новгород,<br>ул. Ошарская, 19</p>
+      </div>
+      <div class="contacts__card">
+        <span class="eyebrow">Бронь и связь</span>
+        <h3>Телефон</h3>
+        <p><a href="tel:+78313190019">+7 831 319-00-19</a></p>
+        <p><a href="mailto:hello@restoran19.ru">hello@restoran19.ru</a></p>
+      </div>
+      <div class="contacts__card">
+        <span class="eyebrow">Часы работы</span>
+        <h3>Мы открыты</h3>
+        <p>Пн–Чт &nbsp;12:00 – 23:00<br>Пт–Сб &nbsp;12:00 – 01:00<br>Вс &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12:00 – 23:00</p>
+      </div>
+      <div class="contacts__cta">
+        <h3>Забронировать стол</h3>
+        <p>Очаг, медный свет и блюда с огня уже ждут вас.</p>
+        <a href="tel:+78313190019" class="btn btn--fire">Позвонить нам</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark">19</span>
+        <div>
+          <strong>Ресторан 19</strong>
+          <span>Локальная кухня на открытом огне</span>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <a href="#menu">Меню</a>
+        <a href="#about">О месте</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <p class="footer__note">© 2026 Ресторан 19 · Нижний Новгород · Ошарская, 19<br><span>Концепт-редизайн. Меню и контакты вымышлены для демонстрации.</span></p>
+    </div>
+  </footer>
+
+</body>
+</html>

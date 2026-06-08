@@ -1,0 +1,511 @@
+/* ===== PRO.Хинкали — концепт-редизайн ===== */
+
+:root{
+  --wine:#5a1226;        /* глубокое вино */
+  --wine-deep:#3d0d1a;   /* тёмное вино */
+  --wood:#2a1a12;        /* тёмное дерево / орех */
+  --wood-soft:#3a2519;
+  --cream:#f6ece0;       /* кремовый фон */
+  --paper:#fbf5ec;       /* светлый паблик */
+  --gold:#c79a4b;        /* золото */
+  --gold-soft:#e3c489;
+  --ink:#2a1a12;         /* основной текст */
+  --ink-soft:#6b5847;    /* приглушённый текст */
+  --line:rgba(122,80,40,.22);
+  --shadow:0 18px 50px -20px rgba(42,26,18,.45);
+  --r:18px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+
+body{
+  margin:0;
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  font-weight:400;
+  overflow-x:hidden;
+}
+
+img,iframe{max-width:100%;}
+img{display:block;height:auto;}
+
+a{color:inherit;text-decoration:none;}
+
+h1,h2,h3{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:600;
+  line-height:1.08;
+  margin:0;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin-inline:auto;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5em;
+  padding:14px 28px;
+  border-radius:999px;
+  font-family:"Manrope",sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.02em;
+  cursor:pointer;
+  border:1.5px solid transparent;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  text-align:center;
+}
+.btn--gold{
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+  color:var(--wine-deep);
+  box-shadow:0 12px 26px -12px rgba(199,154,75,.7);
+}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(199,154,75,.85);}
+.btn--ghost{
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,.55);
+}
+.btn--ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px);}
+
+/* ===== HEADER ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(42,26,18,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(199,154,75,.25);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 0;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--cream);
+}
+.logo-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;height:34px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+  color:var(--wine-deep);
+  font-family:"Cormorant Garamond",serif;
+  font-weight:700;
+  font-size:20px;
+  flex:none;
+}
+.logo-text{
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:.01em;
+  color:var(--cream);
+}
+.logo-text .dot{color:var(--gold);}
+
+.nav{
+  display:flex;
+  gap:26px;
+  margin-left:auto;
+}
+.nav a{
+  color:rgba(246,236,224,.82);
+  font-size:14.5px;
+  font-weight:500;
+  letter-spacing:.02em;
+  position:relative;
+  padding:4px 0;
+  transition:color .2s ease;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:1.5px;
+  background:var(--gold);
+  transition:width .25s ease;
+}
+.nav a:hover{color:#fff;}
+.nav a:hover::after{width:100%;}
+
+.header-btn{padding:10px 20px;font-size:14px;flex:none;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:#fff;
+}
+.hero__bg{
+  position:absolute;
+  inset:0;
+  background-image:url("images/p1.jpg");
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.04);
+}
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(42,13,18,.55) 0%, rgba(61,13,26,.55) 40%, rgba(42,26,18,.88) 100%),
+    radial-gradient(120% 80% at 20% 30%, rgba(0,0,0,.25), rgba(0,0,0,.55));
+}
+.hero__content{
+  position:relative;
+  z-index:2;
+  padding:120px 0 90px;
+  max-width:760px;
+}
+.hero__eyebrow{
+  display:inline-block;
+  font-size:clamp(12px,3vw,14px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  margin:0 0 18px;
+  font-weight:600;
+}
+.hero__title{
+  font-size:clamp(40px,9vw,82px);
+  font-weight:700;
+  letter-spacing:.005em;
+  text-shadow:0 6px 30px rgba(0,0,0,.4);
+}
+.hero__subtitle{
+  font-size:clamp(15px,2.4vw,19px);
+  max-width:540px;
+  margin:22px 0 32px;
+  color:rgba(255,255,255,.9);
+  font-weight:300;
+}
+.hero__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.hero__markers{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:14px;
+  margin:34px 0 0;
+  padding:0;
+  font-size:14.5px;
+  color:rgba(255,255,255,.88);
+}
+.hero__markers li{display:inline-flex;align-items:center;gap:8px;}
+.hero__markers .star{color:var(--gold);}
+.hero__markers .sep{color:var(--gold-soft);}
+
+/* ===== SECTIONS ===== */
+.section{padding:96px 0;}
+.section-head{
+  max-width:680px;
+  margin:0 auto 56px;
+  text-align:center;
+}
+.kicker{
+  font-size:13px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin:0 0 14px;
+}
+.section-title{
+  font-size:clamp(30px,6vw,52px);
+  color:var(--wine);
+}
+.section-lead{
+  margin:16px auto 0;
+  color:var(--ink-soft);
+  font-size:17px;
+}
+
+/* ===== MENU ===== */
+.menu{
+  background:
+    radial-gradient(80% 60% at 100% 0%, rgba(199,154,75,.07), transparent 60%),
+    var(--paper);
+}
+.menu-board{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px 56px;
+}
+.menu-col{display:flex;flex-direction:column;gap:44px;}
+
+.menu-cat__title{
+  font-size:clamp(24px,4vw,32px);
+  color:var(--wine);
+  margin-bottom:20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--line);
+  position:relative;
+}
+.menu-cat__title span{
+  font-style:italic;
+  color:var(--gold);
+  font-weight:500;
+  font-size:.72em;
+}
+.menu-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;}
+.menu-item__head{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+.menu-item__name{
+  font-weight:600;
+  font-size:16px;
+  color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.menu-item__dots{
+  flex:1 1 auto;
+  border-bottom:1.5px dotted var(--line);
+  transform:translateY(-4px);
+  min-width:14px;
+}
+.menu-item__price{
+  flex:none;
+  font-weight:700;
+  color:var(--wine);
+  font-size:15.5px;
+  white-space:nowrap;
+}
+.menu-item__desc{
+  margin:5px 0 0;
+  color:var(--ink-soft);
+  font-size:14px;
+  font-weight:300;
+  line-height:1.5;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  background:linear-gradient(180deg,var(--wood) 0%, var(--wood-soft) 100%);
+  color:var(--cream);
+}
+.about .section-title{color:var(--cream);}
+.about__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.about__text p{color:rgba(246,236,224,.82);font-size:16.5px;font-weight:300;}
+.about__text .kicker{color:var(--gold);}
+.about__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+.about-badge{
+  flex:1 1 120px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(199,154,75,.3);
+  border-radius:14px;
+  padding:16px 14px;
+  text-align:center;
+}
+.about-badge__num{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;
+  font-weight:700;
+  color:var(--gold-soft);
+  line-height:1;
+}
+.about-badge__label{
+  display:block;
+  margin-top:6px;
+  font-size:12.5px;
+  color:rgba(246,236,224,.7);
+  letter-spacing:.02em;
+}
+.about__gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+.about__photo{
+  margin:0;
+  border-radius:var(--r);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(199,154,75,.25);
+}
+.about__photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+.about__photo--big img{aspect-ratio:16/10;}
+.about__photo:not(.about__photo--big) img{aspect-ratio:16/7;}
+.about__photo:hover img{transform:scale(1.05);}
+
+/* ===== REVIEWS ===== */
+.reviews{background:var(--paper);}
+.reviews__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+.review-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:30px 28px;
+  box-shadow:0 16px 40px -28px rgba(90,18,38,.45);
+  display:flex;
+  flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.review-card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -26px rgba(90,18,38,.5);}
+.review-card__stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:14px;}
+.review-card__text{
+  margin:0 0 22px;
+  font-size:15.5px;
+  color:var(--ink);
+  font-style:italic;
+  font-family:"Cormorant Garamond",serif;
+  font-size:19px;
+  line-height:1.45;
+}
+.review-card__author{margin-top:auto;display:flex;flex-direction:column;}
+.review-card__name{font-weight:600;color:var(--wine);}
+.review-card__meta{font-size:13px;color:var(--ink-soft);}
+
+/* ===== MAP ===== */
+.map{
+  background:linear-gradient(180deg,var(--wine-deep),var(--wine));
+  color:var(--cream);
+}
+.map__grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:48px;
+  align-items:center;
+}
+.map .kicker{color:var(--gold-soft);}
+.map .section-title{color:var(--cream);}
+.map__address{
+  font-family:"Cormorant Garamond",serif;
+  font-size:26px;
+  font-weight:600;
+  margin:18px 0 14px;
+  color:#fff;
+}
+.map__note{color:rgba(246,236,224,.78);font-weight:300;margin-bottom:26px;}
+.map__frame{
+  border-radius:var(--r);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(199,154,75,.3);
+}
+.map__frame iframe{max-width:100%;}
+
+/* ===== CONTACTS ===== */
+.contacts{background:var(--cream);}
+.contacts__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+.contact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:34px 28px;
+  text-align:center;
+  box-shadow:0 14px 36px -28px rgba(90,18,38,.4);
+  transition:transform .3s ease;
+}
+.contact-card:hover{transform:translateY(-4px);}
+.contact-card__icon{font-size:30px;display:block;margin-bottom:12px;}
+.contact-card__title{
+  font-size:24px;
+  color:var(--wine);
+  margin-bottom:10px;
+}
+.contact-card p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+.contact-card a{color:var(--wine);font-weight:600;}
+.contact-card a:hover{color:var(--gold);}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:var(--wood);
+  color:var(--cream);
+  padding:54px 0 36px;
+  border-top:1px solid rgba(199,154,75,.25);
+}
+.footer__inner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.footer__brand{display:flex;align-items:center;gap:10px;}
+.footer__tag{margin:0;color:rgba(246,236,224,.75);font-weight:300;}
+.footer__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;}
+.footer__nav a{color:rgba(246,236,224,.8);font-size:14.5px;transition:color .2s ease;}
+.footer__nav a:hover{color:var(--gold);}
+.footer__note{margin:8px 0 0;font-size:13px;color:rgba(246,236,224,.5);}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:860px){
+  .nav{display:none;}
+  .about__grid,.map__grid{grid-template-columns:1fr;gap:40px;}
+  .reviews__grid,.contacts__grid{grid-template-columns:1fr;}
+  .hero{min-height:auto;}
+}
+
+@media (max-width:600px){
+  .section{padding:64px 0;}
+  .section-head{margin-bottom:40px;}
+  .menu-board{grid-template-columns:1fr;gap:0 0;}
+  .menu-col{gap:38px;}
+  .menu-col + .menu-col{margin-top:38px;}
+  .about__grid,.map__grid{gap:34px;}
+  .reviews__grid,.contacts__grid{gap:20px;}
+  .hero__content{padding:96px 0 64px;}
+  .header-btn{display:none;}
+  .logo-text{font-size:21px;}
+  .review-card,.contact-card{padding:26px 22px;}
+}
+
+@media (max-width:380px){
+  .container{width:90%;}
+  .section{padding:52px 0;}
+  .hero__content{padding:80px 0 52px;}
+  .hero__actions{flex-direction:column;}
+  .hero__actions .btn{width:100%;}
+  .map__info .btn{width:100%;}
+  .hero__markers{gap:8px 12px;font-size:13.5px;}
+  .menu-item__name{font-size:15px;}
+  .about__badges{gap:10px;}
+  .about-badge{flex:1 1 100%;}
+  .logo-text{font-size:19px;}
+  .logo-mark{width:30px;height:30px;font-size:18px;}
+}

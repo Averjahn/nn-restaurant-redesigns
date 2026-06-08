@@ -1,0 +1,431 @@
+/* ====== Анор — узбекская кухня · концепт-редизайн ====== */
+
+:root{
+  --pomegranate:#7a1226;   /* гранатовый */
+  --pomegranate-deep:#5a0c1c;
+  --ochre:#c9772b;         /* охра */
+  --gold:#d8a64a;          /* золото */
+  --gold-soft:#e7c989;
+  --cream:#f7efe2;         /* тёплый кремовый фон */
+  --cream-2:#f1e6d3;
+  --ink:#2a1614;           /* тёмный текст */
+  --ink-soft:#6b4a3f;
+  --line:rgba(122,18,38,0.16);
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow:0 18px 50px -24px rgba(90,12,28,0.45);
+  --maxw:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img,iframe{max-width:100%;}
+img{display:block;height:auto;}
+
+a{color:inherit;text-decoration:none;}
+
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.1;margin:0;font-weight:700;}
+
+.container{
+  width:min(var(--maxw),92%);
+  margin-inline:auto;
+}
+
+/* ====== Кнопки ====== */
+.btn{
+  display:inline-block;
+  font-family:'Manrope',sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:0.02em;
+  padding:13px 26px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  border:1px solid transparent;
+  text-align:center;
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--ochre));
+  color:#34160c;
+  box-shadow:0 12px 28px -14px rgba(201,119,43,0.8);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(201,119,43,0.9);}
+.btn-ghost{
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,0.55);
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px);}
+.btn-header{
+  background:var(--pomegranate);
+  color:var(--gold-soft);
+  padding:10px 20px;
+  font-size:14px;
+}
+.btn-header:hover{background:var(--pomegranate-deep);transform:translateY(-2px);}
+
+/* ====== Хедер ====== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(247,239,226,0.86);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand-mark{
+  color:var(--pomegranate);
+  font-size:24px;
+  line-height:1;
+}
+.brand-text{
+  font-family:'Playfair Display',serif;
+  font-weight:800;
+  font-size:24px;
+  color:var(--pomegranate);
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+.brand-text small{
+  font-family:'Manrope',sans-serif;
+  font-weight:500;
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ochre);
+  margin-top:4px;
+}
+.nav{display:flex;gap:26px;}
+.nav a{
+  font-size:15px;
+  font-weight:500;
+  color:var(--ink-soft);
+  position:relative;
+  transition:color .2s;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:var(--gold);
+  transition:width .25s ease;
+}
+.nav a:hover{color:var(--pomegranate);}
+.nav a:hover::after{width:100%;}
+
+/* ====== HERO ====== */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('images/p1.jpg');
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(42,12,18,0.45) 0%, rgba(58,10,20,0.55) 45%, rgba(34,8,14,0.86) 100%),
+    radial-gradient(120% 90% at 50% 10%, rgba(122,18,38,0.18), transparent 60%);
+}
+.hero-content{position:relative;z-index:2;color:#fff;padding:120px 0 90px;}
+.hero-eyebrow{
+  display:inline-block;
+  font-size:13px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  margin-bottom:22px;
+  padding:8px 16px;
+  border:1px solid rgba(216,166,74,0.4);
+  border-radius:999px;
+}
+.hero-title{
+  font-size:clamp(54px,15vw,140px);
+  font-weight:800;
+  letter-spacing:0.01em;
+  margin-bottom:8px;
+  text-shadow:0 12px 40px rgba(0,0,0,0.4);
+}
+.hero-sub{
+  font-size:clamp(16px,2.4vw,21px);
+  max-width:560px;
+  color:rgba(255,255,255,0.92);
+  font-weight:300;
+  margin:0 0 32px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px;}
+.hero-markers{
+  list-style:none;
+  margin:0;padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 28px;
+  font-size:14px;
+  color:rgba(255,255,255,0.85);
+}
+.hero-markers li{position:relative;padding-left:0;}
+.hero-markers .stars{color:var(--gold);font-weight:700;}
+
+/* ====== Секции — общее ====== */
+.section{padding:96px 0;}
+.section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--ochre);
+  margin-bottom:14px;
+}
+.section-title{
+  font-size:clamp(28px,5vw,46px);
+  color:var(--pomegranate);
+  margin-bottom:16px;
+}
+.section-lead{font-size:17px;color:var(--ink-soft);margin:0;}
+
+/* ====== Меню-борд ====== */
+.menu-section{background:var(--cream);}
+.menu-board{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px 60px;
+}
+.menu-cat{
+  background:linear-gradient(180deg,#fffaf0,#f6ead5);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px 30px 26px;
+  box-shadow:var(--shadow);
+}
+.menu-cat-title{
+  font-size:24px;
+  color:var(--pomegranate);
+  margin-bottom:20px;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.menu-cat-title::before{content:"❀";color:var(--gold);font-size:16px;}
+.menu-list{list-style:none;margin:0;padding:0;}
+.menu-item{padding:13px 0;border-bottom:1px dashed rgba(122,18,38,0.12);}
+.menu-item:last-child{border-bottom:none;}
+.menu-item-head{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+}
+.menu-name{
+  font-weight:600;
+  font-size:16.5px;
+  color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.menu-dots{
+  flex:1;
+  border-bottom:2px dotted rgba(122,18,38,0.25);
+  transform:translateY(-4px);
+  min-width:14px;
+}
+.menu-price{
+  font-weight:700;
+  color:var(--ochre);
+  font-size:16px;
+  white-space:nowrap;
+}
+.menu-desc{
+  margin:5px 0 0;
+  font-size:14px;
+  color:var(--ink-soft);
+  font-weight:300;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
+/* ====== О месте ====== */
+.about-section{
+  background:
+    linear-gradient(180deg, var(--cream-2), var(--cream));
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:center;
+}
+.about-text .eyebrow{margin-bottom:14px;}
+.about-text .section-title{text-align:left;margin-bottom:22px;}
+.about-text p{margin:0 0 18px;font-size:16.5px;color:var(--ink-soft);}
+.about-text .btn{margin-top:8px;}
+.about-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.gallery-item{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.gallery-item img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .5s ease;
+}
+.gallery-item:first-child{margin-top:28px;}
+.gallery-item:hover img{transform:scale(1.05);}
+
+/* ====== Отзывы ====== */
+.reviews-section{
+  background:var(--pomegranate);
+  background:linear-gradient(160deg,var(--pomegranate),var(--pomegranate-deep));
+  color:var(--cream);
+}
+.reviews-section .eyebrow{color:var(--gold-soft);}
+.reviews-section .section-title{color:#fff;}
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+.review-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(216,166,74,0.28);
+  border-radius:var(--radius);
+  padding:30px 28px;
+  backdrop-filter:blur(4px);
+}
+.review-card .stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:14px;}
+.review-text{font-size:16px;color:rgba(255,255,255,0.9);font-weight:300;margin:0 0 18px;}
+.review-author{font-weight:600;color:var(--gold-soft);font-size:15px;}
+
+/* ====== Карта ====== */
+.map-section{background:var(--cream);}
+.map-wrap{
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.map-wrap iframe{display:block;width:100%;}
+
+/* ====== Контакты ====== */
+.contacts-section{background:linear-gradient(180deg,var(--cream),var(--cream-2));}
+.contacts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.contact-card{
+  background:#fffaf0;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px 24px;
+  box-shadow:var(--shadow);
+}
+.contact-label{
+  display:block;
+  font-size:12px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--ochre);
+  font-weight:600;
+  margin-bottom:12px;
+}
+.contact-value{margin:0;font-size:17px;color:var(--ink);font-weight:500;}
+.contact-value a{color:var(--pomegranate);font-weight:600;}
+.contact-value a:hover{color:var(--ochre);}
+.contacts-cta{text-align:center;margin-top:44px;}
+
+/* ====== Футер ====== */
+.site-footer{
+  background:var(--ink);
+  color:var(--cream);
+  padding:54px 0 40px;
+}
+.footer-inner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.footer-brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Playfair Display',serif;
+  font-weight:800;font-size:26px;color:var(--gold-soft);
+}
+.footer-brand .brand-mark{color:var(--ochre);}
+.footer-text{margin:0;color:rgba(247,239,226,0.78);font-size:15px;}
+.footer-note{margin:0;color:rgba(247,239,226,0.45);font-size:13px;}
+
+/* ====== АДАПТИВ ====== */
+@media (max-width:900px){
+  .nav{display:none;}
+  .about-grid{grid-template-columns:1fr;gap:38px;}
+  .about-text .section-title{text-align:center;}
+  .about-text .eyebrow{display:block;text-align:center;}
+  .about-text{text-align:center;}
+  .about-text .btn{margin-inline:auto;}
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .contacts-grid{grid-template-columns:1fr 1fr;}
+}
+
+@media (max-width:600px){
+  .section{padding:64px 0;}
+  .section-head{margin-bottom:38px;}
+  .hero-content{padding:96px 0 70px;}
+  .menu-board{grid-template-columns:1fr;gap:22px;}
+  .about-gallery{grid-template-columns:1fr;gap:16px;}
+  .gallery-item:first-child{margin-top:0;}
+  .gallery-item img{height:260px;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .contacts-grid{grid-template-columns:1fr;}
+  .menu-cat{padding:24px 22px 20px;}
+  .hero-markers{gap:10px 18px;font-size:13px;}
+  .btn-header{display:none;}
+}
+
+@media (max-width:380px){
+  .container{width:90%;}
+  .section{padding:52px 0;}
+  .hero{min-height:82vh;}
+  .hero-content{padding:84px 0 60px;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn{width:100%;}
+  .contacts-cta .btn{width:100%;}
+  .menu-cat{padding:20px 18px 16px;}
+  .menu-cat-title{font-size:21px;}
+  .menu-name{font-size:15.5px;}
+  .review-card{padding:24px 20px;}
+  .contact-card{padding:22px 20px;}
+  .hero-eyebrow{font-size:11px;letter-spacing:0.18em;}
+}
