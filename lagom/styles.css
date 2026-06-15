@@ -64,11 +64,8 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 }
 .hf {
   position: absolute;
-  font-size: 26px;
-  opacity: .72;
-  line-height: 1;
+  line-height: 0;
   display: block;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.1));
 }
 
 .hero > .container { position: relative; z-index: 1; }
