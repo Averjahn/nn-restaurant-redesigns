@@ -120,7 +120,8 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 /* ─── Глава-разделитель ─── */
 .chapter {
   display: flex; align-items: center; gap: 20px;
-  padding: 56px 0 0; margin-bottom: -12px;
+  margin: 48px 0 28px;     /* сверху — от предыдущей секции, снизу — до контента */
+  padding: 0;
 }
 .chapter::before,
 .chapter::after { content: ''; flex: 1; height: 1px; background: var(--line); }
@@ -130,7 +131,8 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 }
 
 /* ─── Секции ─── */
-.section { padding: 60px 0; }
+.section { padding: 48px 0 56px; }
+.chapter + .section { padding-top: 0; }      /* chapter уже даёт отступ снизу */
 .section-head { text-align: center; margin-bottom: 44px; }
 .section-eyebrow {
   display: block; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase;
@@ -169,8 +171,7 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 
 /* ─── О НАС ─── */
 .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: start; }
-.about .section-eyebrow, .about .section-title { text-align: left; }
-.about .section-title { margin: 8px 0 20px; }
+.about .section-title { text-align: left; margin: 0 0 20px; }
 .about__text p { color: var(--muted); margin-bottom: 14px; font-size: 15.5px; }
 .about__pull {
   margin: 22px 0;
@@ -196,6 +197,17 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 .contact-card span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--nord); }
 .contact-card b { display: block; font-family: "Spectral",serif; font-size: 20px; margin: 10px 0 5px; }
 .contact-card i { font-style: normal; font-size: 13px; color: var(--muted); }
+
+/* ─── КАРТА ─── */
+.map__address {
+  text-align: center; color: var(--muted); font-size: 14px;
+  margin: 0 0 24px;
+}
+.map__frame {
+  border-radius: 12px; overflow: hidden; line-height: 0;
+  box-shadow: 0 14px 40px rgba(0,0,0,.14);
+}
+.map__frame iframe { display: block; border: 0; }
 
 /* ─── ФУТЕР ─── */
 .footer { padding: 32px 0; border-top: 1px solid var(--line); margin-top: 56px; }
