@@ -177,7 +177,33 @@
   </footer>
 
 
+<audio id="bgMusic" loop preload="none">
+  <source src="audio/lofi.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" title="Музыка хюгге">
+  <span class="music-btn__bars">
+    <i></i><i></i><i></i>
+  </span>
+  <span class="music-btn__label">lofi</span>
+</button>
+
 <script>
+  const music   = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  let playing = false;
+
+  musicBtn.addEventListener('click', () => {
+    if (playing) {
+      music.pause();
+      musicBtn.classList.remove('is-playing');
+    } else {
+      music.play().catch(() => {});
+      musicBtn.classList.add('is-playing');
+    }
+    playing = !playing;
+  });
+
   const pointsMap = document.getElementById('pointsMap');
   document.querySelectorAll('.point[data-ll]').forEach((btn) => {
     btn.addEventListener('click', () => {
