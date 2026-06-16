@@ -12,15 +12,6 @@
 </head>
 <body>
 
-  <div class="intro" id="intro">
-    <div class="intro__inner">
-      <span class="intro__eyebrow">Нижний Новгород</span>
-      <div class="intro__logo">Кофе<span>хюгге</span></div>
-      <p class="intro__sub">уют · кофе · датское настроение</p>
-      <button class="intro__enter" id="introEnter">Войти ☕</button>
-    </div>
-  </div>
-
   <header class="header">
     <div class="container header__inner">
       <a href="#" class="logo">Кофе<span>хюгге</span></a>
@@ -201,20 +192,7 @@
 <script>
   const music    = document.getElementById('bgMusic');
   const musicBtn = document.getElementById('musicBtn');
-  const intro    = document.getElementById('intro');
-  const introEnter = document.getElementById('introEnter');
   let playing = false;
-
-  function startMusic() {
-    music.play().catch(() => {});
-    musicBtn.classList.add('is-playing');
-    playing = true;
-  }
-
-  introEnter.addEventListener('click', () => {
-    intro.classList.add('is-hidden');
-    startMusic();
-  });
 
   musicBtn.addEventListener('click', () => {
     if (playing) {
