@@ -62,6 +62,13 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 .bn{font-size:16px;font-weight:500}
 .bp{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;color:var(--wood);white-space:nowrap}
 
+/* gallery */
+.gallery-section{padding:72px 0;background:var(--paper);border-top:1px solid var(--line)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:240px 240px;gap:12px}
+.gallery__item{background-size:cover;background-position:center;border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.gallery__item:hover{transform:scale(1.02);box-shadow:var(--shadow)}
+.gallery__item--wide{grid-column:span 2}
+
 /* about */
 .about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .about__inner{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;padding:72px 0}
