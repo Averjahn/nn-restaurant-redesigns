@@ -194,17 +194,26 @@
   const musicBtn = document.getElementById('musicBtn');
   let playing = false;
 
-  function startMusicOnce() {
+  function removeAutoStart() {
+    ['click', 'scroll', 'touchstart', 'keydown'].forEach(ev =>
+      document.removeEventListener(ev, startMusicOnce)
+    );
+  }
+
+  function startMusicOnce(e) {
+    if (musicBtn.contains(e.target)) return; // кнопка управляет сама
+    removeAutoStart();
     music.play().catch(() => {});
     musicBtn.classList.add('is-playing');
     playing = true;
   }
 
   ['click', 'scroll', 'touchstart', 'keydown'].forEach(e =>
-    document.addEventListener(e, startMusicOnce, { once: true, passive: true })
+    document.addEventListener(e, startMusicOnce, { passive: true })
   );
 
   musicBtn.addEventListener('click', () => {
+    removeAutoStart();
     if (playing) {
       music.pause();
       musicBtn.classList.remove('is-playing');
