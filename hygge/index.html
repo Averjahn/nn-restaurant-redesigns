@@ -136,23 +136,23 @@
     <div class="container">
       <div class="section-head"><span class="section-eyebrow">Точки</span><h2 class="section-title">Кофехюгге в Нижнем Новгороде</h2></div>
       <div class="points">
-        <a class="point" href="https://yandex.ru/maps/?ll=43.988173%2C56.329694&z=17&pt=43.988173%2C56.329694%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Площадь Маркина, 15а/2</b><span>напротив Речного вокзала · с посадкой</span></a>
-        <a class="point" href="https://yandex.ru/maps/?ll=43.988900%2C56.329500&z=17&pt=43.988900%2C56.329500%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Площадь Маркина, 15а/3</b><span>напротив бывш. фабрики «Маяк» · с посадкой</span></a>
-        <a class="point" href="https://yandex.ru/maps/?ll=44.007965%2C56.331739&z=17&pt=44.007965%2C56.331739%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Нижне-Волжская набережная, 25а</b><span>рядом с фонтаном · с посадкой</span></a>
-        <a class="point" href="https://yandex.ru/maps/?ll=43.992718%2C56.306386&z=17&pt=43.992718%2C56.306386%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Тимирязева, 27а</b><span>с посадочными местами</span></a>
-        <a class="point" href="https://yandex.ru/maps/?ll=43.974052%2C56.277744&z=16&pt=43.974052%2C56.277744%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Парк «Швейцария»</b><span>ост. Сурикова, Медицинская, Администрация Приокского р-на, Океанис · coffee to go</span></a>
-        <a class="point" href="https://yandex.ru/maps/?ll=44.021159%2C56.275565&z=16&pt=44.021159%2C56.275565%2Cpm2rdm" target="_blank" rel="noopener">
-          <b>Щёлоковский хутор</b><span>около Третьего озера · с посадочными местами</span></a>
+        <button class="point is-active" data-ll="43.988173,56.329694" data-z="17">
+          <b>Площадь Маркина, 15а/2</b><span>напротив Речного вокзала · с посадкой</span></button>
+        <button class="point" data-ll="43.988900,56.329500" data-z="17">
+          <b>Площадь Маркина, 15а/3</b><span>напротив бывш. фабрики «Маяк» · с посадкой</span></button>
+        <button class="point" data-ll="44.007965,56.331739" data-z="17">
+          <b>Нижне-Волжская набережная, 25а</b><span>рядом с фонтаном · с посадкой</span></button>
+        <button class="point" data-ll="43.992718,56.306386" data-z="17">
+          <b>Тимирязева, 27а</b><span>с посадочными местами</span></button>
+        <button class="point" data-ll="43.974052,56.277744" data-z="15">
+          <b>Парк «Швейцария»</b><span>ост. Сурикова, Медицинская, Администрация Приокского р-на, Океанис · coffee to go</span></button>
+        <button class="point" data-ll="44.021159,56.275565" data-z="16">
+          <b>Щёлоковский хутор</b><span>около Третьего озера · с посадочными местами</span></button>
       </div>
       <div class="map">
-        <iframe
-          src="https://maps.google.com/maps?q=56.329694,43.988173&z=16&hl=ru&output=embed"
-          width="100%" height="460" frameborder="0" loading="lazy" title="Кофехюгге — 5 точек на карте Нижнего Новгорода"></iframe>
+        <iframe id="pointsMap"
+          src="https://yandex.ru/map-widget/v1/?ll=43.988173,56.329694&z=17&pt=43.988173,56.329694,pm2rdm"
+          width="100%" height="460" frameborder="0" loading="lazy" title="Кофехюгге на карте Нижнего Новгорода" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -176,5 +176,18 @@
     </div>
   </footer>
 
+
+<script>
+  const pointsMap = document.getElementById('pointsMap');
+  document.querySelectorAll('.point[data-ll]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.point').forEach((p) => p.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const ll = btn.dataset.ll;
+      const z  = btn.dataset.z || '17';
+      pointsMap.src = `https://yandex.ru/map-widget/v1/?ll=${ll}&z=${z}&pt=${ll},pm2rdm`;
+    });
+  });
+</script>
 </body>
 </html>
