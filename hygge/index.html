@@ -245,11 +245,12 @@
     const leafMap = L.map('pointsMap', {
       center: [56.329694, 43.988173],
       zoom: 16,
-      scrollWheelZoom: false,
-      zoomControl: false
+      scrollWheelZoom: true,
+      zoomControl: false,
+      attributionControl: false
     });
 
-    L.control.zoom({ position: 'bottomright' }).addTo(leafMap);
+    L.control.zoom({ position: 'topleft' }).addTo(leafMap);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '© <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>',
