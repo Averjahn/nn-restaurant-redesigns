@@ -13,6 +13,7 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 .header{position:sticky;top:0;z-index:100;background:rgba(245,236,221,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .header__inner{display:flex;align-items:center;gap:24px;padding:15px 0}
 .logo{font-size:27px;color:var(--ink)}.logo span{color:var(--honey)}
+.logo__img{height:40px;width:auto;display:block;object-fit:contain}
 .nav{margin-left:auto;display:flex;gap:26px;font-size:15px;font-weight:500}
 .nav a{color:var(--muted);transition:color .2s}.nav a:hover{color:var(--ink)}
 .nav-cta{font-size:13px;font-weight:600;border:1.5px solid var(--ink);padding:9px 16px;border-radius:30px;transition:all .2s;white-space:nowrap}
