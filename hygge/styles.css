@@ -80,6 +80,17 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 .fact span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 .about__img{min-height:400px;border-radius:24px;background-size:cover;background-position:center;box-shadow:var(--shadow);border:7px solid #fff}
 
+/* leaflet map pin */
+.map-pin{width:14px;height:14px;background:var(--honey);border:2.5px solid #fff;border-radius:50%;box-shadow:0 2px 10px rgba(70,48,24,.35)}
+.leaflet-popup-content-wrapper{border-radius:12px !important;box-shadow:0 8px 28px rgba(70,48,24,.14) !important;border:1px solid var(--line) !important;padding:0 !important;font-family:"Inter",sans-serif !important;background:var(--paper) !important}
+.leaflet-popup-content{margin:12px 16px !important}
+.map-popup__name{font-size:13px;font-weight:600;color:var(--ink)}
+.leaflet-popup-tip-container{display:none}
+.leaflet-popup-close-button{color:var(--muted) !important;font-size:16px !important;top:8px !important;right:10px !important}
+.leaflet-control-zoom a{background:var(--paper) !important;color:var(--ink) !important;border-color:var(--line) !important;font-family:"Inter",sans-serif !important}
+.leaflet-control-zoom a:hover{background:var(--bg) !important}
+.leaflet-control-attribution{font-size:10px !important;background:rgba(251,245,234,.8) !important}
+
 /* points + map */
 .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:24px}
 .point{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:all .2s;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink)}
