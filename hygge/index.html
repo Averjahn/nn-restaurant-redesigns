@@ -194,6 +194,16 @@
   const musicBtn = document.getElementById('musicBtn');
   let playing = false;
 
+  function startMusicOnce() {
+    music.play().catch(() => {});
+    musicBtn.classList.add('is-playing');
+    playing = true;
+  }
+
+  ['click', 'scroll', 'touchstart', 'keydown'].forEach(e =>
+    document.addEventListener(e, startMusicOnce, { once: true, passive: true })
+  );
+
   musicBtn.addEventListener('click', () => {
     if (playing) {
       music.pause();
