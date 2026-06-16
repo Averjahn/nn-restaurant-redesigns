@@ -82,8 +82,9 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 
 /* points + map */
 .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:24px}
-.point{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:all .2s}
+.point{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:all .2s;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink)}
 .point:hover{border-color:var(--honey);transform:translateY(-3px);box-shadow:var(--shadow)}
+.point.is-active{border-color:var(--honey);background:linear-gradient(135deg,rgba(211,148,64,.08),rgba(211,148,64,.02));box-shadow:0 4px 20px rgba(211,148,64,.18)}
 .point b{font-family:"Cormorant Garamond",serif;font-size:20px;display:block;margin-bottom:4px}
 .point span{font-size:13px;color:var(--muted)}
 .map{border:7px solid #fff;border-radius:24px;overflow:hidden;line-height:0;box-shadow:var(--shadow)}
