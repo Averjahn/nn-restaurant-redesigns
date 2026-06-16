@@ -126,6 +126,8 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 .footer__social{display:flex;gap:14px}
 .footer__social a{color:var(--muted);transition:color .2s}.footer__social a:hover{color:var(--honey-dark)}
 .footer__demo{color:var(--honey-dark)}
+.footer__music{color:var(--muted);font-size:12px;letter-spacing:.04em;transition:color .2s}
+.footer__music:hover{color:var(--honey-dark)}
 
 @media(max-width:860px){
   .board{grid-template-columns:1fr;gap:0;padding:28px}
