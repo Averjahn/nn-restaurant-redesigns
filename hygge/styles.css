@@ -85,6 +85,11 @@ h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;le
 /* footer */
 .footer{padding:28px 0;border-top:1px solid var(--line)}
 .footer__inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}
+.footer__contacts{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.footer__contacts a{color:var(--muted);transition:color .2s}.footer__contacts a:hover{color:var(--ink)}
+.footer__right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.footer__social{display:flex;gap:14px}
+.footer__social a{color:var(--muted);transition:color .2s}.footer__social a:hover{color:var(--honey-dark)}
 .footer__demo{color:var(--honey-dark)}
 
 @media(max-width:860px){
