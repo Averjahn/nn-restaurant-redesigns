@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ресторан ОКА — Русская и европейская кухня, Нижний Новгород</title>
+  <meta name="description" content="Ресторан ОКА в гостиничном комплексе ОКА, пр. Гагарина 27, Нижний Новгород. Русская и европейская кухня, банкетные залы на 250 и 50 гостей, бизнес-ланч. Бронирование: +7 (831) 422-51-34.">
+  <meta property="og:title" content="Ресторан ОКА — Нижний Новгород">
+  <meta property="og:description" content="Элегантный ресторан в гостинице ОКА. Авторская кухня, банкеты, бизнес-ланч.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================================================
+       HEADER
+       =================================================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        ОКА
+        <span>Ресторан · Нижний Новгород</span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#menu-lunch">Бизнес-ланч</a>
+        <a href="#banquets">Банкеты</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a href="#contacts" class="btn btn-primary header-cta">Забронировать стол</a>
+
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================================================
+       HERO
+       =================================================== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="https://restoranoka.ru/wp-content/uploads/2019/01/restoran-oka-6.jpg"
+        alt="Главный зал ресторана ОКА"
+        fetchpriority="high"
+        onerror="this.closest('.hero-bg').classList.add('noimg')"
+      >
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="flex-shrink:0">
+          <path d="M7 1C4.79 1 3 2.79 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 7 3.5a1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
+        </svg>
+        пр. Гагарина, 27, Нижний Новгород
+      </p>
+
+      <span class="hero-line"></span>
+
+      <h1>Ресторан <em>ОКА</em></h1>
+
+      <p class="hero-sub">
+        Русская и европейская кухня · Авторские блюда шефа<br>
+        Банкетные залы на 250 гостей
+      </p>
+
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Смотреть меню</a>
+        <a href="#banquets" class="btn btn-outline">Заказать банкет</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ЗАЛЫ
+       =================================================== -->
+  <section class="halls section" id="halls">
+    <div class="container">
+      <p class="section-subtitle">Пространства</p>
+      <h2 class="section-title">Наши залы</h2>
+      <div class="divider"></div>
+
+      <div class="halls-grid">
+
+        <!-- Основной зал -->
+        <article class="hall-card">
+          <div class="hall-photo">
+            <img
+              src="https://restoranoka.ru/wp-content/uploads/2016/06/Restoran-OKA-8.jpg"
+              alt="Основной зал ресторана ОКА — светлые тёплые тона"
+              loading="lazy"
+              onerror="this.closest('.hall-photo').classList.add('noimg')"
+            >
+          </div>
+          <div class="hall-info">
+            <span class="hall-capacity">до 250 гостей</span>
+            <h3 class="hall-name">Основной зал</h3>
+            <p class="hall-desc">
+              Просторный светлый зал в тёплых тонах — идеальное место для торжеств,
+              корпоративных вечеров и семейных праздников любого масштаба.
+              Живое настроение, безупречный сервис.
+            </p>
+          </div>
+        </article>
+
+        <!-- Английский зал -->
+        <article class="hall-card">
+          <div class="hall-photo">
+            <img
+              src="https://restoranoka.ru/wp-content/uploads/2019/01/restoran-oka-3.jpg"
+              alt="Английский зал ресторана ОКА — шоколадные тона"
+              loading="lazy"
+              onerror="this.closest('.hall-photo').classList.add('noimg')"
+            >
+          </div>
+          <div class="hall-info">
+            <span class="hall-capacity">до 50 гостей</span>
+            <h3 class="hall-name">Английский зал</h3>
+            <p class="hall-desc">
+              Камерная атмосфера в насыщенных шоколадных тонах. Оснащён
+              всей необходимой техникой для бизнес-мероприятий, переговоров
+              и закрытых корпоративных ужинов.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       МЕНЮ
+       =================================================== -->
+  <section class="menu-section section" id="menu">
+    <div class="container">
+      <p class="section-subtitle">Кухня</p>
+      <h2 class="section-title">Меню</h2>
+      <div class="divider"></div>
+
+      <!-- Табы -->
+      <div class="menu-tabs" role="tablist" aria-label="Разделы меню">
+        <button
+          class="menu-tab active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-breakfast"
+          id="tab-breakfast"
+          onclick="switchTab('breakfast')"
+        >Завтраки</button>
+
+        <button
+          class="menu-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-lunch"
+          id="tab-lunch"
+          onclick="switchTab('lunch')"
+          id="menu-lunch"
+        >Бизнес-ланч</button>
+
+        <button
+          class="menu-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-main"
+          id="tab-main"
+          onclick="switchTab('main')"
+        >Основное меню</button>
+
+        <button
+          class="menu-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-banquet"
+          id="tab-banquet"
+          onclick="switchTab('banquet')"
+        >Банкетное</button>
+      </div>
+
+      <!-- ---- ЗАВТРАКИ ---- -->
+      <div class="menu-panel active" id="panel-breakfast" role="tabpanel" aria-labelledby="tab-breakfast">
+        <div class="menu-category">
+          <h3 class="menu-category-title">Завтраки · Пн–Пт 7:00–10:00, Сб–Вс 8:00–11:00</h3>
+          <div class="breakfast-grid">
+            <div class="breakfast-card">Каша овсяная</div>
+            <div class="breakfast-card">Омлет</div>
+            <div class="breakfast-card">Сырники</div>
+            <div class="breakfast-card">Блины</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- БИЗНЕС-ЛАНЧ ---- -->
+      <div class="menu-panel" id="panel-lunch" role="tabpanel" aria-labelledby="tab-lunch">
+
+        <div class="lunch-header">
+          <div class="lunch-time">
+            Понедельник — пятница · 12:00–15:00
+          </div>
+          <div class="lunch-prices">
+            <div class="lunch-price-item">
+              <span class="price-big">550 ₽</span>
+              <span class="price-label">2 блюда</span>
+            </div>
+            <div class="lunch-price-item">
+              <span class="price-big">600 ₽</span>
+              <span class="price-label">3 блюда</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Салаты</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Цезарь с курицей</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Греческий</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Коктейль с ветчиной и грибами</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Супы</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Борщ с курицей</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Суп дня</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Горячее</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Куриное филе запечённое с картофелем</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Свиная жарёха</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Треска запечённая с овощами и рисом</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Напитки</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Кисель ягодный</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Чай чёрный / зелёный</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">входит в ланч</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ---- ОСНОВНОЕ МЕНЮ ---- -->
+      <div class="menu-panel" id="panel-main" role="tabpanel" aria-labelledby="tab-main">
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Холодные закуски</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Ассорти мясное</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Ассорти рыбное</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Ассорти сырное</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Горячие закуски</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Жареный сыр</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Креветки на гриле</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Салаты</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Греческий</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Цезарь с курицей</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Цезарь с лососем</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Салат с уткой и дорблю</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Супы</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Борщ</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Том Ям с морепродуктами</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Паста</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Карбонара</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Паста с морепродуктами</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Горячее</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Свинина</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">590–850 ₽</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Куриное филе</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">590 ₽</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Говяжий бифштекс</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">1 320 ₽</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Форель</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Судак</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">590 ₽</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Щука</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">590 ₽</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category-title">Десерты</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Медовик</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+            <li class="menu-item">
+              <div class="item-name-wrap">
+                <span class="item-name">Фруктовое ассорти</span>
+              </div>
+              <span class="dots"></span>
+              <span class="item-price">по меню</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ---- БАНКЕТНОЕ МЕНЮ ---- -->
+      <div class="menu-panel" id="panel-banquet" role="tabpanel" aria-labelledby="tab-banquet">
+        <div class="banquet-offer-card">
+          <div class="banquet-price-big">от 2 500 ₽</div>
+          <div class="banquet-price-label">за персону</div>
+          <p class="banquet-offer-desc">
+            Банкетное меню разрабатывается индивидуально под ваше мероприятие.
+            Наш менеджер подберёт оптимальные блюда, учитывая формат, количество
+            гостей и бюджет. Свяжитесь с нами — мы всё организуем.
+          </p>
+          <a href="tel:+79601946101" class="btn btn-primary">Позвонить менеджеру</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       БАНКЕТЫ
+       =================================================== -->
+  <section class="banquets-section section" id="banquets">
+    <div class="container">
+      <div class="banquets-inner">
+
+        <div class="banquets-text">
+          <p class="section-subtitle">Торжества и события</p>
+          <h2 class="section-title">Банкеты</h2>
+          <div class="divider"></div>
+
+          <p>
+            Ресторан ОКА — проверенная площадка для событий любого масштаба.
+            Свадьбы, юбилеи, корпоративные вечера, деловые переговоры —
+            каждое мероприятие мы готовим с особым вниманием к деталям.
+          </p>
+          <p>
+            Опытная команда позаботится о меню, декоре и безупречном сервисе.
+            Вам остаётся только наслаждаться праздником.
+          </p>
+
+          <div class="banquets-features">
+            <div class="banquet-feature">
+              <div class="banquet-feature-icon" aria-hidden="true">🏛</div>
+              <div class="banquet-feature-info">
+                <h4>Основной зал — до 250 гостей</h4>
+                <p>Светлые тёплые тона, сцена, танцпол. Идеально для свадеб и корпоративов.</p>
+              </div>
+            </div>
+            <div class="banquet-feature">
+              <div class="banquet-feature-icon" aria-hidden="true">🎩</div>
+              <div class="banquet-feature-info">
+                <h4>Английский зал — до 50 гостей</h4>
+                <p>Шоколадные тона, переговорное оснащение. Идеально для бизнес-мероприятий.</p>
+              </div>
+            </div>
+            <div class="banquet-feature">
+              <div class="banquet-feature-icon" aria-hidden="true">📋</div>
+              <div class="banquet-feature-info">
+                <h4>Банкетное меню от 2 500 ₽/персона</h4>
+                <p>Индивидуальный подбор блюд под формат мероприятия и бюджет.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="tel:+79601946101" class="btn btn-primary">
+            Позвонить менеджеру банкетов
+          </a>
+        </div>
+
+        <div class="banquets-photos">
+          <div class="banquet-photos-grid">
+            <div class="banquet-photo">
+              <img
+                src="https://restoranoka.ru/wp-content/uploads/2017/03/Oksana-i-Sasha_762.jpg"
+                alt="Банкет в ресторане ОКА"
+                loading="lazy"
+                onerror="this.closest('.banquet-photo').classList.add('noimg')"
+              >
+            </div>
+            <div class="banquet-photo">
+              <img
+                src="https://restoranoka.ru/wp-content/uploads/2017/03/Oksana-i-Sasha_473.jpg"
+                alt="Свадьба в ресторане ОКА"
+                loading="lazy"
+                onerror="this.closest('.banquet-photo').classList.add('noimg')"
+              >
+            </div>
+            <div class="banquet-photo">
+              <img
+                src="https://restoranoka.ru/wp-content/uploads/2018/05/DSC_7406-1.jpg"
+                alt="Блюдо ресторана ОКА"
+                loading="lazy"
+                onerror="this.closest('.banquet-photo').classList.add('noimg')"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ГАЛЕРЕЯ
+       =================================================== -->
+  <section class="gallery-section section" id="gallery">
+    <div class="container">
+      <p class="section-subtitle">Атмосфера</p>
+      <h2 class="section-title">Галерея</h2>
+      <div class="divider"></div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2019/01/restoran-oka-6.jpg"
+            alt="Интерьер ресторана ОКА"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2016/06/Restoran-OKA-8.jpg"
+            alt="Зал ресторана ОКА"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2019/01/restoran-oka-3.jpg"
+            alt="Ресторан ОКА — зал 2"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2017/03/Oksana-i-Sasha_762.jpg"
+            alt="Банкет в ресторане ОКА"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2018/05/DSC_7406-1.jpg"
+            alt="Авторские блюда ресторана ОКА"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://restoranoka.ru/wp-content/uploads/2018/05/DSC_6857.jpg"
+            alt="Блюда ресторана ОКА"
+            loading="lazy"
+            onerror="this.closest('.gallery-item').classList.add('noimg')"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       КОНТАКТЫ
+       =================================================== -->
+  <section class="contacts-section section" id="contacts">
+    <div class="container">
+      <p class="section-subtitle">Как нас найти</p>
+      <h2 class="section-title">Контакты</h2>
+      <div class="divider"></div>
+
+      <div class="contacts-grid">
+
+        <div class="contacts-info">
+
+          <div class="contact-block">
+            <h4>Адрес</h4>
+            <p>пр. Гагарина, 27, Нижний Новгород<br>
+            <span style="color: var(--color-muted); font-size: 14px;">Гостиничный комплекс ОКА</span></p>
+          </div>
+
+          <div class="contact-block">
+            <h4>Телефоны</h4>
+            <a href="tel:+78314225134" class="tel-link">+7 (831) 422-51-34</a>
+            <a href="tel:+78314225155" class="tel-link">+7 (831) 422-51-55</a>
+          </div>
+
+          <div class="contact-block">
+            <h4>Банкеты и мероприятия</h4>
+            <a href="tel:+79601946101" class="tel-link">+7 960 194-61-01</a>
+          </div>
+
+          <div class="contact-block">
+            <h4>Email</h4>
+            <a href="mailto:oka.restoran@yandex.ru">oka.restoran@yandex.ru</a>
+          </div>
+
+          <div class="contact-block">
+            <h4>Часы работы</h4>
+            <div class="hours-table">
+              <div class="hours-row">
+                <span class="day">Понедельник — пятница</span>
+                <span>7:00 – 21:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Суббота — воскресенье</span>
+                <span>8:00 – 21:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Завтраки Пн–Пт</span>
+                <span>7:00 – 10:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Завтраки Сб–Вс</span>
+                <span>8:00 – 11:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Бизнес-ланч Пн–Пт</span>
+                <span>12:00 – 15:00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-block">
+            <h4>Мы в соцсетях</h4>
+            <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.032-1.001-1.49-.866-1.49.406v1.308c0 .373-.12.596-1.098.596-1.619 0-3.42-.979-4.687-2.799-1.904-2.68-2.427-4.685-2.427-5.101 0-.253.095-.487.349-.487h1.744c.26 0 .36.12.46.4.499 1.443 1.338 2.712 1.683 2.712.129 0 .188-.06.188-.389V9.112c-.041-.716-.419-.777-.419-.971 0-.153.124-.307.324-.307h2.745c.219 0 .3.116.3.372v3.168c0 .22.098.3.155.3.128 0 .236-.08.469-.315 1.451-1.621 2.493-4.12 2.493-4.12.069-.143.219-.274.479-.274h1.744c.523 0 .636.269.523.636-.218.933-2.343 4.013-2.343 4.013-.185.3-.253.434 0 .77 1.845 2.052 2.345 3.032 2.345 3.032.372.653.002.985-.659.985z"/>
+              </svg>
+              ВКонтакте
+            </a>
+          </div>
+
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=56.2607,43.8553&z=16&hl=ru&output=embed"
+            width="100%"
+            height="420"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            title="Карта — Ресторан ОКА, пр. Гагарина 27, Нижний Новгород"
+            aria-label="Карта расположения ресторана ОКА"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FOOTER
+       =================================================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">ОКА</span>
+
+      <div class="footer-info">
+        <div>пр. Гагарина, 27, Нижний Новгород</div>
+        <div>+7 (831) 422-51-34</div>
+      </div>
+
+      <span class="footer-copy">© 2025 Ресторан ОКА</span>
+    </div>
+  </footer>
+
+  <!-- ===================================================
+       JAVASCRIPT
+       =================================================== -->
+  <script>
+    // --- Бургер-меню ---
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mainNav   = document.getElementById('mainNav');
+
+    burgerBtn.addEventListener('click', function () {
+      const isOpen = mainNav.classList.toggle('nav--open');
+      burgerBtn.classList.toggle('active', isOpen);
+      burgerBtn.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    // Закрыть при клике на ссылку
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mainNav.classList.remove('nav--open');
+        burgerBtn.classList.remove('active');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // --- Табы меню ---
+    function switchTab(tabKey) {
+      // Деактивировать все табы и панели
+      document.querySelectorAll('.menu-tab').forEach(function (btn) {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.menu-panel').forEach(function (panel) {
+        panel.classList.remove('active');
+      });
+
+      // Активировать нужный
+      var activeTab   = document.getElementById('tab-' + tabKey);
+      var activePanel = document.getElementById('panel-' + tabKey);
+
+      if (activeTab)   { activeTab.classList.add('active');   activeTab.setAttribute('aria-selected', 'true'); }
+      if (activePanel) { activePanel.classList.add('active'); }
+    }
+  </script>
+
+</body>
+</html>

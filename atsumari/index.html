@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АЦУМАРИ — Доставка японской кухни в Нижнем Новгороде</title>
+  <meta name="description" content="АЦУМАРИ — доставка суши, роллов и японской кухни в Нижнем Новгороде. Свежие ингредиенты, широкое меню. Заказ по телефону +7 (831) 413-34-63.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-cart-key="atsumari">
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- CART SIDEBAR -->
+  <aside id="cart" aria-label="Корзина">
+    <div class="cart__head">
+      <span class="cart__title">Корзина</span>
+      <button class="cart__close" id="cartClose" aria-label="Закрыть корзину">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart__foot">
+      <div class="cart__total-row">
+        <span>Итого</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button id="checkoutBtn" disabled>Оформить заказ</button>
+    </div>
+  </aside>
+
+  <!-- ORDER MODAL -->
+  <div id="orderModal" role="dialog" aria-modal="true" aria-label="Оформление заказа">
+    <div class="modal__inner">
+      <div class="modal__head">
+        <h2>Оформление заказа</h2>
+        <button class="modal__close" id="orderClose" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="order-total-row">
+        <span>Сумма заказа</span>
+        <strong id="orderTotal"></strong>
+      </div>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="order-name">Имя</label>
+          <input id="order-name" type="text" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <label for="order-phone">Телефон</label>
+          <input id="order-phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <div class="form-group">
+          <label for="order-address">Адрес доставки</label>
+          <input id="order-address" type="text" placeholder="Улица, дом, квартира">
+        </div>
+        <div class="form-group">
+          <label for="order-zone">Зона / способ</label>
+          <select id="order-zone" style="width:100%;padding:12px;background:var(--color-surface);border:1.5px solid var(--color-border);border-radius:12px;color:var(--color-text);font-family:inherit">
+            <option>🟢 Зелёная зона (от 2000 ₽)</option>
+            <option>🔵 Синяя зона (от 3000 ₽)</option>
+            <option>🔴 Красная зона (от 5000 ₽)</option>
+            <option>Самовывоз</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="order-comment">Комментарий</label>
+          <textarea id="order-comment" placeholder="Пожелания..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Подтвердить заказ</button>
+      </form>
+      <div id="orderSuccess" hidden>
+        <div class="success-icon">🍱</div>
+        <h3>Заказ принят!</h3>
+        <p>Свяжемся в течение 5 минут для подтверждения.</p>
+        <button class="submit-btn" id="successClose">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">АЦУ<span>МА</span>РИ</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-text">Корзина</span>
+        <span id="cartCount" hidden>0</span>
+      </button>
+
+      <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__decor" aria-hidden="true"></div>
+    <div class="hero__kanji" aria-hidden="true">寿</div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow">📍 г. Нижний Новгород, ул. Родионова, 189/24</p>
+
+      <h1>Суши и роллы<br>с <em>доставкой</em></h1>
+
+      <p class="hero-sub">Свежие ингредиенты, аутентичные рецепты.<br>Привезём от 60 минут по всему городу.</p>
+
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Перейти в меню</a>
+        <a href="#contacts" class="btn btn-outline">Контакты</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="badge">🍣 <strong>60 позиций</strong> в меню</div>
+        <div class="badge">⏱ Доставка от <strong>60 мин</strong></div>
+        <div class="badge">📦 Самовывоз <strong>доступен</strong></div>
+        <div class="badge">📞 <strong>+7 (831) 413-34-63</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DELIVERY ZONES ========== -->
+  <section class="section delivery-section" id="delivery">
+    <div class="container">
+      <div class="section-head">
+        <h2>Зоны доставки</h2>
+        <p>Доставляем по всему Нижнему Новгороду. Минимальный заказ зависит от зоны.</p>
+      </div>
+
+      <div class="delivery-grid">
+        <div class="zone-card">
+          <div class="zone-card__icon">🟢</div>
+          <div class="zone-card__name">Зелёная зона</div>
+          <div class="zone-card__detail">
+            Центральный и прилегающие районы<br>
+            Время доставки: ~60 минут
+          </div>
+          <span class="zone-card__min">от 2 000 ₽</span>
+        </div>
+
+        <div class="zone-card">
+          <div class="zone-card__icon">🔵</div>
+          <div class="zone-card__name">Синяя зона</div>
+          <div class="zone-card__detail">
+            Советский, Канавинский, Ленинский районы<br>
+            Время доставки: ~90 минут
+          </div>
+          <span class="zone-card__min">от 3 000 ₽</span>
+        </div>
+
+        <div class="zone-card">
+          <div class="zone-card__icon">🔴</div>
+          <div class="zone-card__name">Красная зона</div>
+          <div class="zone-card__detail">
+            Отдалённые районы и пригороды<br>
+            Время доставки: ~120 минут
+          </div>
+          <span class="zone-card__min">от 5 000 ₽</span>
+        </div>
+
+        <div class="zone-card">
+          <div class="zone-card__icon">🏪</div>
+          <div class="zone-card__name">Самовывоз</div>
+          <div class="zone-card__detail">
+            ул. Родионова, 189/24<br>
+            Без минимальной суммы заказа
+          </div>
+          <span class="zone-card__min">Бесплатно</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <h2>Меню</h2>
+        <p>Суши, роллы, сашими и горячие блюда японской кухни</p>
+      </div>
+
+      <div id="filters" role="group" aria-label="Фильтр по категориям"></div>
+      <div id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTS ========== -->
+  <section class="section contacts-section" id="contacts">
+    <div class="container">
+      <div class="section-head">
+        <h2>Контакты</h2>
+        <p>Позвоните или напишите — ответим быстро</p>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contacts-info">
+
+          <div class="contact-item">
+            <div class="contact-item__icon">📍</div>
+            <div>
+              <div class="contact-item__label">Адрес</div>
+              <div class="contact-item__value">г. Нижний Новгород,<br>ул. Родионова, 189/24</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">📞</div>
+            <div>
+              <div class="contact-item__label">Телефон</div>
+              <div class="contact-item__value">
+                <a href="tel:+78314133463">+7 (831) 413-34-63</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">✉️</div>
+            <div>
+              <div class="contact-item__label">Email</div>
+              <div class="contact-item__value">
+                <a href="mailto:atsumari-nn@mail.ru">atsumari-nn@mail.ru</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">📸</div>
+            <div>
+              <div class="contact-item__label">Instagram</div>
+              <div class="contact-item__value">
+                <a href="https://instagram.com/atsumari_nn" target="_blank" rel="noopener noreferrer">@atsumari_nn</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="tel:+78314133463" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">
+            Позвонить и заказать
+          </a>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=56.3137,43.8975&z=16&hl=ru&output=embed"
+            width="100%"
+            height="400"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            title="Карта расположения АЦУМАРИ"
+            aria-label="Карта: АЦУМАРИ на ул. Родионова, 189/24, Нижний Новгород"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">АЦУ<span>МА</span>РИ</span>
+      <span>Доставка японской кухни · Нижний Новгород</span>
+      <span>© 2025 АЦУМАРИ</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
