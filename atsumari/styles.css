@@ -378,6 +378,15 @@ textarea, input, select { font-family: inherit; }
   color: var(--color-primary);
 }
 
+/* Delivery zone map */
+#deliveryMap {
+  height: 440px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 32px;
+  border: 1px solid var(--color-border);
+}
+
 /* ============================
    MENU SECTION
    ============================ */
