@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Автомир Богемия — Официальный дилер ŠKODA в Нижнем Новгороде</title>
+  <meta name="description" content="Официальный дилер ŠKODA в Нижнем Новгороде. Широкий модельный ряд: KAROQ, RAPID, OCTAVIA, KODIAQ, SUPERB. Сервис, ТО и акции. Казанское шоссе, 25." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Токены ──────────────────────────────── */
+    :root {
+      --color-primary:  #4BA83B;
+      --color-accent:   #1E3A2F;
+      --color-bg:       #ffffff;
+      --color-bg-alt:   #f8f9f5;
+      --color-text:     #1a1a1a;
+      --color-muted:    #6b7280;
+      --color-surface:  #f3f4f0;
+      --color-border:   #e5e7eb;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+
+      --container: 1100px;
+      --gap: 24px;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Manrope', system-ui, sans-serif;
+    }
+
+    /* ─── Reset ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.5vw, 17px);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Контейнер ───────────────────────────── */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ─── Кнопки ──────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .btn-primary:hover { background: #3d9230; border-color: #3d9230; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+    .btn-outline-dark:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+    /* ─── Header ──────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 68px;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .brand span {
+      color: var(--color-primary);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+    }
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-muted);
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--color-text); }
+    .nav a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 2px; }
+    .header-cta { flex-shrink: 0; }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      margin-left: auto;
+    }
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── Hero ────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url(assets/hero.jpg);
+      background-size: cover;
+      background-position: center 40%;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10,18,12,0.92) 0%,
+        rgba(10,18,12,0.55) 45%,
+        rgba(10,18,12,0.15) 100%
+      );
+      z-index: 1;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding-bottom: clamp(56px, 8vw, 100px);
+      padding-top: 120px;
+      max-width: 760px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+    .hero-inner h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 36px;
+      font-weight: 400;
+      max-width: 520px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Stats ───────────────────────────────── */
+    .stats {
+      background: var(--color-accent);
+      padding: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 32px 28px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ─── Section общее ───────────────────────── */
+    .section {
+      padding: clamp(60px, 8vw, 100px) 0;
+    }
+    .section-alt { background: var(--color-bg-alt); }
+    .section-header {
+      margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .section-eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .section-header p {
+      margin-top: 14px;
+      color: var(--color-muted);
+      max-width: 540px;
+      font-size: 16px;
+    }
+
+    /* ─── Модели ──────────────────────────────── */
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+    .model-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+    }
+    .model-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 8px 32px rgba(75,168,59,0.12);
+      transform: translateY(-3px);
+    }
+    .model-card__media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--color-surface);
+    }
+    .model-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .model-card:hover .model-card__media img { transform: scale(1.04); }
+    .model-card__media.noimg::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--color-surface);
+    }
+    .model-card__body {
+      padding: 22px 22px 20px;
+    }
+    .model-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--color-surface);
+      color: var(--color-muted);
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 100px;
+      letter-spacing: 0.3px;
+    }
+    .model-card__name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .model-card__desc {
+      font-size: 14px;
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* ─── Сервис ──────────────────────────────── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+    .service-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 4px 20px rgba(75,168,59,0.1);
+    }
+    .service-card__media {
+      height: 160px;
+      overflow: hidden;
+      background: var(--color-surface);
+    }
+    .service-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .service-card__media.noimg { background: var(--color-surface); }
+    .service-card__body {
+      padding: 20px 20px 18px;
+    }
+    .service-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      background: #edfce9;
+      color: var(--color-primary);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 100px;
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+    .service-card__name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .service-card__desc {
+      font-size: 14px;
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .service-card__price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    /* ─── Галерея ─────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 320px;
+      gap: 12px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .gallery-grid .gallery-item {
+      overflow: hidden;
+    }
+    .gallery-grid .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-grid .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ─── Контакты ────────────────────────────── */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contacts-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .contacts-info h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--color-text);
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .contact-row:first-of-type { border-top: 1px solid var(--color-border); }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: #edfce9;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-row-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .contact-row-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-muted);
+    }
+    .contact-row-value {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+    .contact-row-value a { color: var(--color-text); }
+    .contact-row-value a:hover { color: var(--color-primary); }
+    .contact-row-value .phone-free {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 2px;
+    }
+    .map-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+
+    /* ─── Footer ──────────────────────────────── */
+    .footer {
+      background: var(--color-accent);
+      color: rgba(255,255,255,0.6);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .footer-brand span { color: var(--color-primary); }
+    .footer-copy { font-size: 13px; }
+    .footer-addr { font-size: 13px; }
+
+    /* ─── Focus global ────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    /* ─── Mobile ──────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      .nav.nav--open { display: flex; }
+      .nav a {
+        padding: 14px 20px;
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .nav a:last-of-type { border-bottom: none; }
+      .header-cta { display: none; }
+      .burger { display: flex; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+      .models-grid { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
+      }
+      .gallery-grid .gallery-item:last-child {
+        grid-column: span 2;
+      }
+
+      .contacts-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1099px) {
+      .models-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Header ──────────────────────────────── -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">Автомир&nbsp;<span>Богемия</span></a>
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <a href="#models">Модели</a>
+        <a href="#service">Сервис</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+      <button
+        class="burger"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="mainNav"
+        id="burgerBtn"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Hero ────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="assets/hero.jpg"
+        alt="Автомир Богемия — официальный дилер ŠKODA в Нижнем Новгороде"
+        fetchpriority="high"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+        onerror="this.style.opacity='0'"
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow">📍 Нижегородская обл., Кстовский р-н, Казанское шоссе, 25</p>
+      <h1>Официальный дилер ŠKODA</h1>
+      <p class="hero-sub">Официальный дилер ŠKODA в Нижнем Новгороде — широкий выбор моделей, сертифицированный сервис и выгодные условия покупки.</p>
+      <div class="hero-actions">
+        <a href="#models" class="btn btn-primary">Смотреть модели</a>
+        <a href="#contacts" class="btn btn-outline">Как нас найти</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats ────────────────────────────────── -->
+  <section class="stats" aria-label="Ключевые факты">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">09–21</div>
+        <div class="stat-label">Ежедневно без выходных</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Моделей ŠKODA в наличии</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">ŠKODA</div>
+        <div class="stat-label">Официальный сертифицированный сервис</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8-800</div>
+        <div class="stat-label">Бесплатная горячая линия 555-01-01</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Модели ───────────────────────────────── -->
+  <section id="models" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Модельный ряд</span>
+        <h2>Автомобили ŠKODA в наличии</h2>
+        <p>Выберите автомобиль своей мечты — от компактных городских моделей до представительских седанов и вместительных SUV.</p>
+      </div>
+      <div class="models-grid">
+
+        <!-- KAROQ -->
+        <article class="model-card">
+          <div class="model-card__media">
+            <img
+              src="assets/crossover.jpg"
+              alt="ŠKODA KAROQ — компактный кроссовер"
+              loading="lazy"
+              onerror="this.closest('.model-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">кроссовер</span>
+              <span class="tag">городской</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA KAROQ</h3>
+            <p class="model-card__desc">Компактный кроссовер C-сегмента. 5 мест, 1.4 TSI 150 л.с., передний или полный привод.</p>
+            <a href="#contacts" class="btn btn-outline-dark">Узнать цену</a>
+          </div>
+        </article>
+
+        <!-- RAPID -->
+        <article class="model-card">
+          <div class="model-card__media">
+            <img
+              src="assets/sedan.jpg"
+              alt="ŠKODA RAPID — лифтбек"
+              loading="lazy"
+              onerror="this.closest('.model-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">лифтбек</span>
+              <span class="tag">бюджет</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA RAPID</h3>
+            <p class="model-card__desc">Самый доступный лифтбек марки. Вместительный багажник 530 л, 1.4 TSI 125 л.с.</p>
+            <a href="#contacts" class="btn btn-outline-dark">Узнать цену</a>
+          </div>
+        </article>
+
+        <!-- OCTAVIA -->
+        <article class="model-card">
+          <div class="model-card__media">
+            <img
+              src="assets/sedan.jpg"
+              alt="ŠKODA OCTAVIA — популярный лифтбек"
+              loading="lazy"
+              onerror="this.closest('.model-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">лифтбек</span>
+              <span class="tag">популярная</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA OCTAVIA</h3>
+            <p class="model-card__desc">7 млн проданных автомобилей с 1959 года. 1.6–2.0L, 110–190 л.с., три комплектации.</p>
+            <a href="#contacts" class="btn btn-outline-dark">Узнать цену</a>
+          </div>
+        </article>
+
+        <!-- KODIAQ -->
+        <article class="model-card">
+          <div class="model-card__media">
+            <img
+              src="assets/crossover.jpg"
+              alt="ŠKODA KODIAQ — семейный SUV"
+              loading="lazy"
+              onerror="this.closest('.model-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">SUV</span>
+              <span class="tag">семейный</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA KODIAQ</h3>
+            <p class="model-card__desc">Семейный SUV на 5 или 7 мест. Кристальный дизайн, 360° камера, три зоны климата.</p>
+            <a href="#contacts" class="btn btn-outline-dark">Узнать цену</a>
+          </div>
+        </article>
+
+        <!-- SUPERB -->
+        <article class="model-card">
+          <div class="model-card__media">
+            <img
+              src="assets/sedan.jpg"
+              alt="ŠKODA SUPERB — представительский лифтбек"
+              loading="lazy"
+              onerror="this.closest('.model-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">бизнес-класс</span>
+              <span class="tag">премиум</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA SUPERB</h3>
+            <p class="model-card__desc">Представительский лифтбек бизнес-класса. 9 подушек, контроль слепых зон, массаж сидений.</p>
+            <a href="#contacts" class="btn btn-outline-dark">Узнать цену</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Сервис ───────────────────────────────── -->
+  <section id="service" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Сервисный центр</span>
+        <h2>Официальный сервис ŠKODA</h2>
+        <p>Плановое ТО, ремонт и специальные предложения для владельцев автомобилей ŠKODA.</p>
+      </div>
+      <div class="service-grid">
+
+        <!-- ТО -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <img
+              src="assets/service.jpg"
+              alt="Техническое обслуживание ŠKODA"
+              loading="lazy"
+              onerror="this.closest('.service-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__badge">ТО · Сервис</span>
+            <h3 class="service-card__name">Техническое обслуживание</h3>
+            <p class="service-card__desc">Плановое ТО по регламенту ŠKODA с оригинальными запчастями.</p>
+          </div>
+        </article>
+
+        <!-- Дезинфекция -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <img
+              src="assets/service.jpg"
+              alt="Дезинфекция кондиционера"
+              loading="lazy"
+              onerror="this.closest('.service-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__badge">Акция</span>
+            <h3 class="service-card__name">Дезинфекция кондиционера</h3>
+            <p class="service-card__desc">Чистка и дезинфекция системы кондиционирования + замена салонного фильтра.</p>
+            <div class="service-card__price">2 990 ₽</div>
+          </div>
+        </article>
+
+        <!-- Скидка на ТО -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <img
+              src="assets/service.jpg"
+              alt="Скидка на ТО и ремонт для автомобилей старше 3 лет"
+              loading="lazy"
+              onerror="this.closest('.service-card__media')?.classList.add('noimg');this.style.opacity='0'"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__badge">Акция · Скидка</span>
+            <h3 class="service-card__name">Скидка на ТО и ремонт</h3>
+            <p class="service-card__desc">До 35% на техническое обслуживание и ремонт для автомобилей старше 3 лет.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Галерея ───────────────────────────────── -->
+  <section class="section" aria-label="Фотогалерея">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Галерея</span>
+        <h2>Наш автосалон</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            src="assets/showroom.jpg"
+            alt="Шоурум Автомир Богемия"
+            loading="lazy"
+            onerror="this.style.opacity='0'"
+          />
+        </div>
+        <div class="gallery-item">
+          <img
+            src="assets/interior.jpg"
+            alt="Интерьер салона ŠKODA"
+            loading="lazy"
+            onerror="this.style.opacity='0'"
+          />
+        </div>
+        <div class="gallery-item">
+          <img
+            src="assets/crossover.jpg"
+            alt="ŠKODA KAROQ в шоуруме"
+            loading="lazy"
+            onerror="this.style.opacity='0'"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Контакты ──────────────────────────────── -->
+  <section id="contacts" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Контакты</span>
+        <h2>Как нас найти</h2>
+      </div>
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <h3>Автомир Богемия</h3>
+
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div class="contact-row-body">
+              <span class="contact-row-label">Адрес</span>
+              <address class="contact-row-value" style="font-style:normal;">
+                Нижегородская обл., Кстовский р-н,<br>Казанское шоссе, 25
+              </address>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div class="contact-row-body">
+              <span class="contact-row-label">Телефон</span>
+              <div class="contact-row-value">
+                <a href="tel:+78312884591">+7 (831) 288-45-91</a>
+                <span class="phone-free">
+                  <a href="tel:88005550101">8-800-555-01-01</a> — бесплатно
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-row-body">
+              <span class="contact-row-label">Режим работы</span>
+              <div class="contact-row-value">Ежедневно 09:00–21:00</div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <a href="#contacts" class="btn btn-primary">Записаться на тест-драйв</a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=56.147,44.199&z=15&hl=ru&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;display:block"
+            loading="lazy"
+            allowfullscreen
+            title="Автомир Богемия на карте"
+            aria-label="Карта: Автомир Богемия, Казанское шоссе 25"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Автомир&nbsp;<span>Богемия</span></span>
+      <span class="footer-copy">© 2025 Автомир Богемия — Официальный дилер ŠKODA</span>
+      <span class="footer-addr">Казанское шоссе, 25, Нижегородская обл.</span>
+    </div>
+  </footer>
+
+  <!-- ─── Burger JS ──────────────────────────────── -->
+  <script>
+    const burger = document.getElementById('burgerBtn');
+    const nav    = document.getElementById('mainNav');
+    burger.addEventListener('click', () => {
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('nav--open');
+    });
+    // Закрыть при клике на ссылку
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('nav--open');
+      });
+    });
+  </script>
+
+</body>
+</html>
