@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gazebos Loghouse — Премиальный отдых в Нижнем Новгороде</title>
+  <meta name="description" content="Gazebos Loghouse — деревянные беседки, бани и сауны в Нижнем Новгороде. Корпоративный и семейный отдых на природе. Работаем круглосуточно. Адрес: ул. Артельная, 21А." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #1a1208;
+      --surface:  #2a1e0e;
+      --deep:     #0f0b05;
+      --text:     #f5ead8;
+      --muted:    #b5a48a;
+      --gold:     #C9963C;
+      --gold-dim: rgba(201,150,60,0.18);
+      --font-h:   'Cormorant Garamond', Georgia, serif;
+      --font-b:   'Inter', sans-serif;
+      --radius:   6px;
+      --transition: 0.28s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.6; }
+
+    /* ─── HEADER ─────────────────────────────────────────── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,18,8,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,150,60,0.18);
+    }
+    .header__inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .header__logo {
+      font-family: var(--font-h); font-weight: 700; font-size: 1.45rem;
+      color: var(--gold); letter-spacing: .03em; text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      color: var(--muted); font-family: var(--font-b); font-size: .875rem; font-weight: 500;
+      text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .nav a:hover { color: var(--gold); }
+    .header__cta {
+      display: inline-block; padding: 9px 22px;
+      border: 1.5px solid var(--gold); border-radius: var(--radius);
+      color: var(--gold); font-family: var(--font-b); font-weight: 500; font-size: .875rem;
+      text-decoration: none; letter-spacing: .05em; text-transform: uppercase;
+      transition: background var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+    .header__cta:hover { background: var(--gold); color: var(--deep); }
+
+    /* burger */
+    .burger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 6px;
+    }
+    .burger span { display: block; width: 26px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 0;
+      background: rgba(15,11,5,0.97);
+      border-top: 1px solid rgba(201,150,60,0.15);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      display: block; padding: 14px 24px;
+      color: var(--muted); font-size: .9rem; text-decoration: none; font-weight: 500;
+      border-bottom: 1px solid rgba(201,150,60,0.08);
+      transition: color var(--transition), background var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--gold); background: var(--gold-dim); }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background: url('assets/hero.jpg') center/cover no-repeat;
+    }
+    .hero__bg img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: rgba(26,18,8,0.70);
+    }
+    .hero__content {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 780px; padding: 40px 24px;
+    }
+    .hero__eyebrow {
+      display: inline-block;
+      color: var(--gold); font-family: var(--font-b); font-size: .85rem;
+      font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(201,150,60,0.35);
+      padding-bottom: 8px;
+    }
+    .hero__title {
+      font-family: var(--font-h); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4.5rem);
+      line-height: 1.1; color: var(--text); margin-bottom: 20px;
+    }
+    .hero__tagline {
+      color: var(--muted); font-size: clamp(.95rem, 2vw, 1.1rem); margin-bottom: 40px;
+      max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+    .hero__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      display: inline-block; padding: 14px 36px;
+      background: var(--gold); color: var(--deep);
+      font-family: var(--font-b); font-weight: 500; font-size: .9rem;
+      letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+      border-radius: var(--radius); border: 1.5px solid var(--gold);
+      transition: background var(--transition), color var(--transition);
+    }
+    .btn-gold:hover { background: transparent; color: var(--gold); }
+    .btn-outline {
+      display: inline-block; padding: 14px 36px;
+      border: 1.5px solid rgba(245,234,216,0.45); color: var(--text);
+      font-family: var(--font-b); font-weight: 500; font-size: .9rem;
+      letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+      border-radius: var(--radius);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── STATS ──────────────────────────────────────────── */
+    .stats { background: var(--deep); padding: 52px 24px; }
+    .stats__inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    }
+    .stat {
+      text-align: center; padding: 24px 16px;
+      border-right: 1px solid rgba(201,150,60,0.15);
+    }
+    .stat:last-child { border-right: none; }
+    .stat__value {
+      font-family: var(--font-h); font-weight: 700; font-size: 2.6rem;
+      color: var(--gold); line-height: 1; margin-bottom: 8px;
+    }
+    .stat__label { color: var(--muted); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+
+    /* ─── SECTION COMMON ─────────────────────────────────── */
+    .section { padding: 96px 24px; }
+    .section--surface { background: var(--surface); }
+    .section__header { text-align: center; margin-bottom: 56px; }
+    .section__eyebrow {
+      display: block; color: var(--gold); font-family: var(--font-b);
+      font-size: .78rem; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section__title {
+      font-family: var(--font-h); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--text); line-height: 1.15;
+      display: inline-block;
+      border-bottom: 2px solid var(--gold); padding-bottom: 10px;
+    }
+
+    /* ─── MENU ───────────────────────────────────────────── */
+    #menu { padding: 96px 24px; }
+    .menu__inner { max-width: 1200px; margin: 0 auto; }
+    .menu__cat { margin-bottom: 56px; }
+    .menu__cat-title {
+      font-family: var(--font-h); font-weight: 600; font-size: 1.8rem;
+      color: var(--gold); margin-bottom: 28px;
+      border-bottom: 1px solid rgba(201,150,60,0.25); padding-bottom: 10px;
+    }
+    .menu__grid {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .menu-card {
+      background: var(--surface); border-radius: var(--radius);
+      border: 1.5px solid transparent;
+      padding: 28px 26px;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .menu-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    }
+    .menu-card__icon { font-size: 1.6rem; line-height: 1; }
+    .menu-card__name {
+      font-family: var(--font-h); font-weight: 600; font-size: 1.2rem; color: var(--text);
+    }
+    .menu-card__desc { color: var(--muted); font-size: .875rem; line-height: 1.55; flex: 1; }
+    .menu-card__price { color: var(--gold); font-weight: 500; font-size: .9rem; margin-top: 4px; }
+    .menu-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tag {
+      display: inline-block; padding: 2px 10px;
+      border: 1px solid rgba(201,150,60,0.3); border-radius: 20px;
+      color: var(--gold); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+    }
+
+    /* icon map per category */
+    .icon-bezedka::before { content: '🌿'; }
+    .icon-banya::before   { content: '🔥'; }
+    .icon-event::before   { content: '🎉'; }
+    .icon-terr::before    { content: '🌳'; }
+
+    /* ─── ABOUT ──────────────────────────────────────────── */
+    .about__inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .about__text-side {}
+    .about__quote {
+      position: relative; padding: 32px 32px 32px 48px;
+      border-left: 3px solid var(--gold); margin-bottom: 32px;
+    }
+    .about__quote-letter {
+      position: absolute; top: -16px; left: 8px;
+      font-family: var(--font-h); font-weight: 700; font-size: 7rem;
+      color: var(--gold); opacity: .18; line-height: 1; pointer-events: none;
+    }
+    .about__quote p {
+      font-family: var(--font-h); font-weight: 400; font-size: 1.25rem;
+      color: var(--text); line-height: 1.5; font-style: italic;
+    }
+    .about__body { color: var(--muted); line-height: 1.75; font-size: .95rem; }
+    .about__body p + p { margin-top: 16px; }
+    .about__img {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1.5px solid rgba(201,150,60,0.18);
+    }
+    .about__img img {
+      width: 100%; height: 480px; object-fit: cover; display: block;
+    }
+
+    /* ─── GALLERY ────────────────────────────────────────── */
+    .gallery__inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .gallery__item {
+      position: relative; overflow: hidden; border-radius: var(--radius);
+      aspect-ratio: 4/3;
+      border: 1.5px solid transparent;
+      transition: border-color var(--transition);
+    }
+    .gallery__item:hover { border-color: var(--gold); }
+    .gallery__item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery__item:hover img { transform: scale(1.04); }
+    .gallery__overlay {
+      position: absolute; inset: 0;
+      background: rgba(201,150,60,0);
+      display: flex; align-items: flex-end; padding: 20px;
+      transition: background var(--transition);
+    }
+    .gallery__item:hover .gallery__overlay { background: rgba(201,150,60,0.18); }
+    .gallery__caption {
+      color: var(--text); font-family: var(--font-h); font-size: 1.05rem;
+      opacity: 0; transform: translateY(8px); transition: opacity var(--transition), transform var(--transition);
+    }
+    .gallery__item:hover .gallery__caption { opacity: 1; transform: translateY(0); }
+
+    /* ─── CONTACTS ───────────────────────────────────────── */
+    #contacts { padding: 96px 24px; background: var(--bg); }
+    .contacts__inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start;
+    }
+    .contacts__map {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1.5px solid rgba(201,150,60,0.18);
+    }
+    .contacts__card {
+      background: var(--surface); border-radius: var(--radius);
+      border: 1.5px solid rgba(201,150,60,0.18);
+      padding: 40px 36px;
+    }
+    .contacts__card-title {
+      font-family: var(--font-h); font-weight: 700; font-size: 1.8rem;
+      color: var(--text); margin-bottom: 32px;
+      border-bottom: 2px solid var(--gold); padding-bottom: 10px;
+    }
+    .contact-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+    .contact-row:last-child { margin-bottom: 0; }
+    .contact-icon { font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
+    .contact-label { color: var(--muted); font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 3px; }
+    .contact-value { color: var(--text); font-size: 1rem; font-weight: 500; }
+    .contact-value a { color: var(--gold); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--deep);
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(201,150,60,0.15);
+    }
+    .footer__logo {
+      font-family: var(--font-h); font-weight: 700; font-size: 1.5rem;
+      color: var(--gold); display: block; margin-bottom: 10px;
+    }
+    .footer__tagline { color: var(--muted); font-size: .85rem; margin-bottom: 24px; }
+    .footer__copy { color: rgba(181,164,138,0.55); font-size: .78rem; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .nav, .header__cta { display: none; }
+      .burger { display: flex; }
+      .stats__inner { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat { border-bottom: 1px solid rgba(201,150,60,0.12); }
+      .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+      .stat:nth-child(4) { border-right: none; }
+      .about__inner { grid-template-columns: 1fr; }
+      .about__img img { height: 320px; }
+      .gallery__inner { grid-template-columns: repeat(2, 1fr); }
+      .contacts__inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .stats__inner { grid-template-columns: 1fr 1fr; }
+      .gallery__inner { grid-template-columns: 1fr; }
+      .hero__title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ──────────────────────────────────────────── -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#" class="header__logo">Gazebos Loghouse</a>
+    <nav class="nav">
+      <a href="#menu">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+78314133083" class="header__cta">Позвонить</a>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#menu" onclick="closeMobileNav()">Услуги</a>
+    <a href="#about" onclick="closeMobileNav()">О нас</a>
+    <a href="#gallery" onclick="closeMobileNav()">Галерея</a>
+    <a href="#contacts" onclick="closeMobileNav()">Контакты</a>
+    <a href="tel:+78314133083">+7 (831) 413-30-83</a>
+  </nav>
+</header>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="assets/hero.jpg" alt="Gazebos Loghouse — загородный отдых" onerror="this.style.opacity='0'" />
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <span class="hero__eyebrow">📍 Нижний Новгород · Круглосуточно</span>
+    <h1 class="hero__title">Ваш премиальный отдых на природе</h1>
+    <p class="hero__tagline">Деревянные беседки, бани и сауны — отдых для всей семьи и корпоративных событий в сердце природы</p>
+    <div class="hero__actions">
+      <a href="#menu" class="btn-gold">Наши услуги</a>
+      <a href="#contacts" class="btn-outline">Забронировать</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─────────────────────────────────────────────── -->
+<section class="stats">
+  <div class="stats__inner">
+    <div class="stat">
+      <div class="stat__value">4.6★</div>
+      <div class="stat__label">Рейтинг на Яндекс.Картах</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">1293</div>
+      <div class="stat__label">Оценок гостей</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">24/7</div>
+      <div class="stat__label">Работаем без выходных</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">100+</div>
+      <div class="stat__label">Гостей вмещает шатёр</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── УСЛУГИ ────────────────────────────────────────────── -->
+<section id="menu">
+  <div class="menu__inner">
+    <div class="section__header">
+      <span class="section__eyebrow">Что мы предлагаем</span>
+      <h2 class="section__title">Услуги</h2>
+    </div>
+
+    <!-- Беседки -->
+    <div class="menu__cat">
+      <h3 class="menu__cat-title">Беседки</h3>
+      <div class="menu__grid">
+        <div class="menu-card">
+          <div class="menu-card__icon">🌿</div>
+          <div class="menu-card__name">Беседка малая (до 8 чел.)</div>
+          <div class="menu-card__desc">Уютная деревянная беседка с мангалом. Идеально для небольших компаний и семейных праздников.</div>
+          <div class="menu-card__price">от 1 200 ₽/час</div>
+          <div class="menu-card__tags"><span class="tag">популярное</span><span class="tag">мангал</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🌿</div>
+          <div class="menu-card__name">Беседка средняя (до 15 чел.)</div>
+          <div class="menu-card__desc">Просторная беседка с большим столом, лавками и декоративным освещением.</div>
+          <div class="menu-card__price">от 1 800 ₽/час</div>
+          <div class="menu-card__tags"><span class="tag">мангал</span><span class="tag">освещение</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🌿</div>
+          <div class="menu-card__name">Беседка большая (до 25 чел.)</div>
+          <div class="menu-card__desc">Для корпоративов, юбилеев, свадеб. Оснащена мангалом, розетками, подсветкой.</div>
+          <div class="menu-card__price">от 2 500 ₽/час</div>
+          <div class="menu-card__tags"><span class="tag">банкет</span><span class="tag">корпоратив</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Бани и сауны -->
+    <div class="menu__cat">
+      <h3 class="menu__cat-title">Бани и сауны</h3>
+      <div class="menu__grid">
+        <div class="menu-card">
+          <div class="menu-card__icon">🔥</div>
+          <div class="menu-card__name">Баня «Берлога»</div>
+          <div class="menu-card__desc">Русская баня в доме «МЕДВЕДЬ» — парная, предбанник, комната отдыха, купель. До 8 человек.</div>
+          <div class="menu-card__price">от 4 000 ₽/час</div>
+          <div class="menu-card__tags"><span class="tag">хит</span><span class="tag">купель</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🔥</div>
+          <div class="menu-card__name">Финская сауна</div>
+          <div class="menu-card__desc">Классическая финская сауна с сухим паром. Подходит для небольших компаний до 6 человек.</div>
+          <div class="menu-card__price">от 3 000 ₽/час</div>
+          <div class="menu-card__tags"><span class="tag">сауна</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мероприятия -->
+    <div class="menu__cat">
+      <h3 class="menu__cat-title">Мероприятия</h3>
+      <div class="menu__grid">
+        <div class="menu-card">
+          <div class="menu-card__icon">🎉</div>
+          <div class="menu-card__name">Аренда шатра</div>
+          <div class="menu-card__desc">Большой шатёр для свадеб, корпоративов и других крупных мероприятий. До 100 гостей.</div>
+          <div class="menu-card__price">По запросу</div>
+          <div class="menu-card__tags"><span class="tag">свадьба</span><span class="tag">корпоратив</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🎉</div>
+          <div class="menu-card__name">Свадьба / Банкет</div>
+          <div class="menu-card__desc">Полный сервис для особых событий: оформление, мангальная зона, парковка, беседки.</div>
+          <div class="menu-card__price">По запросу</div>
+          <div class="menu-card__tags"><span class="tag">свадьба</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Территория -->
+    <div class="menu__cat">
+      <h3 class="menu__cat-title">Территория</h3>
+      <div class="menu__grid">
+        <div class="menu-card">
+          <div class="menu-card__icon">🌳</div>
+          <div class="menu-card__name">Пруд с рыбками</div>
+          <div class="menu-card__desc">Декоративный пруд на территории — идеально для фото и прогулок с детьми.</div>
+          <div class="menu-card__price">Бесплатно</div>
+          <div class="menu-card__tags"><span class="tag">природа</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🌳</div>
+          <div class="menu-card__name">Детская площадка</div>
+          <div class="menu-card__desc">Несколько детских площадок с горками, качелями и игровыми зонами.</div>
+          <div class="menu-card__price">Бесплатно</div>
+          <div class="menu-card__tags"><span class="tag">дети</span></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card__icon">🌳</div>
+          <div class="menu-card__name">Парковка</div>
+          <div class="menu-card__desc">Бесплатная охраняемая парковка для гостей прямо на территории комплекса.</div>
+          <div class="menu-card__price">Бесплатно</div>
+          <div class="menu-card__tags"><span class="tag">бесплатно</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── О НАС ──────────────────────────────────────────────── -->
+<section class="section section--surface" id="about">
+  <div class="about__inner" style="max-width:1100px;margin:0 auto;">
+    <div class="about__text-side">
+      <span class="section__eyebrow">Наша история</span>
+      <h2 class="section__title" style="margin-bottom:36px;">О нас</h2>
+      <div class="about__quote">
+        <span class="about__quote-letter">Г</span>
+        <p>«Gazebos Loghouse — место, где городская суета остаётся за воротами, а природа становится лучшим собеседником»</p>
+      </div>
+      <div class="about__body">
+        <p>Мы создали уникальный загородный комплекс в черте Нижнего Новгорода, где каждая деталь продумана для вашего комфорта. Деревянные беседки ручной работы, настоящая русская баня, тихий пруд с рыбками — всё это ждёт вас.</p>
+        <p>Более 1293 гостей уже оценили наш комплекс на Яндекс.Картах, поставив нам рейтинг 4.6 из 5. Мы работаем круглосуточно, 365 дней в году — для семейных праздников, корпоративных мероприятий и романтических вечеров.</p>
+      </div>
+    </div>
+    <div class="about__img">
+      <img src="assets/event.jpg" alt="Мероприятие в Gazebos Loghouse" onerror="this.style.opacity='0'" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── ГАЛЕРЕЯ ────────────────────────────────────────────── -->
+<section class="section" id="gallery">
+  <div class="section__header">
+    <span class="section__eyebrow">Наша атмосфера</span>
+    <h2 class="section__title">Галерея</h2>
+  </div>
+  <div class="gallery__inner">
+    <div class="gallery__item">
+      <img src="assets/nature.jpg" alt="Природа комплекса" onerror="this.style.opacity='0'" />
+      <div class="gallery__overlay">
+        <span class="gallery__caption">Природа</span>
+      </div>
+    </div>
+    <div class="gallery__item">
+      <img src="assets/gazebo.jpg" alt="Деревянная беседка" onerror="this.style.opacity='0'" />
+      <div class="gallery__overlay">
+        <span class="gallery__caption">Беседки</span>
+      </div>
+    </div>
+    <div class="gallery__item">
+      <img src="assets/pond.jpg" alt="Пруд на территории" onerror="this.style.opacity='0'" />
+      <div class="gallery__overlay">
+        <span class="gallery__caption">Пруд</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── КОНТАКТЫ ───────────────────────────────────────────── -->
+<section id="contacts">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="section__header">
+      <span class="section__eyebrow">Мы ждём вас</span>
+      <h2 class="section__title">Контакты</h2>
+    </div>
+    <div class="contacts__inner">
+      <div class="contacts__map">
+        <iframe
+          src="https://maps.google.com/maps?q=56.298568,44.003390&z=16&hl=ru&output=embed"
+          width="100%"
+          height="400"
+          style="border:0;display:block"
+          loading="lazy"
+          allowfullscreen
+          title="Gazebos Loghouse на карте"
+        ></iframe>
+      </div>
+      <div class="contacts__card">
+        <h3 class="contacts__card-title">Как нас найти</h3>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Адрес</div>
+            <div class="contact-value">ул. Артельная, 21А,<br>Нижний Новгород</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Телефон</div>
+            <div class="contact-value"><a href="tel:+78314133083">+7 (831) 413-30-83</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Режим работы</div>
+            <div class="contact-value">Работаем круглосуточно, 24/7</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px;">
+          <a href="tel:+78314133083" class="btn-gold" style="display:block;text-align:center;">Позвонить нам</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <span class="footer__logo">Gazebos Loghouse</span>
+  <p class="footer__tagline">Деревянные беседки, бани и сауны — отдых для всей семьи и корпоративных событий</p>
+  <p class="footer__copy">&copy; 2024 Gazebos Loghouse · ул. Артельная, 21А, Нижний Новгород · +7 (831) 413-30-83</p>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+
+  function closeMobileNav() {
+    burger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  }
+</script>
+
+</body>
+</html>

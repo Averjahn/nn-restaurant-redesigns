@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автомир Богемия — Официальный дилер ŠKODA в Нижнем Новгороде</title>
+  <meta name="description" content="Официальный дилер ŠKODA в Нижнем Новгороде. Продажа новых автомобилей ŠKODA: KAROQ, RAPID, OCTAVIA, KODIAQ, SUPERB. Авторизованный сервисный центр. Казанское шоссе, 25.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       CSS TOKENS — Variant C: Технологичный глянец
+    ============================================================ */
+    :root {
+      --color-primary:   #3adb76;
+      --color-primary2:  #00c4ff;
+      --color-grad:      linear-gradient(135deg, #3adb76 0%, #00c4ff 100%);
+      --color-bg:        #13181f;
+      --color-surface:   #1c2530;
+      --color-surface2:  #232e3d;
+      --color-text:      #e2eaf0;
+      --color-muted:     #7a93ad;
+      --color-border:    #2a3a4d;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --container: 1160px;
+      --gap: 24px;
+
+      --font-head: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --transition: 0.25s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ============================================================
+       GRADIENT TEXT UTILITY
+    ============================================================ */
+    .grad-text {
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ============================================================
+       DIAGONAL DIVIDER UTILITY
+    ============================================================ */
+    .diag-bottom {
+      position: relative;
+    }
+    .diag-bottom::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--color-bg);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      z-index: 2;
+    }
+    .diag-top {
+      position: relative;
+    }
+    .diag-top::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--color-surface);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 2;
+    }
+
+    /* ============================================================
+       THIN LINE GEOMETRIC DECORATION
+    ============================================================ */
+    .geo-line {
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-grad);
+      margin-bottom: 16px;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--color-grad);
+      color: #0d1117;
+    }
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(58, 219, 118, 0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(58, 219, 118, 0.5);
+      color: var(--color-primary);
+    }
+    .btn-outline:hover {
+      border-color: var(--color-primary);
+      background: rgba(58, 219, 118, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       TOP BAR
+    ============================================================ */
+    .topbar {
+      background: rgba(19, 24, 31, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 10px 0;
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .topbar__logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--color-text);
+      letter-spacing: 0.02em;
+    }
+    .topbar__logo span {
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .topbar__nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .topbar__nav a {
+      font-family: var(--font-head);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      transition: color var(--transition);
+    }
+    .topbar__nav a:hover { color: var(--color-primary); }
+    .topbar__contacts {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar__phone {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--color-text);
+    }
+    .topbar__hours {
+      color: var(--color-muted);
+      font-size: 0.78rem;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero__bg img {
+      object-position: center 60%;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(13, 17, 23, 0.96) 0%,
+        rgba(13, 17, 23, 0.75) 55%,
+        rgba(13, 17, 23, 0.3) 100%
+      );
+      z-index: 1;
+    }
+    /* Geometric accent lines */
+    .hero__geo {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 42%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero__geo::before {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(58, 219, 118, 0.12);
+      border-radius: 50%;
+    }
+    .hero__geo::after {
+      content: '';
+      position: absolute;
+      right: 60px;
+      top: 80px;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(0, 196, 255, 0.1);
+      border-radius: 50%;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 80px 0;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(58, 219, 118, 0.1);
+      border: 1px solid rgba(58, 219, 118, 0.25);
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero__badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero__title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.05;
+      color: var(--color-text);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .hero__title .brand-name {
+      display: block;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero__tagline {
+      font-family: var(--font-head);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .hero__desc {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      max-width: 480px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero__stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+    .hero__stat-val {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2rem;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero__stat-label {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    .section {
+      padding: 100px 0;
+    }
+    .section--surface {
+      background: var(--color-surface);
+    }
+    .section__head {
+      margin-bottom: 56px;
+    }
+    .section__eyebrow {
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section__eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--color-grad);
+      flex-shrink: 0;
+    }
+    .section__title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .section__title em {
+      font-style: normal;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section__sub {
+      margin-top: 14px;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+    }
+
+    /* ============================================================
+       MODELS GRID
+    ============================================================ */
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: var(--gap);
+    }
+
+    .model-card {
+      background: rgba(28, 37, 48, 0.6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .model-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(58, 219, 118, 0.4);
+      box-shadow: 0 16px 48px rgba(58, 219, 118, 0.12);
+    }
+    .model-card:hover .model-card__img-wrap::after {
+      opacity: 1;
+    }
+    .model-card__img-wrap {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+    }
+    .model-card__img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(58, 219, 118, 0.12) 0%, rgba(0, 196, 255, 0.08) 100%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .model-card__body {
+      padding: 24px;
+    }
+    .model-card__tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .tag {
+      font-family: var(--font-head);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: rgba(58, 219, 118, 0.1);
+      border: 1px solid rgba(58, 219, 118, 0.2);
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+    .model-card__name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .model-card__desc {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .model-card__cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      transition: gap var(--transition);
+    }
+    .model-card:hover .model-card__cta { gap: 10px; }
+    .model-card__cta-arrow {
+      font-size: 1rem;
+      transition: transform var(--transition);
+    }
+    .model-card:hover .model-card__cta-arrow { transform: translateX(4px); }
+
+    /* ============================================================
+       PROMO BANNER (diagonal)
+    ============================================================ */
+    .promo-band {
+      position: relative;
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0d1e16 0%, #131f2b 100%);
+      overflow: hidden;
+    }
+    .promo-band::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-grad);
+    }
+    .promo-band::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-grad);
+    }
+    .promo-band__geo {
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(58, 219, 118, 0.07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .promo-band__geo2 {
+      position: absolute;
+      left: -60px;
+      bottom: -80px;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(0, 196, 255, 0.07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .promo-band__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .promo-band__title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .promo-band__title em {
+      font-style: normal;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .promo-band__sub {
+      margin-top: 12px;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+    .promo-band__offers {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .promo-offer {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(28, 37, 48, 0.7);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(12px);
+      transition: border-color var(--transition);
+    }
+    .promo-offer:hover {
+      border-color: rgba(58, 219, 118, 0.35);
+    }
+    .promo-offer__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(58, 219, 118, 0.12);
+      border: 1px solid rgba(58, 219, 118, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .promo-offer__name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .promo-offer__desc {
+      font-size: 0.83rem;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+    .promo-offer__price {
+      margin-left: auto;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1rem;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+      padding-left: 16px;
+    }
+
+    /* ============================================================
+       SERVICE SECTION
+    ============================================================ */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--gap);
+    }
+    .service-card {
+      padding: 32px;
+      background: rgba(28, 37, 48, 0.5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--color-grad);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: rgba(58, 219, 118, 0.3); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: rgba(58, 219, 118, 0.1);
+      border: 1px solid rgba(58, 219, 118, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .service-card__name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-text);
+      margin-bottom: 10px;
+    }
+    .service-card__desc {
+      font-size: 0.87rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       FEATURES / WHY US STRIP
+    ============================================================ */
+    .features-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .feature-item {
+      background: var(--color-surface);
+      padding: 32px 24px;
+      text-align: center;
+      transition: background var(--transition);
+    }
+    .feature-item:hover { background: var(--color-surface2); }
+    .feature-item__icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .feature-item__val {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .feature-item__label {
+      font-size: 0.82rem;
+      color: var(--color-muted);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       SHOWROOM PHOTO STRIP
+    ============================================================ */
+    .showroom-strip {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 12px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .showroom-strip__main {
+      height: 420px;
+    }
+    .showroom-strip__col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .showroom-strip__col-item {
+      flex: 1;
+      min-height: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .showroom-strip__main {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,17,23,0.4) 0%, transparent 60%);
+    }
+
+    /* ============================================================
+       CONTACT / CTA SECTION
+    ============================================================ */
+    .contact-section {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(58, 219, 118, 0.04) 0%, rgba(0, 196, 255, 0.04) 100%);
+    }
+    .contact-section__bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--color-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.3;
+    }
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info__title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      color: var(--color-text);
+    }
+    .contact-info__title em {
+      font-style: normal;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .contact-detail__icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: rgba(58, 219, 118, 0.1);
+      border: 1px solid rgba(58, 219, 118, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-detail__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 4px;
+      font-family: var(--font-head);
+      font-weight: 700;
+    }
+    .contact-detail__val {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+    .contact-detail__val a {
+      transition: color var(--transition);
+    }
+    .contact-detail__val a:hover { color: var(--color-primary); }
+
+    /* Contact form */
+    .contact-form {
+      background: rgba(28, 37, 48, 0.7);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .contact-form__title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-text);
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font-head);
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: rgba(13, 17, 23, 0.8);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--color-text);
+      transition: border-color var(--transition);
+      outline: none;
+      width: 100%;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: var(--color-muted); opacity: 0.6; }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: rgba(58, 219, 118, 0.5);
+      box-shadow: 0 0 0 3px rgba(58, 219, 118, 0.08);
+    }
+    .form-select { cursor: pointer; appearance: none; }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-privacy {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      margin-top: 12px;
+    }
+
+    /* ============================================================
+       MAP PLACEHOLDER
+    ============================================================ */
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 360px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .map-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(0.4) brightness(0.8) hue-rotate(90deg);
+    }
+    .map-placeholder {
+      text-align: center;
+      color: var(--color-muted);
+    }
+    .map-placeholder__icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .map-placeholder__text { font-size: 0.9rem; }
+    .map-placeholder__addr {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-text);
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: #0b0f14;
+      border-top: 1px solid var(--color-border);
+      padding: 48px 0 32px;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer__brand {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+    .footer__brand span {
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .footer__desc {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer__phone {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .footer__free {
+      font-size: 0.82rem;
+      color: var(--color-muted);
+    }
+    .footer__col-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer__links a {
+      font-size: 0.87rem;
+      color: var(--color-muted);
+      transition: color var(--transition);
+    }
+    .footer__links a:hover { color: var(--color-primary); }
+    .footer__bottom {
+      border-top: 1px solid var(--color-border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer__copy {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+    .footer__legal {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      opacity: 0.6;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .features-strip { grid-template-columns: repeat(2, 1fr); }
+      .promo-band__inner { grid-template-columns: 1fr; gap: 32px; }
+      .showroom-strip { grid-template-columns: 1fr 1fr; }
+      .showroom-strip__main { grid-column: 1 / -1; height: 280px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .topbar__nav { display: none; }
+      .hero { min-height: 80vh; }
+      .hero__stats { gap: 24px; }
+      .hero__geo { display: none; }
+      .features-strip { grid-template-columns: 1fr 1fr; }
+      .models-grid { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .topbar__inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+    @media (max-width: 480px) {
+      .features-strip { grid-template-columns: 1fr; }
+      .hero__title { font-size: 2.2rem; }
+      .contact-form { padding: 24px; }
+      .section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR / NAV
+  ============================================================ -->
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <div class="topbar__logo">Автомир <span>Богемия</span></div>
+        <nav>
+          <ul class="topbar__nav">
+            <li><a href="#models">Модельный ряд</a></li>
+            <li><a href="#service">Сервис</a></li>
+            <li><a href="#showroom">Шоурум</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="topbar__contacts">
+          <div>
+            <div class="topbar__phone">+7 (831) 288-45-91</div>
+            <div class="topbar__hours">Ежедневно 09:00–21:00</div>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:0.78rem;">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="assets/hero.jpg" alt="ŠKODA в Нижнем Новгороде — Автомир Богемия" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__geo"></div>
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">Официальный дилер ŠKODA</div>
+        <h1 class="hero__title">
+          Технологии
+          <span class="brand-name">встречают дорогу</span>
+        </h1>
+        <p class="hero__tagline">Официальный дилер ŠKODA в Нижнем Новгороде</p>
+        <p class="hero__desc">
+          Авторизованный автосалон и сервисный центр. Полный модельный ряд ŠKODA,
+          оригинальные запчасти и гарантийное обслуживание по заводским стандартам.
+          Казанское шоссе, 25 — минуты от трассы М7.
+        </p>
+        <div class="hero__actions">
+          <a href="#models" class="btn btn-primary">Смотреть модели</a>
+          <a href="#contact" class="btn btn-outline">Тест-драйв</a>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <span class="hero__stat-val">5</span>
+            <span class="hero__stat-label">Моделей в наличии</span>
+          </div>
+          <div>
+            <span class="hero__stat-val">35%</span>
+            <span class="hero__stat-label">Скидка на сервис</span>
+          </div>
+          <div>
+            <span class="hero__stat-val">7M+</span>
+            <span class="hero__stat-label">Продано Octavia</span>
+          </div>
+          <div>
+            <span class="hero__stat-val">09–21</span>
+            <span class="hero__stat-label">Ежедневно</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY US — FEATURES STRIP
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head" style="text-align:center; margin-bottom: 44px;">
+        <span class="section__eyebrow" style="justify-content:center;">Почему мы</span>
+        <h2 class="section__title">Официальный статус. <em>Реальные преимущества.</em></h2>
+      </div>
+      <div class="features-strip">
+        <div class="feature-item">
+          <span class="feature-item__icon">🏆</span>
+          <span class="feature-item__val">Официальный</span>
+          <span class="feature-item__label">дилер ŠKODA Czech Republic</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-item__icon">🔧</span>
+          <span class="feature-item__val">Оригинал</span>
+          <span class="feature-item__label">запчасти и расходники ŠKODA</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-item__icon">📋</span>
+          <span class="feature-item__val">Гарантия</span>
+          <span class="feature-item__label">заводское обслуживание</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-item__icon">🚗</span>
+          <span class="feature-item__val">Тест-драйв</span>
+          <span class="feature-item__label">любой модели прямо сегодня</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODELS SECTION
+  ============================================================ -->
+  <section class="section section--surface diag-top" id="models" style="padding-top: 120px;">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__eyebrow">Модельный ряд</span>
+        <h2 class="section__title">Выберите <em>свою ŠKODA</em></h2>
+        <p class="section__sub">От компактного городского кроссовера до представительского бизнес-класса — чешское качество в каждой модели.</p>
+      </div>
+      <div class="models-grid">
+
+        <!-- KAROQ -->
+        <article class="model-card">
+          <div class="model-card__img-wrap">
+            <img src="assets/crossover.jpg" alt="ŠKODA KAROQ" loading="lazy">
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">кроссовер</span>
+              <span class="tag">городской</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA KAROQ</h3>
+            <p class="model-card__desc">Компактный кроссовер C-сегмента. 5 мест, 1.4 TSI 150 л.с., передний или полный привод.</p>
+            <span class="model-card__cta">Узнать подробнее <span class="model-card__cta-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- RAPID -->
+        <article class="model-card">
+          <div class="model-card__img-wrap">
+            <img src="assets/sedan.jpg" alt="ŠKODA RAPID" loading="lazy">
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">лифтбек</span>
+              <span class="tag">бюджет</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA RAPID</h3>
+            <p class="model-card__desc">Самый доступный лифтбек марки. Вместительный багажник 530 л, 1.4 TSI 125 л.с.</p>
+            <span class="model-card__cta">Узнать подробнее <span class="model-card__cta-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- OCTAVIA -->
+        <article class="model-card">
+          <div class="model-card__img-wrap">
+            <img src="assets/sedan.jpg" alt="ŠKODA OCTAVIA" loading="lazy">
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">лифтбек</span>
+              <span class="tag">популярная</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA OCTAVIA</h3>
+            <p class="model-card__desc">7 млн проданных автомобилей с 1959 года. 1.6–2.0L, 110–190 л.с., три комплектации.</p>
+            <span class="model-card__cta">Узнать подробнее <span class="model-card__cta-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- KODIAQ -->
+        <article class="model-card">
+          <div class="model-card__img-wrap">
+            <img src="assets/crossover.jpg" alt="ŠKODA KODIAQ" loading="lazy">
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">SUV</span>
+              <span class="tag">семейный</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA KODIAQ</h3>
+            <p class="model-card__desc">Семейный SUV на 5 или 7 мест. Кристальный дизайн, 360° камера, три зоны климата.</p>
+            <span class="model-card__cta">Узнать подробнее <span class="model-card__cta-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- SUPERB -->
+        <article class="model-card">
+          <div class="model-card__img-wrap">
+            <img src="assets/sedan.jpg" alt="ŠKODA SUPERB" loading="lazy">
+          </div>
+          <div class="model-card__body">
+            <div class="model-card__tags">
+              <span class="tag">бизнес-класс</span>
+              <span class="tag">премиум</span>
+            </div>
+            <h3 class="model-card__name">ŠKODA SUPERB</h3>
+            <p class="model-card__desc">Представительский лифтбек бизнес-класса. 9 подушек, контроль слепых зон, массаж сидений.</p>
+            <span class="model-card__cta">Узнать подробнее <span class="model-card__cta-arrow">→</span></span>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top: 48px;">
+        <a href="#contact" class="btn btn-primary">Записаться на тест-драйв</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROMO OFFERS BAND
+  ============================================================ -->
+  <section class="promo-band" id="service">
+    <div class="promo-band__geo"></div>
+    <div class="promo-band__geo2"></div>
+    <div class="container">
+      <div class="promo-band__inner">
+        <div>
+          <span class="section__eyebrow">Специальные предложения</span>
+          <h2 class="promo-band__title">Сервис со <em>скидкой до 35%</em></h2>
+          <p class="promo-band__sub">Акции для автомобилей от 3 лет и разовые услуги по фиксированной цене.</p>
+          <div style="margin-top: 32px;">
+            <a href="#contact" class="btn btn-primary">Записаться в сервис</a>
+          </div>
+        </div>
+        <div class="promo-band__offers">
+          <div class="promo-offer">
+            <div class="promo-offer__icon">❄️</div>
+            <div>
+              <div class="promo-offer__name">Дезинфекция кондиционера</div>
+              <div class="promo-offer__desc">Чистка и дезинфекция системы кондиционирования + замена салонного фильтра.</div>
+            </div>
+            <div class="promo-offer__price">2 990 ₽</div>
+          </div>
+          <div class="promo-offer">
+            <div class="promo-offer__icon">🔧</div>
+            <div>
+              <div class="promo-offer__name">Скидка на ТО и ремонт</div>
+              <div class="promo-offer__desc">До 35% на техническое обслуживание и ремонт для автомобилей старше 3 лет.</div>
+            </div>
+            <div class="promo-offer__price">–35%</div>
+          </div>
+          <div class="promo-offer">
+            <div class="promo-offer__icon">📋</div>
+            <div>
+              <div class="promo-offer__name">Техническое обслуживание</div>
+              <div class="promo-offer__desc">Плановое ТО по регламенту ŠKODA с оригинальными запчастями.</div>
+            </div>
+            <div class="promo-offer__price">По заявке</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICE CARDS SECTION
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__eyebrow">Сервис</span>
+        <h2 class="section__title">Авторизованный <em>сервисный центр</em></h2>
+        <p class="section__sub">Обслуживаем по заводским стандартам ŠKODA с применением оригинальных запчастей и расходных материалов.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card__icon">🛠️</div>
+          <div class="service-card__name">Плановое ТО</div>
+          <div class="service-card__desc">Плановое техническое обслуживание по регламенту ŠKODA с оригинальными запчастями и контрольной диагностикой.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">❄️</div>
+          <div class="service-card__name">Кондиционер</div>
+          <div class="service-card__desc">Дезинфекция системы кондиционирования и замена салонного фильтра. Фиксированная цена 2 990 ₽.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">💰</div>
+          <div class="service-card__name">Скидки для авто 3+</div>
+          <div class="service-card__desc">До 35% скидки на техническое обслуживание и ремонт для автомобилей старше трёх лет.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHOWROOM PHOTO GALLERY
+  ============================================================ -->
+  <section class="section section--surface" id="showroom">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__eyebrow">Шоурум</span>
+        <h2 class="section__title">Современный <em>автосалон</em></h2>
+        <p class="section__sub">Приезжайте на тест-драйв. Казанское шоссе, 25 — удобно с трассы М7.</p>
+      </div>
+      <div class="showroom-strip">
+        <div class="showroom-strip__main">
+          <img src="assets/showroom.jpg" alt="Шоурум Автомир Богемия" loading="lazy">
+          <div class="photo-overlay"></div>
+        </div>
+        <div class="showroom-strip__col">
+          <div class="showroom-strip__col-item">
+            <img src="assets/interior.jpg" alt="Интерьер ŠKODA" loading="lazy">
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="showroom-strip__col-item">
+            <img src="assets/service.jpg" alt="Сервисная зона" loading="lazy">
+            <div class="photo-overlay"></div>
+          </div>
+        </div>
+        <div class="showroom-strip__col">
+          <div class="showroom-strip__col-item">
+            <img src="assets/exterior.jpg" alt="Внешний вид дилерского центра" loading="lazy">
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="showroom-strip__col-item">
+            <img src="assets/crossover.jpg" alt="ŠKODA KAROQ" loading="lazy">
+            <div class="photo-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT / FORM SECTION
+  ============================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-section__bg-grid"></div>
+    <div class="container">
+      <div class="contact-inner">
+
+        <!-- Left: info -->
+        <div>
+          <span class="section__eyebrow">Контакты</span>
+          <h2 class="contact-info__title">Приезжайте.<br>Или <em>позвоните</em>.</h2>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📍</div>
+            <div>
+              <div class="contact-detail__label">Адрес</div>
+              <div class="contact-detail__val">Нижегородская обл., Кстовский р-н,<br>Казанское шоссе, 25</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📞</div>
+            <div>
+              <div class="contact-detail__label">Телефон</div>
+              <div class="contact-detail__val">
+                <a href="tel:+78312884591">+7 (831) 288-45-91</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">🆓</div>
+            <div>
+              <div class="contact-detail__label">Бесплатный номер</div>
+              <div class="contact-detail__val">
+                <a href="tel:88005550101">8-800-555-01-01</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">🕐</div>
+            <div>
+              <div class="contact-detail__label">Часы работы</div>
+              <div class="contact-detail__val">Ежедневно 09:00 – 21:00</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 36px;">
+            <div class="map-wrap">
+              <div class="map-placeholder">
+                <div class="map-placeholder__icon">🗺️</div>
+                <div class="map-placeholder__text">Нижегородская обл., Кстовский р-н</div>
+                <div class="map-placeholder__addr">Казанское шоссе, 25</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form">
+          <div class="contact-form__title">Записаться на тест-драйв или сервис</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Имя</label>
+              <input type="text" class="form-input" placeholder="Иван Иванов">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Телефон</label>
+              <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Модель</label>
+            <select class="form-select form-input">
+              <option value="">Выберите модель...</option>
+              <option>ŠKODA KAROQ</option>
+              <option>ŠKODA RAPID</option>
+              <option>ŠKODA OCTAVIA</option>
+              <option>ŠKODA KODIAQ</option>
+              <option>ŠKODA SUPERB</option>
+              <option>Сервис / ТО</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Тип визита</label>
+            <select class="form-select form-input">
+              <option value="">Выберите тип...</option>
+              <option>Тест-драйв</option>
+              <option>Консультация по покупке</option>
+              <option>Техническое обслуживание</option>
+              <option>Дезинфекция кондиционера</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Комментарий</label>
+            <textarea class="form-textarea" placeholder="Удобное время, вопросы..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;">
+            Отправить заявку →
+          </button>
+          <p class="form-privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Не передаём третьим лицам.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Автомир <span>Богемия</span></div>
+          <p class="footer__desc">Официальный дилер ŠKODA в Нижнем Новгороде. Продажа новых автомобилей, авторизованный сервисный центр, оригинальные запчасти.</p>
+          <a href="tel:+78312884591" class="footer__phone">+7 (831) 288-45-91</a>
+          <span class="footer__free">8-800-555-01-01 — звонок бесплатный</span>
+        </div>
+        <div>
+          <div class="footer__col-title">Модели</div>
+          <ul class="footer__links">
+            <li><a href="#models">ŠKODA KAROQ</a></li>
+            <li><a href="#models">ŠKODA RAPID</a></li>
+            <li><a href="#models">ŠKODA OCTAVIA</a></li>
+            <li><a href="#models">ŠKODA KODIAQ</a></li>
+            <li><a href="#models">ŠKODA SUPERB</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Сервис</div>
+          <ul class="footer__links">
+            <li><a href="#service">Техническое обслуживание</a></li>
+            <li><a href="#service">Дезинфекция кондиционера</a></li>
+            <li><a href="#service">Скидки на ТО и ремонт</a></li>
+            <li><a href="#contact">Записаться онлайн</a></li>
+          </ul>
+          <div style="margin-top: 24px;">
+            <div class="footer__col-title">Адрес</div>
+            <p style="font-size:0.85rem; color:var(--color-muted); line-height:1.6;">Нижегородская обл.,<br>Кстовский р-н,<br>Казанское шоссе, 25<br>Ежедневно 09:00–21:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2024 Автомир Богемия. Официальный дилер ŠKODA.</span>
+        <span class="footer__legal">Не является публичной офертой. Цены уточняйте у менеджеров.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
