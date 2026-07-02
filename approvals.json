@@ -1,0 +1,232 @@
+{
+  "anor": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "atsumari": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "bezuhov": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "bogemia": {
+    "approved": false,
+    "price": 150000,
+    "approvedAt": null
+  },
+  "brod": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "buhara": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "chertochka": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "coffeecake": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "coffeemolly": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "crazybrothers": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "cuppcake": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "dzhani": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "fukuramen": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "grillbar": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "hygge": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "karamel": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "kofevarke": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "krdparen": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "kupets": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "lagom": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "legenda": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "loghouse": {
+    "approved": false,
+    "price": 80000,
+    "approvedAt": null
+  },
+  "macbookbro": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "mariko": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "matreshka": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "migmig": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "oka": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "onegin": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "pivnushka": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "pizzaricca": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "prohinkali": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "provence": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "ps": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "ramenutka": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "redwall": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "rest19": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "seledka": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "shashlyk52": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "skuratov": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "steakkm": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "traktir": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "triorange": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "vesna": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "vkt": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "vypechka": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "wolkonsky": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  }
+}

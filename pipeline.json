@@ -1,0 +1,52 @@
+{
+  "updated": "2026-07-03",
+  "statuses": ["found", "redesign-done", "approved", "pitched", "replied", "paid"],
+  "leads": [
+    {
+      "slug": "bogemia",
+      "name": "Автомир Богемия (ŠKODA)",
+      "category": "automotive",
+      "city": "Нижний Новгород / Кстово",
+      "address": "Кстово, Нижегородская область",
+      "phone": "",
+      "channels": { "whatsapp": "", "vk": "", "telegram": "", "email": "", "site": "https://bogemia-nn.ru/" },
+      "status": "redesign-done",
+      "price": 150000,
+      "variants": ["bogemia-a", "bogemia-b", "bogemia-c"],
+      "history": [
+        { "date": "2026-07-03", "event": "3 варианта задеплоены в галерею" }
+      ]
+    },
+    {
+      "slug": "macbookbro",
+      "name": "Макбучная (техника Apple)",
+      "category": "tech-retail",
+      "city": "Нижний Новгород",
+      "address": "Грузинская улица, 41А",
+      "phone": "+7 (986) 757-73-51",
+      "channels": { "whatsapp": "https://api.whatsapp.com/send?phone=79867577351", "vk": "https://vk.com/macbookbro", "telegram": "", "email": "", "site": "https://macbookbro.orgs.biz/" },
+      "status": "redesign-done",
+      "price": 90000,
+      "variants": ["macbookbro-a", "macbookbro-b", "macbookbro-c"],
+      "history": [
+        { "date": "2026-07-03", "event": "3 варианта задеплоены в галерею" }
+      ]
+    },
+    {
+      "slug": "loghouse",
+      "name": "Gazebos Loghouse (беседки и бани)",
+      "category": "recreation",
+      "city": "Нижний Новгород",
+      "address": "ул. Артельная, 21А",
+      "phone": "+7 (831) 413-30-83",
+      "channels": { "whatsapp": "", "vk": "", "telegram": "", "email": "", "site": "" },
+      "status": "redesign-done",
+      "price": 80000,
+      "variants": ["loghouse-a", "loghouse-b", "loghouse-c"],
+      "notes": "Сайта нет вообще — питч «мы сделали вам сайт с нуля». Рейтинг 4.6★, 523 отзыва на Яндекс.Картах.",
+      "history": [
+        { "date": "2026-07-03", "event": "3 варианта задеплоены в галерею" }
+      ]
+    }
+  ]
+}
