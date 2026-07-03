@@ -228,5 +228,25 @@
     "approved": false,
     "price": 70000,
     "approvedAt": null
+  },
+  "smailnn": {
+    "approved": false,
+    "price": 180000,
+    "approvedAt": null
+  },
+  "vetdrug": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "zoomir": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "samurai": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
   }
 }
