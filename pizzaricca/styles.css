@@ -35,6 +35,7 @@ body {
   color: var(--color-text);
   font-size: clamp(15px, 1.5vw, 17px);
   line-height: 1.6;
+  overflow-x: hidden; /* корзина/модал (fixed) не должны давать горизонтальный скролл на мобильном */
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
