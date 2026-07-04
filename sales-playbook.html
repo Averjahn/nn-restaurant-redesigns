@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шпаргалка продажника — редизайны сайтов</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f4f6fb;--card:#fff;--line:#e3e8f0;--text:#141b2d;--muted:#5c6880;--accent:#2563eb;--green:#16a34a;--orig:#94a3b8}
+  body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;padding:0 0 60px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header.top{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:34px 0}
+  header.top h1{font-size:clamp(22px,4vw,32px);font-weight:800}
+  header.top p{opacity:.9;margin-top:8px;max-width:640px}
+  .howto{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:22px 0}
+  .howto h2{font-size:16px;margin-bottom:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+  .howto ol{padding-left:20px}.howto li{margin:5px 0}
+  .howto .obj{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+  .howto .obj b{color:var(--accent)}
+  nav.toc{position:sticky;top:0;z-index:10;background:rgba(244,246,251,.92);backdrop-filter:blur(8px);padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px}
+  nav.toc a{font-size:13px;font-weight:600;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 12px}
+  nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin:22px 0;box-shadow:0 4px 20px rgba(20,27,45,.05);scroll-margin-top:64px}
+  .card-head h2{font-size:22px;font-weight:800}
+  .tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:12px;font-weight:700;background:#eef2ff;color:var(--accent);border-radius:20px;padding:3px 11px}
+  .tag-price{background:#ecfdf5;color:var(--green)}
+  .solv{font-size:14px;color:var(--muted);margin:12px 0}
+  .links-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .btn{font-size:14px;font-weight:700;border-radius:10px;padding:10px 16px;border:1px solid var(--line);white-space:nowrap}
+  .btn-orig{background:#f1f5f9;color:#475569}
+  .btn-orig.disabled{opacity:.6}
+  .btn-redesign{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .btn-wa{background:var(--green);color:#fff;border-color:var(--green)}
+  .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-bottom:6px}
+  .col h3{font-size:14px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);margin-bottom:8px}
+  ul.probs{list-style:none}ul.probs li{font-size:14px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .contacts{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+  .chip{font-size:14px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:8px 12px;overflow-wrap:anywhere}
+  .chip:hover{border-color:var(--accent)}
+  .channel{font-size:13px;color:var(--muted);background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:8px 12px}
+  .script-block{margin-top:16px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px}
+  .script-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px;flex-wrap:wrap}
+  .script-head h3{font-size:14px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .copy-btn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+  .copy-btn.done{background:var(--green)}
+  textarea.script{width:100%;border:1px solid var(--line);border-radius:8px;padding:12px;font-family:inherit;font-size:14px;line-height:1.5;color:var(--text);background:#fff;resize:vertical}
+  @media(max-width:640px){.cols{grid-template-columns:minmax(0,1fr)}}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <h1>Шпаргалка продажника — готовые редизайны</h1>
+  <p>7 компаний Нижнего Новгорода, для которых уже сделаны сайты. Заход простой: «мы уже сделали вам новый сайт — посмотрите». Ниже по каждой: ссылка на их текущий сайт, ссылка на наш редизайн, что у них не так и готовое сообщение.</p>
+</div></header>
+<div class="wrap">
+  <div class="howto">
+    <h2>Как продавать за 4 шага</h2>
+    <ol>
+      <li><b>Открой ссылку на их сайт и наш редизайн</b> — сравни, чтобы говорить предметно.</li>
+      <li><b>Заход через боль:</b> назови 1–2 проблемы их сайта из блока «что не так» (нет цен / не находят в поиске / сайт на телефоне разваливается).</li>
+      <li><b>Покажи решение:</b> «мы это уже исправили, вот ссылка — посмотрите, 3 варианта на выбор».</li>
+      <li><b>Цель звонка — не продать, а получить согласие прислать ссылку</b> в WhatsApp/Telegram. Продаёт сам сайт.</li>
+    </ol>
+    <div class="obj">
+      <b>Возражения:</b>
+      «Дорого» → сайт окупается на новых клиентах из поиска, можно поэтапно. ·
+      «Нет времени» → всё уже готово, запуск на вашем домене за 3–5 дней. ·
+      «Подумаю» → предложи прислать все 3 варианта, пусть выберет какой нравится. ·
+      Подпись/контакт студии: <b>8 920 040 88 01 · Telegram @averjahn</b>
+    </div>
+  </div>
+</div>
+<nav class="toc"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px"><a href="#macbookbro">Макбучная</a> <a href="#bogemia">Автомир Богемия (ŠKODA)</a> <a href="#loghouse">Gazebos Loghouse</a> <a href="#smailnn">Стоматология «Смайл»</a> <a href="#vetdrug">Ветцентр «ВетДруг»</a> <a href="#zoomir">Ветклиника «ЗооМир»</a> <a href="#samurai">Детейлинг «Самурай»</a></div></nav>
+<div class="wrap">
+  
+    <section class="card" id="macbookbro">
+      <div class="card-head">
+        <div>
+          <h2>Макбучная</h2>
+          <div class="tags"><span class="tag">Техника Apple</span><span class="tag tag-price">от 90 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — дорогая техника, стабильный поток</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://macbookbro.orgs.biz/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-a/" target="_blank" rel="noopener">🖥 Вариант A</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-b/" target="_blank" rel="noopener">🖥 Вариант B</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-c/" target="_blank" rel="noopener">🖥 Вариант C</a><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=79867577351&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%92%D1%8B%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%91%D1%82%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D1%83%20Apple%2C%20%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%20%D1%83%20%D0%B2%D0%B0%D1%81%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%D0%BC%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80%D0%B5%20orgs.biz%20%E2%80%94%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B8%D1%85%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D1%8D%D1%82%D0%BE%20%D0%BF%D0%BE%D0%B4%D1%80%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%20%D0%B4%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D0%B5.%20%D0%9C%D1%8B%20%D1%83%D0%B6%D0%B5%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%BB%D0%B8%20%D0%B4%D0%BB%D1%8F%20%C2%AB%D0%9C%D0%B0%D0%BA%D0%B1%D1%83%D1%87%D0%BD%D0%BE%D0%B9%C2%BB%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%2C%203%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%3A%0A%0A%E2%96%AA%EF%B8%8F%20https%3A//averjahn.github.io/nn-restaurant-redesigns/macbookbro-a/%0A%E2%96%AA%EF%B8%8F%20https%3A//averjahn.github.io/nn-restaurant-redesigns/macbookbro-b/%0A%E2%96%AA%EF%B8%8F%20https%3A//averjahn.github.io/nn-restaurant-redesigns/macbookbro-c/%0A%0A%D0%92%D0%BD%D1%83%D1%82%D1%80%D0%B8%20%E2%80%94%20%D0%B2%D0%B5%D1%81%D1%8C%20%D0%B2%D0%B0%D1%88%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%2C%20SEO%20%D0%BF%D0%BE%D0%B4%20%C2%AB%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20macbook%20%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9%20%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%C2%BB%2C%20%D0%BA%D0%B0%D1%80%D1%82%D0%B0%2C%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B8%2C%20%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F.%20%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA%20%D0%BD%D0%B0%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B5%20%D0%B7%D0%B0%203%E2%80%935%20%D0%B4%D0%BD%D0%B5%D0%B9%2C%20%D0%BE%D1%82%2090%20000%20%E2%82%BD%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87.%0A%0A%D0%95%D1%81%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%81%D1%8F%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9-%D1%82%D0%BE%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%20%E2%80%94%20%D0%BE%D1%82%D0%B2%D0%B5%D1%87%D1%83%20%D0%BD%D0%B0%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.%0A8%20920%20040%2088%2001%20%C2%B7%20Telegram%20%40averjahn" target="_blank" rel="noopener">🟢 WhatsApp с готовым текстом</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Сайт на бесплатном конструкторе orgs.biz, без своего домена → 🟢 солидный сайт в стиле Apple на своём домене</li><li>Не находят в поиске (нет SEO) → 🟢 оптимизация под «купить macbook Нижний Новгород»</li><li>Дизайн из 2010-х, опечатки, дубли товаров → 🟢 три современных варианта, чистый каталог</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="tel:+79867577351" target="_blank" rel="noopener">Телефон: <b>+7 (986) 757-73-51</b></a> <a class="chip" href="https://vk.com/macbookbro" target="_blank" rel="noopener">VK: <b>vk.com/macbookbro</b></a></div>
+          <div class="channel">📢 WhatsApp (мобильный) — лучший канал. Дублировать в VK.</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_macbookbro">📋 Скопировать</button></div>
+        <textarea id="s_macbookbro" class="script" readonly rows="10">Здравствуйте! Вы продаёте технику Apple, а сайт у вас на бесплатном конструкторе orgs.biz — для дорогих покупок это подрывает доверие. Мы уже сделали для «Макбучной» новый сайт, 3 варианта на выбор:
+
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-a/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-b/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/macbookbro-c/
+
+Внутри — весь ваш каталог, SEO под «купить macbook Нижний Новгород», карта, кнопки связи, мобильная версия. Запуск на вашем домене за 3–5 дней, от 90 000 ₽ под ключ.
+
+Если понравился какой-то вариант — отвечу на вопросы.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="bogemia">
+      <div class="card-head">
+        <div>
+          <h2>Автомир Богемия (ŠKODA)</h2>
+          <div class="tags"><span class="tag">Автосалон</span><span class="tag tag-price">от 150 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — чек авто в сотни тыс. ₽</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://bogemia-nn.ru/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/bogemia-a/" target="_blank" rel="noopener">🖥 Вариант A</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/bogemia-b/" target="_blank" rel="noopener">🖥 Вариант B</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/bogemia-c/" target="_blank" rel="noopener">🖥 Вариант C</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>На сайте нет ни одной цены → 🟢 карточки моделей с ценой и заявкой</li><li>Нет мобильной версии и карты проезда → 🟢 mobile-first + карта с маршрутом</li><li>Акция датирована будущим числом (баг CMS), нет SEO → 🟢 актуальный контент, SEO-теги</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="https://bogemia-nn.ru/" target="_blank" rel="noopener">Сайт (форма): <b>bogemia-nn.ru</b></a></div>
+          <div class="channel">📢 Телефона нет — форма на сайте или email отдела маркетинга (уточнить у нас).</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_bogemia">📋 Скопировать</button></div>
+        <textarea id="s_bogemia" class="script" readonly rows="10">Здравствуйте! Автомир Богемия (ŠKODA) — а на сайте нет ни одной цены, нет мобильной версии и карты, а акция стоит будущим числом (баг CMS). Покупатель авто уходит туда, где цена видна сразу. Мы уже сделали 3 варианта нового сайта:
+
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/bogemia-a/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/bogemia-b/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/bogemia-c/
+
+Запуск на вашем домене за 3–5 дней, от 150 000 ₽ под ключ.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="loghouse">
+      <div class="card-head">
+        <div>
+          <h2>Gazebos Loghouse</h2>
+          <div class="tags"><span class="tag">Беседки, бани, банкеты</span><span class="tag tag-price">от 80 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — рейтинг 4.6★, 523 отзыва, живой спрос</div>
+      <div class="links-row"><span class="btn btn-orig disabled">🚫 Сайта нет</span><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/loghouse-a/" target="_blank" rel="noopener">🖥 Вариант A</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/loghouse-b/" target="_blank" rel="noopener">🖥 Вариант B</a> <a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/loghouse-c/" target="_blank" rel="noopener">🖥 Вариант C</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Своего сайта нет вообще → 🟢 полноценный сайт с нуля, 3 варианта</li><li>Клиенты гуглят «беседки с баней НН» и не находят → 🟢 SEO + попадание в поиск</li><li>Бронь только звонком → 🟢 каталог с ценами, карта, кнопки брони</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="tel:+78314133083" target="_blank" rel="noopener">Телефон: <b>+7 (831) 413-30-83</b></a></div>
+          <div class="channel">📢 Звонок (городской номер). Заход: «сделали вам сайт с нуля, сайта у вас ещё нет».</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_loghouse">📋 Скопировать</button></div>
+        <textarea id="s_loghouse" class="script" readonly rows="10">Здравствуйте! У «Gazebos Loghouse» отличные отзывы (4.6★), но своего сайта нет — а кто гуглит «беседки с баней Нижний Новгород», вас не находит и уходит к конкурентам. Мы уже сделали вам сайт с нуля, 3 варианта:
+
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/loghouse-a/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/loghouse-b/
+▪️ https://averjahn.github.io/nn-restaurant-redesigns/loghouse-c/
+
+Внутри: беседки и цены, баня, шатёр, карта, бронь. Запуск за 3–5 дней, от 80 000 ₽ под ключ.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="smailnn">
+      <div class="card-head">
+        <div>
+          <h2>Стоматология «Смайл»</h2>
+          <div class="tags"><span class="tag">Стоматология</span><span class="tag tag-price">от 180 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — импланты/ортодонтия, высокая маржа</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://smailnn.ru/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/smailnn/" target="_blank" rel="noopener">🖥 Наш сайт</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Сайт на http без HTTPS (небезопасно, штраф в выдаче) → 🟢 быстрый безопасный сайт</li><li>Нет мобильной версии, нет цен и онлайн-записи → 🟢 услуги, запись, карта, телефоны</li><li>Конструктор Nethouse, устаревший дизайн → 🟢 свой домен, современный дизайн</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="tel:+78314351905" target="_blank" rel="noopener">Телефон: <b>+7 (831) 435-19-05</b></a></div>
+          <div class="channel">📢 Звонок (городской номер).</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_smailnn">📋 Скопировать</button></div>
+        <textarea id="s_smailnn" class="script" readonly rows="10">Здравствуйте! «Смайл» работает с 2003 года, а сайт до сих пор на http без мобильной версии — пациенты со смартфонов уходят, и Яндекс понижает такой сайт. Мы уже сделали вам новый:
+
+❌ нет HTTPS и мобильной версии → 🟢 быстрый безопасный сайт под телефоны
+❌ нет цен и онлайн-записи → 🟢 услуги, запись, карта
+❌ конструктор Nethouse → 🟢 свой домен, современный дизайн
+
+https://averjahn.github.io/nn-restaurant-redesigns/smailnn/
+Запуск за 3–5 дней, от 180 000 ₽ под ключ.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="vetdrug">
+      <div class="card-head">
+        <div>
+          <h2>Ветцентр «ВетДруг»</h2>
+          <div class="tags"><span class="tag">Ветклиника 24/7</span><span class="tag tag-price">от 90 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — круглосуточно, 14 врачей, повторные клиенты</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://vetdrugnn.ru/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/vetdrug/" target="_blank" rel="noopener">🖥 Наш сайт</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Почти все фото на сайте — пустые квадраты-заглушки → 🟢 нормальные фото и блоки</li><li>Нет онлайн-записи, нет адресов и расписания филиалов → 🟢 запись, филиалы, карта 24/7</li><li>Слабое SEO, устаревший дизайн → 🟢 SEO-теги, современный дизайн</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="tel:+78312601369" target="_blank" rel="noopener">Телефон: <b>+7 (831) 260-13-69</b></a></div>
+          <div class="channel">📢 Звонок (городской номер).</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_vetdrug">📋 Скопировать</button></div>
+        <textarea id="s_vetdrug" class="script" readonly rows="10">Здравствуйте! ВетДруг работает круглосуточно, 14 врачей — а на сайте почти все фото пустые квадраты-заглушки, нет онлайн-записи и адресов филиалов. Владельцу питомца ночью это критично. Мы сделали новый сайт:
+
+❌ битые картинки везде → 🟢 нормальные фото и блоки
+❌ нет записи и расписания → 🟢 запись, филиалы, карта 24/7
+
+https://averjahn.github.io/nn-restaurant-redesigns/vetdrug/
+Запуск за 3–5 дней, от 90 000 ₽.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="zoomir">
+      <div class="card-head">
+        <div>
+          <h2>Ветклиника «ЗооМир»</h2>
+          <div class="tags"><span class="tag">Ветклиника 24/7</span><span class="tag tag-price">от 90 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — 3 филиала, стационар, гостиница</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://zoomir-nn.com/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/zoomir/" target="_blank" rel="noopener">🖥 Наш сайт</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Нет цен на услуги → 🟢 понятные услуги по филиалам</li><li>Копирайт «© 1997–2026» (баг), битые фото врачей → 🟢 команда и оборудование, корректный контент</li><li>Показаны 4 врача из 11 → 🟢 полная команда</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="https://t.me/+79991406272" target="_blank" rel="noopener">Telegram: <b>t.me/+79991406272</b></a> <a class="chip" href="tel:+78314132812" target="_blank" rel="noopener">Телефон: <b>+7 (831) 413-28-12</b></a></div>
+          <div class="channel">📢 Telegram (можно писать сразу) или звонок.</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_zoomir">📋 Скопировать</button></div>
+        <textarea id="s_zoomir" class="script" readonly rows="10">Здравствуйте! ЗооМир — 3 филиала, стационар, гостиница. Но на сайте нет цен, фото врачей битые, а в подвале «© 1997–2026» (баг). Мы уже сделали вам новый сайт:
+
+❌ нет цен на услуги → 🟢 понятные услуги по филиалам
+❌ битые фото врачей → 🟢 команда и оборудование
+
+https://averjahn.github.io/nn-restaurant-redesigns/zoomir/
+Запуск за 3–5 дней, от 90 000 ₽.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+    <section class="card" id="samurai">
+      <div class="card-head">
+        <div>
+          <h2>Детейлинг «Самурай»</h2>
+          <div class="tags"><span class="tag">Детейлинг авто</span><span class="tag tag-price">от 90 000 ₽</span></div>
+        </div>
+      </div>
+      <div class="solv">💰 Платёжеспособность: Высокая — владельцы премиум-авто, чек высокий</div>
+      <div class="links-row"><a class="btn btn-orig" href="https://samurainn.ru/" target="_blank" rel="noopener">🔗 Их текущий сайт</a><a class="btn btn-redesign" href="https://averjahn.github.io/nn-restaurant-redesigns/samurai/" target="_blank" rel="noopener">🖥 Наш сайт</a></div>
+      <div class="cols">
+        <div class="col">
+          <h3>Что не так у них (заход в разговоре)</h3>
+          <ul class="probs"><li>Цена «от 5 000» и тут же «от 20 000» — путает клиента → 🟢 чёткий прайс по услугам</li><li>Логотипы брендов — заглушки → 🟢 премиум-подача работ</li><li>Дубли услуг в меню, слабое SEO → 🟢 чистая структура + SEO</li></ul>
+        </div>
+        <div class="col">
+          <h3>Как связаться</h3>
+          <div class="contacts"><a class="chip" href="tel:+78314349743" target="_blank" rel="noopener">Телефон: <b>+7 (831) 434-97-43</b></a> <a class="chip" href="https://vk.com/asamurainn" target="_blank" rel="noopener">VK: <b>vk.com/asamurainn</b></a></div>
+          <div class="channel">📢 Звонок или VK.</div>
+        </div>
+      </div>
+      <div class="script-block">
+        <div class="script-head"><h3>Готовое сообщение</h3>
+          <button class="copy-btn" data-target="s_samurai">📋 Скопировать</button></div>
+        <textarea id="s_samurai" class="script" readonly rows="10">Здравствуйте! Детейлинг «Самурай», 600 м², 10+ лет — а на сайте цена «от 5 000» и тут же «от 20 000» (путает клиента), логотипы брендов — заглушки. Мы сделали новый сайт:
+
+❌ противоречивые цены → 🟢 чёткий прайс по услугам
+❌ заглушки вместо фото → 🟢 премиум-подача работ
+
+https://averjahn.github.io/nn-restaurant-redesigns/samurai/
+Запуск за 3–5 дней, от 90 000 ₽.
+8 920 040 88 01 · Telegram @averjahn</textarea>
+      </div>
+    </section>
+  <footer>Внутренний документ студии · цены «под ключ» включают домен, хостинг и настройку · обновлено вручную</footer>
+</div>
+<script>
+document.querySelectorAll('.copy-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const ta=document.getElementById(b.dataset.target);
+    navigator.clipboard.writeText(ta.value).then(()=>{
+      const t=b.textContent;b.textContent='✓ Скопировано';b.classList.add('done');
+      setTimeout(()=>{b.textContent=t;b.classList.remove('done')},1800);
+    });
+  });
+});
+</script>
+</body>
+</html>
