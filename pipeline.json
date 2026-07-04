@@ -679,6 +679,32 @@
           "event": "добавлен в лиды из портфолио"
         }
       ]
+    },
+    {
+      "slug": "avtosushi",
+      "name": "Автосуши (доставка суши/пицца/wok)",
+      "category": "Доставка суши",
+      "city": "Нижний Новгород",
+      "phone": "8 (800) 100-11-37",
+      "channels": {
+        "whatsapp": "",
+        "vk": "https://vk.com/avtosushi_avtopizza",
+        "telegram": "https://t.me/marketerasap",
+        "email": "vk@avtosushi.ru",
+        "site": "https://nn.avtosushi.ru/"
+      },
+      "status": "redesign-done",
+      "price": 110000,
+      "variants": [
+        "avtosushi"
+      ],
+      "notes": "ordering-редизайн: 74 позиции меню с ценами, корзина, оформление",
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "редизайн собран (меню+корзина) и задеплоен"
+        }
+      ]
     }
   ]
 }

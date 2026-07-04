@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автосуши — доставка суши, роллов, пиццы и wok в Нижнем Новгороде</title>
+<meta name="description" content="Автосуши — доставка суши, роллов, пиццы, wok, бургеров и десертов в Нижнем Новгороде. Свежие ингредиенты, быстрая доставка. Заказ онлайн: 8 800 100-11-37.">
+<meta name="theme-color" content="#111318">
+<meta property="og:title" content="Автосуши — доставка суши и роллов в Нижнем Новгороде">
+<meta property="og:description" content="Роллы, суши, пицца, wok, бургеры. Быстрая доставка. Заказ онлайн.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#ffffff;--bg2:#f6f4f0;--card:#ffffff;--line:#eceae5;--ink:#16130f;--muted:#7d7970;
+    --red:#e23b3b;--red-d:#c22a2a;--wasabi:#4a7c33;--gold:#f0a500;
+    --container:1180px;--radius:18px;
+  }
+  html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:hidden}
+  body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+  .display{font-family:'Unbounded',sans-serif}
+  /* header */
+  .hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hdr-in{display:flex;align-items:center;gap:16px;height:64px}
+  .logo{font-family:'Unbounded';font-weight:800;font-size:22px;letter-spacing:-.02em;flex-shrink:0;white-space:nowrap}
+  .logo b{color:var(--red)}
+  .hdr-phone{margin-left:auto;font-weight:800;font-size:15px;white-space:nowrap;overflow-wrap:anywhere}
+  .hdr-phone span{color:var(--muted);font-weight:600;font-size:12px;display:block}
+  .cart-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:10px 16px;border-radius:12px;font-weight:800;font-size:14px;flex-shrink:0}
+  .cart-btn:hover{background:var(--red-d)}
+  .cart-btn .cnt{background:#fff;color:var(--red);border-radius:20px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;padding:0 6px}
+  /* hero */
+  .hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.25) 0%,rgba(10,8,6,.82) 100%);z-index:1}
+  .hero-in{position:relative;z-index:2;padding:56px 0 44px;max-width:640px}
+  .hero .eyebrow{display:inline-flex;gap:8px;align-items:center;background:var(--red);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:800;margin-bottom:16px}
+  .hero h1{font-size:clamp(32px,6vw,60px);font-weight:800;line-height:1.05;margin-bottom:14px;overflow-wrap:anywhere}
+  .hero p{font-size:clamp(15px,2vw,19px);opacity:.92;max-width:520px;margin-bottom:26px}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:800;font-size:15px;transition:.2s}
+  .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.5)}.btn-ghost:hover{background:rgba(255,255,255,.25)}
+  /* advantages */
+  .adv{background:var(--bg2);padding:22px 0}
+  .adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .adv-i{display:flex;gap:12px;align-items:center;min-width:0}
+  .adv-i .ic{font-size:26px;flex-shrink:0}
+  .adv-i b{font-size:15px}.adv-i span{font-size:12.5px;color:var(--muted);display:block}
+  /* menu */
+  .menu{padding:44px 0 60px}
+  .menu h2{font-size:clamp(26px,4vw,40px);font-weight:800;margin-bottom:6px}
+  .menu .sub{color:var(--muted);margin-bottom:22px}
+  .tabs{position:sticky;top:64px;z-index:40;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:8px;background:var(--bg);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:9px 16px;border-radius:20px;background:var(--bg2);color:var(--ink);font-weight:700;font-size:14px;white-space:nowrap;border:1.5px solid transparent}
+  .tab.active{background:var(--ink);color:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:.2s}
+  .card:hover{box-shadow:0 12px 30px rgba(20,15,10,.09);transform:translateY(-3px)}
+  .card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+  .card-media img{width:100%;height:100%;object-fit:cover}
+  .hit-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:20px}
+  .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .card-body h3{font-size:15.5px;font-weight:700;margin-bottom:5px;overflow-wrap:anywhere}
+  .card-body p{font-size:12.5px;color:var(--muted);margin-bottom:14px;flex:1}
+  .card-foot{display:flex;align-items:center;gap:10px;margin-top:auto}
+  .price{font-family:'Unbounded';font-weight:700;font-size:18px;white-space:nowrap}
+  .add{margin-left:auto;background:var(--red);color:#fff;border-radius:10px;padding:9px 15px;font-weight:800;font-size:13px;flex-shrink:0}
+  .add:hover{background:var(--red-d)}
+  .add.inrow{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);color:var(--ink);padding:6px 8px}
+  .qbtn{width:26px;height:26px;border-radius:8px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:16px;display:inline-flex;align-items:center;justify-content:center}
+  .qn{min-width:18px;text-align:center;font-weight:800}
+  /* cart overlay (clipping context — предотвращает горизонтальный overflow) */
+  .ov{position:fixed;inset:0;z-index:200;background:rgba(10,8,6,.5);overflow:hidden;opacity:0;visibility:hidden;transition:.3s}
+  .ov.open{opacity:1;visibility:visible}
+  .cart{position:absolute;top:0;right:0;bottom:0;width:min(410px,100vw);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1)}
+  .ov.open .cart{transform:none}
+  .cart-h{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+  .cart-h h3{font-size:19px;font-weight:800}
+  .x{width:36px;height:36px;border-radius:10px;background:var(--bg2);font-size:20px;display:flex;align-items:center;justify-content:center}
+  .cart-items{flex:1;overflow-y:auto;padding:8px 20px}
+  .ci{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+  .ci img{width:60px;height:60px;border-radius:12px;object-fit:cover;flex-shrink:0}
+  .ci-b{flex:1;min-width:0}
+  .ci-b h4{font-size:14px;font-weight:700;overflow-wrap:anywhere}
+  .ci-b .p{color:var(--muted);font-size:13px}
+  .ci-q{display:flex;align-items:center;gap:8px;margin-top:6px}
+  .cart-empty{padding:60px 20px;text-align:center;color:var(--muted)}
+  .cart-f{padding:18px 20px;border-top:1px solid var(--line)}
+  .cart-total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:14px}
+  .cart-f .btn-red{width:100%;justify-content:center}
+  /* order modal */
+  .modal{position:fixed;inset:0;z-index:210;background:rgba(10,8,6,.55);display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-box{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:26px}
+  .modal-box h3{font-size:22px;font-weight:800;margin-bottom:6px}
+  .modal-box .sub{color:var(--muted);margin-bottom:18px;font-size:14px}
+  .fld{margin-bottom:12px}
+  .fld input{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit}
+  .fld input:focus{outline:none;border-color:var(--red)}
+  .ok{text-align:center;padding:20px 0}
+  .ok .em{font-size:52px}
+  .ok h3{margin:10px 0 6px}
+  /* footer */
+  .ftr{background:var(--ink);color:#cfc9c0;padding:44px 0 30px;margin-top:20px}
+  .ftr-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;margin-bottom:26px}
+  .ftr h4{color:#fff;font-size:16px;margin-bottom:12px}
+  .ftr a{color:#cfc9c0;display:block;margin-bottom:7px;font-size:14px;overflow-wrap:anywhere}
+  .ftr a:hover{color:#fff}
+  .ftr .logo{color:#fff;margin-bottom:10px}
+  .ftr-bottom{border-top:1px solid #2a2620;padding-top:18px;font-size:13px;color:#8b857c;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+  @media(max-width:860px){.ftr-grid{grid-template-columns:1fr 1fr}.adv-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){
+    .hdr-phone{display:none}
+    .ftr-grid{grid-template-columns:1fr}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+    .card-body{padding:11px 12px 13px}
+    .add{padding:8px 12px}
+    .logo{font-size:19px}
+  }
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="container hdr-in">
+    <a href="#top" class="logo">АВТО<b>СУШИ</b></a>
+    <a href="tel:88001001137" class="hdr-phone">8 (800) 100-11-37<span>ежедневно · доставка</span></a>
+    <button class="cart-btn" id="cartOpen">🛒 Корзина <span class="cnt" id="cnt">0</span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="assets/hero.jpg" alt="Ассорти суши и роллов Автосуши" fetchpriority="high" onerror="this.style.opacity='0'">
+  <div class="container hero-in">
+    <span class="eyebrow">🚗 Доставка по Нижнему Новгороду</span>
+    <h1 class="display">Суши, роллы, пицца и wok — быстро и вкусно</h1>
+    <p>Свежие ингредиенты, честные порции и доставка к двери. Собирайте заказ прямо на сайте.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-red">Смотреть меню</a>
+      <a href="tel:88001001137" class="btn btn-ghost">📞 Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<section class="adv">
+  <div class="container adv-grid">
+    <div class="adv-i"><span class="ic">🍣</span><div><b>Свежее каждый день</b><span>готовим под заказ</span></div></div>
+    <div class="adv-i"><span class="ic">🚀</span><div><b>Быстрая доставка</b><span>по всему городу</span></div></div>
+    <div class="adv-i"><span class="ic">💳</span><div><b>Удобная оплата</b><span>онлайн и при получении</span></div></div>
+    <div class="adv-i"><span class="ic">🎁</span><div><b>Акции и бонусы</b><span>программа лояльности</span></div></div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="container">
+    <h2 class="display">Меню</h2>
+    <p class="sub">Более 70 позиций: роллы, суши, пицца, wok, бургеры и десерты</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="container">
+    <div class="ftr-grid">
+      <div>
+        <div class="logo display">АВТО<b style="color:var(--red)">СУШИ</b></div>
+        <p style="font-size:14px;color:#a8a299">Доставка суши, роллов, пиццы и wok в Нижнем Новгороде. Кафе самообслуживания с высокими стандартами качества.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:88001001137">8 (800) 100-11-37</a>
+        <a href="mailto:vk@avtosushi.ru">vk@avtosushi.ru</a>
+        <a href="https://vk.com/avtosushi_avtopizza" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://t.me/marketerasap" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div>
+        <h4>Информация</h4>
+        <a href="#menu">Меню</a>
+        <a href="#top">Доставка и оплата</a>
+        <a href="#top">Акции</a>
+        <a href="#top">Программа лояльности</a>
+      </div>
+    </div>
+    <div class="ftr-bottom"><span>© 2026 Автосуши · Нижний Новгород</span><span>Доставка суши и роллов</span></div>
+  </div>
+</footer>
+
+<!-- cart -->
+<div class="ov" id="cartOv">
+  <aside class="cart" id="cart">
+    <div class="cart-h"><h3>Корзина</h3><button class="x" id="cartClose">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-f">
+      <div class="cart-total"><span>Итого</span><span id="total">0 ₽</span></div>
+      <button class="btn btn-red" id="checkout">Оформить заказ</button>
+    </div>
+  </aside>
+</div>
+
+<!-- order modal -->
+<div class="modal" id="orderModal">
+  <div class="modal-box">
+    <div id="orderForm">
+      <h3>Оформление заказа</h3>
+      <p class="sub">Оставьте контакты — перезвоним и подтвердим</p>
+      <form id="form">
+        <div class="fld"><input type="text" placeholder="Ваше имя" required></div>
+        <div class="fld"><input type="tel" placeholder="Телефон" required></div>
+        <div class="fld"><input type="text" placeholder="Адрес доставки" required></div>
+        <button type="submit" class="btn btn-red" style="width:100%;justify-content:center">Отправить заказ</button>
+        <button type="button" class="btn" id="orderCancel" style="width:100%;justify-content:center;color:var(--muted);margin-top:8px">Отмена</button>
+      </form>
+    </div>
+    <div class="ok" id="orderOk" hidden>
+      <div class="em">✅</div>
+      <h3>Заказ принят!</h3>
+      <p class="sub">Мы перезвоним вам в ближайшее время для подтверждения.</p>
+      <button class="btn btn-red" id="okClose" style="justify-content:center">Хорошо</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const MENU=[{"id": 1, "name": "Сет «3 ролла»", "price": 999, "cat": "set", "desc": "Три популярных ролла в одном наборе", "hit": true, "img": "assets/set.jpg"}, {"id": 2, "name": "Сет «Обед»", "price": 990, "cat": "set", "desc": "Сытный набор на обед", "hit": false, "img": "assets/set.jpg"}, {"id": 3, "name": "Комбо «Очень много для двоих»", "price": 2280, "cat": "set", "desc": "Большой набор на компанию", "hit": true, "img": "assets/set.jpg"}, {"id": 4, "name": "Комбо «Только для тебя»", "price": 930, "cat": "set", "desc": "Персональный набор", "hit": false, "img": "assets/set.jpg"}, {"id": 5, "name": "Комбо «Когда много работы»", "price": 550, "cat": "set", "desc": "Быстрый перекус на работе", "hit": false, "img": "assets/set.jpg"}, {"id": 6, "name": "Ролл Филадельфия с нектарином", "price": 559, "cat": "rolls", "desc": "Лосось, сыр, нектарин", "hit": true, "img": "assets/rolls.jpg"}, {"id": 7, "name": "Ролл с лососем", "price": 285, "cat": "rolls", "desc": "Классика с лососем", "hit": true, "img": "assets/rolls.jpg"}, {"id": 8, "name": "Ролл с лососем и огурцом", "price": 285, "cat": "rolls", "desc": "Лосось, огурец", "hit": false, "img": "assets/rolls.jpg"}, {"id": 9, "name": "Ролл с угрём", "price": 285, "cat": "rolls", "desc": "Копчёный угорь, соус унаги", "hit": false, "img": "assets/rolls.jpg"}, {"id": 10, "name": "Ролл с угрём и огурцом", "price": 280, "cat": "rolls", "desc": "Угорь, огурец", "hit": false, "img": "assets/rolls.jpg"}, {"id": 11, "name": "Ролл с тунцом", "price": 280, "cat": "rolls", "desc": "Свежий тунец", "hit": false, "img": "assets/rolls.jpg"}, {"id": 12, "name": "Ролл с креветкой", "price": 230, "cat": "rolls", "desc": "Тигровая креветка", "hit": false, "img": "assets/rolls.jpg"}, {"id": 13, "name": "Ролл с креветкой и огурцом", "price": 240, "cat": "rolls", "desc": "Креветка, огурец", "hit": false, "img": "assets/rolls.jpg"}, {"id": 14, "name": "Ролл с авокадо", "price": 185, "cat": "rolls", "desc": "Вегетарианский", "hit": false, "img": "assets/rolls.jpg"}, {"id": 15, "name": "Ролл с огурцом", "price": 175, "cat": "rolls", "desc": "Лёгкий и хрустящий", "hit": false, "img": "assets/rolls.jpg"}, {"id": 16, "name": "Веган ролл", "price": 210, "cat": "rolls", "desc": "Без продуктов животного происхождения", "hit": false, "img": "assets/rolls.jpg"}, {"id": 17, "name": "Ролл Спайс с лососем", "price": 295, "cat": "spice", "desc": "Лосось, спайс-соус", "hit": true, "img": "assets/spicy.jpg"}, {"id": 18, "name": "Ролл Спайс с тунцом", "price": 295, "cat": "spice", "desc": "Тунец, спайс-соус", "hit": false, "img": "assets/spicy.jpg"}, {"id": 19, "name": "Ролл Спайс с угрём", "price": 295, "cat": "spice", "desc": "Угорь, спайс-соус", "hit": false, "img": "assets/spicy.jpg"}, {"id": 20, "name": "Ролл Спайс с креветкой", "price": 250, "cat": "spice", "desc": "Креветка, спайс-соус", "hit": false, "img": "assets/spicy.jpg"}, {"id": 21, "name": "Запечённые гунканы с лососем, 2 шт", "price": 320, "cat": "baked", "desc": "Под сырной шапкой", "hit": false, "img": "assets/baked.jpg"}, {"id": 22, "name": "Запечённые гунканы с угрём, 2 шт", "price": 300, "cat": "baked", "desc": "Под сырной шапкой", "hit": false, "img": "assets/baked.jpg"}, {"id": 23, "name": "Запечённые гунканы с тунцом, 2 шт", "price": 300, "cat": "baked", "desc": "Под сырной шапкой", "hit": false, "img": "assets/baked.jpg"}, {"id": 24, "name": "Запечённые гунканы с креветками, 2 шт", "price": 300, "cat": "baked", "desc": "Под сырной шапкой", "hit": false, "img": "assets/baked.jpg"}, {"id": 25, "name": "Ролл Марс", "price": 580, "cat": "hot", "desc": "Сытный горячий ролл", "hit": true, "img": "assets/hot.jpg"}, {"id": 26, "name": "Ролл Шанхай", "price": 480, "cat": "hot", "desc": "Хрустящий в темпуре", "hit": false, "img": "assets/hot.jpg"}, {"id": 27, "name": "Ролл Эби Лава", "price": 430, "cat": "hot", "desc": "С креветкой, острый", "hit": false, "img": "assets/hot.jpg"}, {"id": 28, "name": "Ролл Унаги спайс темпура (панко)", "price": 430, "cat": "hot", "desc": "Угорь, панко, спайс", "hit": false, "img": "assets/hot.jpg"}, {"id": 29, "name": "Ролл Сакура", "price": 380, "cat": "hot", "desc": "Нежный горячий ролл", "hit": false, "img": "assets/hot.jpg"}, {"id": 30, "name": "Ролл Мураками (панко)", "price": 350, "cat": "hot", "desc": "В хрустящей панировке", "hit": false, "img": "assets/hot.jpg"}, {"id": 31, "name": "Сэндвич-ролл с лососем", "price": 450, "cat": "hot", "desc": "Тёплый сэндвич-ролл", "hit": false, "img": "assets/hot.jpg"}, {"id": 32, "name": "Тортилья-ролл с говядиной", "price": 340, "cat": "hot", "desc": "В тортилье, сытный", "hit": false, "img": "assets/hot.jpg"}, {"id": 33, "name": "Суши с лососем", "price": 195, "cat": "sushi", "desc": "Нигири с лососем", "hit": false, "img": "assets/sushi.jpg"}, {"id": 34, "name": "Суши с креветкой", "price": 160, "cat": "sushi", "desc": "Нигири с креветкой", "hit": false, "img": "assets/sushi.jpg"}, {"id": 35, "name": "Суши с тунцом", "price": 155, "cat": "sushi", "desc": "Нигири с тунцом", "hit": false, "img": "assets/sushi.jpg"}, {"id": 36, "name": "Суши с угрём", "price": 155, "cat": "sushi", "desc": "Нигири с угрём", "hit": false, "img": "assets/sushi.jpg"}, {"id": 37, "name": "Гунканы с лососем, 2 шт", "price": 310, "cat": "sushi", "desc": "Гункан-маки", "hit": false, "img": "assets/sushi.jpg"}, {"id": 38, "name": "Гунканы с креветкой, 2 шт", "price": 310, "cat": "sushi", "desc": "Гункан-маки", "hit": false, "img": "assets/sushi.jpg"}, {"id": 39, "name": "Пицца Сыр-сыр", "price": 450, "cat": "pizza", "desc": "Четыре вида сыра", "hit": true, "img": "assets/pizza.jpg"}, {"id": 40, "name": "Пицца Мясной пир", "price": 400, "cat": "pizza", "desc": "Ассорти из мяса", "hit": false, "img": "assets/pizza.jpg"}, {"id": 41, "name": "Пицца Змей Горыныч", "price": 400, "cat": "pizza", "desc": "Острая, с пепперони", "hit": false, "img": "assets/pizza.jpg"}, {"id": 42, "name": "Пицца Ветчина-грибы", "price": 400, "cat": "pizza", "desc": "Классика", "hit": false, "img": "assets/pizza.jpg"}, {"id": 43, "name": "Пицца Сливочная пепперони", "price": 400, "cat": "pizza", "desc": "Пепперони, сливочный соус", "hit": false, "img": "assets/pizza.jpg"}, {"id": 44, "name": "Пицца Цезарь", "price": 400, "cat": "pizza", "desc": "Курица, соус цезарь", "hit": false, "img": "assets/pizza.jpg"}, {"id": 45, "name": "Пицца Бургер", "price": 390, "cat": "pizza", "desc": "Со вкусом бургера", "hit": false, "img": "assets/pizza.jpg"}, {"id": 46, "name": "Пицца С нектарином и дорблю", "price": 390, "cat": "pizza", "desc": "Сладко-солёная", "hit": false, "img": "assets/pizza.jpg"}, {"id": 47, "name": "Удон Том Ям", "price": 510, "cat": "wok", "desc": "Острый удон в стиле Том Ям", "hit": true, "img": "assets/wok.jpg"}, {"id": 48, "name": "Удон с креветками и овощами", "price": 555, "cat": "wok", "desc": "Пшеничная лапша, креветки", "hit": false, "img": "assets/wok.jpg"}, {"id": 49, "name": "Удон с курицей и овощами", "price": 410, "cat": "wok", "desc": "Пшеничная лапша, курица", "hit": false, "img": "assets/wok.jpg"}, {"id": 50, "name": "Гречневая лапша с курицей и овощами", "price": 410, "cat": "wok", "desc": "Соба с курицей", "hit": false, "img": "assets/wok.jpg"}, {"id": 51, "name": "Яичная лапша со свининой и овощами", "price": 440, "cat": "wok", "desc": "Свинина, овощи", "hit": false, "img": "assets/wok.jpg"}, {"id": 52, "name": "Рис с креветками и овощами", "price": 555, "cat": "wok", "desc": "Обжаренный рис", "hit": false, "img": "assets/wok.jpg"}, {"id": 53, "name": "Паста Феттучини с креветками", "price": 530, "cat": "wok", "desc": "Сливочный соус", "hit": false, "img": "assets/wok.jpg"}, {"id": 54, "name": "Острая Фунчоза со свининой", "price": 430, "cat": "wok", "desc": "Стеклянная лапша", "hit": false, "img": "assets/wok.jpg"}, {"id": 55, "name": "Бургер с жареным беконом", "price": 395, "cat": "burger", "desc": "Говядина, бекон", "hit": true, "img": "assets/burger.jpg"}, {"id": 56, "name": "Бургер Классика", "price": 330, "cat": "burger", "desc": "Классический чизбургер", "hit": false, "img": "assets/burger.jpg"}, {"id": 57, "name": "Чикенбургер", "price": 310, "cat": "burger", "desc": "Куриная котлета", "hit": false, "img": "assets/burger.jpg"}, {"id": 58, "name": "Чизбургер", "price": 310, "cat": "burger", "desc": "Двойной сыр", "hit": false, "img": "assets/burger.jpg"}, {"id": 59, "name": "Поке с лососем", "price": 555, "cat": "poke", "desc": "Рис, лосось, овощи", "hit": true, "img": "assets/poke.jpg"}, {"id": 60, "name": "Поке с креветкой", "price": 555, "cat": "poke", "desc": "Рис, креветка, овощи", "hit": false, "img": "assets/poke.jpg"}, {"id": 61, "name": "Салат Эби Микс", "price": 490, "cat": "poke", "desc": "С креветками", "hit": false, "img": "assets/poke.jpg"}, {"id": 62, "name": "Салат Токио", "price": 420, "cat": "poke", "desc": "Свежий японский салат", "hit": false, "img": "assets/poke.jpg"}, {"id": 63, "name": "Салат Пекинский микс", "price": 315, "cat": "poke", "desc": "Лёгкий овощной", "hit": false, "img": "assets/poke.jpg"}, {"id": 64, "name": "Бабл-лимонад Клубника", "price": 217, "cat": "drink", "desc": "Освежающий лимонад", "hit": false, "img": "assets/drink.jpg"}, {"id": 65, "name": "Молочный коктейль Шоколадный", "price": 190, "cat": "drink", "desc": "Густой коктейль", "hit": false, "img": "assets/drink.jpg"}, {"id": 66, "name": "Молочный коктейль Клубничный", "price": 190, "cat": "drink", "desc": "Густой коктейль", "hit": false, "img": "assets/drink.jpg"}, {"id": 67, "name": "Кофе Латте 300 мл", "price": 175, "cat": "drink", "desc": "На выбор зёрен", "hit": false, "img": "assets/drink.jpg"}, {"id": 68, "name": "Кофе Капучино 300 мл", "price": 175, "cat": "drink", "desc": "На выбор зёрен", "hit": false, "img": "assets/drink.jpg"}, {"id": 69, "name": "Чай в чайнике", "price": 210, "cat": "drink", "desc": "Чёрный или зелёный", "hit": false, "img": "assets/drink.jpg"}, {"id": 70, "name": "Ролл Банан & Киви", "price": 420, "cat": "dessert", "desc": "Сладкий ролл", "hit": true, "img": "assets/dessert.jpg"}, {"id": 71, "name": "Ролл Тропик", "price": 410, "cat": "dessert", "desc": "Сладкий ролл", "hit": false, "img": "assets/dessert.jpg"}, {"id": 72, "name": "Трайфл Автосуши", "price": 450, "cat": "dessert", "desc": "Фирменный десерт", "hit": false, "img": "assets/dessert.jpg"}, {"id": 73, "name": "Эклер Сникерс", "price": 220, "cat": "dessert", "desc": "Шоколад, карамель, арахис", "hit": false, "img": "assets/dessert.jpg"}, {"id": 74, "name": "Эклер Малина", "price": 220, "cat": "dessert", "desc": "С малиновым кремом", "hit": false, "img": "assets/dessert.jpg"}];
+const CATS=[{"key": "all", "name": "Хиты"}, {"key": "rolls", "name": "Роллы"}, {"key": "spice", "name": "Спайс-роллы"}, {"key": "baked", "name": "Запечённые"}, {"key": "hot", "name": "Горячие роллы"}, {"key": "sushi", "name": "Суши и гунканы"}, {"key": "set", "name": "Сеты и комбо"}, {"key": "pizza", "name": "Пицца"}, {"key": "wok", "name": "Wok и лапша"}, {"key": "burger", "name": "Бургеры"}, {"key": "poke", "name": "Поке и салаты"}, {"key": "drink", "name": "Напитки"}, {"key": "dessert", "name": "Десерты"}];
+let cart={};
+const $=s=>document.querySelector(s);
+const money=n=>n.toLocaleString('ru-RU')+' ₽';
+
+function renderTabs(active){
+  const box=$('#tabs');box.innerHTML='';
+  CATS.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='tab'+(c.key===active?' active':'');
+    b.textContent=c.name;
+    b.onclick=()=>{renderTabs(c.key);renderGrid(c.key);};
+    box.appendChild(b);
+  });
+}
+function renderGrid(cat){
+  const grid=$('#grid');grid.innerHTML='';
+  const list = cat==='all' ? MENU.filter(m=>m.hit).concat(MENU.filter(m=>!m.hit)) : MENU.filter(m=>m.cat===cat);
+  list.forEach(p=>{
+    const q=cart[p.id]||0;
+    const card=document.createElement('div');card.className='card';
+    card.innerHTML=`
+      <div class="card-media">${p.hit?'<span class="hit-badge">ХИТ</span>':''}<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.opacity='0'"></div>
+      <div class="card-body">
+        <h3>${p.name}</h3><p>${p.desc||''}</p>
+        <div class="card-foot">
+          <span class="price">${money(p.price)}</span>
+          ${q>0
+            ? `<span class="add inrow"><button class="qbtn" data-m="${p.id}">−</button><span class="qn">${q}</span><button class="qbtn" data-p="${p.id}">+</button></span>`
+            : `<button class="add" data-add="${p.id}">В корзину</button>`}
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+  grid.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{addItem(+b.dataset.add);});
+  grid.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{addItem(+b.dataset.p);});
+  grid.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{removeItem(+b.dataset.m);});
+}
+function addItem(id){cart[id]=(cart[id]||0)+1;sync();}
+function removeItem(id){cart[id]=(cart[id]||0)-1;if(cart[id]<=0)delete cart[id];sync();}
+function count(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function total(){return Object.entries(cart).reduce((s,[id,q])=>s+MENU.find(m=>m.id==id).price*q,0);}
+function sync(){
+  $('#cnt').textContent=count();
+  $('#total').textContent=money(total());
+  const active=document.querySelector('.tab.active');renderGrid(active?active.textContent&&CATS.find(c=>c.name===active.textContent).key:'all');
+  renderCart();
+}
+function renderCart(){
+  const box=$('#cartItems');
+  const ids=Object.keys(cart);
+  if(!ids.length){box.innerHTML='<div class="cart-empty">🛒<br>Корзина пуста<br><small>Добавьте что-нибудь из меню</small></div>';return;}
+  box.innerHTML='';
+  ids.forEach(id=>{
+    const p=MENU.find(m=>m.id==id),q=cart[id];
+    const el=document.createElement('div');el.className='ci';
+    el.innerHTML=`<img src="${p.img}" alt="${p.name}" onerror="this.style.visibility='hidden'">
+      <div class="ci-b"><h4>${p.name}</h4><div class="p">${money(p.price)}</div>
+        <div class="ci-q"><button class="qbtn" data-m="${p.id}">−</button><span class="qn">${q}</span><button class="qbtn" data-p="${p.id}">+</button></div>
+      </div>`;
+    box.appendChild(el);
+  });
+  box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>addItem(+b.dataset.p));
+  box.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>removeItem(+b.dataset.m));
+}
+$('#cartOpen').onclick=()=>$('#cartOv').classList.add('open');
+$('#cartClose').onclick=()=>$('#cartOv').classList.remove('open');
+$('#cartOv').onclick=e=>{if(e.target.id==='cartOv')$('#cartOv').classList.remove('open');};
+$('#checkout').onclick=()=>{if(count()>0){$('#cartOv').classList.remove('open');$('#orderModal').classList.add('open');}};
+$('#orderCancel').onclick=()=>$('#orderModal').classList.remove('open');
+$('#form').onsubmit=e=>{e.preventDefault();$('#orderForm').hidden=true;$('#orderOk').hidden=false;cart={};sync();};
+$('#okClose').onclick=()=>{$('#orderModal').classList.remove('open');$('#orderForm').hidden=false;$('#orderOk').hidden=true;$('#form').reset();};
+renderTabs('all');renderGrid('all');renderCart();
+</script>
+</body>
+</html>

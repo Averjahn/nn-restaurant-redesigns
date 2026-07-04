@@ -148,5 +148,10 @@
     "approved": false,
     "price": 90000,
     "approvedAt": null
+  },
+  "avtosushi": {
+    "approved": false,
+    "price": 110000,
+    "approvedAt": null
   }
 }
