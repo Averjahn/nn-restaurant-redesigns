@@ -1,7 +1,7 @@
-/* ===== Русская Выпечка — тёплый дружелюбный фастфуд (кремовый + янтарь) ===== */
+/* ===== Русская Выпечка — свежий фермерский: тёплый крем + травяной зелёный + терракота ===== */
 :root{
-  --bg:#fff8ee;--bg2:#fffdf9;--card:#fffdf9;--line:#efe4d2;--ink:#2a1f17;--muted:#9a8975;
-  --amber:#f2a900;--amber-dark:#d98e00;--red:#c8321f;--shadow:0 16px 40px rgba(120,80,20,.13);
+  --bg:#f6f4ea;--bg2:#fdfdf7;--card:#fdfdf7;--line:#e4e6d5;--ink:#20261a;--muted:#7f8a72;
+  --amber:#2f8f3e;--amber-dark:#236f30;--red:#c1502e;--shadow:0 16px 40px rgba(40,70,30,.13);
 }
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}

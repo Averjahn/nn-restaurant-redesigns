@@ -1,7 +1,7 @@
-/* ===== Шашлык52 — светлый современный доставочный, красный акцент ===== */
+/* ===== Шашлык52 — тёплый крафтовый мангал: кремовый + ember-оранжевый + уголь ===== */
 :root{
-  --bg:#fff;--bg2:#fbf7f3;--card:#fff;--line:#ececec;--ink:#1c1a18;--muted:#8a8580;
-  --red:#e11d2a;--red-dark:#c0121e;--warm:#fff4ed;--shadow:0 14px 40px rgba(0,0,0,.08);
+  --bg:#f7f1e8;--bg2:#fdfaf4;--card:#fffdf8;--line:#e6dccc;--ink:#241b12;--muted:#8a7d6c;
+  --red:#e0561f;--red-dark:#b83f12;--warm:#fbead9;--shadow:0 14px 40px rgba(80,50,20,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
