@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "statuses": [
     "found",
     "redesign-done",
@@ -236,7 +236,7 @@
         "email": "",
         "site": "https://restoranoka.ru/"
       },
-      "status": "found",
+      "status": "redesign-done",
       "reason": "счётчик акции истёк 01.05.2024 — сайт выглядит заброшенным; устаревший дизайн; нет онлайн-брони; под вопросом мобильная версия и HTTPS",
       "price": 150000,
       "solvency": "высокая",
@@ -245,7 +245,14 @@
         {
           "date": "2026-07-03",
           "event": "найден через ресерч, аудит сайта проведён"
+        },
+        {
+          "date": "2026-07-04",
+          "event": "редизайн (oka) в галерее"
         }
+      ],
+      "variants": [
+        "oka"
       ]
     },
     {
@@ -385,6 +392,292 @@
       ],
       "variants": [
         "samurai"
+      ]
+    },
+    {
+      "slug": "onegin",
+      "name": "Онегинъ",
+      "category": "Клуб-ресторан",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://onegin-nn.ru/"
+      },
+      "status": "redesign-done",
+      "price": 70000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "onegin"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "kupets",
+      "name": "Купеческий",
+      "category": "Ресторан русской кухни",
+      "city": "Нижний Новгород",
+      "phone": "+7 (910) 380-02-22",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://www.kupets-nn.ru/"
+      },
+      "status": "redesign-done",
+      "price": 70000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "kupets"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "legenda",
+      "name": "Легенда Чайхана",
+      "category": "Чайхана / узбекская",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://chajhana-legenda.clients.site/"
+      },
+      "status": "redesign-done",
+      "price": 70000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "legenda"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "shashlyk52",
+      "name": "Шашлык52",
+      "category": "Доставка шашлыка",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://shashlyk52.ru/"
+      },
+      "status": "redesign-done",
+      "price": 65000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "shashlyk52"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "vypechka",
+      "name": "Русская Выпечка",
+      "category": "Доставка еды",
+      "city": "Нижний Новгород",
+      "phone": "+7 (910) 790-44-48",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://www.dostavkann24.ru/"
+      },
+      "status": "redesign-done",
+      "price": 65000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "vypechka"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "coffeemolly",
+      "name": "Coffee Molly",
+      "category": "Кофейня + школа бариста",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://coffeemolly.ru/"
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "coffeemolly"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "hygge",
+      "name": "Кофехюгге",
+      "category": "Кофейня",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://coffeehyggenn.tilda.ws/"
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "hygge"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "cuppcake",
+      "name": "CuPPcake",
+      "category": "ПП-десерты",
+      "city": "Нижний Новгород",
+      "phone": "+7 (950) 376-63-17",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": "https://cuppcake.ru/"
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "портфолио-редизайн; заход мягкий (сравнить с их сайтом)",
+      "variants": [
+        "cuppcake"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "lagom",
+      "name": "Lägom Кофе",
+      "category": "Скандинавская кофейня",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": ""
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "своего сайта нет — заход «сделали вам сайт»",
+      "variants": [
+        "lagom"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "chertochka",
+      "name": "Чёрточка",
+      "category": "Кофейня",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": ""
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "своего сайта нет — заход «сделали вам сайт»",
+      "variants": [
+        "chertochka"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
+      ]
+    },
+    {
+      "slug": "ps",
+      "name": "P.S. Кондитерская",
+      "category": "Кондитерская-кофейня",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "channels": {
+        "whatsapp": "",
+        "vk": "",
+        "telegram": "",
+        "email": "",
+        "site": ""
+      },
+      "status": "redesign-done",
+      "price": 50000,
+      "notes": "своего сайта нет — заход «сделали вам сайт»",
+      "variants": [
+        "ps"
+      ],
+      "history": [
+        {
+          "date": "2026-07-04",
+          "event": "добавлен в лиды из портфолио"
+        }
       ]
     }
   ]
