@@ -1,14 +1,4 @@
 {
-  "anor": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "atsumari": {
-    "approved": false,
-    "price": 65000,
-    "approvedAt": null
-  },
   "bezuhov": {
     "approved": false,
     "price": 70000,
@@ -44,24 +34,9 @@
     "price": 50000,
     "approvedAt": null
   },
-  "crazybrothers": {
-    "approved": false,
-    "price": 60000,
-    "approvedAt": null
-  },
   "cuppcake": {
     "approved": false,
     "price": 50000,
-    "approvedAt": null
-  },
-  "dzhani": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "fukuramen": {
-    "approved": false,
-    "price": 60000,
     "approvedAt": null
   },
   "grillbar": {
@@ -74,17 +49,7 @@
     "price": 50000,
     "approvedAt": null
   },
-  "karamel": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
   "kofevarke": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "krdparen": {
     "approved": false,
     "price": 50000,
     "approvedAt": null
@@ -114,21 +79,6 @@
     "price": 90000,
     "approvedAt": null
   },
-  "mariko": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "matreshka": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "migmig": {
-    "approved": false,
-    "price": 60000,
-    "approvedAt": null
-  },
   "oka": {
     "approved": false,
     "price": 50000,
@@ -139,26 +89,6 @@
     "price": 70000,
     "approvedAt": null
   },
-  "pivnushka": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "pizzaricca": {
-    "approved": false,
-    "price": 65000,
-    "approvedAt": null
-  },
-  "prohinkali": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "provence": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
   "ps": {
     "approved": false,
     "price": 50000,
@@ -167,16 +97,6 @@
   "ramenutka": {
     "approved": false,
     "price": 60000,
-    "approvedAt": null
-  },
-  "redwall": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "rest19": {
-    "approved": false,
-    "price": 50000,
     "approvedAt": null
   },
   "seledka": {
@@ -199,22 +119,7 @@
     "price": 70000,
     "approvedAt": null
   },
-  "traktir": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
   "triorange": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "vesna": {
-    "approved": false,
-    "price": 50000,
-    "approvedAt": null
-  },
-  "vkt": {
     "approved": false,
     "price": 50000,
     "approvedAt": null
@@ -222,11 +127,6 @@
   "vypechka": {
     "approved": false,
     "price": 60000,
-    "approvedAt": null
-  },
-  "wolkonsky": {
-    "approved": false,
-    "price": 70000,
     "approvedAt": null
   },
   "smailnn": {

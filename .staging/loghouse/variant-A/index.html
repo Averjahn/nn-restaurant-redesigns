@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gazebos Loghouse — Беседки и бани в Нижнем Новгороде</title>
+  <meta name="description" content="Gazebos Loghouse — деревянные беседки, бани и сауны в Нижнем Новгороде. Аренда беседок от 1 200 ₽/час, русская баня, финская сауна, аренда шатра для свадеб и корпоративов. Ул. Артельная, 21А. Тел.: +7 (831) 413-30-83" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf7f2;
+      --surface: #f0ebe0;
+      --text: #2C1810;
+      --accent: #8B4513;
+      --accent-hover: #6B3410;
+      --divider: #C4A882;
+      --shadow: rgba(44, 24, 16, 0.12);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'PT Serif', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 3px solid var(--divider);
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .logo span { color: var(--accent); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--accent-hover); }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+
+    /* Burger */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 71px;
+      left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 3px solid var(--divider);
+      padding: 20px 24px 24px;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 99;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+    .mobile-nav .btn { margin-top: 8px; text-align: center; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      flex: 0 0 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 48px;
+      gap: 20px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #5a3a28;
+      max-width: 440px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .hero-photo {
+      flex: 0 0 45%;
+      min-height: 500px;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── STATS ─── */
+    #stats {
+      background: var(--surface);
+      border-top: 3px solid var(--divider);
+      border-bottom: 3px solid var(--divider);
+      padding: 48px 24px;
+    }
+
+    .stats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-top: 6px;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 80px 24px; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 3px solid var(--divider);
+      margin-bottom: 64px;
+    }
+
+    /* ─── УСЛУГИ ─── */
+    #menu { background: var(--bg); border-top: 3px solid var(--divider); }
+
+    .menu-category { margin-bottom: 52px; }
+
+    .menu-cat-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--divider);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .menu-card {
+      background: var(--surface);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(44, 24, 16, 0.18);
+    }
+
+    .menu-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .menu-card-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .menu-card-desc {
+      font-size: 0.88rem;
+      color: #5a3a28;
+      flex: 1;
+    }
+
+    .menu-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: rgba(139, 69, 19, 0.1);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    .menu-card-price {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 10px;
+    }
+
+    /* ─── О НАС ─── */
+    #about {
+      background: var(--surface);
+      border-top: 3px solid var(--divider);
+      border-bottom: 3px solid var(--divider);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .about-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px var(--shadow);
+      display: block;
+    }
+
+    /* ─── ГАЛЕРЕЯ ─── */
+    #gallery { background: var(--bg); border-top: 3px solid var(--divider); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px var(--shadow);
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ─── КОНТАКТЫ ─── */
+    #contacts {
+      background: var(--surface);
+      border-top: 3px solid var(--divider);
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contacts-map {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .contacts-info {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-block h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .contact-block p, .contact-block a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .contact-block a:hover { color: var(--accent); }
+
+    .contact-phone a {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--text);
+      color: var(--bg);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.9rem;
+      border-top: 3px solid var(--accent);
+    }
+    footer a { color: var(--divider); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { flex-direction: column; }
+      .hero-text { flex: none; padding: 48px 24px 36px; }
+      .hero-photo { flex: none; min-height: 320px; width: 100%; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .contacts-grid { grid-template-columns: 1fr; }
+
+      nav { display: none; }
+      .header-btn { display: none; }
+      .burger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+      section { padding: 56px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#hero">Gazebos <span>Loghouse</span></a>
+    <nav>
+      <a href="#menu">Беседки</a>
+      <a href="#menu">Бани</a>
+      <a href="#menu">Мероприятия</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn header-btn" href="tel:+78314133083">Забронировать</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#menu" onclick="closeMenu()">Беседки</a>
+  <a href="#menu" onclick="closeMenu()">Бани</a>
+  <a href="#menu" onclick="closeMenu()">Мероприятия</a>
+  <a href="#contacts" onclick="closeMenu()">Контакты</a>
+  <a class="btn" href="tel:+78314133083" onclick="closeMenu()">Забронировать</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero" style="padding:0;">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">📍 Нижний Новгород, ул. Артельная 21А</p>
+      <h1 class="hero-h1">Отдых на природе в сердце Нижнего Новгорода</h1>
+      <p class="hero-tagline">Деревянные беседки, бани и сауны — отдых для всей семьи и корпоративных событий</p>
+      <div class="hero-cta">
+        <a class="btn" href="tel:+78314133083">Позвонить нам</a>
+        <a class="btn btn-outline" href="#menu">Посмотреть услуги</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="../assets/hero.jpg" alt="Gazebos Loghouse — вид на территорию" onerror="this.style.opacity='0'" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-value">4.6★</div>
+      <div class="stat-label">Рейтинг на Яндекс.Картах</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">1 293</div>
+      <div class="stat-label">Оценок гостей</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">24/7</div>
+      <div class="stat-label">Работаем без выходных</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">100+</div>
+      <div class="stat-label">Гостей вмещает шатёр</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── УСЛУГИ ─── -->
+<section id="menu">
+  <div class="section-inner">
+    <h2 class="section-heading">Наши услуги</h2>
+
+    <!-- Беседки -->
+    <div class="menu-category">
+      <h3 class="menu-cat-title">Беседки</h3>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/gazebo.jpg" alt="Беседка малая" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Беседка малая (до 8 чел.)</div>
+            <div class="menu-card-desc">Уютная деревянная беседка с мангалом. Идеально для небольших компаний и семейных праздников.</div>
+            <div class="menu-card-tags">
+              <span class="tag">популярное</span>
+              <span class="tag">мангал</span>
+            </div>
+            <div class="menu-card-price">1 200 ₽/час</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/gazebo.jpg" alt="Беседка средняя" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Беседка средняя (до 15 чел.)</div>
+            <div class="menu-card-desc">Просторная беседка с большим столом, лавками и декоративным освещением.</div>
+            <div class="menu-card-tags">
+              <span class="tag">мангал</span>
+              <span class="tag">освещение</span>
+            </div>
+            <div class="menu-card-price">1 800 ₽/час</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/gazebo.jpg" alt="Беседка большая" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Беседка большая (до 25 чел.)</div>
+            <div class="menu-card-desc">Для корпоративов, юбилеев, свадеб. Оснащена мангалом, розетками, подсветкой.</div>
+            <div class="menu-card-tags">
+              <span class="tag">банкет</span>
+              <span class="tag">корпоратив</span>
+            </div>
+            <div class="menu-card-price">2 500 ₽/час</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Бани и сауны -->
+    <div class="menu-category">
+      <h3 class="menu-cat-title">Бани и сауны</h3>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/sauna.jpg" alt="Баня Берлога" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Баня «Берлога»</div>
+            <div class="menu-card-desc">Русская баня в доме «МЕДВЕДЬ» — парная, предбанник, комната отдыха, купель. До 8 человек.</div>
+            <div class="menu-card-tags">
+              <span class="tag">хит</span>
+              <span class="tag">купель</span>
+            </div>
+            <div class="menu-card-price">4 000 ₽/час</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/sauna.jpg" alt="Финская сауна" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Финская сауна</div>
+            <div class="menu-card-desc">Классическая финская сауна с сухим паром. Подходит для небольших компаний до 6 человек.</div>
+            <div class="menu-card-tags">
+              <span class="tag">сауна</span>
+            </div>
+            <div class="menu-card-price">3 000 ₽/час</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мероприятия -->
+    <div class="menu-category">
+      <h3 class="menu-cat-title">Мероприятия</h3>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/event.jpg" alt="Аренда шатра" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Аренда шатра</div>
+            <div class="menu-card-desc">Большой шатёр для свадеб, корпоративов и других крупных мероприятий. До 100 гостей.</div>
+            <div class="menu-card-tags">
+              <span class="tag">свадьба</span>
+              <span class="tag">корпоратив</span>
+            </div>
+            <div class="menu-card-price">По запросу</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/event.jpg" alt="Свадьба / Банкет" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Свадьба / Банкет</div>
+            <div class="menu-card-desc">Полный сервис для особых событий: оформление, мангальная зона, парковка, беседки.</div>
+            <div class="menu-card-tags">
+              <span class="tag">свадьба</span>
+            </div>
+            <div class="menu-card-price">По запросу</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Территория -->
+    <div class="menu-category">
+      <h3 class="menu-cat-title">Территория</h3>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/nature.jpg" alt="Пруд с рыбками" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Пруд с рыбками</div>
+            <div class="menu-card-desc">Декоративный пруд на территории — идеально для фото и прогулок с детьми.</div>
+            <div class="menu-card-tags">
+              <span class="tag">природа</span>
+            </div>
+            <div class="menu-card-price">Бесплатно</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/nature.jpg" alt="Детская площадка" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Детская площадка</div>
+            <div class="menu-card-desc">Несколько детских площадок с горками, качелями и игровыми зонами.</div>
+            <div class="menu-card-tags">
+              <span class="tag">дети</span>
+            </div>
+            <div class="menu-card-price">Бесплатно</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img class="menu-card-img" src="../assets/nature.jpg" alt="Парковка" onerror="this.style.opacity='0'" />
+          <div class="menu-card-body">
+            <div class="menu-card-name">Парковка</div>
+            <div class="menu-card-desc">Бесплатная охраняемая парковка для гостей прямо на территории комплекса.</div>
+            <div class="menu-card-tags">
+              <span class="tag">бесплатно</span>
+            </div>
+            <div class="menu-card-price">Бесплатно</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── О НАС ─── -->
+<section id="about">
+  <div class="section-inner">
+    <h2 class="section-heading">О нас</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Gazebos Loghouse — это загородный комплекс в черте Нижнего Новгорода, где природа встречается с настоящим русским гостеприимством. Мы работаем круглосуточно, 7 дней в неделю, чтобы вы могли отдохнуть в любое удобное время.</p>
+        <p>На нашей территории расположены деревянные беседки разных размеров с мангальными зонами, русская баня «Берлога» в доме «МЕДВЕДЬ» с купелью, финская сауна, декоративный пруд, детские площадки и просторный шатёр для крупных мероприятий.</p>
+        <p>Мы принимаем семейные праздники, корпоративы, свадьбы и дни рождения. Наш персонал поможет организовать мероприятие любого масштаба — от уютного семейного ужина до банкета на 100 гостей.</p>
+        <p style="margin-top:8px">
+          <a class="btn" href="tel:+78314133083">Позвонить и забронировать</a>
+        </p>
+      </div>
+      <div>
+        <img class="about-img" src="../assets/gazebo.jpg" alt="Беседка Gazebos Loghouse" onerror="this.style.opacity='0'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ГАЛЕРЕЯ ─── -->
+<section id="gallery">
+  <div class="section-inner">
+    <h2 class="section-heading">Наша территория</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="../assets/gazebo.jpg" alt="Деревянные беседки" onerror="this.style.opacity='0'" />
+      </div>
+      <div class="gallery-item">
+        <img src="../assets/event.jpg" alt="Мероприятия и банкеты" onerror="this.style.opacity='0'" />
+      </div>
+      <div class="gallery-item">
+        <img src="../assets/nature.jpg" alt="Природа и территория" onerror="this.style.opacity='0'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── КОНТАКТЫ ─── -->
+<section id="contacts">
+  <div class="section-inner">
+    <h2 class="section-heading">Как нас найти</h2>
+    <div class="contacts-grid">
+      <div class="contacts-map">
+        <iframe
+          src="https://maps.google.com/maps?q=56.298568,44.003390&z=16&hl=ru&output=embed"
+          width="100%"
+          height="400"
+          style="border:0;display:block"
+          loading="lazy"
+          allowfullscreen
+          title="Gazebos Loghouse на карте"
+        ></iframe>
+      </div>
+      <div class="contacts-info">
+        <div class="contact-block contact-phone">
+          <h3>Телефон</h3>
+          <a href="tel:+78314133083">+7 (831) 413-30-83</a>
+        </div>
+        <div class="contact-block">
+          <h3>Адрес</h3>
+          <p>ул. Артельная, 21А<br />Нижний Новгород</p>
+        </div>
+        <div class="contact-block">
+          <h3>Режим работы</h3>
+          <p>Работаем круглосуточно, 24/7<br />Без выходных и праздников</p>
+        </div>
+        <div class="contact-block">
+          <a class="btn" href="tel:+78314133083" style="width:fit-content">Позвонить и забронировать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© 2026 Gazebos Loghouse · <a href="#contacts">ул. Артельная, 21А, Нижний Новгород</a></p>
+</footer>
+
+<script>
+  // Burger menu
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  burger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  function closeMenu() {
+    mobileNav.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "slug": "vetdrug",
+  "name": "Ветцентр «ВетДруг»",
+  "tagline": "Круглосуточная ветеринарная помощь — клиника, стационар и выезд врача на дом",
+  "category": "veterinary",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "ул. Сутырина · ул. Кузьмина · м. Чкаловская · Новопокровское-Свет",
+  "coords": { "lat": 56.3612191, "lon": 43.8460903 },
+  "phone": "+7 (831) 260-13-69",
+  "hours": "Круглосуточно, без выходных — 24/7",
+  "socials": { "vk": "", "telegram": "", "instagram": "" },
+  "brand": { "primary": "#2563eb", "accent": "#f59e0b", "bg": "#ffffff", "mood": "забота о питомцах, доверие, круглосуточно, тепло и надёжность" },
+  "stats": [
+    { "value": "24/7", "label": "Работаем круглосуточно" },
+    { "value": "100 000+", "label": "Спасённых животных за 12 лет" },
+    { "value": "14", "label": "Врачей узкого профиля" },
+    { "value": "300+", "label": "Видов ветеринарных услуг" }
+  ],
+  "menu": [
+    { "cat": "Вызов врача на дом", "items": [
+      { "id": 1, "name": "Стандартный вызов (2–3 часа)", "desc": "Врач приедет к питомцу домой в удобное время.", "price": 300, "img": "assets/home.jpg", "tags": ["удобно"] },
+      { "id": 2, "name": "Экстренный вызов (в течение часа)", "desc": "Срочный выезд при острых состояниях.", "price": 500, "img": "assets/home.jpg", "tags": ["срочно"] },
+      { "id": 3, "name": "Ночной вызов", "desc": "Помощь ночью, когда обычные клиники закрыты.", "price": 500, "img": "assets/home.jpg", "tags": ["24/7"] }
+    ]},
+    { "cat": "Приём и диагностика", "items": [
+      { "id": 4, "name": "Терапия и осмотр", "desc": "Первичный приём, постановка диагноза, план лечения.", "price": null, "img": "assets/exam.jpg", "tags": [] },
+      { "id": 5, "name": "УЗИ, анализы, диагностика", "desc": "Собственный диагностический центр, результаты в день сдачи.", "price": null, "img": "assets/lab.jpg", "tags": [] },
+      { "id": 6, "name": "Кардиология", "desc": "ЭхоКГ, ЭКГ, ведение сердечных пациентов.", "price": null, "img": "assets/exam.jpg", "tags": [] }
+    ]},
+    { "cat": "Хирургия и стационар", "items": [
+      { "id": 7, "name": "Хирургия любой сложности", "desc": "Плановые и экстренные операции.", "price": null, "img": "assets/surgery.jpg", "tags": [] },
+      { "id": 8, "name": "Круглосуточный стационар", "desc": "Наблюдение и уход за питомцем 24 часа.", "price": null, "img": "assets/surgery.jpg", "tags": ["24/7"] },
+      { "id": 9, "name": "Стоматология", "desc": "Чистка, лечение и удаление зубов у животных.", "price": null, "img": "assets/exam.jpg", "tags": [] }
+    ]}
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",    "role": "hero" },
+    { "src": "assets/exam.jpg",    "role": "service" },
+    { "src": "assets/surgery.jpg", "role": "service" },
+    { "src": "assets/home.jpg",    "role": "service" },
+    { "src": "assets/lab.jpg",     "role": "service" },
+    { "src": "assets/pet.jpg",     "role": "interior" },
+    { "src": "assets/doctor.jpg",  "role": "team" }
+  ],
+  "source": { "url": "https://vetdrugnn.ru/", "type": "site", "scrapedAt": "2026-07-03" }
+}

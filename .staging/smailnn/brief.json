@@ -1,0 +1,48 @@
+{
+  "slug": "smailnn",
+  "name": "Стоматология «Смайл»",
+  "tagline": "С улыбкой по жизни — лечение, имплантация и детская стоматология в Нижнем Новгороде",
+  "category": "dental",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "пр. Гагарина, 222 · пр. Ленина, 44 · Новокузнечихинская, 9",
+  "coords": { "lat": 56.2301623, "lon": 43.9469197 },
+  "phone": "+7 (831) 462-63-09",
+  "phones": ["+7 (831) 462-63-09", "+7 (831) 252-27-27", "+7 (831) 435-19-05"],
+  "email": "smailnn2011@yandex.ru",
+  "hours": "Пн–Пт: 9:00–20:00 · Сб: 8:00–15:00 · Вс: выходной",
+  "socials": { "vk": "", "telegram": "", "instagram": "" },
+  "brand": { "primary": "#0ea5a4", "accent": "#0ea5a4", "bg": "#ffffff", "mood": "чистая медицина, бирюза, доверие, забота, свет" },
+  "stats": [
+    { "value": "с 2003", "label": "Работаем более 20 лет" },
+    { "value": "70%", "label": "Пациентов приходят по рекомендации" },
+    { "value": "3", "label": "Клиники в городе" },
+    { "value": "0+", "label": "Принимаем детей любого возраста" }
+  ],
+  "menu": [
+    { "cat": "Лечение и профилактика", "items": [
+      { "id": 1, "name": "Лечение кариеса и осложнений", "desc": "Безболезненно, современные материалы, гарантия результата.", "price": null, "img": "assets/procedure.jpg", "tags": ["популярное"] },
+      { "id": 2, "name": "Профессиональная гигиена", "desc": "Чистка Air Flow, снятие налёта и камня, полировка.", "price": null, "img": "assets/hygiene.jpg", "tags": [] },
+      { "id": 3, "name": "Лечение пародонта", "desc": "Профилактика и лечение заболеваний дёсен.", "price": null, "img": "assets/procedure.jpg", "tags": [] }
+    ]},
+    { "cat": "Хирургия и имплантация", "items": [
+      { "id": 4, "name": "Имплантология", "desc": "Восстановление зубов имплантами, точная 3D-диагностика.", "price": null, "img": "assets/implant.jpg", "tags": ["хит"] },
+      { "id": 5, "name": "Удаление зубов любой сложности", "desc": "Атравматично, с современной анестезией.", "price": null, "img": "assets/procedure.jpg", "tags": [] },
+      { "id": 6, "name": "Хирургическая стоматология", "desc": "Полный спектр хирургических вмешательств.", "price": null, "img": "assets/interior.jpg", "tags": [] }
+    ]},
+    { "cat": "Протезирование и дети", "items": [
+      { "id": 7, "name": "Протезирование", "desc": "Коронки, виниры, съёмные и несъёмные протезы.", "price": null, "img": "assets/implant.jpg", "tags": [] },
+      { "id": 8, "name": "Детская стоматология", "desc": "Бережный приём детей любого возраста, без страха и слёз.", "price": null, "img": "assets/child.jpg", "tags": ["для детей"] }
+    ]}
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",      "role": "hero" },
+    { "src": "assets/interior.jpg",  "role": "interior" },
+    { "src": "assets/procedure.jpg", "role": "service" },
+    { "src": "assets/implant.jpg",   "role": "service" },
+    { "src": "assets/hygiene.jpg",   "role": "service" },
+    { "src": "assets/child.jpg",     "role": "service" },
+    { "src": "assets/doctor.jpg",    "role": "team" }
+  ],
+  "source": { "url": "https://smailnn.ru/", "type": "site", "scrapedAt": "2026-07-03" }
+}

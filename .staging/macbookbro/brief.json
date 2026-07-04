@@ -1,0 +1,94 @@
+{
+  "slug": "macbookbro",
+  "name": "Макбучная",
+  "tagline": "Оригинальная техника Apple — продажа, трейд-ин, консультация",
+  "category": "tech-retail",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "Грузинская улица, 41А, Нижний Новгород",
+  "coords": { "lat": 56.3200417, "lon": 44.0076254 },
+  "phone": "+7 (986) 757-73-51",
+  "whatsapp": "https://api.whatsapp.com/send?phone=79867577351",
+  "hours": "Пн,Вт,Чт,Пт: 11:00–20:00 · Сб,Вс: 10:00–19:00 · Выходной: ср",
+  "socials": {
+    "vk": "https://vk.com/macbookbro",
+    "telegram": "",
+    "instagram": ""
+  },
+  "brand": {
+    "primary": "#1d1d1f",
+    "accent": "#0071e3",
+    "bg": "#ffffff",
+    "mood": "минимализм Apple, чистота, белый и тёмно-серый, синий акцент"
+  },
+  "menu": [
+    {
+      "cat": "MacBook",
+      "items": [
+        { "id": 1,  "name": "MacBook Air M1 8/256", "desc": "Space Gray. Самая популярная модель, лёгкая и мощная.", "price": 82990, "img": "assets/macbook.jpg", "tags": ["в наличии", "хит"] },
+        { "id": 2,  "name": "MacBook Pro 13\" 2020 16/512", "desc": "Отличный баланс цены и производительности.", "price": 94990, "img": "assets/macbook.jpg", "tags": ["в наличии"] },
+        { "id": 3,  "name": "MacBook Pro 14\" M1 Pro 16/1024", "desc": "Silver. Профессиональный уровень, мини-LED дисплей.", "price": 184990, "img": "assets/macbook.jpg", "tags": ["Pro"] },
+        { "id": 4,  "name": "MacBook Pro 16\" M1 Max", "desc": "Максимальная производительность для профессионалов.", "price": 279990, "img": "assets/macbook.jpg", "tags": ["Pro", "топ"] }
+      ]
+    },
+    {
+      "cat": "iPhone",
+      "items": [
+        { "id": 5,  "name": "iPhone 11 64GB",     "desc": "Отличный выбор с хорошей камерой.", "price": 28990, "img": "assets/iphone.jpg", "tags": ["б/у"] },
+        { "id": 6,  "name": "iPhone 12",           "desc": "5G, OLED, Face ID. Прекрасная камера.", "price": 45990, "img": "assets/iphone.jpg", "tags": ["в наличии"] },
+        { "id": 7,  "name": "iPhone 13",           "desc": "Улучшенная камера и батарея.", "price": 56990, "img": "assets/iphone.jpg", "tags": ["в наличии", "хит"] },
+        { "id": 8,  "name": "iPhone 14",           "desc": "Emergency SOS, новая камера.", "price": 64990, "img": "assets/iphone.jpg", "tags": ["в наличии"] },
+        { "id": 9,  "name": "iPhone 14 Pro",       "desc": "Dynamic Island, 48MP камера.", "price": 97990, "img": "assets/iphone.jpg", "tags": ["Pro", "хит"] },
+        { "id": 10, "name": "iPhone 14 Pro Max",   "desc": "Самый большой экран, лучшая батарея.", "price": 114990, "img": "assets/iphone.jpg", "tags": ["Pro"] }
+      ]
+    },
+    {
+      "cat": "iPad",
+      "items": [
+        { "id": 11, "name": "iPad mini (2021)",         "desc": "Компактный, мощный чип A15.", "price": 37990, "img": "assets/ipad.jpg", "tags": ["в наличии"] },
+        { "id": 12, "name": "iPad Air 5-го поколения 64GB", "desc": "Чип M1, USB-C, Touch ID.", "price": 47990, "img": "assets/ipad.jpg", "tags": ["в наличии", "хит"] },
+        { "id": 13, "name": "iPad Pro 11\" (2021)",     "desc": "Liquid Retina XDR, M1, miniLED.", "price": 63990, "img": "assets/ipad.jpg", "tags": ["Pro"] },
+        { "id": 14, "name": "iPad Pro 12.9\" (2021)",   "desc": "Максимальный экран, M1.", "price": 84990, "img": "assets/ipad.jpg", "tags": ["Pro"] }
+      ]
+    },
+    {
+      "cat": "Apple Watch & AirPods",
+      "items": [
+        { "id": 15, "name": "Apple Watch Series 8",  "desc": "Датчик температуры, crashdetection.", "price": 39990, "img": "assets/store.jpg", "tags": ["в наличии"] },
+        { "id": 16, "name": "Apple Watch Ultra",      "desc": "Titanium, 49mm, для экстремальных нагрузок.", "price": 79990, "img": "assets/store.jpg", "tags": ["топ"] },
+        { "id": 17, "name": "AirPods Pro 2 (2022)",  "desc": "ANC нового поколения, Adaptive Transparency.", "price": 20990, "img": "assets/store.jpg", "tags": ["в наличии", "хит"] },
+        { "id": 18, "name": "AirPods Max",           "desc": "Over-ear, Hi-Fi аудио, ANC.", "price": 40990, "img": "assets/store.jpg", "tags": [] }
+      ]
+    },
+    {
+      "cat": "Mac",
+      "items": [
+        { "id": 19, "name": "Mac Mini M1 16/512",          "desc": "Тихий, мощный, компактный рабочий стол.", "price": 94990, "img": "assets/macbook.jpg", "tags": ["в наличии"] },
+        { "id": 20, "name": "Mac Studio M1 Max 32/512",    "desc": "Профессиональная рабочая станция.", "price": 209990, "img": "assets/macbook.jpg", "tags": ["Pro"] }
+      ]
+    },
+    {
+      "cat": "Сервис",
+      "items": [
+        { "id": 21, "name": "Замена раскладки клавиатуры", "desc": "Русская/другая раскладка. Занимает 10–15 минут.", "price": 4500, "img": "assets/repair.jpg", "tags": ["быстро"] },
+        { "id": 22, "name": "Продувка клавиатуры",         "desc": "Удаление пыли и мусора из-под клавиш.", "price": null, "img": "assets/repair.jpg", "tags": ["сервис"] },
+        { "id": 23, "name": "Трейд-ин",                    "desc": "Обменяй своё старое устройство Apple на новое со скидкой.", "price": null, "img": "assets/store.jpg", "tags": ["выгодно"] },
+        { "id": 24, "name": "Бесплатная консультация",     "desc": "Поможем выбрать технику, ответим на любые вопросы.", "price": 0, "img": "assets/store.jpg", "tags": ["бесплатно"] }
+      ]
+    }
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",     "role": "hero",     "origin": "stock" },
+    { "src": "assets/macbook.jpg",  "role": "dish",     "origin": "stock" },
+    { "src": "assets/iphone.jpg",   "role": "dish",     "origin": "stock" },
+    { "src": "assets/ipad.jpg",     "role": "dish",     "origin": "stock" },
+    { "src": "assets/store.jpg",    "role": "interior", "origin": "stock" },
+    { "src": "assets/repair.jpg",   "role": "interior", "origin": "stock" },
+    { "src": "assets/interior.jpg", "role": "interior", "origin": "stock" }
+  ],
+  "source": {
+    "url": "https://macbookbro.orgs.biz/",
+    "type": "site",
+    "scrapedAt": "2026-06-24"
+  }
+}

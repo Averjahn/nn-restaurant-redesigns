@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЗооМир — круглосуточная ветеринарная клиника в Нижнем Новгороде, 3 филиала</title>
+<meta name="description" content="Ветклиника «ЗооМир» в Нижнем Новгороде: круглосуточный приём, 3 филиала, 11 врачей, своя лаборатория с результатами в день сдачи, хирургия, стационар и гостиница для животных.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#16a34a;
+  --primary-dark:#15803d;
+  --accent:#f97316;
+  --bg:#ffffff;
+  --surface:#f0fdf4;
+  --text:#14231a;
+  --muted:#5c6b62;
+  --line:#dcefe2;
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:26px;
+  --container:1140px;
+  --gap:24px;
+  --header-h:70px;
+  --shadow:0 10px 30px rgba(20,35,26,.08);
+  --shadow-lg:0 20px 50px rgba(20,35,26,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  font-size:clamp(15px,1.5vw,17px);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand{font-family:'Manrope','Inter',system-ui,sans-serif;margin:0}
+h1{font-size:clamp(32px,6vw,60px);font-weight:800;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.12;letter-spacing:-.01em}
+h3{font-size:clamp(18px,2.4vw,22px);font-weight:700}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px;width:100%}
+.section{padding:clamp(48px,8vw,90px) 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:600;font-size:14px;color:var(--primary-dark);
+  background:var(--surface);border:1px solid var(--line);
+  padding:8px 16px;border-radius:999px;
+}
+.sec-head{max-width:640px;margin-bottom:clamp(28px,4vw,44px)}
+.sec-head .eyebrow{margin-bottom:16px}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;
+  padding:13px 24px;border-radius:999px;cursor:pointer;border:2px solid transparent;
+  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(22,163,74,.3)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:#ea6c0f;transform:translateY(-2px);box-shadow:0 8px 20px rgba(249,115,22,.3)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary-dark);background:var(--surface)}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:16px;
+  height:var(--header-h);
+}
+.brand{
+  font-weight:800;font-size:22px;color:var(--primary);
+  display:inline-flex;align-items:center;gap:8px;margin-right:auto;
+}
+.brand span{color:var(--text)}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-weight:600;font-size:15px;color:var(--text);transition:color .15s}
+.nav a:hover{color:var(--primary)}
+.header-cta{display:inline-flex}
+.burger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;background:none;border:0;cursor:pointer;padding:10px;
+}
+.burger span{display:block;height:2px;background:var(--text);border-radius:2px;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--surface),#fff)}
+.hero-inner{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(28px,5vw,56px);align-items:center;
+  padding:clamp(40px,7vw,80px) 0;
+}
+.hero-text{min-width:0}
+.hero-text .eyebrow{margin-bottom:20px}
+.hero-text h1{margin-bottom:18px}
+.hero-sub{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:44ch;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-media{min-width:0}
+.hero-media img{
+  width:100%;height:clamp(280px,42vw,480px);object-fit:cover;
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;margin-top:22px;
+  font-size:14px;color:var(--muted);font-weight:500;
+}
+.hero-badge b{color:var(--text)}
+
+/* Stats */
+.stats{background:var(--primary);color:#fff}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;
+  padding:clamp(32px,5vw,52px) 0;
+}
+.stat{min-width:0;text-align:center;padding:8px}
+.stat b{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(30px,5vw,46px);display:block;line-height:1}
+.stat span{display:block;margin-top:10px;font-size:14px;opacity:.92}
+
+/* Services */
+.cat-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.tab{
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;
+  padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);
+  background:#fff;color:var(--muted);cursor:pointer;transition:.15s;
+}
+.tab:hover{border-color:var(--primary);color:var(--primary-dark)}
+.tab.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.cards{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;
+}
+.card{
+  display:flex;flex-direction:column;min-width:0;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card__media{position:relative;aspect-ratio:16/10;background:var(--surface);overflow:hidden}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.card:hover .card__media img{transform:scale(1.05)}
+.card__body{padding:20px;display:flex;flex-direction:column;flex:1;min-width:0}
+.card__tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tag{
+  font-size:12px;font-weight:600;color:var(--accent);
+  background:#fff4ec;padding:4px 10px;border-radius:999px;
+}
+.card h3{margin-bottom:8px}
+.card__desc{color:var(--muted);font-size:14.5px;flex:1}
+.card__price{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-family:'Manrope',sans-serif;font-weight:700;color:var(--primary-dark);
+}
+.card__price .req{color:var(--muted);font-weight:600;font-size:14px}
+.hidden{display:none}
+
+/* Features */
+.features{background:var(--surface)}
+.feat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.feat{
+  display:flex;gap:16px;min-width:0;align-items:flex-start;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;
+}
+.feat .ico{
+  flex:0 0 auto;width:52px;height:52px;border-radius:14px;
+  background:var(--surface);display:grid;place-items:center;font-size:26px;
+}
+.feat-body{min-width:0}
+.feat h3{margin-bottom:6px}
+.feat p{color:var(--muted);font-size:14.5px}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.gallery-grid figure{margin:0;min-width:0;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow)}
+.gallery-grid img{width:100%;height:clamp(200px,26vw,300px);object-fit:cover;transition:transform .3s}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+
+/* Branches */
+.branches{background:var(--surface)}
+.branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.branch{
+  display:flex;flex-direction:column;min-width:0;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px;box-shadow:var(--shadow);
+}
+.branch .pin{
+  width:44px;height:44px;border-radius:12px;background:var(--surface);
+  display:grid;place-items:center;font-size:22px;margin-bottom:16px;
+}
+.branch h3{margin-bottom:4px}
+.branch .addr{color:var(--muted);font-size:14.5px;margin-bottom:16px;overflow-wrap:anywhere}
+.branch a.phone{
+  font-family:'Manrope',sans-serif;font-weight:700;color:var(--primary-dark);
+  font-size:17px;overflow-wrap:anywhere;margin-top:auto;
+}
+.branch a.phone:hover{color:var(--accent)}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
+.contacts-info{min-width:0;display:flex;flex-direction:column;gap:18px}
+.contact-row{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.contact-row .ico{
+  flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--surface);
+  display:grid;place-items:center;font-size:20px;
+}
+.contact-row .lbl{font-size:13px;color:var(--muted);margin-bottom:2px}
+.contact-row .val{overflow-wrap:anywhere}
+.contact-row .val a{font-weight:600;color:var(--primary-dark)}
+.contact-row .val a:hover{color:var(--accent)}
+.contact-row.stack{flex-direction:column}
+.phone-list{display:flex;flex-direction:column;gap:2px}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow);min-width:0}
+.map-wrap iframe{width:100%;height:400px;border:0;display:block}
+.tg-btn{align-self:flex-start;margin-top:4px}
+
+/* Footer */
+.footer{background:var(--text);color:#e5efe9}
+.footer-inner{
+  display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between;
+  padding:36px 0;
+}
+.footer .brand{color:#fff}
+.footer .brand span{color:#b9d4c4}
+.footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
+.footer .fnav a{color:#b9d4c4;font-size:14px}
+.footer .fnav a:hover{color:#fff}
+.footer .copy{color:#8fae9d;font-size:13px;width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;overflow-wrap:anywhere}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:minmax(0,1fr)}
+  .hero-media{order:-1}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .branch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:768px){
+  .nav{
+    display:none;position:absolute;top:var(--header-h);left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  .nav.nav--open{display:flex}
+  .nav a{padding:16px 20px;border-top:1px solid var(--line)}
+  .header-cta{display:none}
+  .burger{display:flex}
+  .feat-grid{grid-template-columns:minmax(0,1fr)}
+  .contacts-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-actions .btn{width:100%}
+}
+@media (max-width:560px){
+  .cards,.branch-grid,.gallery-grid{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand">🐾 ЗооМир</a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#branches">Филиалы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">🐾 Скорая ветпомощь · 24/7</p>
+      <h1>Здоровье ваших питомцев — наша забота</h1>
+      <p class="hero-sub">Скорая ветеринарная помощь в Нижнем Новгороде: 3 филиала, стационар и гостиница. Своя лаборатория — результаты анализов в день сдачи.</p>
+      <div class="hero-actions">
+        <a href="#contacts" class="btn btn-primary">Записаться</a>
+        <a href="#services" class="btn btn-outline">Услуги</a>
+      </div>
+      <p class="hero-badge">✅ Принимаем <b>круглосуточно</b> — в любое время дня и ночи</p>
+    </div>
+    <div class="hero-media">
+      <img src="../assets/hero.jpg" alt="Ветеринарный врач клиники «ЗооМир» на приёме с питомцем" width="600" height="480" fetchpriority="high" onerror="this.style.opacity='0'">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><b>3</b><span>Филиала по городу</span></div>
+      <div class="stat"><b>24/7</b><span>Круглосуточный приём</span></div>
+      <div class="stat"><b>11</b><span>Ветеринарных врачей</span></div>
+      <div class="stat"><b>1 день</b><span>Результаты анализов в день сдачи</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Что мы делаем</p>
+      <h2>Услуги ветклиники</h2>
+      <p>Диагностика, хирургия и уход в одном месте. Полный цикл помощи питомцу — от осмотра до стационара.</p>
+    </div>
+
+    <div class="cat-tabs" role="tablist" aria-label="Категории услуг">
+      <button class="tab active" data-cat="0" role="tab" aria-selected="true">Приём и диагностика</button>
+      <button class="tab" data-cat="1" role="tab" aria-selected="false">Хирургия и лечение</button>
+      <button class="tab" data-cat="2" role="tab" aria-selected="false">Профилактика и уход</button>
+    </div>
+
+    <!-- cat 0 -->
+    <div class="cards" data-panel="0">
+      <article class="card">
+        <div class="card__media"><img src="../assets/lab.jpg" alt="Клиническая диагностика: УЗИ и лабораторные анализы" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <div class="card__tags"><span class="tag">своя лаборатория</span></div>
+          <h3>Клиническая диагностика</h3>
+          <p class="card__desc">УЗИ, ЭхоКГ, эндоскопия, анализы — результаты в день сдачи.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/exam.jpg" alt="Терапевтический осмотр питомца" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Терапия и осмотр</h3>
+          <p class="card__desc">Первичный приём, диагноз, план лечения.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/exam.jpg" alt="Приём у кардиолога и офтальмолога для животных" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Кардиология и офтальмология</h3>
+          <p class="card__desc">Узкие специалисты по сердцу и зрению питомцев.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/home.jpg" alt="Цифровой рентген питомца на выезде на дом" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <div class="card__tags"><span class="tag">выезд</span></div>
+          <h3>Цифровой рентген на выезде</h3>
+          <p class="card__desc">Рентген-диагностика прямо у вас дома.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- cat 1 -->
+    <div class="cards hidden" data-panel="1">
+      <article class="card">
+        <div class="card__media"><img src="../assets/surgery.jpg" alt="Ветеринарная хирургия и травматология" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Хирургия и травматология</h3>
+          <p class="card__desc">Плановые и экстренные операции.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/exam.jpg" alt="Онкология и дерматология для животных" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Онкология и дерматология</h3>
+          <p class="card__desc">Диагностика и лечение опухолей и кожных болезней.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/surgery.jpg" alt="Инфекционный стационар для животных" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Инфекционный стационар</h3>
+          <p class="card__desc">Изолированное отделение для инфекционных пациентов.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- cat 2 -->
+    <div class="cards hidden" data-panel="2">
+      <article class="card">
+        <div class="card__media"><img src="../assets/exam.jpg" alt="Вакцинация и чипирование питомцев" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <h3>Вакцинация и чипирование</h3>
+          <p class="card__desc">Прививки и установка микрочипа с регистрацией.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/pet.jpg" alt="Гостиница для животных в клинике «ЗооМир»" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <div class="card__tags"><span class="tag">удобно</span></div>
+          <h3>Гостиница для животных</h3>
+          <p class="card__desc">Присмотр за питомцем, пока вы в отъезде.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="../assets/home.jpg" alt="Выезд ветеринара на дом" loading="lazy" onerror="this.style.opacity='0'"></div>
+        <div class="card__body">
+          <div class="card__tags"><span class="tag">выезд</span></div>
+          <h3>Выезд на дом</h3>
+          <p class="card__desc">Осмотр и процедуры без стресса для питомца.</p>
+          <div class="card__price"><span class="req">Цена по запросу</span><a href="#contacts" class="btn btn-outline" style="padding:8px 16px">Записаться</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section features">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Почему «ЗооМир»</p>
+      <h2>Преимущества клиники</h2>
+      <p>Оборудование и отделения, которые есть далеко не в каждой ветклинике города.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ico">🩻</div>
+        <div class="feat-body"><h3>Цифровой рентген на выезде</h3><p>Точная рентген-диагностика прямо у вас дома, без стресса для питомца.</p></div>
+      </div>
+      <div class="feat">
+        <div class="ico">🏥</div>
+        <div class="feat-body"><h3>Инфекционный стационар</h3><p>Изолированное отделение для инфекционных пациентов под круглосуточным наблюдением.</p></div>
+      </div>
+      <div class="feat">
+        <div class="ico">🏠</div>
+        <div class="feat-body"><h3>Гостиница для животных</h3><p>Комфортный присмотр за питомцем, пока вы в отъезде.</p></div>
+      </div>
+      <div class="feat">
+        <div class="ico">🔬</div>
+        <div class="feat-body"><h3>УЗИ и эндоскопия</h3><p>Своя лаборатория и диагностика — результаты анализов в день сдачи.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Фотогалерея</p>
+      <h2>Наша клиника</h2>
+      <p>Приём, операционная и наши пациенты.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="../assets/exam.jpg" alt="Кабинет приёма и осмотра питомцев" loading="lazy" onerror="this.style.opacity='0'"></figure>
+      <figure><img src="../assets/surgery.jpg" alt="Операционная ветклиники «ЗооМир»" loading="lazy" onerror="this.style.opacity='0'"></figure>
+      <figure><img src="../assets/pet.jpg" alt="Питомец на попечении клиники" loading="lazy" onerror="this.style.opacity='0'"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section class="section branches" id="branches">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">3 филиала по городу</p>
+      <h2>Где нас найти</h2>
+      <p>Круглосуточный приём в каждом филиале — выбирайте ближайший.</p>
+    </div>
+    <div class="branch-grid">
+      <div class="branch">
+        <div class="pin">📍</div>
+        <h3>Филиал на Академической</h3>
+        <p class="addr">ул. Академическая, 2</p>
+        <a class="phone" href="tel:+78314132812">+7 (831) 413-28-12</a>
+      </div>
+      <div class="branch">
+        <div class="pin">📍</div>
+        <h3>Филиал на Щербинках</h3>
+        <p class="addr">ул. Щербинки-1, 10Б</p>
+        <a class="phone" href="tel:+78314137214">+7 (831) 413-72-14</a>
+      </div>
+      <div class="branch">
+        <div class="pin">📍</div>
+        <h3>Филиал на Биробиджанской</h3>
+        <p class="addr">ул. Биробиджанская, 1</p>
+        <a class="phone" href="tel:+78314132518">+7 (831) 413-25-18</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как с нами связаться</h2>
+      <p>Звоните в любое время — мы принимаем круглосуточно.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="contact-row stack">
+          <div style="display:flex;gap:14px;align-items:flex-start;min-width:0">
+            <div class="ico">📞</div>
+            <div class="val">
+              <div class="lbl">Телефоны филиалов</div>
+              <div class="phone-list">
+                <a href="tel:+78314132812">+7 (831) 413-28-12</a>
+                <a href="tel:+78314137214">+7 (831) 413-72-14</a>
+                <a href="tel:+78314132518">+7 (831) 413-25-18</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ico">📍</div>
+          <div class="val">
+            <div class="lbl">Адреса филиалов</div>
+            ул. Академическая, 2 · ул. Щербинки-1, 10Б · ул. Биробиджанская, 1
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ico">🕐</div>
+          <div class="val">
+            <div class="lbl">Режим работы</div>
+            Круглосуточно — принимаем в любое время
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ico">✈️</div>
+          <div class="val">
+            <div class="lbl">Telegram</div>
+            <a href="https://t.me/+79991406272" target="_blank" rel="noopener">Написать в Telegram</a>
+          </div>
+        </div>
+        <a href="tel:+78314132812" class="btn btn-accent tg-btn">📞 Позвонить сейчас</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2820152,44.0821745&z=15&hl=ru&output=embed" width="100%" height="400" style="border:0;display:block" loading="lazy" allowfullscreen title="ЗооМир на карте"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">🐾 ЗооМир</a>
+    <nav class="fnav" aria-label="Навигация в подвале">
+      <a href="#services">Услуги</a>
+      <a href="#branches">Филиалы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="https://t.me/+79991406272" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="copy">© 2026 Ветклиника «ЗооМир», Нижний Новгород · Круглосуточная ветеринарная помощь · 3 филиала</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Burger
+  var burger=document.getElementById('burger'), nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+  // Tabs
+  var tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('[data-panel]');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var cat=tab.getAttribute('data-cat');
+      tabs.forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
+      tab.classList.add('active');tab.setAttribute('aria-selected','true');
+      panels.forEach(function(p){
+        p.classList.toggle('hidden',p.getAttribute('data-panel')!==cat);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

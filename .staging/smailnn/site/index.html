@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Стоматология Смайл — лечение, имплантация, детская стоматология в Нижнем Новгороде</title>
+<meta name="description" content="Стоматология «Смайл» в Нижнем Новгороде: лечение кариеса, имплантация, протезирование и детская стоматология. Работаем с 2003 года, 3 клиники, европейское оборудование. Запишитесь на приём.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0ea5a4;
+    --primary-dark: #0c8382;
+    --bg: #ffffff;
+    --surface: #f0fdfa;
+    --text: #0f2e2d;
+    --muted: #5c716f;
+    --border: #d7 efe9;
+    --border: #d0ece8;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --shadow-sm: 0 4px 16px rgba(15,46,45,.06);
+    --shadow-md: 0 12px 40px rgba(15,46,45,.10);
+    --container: 1160px;
+    --header-h: 68px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(15px, 1.4vw, 17px);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Manrope', -apple-system, sans-serif;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  h1 { font-size: clamp(32px, 6vw, 60px); font-weight: 800; }
+  h2 { font-size: clamp(26px, 4.2vw, 44px); font-weight: 800; }
+  h3 { font-size: clamp(18px, 2.4vw, 23px); font-weight: 700; }
+
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .section { padding: clamp(56px, 8vw, 100px) 0; }
+  .section-head { max-width: 640px; margin: 0 0 clamp(32px, 5vw, 48px); }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    background: var(--surface);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+  }
+  .section-head p { color: var(--muted); margin-top: 14px; font-size: clamp(15px,1.6vw,18px); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(14,165,164,.28);
+  }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(14,165,164,.36); }
+  .btn-outline {
+    background: #fff;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-outline:hover { border-color: var(--primary); color: var(--primary-dark); transform: translateY(-2px); }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.86);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: var(--header-h);
+  }
+  .brand {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .brand .dot { color: var(--primary); }
+  .brand svg { flex: 0 0 auto; }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: auto;
+  }
+  .nav a { font-weight: 500; font-size: 15px; color: var(--text); transition: color .15s; }
+  .nav a:hover { color: var(--primary-dark); }
+  .header-cta { flex: 0 0 auto; }
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin-left: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform .25s, opacity .2s;
+  }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Hero */
+  .hero { padding: clamp(32px, 5vw, 64px) 0 clamp(48px, 7vw, 88px); }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+  }
+  .hero-copy { min-width: 0; }
+  .hero-copy h1 { margin-bottom: 18px; }
+  .hero-sub {
+    color: var(--muted);
+    font-size: clamp(16px, 1.8vw, 19px);
+    max-width: 46ch;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .hero-media {
+    position: relative;
+    min-width: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 4 / 5;
+    background: var(--surface);
+  }
+  .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(8px);
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    min-width: 0;
+  }
+  .hero-badge .ring {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--primary-dark);
+  }
+  .hero-badge b { font-family: 'Manrope', sans-serif; font-size: 15px; display: block; }
+  .hero-badge span { font-size: 13px; color: var(--muted); }
+
+  /* Stats */
+  .stats { background: var(--surface); }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .stat {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 26px 22px;
+    min-width: 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat .val {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--primary-dark);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat .lbl { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* Services */
+  .cat-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .cat-tab {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .18s;
+  }
+  .cat-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .svc-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .svc-media { position: relative; aspect-ratio: 16 / 11; background: var(--surface); }
+  .svc-media img { width: 100%; height: 100%; object-fit: cover; }
+  .svc-tag {
+    position: absolute;
+    top: 12px; left: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.94);
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-sm);
+  }
+  .svc-body { padding: 20px; display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .svc-body h3 { margin-bottom: 8px; }
+  .svc-body p { color: var(--muted); font-size: 14.5px; flex: 1; }
+  .svc-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .svc-price { font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--primary-dark); font-size: 15px; }
+  .svc-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .svc-link:hover { color: var(--primary-dark); }
+
+  /* Features */
+  .features { background: var(--surface); }
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 48px);
+    align-items: center;
+  }
+  .feat-media {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 4 / 3;
+    min-width: 0;
+    background: #fff;
+  }
+  .feat-media img { width: 100%; height: 100%; object-fit: cover; }
+  .feat-list { display: grid; gap: 18px; min-width: 0; margin-top: 26px; }
+  .feat-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    min-width: 0;
+  }
+  .feat-item .ic {
+    flex: 0 0 auto;
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    border-radius: 14px;
+    background: #fff;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-sm);
+  }
+  .feat-item .tx { min-width: 0; }
+  .feat-item h3 { font-size: 17px; margin-bottom: 4px; }
+  .feat-item p { color: var(--muted); font-size: 14.5px; }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .gal {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--surface);
+    min-width: 0;
+  }
+  .gal img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .gal:hover img { transform: scale(1.05); }
+  .gal .cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(15,46,45,.75));
+  }
+
+  /* Contacts */
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    align-items: start;
+  }
+  .contacts-info { min-width: 0; overflow-wrap: anywhere; }
+  .info-block { margin-bottom: 26px; }
+  .info-block h3 { font-size: 15px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-family:'Manrope',sans-serif; font-weight:700; margin-bottom: 12px; }
+  .info-block a { color: var(--text); font-weight: 500; }
+  .info-block a:hover { color: var(--primary-dark); }
+  .phone-list, .addr-list { display: grid; gap: 8px; }
+  .phone-list a { font-family:'Manrope',sans-serif; font-weight: 700; font-size: 18px; }
+  .addr-list li { list-style: none; }
+  .addr-list, .phone-list { margin: 0; padding: 0; }
+  .map-wrap {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    min-width: 0;
+  }
+  .map-wrap iframe { width: 100%; height: 400px; border: 0; display: block; }
+
+  /* Footer */
+  .footer {
+    background: var(--text);
+    color: #cfe9e6;
+    padding: 48px 0 32px;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .footer .brand { color: #fff; font-size: 24px; margin-bottom: 10px; }
+  .footer-col { min-width: 0; overflow-wrap: anywhere; }
+  .footer-col p, .footer-col a { color: #a9d3ce; font-size: 14px; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    font-size: 13px;
+    color: #8fc0ba;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      position: fixed;
+      inset: var(--header-h) 0 auto 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 8px 20px 16px;
+      margin-left: 0;
+      transform: translateY(-120%);
+      transition: transform .28s ease;
+      pointer-events: none;
+    }
+    .nav.nav--open { transform: translateY(0); pointer-events: auto; }
+    .nav a { padding: 14px 4px; border-bottom: 1px solid var(--surface); font-size: 16px; }
+    .header-cta { display: none; }
+    .burger { display: flex; }
+
+    .hero-inner { grid-template-columns: minmax(0, 1fr); }
+    .hero-media { order: -1; aspect-ratio: 16 / 12; }
+    .hero-actions .btn { flex: 1 1 auto; }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: minmax(0, 1fr); }
+    .feat-grid { grid-template-columns: minmax(0, 1fr); }
+    .contacts-grid { grid-template-columns: minmax(0, 1fr); }
+    .feat-media { order: -1; }
+  }
+
+  @media (max-width: 420px) {
+    .stats-grid { grid-template-columns: minmax(0, 1fr); }
+    .gallery-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Стоматология Смайл — на главную">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 9c0-3 2.2-5 4.5-5C10 4 11 5 12 5s2-1 3.5-1C17.8 4 20 6 20 9c0 4-2.5 8-4.2 9.6-.9.8-1.8.2-2.1-.8L12 13l-1.7 4.8c-.3 1-1.2 1.6-2.1.8C6.5 17 4 13 4 9Z" fill="#0ea5a4"/>
+      </svg>
+      Смайл<span class="dot">.</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#about">О клинике</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">📍 пр. Гагарина, 222 · Нижний Новгород</p>
+        <h1>Стоматология, в которую хочется возвращаться</h1>
+        <p class="hero-sub">С улыбкой по жизни — лечение, имплантация и детская стоматология в Нижнем Новгороде. Бережно, современно и без страха.</p>
+        <div class="hero-actions">
+          <a href="#contacts" class="btn btn-primary">Записаться</a>
+          <a href="#services" class="btn btn-outline">Услуги</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="../assets/hero.jpg" alt="Приём в стоматологии «Смайл»" width="800" height="1000" fetchpriority="high" onerror="this.style.opacity='0'">
+        <div class="hero-badge">
+          <span class="ring" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <b>Работаем с 2003 года</b>
+            <span>70% пациентов приходят по рекомендации</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container section" style="padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,6vw,72px)">
+      <div class="stats-grid">
+        <div class="stat"><div class="val">с 2003</div><div class="lbl">Работаем более 20 лет</div></div>
+        <div class="stat"><div class="val">70%</div><div class="lbl">Пациентов приходят по рекомендации</div></div>
+        <div class="stat"><div class="val">3</div><div class="lbl">Клиники в городе</div></div>
+        <div class="stat"><div class="val">0+</div><div class="lbl">Принимаем детей любого возраста</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Наши услуги</p>
+        <h2>Полный спектр стоматологии для всей семьи</h2>
+        <p>От профилактики до сложной имплантации — под одной крышей, на европейском оборудовании.</p>
+      </div>
+
+      <div class="cat-tabs" role="tablist" aria-label="Категории услуг">
+        <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true">Все услуги</button>
+        <button class="cat-tab" data-cat="Лечение и профилактика" role="tab" aria-selected="false">Лечение и профилактика</button>
+        <button class="cat-tab" data-cat="Хирургия и имплантация" role="tab" aria-selected="false">Хирургия и имплантация</button>
+        <button class="cat-tab" data-cat="Протезирование и дети" role="tab" aria-selected="false">Протезирование и дети</button>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <article class="svc-card" data-cat="Лечение и профилактика">
+          <div class="svc-media"><span class="svc-tag">популярное</span><img src="../assets/procedure.jpg" alt="Лечение кариеса и осложнений" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Лечение кариеса и осложнений</h3><p>Безболезненно, современные материалы, гарантия результата.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Лечение и профилактика">
+          <div class="svc-media"><img src="../assets/hygiene.jpg" alt="Профессиональная гигиена полости рта" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Профессиональная гигиена</h3><p>Чистка Air Flow, снятие налёта и камня, полировка.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Лечение и профилактика">
+          <div class="svc-media"><img src="../assets/procedure.jpg" alt="Лечение пародонта и заболеваний дёсен" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Лечение пародонта</h3><p>Профилактика и лечение заболеваний дёсен.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Хирургия и имплантация">
+          <div class="svc-media"><span class="svc-tag">хит</span><img src="../assets/implant.jpg" alt="Имплантология — восстановление зубов имплантами" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Имплантология</h3><p>Восстановление зубов имплантами, точная 3D-диагностика.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Хирургия и имплантация">
+          <div class="svc-media"><img src="../assets/procedure.jpg" alt="Удаление зубов любой сложности" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Удаление зубов любой сложности</h3><p>Атравматично, с современной анестезией.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Хирургия и имплантация">
+          <div class="svc-media"><img src="../assets/interior.jpg" alt="Хирургическая стоматология" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Хирургическая стоматология</h3><p>Полный спектр хирургических вмешательств.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Протезирование и дети">
+          <div class="svc-media"><img src="../assets/implant.jpg" alt="Протезирование — коронки, виниры, протезы" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Протезирование</h3><p>Коронки, виниры, съёмные и несъёмные протезы.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+        <article class="svc-card" data-cat="Протезирование и дети">
+          <div class="svc-media"><span class="svc-tag">для детей</span><img src="../assets/child.jpg" alt="Детская стоматология" loading="lazy" onerror="this.style.opacity='0'"></div>
+          <div class="svc-body"><h3>Детская стоматология</h3><p>Бережный приём детей любого возраста, без страха и слёз.</p>
+            <div class="svc-foot"><span class="svc-price">По записи</span><a class="svc-link" href="#contacts">Записаться →</a></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section features" id="about">
+    <div class="container">
+      <div class="feat-grid">
+        <div class="feat-media">
+          <img src="../assets/doctor.jpg" alt="Врач стоматологии «Смайл»" loading="lazy" onerror="this.style.opacity='0'">
+        </div>
+        <div>
+          <p class="eyebrow">О клинике</p>
+          <h2>Премиум-стоматология, которой доверяют с 2003 года</h2>
+          <div class="feat-list">
+            <div class="feat-item">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <div class="tx"><h3>Более 20 лет опыта</h3><p>Работаем с 2003 года и накопили тысячи довольных пациентов.</p></div>
+            </div>
+            <div class="feat-item">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <div class="tx"><h3>Европейское оборудование</h3><p>Точная 3D-диагностика и современные материалы на каждом приёме.</p></div>
+            </div>
+            <div class="feat-item">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <div class="tx"><h3>70% — по рекомендации</h3><p>Большинство новых пациентов приходят по совету друзей и близких.</p></div>
+            </div>
+            <div class="feat-item">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M5 20a7 7 0 0 1 14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <div class="tx"><h3>Детский приём 0+</h3><p>Принимаем детей любого возраста — бережно, без страха и слёз.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Галерея</p>
+        <h2>Загляните внутрь наших клиник</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gal"><img src="../assets/interior.jpg" alt="Интерьер клиники «Смайл»" loading="lazy" onerror="this.style.opacity='0'"><figcaption class="cap">Интерьер клиники</figcaption></figure>
+        <figure class="gal"><img src="../assets/procedure.jpg" alt="Процедура лечения" loading="lazy" onerror="this.style.opacity='0'"><figcaption class="cap">Приём и лечение</figcaption></figure>
+        <figure class="gal"><img src="../assets/child.jpg" alt="Детский приём" loading="lazy" onerror="this.style.opacity='0'"><figcaption class="cap">Детская стоматология</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section features" id="contacts">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Контакты</p>
+        <h2>Запишитесь на приём</h2>
+        <p>Три клиники в Нижнем Новгороде. Позвоните или приезжайте — мы поможем подобрать удобное время.</p>
+      </div>
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <div class="info-block">
+            <h3>Телефоны</h3>
+            <div class="phone-list">
+              <a href="tel:+78314626309">+7 (831) 462-63-09</a>
+              <a href="tel:+78312522727">+7 (831) 252-27-27</a>
+              <a href="tel:+78314351905">+7 (831) 435-19-05</a>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>Email</h3>
+            <a href="mailto:smailnn2011@yandex.ru">smailnn2011@yandex.ru</a>
+          </div>
+          <div class="info-block">
+            <h3>Часы работы</h3>
+            <p>Пн–Пт: 9:00–20:00<br>Сб: 8:00–15:00<br>Вс: выходной</p>
+          </div>
+          <div class="info-block">
+            <h3>Адреса клиник</h3>
+            <ul class="addr-list">
+              <li>пр. Гагарина, 222</li>
+              <li>пр. Ленина, 44</li>
+              <li>Новокузнечихинская, 9</li>
+            </ul>
+          </div>
+          <a href="tel:+78314626309" class="btn btn-primary" style="margin-top:8px">Позвонить и записаться</a>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=56.2301623,43.9469197&z=16&hl=ru&output=embed" width="100%" height="400" style="border:0;display:block" loading="lazy" allowfullscreen title="Стоматология Смайл на карте"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <div class="brand" style="color:#fff">Смайл<span style="color:var(--primary)">.</span></div>
+      <p>Стоматология в Нижнем Новгороде.<br>С улыбкой по жизни с 2003 года.</p>
+    </div>
+    <div class="footer-col">
+      <p style="color:#fff;font-family:'Manrope',sans-serif;font-weight:700;margin-bottom:8px">Контакты</p>
+      <p><a href="tel:+78314626309">+7 (831) 462-63-09</a><br>
+      <a href="mailto:smailnn2011@yandex.ru">smailnn2011@yandex.ru</a></p>
+    </div>
+    <div class="footer-col">
+      <p style="color:#fff;font-family:'Manrope',sans-serif;font-weight:700;margin-bottom:8px">Клиники</p>
+      <p>пр. Гагарина, 222<br>пр. Ленина, 44<br>Новокузнечихинская, 9</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">© 2026 Стоматология «Смайл» · Нижний Новгород</div>
+</footer>
+
+<script>
+  // Burger
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Category tabs
+  var tabs = document.querySelectorAll('.cat-tab');
+  var cards = document.querySelectorAll('#servicesGrid .svc-card');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      var cat = tab.getAttribute('data-cat');
+      cards.forEach(function (c) {
+        c.style.display = (cat === 'all' || c.getAttribute('data-cat') === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

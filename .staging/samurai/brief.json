@@ -1,0 +1,46 @@
+{
+  "slug": "samurai",
+  "name": "Детейлинг-центр «Самурай»",
+  "tagline": "Детейлинг, полировка, оклейка и кузовной ремонт — вернём вашему авто идеальный вид",
+  "category": "auto-detailing",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "ул. Деловая, 2, литер Б, оф. 1",
+  "coords": { "lat": 56.3070861, "lon": 44.0551513 },
+  "phone": "+7 (831) 410-67-10",
+  "phones": ["+7 (831) 410-67-10", "+7 (910) 790-67-10", "+7 (950) 600-68-18"],
+  "email": "samur52@yandex.ru",
+  "hours": "Пн–Пт: 9:00–18:00",
+  "socials": { "vk": "https://vk.com/asamurainn", "telegram": "", "instagram": "" },
+  "brand": { "primary": "#dc2626", "accent": "#dc2626", "bg": "#0f1113", "mood": "тёмный премиум-автосервис, мощь, металл, красный акцент, глянец" },
+  "stats": [
+    { "value": "10+ лет", "label": "Опыта в кузовном ремонте" },
+    { "value": "600 м²", "label": "Площадь ремонтной базы" },
+    { "value": "10–15 мин", "label": "Оценка стоимости по фото" },
+    { "value": "1 год", "label": "Гарантия на все работы" }
+  ],
+  "menu": [
+    { "cat": "Детейлинг и защита", "items": [
+      { "id": 1, "name": "Полировка кузова", "desc": "Восстановление блеска, удаление царапин и голограмм.", "price": 5000, "img": "assets/polish.jpg", "tags": ["хит"] },
+      { "id": 2, "name": "Керамическое покрытие", "desc": "Долговременная защита ЛКП, глубокий глянец.", "price": null, "img": "assets/ceramic.jpg", "tags": ["защита"] },
+      { "id": 3, "name": "Химчистка салона", "desc": "Глубокая чистка и восстановление интерьера.", "price": null, "img": "assets/interior-clean.jpg", "tags": [] },
+      { "id": 4, "name": "Полировка фар", "desc": "Прозрачность и яркость света как у новых.", "price": 2000, "img": "assets/polish.jpg", "tags": [] }
+    ]},
+    { "cat": "Кузовной ремонт", "items": [
+      { "id": 5, "name": "Покраска автомобиля", "desc": "Полная, локальная или отдельных элементов, точный подбор краски.", "price": null, "img": "assets/paint.jpg", "tags": [] },
+      { "id": 6, "name": "Удаление вмятин без покраски", "desc": "Технология PDR — быстро и без следов.", "price": null, "img": "assets/repair.jpg", "tags": [] },
+      { "id": 7, "name": "Восстановление геометрии кузова", "desc": "Ремонт после ДТП, стапельные работы.", "price": null, "img": "assets/repair.jpg", "tags": ["после ДТП"] },
+      { "id": 8, "name": "Сварочные работы", "desc": "Ремонт порогов, арок, силовых элементов.", "price": null, "img": "assets/paint.jpg", "tags": [] }
+    ]}
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",           "role": "hero" },
+    { "src": "assets/polish.jpg",         "role": "service" },
+    { "src": "assets/ceramic.jpg",        "role": "service" },
+    { "src": "assets/paint.jpg",          "role": "service" },
+    { "src": "assets/repair.jpg",         "role": "service" },
+    { "src": "assets/interior-clean.jpg", "role": "service" },
+    { "src": "assets/garage.jpg",         "role": "interior" }
+  ],
+  "source": { "url": "https://samurainn.ru/", "type": "site", "scrapedAt": "2026-07-03" }
+}

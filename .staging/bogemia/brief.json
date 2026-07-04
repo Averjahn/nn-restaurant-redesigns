@@ -1,0 +1,104 @@
+{
+  "slug": "bogemia",
+  "name": "Автомир Богемия",
+  "tagline": "Официальный дилер ŠKODA в Нижнем Новгороде",
+  "category": "automotive",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "Нижегородская обл., Кстовский р-н, Казанское шоссе, 25",
+  "coords": { "lat": 56.147, "lon": 44.199, "note": "approx — Кстово, Казанское шоссе" },
+  "phone": "+7 (831) 288-45-91",
+  "phone_free": "8-800-555-01-01",
+  "hours": "Ежедневно 09:00–21:00",
+  "socials": { "vk": "", "telegram": "", "instagram": "" },
+  "brand": { "primary": "#4BA83B", "accent": "#1E3A2F", "bg": "#0E1C16", "mood": "премиум авто, чешское качество, зелёный ŠKODA" },
+  "menu": [
+    {
+      "cat": "Модельный ряд",
+      "items": [
+        {
+          "id": 1,
+          "name": "ŠKODA KAROQ",
+          "desc": "Компактный кроссовер C-сегмента. 5 мест, 1.4 TSI 150 л.с., передний или полный привод.",
+          "price": null,
+          "img": "assets/crossover.jpg",
+          "tags": ["кроссовер", "городской"]
+        },
+        {
+          "id": 2,
+          "name": "ŠKODA RAPID",
+          "desc": "Самый доступный лифтбек марки. Вместительный багажник 530 л, 1.4 TSI 125 л.с.",
+          "price": null,
+          "img": "assets/sedan.jpg",
+          "tags": ["лифтбек", "бюджет"]
+        },
+        {
+          "id": 3,
+          "name": "ŠKODA OCTAVIA",
+          "desc": "7 млн проданных автомобилей с 1959 года. 1.6–2.0L, 110–190 л.с., три комплектации.",
+          "price": null,
+          "img": "assets/sedan.jpg",
+          "tags": ["лифтбек", "популярная"]
+        },
+        {
+          "id": 4,
+          "name": "ŠKODA KODIAQ",
+          "desc": "Семейный SUV на 5 или 7 мест. Кристальный дизайн, 360° камера, три зоны климата.",
+          "price": null,
+          "img": "assets/crossover.jpg",
+          "tags": ["SUV", "семейный"]
+        },
+        {
+          "id": 5,
+          "name": "ŠKODA SUPERB",
+          "desc": "Представительский лифтбек бизнес-класса. 9 подушек, контроль слепых зон, массаж сидений.",
+          "price": null,
+          "img": "assets/sedan.jpg",
+          "tags": ["бизнес-класс", "премиум"]
+        }
+      ]
+    },
+    {
+      "cat": "Сервис",
+      "items": [
+        {
+          "id": 6,
+          "name": "Техническое обслуживание",
+          "desc": "Плановое ТО по регламенту ŠKODA с оригинальными запчастями.",
+          "price": null,
+          "img": "assets/service.jpg",
+          "tags": ["ТО", "сервис"]
+        },
+        {
+          "id": 7,
+          "name": "Дезинфекция кондиционера",
+          "desc": "Чистка и дезинфекция системы кондиционирования + замена салонного фильтра.",
+          "price": 2990,
+          "img": "assets/service.jpg",
+          "tags": ["акция"]
+        },
+        {
+          "id": 8,
+          "name": "Скидка на ТО и ремонт",
+          "desc": "До 35% на техническое обслуживание и ремонт для автомобилей старше 3 лет.",
+          "price": null,
+          "img": "assets/service.jpg",
+          "tags": ["акция", "скидка"]
+        }
+      ]
+    }
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",      "role": "hero",     "origin": "stock" },
+    { "src": "assets/showroom.jpg",  "role": "interior", "origin": "stock" },
+    { "src": "assets/service.jpg",   "role": "interior", "origin": "stock" },
+    { "src": "assets/crossover.jpg", "role": "dish",     "origin": "stock" },
+    { "src": "assets/sedan.jpg",     "role": "dish",     "origin": "stock" },
+    { "src": "assets/interior.jpg",  "role": "interior", "origin": "stock" }
+  ],
+  "source": {
+    "url": "https://bogemia-nn.ru/",
+    "type": "site",
+    "scrapedAt": "2026-06-20"
+  }
+}

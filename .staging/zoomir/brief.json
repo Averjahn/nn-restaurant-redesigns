@@ -1,0 +1,49 @@
+{
+  "slug": "zoomir",
+  "name": "Ветклиника «ЗооМир»",
+  "tagline": "Скорая ветеринарная помощь для ваших питомцев — 3 филиала, стационар и гостиница",
+  "category": "veterinary",
+  "tier": "concept",
+  "city": "Нижний Новгород",
+  "address": "ул. Академическая, 2 · ул. Щербинки-1, 10Б · ул. Биробиджанская, 1",
+  "coords": { "lat": 56.2820152, "lon": 44.0821745 },
+  "phone": "+7 (831) 413-28-12",
+  "phones": ["+7 (831) 413-28-12", "+7 (831) 413-72-14", "+7 (831) 413-25-18"],
+  "hours": "Круглосуточно — принимаем в любое время",
+  "socials": { "vk": "", "telegram": "https://t.me/+79991406272", "instagram": "" },
+  "brand": { "primary": "#16a34a", "accent": "#f97316", "bg": "#ffffff", "mood": "забота, зелёный, здоровье питомцев, современная клиника" },
+  "stats": [
+    { "value": "3", "label": "Филиала по городу" },
+    { "value": "24/7", "label": "Круглосуточный приём" },
+    { "value": "11", "label": "Ветеринарных врачей" },
+    { "value": "1 день", "label": "Результаты анализов в день сдачи" }
+  ],
+  "menu": [
+    { "cat": "Приём и диагностика", "items": [
+      { "id": 1, "name": "Клиническая диагностика", "desc": "УЗИ, ЭхоКГ, эндоскопия, анализы — результаты в день сдачи.", "price": null, "img": "assets/lab.jpg", "tags": ["своя лаборатория"] },
+      { "id": 2, "name": "Терапия и осмотр", "desc": "Первичный приём, диагноз, план лечения.", "price": null, "img": "assets/exam.jpg", "tags": [] },
+      { "id": 3, "name": "Кардиология и офтальмология", "desc": "Узкие специалисты по сердцу и зрению питомцев.", "price": null, "img": "assets/exam.jpg", "tags": [] },
+      { "id": 4, "name": "Цифровой рентген на выезде", "desc": "Рентген-диагностика прямо у вас дома.", "price": null, "img": "assets/home.jpg", "tags": ["выезд"] }
+    ]},
+    { "cat": "Хирургия и лечение", "items": [
+      { "id": 5, "name": "Хирургия и травматология", "desc": "Плановые и экстренные операции.", "price": null, "img": "assets/surgery.jpg", "tags": [] },
+      { "id": 6, "name": "Онкология и дерматология", "desc": "Диагностика и лечение опухолей и кожных болезней.", "price": null, "img": "assets/exam.jpg", "tags": [] },
+      { "id": 7, "name": "Инфекционный стационар", "desc": "Изолированное отделение для инфекционных пациентов.", "price": null, "img": "assets/surgery.jpg", "tags": [] }
+    ]},
+    { "cat": "Профилактика и уход", "items": [
+      { "id": 8, "name": "Вакцинация и чипирование", "desc": "Прививки и установка микрочипа с регистрацией.", "price": null, "img": "assets/exam.jpg", "tags": [] },
+      { "id": 9, "name": "Гостиница для животных", "desc": "Присмотр за питомцем, пока вы в отъезде.", "price": null, "img": "assets/pet.jpg", "tags": ["удобно"] },
+      { "id": 10, "name": "Выезд на дом", "desc": "Осмотр и процедуры без стресса для питомца.", "price": null, "img": "assets/home.jpg", "tags": ["выезд"] }
+    ]}
+  ],
+  "photos": [
+    { "src": "assets/hero.jpg",    "role": "hero" },
+    { "src": "assets/exam.jpg",    "role": "service" },
+    { "src": "assets/surgery.jpg", "role": "service" },
+    { "src": "assets/lab.jpg",     "role": "service" },
+    { "src": "assets/home.jpg",    "role": "service" },
+    { "src": "assets/pet.jpg",     "role": "interior" },
+    { "src": "assets/doctor.jpg",  "role": "team" }
+  ],
+  "source": { "url": "https://zoomir-nn.com/", "type": "site", "scrapedAt": "2026-07-03" }
+}
