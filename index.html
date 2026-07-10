@@ -46,13 +46,14 @@
   .work{padding:70px 0 30px}
   .work__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px}
   .work__head h2{font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.02em}
-  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-  .card{background:var(--bg);display:flex;flex-direction:column}
-  .card__prev{display:block;width:100%;aspect-ratio:16/10;transition:filter .2s}
-  .card__meta{padding:16px 20px 18px;display:flex;flex-direction:column;gap:4px}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+  .card__prev{display:block;width:100%;aspect-ratio:16/10;border-radius:13px;transition:filter .25s,transform .25s}
+  .card__meta{padding:16px 8px 6px;display:flex;flex-direction:column;gap:5px}
   .card__name{font-size:18px;font-weight:700;letter-spacing:-.01em}
   .card__cat{font-size:13px;color:var(--muted)}
-  .card:hover .card__prev{filter:brightness(1.08)}
+  .card:hover{border-color:var(--fg);transform:translateY(-4px)}
+  .card:hover .card__prev{filter:brightness(1.05) saturate(1.08);transform:scale(1.015)}
   .card:hover .card__name{text-decoration:underline;text-underline-offset:3px}
   /* contact */
   .contact{padding:96px 0;border-top:1px solid var(--line);margin-top:40px}
@@ -128,126 +129,126 @@
       </div>
       <div class="grid">
         <a class="card" href="avtosushi/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#e23b3b 0.00% 25.00%,#16130f 25.00% 50.00%,#f0a500 50.00% 75.00%,#4a7c33 75.00% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #e23b3b 0%, #e23b3b00 62%), radial-gradient(58% 58% at 74% 26%, #16130f 0%, #16130f00 62%), radial-gradient(58% 58% at 32% 72%, #f0a500 0%, #f0a50000 62%), radial-gradient(58% 58% at 78% 70%, #4a7c33 0%, #4a7c3300 62%), linear-gradient(135deg,#e23b3b, #16130f, #f0a500, #4a7c33)"></span>
           <span class="card__meta">
             <span class="card__name">Автосуши</span>
             <span class="card__cat">Доставка</span>
           </span>
         </a>
         <a class="card" href="macbookbro-a/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#0071e3 0.00% 25.00%,#000000 25.00% 50.00%,#2997ff 50.00% 75.00%,#f5f5f7 75.00% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #0071e3 0%, #0071e300 62%), radial-gradient(58% 58% at 74% 26%, #000000 0%, #00000000 62%), radial-gradient(58% 58% at 32% 72%, #2997ff 0%, #2997ff00 62%), radial-gradient(58% 58% at 78% 70%, #f5f5f7 0%, #f5f5f700 62%), linear-gradient(135deg,#0071e3, #000000, #2997ff, #f5f5f7)"></span>
           <span class="card__meta">
             <span class="card__name">Макбучная</span>
             <span class="card__cat">Apple-ритейл</span>
           </span>
         </a>
         <a class="card" href="bogemia-a/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#4BA83B 0.00% 25.00%,#0a2818 25.00% 50.00%,#5DC44A 50.00% 75.00%,#e8f0e5 75.00% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #4BA83B 0%, #4BA83B00 62%), radial-gradient(58% 58% at 74% 26%, #0a2818 0%, #0a281800 62%), radial-gradient(58% 58% at 32% 72%, #5DC44A 0%, #5DC44A00 62%), radial-gradient(58% 58% at 78% 70%, #e8f0e5 0%, #e8f0e500 62%), linear-gradient(135deg,#4BA83B, #0a2818, #5DC44A, #e8f0e5)"></span>
           <span class="card__meta">
             <span class="card__name">Богемия ŠKODA</span>
             <span class="card__cat">Автосалон</span>
           </span>
         </a>
         <a class="card" href="loghouse-a/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#8B4513 0.00% 25.00%,#2D5016 25.00% 50.00%,#C9963C 50.00% 75.00%,#faf7f2 75.00% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #8B4513 0%, #8B451300 62%), radial-gradient(58% 58% at 74% 26%, #2D5016 0%, #2D501600 62%), radial-gradient(58% 58% at 32% 72%, #C9963C 0%, #C9963C00 62%), radial-gradient(58% 58% at 78% 70%, #faf7f2 0%, #faf7f200 62%), linear-gradient(135deg,#8B4513, #2D5016, #C9963C, #faf7f2)"></span>
           <span class="card__meta">
             <span class="card__name">Gazebos Loghouse</span>
             <span class="card__cat">Загородный отдых</span>
           </span>
         </a>
         <a class="card" href="samurai/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#dc2626 0.00% 33.33%,#0f1113 33.33% 66.67%,#9ca3af 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #dc2626 0%, #dc262600 62%), radial-gradient(58% 58% at 74% 26%, #0f1113 0%, #0f111300 62%), radial-gradient(58% 58% at 32% 72%, #9ca3af 0%, #9ca3af00 62%), linear-gradient(135deg,#dc2626, #0f1113, #9ca3af)"></span>
           <span class="card__meta">
             <span class="card__name">Самурай</span>
             <span class="card__cat">Детейлинг</span>
           </span>
         </a>
         <a class="card" href="smailnn/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#0ea5a4 0.00% 33.33%,#043432 33.33% 66.67%,#d4f5f2 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #0ea5a4 0%, #0ea5a400 62%), radial-gradient(58% 58% at 74% 26%, #043432 0%, #04343200 62%), radial-gradient(58% 58% at 32% 72%, #d4f5f2 0%, #d4f5f200 62%), linear-gradient(135deg,#0ea5a4, #043432, #d4f5f2)"></span>
           <span class="card__meta">
             <span class="card__name">Смайл</span>
             <span class="card__cat">Стоматология</span>
           </span>
         </a>
         <a class="card" href="vetdrug/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#2563eb 0.00% 33.33%,#f59e0b 33.33% 66.67%,#0f172a 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #2563eb 0%, #2563eb00 62%), radial-gradient(58% 58% at 74% 26%, #f59e0b 0%, #f59e0b00 62%), radial-gradient(58% 58% at 32% 72%, #0f172a 0%, #0f172a00 62%), linear-gradient(135deg,#2563eb, #f59e0b, #0f172a)"></span>
           <span class="card__meta">
             <span class="card__name">ВетДруг</span>
             <span class="card__cat">Ветклиника</span>
           </span>
         </a>
         <a class="card" href="zoomir/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#16a34a 0.00% 33.33%,#f97316 33.33% 66.67%,#14231a 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #16a34a 0%, #16a34a00 62%), radial-gradient(58% 58% at 74% 26%, #f97316 0%, #f9731600 62%), radial-gradient(58% 58% at 32% 72%, #14231a 0%, #14231a00 62%), linear-gradient(135deg,#16a34a, #f97316, #14231a)"></span>
           <span class="card__meta">
             <span class="card__name">ЗооМир</span>
             <span class="card__cat">Ветклиника</span>
           </span>
         </a>
         <a class="card" href="kupets/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#b08d4c 0.00% 33.33%,#1a1208 33.33% 66.67%,#e8d9b8 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #b08d4c 0%, #b08d4c00 62%), radial-gradient(58% 58% at 74% 26%, #1a1208 0%, #1a120800 62%), radial-gradient(58% 58% at 32% 72%, #e8d9b8 0%, #e8d9b800 62%), linear-gradient(135deg,#b08d4c, #1a1208, #e8d9b8)"></span>
           <span class="card__meta">
             <span class="card__name">Купеческий</span>
             <span class="card__cat">Ресторан</span>
           </span>
         </a>
         <a class="card" href="oka/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#0d1520 0.00% 33.33%,#c9a84c 33.33% 66.67%,#e8dcc0 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #0d1520 0%, #0d152000 62%), radial-gradient(58% 58% at 74% 26%, #c9a84c 0%, #c9a84c00 62%), radial-gradient(58% 58% at 32% 72%, #e8dcc0 0%, #e8dcc000 62%), linear-gradient(135deg,#0d1520, #c9a84c, #e8dcc0)"></span>
           <span class="card__meta">
             <span class="card__name">Ресторан ОКА</span>
             <span class="card__cat">Ресторан</span>
           </span>
         </a>
         <a class="card" href="coffeemolly/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#4a3526 0.00% 33.33%,#1fb0a0 33.33% 66.67%,#e8ddca 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #4a3526 0%, #4a352600 62%), radial-gradient(58% 58% at 74% 26%, #1fb0a0 0%, #1fb0a000 62%), radial-gradient(58% 58% at 32% 72%, #e8ddca 0%, #e8ddca00 62%), linear-gradient(135deg,#4a3526, #1fb0a0, #e8ddca)"></span>
           <span class="card__meta">
             <span class="card__name">Coffee Molly</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="hygge/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#d39440 0.00% 33.33%,#3a2c1e 33.33% 66.67%,#f0e2c8 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #d39440 0%, #d3944000 62%), radial-gradient(58% 58% at 74% 26%, #3a2c1e 0%, #3a2c1e00 62%), radial-gradient(58% 58% at 32% 72%, #f0e2c8 0%, #f0e2c800 62%), linear-gradient(135deg,#d39440, #3a2c1e, #f0e2c8)"></span>
           <span class="card__meta">
             <span class="card__name">Кофехюгге</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="chertochka/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#1a1613 0.00% 33.33%,#a9663a 33.33% 66.67%,#e8dccb 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #1a1613 0%, #1a161300 62%), radial-gradient(58% 58% at 74% 26%, #a9663a 0%, #a9663a00 62%), radial-gradient(58% 58% at 32% 72%, #e8dccb 0%, #e8dccb00 62%), linear-gradient(135deg,#1a1613, #a9663a, #e8dccb)"></span>
           <span class="card__meta">
             <span class="card__name">Чёрточка</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="lagom/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#5b7c92 0.00% 33.33%,#cbb89a 33.33% 66.67%,#eae4d8 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #5b7c92 0%, #5b7c9200 62%), radial-gradient(58% 58% at 74% 26%, #cbb89a 0%, #cbb89a00 62%), radial-gradient(58% 58% at 32% 72%, #eae4d8 0%, #eae4d800 62%), linear-gradient(135deg,#5b7c92, #cbb89a, #eae4d8)"></span>
           <span class="card__meta">
             <span class="card__name">Lägom</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="cuppcake/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#d36b7d 0.00% 33.33%,#8aa890 33.33% 66.67%,#f5dfe4 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #d36b7d 0%, #d36b7d00 62%), radial-gradient(58% 58% at 74% 26%, #8aa890 0%, #8aa89000 62%), radial-gradient(58% 58% at 32% 72%, #f5dfe4 0%, #f5dfe400 62%), linear-gradient(135deg,#d36b7d, #8aa890, #f5dfe4)"></span>
           <span class="card__meta">
             <span class="card__name">CuPPcake</span>
             <span class="card__cat">Кондитерская</span>
           </span>
         </a>
         <a class="card" href="ps/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#e8b4b8 0.00% 33.33%,#7a5c54 33.33% 66.67%,#f2ddd8 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #e8b4b8 0%, #e8b4b800 62%), radial-gradient(58% 58% at 74% 26%, #7a5c54 0%, #7a5c5400 62%), radial-gradient(58% 58% at 32% 72%, #f2ddd8 0%, #f2ddd800 62%), linear-gradient(135deg,#e8b4b8, #7a5c54, #f2ddd8)"></span>
           <span class="card__meta">
             <span class="card__name">P.S.</span>
             <span class="card__cat">Кондитерская</span>
           </span>
         </a>
         <a class="card" href="shashlyk52/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#e11d2a 0.00% 33.33%,#1a1a1a 33.33% 66.67%,#f0c33a 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #e11d2a 0%, #e11d2a00 62%), radial-gradient(58% 58% at 74% 26%, #1a1a1a 0%, #1a1a1a00 62%), radial-gradient(58% 58% at 32% 72%, #f0c33a 0%, #f0c33a00 62%), linear-gradient(135deg,#e11d2a, #1a1a1a, #f0c33a)"></span>
           <span class="card__meta">
             <span class="card__name">Шашлык52</span>
             <span class="card__cat">Доставка</span>
           </span>
         </a>
         <a class="card" href="vypechka/">
-          <span class="card__prev" style="background:linear-gradient(90deg,#f2a900 0.00% 33.33%,#c8321f 33.33% 66.67%,#3a2a12 66.67% 100.00%)"></span>
+          <span class="card__prev" style="background:radial-gradient(58% 58% at 26% 30%, #f2a900 0%, #f2a90000 62%), radial-gradient(58% 58% at 74% 26%, #c8321f 0%, #c8321f00 62%), radial-gradient(58% 58% at 32% 72%, #3a2a12 0%, #3a2a1200 62%), linear-gradient(135deg,#f2a900, #c8321f, #3a2a12)"></span>
           <span class="card__meta">
             <span class="card__name">Русская Выпечка</span>
             <span class="card__cat">Доставка</span>
