@@ -47,13 +47,13 @@
   .work__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px}
   .work__head h2{font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.02em}
   .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-  .card{background:var(--bg);padding:30px 26px 26px;min-height:150px;display:flex;flex-direction:column;transition:background .18s,color .18s}
-  .card__name{font-size:22px;font-weight:700;letter-spacing:-.01em}
-  .card__cat{font-size:13px;color:var(--muted);margin-top:6px}
-  .card__go{margin-top:auto;font-size:13px;font-weight:600;opacity:0;transform:translateY(6px);transition:.2s}
-  .card:hover{background:var(--fg);color:var(--bg)}
-  .card:hover .card__cat{color:var(--bg)}
-  .card:hover .card__go{opacity:1;transform:none}
+  .card{background:var(--bg);display:flex;flex-direction:column}
+  .card__prev{display:block;width:100%;aspect-ratio:16/10;transition:filter .2s}
+  .card__meta{padding:16px 20px 18px;display:flex;flex-direction:column;gap:4px}
+  .card__name{font-size:18px;font-weight:700;letter-spacing:-.01em}
+  .card__cat{font-size:13px;color:var(--muted)}
+  .card:hover .card__prev{filter:brightness(1.08)}
+  .card:hover .card__name{text-decoration:underline;text-underline-offset:3px}
   /* contact */
   .contact{padding:96px 0;border-top:1px solid var(--line);margin-top:40px}
   .contact h2{font-size:clamp(30px,5vw,60px);font-weight:800;letter-spacing:-.03em;margin-bottom:30px}
@@ -67,7 +67,6 @@
     .wrap{padding:0 20px}
     .pts,.grid{grid-template-columns:1fr}
     .hd nav{gap:18px} .hd nav a.nav-hide{display:none}
-    .card__go{opacity:1;transform:none}
   }
 </style>
 </head>
@@ -87,9 +86,9 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <span class="lbl">Веб-студия · Нижний Новгород</span>
+      <span class="lbl">Нижний Новгород</span>
       <h1>Лучшие сайты.<br><span>Лучший дизайн.</span></h1>
-      <p class="lead">Проектируем, разрабатываем и запускаем сайты под ключ.</p>
+      <p class="lead">Проектируем, разрабатываем и запускаем сайты.</p>
       <a href="#work" class="cta">Смотреть работы &rarr;</a>
     </div>
   </section>
@@ -129,94 +128,130 @@
       </div>
       <div class="grid">
         <a class="card" href="avtosushi/">
-          <span class="card__name">Автосуши</span>
-          <span class="card__cat">Доставка</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#e23b3b 0.00% 25.00%,#16130f 25.00% 50.00%,#f0a500 50.00% 75.00%,#4a7c33 75.00% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Автосуши</span>
+            <span class="card__cat">Доставка</span>
+          </span>
         </a>
         <a class="card" href="macbookbro-a/">
-          <span class="card__name">Макбучная</span>
-          <span class="card__cat">Apple-ритейл</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#0071e3 0.00% 25.00%,#000000 25.00% 50.00%,#2997ff 50.00% 75.00%,#f5f5f7 75.00% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Макбучная</span>
+            <span class="card__cat">Apple-ритейл</span>
+          </span>
         </a>
         <a class="card" href="bogemia-a/">
-          <span class="card__name">Богемия ŠKODA</span>
-          <span class="card__cat">Автосалон</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#4BA83B 0.00% 25.00%,#0a2818 25.00% 50.00%,#5DC44A 50.00% 75.00%,#e8f0e5 75.00% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Богемия ŠKODA</span>
+            <span class="card__cat">Автосалон</span>
+          </span>
         </a>
         <a class="card" href="loghouse-a/">
-          <span class="card__name">Gazebos Loghouse</span>
-          <span class="card__cat">Загородный отдых</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#8B4513 0.00% 25.00%,#2D5016 25.00% 50.00%,#C9963C 50.00% 75.00%,#faf7f2 75.00% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Gazebos Loghouse</span>
+            <span class="card__cat">Загородный отдых</span>
+          </span>
         </a>
         <a class="card" href="samurai/">
-          <span class="card__name">Самурай</span>
-          <span class="card__cat">Детейлинг</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#dc2626 0.00% 33.33%,#0f1113 33.33% 66.67%,#9ca3af 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Самурай</span>
+            <span class="card__cat">Детейлинг</span>
+          </span>
         </a>
         <a class="card" href="smailnn/">
-          <span class="card__name">Смайл</span>
-          <span class="card__cat">Стоматология</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#0ea5a4 0.00% 33.33%,#043432 33.33% 66.67%,#d4f5f2 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Смайл</span>
+            <span class="card__cat">Стоматология</span>
+          </span>
         </a>
         <a class="card" href="vetdrug/">
-          <span class="card__name">ВетДруг</span>
-          <span class="card__cat">Ветклиника</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#2563eb 0.00% 33.33%,#f59e0b 33.33% 66.67%,#0f172a 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">ВетДруг</span>
+            <span class="card__cat">Ветклиника</span>
+          </span>
         </a>
         <a class="card" href="zoomir/">
-          <span class="card__name">ЗооМир</span>
-          <span class="card__cat">Ветклиника</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#16a34a 0.00% 33.33%,#f97316 33.33% 66.67%,#14231a 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">ЗооМир</span>
+            <span class="card__cat">Ветклиника</span>
+          </span>
         </a>
         <a class="card" href="kupets/">
-          <span class="card__name">Купеческий</span>
-          <span class="card__cat">Ресторан</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#b08d4c 0.00% 33.33%,#1a1208 33.33% 66.67%,#e8d9b8 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Купеческий</span>
+            <span class="card__cat">Ресторан</span>
+          </span>
         </a>
         <a class="card" href="oka/">
-          <span class="card__name">Ресторан ОКА</span>
-          <span class="card__cat">Ресторан</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#0d1520 0.00% 33.33%,#c9a84c 33.33% 66.67%,#e8dcc0 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Ресторан ОКА</span>
+            <span class="card__cat">Ресторан</span>
+          </span>
         </a>
         <a class="card" href="coffeemolly/">
-          <span class="card__name">Coffee Molly</span>
-          <span class="card__cat">Кофейня</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#4a3526 0.00% 33.33%,#1fb0a0 33.33% 66.67%,#e8ddca 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Coffee Molly</span>
+            <span class="card__cat">Кофейня</span>
+          </span>
         </a>
         <a class="card" href="hygge/">
-          <span class="card__name">Кофехюгге</span>
-          <span class="card__cat">Кофейня</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#d39440 0.00% 33.33%,#3a2c1e 33.33% 66.67%,#f0e2c8 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Кофехюгге</span>
+            <span class="card__cat">Кофейня</span>
+          </span>
         </a>
         <a class="card" href="chertochka/">
-          <span class="card__name">Чёрточка</span>
-          <span class="card__cat">Кофейня</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#1a1613 0.00% 33.33%,#a9663a 33.33% 66.67%,#e8dccb 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Чёрточка</span>
+            <span class="card__cat">Кофейня</span>
+          </span>
         </a>
         <a class="card" href="lagom/">
-          <span class="card__name">Lägom</span>
-          <span class="card__cat">Кофейня</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#5b7c92 0.00% 33.33%,#cbb89a 33.33% 66.67%,#eae4d8 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Lägom</span>
+            <span class="card__cat">Кофейня</span>
+          </span>
         </a>
         <a class="card" href="cuppcake/">
-          <span class="card__name">CuPPcake</span>
-          <span class="card__cat">Кондитерская</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#d36b7d 0.00% 33.33%,#8aa890 33.33% 66.67%,#f5dfe4 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">CuPPcake</span>
+            <span class="card__cat">Кондитерская</span>
+          </span>
         </a>
         <a class="card" href="ps/">
-          <span class="card__name">P.S.</span>
-          <span class="card__cat">Кондитерская</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#e8b4b8 0.00% 33.33%,#7a5c54 33.33% 66.67%,#f2ddd8 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">P.S.</span>
+            <span class="card__cat">Кондитерская</span>
+          </span>
         </a>
         <a class="card" href="shashlyk52/">
-          <span class="card__name">Шашлык52</span>
-          <span class="card__cat">Доставка</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#e11d2a 0.00% 33.33%,#1a1a1a 33.33% 66.67%,#f0c33a 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Шашлык52</span>
+            <span class="card__cat">Доставка</span>
+          </span>
         </a>
         <a class="card" href="vypechka/">
-          <span class="card__name">Русская Выпечка</span>
-          <span class="card__cat">Доставка</span>
-          <span class="card__go">Смотреть</span>
+          <span class="card__prev" style="background:linear-gradient(90deg,#f2a900 0.00% 33.33%,#c8321f 33.33% 66.67%,#3a2a12 66.67% 100.00%)"></span>
+          <span class="card__meta">
+            <span class="card__name">Русская Выпечка</span>
+            <span class="card__cat">Доставка</span>
+          </span>
         </a>
       </div>
     </div>
@@ -237,7 +272,7 @@
 <footer>
   <div class="wrap ft">
     <span>© 2026 · Нижний Новгород</span>
-    <span>Сайты и редизайн под ключ</span>
+    <span>Сайты и редизайн</span>
   </div>
 </footer>
 
