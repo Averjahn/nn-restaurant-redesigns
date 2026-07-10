@@ -48,12 +48,13 @@
   .work__head h2{font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.02em}
   .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
   .card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-  .card__prev{display:block;width:100%;aspect-ratio:16/10;border-radius:13px;transition:filter .25s,transform .25s}
+  .card__prev{display:block;position:relative;width:100%;aspect-ratio:16/10;border-radius:13px;overflow:hidden;transition:filter .25s}
+  .card__frame{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:top left;pointer-events:none;background:#fff}
   .card__meta{padding:16px 8px 6px;display:flex;flex-direction:column;gap:5px}
   .card__name{font-size:18px;font-weight:700;letter-spacing:-.01em}
   .card__cat{font-size:13px;color:var(--muted)}
   .card:hover{border-color:var(--fg);transform:translateY(-4px)}
-  .card:hover .card__prev{filter:brightness(1.05) saturate(1.08);transform:scale(1.015)}
+  .card:hover .card__prev{filter:brightness(1.04)}
   .card:hover .card__name{text-decoration:underline;text-underline-offset:3px}
   /* contact */
   .contact{padding:96px 0;border-top:1px solid var(--line);margin-top:40px}
@@ -129,126 +130,162 @@
       </div>
       <div class="grid">
         <a class="card" href="avtosushi/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 74% 42% at 100% 87%, #4a7c33 54%, #4a7c3300 56%), radial-gradient(ellipse 61% 42% at 25% 48%, #4a7c33 58%, #4a7c3300 60%), radial-gradient(ellipse 74% 43% at 48% 98%, #f0a500 58%, #f0a50000 60%), radial-gradient(ellipse 65% 63% at 78% 36%, #16130f 60%, #16130f00 62%), radial-gradient(ellipse 73% 40% at 45% 45%, #16130f 53%, #16130f00 55%), radial-gradient(ellipse 78% 38% at 50% 55%, #e23b3b 50%, #e23b3b00 52%), radial-gradient(ellipse 61% 49% at 59% 63%, #e23b3b 59%, #e23b3b00 61%), #4a7c33"></span>
+          <span class="card__prev" style="background:#4a7c33">
+            <iframe class="card__frame" src="avtosushi/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Автосуши</span>
             <span class="card__cat">Доставка</span>
           </span>
         </a>
         <a class="card" href="macbookbro-a/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 49% 69% at 57% 77%, #2997ff 47%, #2997ff00 49%), radial-gradient(ellipse 64% 52% at -6% 0%, #2997ff 55%, #2997ff00 57%), radial-gradient(ellipse 68% 58% at 4% 4%, #f5f5f7 53%, #f5f5f700 55%), radial-gradient(ellipse 39% 57% at 69% 55%, #000000 61%, #00000000 63%), radial-gradient(ellipse 53% 63% at 86% -10%, #0071e3 53%, #0071e300 55%), #f5f5f7"></span>
+          <span class="card__prev" style="background:#f5f5f7">
+            <iframe class="card__frame" src="macbookbro-a/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Макбучная</span>
             <span class="card__cat">Apple-ритейл</span>
           </span>
         </a>
         <a class="card" href="bogemia-a/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 41% 63% at 24% 25%, #e8f0e5 59%, #e8f0e500 61%), radial-gradient(ellipse 63% 67% at 59% 67%, #e8f0e5 62%, #e8f0e500 64%), radial-gradient(ellipse 65% 74% at 5% 90%, #0a2818 57%, #0a281800 59%), radial-gradient(ellipse 68% 48% at 55% 104%, #0a2818 47%, #0a281800 49%), radial-gradient(ellipse 64% 69% at 13% 28%, #5DC44A 46%, #5DC44A00 48%), radial-gradient(ellipse 64% 38% at 83% 19%, #5DC44A 59%, #5DC44A00 61%), radial-gradient(ellipse 45% 41% at 62% 15%, #4BA83B 51%, #4BA83B00 53%), radial-gradient(ellipse 41% 56% at 57% 31%, #4BA83B 51%, #4BA83B00 53%), #e8f0e5"></span>
+          <span class="card__prev" style="background:#e8f0e5">
+            <iframe class="card__frame" src="bogemia-a/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Богемия ŠKODA</span>
             <span class="card__cat">Автосалон</span>
           </span>
         </a>
         <a class="card" href="loghouse-a/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 56% 43% at 70% 39%, #8B4513 60%, #8B451300 62%), radial-gradient(ellipse 58% 60% at 88% 58%, #C9963C 61%, #C9963C00 63%), radial-gradient(ellipse 39% 61% at 61% 61%, #C9963C 54%, #C9963C00 56%), radial-gradient(ellipse 58% 56% at 67% 60%, #faf7f2 50%, #faf7f200 52%), radial-gradient(ellipse 65% 74% at 62% 106%, #2D5016 62%, #2D501600 64%), #faf7f2"></span>
+          <span class="card__prev" style="background:#faf7f2">
+            <iframe class="card__frame" src="loghouse-a/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Gazebos Loghouse</span>
             <span class="card__cat">Загородный отдых</span>
           </span>
         </a>
         <a class="card" href="samurai/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 64% 69% at 39% 21%, #dc2626 50%, #dc262600 52%), radial-gradient(ellipse 69% 51% at 46% 13%, #9ca3af 52%, #9ca3af00 54%), radial-gradient(ellipse 59% 39% at 41% 44%, #9ca3af 58%, #9ca3af00 60%), radial-gradient(ellipse 69% 55% at 66% 38%, #0f1113 48%, #0f111300 50%), #9ca3af"></span>
+          <span class="card__prev" style="background:#9ca3af">
+            <iframe class="card__frame" src="samurai/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Самурай</span>
             <span class="card__cat">Детейлинг</span>
           </span>
         </a>
         <a class="card" href="smailnn/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 71% 78% at 46% 19%, #0ea5a4 60%, #0ea5a400 62%), radial-gradient(ellipse 59% 43% at 75% -9%, #043432 48%, #04343200 50%), radial-gradient(ellipse 39% 76% at 56% 63%, #d4f5f2 61%, #d4f5f200 63%), radial-gradient(ellipse 68% 75% at 52% 62%, #d4f5f2 60%, #d4f5f200 62%), #d4f5f2"></span>
+          <span class="card__prev" style="background:#d4f5f2">
+            <iframe class="card__frame" src="smailnn/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Смайл</span>
             <span class="card__cat">Стоматология</span>
           </span>
         </a>
         <a class="card" href="vetdrug/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 54% 48% at 84% 72%, #2563eb 51%, #2563eb00 53%), radial-gradient(ellipse 58% 67% at 48% -1%, #2563eb 47%, #2563eb00 49%), radial-gradient(ellipse 49% 55% at -8% 22%, #0f172a 48%, #0f172a00 50%), radial-gradient(ellipse 56% 40% at -7% 65%, #f59e0b 56%, #f59e0b00 58%), radial-gradient(ellipse 58% 59% at 45% 19%, #f59e0b 49%, #f59e0b00 51%), #0f172a"></span>
+          <span class="card__prev" style="background:#0f172a">
+            <iframe class="card__frame" src="vetdrug/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">ВетДруг</span>
             <span class="card__cat">Ветклиника</span>
           </span>
         </a>
         <a class="card" href="zoomir/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 51% 45% at 41% 53%, #14231a 51%, #14231a00 53%), radial-gradient(ellipse 54% 53% at 41% 28%, #f97316 51%, #f9731600 53%), radial-gradient(ellipse 57% 67% at 73% 102%, #16a34a 53%, #16a34a00 55%), radial-gradient(ellipse 39% 52% at 4% 53%, #16a34a 58%, #16a34a00 60%), #14231a"></span>
+          <span class="card__prev" style="background:#14231a">
+            <iframe class="card__frame" src="zoomir/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">ЗооМир</span>
             <span class="card__cat">Ветклиника</span>
           </span>
         </a>
         <a class="card" href="kupets/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 71% 58% at -4% 5%, #e8d9b8 54%, #e8d9b800 56%), radial-gradient(ellipse 48% 64% at 2% 19%, #e8d9b8 55%, #e8d9b800 57%), radial-gradient(ellipse 40% 78% at 57% 86%, #b08d4c 50%, #b08d4c00 52%), radial-gradient(ellipse 43% 57% at 93% -8%, #1a1208 64%, #1a120800 66%), #e8d9b8"></span>
+          <span class="card__prev" style="background:#e8d9b8">
+            <iframe class="card__frame" src="kupets/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Купеческий</span>
             <span class="card__cat">Ресторан</span>
           </span>
         </a>
         <a class="card" href="oka/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 38% 53% at 99% 27%, #0d1520 52%, #0d152000 54%), radial-gradient(ellipse 50% 67% at 46% 12%, #0d1520 47%, #0d152000 49%), radial-gradient(ellipse 65% 44% at 64% 33%, #c9a84c 47%, #c9a84c00 49%), radial-gradient(ellipse 43% 43% at 34% 35%, #c9a84c 57%, #c9a84c00 59%), radial-gradient(ellipse 74% 68% at 61% 2%, #e8dcc0 48%, #e8dcc000 50%), #e8dcc0"></span>
+          <span class="card__prev" style="background:#e8dcc0">
+            <iframe class="card__frame" src="oka/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Ресторан ОКА</span>
             <span class="card__cat">Ресторан</span>
           </span>
         </a>
         <a class="card" href="coffeemolly/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 73% 64% at 18% 91%, #1fb0a0 61%, #1fb0a000 63%), radial-gradient(ellipse 73% 75% at 43% 25%, #1fb0a0 62%, #1fb0a000 64%), radial-gradient(ellipse 65% 51% at 46% 50%, #e8ddca 46%, #e8ddca00 48%), radial-gradient(ellipse 74% 54% at 2% 50%, #e8ddca 61%, #e8ddca00 63%), radial-gradient(ellipse 60% 69% at 22% 39%, #4a3526 63%, #4a352600 65%), radial-gradient(ellipse 61% 72% at 44% 7%, #4a3526 46%, #4a352600 48%), #e8ddca"></span>
+          <span class="card__prev" style="background:#e8ddca">
+            <iframe class="card__frame" src="coffeemolly/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Coffee Molly</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="hygge/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 40% 74% at 107% 43%, #f0e2c8 58%, #f0e2c800 60%), radial-gradient(ellipse 59% 49% at 87% 70%, #f0e2c8 60%, #f0e2c800 62%), radial-gradient(ellipse 65% 38% at 10% 45%, #3a2c1e 60%, #3a2c1e00 62%), radial-gradient(ellipse 68% 57% at 73% 89%, #3a2c1e 53%, #3a2c1e00 55%), radial-gradient(ellipse 78% 75% at 101% 10%, #d39440 49%, #d3944000 51%), radial-gradient(ellipse 53% 66% at 98% 47%, #d39440 51%, #d3944000 53%), #f0e2c8"></span>
+          <span class="card__prev" style="background:#f0e2c8">
+            <iframe class="card__frame" src="hygge/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Кофехюгге</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="chertochka/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 54% 78% at 31% 21%, #e8dccb 51%, #e8dccb00 53%), radial-gradient(ellipse 44% 75% at -7% 2%, #1a1613 56%, #1a161300 58%), radial-gradient(ellipse 66% 42% at 95% 23%, #a9663a 54%, #a9663a00 56%), #e8dccb"></span>
+          <span class="card__prev" style="background:#e8dccb">
+            <iframe class="card__frame" src="chertochka/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Чёрточка</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="lagom/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 72% 39% at 91% 15%, #eae4d8 58%, #eae4d800 60%), radial-gradient(ellipse 52% 72% at 86% 6%, #cbb89a 55%, #cbb89a00 57%), radial-gradient(ellipse 60% 38% at 14% 30%, #cbb89a 49%, #cbb89a00 51%), radial-gradient(ellipse 70% 72% at 62% 40%, #5b7c92 63%, #5b7c9200 65%), radial-gradient(ellipse 56% 42% at 17% 89%, #5b7c92 60%, #5b7c9200 62%), #eae4d8"></span>
+          <span class="card__prev" style="background:#eae4d8">
+            <iframe class="card__frame" src="lagom/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Lägom</span>
             <span class="card__cat">Кофейня</span>
           </span>
         </a>
         <a class="card" href="cuppcake/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 75% 61% at 9% 102%, #f5dfe4 64%, #f5dfe400 66%), radial-gradient(ellipse 67% 45% at 22% 79%, #d36b7d 56%, #d36b7d00 58%), radial-gradient(ellipse 48% 64% at 99% 23%, #8aa890 57%, #8aa89000 59%), #f5dfe4"></span>
+          <span class="card__prev" style="background:#f5dfe4">
+            <iframe class="card__frame" src="cuppcake/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">CuPPcake</span>
             <span class="card__cat">Кондитерская</span>
           </span>
         </a>
         <a class="card" href="ps/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 43% 78% at 25% 57%, #f2ddd8 46%, #f2ddd800 48%), radial-gradient(ellipse 71% 65% at 64% 70%, #f2ddd8 61%, #f2ddd800 63%), radial-gradient(ellipse 46% 69% at 100% 23%, #e8b4b8 56%, #e8b4b800 58%), radial-gradient(ellipse 72% 67% at 87% 10%, #e8b4b8 55%, #e8b4b800 57%), radial-gradient(ellipse 50% 72% at 75% 17%, #7a5c54 54%, #7a5c5400 56%), #f2ddd8"></span>
+          <span class="card__prev" style="background:#f2ddd8">
+            <iframe class="card__frame" src="ps/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">P.S.</span>
             <span class="card__cat">Кондитерская</span>
           </span>
         </a>
         <a class="card" href="shashlyk52/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 40% 60% at 10% 54%, #e11d2a 46%, #e11d2a00 48%), radial-gradient(ellipse 55% 46% at 84% 45%, #1a1a1a 48%, #1a1a1a00 50%), radial-gradient(ellipse 48% 46% at 98% 90%, #1a1a1a 61%, #1a1a1a00 63%), radial-gradient(ellipse 59% 57% at 66% 40%, #f0c33a 64%, #f0c33a00 66%), radial-gradient(ellipse 42% 66% at 76% 84%, #f0c33a 55%, #f0c33a00 57%), #f0c33a"></span>
+          <span class="card__prev" style="background:#f0c33a">
+            <iframe class="card__frame" src="shashlyk52/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Шашлык52</span>
             <span class="card__cat">Доставка</span>
           </span>
         </a>
         <a class="card" href="vypechka/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:radial-gradient(ellipse 76% 60% at 12% 60%, #f2a900 51%, #f2a90000 53%), radial-gradient(ellipse 67% 49% at 49% 60%, #3a2a12 52%, #3a2a1200 54%), radial-gradient(ellipse 65% 60% at 49% 105%, #3a2a12 49%, #3a2a1200 51%), radial-gradient(ellipse 42% 54% at -5% 16%, #c8321f 48%, #c8321f00 50%), radial-gradient(ellipse 58% 72% at 83% 16%, #c8321f 57%, #c8321f00 59%), #3a2a12"></span>
+          <span class="card__prev" style="background:#3a2a12">
+            <iframe class="card__frame" src="vypechka/" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+          </span>
           <span class="card__meta">
             <span class="card__name">Русская Выпечка</span>
             <span class="card__cat">Доставка</span>
@@ -287,6 +324,19 @@
       try{localStorage.setItem('theme',next);}catch(e){}
       document.querySelector('meta[name=theme-color]').setAttribute('content',next==='dark'?'#000000':'#ffffff');
     });
+  })();
+
+  /* живые миниатюры: масштабируем iframe сайта под ширину карточки */
+  (function(){
+    const FW=1440;
+    function fit(){
+      document.querySelectorAll('.card__prev').forEach(box=>{
+        const w=box.clientWidth;
+        box.querySelector('.card__frame').style.transform='scale('+(w/FW)+')';
+      });
+    }
+    fit();
+    window.addEventListener('resize',()=>{clearTimeout(window.__rft);window.__rft=setTimeout(fit,120);});
   })();
 </script>
   <script>
