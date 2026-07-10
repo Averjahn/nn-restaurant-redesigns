@@ -1,658 +1,270 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайты для ресторанов и кафе · Нижний Новгород</title>
-  <meta name="description" content="Разрабатываем современные сайты для ресторанов, кафе и служб доставки в Нижнем Новгороде. SEO-оптимизация, Яндекс.Метрика, рост клиентов. Тел. 8 920 040 88 01.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --accent: #e8541a;
-      --accent-dark: #c43d0e;
-      --bg: #0b0b0d;
-      --bg2: #111114;
-      --surface: #18181c;
-      --border: #262629;
-      --text: #f0ece4;
-      --muted: #8a8a8e;
-      --container: 1100px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: "Inter", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* ── Контейнер ── */
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-
-    /* ── HEADER ── */
-    .header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(11,11,13,.85); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .header__inner {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 0; gap: 24px;
-    }
-    .header__logo {
-      font-size: 17px; font-weight: 800; letter-spacing: -.02em;
-      color: var(--text);
-    }
-    .header__logo span { color: var(--accent); }
-    .nav { display: flex; gap: 28px; }
-    .nav a { font-size: 14px; color: var(--muted); font-weight: 500; transition: color .2s; }
-    .nav a:hover { color: var(--text); }
-    .header__cta {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--accent); color: #fff;
-      padding: 10px 20px; border-radius: 10px;
-      font-size: 14px; font-weight: 700;
-      transition: background .2s; white-space: nowrap;
-    }
-    .header__cta:hover { background: var(--accent-dark); }
-    .burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .burger span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; transition: .3s; }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100svh; display: flex; align-items: center;
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, #1e0e06 0%, var(--bg) 70%);
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8541a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .hero__inner { position: relative; padding: 80px 0; max-width: 700px; }
-    .hero__badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(232,84,26,.12); color: var(--accent);
-      border: 1px solid rgba(232,84,26,.25);
-      padding: 6px 14px; border-radius: 100px;
-      font-size: 13px; font-weight: 600; margin-bottom: 28px;
-    }
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 72px); font-weight: 900;
-      line-height: 1.07; letter-spacing: -.03em; margin-bottom: 24px;
-    }
-    .hero h1 em { color: var(--accent); font-style: normal; }
-    .hero__sub {
-      font-size: clamp(16px, 2vw, 19px); color: var(--muted);
-      max-width: 560px; margin-bottom: 40px; line-height: 1.65;
-    }
-    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: #fff;
-      padding: 14px 28px; border-radius: 12px;
-      font-size: 15px; font-weight: 700;
-      transition: background .2s, transform .15s;
-    }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1.5px solid var(--border); color: var(--text);
-      padding: 14px 28px; border-radius: 12px;
-      font-size: 15px; font-weight: 600;
-      transition: border-color .2s, transform .15s;
-    }
-    .btn-outline:hover { border-color: var(--muted); transform: translateY(-2px); }
-    .hero__stats {
-      display: flex; gap: 32px; flex-wrap: wrap;
-      margin-top: 56px; padding-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-    .stat__num { font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1; }
-    .stat__label { font-size: 13px; color: var(--muted); margin-top: 4px; }
-
-    /* ── СЕКЦИИ ── */
-    .section { padding: 96px 0; }
-    .section-label {
-      font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(26px, 4vw, 44px); font-weight: 800;
-      letter-spacing: -.02em; margin-bottom: 16px;
-    }
-    .section-sub { font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.65; }
-    .section-head { margin-bottom: 56px; }
-
-    /* ── ЧТО ВХОДИТ ── */
-    .features-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .feature {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px;
-      transition: border-color .2s, transform .2s;
-    }
-    .feature:hover { border-color: rgba(232,84,26,.4); transform: translateY(-4px); }
-    .feature__icon {
-      width: 48px; height: 48px; background: rgba(232,84,26,.12);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; margin-bottom: 18px;
-    }
-    .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .feature p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-
-    /* ── SEO + МЕТРИКА ── */
-    .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .seo-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 20px; padding: 32px;
-    }
-    .seo-card--accent { border-color: rgba(232,84,26,.3); background: rgba(232,84,26,.05); }
-    .seo-card__title { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
-    .seo-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .seo-list li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 15px; color: var(--muted);
-    }
-    .seo-list li::before {
-      content: '✓'; color: var(--accent); font-weight: 800;
-      flex-shrink: 0; margin-top: 1px;
-    }
-
-    /* ── ПОРТФОЛИО ── */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .card {
-      display: block; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 16px;
-      overflow: hidden; transition: transform .2s, border-color .2s;
-    }
-    .card:hover { transform: translateY(-6px); }
-    .card__top {
-      height: 130px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; font-weight: 800; text-align: center; padding: 0 16px;
-      line-height: 1.2;
-    }
-    .badge {
-      display: inline-block; font-size: 11px; font-weight: 700;
-      color: var(--accent); border: 1px solid var(--accent);
-      border-radius: 20px; padding: 2px 9px; margin-left: 6px; vertical-align: middle;
-    }
-    .card__body { padding: 18px; }
-    .card__body h3 { font-size: 16px; font-weight: 700; }
-    .card__body p { color: var(--muted); font-size: 13px; margin-top: 4px; }
-    .card__body em {
-      display: inline-block; margin-top: 12px;
-      color: var(--accent); font-style: normal; font-weight: 600; font-size: 13px;
-    }
-
-    /* Градиенты карточек */
-    .m  {background:linear-gradient(135deg,#15110e,#211b16);color:#e2641e}
-    .s  {background:linear-gradient(135deg,#e11d2a,#a8121d);color:#fff}
-    .v  {background:linear-gradient(135deg,#f2a900,#c8321f);color:#fff}
-    .p  {background:linear-gradient(135deg,#f7ece8,#e8b4b8);color:#7a5c54}
-    .c  {background:linear-gradient(135deg,#4a3526,#1fb0a0);color:#fff}
-    .ch {background:linear-gradient(135deg,#1a1613,#a9663a);color:#f1ebdf}
-    .hy {background:linear-gradient(135deg,#3a2c1e,#d39440);color:#fbf5ea}
-    .cp {background:linear-gradient(135deg,#8aa890,#d36b7d);color:#fff}
-    .cb {background:linear-gradient(135deg,#121212,#ffd400);color:#fff}
-    .wk {background:linear-gradient(135deg,#7a2331,#a98b4b);color:#fff}
-    .lg {background:linear-gradient(135deg,#5b7c92,#cbb89a);color:#fff}
-    .kp {background:linear-gradient(135deg,#ec6a1e,#c43a1f);color:#fff}
-    .ku {background:linear-gradient(135deg,#221c16,#b08d4c);color:#fff}
-    .vk {background:linear-gradient(135deg,#1e2a44,#c98a3a);color:#fff}
-    .ka {background:linear-gradient(135deg,#9c5a2a,#e8b4b8);color:#fff}
-    .pv {background:linear-gradient(135deg,#241a12,#c8852a);color:#fff}
-    .ve {background:linear-gradient(135deg,#5aa896,#f08c7a);color:#fff}
-    .pr {background:linear-gradient(135deg,#8a7cc0,#8a9a5b);color:#fff}
-    .tr {background:linear-gradient(135deg,#6e1c1c,#b08d4c);color:#fff}
-    .mt {background:linear-gradient(135deg,#cc2a2a,#1a1a1a);color:#fff}
-    .card:hover.m{border-color:#e2641e}.card:hover.s{border-color:#e11d2a}.card:hover.v{border-color:#f2a900}
-    .card:hover.p{border-color:#e08aa0}.card:hover.c{border-color:#1fb0a0}.card:hover.ch{border-color:#a9663a}
-    .card:hover.hy{border-color:#d39440}.card:hover.cp{border-color:#d36b7d}.card:hover.cb{border-color:#ffd400}
-    .card:hover.wk{border-color:#7a2331}.card:hover.lg{border-color:#5b7c92}.card:hover.kp{border-color:#ec6a1e}
-    .card:hover.ku{border-color:#b08d4c}.card:hover.vk{border-color:#c98a3a}.card:hover.ka{border-color:#e8b4b8}
-    .card:hover.pv{border-color:#c8852a}.card:hover.ve{border-color:#5aa896}.card:hover.pr{border-color:#8a7cc0}
-    .card:hover.tr{border-color:#b08d4c}.card:hover.mt{border-color:#cc2a2a}
-    .ok {background:linear-gradient(135deg,#0d1520,#c9a84c);color:#f0ece4}
-    .pr2{background:linear-gradient(135deg,#0f0f0f,#e63025);color:#fff}
-    .at {background:linear-gradient(135deg,#0a0a0a,#c41e1e);color:#f0f0f0}
-    .dr {background:linear-gradient(135deg,#041f2a,#0e7490);color:#ecfeff}
-    .card:hover.ok{border-color:#c9a84c}.card:hover.pr2{border-color:#e63025}.card:hover.at{border-color:#c41e1e}.card:hover.dr{border-color:#0e7490}
-    .ba {background:linear-gradient(135deg,#e8f0e5,#4BA83B);color:#1a2714}
-    .bb {background:linear-gradient(135deg,#0a0e0a,#111a11);color:#5DC44A}
-    .bc {background:linear-gradient(135deg,#13181f,#1c2530);color:#3adb76}
-    .mba{background:linear-gradient(135deg,#f5f5f7,#c5deff);color:#1d1d1f}
-    .mbb{background:linear-gradient(135deg,#000000,#0a1929);color:#2997ff}
-    .mbc{background:linear-gradient(135deg,#fafaf8,#e0e0d8);color:#0a0a0a}
-    .lha{background:linear-gradient(135deg,#3d1e0a,#8B4513);color:#faf7f2}
-    .lhb{background:linear-gradient(135deg,#1a3d0a,#2D5016);color:#d4ead0}
-    .lhc{background:linear-gradient(135deg,#1a1208,#2a1e0e);color:#C9963C}
-    .card:hover.ba{border-color:#4BA83B}.card:hover.bb{border-color:#5DC44A}.card:hover.bc{border-color:#3adb76}
-    .card:hover.mba{border-color:#0071e3}.card:hover.mbb{border-color:#2997ff}.card:hover.mbc{border-color:#005ce6}
-    .card:hover.lha{border-color:#8B4513}.card:hover.lhb{border-color:#2D5016}.card:hover.lhc{border-color:#C9963C}
-    .sml{background:linear-gradient(135deg,#0ea5a4,#e0f7f6);color:#043432}
-    .vtd{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#eff6ff}
-    .zmr{background:linear-gradient(135deg,#14532d,#16a34a);color:#f0fdf4}
-    .smr{background:linear-gradient(135deg,#0f1113,#dc2626);color:#fff}
-    .card:hover.sml{border-color:#0ea5a4}.card:hover.vtd{border-color:#2563eb}.card:hover.zmr{border-color:#16a34a}.card:hover.smr{border-color:#dc2626}
-    .avs{background:linear-gradient(135deg,#16130f,#e23b3b);color:#fff}
-    .card:hover.avs{border-color:#e23b3b}
-
-    /* ── КАК МЫ РАБОТАЕМ ── */
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .step { position: relative; }
-    .step__num {
-      font-size: 48px; font-weight: 900; color: rgba(232,84,26,.15);
-      line-height: 1; margin-bottom: 12px;
-    }
-    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .step::after {
-      content: '→'; position: absolute; right: -14px; top: 12px;
-      color: var(--border); font-size: 20px;
-    }
-    .step:last-child::after { display: none; }
-
-    /* ── CTA БЛОК ── */
-    .cta-block {
-      background: linear-gradient(135deg, rgba(232,84,26,.15) 0%, rgba(196,61,14,.05) 100%);
-      border: 1px solid rgba(232,84,26,.25);
-      border-radius: 24px; padding: 64px 48px;
-      text-align: center;
-    }
-    .cta-block h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 800; margin-bottom: 16px; }
-    .cta-block p { font-size: 17px; color: var(--muted); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
-    .cta-contacts { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-link {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 28px; border-radius: 12px;
-      font-size: 15px; font-weight: 700; transition: .2s;
-    }
-    .cta-link--tel { background: var(--accent); color: #fff; }
-    .cta-link--tel:hover { background: var(--accent-dark); }
-    .cta-link--tg { background: #229ed9; color: #fff; }
-    .cta-link--tg:hover { background: #1a85b5; }
-
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0; margin-top: 0;
-    }
-    .footer__inner {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-      font-size: 13px; color: var(--muted);
-    }
-    .footer__note { font-size: 12px; color: #444; }
-
-    /* ── АДАПТИВ ── */
-    @media (max-width: 900px) {
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .seo-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      .step::after { display: none; }
-    }
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .nav.open {
-        display: flex; flex-direction: column; gap: 0;
-        position: fixed; inset: 0; background: var(--bg2); z-index: 99;
-        padding: 80px 24px 40px;
-      }
-      .nav.open a { font-size: 24px; padding: 14px 0; border-bottom: 1px solid var(--border); color: var(--text); }
-      .burger { display: block; z-index: 101; }
-      .header__cta { display: none; }
-      .features-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .cta-block { padding: 40px 24px; }
-    }
-    @media (max-width: 480px) {
-      .steps { grid-template-columns: 1fr; }
-      .hero__stats { gap: 20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Веб-студия — сайты и редизайн · Нижний Новгород</title>
+<meta name="description" content="Веб-студия из Нижнего Новгорода. Сайты и редизайн под ключ: дизайн, адаптив, SEO и Яндекс.Метрика. Портфолио работ. 8 920 040 88 01, Telegram @averjahn.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#000;--fg:#fff;--muted:#8a8a8a;--line:#232323;--accent:#fff;--maxw:1180px}
+  :root[data-theme="light"]{--bg:#fff;--fg:#000;--muted:#6a6a6a;--line:#e6e6e6;--accent:#000}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;height:68px;gap:24px}
+  .mark{width:16px;height:16px;background:var(--fg);flex-shrink:0}
+  .hd .lbl{margin-left:2px}
+  .hd nav{margin-left:auto;display:flex;align-items:center;gap:28px}
+  .hd nav a{font-size:14px;color:var(--muted);transition:color .2s}
+  .hd nav a:hover{color:var(--fg)}
+  .toggle{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:none}
+  .toggle span{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--fg);background:linear-gradient(90deg,var(--fg) 50%,transparent 50%)}
+  /* hero */
+  .hero{padding:14vh 0 12vh;border-bottom:1px solid var(--line)}
+  .hero h1{font-size:clamp(40px,8vw,104px);font-weight:800;letter-spacing:-.03em;line-height:.98;margin:22px 0 26px}
+  .hero h1 span{color:var(--muted)}
+  .hero .lead{font-size:clamp(15px,1.6vw,18px);color:var(--muted);max-width:520px;margin-bottom:36px}
+  .cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;border-bottom:1px solid var(--fg);padding-bottom:3px}
+  .cta:hover{gap:16px}
+  /* points */
+  .points{padding:64px 0;border-bottom:1px solid var(--line)}
+  .pts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .pt{background:var(--bg);padding:32px 26px 40px}
+  .pt__n{font-size:13px;color:var(--muted);font-weight:600}
+  .pt h3{font-size:19px;font-weight:700;margin:26px 0 10px;letter-spacing:-.01em}
+  .pt p{font-size:14px;color:var(--muted);line-height:1.5}
+  /* portfolio */
+  .work{padding:70px 0 30px}
+  .work__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px}
+  .work__head h2{font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--bg);padding:30px 26px 26px;min-height:150px;display:flex;flex-direction:column;transition:background .18s,color .18s}
+  .card__name{font-size:22px;font-weight:700;letter-spacing:-.01em}
+  .card__cat{font-size:13px;color:var(--muted);margin-top:6px}
+  .card__go{margin-top:auto;font-size:13px;font-weight:600;opacity:0;transform:translateY(6px);transition:.2s}
+  .card:hover{background:var(--fg);color:var(--bg)}
+  .card:hover .card__cat{color:var(--bg)}
+  .card:hover .card__go{opacity:1;transform:none}
+  /* contact */
+  .contact{padding:96px 0;border-top:1px solid var(--line);margin-top:40px}
+  .contact h2{font-size:clamp(30px,5vw,60px);font-weight:800;letter-spacing:-.03em;margin-bottom:30px}
+  .contact .rows{display:flex;flex-wrap:wrap;gap:14px 60px}
+  .contact .rows a{font-size:clamp(18px,2.4vw,26px);font-weight:600;border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .2s}
+  .contact .rows a:hover{border-color:var(--fg)}
+  footer{border-top:1px solid var(--line);padding:26px 0}
+  .ft{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);flex-wrap:wrap;gap:8px}
+  @media(max-width:900px){.pts{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    .pts,.grid{grid-template-columns:1fr}
+    .hd nav{gap:18px} .hd nav a.nav-hide{display:none}
+    .card__go{opacity:1;transform:none}
+  }
+</style>
 </head>
-<body>
+<body id="top">
+<header>
+  <div class="wrap hd">
+    <span class="mark"></span>
+    <span class="lbl">Веб-студия</span>
+    <nav>
+      <a href="#work" class="nav-hide">Работы</a>
+      <a href="#contact">Контакты</a>
+      <button class="toggle" id="themeToggle" aria-label="Сменить тему" title="Сменить тему"><span></span></button>
+    </nav>
+  </div>
+</header>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header__inner">
-      <a href="#top" class="header__logo">веб<span>·</span>студия</a>
-      <nav class="nav" id="nav" aria-label="Основная навигация">
-        <a href="#features">Что входит</a>
-        <a href="#seo">SEO и метрика</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <a href="tel:+79200408801" class="header__cta">Позвонить</a>
-      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="lbl">Веб-студия · Нижний Новгород</span>
+      <h1>Лучшие сайты.<br><span>Лучший дизайн.</span></h1>
+      <p class="lead">Проектируем, разрабатываем и запускаем сайты под ключ.</p>
+      <a href="#work" class="cta">Смотреть работы &rarr;</a>
     </div>
-  </header>
+  </section>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container hero__inner">
-      <p class="hero__badge">📍 Нижний Новгород</p>
-      <h1>Сайт для<br>вашего заведения —<br><em>под ключ</em></h1>
-      <p class="hero__sub">
-        Делаем современные сайты для ресторанов, кафе и служб доставки. Парсим ваше меню и фото, настраиваем SEO и Яндекс.Метрику. Клиенты находят вас в поиске и заказывают онлайн.
-      </p>
-      <div class="hero__actions">
-        <a href="#contacts" class="btn-primary">Обсудить проект →</a>
-        <a href="#portfolio" class="btn-outline">Смотреть работы</a>
-      </div>
-      <div class="hero__stats">
-        <div>
-          <div class="stat__num">40+</div>
-          <div class="stat__label">редизайнов сделано</div>
+  <section class="points">
+    <div class="wrap">
+      <div class="pts">
+        <div class="pt">
+          <span class="pt__n">01</span>
+          <h3>Дизайн</h3>
+          <p>Современный, чистый, узнаваемый.</p>
         </div>
-        <div>
-          <div class="stat__num">100%</div>
-          <div class="stat__label">уникальный дизайн</div>
+        <div class="pt">
+          <span class="pt__n">02</span>
+          <h3>Адаптив</h3>
+          <p>Безупречно на телефоне и десктопе.</p>
         </div>
-        <div>
-          <div class="stat__num">×2–5</div>
-          <div class="stat__label">рост онлайн-заказов</div>
+        <div class="pt">
+          <span class="pt__n">03</span>
+          <h3>SEO и Метрика</h3>
+          <p>Находят в поиске, видно аналитику.</p>
+        </div>
+        <div class="pt">
+          <span class="pt__n">04</span>
+          <h3>Под ключ</h3>
+          <p>Домен, хостинг, запуск, поддержка.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ЧТО ВХОДИТ -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">Что входит</p>
-        <h2 class="section-title">Полный комплект для вашего бизнеса</h2>
-        <p class="section-sub">Берём на себя весь цикл: от сбора данных до публикации и аналитики.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature__icon">🎨</div>
-          <h3>Уникальный дизайн</h3>
-          <p>Три разных концепта на выбор. Каждый — под атмосферу и кухню вашего заведения, без шаблонов.</p>
-        </div>
-        <div class="feature">
-          <div class="feature__icon">📋</div>
-          <h3>Онлайн-меню</h3>
-          <p>Всё меню с ценами, фотографиями и описаниями. Для доставки — корзина и форма заказа.</p>
-        </div>
-        <div class="feature">
-          <div class="feature__icon">📱</div>
-          <h3>Мобильная вёрстка</h3>
-          <p>Сайт одинаково красив на iPhone, Android и десктопе. Без горизонтального скролла и сломанных блоков.</p>
-        </div>
-        <div class="feature">
-          <div class="feature__icon">🗺️</div>
-          <h3>Карта и контакты</h3>
-          <p>Интерактивная карта с вашим адресом, телефон, часы работы и ссылки на соцсети.</p>
-        </div>
-        <div class="feature">
-          <div class="feature__icon">⚡</div>
-          <h3>Быстрая загрузка</h3>
-          <p>Оптимизированные фото, ленивая загрузка, минимум кода. PageSpeed выше 90.</p>
-        </div>
-        <div class="feature">
-          <div class="feature__icon">🔄</div>
-          <h3>Поддержка и обновления</h3>
-          <p>Меняется меню или цены — обновим. Нужно добавить акцию — добавим. Работаем на результат.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO + МЕТРИКА -->
-  <section class="section" id="seo" style="background: var(--bg2); margin: 0;">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">SEO и аналитика</p>
-        <h2 class="section-title">Клиенты находят вас<br>в Яндексе и Google</h2>
-        <p class="section-sub">Каждый сайт настроен для поиска с первого дня. Вы видите откуда приходят гости и что они смотрят.</p>
-      </div>
-      <div class="seo-grid">
-        <div class="seo-card seo-card--accent">
-          <div class="seo-card__title">🔍 SEO-оптимизация</div>
-          <ul class="seo-list">
-            <li>Title, Description, H1 — прописаны под запросы вашего города</li>
-            <li>Семантическая разметка Schema.org (LocalBusiness, Menu)</li>
-            <li>Alt-теги у всех фотографий</li>
-            <li>Быстрая загрузка — фактор ранжирования в поиске</li>
-            <li>Карта сайта и robots.txt</li>
-            <li>Привязка к Яндекс.Бизнесу и Google Business</li>
-          </ul>
-        </div>
-        <div class="seo-card">
-          <div class="seo-card__title">📊 Яндекс.Метрика</div>
-          <ul class="seo-list">
-            <li>Установка и настройка счётчика Яндекс.Метрики</li>
-            <li>Цели на звонок, переход в меню, заказ</li>
-            <li>Вебвизор — видеозапись поведения посетителей</li>
-            <li>Карта кликов — где нажимают чаще всего</li>
-            <li>Источники трафика — откуда приходят гости</li>
-            <li>Еженедельный отчёт по ключевым метрикам</li>
-          </ul>
-        </div>
-        <div class="seo-card" style="grid-column: 1 / -1;">
-          <div class="seo-card__title">💰 Как это влияет на бизнес</div>
-          <ul class="seo-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px;">
-            <li>Больше гостей из поиска «ресторан + ваш район» без платной рекламы</li>
-            <li>Онлайн-заказы 24/7 без менеджера на телефоне</li>
-            <li>Клиент видит меню и цены ещё до визита — меньше звонков с вопросами</li>
-            <li>Вы знаете какие блюда смотрят чаще — данные для управления меню</li>
-            <li>Фотографии еды в поиске (rich snippets) — больше кликов по сравнению с конкурентами</li>
-            <li>Постоянное обновление сайта — сигнал для поисковиков что бизнес активен</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- КАК РАБОТАЕМ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">Процесс</p>
-        <h2 class="section-title">Как мы работаем</h2>
-        <p class="section-sub">Прозрачный процесс — вы всегда знаете что происходит.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step__num">01</div>
-          <h3>Бриф и данные</h3>
-          <p>Вы присылаете ссылку на сайт или просто название и адрес. Остальное собираем сами.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">02</div>
-          <h3>Три концепта</h3>
-          <p>Дизайн в трёх разных стилях. Вы выбираете который нравится — дорабатываем его.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">03</div>
-          <h3>SEO и метрика</h3>
-          <p>Настраиваем поисковую оптимизацию и Яндекс.Метрику до публикации.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">04</div>
-          <h3>Публикация</h3>
-          <p>Сайт выходит в интернет. Вы получаете ссылку и доступ к статистике.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ПОРТФОЛИО -->
-  <section class="section" id="portfolio" style="background: var(--bg2); margin: 0;">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">Портфолио</p>
-        <h2 class="section-title">Наши работы</h2>
-        <p class="section-sub">Редизайны сайтов для заведений Нижнего Новгорода. Данные и фото — с оригинальных сайтов.</p>
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="work__head">
+        <h2>Работы</h2>
+        <span class="lbl">18 проектов</span>
       </div>
       <div class="grid">
-        <a class="card" href="shashlyk52/">
-          <div class="card__top s">Шашлык52</div>
-          <div class="card__body"><h3>Шашлык52</h3><p>Доставка шашлыка · светлый красный</p><em>Открыть →</em></div>
+        <a class="card" href="avtosushi/">
+          <span class="card__name">Автосуши</span>
+          <span class="card__cat">Доставка</span>
+          <span class="card__go">Смотреть</span>
         </a>
-        <a class="card" href="vypechka/">
-          <div class="card__top v">Русская Выпечка</div>
-          <div class="card__body"><h3>Русская Выпечка</h3><p>Фастфуд-доставка · тёплый янтарь</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="ps/">
-          <div class="card__top p">P.S.</div>
-          <div class="card__body"><h3>P.S.</h3><p>Кондитерская · нежная пастель</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="coffeemolly/">
-          <div class="card__top c">Coffee Molly</div>
-          <div class="card__body"><h3>Coffee Molly</h3><p>Кофейня + школа бариста · кофе и бирюза</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="chertochka/">
-          <div class="card__top ch">Чёрточка —</div>
-          <div class="card__body"><h3>Чёрточка</h3><p>Кофе навынос · минимализм</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="hygge/">
-          <div class="card__top hy">Кофехюгге</div>
-          <div class="card__body"><h3>Кофехюгге</h3><p>Сеть кофеен · уют хюгге + карта точек</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="cuppcake/">
-          <div class="card__top cp">CuPPcake</div>
-          <div class="card__body"><h3>CuPPcake</h3><p>Десерты без сахара · пастель</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="lagom/">
-          <div class="card__top lg">Lägom</div>
-          <div class="card__body"><h3>Lägom Кофе</h3><p>Скандинавская кофейня · минимализм</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="kupets/">
-          <div class="card__top ku">Купеческий</div>
-          <div class="card__body"><h3>Купеческий</h3><p>Премиум русская кухня · витрина-меню</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="oka/">
-          <div class="card__top ok">РЕСТОРАН ОКА</div>
-          <div class="card__body"><h3>Ресторан ОКА <span class="badge">концепт</span></h3><p>Банкетный ресторан · тёмно-синий + золото</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="https://averjahn.github.io/driving-theory/" target="_blank" rel="noopener">
-          <div class="card__top dr">🚗 DriveReady</div>
-          <div class="card__body"><h3>DriveReady <span class="badge">веб-приложение</span></h3><p>Адаптивные курсы ПДД · 7 стран · урок → тест → разблокировка</p><em>Открыть →</em></div>
-        </a>
-
-        <a class="card" href="bogemia-a/">
-          <div class="card__top ba">БОГЕМИЯ А</div>
-          <div class="card__body"><h3>Богемия ŠKODA</h3><p>Автосалон · минимализм · белый + зелёный</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="bogemia-b/">
-          <div class="card__top bb">БОГЕМИЯ Б</div>
-          <div class="card__body"><h3>Богемия ŠKODA</h3><p>Автосалон · тёмный премиум · неон-зелёный</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="bogemia-c/">
-          <div class="card__top bc">БОГЕМИЯ В</div>
-          <div class="card__body"><h3>Богемия ŠKODA</h3><p>Автосалон · технологичный глянец · сталь</p><em>Открыть →</em></div>
-        </a>
-
         <a class="card" href="macbookbro-a/">
-          <div class="card__top mba">МАКБУЧНАЯ А</div>
-          <div class="card__body"><h3>Макбучная</h3><p>Apple-магазин · минимализм · белый + синий</p><em>Открыть →</em></div>
+          <span class="card__name">Макбучная</span>
+          <span class="card__cat">Apple-ритейл</span>
+          <span class="card__go">Смотреть</span>
         </a>
-        <a class="card" href="macbookbro-b/">
-          <div class="card__top mbb">МАКБУЧНАЯ Б</div>
-          <div class="card__body"><h3>Макбучная</h3><p>Apple-магазин · dark mode · full-bleed</p><em>Открыть →</em></div>
+        <a class="card" href="bogemia-a/">
+          <span class="card__name">Богемия ŠKODA</span>
+          <span class="card__cat">Автосалон</span>
+          <span class="card__go">Смотреть</span>
         </a>
-        <a class="card" href="macbookbro-c/">
-          <div class="card__top mbc">МАКБУЧНАЯ В</div>
-          <div class="card__body"><h3>Макбучная</h3><p>Apple-магазин · editorial · кремовый + Syne</p><em>Открыть →</em></div>
-        </a>
-
         <a class="card" href="loghouse-a/">
-          <div class="card__top lha">LOGHOUSE А</div>
-          <div class="card__body"><h3>Gazebos Loghouse</h3><p>Беседки и бани · лесная усадьба · тёплый</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="loghouse-b/">
-          <div class="card__top lhb">LOGHOUSE Б</div>
-          <div class="card__body"><h3>Gazebos Loghouse</h3><p>Беседки и бани · природный эко-стиль</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="loghouse-c/">
-          <div class="card__top lhc">LOGHOUSE В</div>
-          <div class="card__body"><h3>Gazebos Loghouse</h3><p>Беседки и бани · тёмный премиум · золото</p><em>Открыть →</em></div>
-        </a>
-
-        <a class="card" href="smailnn/">
-          <div class="card__top sml">СМАЙЛ</div>
-          <div class="card__body"><h3>Стоматология «Смайл»</h3><p>Медицина · чистая бирюза · имплантация и дети</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="vetdrug/">
-          <div class="card__top vtd">ВЕТДРУГ</div>
-          <div class="card__body"><h3>Ветцентр «ВетДруг»</h3><p>Ветклиника 24/7 · синий · выезд врача на дом</p><em>Открыть →</em></div>
-        </a>
-        <a class="card" href="zoomir/">
-          <div class="card__top zmr">ЗООМИР</div>
-          <div class="card__body"><h3>Ветклиника «ЗооМир»</h3><p>Ветклиника · зелёный · 3 филиала, стационар</p><em>Открыть →</em></div>
+          <span class="card__name">Gazebos Loghouse</span>
+          <span class="card__cat">Загородный отдых</span>
+          <span class="card__go">Смотреть</span>
         </a>
         <a class="card" href="samurai/">
-          <div class="card__top smr">САМУРАЙ</div>
-          <div class="card__body"><h3>Детейлинг «Самурай»</h3><p>Автосервис · тёмный премиум · полировка и кузов</p><em>Открыть →</em></div>
+          <span class="card__name">Самурай</span>
+          <span class="card__cat">Детейлинг</span>
+          <span class="card__go">Смотреть</span>
         </a>
-        <a class="card" href="avtosushi/">
-          <div class="card__top avs">АВТОСУШИ</div>
-          <div class="card__body"><h3>Автосуши</h3><p>Доставка суши/пицца/wok · 300 блюд с реальными фото · корзина</p><em>Открыть →</em></div>
+        <a class="card" href="smailnn/">
+          <span class="card__name">Смайл</span>
+          <span class="card__cat">Стоматология</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="vetdrug/">
+          <span class="card__name">ВетДруг</span>
+          <span class="card__cat">Ветклиника</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="zoomir/">
+          <span class="card__name">ЗооМир</span>
+          <span class="card__cat">Ветклиника</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="kupets/">
+          <span class="card__name">Купеческий</span>
+          <span class="card__cat">Ресторан</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="oka/">
+          <span class="card__name">Ресторан ОКА</span>
+          <span class="card__cat">Ресторан</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="coffeemolly/">
+          <span class="card__name">Coffee Molly</span>
+          <span class="card__cat">Кофейня</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="hygge/">
+          <span class="card__name">Кофехюгге</span>
+          <span class="card__cat">Кофейня</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="chertochka/">
+          <span class="card__name">Чёрточка</span>
+          <span class="card__cat">Кофейня</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="lagom/">
+          <span class="card__name">Lägom</span>
+          <span class="card__cat">Кофейня</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="cuppcake/">
+          <span class="card__name">CuPPcake</span>
+          <span class="card__cat">Кондитерская</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="ps/">
+          <span class="card__name">P.S.</span>
+          <span class="card__cat">Кондитерская</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="shashlyk52/">
+          <span class="card__name">Шашлык52</span>
+          <span class="card__cat">Доставка</span>
+          <span class="card__go">Смотреть</span>
+        </a>
+        <a class="card" href="vypechka/">
+          <span class="card__name">Русская Выпечка</span>
+          <span class="card__cat">Доставка</span>
+          <span class="card__go">Смотреть</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" id="contacts">
-    <div class="container">
-      <div class="cta-block">
-        <h2>Хотите такой сайт<br>для вашего заведения?</h2>
-        <p>Пришлите ссылку на ваш сайт или просто название и адрес — покажем как будет выглядеть результат ещё до оплаты.</p>
-        <div class="cta-contacts">
-          <a href="tel:+79200408801" class="cta-link cta-link--tel">
-            📞 8 920 040 88 01
-          </a>
-          <a href="https://t.me/averjahn" class="cta-link cta-link--tg" target="_blank" rel="noopener">
-            ✈️ @averjahn в Telegram
-          </a>
-        </div>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <span class="lbl">Контакты</span>
+      <h2>Обсудим проект.</h2>
+      <div class="rows">
+        <a href="tel:+79200408801">8 920 040 88 01</a>
+        <a href="https://t.me/averjahn" target="_blank" rel="noopener">Telegram @averjahn</a>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span>Нижний Новгород · 8 920 040 88 01 · <a href="https://t.me/averjahn" style="color:var(--accent)">@averjahn</a></span>
-      <span class="footer__note">Демонстрация дизайна. Фото и тексты меню принадлежат заведениям.</span>
-    </div>
-  </footer>
+<footer>
+  <div class="wrap ft">
+    <span>© 2026 · Нижний Новгород</span>
+    <span>Сайты и редизайн под ключ</span>
+  </div>
+</footer>
 
-  <script>
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
-    burger.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open);
+<script>
+  (function(){
+    const root=document.documentElement;
+    try{root.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');}catch(e){root.setAttribute('data-theme','dark');}
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('theme',next);}catch(e){}
+      document.querySelector('meta[name=theme-color]').setAttribute('content',next==='dark'?'#000000':'#ffffff');
     });
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); });
-    });
-  </script>
-
+  })();
+</script>
   <script>
-  /* ═══ Админ-режим: наберите q w e подряд ═══ */
+  /* Админ-режим: наберите q w e подряд */
   (function () {
     const SEQ = ['q', 'w', 'e'];
     const REPO = 'Averjahn/nn-restaurant-redesigns';
     let buf = [], bufTimer = null;
     let adminOn = false, approvals = null, dirty = false;
-
-    /* проект = папка карточки без суффикса варианта -a/-b/-c */
     function projectOf(href) {
       const m = (href || '').match(/^([a-z0-9-]+?)(?:-([abc]))?\/$/);
-      if (!m) return null;
-      return m[2] ? m[1] : m[1];
+      if (!m) return null; return m[2] ? m[1] : m[1];
     }
-
     const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
-
     document.addEventListener('keydown', e => {
       if (e.target instanceof Element && e.target.matches('input, textarea')) return;
       buf.push(e.key.toLowerCase());
@@ -660,150 +272,96 @@
       bufTimer = setTimeout(() => { buf = []; }, 2000);
       if (buf.slice(-3).join('') === SEQ.join('')) { buf = []; toggleAdmin(); }
     });
-
     async function toggleAdmin() {
       if (adminOn) { teardown(); return; }
       if (!approvals) {
-        try {
-          const r = await fetch('approvals.json', { cache: 'no-store' });
-          approvals = await r.json();
-        } catch (err) { approvals = {}; }
-        /* локальные несохранённые правки поверх файла */
-        try {
-          const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
-          for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]);
-        } catch (err) {}
+        try { const r = await fetch('approvals.json', { cache: 'no-store' }); approvals = await r.json(); }
+        catch (err) { approvals = {}; }
+        try { const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
+          for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]); } catch (err) {}
       }
       setup();
     }
-
     function setup() {
-      adminOn = true;
-      document.body.classList.add('rd-admin');
-
+      adminOn = true; document.body.classList.add('rd-admin');
       if (!document.getElementById('rd-admin-css')) {
-        const st = document.createElement('style');
-        st.id = 'rd-admin-css';
+        const st = document.createElement('style'); st.id = 'rd-admin-css';
         st.textContent = `
-          .rd-check { position:absolute; top:10px; left:10px; z-index:5;
-            display:flex; align-items:center; gap:6px; background:rgba(0,0,0,.75);
-            border:1px solid #444; border-radius:8px; padding:5px 10px;
-            font-size:12px; font-weight:700; color:#ccc; cursor:pointer; backdrop-filter:blur(4px); }
-          .rd-check input { accent-color:#3fb950; width:15px; height:15px; cursor:pointer; }
-          .rd-check.on { border-color:#3fb950; color:#3fb950; }
-          .rd-price { position:absolute; top:10px; right:10px; z-index:5;
-            background:rgba(0,0,0,.75); border:1px solid #444; border-radius:8px;
-            padding:5px 10px; font-size:12px; font-weight:700; color:#e8a03c; backdrop-filter:blur(4px); }
-          .card { position:relative; }
-          #rd-panel { position:fixed; left:0; right:0; bottom:0; z-index:1000;
-            background:#101014; border-top:2px solid var(--accent);
-            padding:14px 24px; display:flex; flex-wrap:wrap; gap:14px; align-items:center;
-            font-size:14px; box-shadow:0 -8px 32px rgba(0,0,0,.6); }
-          #rd-panel .rd-sum { font-weight:800; color:#3fb950; font-size:16px; }
-          #rd-panel .rd-cnt { color:var(--muted); }
-          #rd-panel input[type=password] { background:#1a1a20; border:1px solid #333;
-            border-radius:8px; color:#eee; padding:8px 12px; font-size:13px; width:220px; }
-          #rd-panel button { background:var(--accent); border:none; border-radius:8px;
-            color:#fff; padding:8px 16px; font-size:13px; font-weight:700; cursor:pointer; }
-          #rd-panel button.rd-ghost { background:transparent; border:1px solid #444; color:#aaa; }
-          #rd-panel .rd-status { font-size:12px; color:var(--muted); }
-          body.rd-admin { padding-bottom:80px; }
-        `;
+          .rd-check{position:absolute;top:10px;left:10px;z-index:5;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.8);border:1px solid #444;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;color:#ccc;cursor:pointer}
+          .rd-check input{accent-color:#3fb950;width:15px;height:15px;cursor:pointer}
+          .rd-check.on{border-color:#3fb950;color:#3fb950}
+          .rd-price{position:absolute;top:10px;right:10px;z-index:5;background:rgba(0,0,0,.8);border:1px solid #444;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;color:#e8a03c}
+          .card{position:relative}
+          #rd-panel{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#101014;border-top:2px solid #fff;padding:14px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px;color:#eee}
+          #rd-panel .rd-sum{font-weight:800;color:#3fb950;font-size:16px}
+          #rd-panel .rd-cnt{color:#999}
+          #rd-panel input[type=password]{background:#1a1a20;border:1px solid #333;border-radius:8px;color:#eee;padding:8px 12px;font-size:13px;width:220px}
+          #rd-panel button{background:#fff;border:none;border-radius:8px;color:#000;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
+          #rd-panel button.rd-ghost{background:transparent;border:1px solid #444;color:#aaa}
+          #rd-panel .rd-status{font-size:12px;color:#999}
+          body.rd-admin{padding-bottom:80px}`;
         document.head.appendChild(st);
       }
-
-      /* чекбоксы на карточках (только локальные проекты) */
       document.querySelectorAll('.card').forEach(card => {
         const proj = projectOf(card.getAttribute('href'));
         if (!proj || !approvals[proj]) return;
         card.dataset.rdProj = proj;
-
         const chk = document.createElement('label');
         chk.className = 'rd-check' + (approvals[proj].approved ? ' on' : '');
         chk.innerHTML = `<input type="checkbox" ${approvals[proj].approved ? 'checked' : ''}> одобрено`;
         chk.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); toggle(proj); });
-
         const price = document.createElement('span');
-        price.className = 'rd-price';
-        price.textContent = fmt(approvals[proj].price);
-
-        card.appendChild(chk);
-        card.appendChild(price);
+        price.className = 'rd-price'; price.textContent = fmt(approvals[proj].price);
+        card.appendChild(chk); card.appendChild(price);
       });
-
-      /* панель */
-      const panel = document.createElement('div');
-      panel.id = 'rd-panel';
+      const panel = document.createElement('div'); panel.id = 'rd-panel';
       panel.innerHTML = `
         <span class="rd-cnt">Одобрено: <b id="rd-count">0</b> из <b>${Object.keys(approvals).length}</b></span>
         <span class="rd-sum" id="rd-total">0 ₽</span>
         <span style="flex:1"></span>
-        <input type="password" id="rd-token" placeholder="GitHub token (сохранить в репо)" value="${localStorage.getItem('rd_token') || ''}">
-        <button id="rd-save">💾 Сохранить в репо</button>
-        <button class="rd-ghost" id="rd-copy">📋 Скопировать JSON</button>
-        <span class="rd-status" id="rd-status"></span>
-      `;
+        <input type="password" id="rd-token" placeholder="GitHub token" value="${localStorage.getItem('rd_token') || ''}">
+        <button id="rd-save">Сохранить в репо</button>
+        <button class="rd-ghost" id="rd-copy">Скопировать JSON</button>
+        <span class="rd-status" id="rd-status"></span>`;
       document.body.appendChild(panel);
-
       document.getElementById('rd-save').addEventListener('click', saveToRepo);
       document.getElementById('rd-copy').addEventListener('click', () => {
-        navigator.clipboard.writeText(JSON.stringify(approvals, null, 2));
-        status('JSON в буфере — пришли его Claude');
-      });
+        navigator.clipboard.writeText(JSON.stringify(approvals, null, 2)); status('JSON в буфере — пришли его Claude'); });
       recount();
     }
-
     function teardown() {
-      adminOn = false;
-      document.body.classList.remove('rd-admin');
+      adminOn = false; document.body.classList.remove('rd-admin');
       document.querySelectorAll('.rd-check, .rd-price').forEach(el => el.remove());
       document.getElementById('rd-panel')?.remove();
     }
-
     function toggle(proj) {
-      const a = approvals[proj];
-      a.approved = !a.approved;
-      a.approvedAt = a.approved ? new Date().toISOString().slice(0, 10) : null;
-      dirty = true;
-      /* локальный бэкап несохранённого */
+      const a = approvals[proj]; a.approved = !a.approved;
+      a.approvedAt = a.approved ? new Date().toISOString().slice(0, 10) : null; dirty = true;
       localStorage.setItem('rd_approvals', JSON.stringify(approvals));
-      /* синхронизировать все карточки проекта (варианты A/B/C) */
       document.querySelectorAll(`.card[data-rd-proj="${proj}"] .rd-check`).forEach(chk => {
-        chk.classList.toggle('on', a.approved);
-        chk.querySelector('input').checked = a.approved;
-      });
+        chk.classList.toggle('on', a.approved); chk.querySelector('input').checked = a.approved; });
       recount();
     }
-
     function recount() {
       let n = 0, sum = 0;
       for (const k in approvals) if (approvals[k].approved) { n++; sum += approvals[k].price; }
       document.getElementById('rd-count').textContent = n;
       document.getElementById('rd-total').textContent = fmt(sum);
     }
-
-    function status(msg) {
-      const el = document.getElementById('rd-status');
-      el.textContent = msg;
-      setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 6000);
-    }
-
+    function status(msg) { const el = document.getElementById('rd-status'); el.textContent = msg;
+      setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 6000); }
     async function saveToRepo() {
       const token = document.getElementById('rd-token').value.trim();
-      if (!token) { status('Нужен GitHub token (fine-grained, contents:write)'); return; }
-      localStorage.setItem('rd_token', token);
-      status('Сохраняю…');
+      if (!token) { status('Нужен GitHub token (contents:write)'); return; }
+      localStorage.setItem('rd_token', token); status('Сохраняю…');
       try {
         const api = `https://api.github.com/repos/${REPO}/contents/approvals.json`;
         const head = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
         const cur = await fetch(api, { headers: head }).then(r => r.json());
-        const body = {
-          message: 'update approvals via admin panel',
-          content: btoa(unescape(encodeURIComponent(JSON.stringify(approvals, null, 2)))),
-          sha: cur.sha
-        };
+        const body = { message: 'update approvals via admin panel',
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(approvals, null, 2)))), sha: cur.sha };
         const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify(body) });
-        if (res.ok) { dirty = false; localStorage.removeItem('rd_approvals'); status('✅ Сохранено в репо'); }
+        if (res.ok) { dirty = false; localStorage.removeItem('rd_approvals'); status('Сохранено в репо'); }
         else { const e = await res.json(); status('Ошибка: ' + (e.message || res.status)); }
       } catch (err) { status('Ошибка сети: ' + err.message); }
     }
