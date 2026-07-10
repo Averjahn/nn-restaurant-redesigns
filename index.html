@@ -49,7 +49,7 @@
   .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
   .card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
   .card__prev{display:block;position:relative;width:100%;aspect-ratio:16/10;border-radius:13px;overflow:hidden;transition:filter .25s}
-  .card__frame{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:top left;pointer-events:none;background:#fff;opacity:0;transition:opacity .35s ease}
+  .card__frame{position:absolute;top:0;left:0;width:1024px;height:640px;border:0;transform-origin:top left;pointer-events:none;background:#fff;opacity:0;transition:opacity .35s ease}
   .card__frame.is-loaded{opacity:1}
   .card__meta{padding:16px 8px 6px;display:flex;flex-direction:column;gap:5px}
   .card__name{font-size:18px;font-weight:700;letter-spacing:-.01em}
@@ -132,7 +132,7 @@
       <div class="grid">
         <a class="card" href="avtosushi/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#4a7c33">
-            <iframe class="card__frame" data-src="avtosushi/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="avtosushi/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Автосуши</span>
@@ -141,7 +141,7 @@
         </a>
         <a class="card" href="macbookbro-a/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#f5f5f7">
-            <iframe class="card__frame" data-src="macbookbro-a/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="macbookbro-a/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Макбучная</span>
@@ -150,7 +150,7 @@
         </a>
         <a class="card" href="bogemia-a/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#e8f0e5">
-            <iframe class="card__frame" data-src="bogemia-a/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="bogemia-a/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Богемия ŠKODA</span>
@@ -159,7 +159,7 @@
         </a>
         <a class="card" href="loghouse-a/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#faf7f2">
-            <iframe class="card__frame" data-src="loghouse-a/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="loghouse-a/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Gazebos Loghouse</span>
@@ -168,7 +168,7 @@
         </a>
         <a class="card" href="samurai/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#9ca3af">
-            <iframe class="card__frame" data-src="samurai/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="samurai/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Самурай</span>
@@ -177,7 +177,7 @@
         </a>
         <a class="card" href="smailnn/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#d4f5f2">
-            <iframe class="card__frame" data-src="smailnn/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="smailnn/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Смайл</span>
@@ -186,7 +186,7 @@
         </a>
         <a class="card" href="vetdrug/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#0f172a">
-            <iframe class="card__frame" data-src="vetdrug/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="vetdrug/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">ВетДруг</span>
@@ -195,7 +195,7 @@
         </a>
         <a class="card" href="zoomir/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#14231a">
-            <iframe class="card__frame" data-src="zoomir/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="zoomir/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">ЗооМир</span>
@@ -204,7 +204,7 @@
         </a>
         <a class="card" href="kupets/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#e8d9b8">
-            <iframe class="card__frame" data-src="kupets/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="kupets/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Купеческий</span>
@@ -213,7 +213,7 @@
         </a>
         <a class="card" href="oka/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#e8dcc0">
-            <iframe class="card__frame" data-src="oka/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="oka/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Ресторан ОКА</span>
@@ -222,7 +222,7 @@
         </a>
         <a class="card" href="coffeemolly/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#e8ddca">
-            <iframe class="card__frame" data-src="coffeemolly/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="coffeemolly/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Coffee Molly</span>
@@ -231,7 +231,7 @@
         </a>
         <a class="card" href="hygge/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#f0e2c8">
-            <iframe class="card__frame" data-src="hygge/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="hygge/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Кофехюгге</span>
@@ -240,7 +240,7 @@
         </a>
         <a class="card" href="chertochka/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#e8dccb">
-            <iframe class="card__frame" data-src="chertochka/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="chertochka/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Чёрточка</span>
@@ -249,7 +249,7 @@
         </a>
         <a class="card" href="lagom/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#eae4d8">
-            <iframe class="card__frame" data-src="lagom/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="lagom/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Lägom</span>
@@ -258,7 +258,7 @@
         </a>
         <a class="card" href="cuppcake/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#f5dfe4">
-            <iframe class="card__frame" data-src="cuppcake/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="cuppcake/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">CuPPcake</span>
@@ -267,7 +267,7 @@
         </a>
         <a class="card" href="ps/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#f2ddd8">
-            <iframe class="card__frame" data-src="ps/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="ps/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">P.S.</span>
@@ -276,7 +276,7 @@
         </a>
         <a class="card" href="shashlyk52/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#f0c33a">
-            <iframe class="card__frame" data-src="shashlyk52/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="shashlyk52/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Шашлык52</span>
@@ -285,7 +285,7 @@
         </a>
         <a class="card" href="vypechka/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#3a2a12">
-            <iframe class="card__frame" data-src="vypechka/" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+            <iframe class="card__frame" data-src="vypechka/" tabindex="-1" aria-hidden="true" scrolling="no" sandbox="allow-same-origin"></iframe>
           </span>
           <span class="card__meta">
             <span class="card__name">Русская Выпечка</span>
@@ -329,7 +329,7 @@
 
   /* живые миниатюры: приоритетная подгрузка сверху вниз, без пустых мельканий */
   (function(){
-    const FW=1440;
+    const FW=1024; // рендерим страницу мельче — меньше layout/paint, чем при исходных 1440
     const MAX_CONCURRENT=2;           // не грузим все 18 разом — иначе тормозит и всё скачет
     const frames=Array.from(document.querySelectorAll('.card__frame')); // порядок в DOM = сверху вниз
     let active=0;
