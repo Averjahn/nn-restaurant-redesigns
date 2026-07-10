@@ -31,7 +31,11 @@
   /* hero */
   .hero{padding:14vh 0 12vh;border-bottom:1px solid var(--line)}
   .hero h1{font-size:clamp(40px,8vw,104px);font-weight:800;letter-spacing:-.03em;line-height:.98;margin:22px 0 26px}
-  .hero h1 span{color:var(--muted)}
+  .tw-l2{color:var(--muted)}
+  .tw-cursor{display:inline-block;width:.06em;height:.86em;background:var(--fg);margin-left:.03em;vertical-align:-.05em;animation:tw-blink 1s steps(1) infinite}
+  .tw-cursor.done{display:none}
+  @keyframes tw-blink{50%{opacity:0}}
+  @media(prefers-reduced-motion:reduce){.tw-cursor{animation:none;display:none}}
   .hero .lead{font-size:clamp(15px,1.6vw,18px);color:var(--muted);max-width:520px;margin-bottom:36px}
   .cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;border-bottom:1px solid var(--fg);padding-bottom:3px}
   .cta:hover{gap:16px}
@@ -90,7 +94,7 @@
   <section class="hero">
     <div class="wrap">
       <span class="lbl">Нижний Новгород</span>
-      <h1>Лучшие сайты.<br><span>Лучший дизайн.</span></h1>
+      <h1 aria-label="Лучшие сайты. Лучший дизайн."><span class="tw" aria-hidden="true"><span class="tw-l1" id="twL1"></span><br><span class="tw-l2" id="twL2"></span><span class="tw-cursor" id="twCursor"></span></span></h1>
       <p class="lead">Проектируем, разрабатываем и запускаем сайты.</p>
       <a href="#work" class="cta">Смотреть работы &rarr;</a>
     </div>
@@ -325,6 +329,24 @@
       try{localStorage.setItem('theme',next);}catch(e){}
       document.querySelector('meta[name=theme-color]').setAttribute('content',next==='dark'?'#000000':'#ffffff');
     });
+  })();
+
+  /* печатная машинка: один раз печатает заголовок и останавливается (без повторов/удаления) */
+  (function(){
+    const l1=document.getElementById('twL1'), l2=document.getElementById('twL2'), cur=document.getElementById('twCursor');
+    if(!l1||!l2) return;
+    const L1='Лучшие сайты.', L2='Лучший дизайн.';
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      l1.textContent=L1; l2.textContent=L2; cur.classList.add('done'); return;
+    }
+    function typeInto(el,text,speed,done){
+      let i=0;
+      (function step(){
+        el.textContent=text.slice(0,i); i++;
+        if(i<=text.length) setTimeout(step,speed); else if(done) done();
+      })();
+    }
+    typeInto(l1,L1,42,()=>typeInto(l2,L2,42,()=>cur.classList.add('done')));
   })();
 
   /* живые миниатюры: приоритетная подгрузка сверху вниз, без пустых мельканий */
