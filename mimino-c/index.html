@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МиМиНо — грузинская кухня и караоке в Нижнем Новгороде</title>
+<meta name="description" content="Ресторан-караоке «МиМиНо» в Нижнем Новгороде: настоящая грузинская кухня — хачапури, хинкали, мангал и домашнее вино. Уютный Белый зал и энергичный Красный караоке-зал. Открыты до 6 утра. Бронирование стола онлайн.">
+<meta name="theme-color" content="#B21E23">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="МиМиНо — грузинская кухня и караоке в Нижнем Новгороде">
+<meta property="og:description" content="Настоящая грузинская кухня и караоке до утра. Два зала, банкеты, домашнее вино. Забронируйте стол онлайн.">
+<meta property="og:image" content="assets/interior1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23B21E23'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23C9A24B' stroke-width='2.5'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23F3E9D8' text-anchor='middle'%3E%D0%9C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#B21E23;
+  --wine-deep:#8f1418;
+  --green:#4E8B3A;
+  --green-deep:#3c6d2d;
+  --gold:#C9A24B;
+  --gold-soft:#e0c583;
+  --paper:#F3E9D8;
+  --paper-2:#FBF6EE;
+  --linen:#ece0c9;
+  --ink:#241a17;
+  --ink-soft:#5b4a41;
+  --muted:#8a7565;
+  --white:#ffffff;
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1180px;
+  --gap:24px;
+  --header-h:74px;
+
+  --shadow-sm:0 4px 16px rgba(60,30,15,.10);
+  --shadow-md:0 14px 40px rgba(60,30,15,.16);
+  --shadow-lg:0 24px 60px rgba(60,30,15,.22);
+
+  --font-display:'Prata',Georgia,serif;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-text:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px);-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--font-text);
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--paper);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.12;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;border:0;background:none;}
+
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 22px;width:100%;}
+
+/* ---------- Ornamental paper texture ---------- */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201,162,75,.06), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(78,139,58,.05), transparent 42%),
+    var(--paper);
+}
+.vine-bg{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 26px;border-radius:100px;
+  font-weight:500;font-size:15px;letter-spacing:.02em;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  text-align:center;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--wine);color:var(--paper);box-shadow:0 8px 22px rgba(178,30,35,.32);}
+.btn-primary:hover{background:var(--wine-deep);box-shadow:0 12px 28px rgba(178,30,35,.4);}
+.btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 8px 22px rgba(201,162,75,.35);}
+.btn-gold:hover{background:var(--gold-soft);}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid rgba(36,26,23,.28);}
+.btn-outline:hover{border-color:var(--wine);color:var(--wine);}
+.btn-lg{padding:17px 34px;font-size:16px;}
+.btn-block{width:100%;}
+
+/* ---------- Section frame ---------- */
+.section{padding:clamp(56px,8vw,104px) 0;position:relative;}
+.section-head{text-align:center;max-width:720px;margin:0 auto clamp(36px,5vw,58px);}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-text);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--wine);margin-bottom:14px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--gold);}
+.section-head h2{
+  font-family:var(--font-display);
+  font-size:clamp(30px,5vw,52px);
+  color:var(--ink);line-height:1.08;
+}
+.section-head .lede{margin-top:16px;font-family:var(--font-serif);font-size:clamp(18px,2.4vw,23px);color:var(--ink-soft);line-height:1.4;}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(243,233,216,.86);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,162,75,.35);
+}
+.header-inner{display:flex;align-items:center;gap:18px;height:var(--header-h);}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;min-width:0;}
+.brand img{height:44px;width:auto;}
+.brand-name{font-family:var(--font-display);font-size:22px;color:var(--wine);white-space:nowrap;letter-spacing:.02em;}
+.nav{display:flex;align-items:center;gap:6px;margin-left:auto;}
+.nav a{
+  padding:9px 14px;border-radius:100px;font-size:15px;font-weight:500;color:var(--ink-soft);
+  transition:color .16s, background .16s;white-space:nowrap;
+}
+.nav a:hover{color:var(--wine);background:rgba(178,30,35,.07);}
+.header-cta{margin-left:8px;}
+.burger{
+  display:none;width:46px;height:46px;flex-shrink:0;margin-left:auto;
+  border-radius:12px;position:relative;background:var(--wine);
+}
+.burger span{
+  position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:var(--paper);
+  transition:transform .3s ease, opacity .2s ease;
+}
+.burger span:nth-child(1){top:16px;}
+.burger span:nth-child(2){top:22px;}
+.burger span:nth-child(3){top:28px;}
+body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+body.menu-open .burger span:nth-child(2){opacity:0;}
+body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+/* ---------- Mobile fullscreen menu ---------- */
+.mobile-menu{
+  position:fixed;inset:0;z-index:99;
+  background:linear-gradient(160deg,var(--wine) 0%,var(--wine-deep) 100%);
+  color:var(--paper);
+  display:flex;flex-direction:column;
+  padding:calc(var(--header-h) + 20px) 26px 34px;
+  transform:translateX(100%);
+  transition:transform .42s cubic-bezier(.7,0,.2,1);
+  visibility:hidden;overflow-y:auto;
+}
+.mobile-menu.open{transform:translateX(0);visibility:visible;}
+.mobile-menu .mm-vine{position:absolute;top:0;right:0;width:230px;opacity:.16;pointer-events:none;}
+.mm-links{display:flex;flex-direction:column;gap:2px;margin-top:6px;}
+.mm-links a{
+  font-family:var(--font-display);font-size:clamp(28px,8vw,40px);
+  padding:12px 0;border-bottom:1px solid rgba(243,233,216,.2);
+  display:flex;align-items:center;justify-content:space-between;
+  opacity:0;transform:translateX(24px);
+}
+.mobile-menu.open .mm-links a{animation:mmIn .5s forwards;}
+.mobile-menu.open .mm-links a:nth-child(1){animation-delay:.10s;}
+.mobile-menu.open .mm-links a:nth-child(2){animation-delay:.16s;}
+.mobile-menu.open .mm-links a:nth-child(3){animation-delay:.22s;}
+.mobile-menu.open .mm-links a:nth-child(4){animation-delay:.28s;}
+.mobile-menu.open .mm-links a:nth-child(5){animation-delay:.34s;}
+@keyframes mmIn{to{opacity:1;transform:translateX(0);}}
+.mm-links a span{font-family:var(--font-text);font-size:15px;color:var(--gold-soft);}
+.mm-foot{margin-top:auto;padding-top:28px;}
+.mm-phone{
+  display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:26px;color:var(--paper);
+  margin-bottom:10px;
+}
+.mm-phone svg{width:26px;height:26px;flex-shrink:0;fill:var(--gold-soft);}
+.mm-hours{font-size:15px;color:var(--gold-soft);margin-bottom:20px;}
+.mm-socials{display:flex;gap:12px;margin-bottom:22px;}
+.mm-socials a{
+  width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(243,233,216,.35);
+  display:flex;align-items:center;justify-content:center;
+}
+.mm-socials a svg{width:22px;height:22px;fill:var(--paper);}
+.mm-socials a:hover{background:rgba(243,233,216,.14);}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(40px,7vw,72px) 0 clamp(56px,8vw,90px);}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,56px);align-items:center;
+}
+.hero-copy{min-width:0;}
+.hero .eyebrow{margin-bottom:18px;}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(38px,7.5vw,78px);
+  color:var(--ink);line-height:1.02;letter-spacing:-.01em;
+}
+.hero h1 .accent{color:var(--wine);}
+.hero-sub{
+  margin-top:22px;font-family:var(--font-serif);font-size:clamp(19px,2.6vw,26px);
+  color:var(--ink-soft);line-height:1.42;max-width:32ch;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+.hero-media{position:relative;min-width:0;}
+.hero-media .frame{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);aspect-ratio:4/5;
+  border:3px solid var(--gold);
+}
+.hero-media .frame img{width:100%;height:100%;object-fit:cover;}
+.hero-badge{
+  position:absolute;bottom:-18px;left:-14px;z-index:3;
+  background:var(--paper-2);border-radius:var(--radius-md);padding:14px 20px;
+  box-shadow:var(--shadow-md);border:1px solid var(--gold-soft);
+  display:flex;align-items:center;gap:12px;max-width:80%;
+}
+.hero-badge svg{width:32px;height:32px;flex-shrink:0;fill:var(--wine);}
+.hero-badge b{font-family:var(--font-display);font-size:16px;color:var(--ink);display:block;}
+.hero-badge span{font-size:13px;color:var(--muted);}
+.hero-vine{position:absolute;top:-40px;right:-60px;width:340px;opacity:.5;z-index:0;pointer-events:none;}
+
+/* ---------- Stats ---------- */
+.stats{background:linear-gradient(180deg,var(--ink) 0%,#2f221d 100%);color:var(--paper);}
+.stats .container{padding-top:clamp(44px,6vw,64px);padding-bottom:clamp(44px,6vw,64px);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}
+.stat{text-align:center;position:relative;padding:8px 6px;}
+.stat:not(:last-child)::after{content:"";position:absolute;right:-10px;top:18%;bottom:18%;width:1px;background:rgba(201,162,75,.3);}
+.stat .val{font-family:var(--font-display);font-size:clamp(30px,5vw,50px);color:var(--gold);line-height:1;}
+.stat .lbl{margin-top:10px;font-size:14px;color:rgba(243,233,216,.82);line-height:1.4;}
+
+/* ---------- Halls ---------- */
+.halls-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px);}
+.hall{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:440px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  box-shadow:var(--shadow-md);isolation:isolate;
+}
+.hall img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s ease;}
+.hall:hover img{transform:scale(1.05);}
+.hall::after{content:"";position:absolute;inset:0;z-index:-1;}
+.hall.white::after{background:linear-gradient(180deg,rgba(30,45,20,.05) 0%,rgba(20,30,12,.72) 100%);}
+.hall.red::after{background:linear-gradient(180deg,rgba(60,8,10,.1) 0%,rgba(70,10,12,.82) 100%);}
+.hall-body{padding:clamp(24px,3vw,34px);color:var(--white);position:relative;}
+.hall-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 13px;border-radius:100px;margin-bottom:14px;
+}
+.hall.white .hall-tag{background:var(--green);color:var(--white);}
+.hall.red .hall-tag{background:var(--gold);color:var(--ink);}
+.hall-body h3{font-family:var(--font-display);font-size:clamp(24px,3.4vw,34px);margin-bottom:10px;}
+.hall-body p{font-size:15.5px;color:rgba(255,255,255,.9);line-height:1.55;max-width:44ch;}
+.hall-cta{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--gold-soft);}
+.hall-cta svg{width:16px;height:16px;fill:currentColor;transition:transform .2s;}
+.hall:hover .hall-cta svg{transform:translateX(4px);}
+
+/* ---------- Menu ---------- */
+.menu-section{background:var(--paper-2);}
+.menu-cats{display:flex;flex-direction:column;gap:clamp(40px,5vw,56px);}
+.menu-cat{max-width:900px;margin:0 auto;width:100%;}
+.cat-title{
+  display:flex;align-items:center;gap:18px;margin-bottom:26px;
+  font-family:var(--font-display);font-size:clamp(23px,3.4vw,34px);color:var(--wine);
+  justify-content:center;text-align:center;
+}
+.cat-title::before,.cat-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);min-width:0;}
+.menu-list{display:flex;flex-direction:column;gap:6px;}
+.menu-item{
+  display:flex;align-items:baseline;gap:8px;padding:12px 4px;border-radius:10px;min-width:0;
+  transition:background .16s;
+}
+.menu-item:hover{background:rgba(201,162,75,.09);}
+.mi-main{min-width:0;flex:1;display:flex;flex-direction:column;}
+.mi-top{display:flex;align-items:baseline;gap:8px;min-width:0;}
+.mi-name{font-family:var(--font-serif);font-weight:600;font-size:clamp(18px,2.2vw,21px);color:var(--ink);line-height:1.2;}
+.mi-tags{display:inline-flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:100px;white-space:nowrap;line-height:1.2;
+}
+.tag.hit{background:var(--wine);color:var(--paper);}
+.tag.veg{background:rgba(78,139,58,.15);color:var(--green-deep);}
+.tag.mangal{background:rgba(201,162,75,.22);color:#8a6d1f;}
+.tag.spicy{background:rgba(178,30,35,.12);color:var(--wine);}
+.tag.age{background:var(--ink);color:var(--gold-soft);}
+.mi-desc{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5;max-width:56ch;}
+.mi-dots{flex:1;border-bottom:1.5px dotted var(--gold);align-self:flex-end;margin:0 4px 7px;min-width:20px;}
+.mi-price{font-family:var(--font-display);font-size:clamp(16px,2vw,19px);color:var(--wine);white-space:nowrap;flex-shrink:0;align-self:flex-end;padding-bottom:2px;}
+.menu-note{text-align:center;margin-top:38px;font-size:14px;color:var(--muted);font-style:italic;}
+
+/* ornament divider */
+.orn-div{display:flex;align-items:center;justify-content:center;margin:0;opacity:.8;}
+.orn-div svg{width:66px;height:auto;}
+
+/* ---------- Highlights ---------- */
+.hl-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}
+.hl-card{
+  background:var(--paper-2);border:1px solid rgba(201,162,75,.4);border-radius:var(--radius-md);
+  padding:30px 24px;text-align:center;transition:transform .2s, box-shadow .2s;min-width:0;
+}
+.hl-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.hl-ic{
+  width:62px;height:62px;margin:0 auto 18px;border-radius:50%;
+  background:linear-gradient(145deg,var(--wine),var(--wine-deep));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(178,30,35,.28);
+}
+.hl-ic svg{width:30px;height:30px;fill:var(--paper);}
+.hl-card h3{font-family:var(--font-display);font-size:19px;color:var(--ink);margin-bottom:10px;}
+.hl-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+
+/* ---------- Gallery ---------- */
+.gallery-section{background:linear-gradient(180deg,var(--paper) 0%,var(--linen) 100%);}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;grid-auto-rows:200px;
+}
+.g-item{
+  position:relative;overflow:hidden;border-radius:var(--radius-md);cursor:pointer;
+  box-shadow:var(--shadow-sm);background:var(--linen);
+}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.g-item:hover img{transform:scale(1.07);}
+.g-item::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(36,26,23,.42));
+  opacity:0;transition:opacity .3s;
+}
+.g-item:hover::after{opacity:1;}
+.g-item .g-zoom{
+  position:absolute;right:12px;bottom:12px;width:38px;height:38px;border-radius:50%;
+  background:rgba(243,233,216,.92);display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.7);transition:opacity .3s, transform .3s;z-index:2;
+}
+.g-item:hover .g-zoom{opacity:1;transform:scale(1);}
+.g-item .g-zoom svg{width:18px;height:18px;fill:var(--wine);}
+.g-item.span-2{grid-column:span 2;grid-row:span 2;}
+.g-item.wide{grid-column:span 2;}
+.g-item.tall{grid-row:span 2;}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:200;background:rgba(24,16,12,.92);
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:92vw;max-height:86vh;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:2px solid var(--gold);}
+.lb-close{position:absolute;top:20px;right:22px;width:48px;height:48px;border-radius:50%;background:rgba(243,233,216,.14);color:var(--paper);font-size:26px;display:flex;align-items:center;justify-content:center;}
+.lb-close:hover{background:rgba(243,233,216,.28);}
+
+/* ---------- Booking ---------- */
+.booking-section{
+  background:linear-gradient(160deg,var(--ink) 0%,#37271f 55%,#2b1c17 100%);
+  color:var(--paper);position:relative;overflow:hidden;
+}
+.booking-section .book-vine{position:absolute;top:-30px;left:-50px;width:300px;opacity:.14;pointer-events:none;}
+.booking-section .book-vine2{position:absolute;bottom:-40px;right:-50px;width:300px;opacity:.14;pointer-events:none;transform:scaleX(-1);}
+.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,56px);align-items:center;position:relative;z-index:1;}
+.booking-intro{min-width:0;}
+.booking-intro .eyebrow{color:var(--gold-soft);}
+.booking-intro .eyebrow::before,.booking-intro .eyebrow::after{background:var(--gold);}
+.booking-intro h2{font-family:var(--font-display);font-size:clamp(30px,4.6vw,50px);color:var(--paper);line-height:1.06;}
+.booking-intro .lede{margin-top:18px;font-family:var(--font-serif);font-size:clamp(18px,2.4vw,23px);color:rgba(243,233,216,.85);line-height:1.45;}
+.booking-perks{margin-top:26px;display:flex;flex-direction:column;gap:14px;}
+.booking-perks li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(243,233,216,.9);min-width:0;}
+.booking-perks svg{width:22px;height:22px;flex-shrink:0;fill:var(--gold);margin-top:2px;}
+.booking-call{
+  margin-top:26px;display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--font-display);font-size:clamp(20px,3vw,26px);color:var(--gold-soft);
+}
+.booking-call svg{width:24px;height:24px;fill:currentColor;flex-shrink:0;}
+
+.book-card{
+  background:var(--paper-2);border-radius:var(--radius-lg);padding:clamp(24px,3.5vw,38px);
+  box-shadow:var(--shadow-lg);color:var(--ink);min-width:0;border:1px solid var(--gold-soft);
+}
+.book-card h3{font-family:var(--font-display);font-size:22px;color:var(--wine);margin-bottom:6px;}
+.book-card .sub{font-size:14px;color:var(--muted);margin-bottom:22px;}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;}
+.field label .req{color:var(--wine);}
+.field input,.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+  padding:12px 14px;border-radius:var(--radius-sm);
+  border:1.5px solid rgba(36,26,23,.16);background:var(--white);
+  transition:border-color .16s, box-shadow .16s;min-width:0;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(78,139,58,.16);
+}
+.field textarea{resize:vertical;min-height:76px;}
+.field.error input,.field.error select,.field.error textarea{border-color:var(--wine);box-shadow:0 0 0 3px rgba(178,30,35,.12);}
+.field .err-msg{font-size:12.5px;color:var(--wine);display:none;}
+.field.error .err-msg{display:block;}
+/* honeypot */
+.hp-field{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;}
+.form-foot{margin-top:22px;}
+.form-hint{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5;}
+.form-hint b{color:var(--ink-soft);}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:210;background:rgba(24,16,12,.6);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:var(--paper-2);border-radius:var(--radius-lg);max-width:460px;width:100%;
+  padding:clamp(26px,4vw,40px);box-shadow:var(--shadow-lg);text-align:center;
+  border:1px solid var(--gold-soft);position:relative;
+  animation:modalIn .35s cubic-bezier(.3,1.2,.5,1);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.96);}to{opacity:1;transform:none;}}
+.modal .check{
+  width:74px;height:74px;margin:0 auto 18px;border-radius:50%;
+  background:linear-gradient(145deg,var(--green),var(--green-deep));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(78,139,58,.35);
+}
+.modal .check svg{width:38px;height:38px;fill:none;stroke:var(--white);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+.modal h3{font-family:var(--font-display);font-size:26px;color:var(--ink);margin-bottom:8px;}
+.modal .m-sub{font-size:15px;color:var(--ink-soft);margin-bottom:20px;}
+.book-details{
+  text-align:left;background:var(--white);border-radius:var(--radius-md);padding:18px 20px;
+  margin-bottom:20px;border:1px solid rgba(201,162,75,.35);
+}
+.book-details dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;}
+.book-details dt{font-size:13px;color:var(--muted);font-weight:500;}
+.book-details dd{margin:0;font-size:14px;font-weight:600;color:var(--ink);text-align:right;overflow-wrap:anywhere;}
+.modal-actions{display:flex;flex-direction:column;gap:10px;}
+.modal-disclaimer{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.5;}
+.modal-close{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;}
+.modal-close:hover{background:rgba(36,26,23,.08);color:var(--ink);}
+
+/* ---------- Contacts ---------- */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,44px);align-items:stretch;}
+.contacts-info{min-width:0;display:flex;flex-direction:column;gap:20px;}
+.ci-row{display:flex;gap:14px;align-items:flex-start;min-width:0;}
+.ci-row .ci-ic{
+  width:46px;height:46px;flex-shrink:0;border-radius:50%;background:rgba(178,30,35,.1);
+  display:flex;align-items:center;justify-content:center;
+}
+.ci-row .ci-ic svg{width:22px;height:22px;fill:var(--wine);}
+.ci-row .ci-body{min-width:0;overflow-wrap:anywhere;}
+.ci-row .ci-body .k{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+.ci-row .ci-body .v{font-size:17px;color:var(--ink);font-weight:500;line-height:1.4;margin-top:2px;}
+.ci-row .ci-body a.v:hover{color:var(--wine);}
+.ci-socials{display:flex;gap:12px;margin-top:6px;}
+.ci-socials a{
+  width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(201,162,75,.5);
+  display:flex;align-items:center;justify-content:center;transition:background .16s, transform .16s;
+}
+.ci-socials a:hover{background:var(--wine);transform:translateY(-3px);}
+.ci-socials a:hover svg{fill:var(--paper);}
+.ci-socials a svg{width:24px;height:24px;fill:var(--wine);transition:fill .16s;}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:3px solid var(--gold);min-height:340px;}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block;}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--ink);color:rgba(243,233,216,.8);padding:52px 0 30px;}
+.footer-top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;}
+.footer-brand{display:flex;flex-direction:column;gap:12px;max-width:320px;min-width:0;}
+.footer-brand .fb-logo{display:flex;align-items:center;gap:11px;}
+.footer-brand .fb-logo img{height:42px;}
+.footer-brand .fb-logo span{font-family:var(--font-display);font-size:22px;color:var(--gold-soft);}
+.footer-brand p{font-size:14px;line-height:1.6;color:rgba(243,233,216,.68);}
+.footer-cols{display:flex;flex-wrap:wrap;gap:40px;}
+.footer-col h4{font-family:var(--font-text);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600;}
+.footer-col a,.footer-col p{display:block;font-size:14.5px;color:rgba(243,233,216,.78);margin-bottom:9px;overflow-wrap:anywhere;}
+.footer-col a:hover{color:var(--gold-soft);}
+.footer-bottom{
+  margin-top:38px;padding-top:22px;border-top:1px solid rgba(201,162,75,.22);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;
+  font-size:13px;color:rgba(243,233,216,.55);
+}
+.age-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;
+  border:1.5px solid var(--wine);color:var(--gold-soft);font-weight:600;font-size:13px;
+}
+.age-badge b{background:var(--wine);color:var(--paper);border-radius:6px;padding:1px 7px;font-size:12px;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1040px){
+  .nav,.header-cta{display:none;}
+  .burger{display:block;}
+  .brand-name{font-size:20px;}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-media{max-width:440px;margin:0 auto;width:100%;}
+  .halls-grid{grid-template-columns:1fr;}
+  .hl-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .booking-grid{grid-template-columns:1fr;}
+  .contacts-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:170px;}
+}
+@media (max-width:600px){
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;}
+  .stat:nth-child(2)::after{display:none;}
+  .stat:not(:last-child)::after{display:none;}
+  .hl-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;}
+  .g-item.span-2{grid-row:span 1;}
+  .footer-cols{gap:28px;}
+}
+@media (max-width:400px){
+  .container{padding:0 16px;}
+  .hero h1{font-size:34px;}
+  .btn{padding:13px 20px;font-size:14px;}
+  .mi-desc{font-size:13px;}
+}
+</style>
+</head>
+<body>
+
+<!-- decorative page vine -->
+<svg class="vine-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#C9A24B" stroke-width="1" opacity="0.18">
+    <path d="M-20,120 C200,60 260,220 480,160 C700,100 760,260 980,200 C1200,140 1300,300 1500,240"/>
+    <path d="M-20,780 C200,720 260,880 480,820 C700,760 760,920 980,860 C1200,800 1300,960 1500,900"/>
+  </g>
+  <g fill="#4E8B3A" opacity="0.10">
+    <circle cx="480" cy="160" r="5"/><circle cx="980" cy="200" r="5"/><circle cx="480" cy="820" r="5"/><circle cx="980" cy="860" r="5"/>
+  </g>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="МиМиНо — на главную">
+      <img src="assets/logo.png" alt="Логотип ресторана МиМиНо" onerror="this.style.display='none'">
+      <span class="brand-name">МиМиНо</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#menu">Меню</a>
+      <a href="#halls">Залы</a>
+      <a href="#about">О нас</a>
+      <a href="#booking">Бронирование</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#booking" class="btn btn-primary header-cta">Забронировать стол</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <svg class="mm-vine" viewBox="0 0 200 200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#F3E9D8" stroke-width="2">
+      <path d="M180,10 C120,40 160,90 100,110 C50,128 90,170 30,190"/>
+    </g>
+    <g fill="#F3E9D8">
+      <circle cx="100" cy="110" r="6"/><circle cx="88" cy="122" r="5"/><circle cx="30" cy="190" r="6"/>
+    </g>
+  </svg>
+  <nav class="mm-links" aria-label="Мобильная навигация">
+    <a href="#menu" class="mm-link">Меню <span>15+ грузинских блюд</span></a>
+    <a href="#halls" class="mm-link">Залы <span>Белый · Красный · Банкет</span></a>
+    <a href="#about" class="mm-link">О нас <span>Гостеприимство</span></a>
+    <a href="#booking" class="mm-link">Бронирование <span>Онлайн, без звонка</span></a>
+    <a href="#contacts" class="mm-link">Контакты <span>Как нас найти</span></a>
+  </nav>
+  <div class="mm-foot">
+    <a href="tel:+78312149212" class="mm-phone">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+      8 (831) 214-92-12
+    </a>
+    <p class="mm-hours">Ежедневно с 12:00 до 06:00</p>
+    <div class="mm-socials">
+      <a href="https://vk.com/mimino.rest" target="_blank" rel="noopener" aria-label="ВКонтакте">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17c-5 0-8-3.4-8.1-9.1h2.5c.1 4.2 2 6 3.4 6.3V7.9h2.4v2.6c1.4-.2 2.9-1.8 3.4-3.6h2.4c-.4 2.2-2 3.8-3.1 4.5 1.1.6 2.9 2 3.6 4.1h-2.6c-.5-1.6-1.9-2.9-3.3-3.1V17h-.6z"/></svg>
+      </a>
+      <a href="https://t.me/miminonn" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3 2.6 11.6c-.9.4-.9 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7l3.3-15.7c.2-1-.8-1.8-1.9-1.3zM9.6 14.2l8.2-5.1c.4-.2.7.3.4.6l-6.7 6.1c-.2.2-.4.5-.4.8l-.2 2.4-1.1-4.4z"/></svg>
+      </a>
+    </div>
+    <a href="#booking" class="btn btn-gold btn-lg btn-block mm-book">Забронировать стол</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">📍 Нижний Новгород · ул. Героя Смирнова, 14</p>
+      <h1>Как в гостях<br>у настоящего <span class="accent">грузина</span></h1>
+      <p class="hero-sub">Сочные хачапури и хинкали, мангал, домашнее вино и караоке до утра — тёплое грузинское застолье в самом сердце города.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary btn-lg">Забронировать стол</a>
+        <a href="#menu" class="btn btn-outline btn-lg">Смотреть меню</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <svg class="hero-vine" viewBox="0 0 300 300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#C9A24B" stroke-width="2" opacity="0.8">
+          <path d="M290,20 C220,60 260,120 190,150 C130,176 170,230 100,260"/>
+        </g>
+        <g fill="#4E8B3A" opacity="0.75">
+          <circle cx="190" cy="150" r="8"/><circle cx="176" cy="164" r="6"/><circle cx="200" cy="138" r="6"/>
+          <circle cx="100" cy="260" r="8"/><circle cx="88" cy="272" r="6"/>
+        </g>
+      </svg>
+      <div class="frame">
+        <img src="assets/interior1.jpg" alt="Интерьер Красного караоке-зала ресторана МиМиНо" fetchpriority="high" onerror="this.style.opacity='0'">
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.2 8.6 2 9.3l5.5 4.7L5.8 21 12 17.3 18.2 21l-1.7-7 5.5-4.7-7.2-.7z"/></svg>
+        <div><b>Караоке каждый вечер</b><span>Живой звук до 06:00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="val">2</div><div class="lbl">зала — Белый и Красный караоке</div></div>
+      <div class="stat"><div class="val">06:00</div><div class="lbl">Открыты до утра, ежедневно</div></div>
+      <div class="stat"><div class="val">100+</div><div class="lbl">гостей вмещает банкетный зал</div></div>
+      <div class="stat"><div class="val">🎤</div><div class="lbl">Караоке каждый вечер</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HALLS ============ -->
+<section class="section" id="halls">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Два настроения</span>
+      <h2>Два зала — на любой вечер</h2>
+      <p class="lede">Тихий уют светлого зала или бешеная энергетика караоке — выбирайте, каким будет ваш вечер.</p>
+    </div>
+    <div class="halls-grid">
+      <article class="hall white">
+        <img src="assets/photo_0021.jpg" alt="Белый зал ресторана МиМиНо в светлых тонах" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+        <div class="hall-body">
+          <span class="hall-tag">Уют и тишина</span>
+          <h3>Белый зал</h3>
+          <p>Тихий и уютный зал в светлых тонах — для семейного ужина, свидания и спокойного вечера с бокалом вина.</p>
+          <a href="#booking" class="hall-cta">Забронировать белый зал
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9z"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="hall red">
+        <img src="assets/interior1.jpg" alt="Красный караоке-зал ресторана МиМиНо" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+        <div class="hall-body">
+          <span class="hall-tag">Караоке и драйв</span>
+          <h3>Красный караоке-зал</h3>
+          <p>Бешеная энергетика, живой звук и караоке до утра — для шумных компаний и ярких праздников.</p>
+          <a href="#booking" class="hall-cta">Забронировать караоке
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7v-4H4v-6h9z"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+    <div class="orn-div" style="margin-top:32px" aria-hidden="true">
+      <svg viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#C9A24B" stroke-width="1.5"><path d="M2,12 C20,2 30,22 48,12 C58,6 62,6 60,12 C58,18 62,18 72,12 C90,2 100,22 118,12"/></g><circle cx="60" cy="12" r="3" fill="#B21E23"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section menu-section" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Грузинский стол</span>
+      <h2>Меню</h2>
+      <p class="lede">35 блюд домашней грузинской кухни — от хачапури по-аджарски до чакапули в белом вине.</p>
+    </div>
+    <div class="menu-cats" id="menuCats"></div>
+    <p class="menu-note">Цены указаны в рублях. Актуальный ассортимент уточняйте у официанта.</p>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS / ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему МиМиНо</span>
+      <h2>Тепло, вкус и живой звук</h2>
+      <p class="lede">Мы собрали всё, за что любят грузинское гостеприимство — под одной крышей в Нижнем Новгороде.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="hl-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10l-.5 6a4.5 4.5 0 01-4 4.4V19h3v2H8.5v-2h3v-6.6a4.5 4.5 0 01-4-4.4L7 2zm1.7 2l.3 3.7A2.5 2.5 0 0012 10a2.5 2.5 0 003-2.3L15.3 4H8.7z"/></svg></div>
+        <h3>Грузинское застолье</h3>
+        <p>Хачапури, хинкали, мангал и домашнее вино — как в гостях у настоящего грузина.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm-7 9a7 7 0 0014 0h-2a5 5 0 01-10 0H5zm6 7h2v3h-2v-3z"/></svg></div>
+        <h3>Караоке каждый вечер</h3>
+        <p>Красный зал с живым звуком — пой любимые песни до 6 утра.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-4-4 4 4 0 004 4zm-8 0a3 3 0 10-3-3 3 3 0 003 3zm0 2c-2.7 0-6 1.3-6 4v2h7v-2c0-1 .4-1.9 1-2.6A9.6 9.6 0 008 13zm8 0c-3 0-8 1.5-8 4.5V20h16v-2.5c0-3-5-4.5-8-4.5z"/></svg></div>
+        <h3>Банкеты под ключ</h3>
+        <p>Свадьбы, юбилеи и корпоративы на 100+ гостей с индивидуальным меню.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 109 9c0-.5 0-.9-.1-1.4A6 6 0 0113.4 3.1C12.9 3 12.5 3 12 3z"/></svg></div>
+        <h3>Открыты до утра</h3>
+        <p>Работаем каждый день с полудня до 6:00 — вечер можно не заканчивать.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section gallery-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Атмосфера</span>
+      <h2>Интерьеры МиМиНо</h2>
+      <p class="lede">Тёплый свет, дерево и грузинское гостеприимство — загляните к нам ещё до визита.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section booking-section" id="booking">
+  <svg class="book-vine" viewBox="0 0 300 300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#C9A24B" stroke-width="2"><path d="M10,20 C80,60 40,120 110,150 C170,176 130,230 200,260"/></g><g fill="#4E8B3A"><circle cx="110" cy="150" r="8"/><circle cx="124" cy="164" r="6"/><circle cx="200" cy="260" r="8"/></g></svg>
+  <svg class="book-vine2" viewBox="0 0 300 300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#C9A24B" stroke-width="2"><path d="M10,20 C80,60 40,120 110,150 C170,176 130,230 200,260"/></g><g fill="#4E8B3A"><circle cx="110" cy="150" r="8"/><circle cx="200" cy="260" r="8"/></g></svg>
+  <div class="container booking-grid">
+    <div class="booking-intro">
+      <span class="eyebrow">Бронирование стола</span>
+      <h2>Забронируйте стол онлайн</h2>
+      <p class="lede">Без звонков и авторизации — заполните форму, и мы придержим для вас лучший стол.</p>
+      <ul class="booking-perks">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Выбор зала: Белый, Красный караоке или Банкетный</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Любой повод — от ужина до свадьбы</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Мгновенное подтверждение брони на экране</li>
+      </ul>
+      <a href="tel:+78312149212" class="booking-call">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        8 (831) 214-92-12
+      </a>
+    </div>
+
+    <div class="book-card">
+      <h3>Бронь стола</h3>
+      <p class="sub">Заполните поля со звёздочкой — остальное по желанию.</p>
+      <form id="bookingForm" novalidate>
+        <!-- honeypot -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Не заполняйте это поле</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="bName">Имя <span class="req">*</span></label>
+            <input type="text" id="bName" name="name" placeholder="Как к вам обращаться" autocomplete="name" required>
+            <span class="err-msg">Пожалуйста, укажите имя</span>
+          </div>
+          <div class="field">
+            <label for="bPhone">Телефон <span class="req">*</span></label>
+            <input type="tel" id="bPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required>
+            <span class="err-msg">Укажите корректный номер РФ</span>
+          </div>
+          <div class="field">
+            <label for="bZone">Зал <span class="req">*</span></label>
+            <select id="bZone" name="zone" required>
+              <option value="" disabled selected>Выберите зал</option>
+              <option>Белый зал</option>
+              <option>Красный караоке-зал</option>
+              <option>Банкетный зал</option>
+              <option>Любой зал</option>
+            </select>
+            <span class="err-msg">Выберите зал</span>
+          </div>
+          <div class="field">
+            <label for="bGuests">Гостей <span class="req">*</span></label>
+            <select id="bGuests" name="guests" required>
+              <option value="" disabled selected>Сколько вас</option>
+              <option>1–2</option><option>3–4</option><option>5–8</option><option>9–15</option><option>16+</option>
+            </select>
+            <span class="err-msg">Укажите число гостей</span>
+          </div>
+          <div class="field">
+            <label for="bDate">Дата <span class="req">*</span></label>
+            <input type="date" id="bDate" name="date" required>
+            <span class="err-msg">Выберите дату</span>
+          </div>
+          <div class="field">
+            <label for="bTime">Время <span class="req">*</span></label>
+            <select id="bTime" name="time" required>
+              <option value="" disabled selected>Во сколько</option>
+            </select>
+            <span class="err-msg">Выберите время (12:00–06:00)</span>
+          </div>
+          <div class="field full">
+            <label for="bOccasion">Повод</label>
+            <select id="bOccasion" name="occasion">
+              <option value="" selected>Не указывать</option>
+              <option>Ужин</option><option>День рождения</option><option>Свадьба / банкет</option>
+              <option>Караоке-вечеринка</option><option>Корпоратив</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="bWish">Пожелания</label>
+            <textarea id="bWish" name="wish" placeholder="Стол у сцены, детский стул, торт к десерту…"></textarea>
+          </div>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="bookSubmit">Забронировать стол</button>
+          <p class="form-hint"><b>Тестовый режим.</b> Бронь предварительная — мы свяжемся для подтверждения. Данные никуда не передаются.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTS ============ -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+      <p class="lede">Ждём вас каждый день в здании кинотеатра «МИР» — от полудня до самого утра.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></div>
+          <div class="ci-body"><div class="k">Адрес</div><div class="v">Нижний Новгород, ул. Героя Смирнова, 14 (здание к/т «МИР»)</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg></div>
+          <div class="ci-body"><div class="k">Телефоны</div>
+            <div class="v"><a href="tel:+78312149212" class="v">+7 (831) 214-92-12</a></div>
+            <div class="v"><a href="tel:+79625125550" class="v">+7 (962) 512-55-50</a></div>
+          </div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm1 9.4 3.5 2-.8 1.3L11 13V7h2v5.4z"/></svg></div>
+          <div class="ci-body"><div class="k">Часы работы</div><div class="v">Ежедневно с 12:00 до 06:00</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.3-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.7-4.6 4.9.3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg></div>
+          <div class="ci-body"><div class="k">Мы в соцсетях</div>
+            <div class="ci-socials">
+              <a href="https://vk.com/mimino.rest" target="_blank" rel="noopener" aria-label="ВКонтакте">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17c-5 0-8-3.4-8.1-9.1h2.5c.1 4.2 2 6 3.4 6.3V7.9h2.4v2.6c1.4-.2 2.9-1.8 3.4-3.6h2.4c-.4 2.2-2 3.8-3.1 4.5 1.1.6 2.9 2 3.6 4.1h-2.6c-.5-1.6-1.9-2.9-3.3-3.1V17h-.6z"/></svg>
+              </a>
+              <a href="https://t.me/miminonn" target="_blank" rel="noopener" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3 2.6 11.6c-.9.4-.9 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7l3.3-15.7c.2-1-.8-1.8-1.9-1.3zM9.6 14.2l8.2-5.1c.4-.2.7.3.4.6l-6.7 6.1c-.2.2-.4.5-.4.8l-.2 2.4-1.1-4.4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2411784,43.8593421&z=16&hl=ru&output=embed" width="100%" height="400" loading="lazy" allowfullscreen title="Карта — ресторан МиМиНо на ул. Героя Смирнова, 14"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-logo">
+          <img src="assets/logo.png" alt="Логотип МиМиНо" onerror="this.style.display='none'">
+          <span>МиМиНо</span>
+        </div>
+        <p>Настоящая грузинская кухня и караоке в Нижнем Новгороде — сочные блюда и вкусный звук.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <a href="#menu">Меню</a>
+          <a href="#halls">Залы</a>
+          <a href="#about">О нас</a>
+          <a href="#booking">Бронирование</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <a href="tel:+78312149212">+7 (831) 214-92-12</a>
+          <a href="tel:+79625125550">+7 (962) 512-55-50</a>
+          <p>ул. Героя Смирнова, 14</p>
+          <p>Ежедневно 12:00–06:00</p>
+        </div>
+        <div class="footer-col">
+          <h4>Соцсети</h4>
+          <a href="https://vk.com/mimino.rest" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://t.me/miminonn" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ресторан-караоке «МиМиНо». Все права защищены.</span>
+      <span class="age-badge"><b>18+</b> Алкоголь — вред здоровью. Не для несовершеннолетних.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Закрыть">&times;</button>
+  <img src="" alt="Интерьер ресторана МиМиНо — увеличенное фото" id="lbImg">
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+    <div class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg></div>
+    <h3 id="modalTitle">Стол забронирован!</h3>
+    <p class="m-sub">Спасибо! Ваша предварительная бронь принята.</p>
+    <div class="book-details"><dl id="bookDetails"></dl></div>
+    <div class="modal-actions">
+      <a href="tel:+78312149212" class="btn btn-primary btn-block">Позвонить 8 (831) 214-92-12</a>
+      <a href="https://t.me/miminonn" target="_blank" rel="noopener" class="btn btn-outline btn-block">Продублировать в Telegram</a>
+    </div>
+    <p class="modal-disclaimer">Бронь предварительная и работает в тестовом режиме. Для гарантии, пожалуйста, подтвердите её звонком или в Telegram.</p>
+  </div>
+</div>
+
+<script>
+/* ============ MENU DATA ============ */
+const MENU=[
+ {cat:"Хачапури и выпечка",items:[
+  {name:"Хачапури по-аджарски",desc:"Лодочка из теста с сулугуни, яйцом и сливочным маслом. Легенда грузинского стола.",price:490,tags:["хит","вег"]},
+  {name:"Хачапури по-имеретински",desc:"Круглая лепёшка с щедрой начинкой из имеретинского сыра.",price:420,tags:["вег"]},
+  {name:"Хачапури по-мегрельски",desc:"С двойным сыром — внутри и румяной сырной корочкой сверху.",price:520,tags:[]},
+  {name:"Кубдари",desc:"Горская лепёшка с сочной рубленой мясной начинкой и специями.",price:480,tags:[]},
+  {name:"Мчади с сулугуни",desc:"Кукурузные лепёшки с солёным сыром — простая грузинская классика.",price:210,tags:["вег"]}
+ ]},
+ {cat:"Хинкали",items:[
+  {name:"Хинкали с говядиной и свининой",desc:"Сочные горячие мешочки с ароматным бульоном внутри. Цена за штуку.",price:90,tags:["хит"]},
+  {name:"Хинкали с бараниной",desc:"С рубленой бараниной и зеленью. Цена за штуку.",price:110,tags:[]},
+  {name:"Хинкали с сыром сулугуни",desc:"Вегетарианские, с тянущимся сыром. Цена за штуку.",price:95,tags:["вег"]},
+  {name:"Хинкали жареные",desc:"Обжаренные до румяной корочки. Цена за штуку.",price:110,tags:[]}
+ ]},
+ {cat:"Мангал и горячее",items:[
+  {name:"Шашлык из свинины",desc:"Маринованная шейка на углях с луком и лавашом.",price:590,tags:["хит","мангал"]},
+  {name:"Шашлык из баранины",desc:"Нежная баранина на мангале с грузинскими специями.",price:720,tags:["мангал"]},
+  {name:"Шашлык из курицы",desc:"Куриное филе в маринаде, сочное и ароматное.",price:480,tags:["мангал"]},
+  {name:"Люля-кебаб",desc:"Рубленое мясо со специями, приготовленное на шампуре.",price:520,tags:["мангал"]},
+  {name:"Оджахури",desc:"Жареная свинина с картофелем, луком и зеленью на кеци.",price:560,tags:[]},
+  {name:"Чахохбили",desc:"Тушёная курица в томатах с луком и грузинскими травами.",price:540,tags:[]},
+  {name:"Чакапули из баранины",desc:"Баранина, томлённая в белом вине с тархуном и ткемали.",price:690,tags:[]},
+  {name:"Цыплёнок табака",desc:"Хрустящий цыплёнок под прессом с чесночным соусом.",price:620,tags:["хит"]}
+ ]},
+ {cat:"Закуски и салаты",items:[
+  {name:"Пхали ассорти",desc:"Три вида: шпинат, свёкла и капуста с грецким орехом.",price:420,tags:["вег"]},
+  {name:"Сациви",desc:"Курица в нежном ореховом соусе с гранатом — классика застолья.",price:480,tags:["хит"]},
+  {name:"Бадриджани",desc:"Баклажаны с ореховой начинкой и гранатовыми зёрнами.",price:390,tags:["вег"]},
+  {name:"Лобио в горшочке",desc:"Фасоль, тушённая со специями и зеленью, подаётся с мчади.",price:360,tags:["вег"]},
+  {name:"Аджапсандали",desc:"Овощное рагу из баклажанов, перца и томатов по-грузински.",price:340,tags:["вег"]},
+  {name:"Сыр сулугуни",desc:"Молодой солёный сыр — жареный или свежий, на выбор.",price:320,tags:["вег"]}
+ ]},
+ {cat:"Супы",items:[
+  {name:"Харчо",desc:"Наваристый острый суп из говядины с рисом и грецким орехом.",price:390,tags:["остр"]},
+  {name:"Чихиртма",desc:"Куриный суп на яично-мучной заправке с лимоном.",price:360,tags:[]},
+  {name:"Хаши",desc:"Наваристый бульон — грузинское утро после весёлого вечера.",price:450,tags:[]}
+ ]},
+ {cat:"Бар и напитки",items:[
+  {name:"Вино Саперави (бокал)",desc:"Сухое красное грузинское вино, 150 мл.",price:320,tags:["18+"]},
+  {name:"Вино Киндзмараули (бокал)",desc:"Полусладкое красное, бархатный вкус, 150 мл.",price:380,tags:["18+"]},
+  {name:"Домашнее вино (графин 1 л)",desc:"Молодое вино от хозяина — красное или белое.",price:1200,tags:["18+"]},
+  {name:"Чача (50 мл)",desc:"Крепкая грузинская виноградная водка.",price:250,tags:["18+"]},
+  {name:"Лимонад «Натахтари»",desc:"Грузинский лимонад: тархун, груша, фейхоа.",price:220,tags:[]},
+  {name:"Чай грузинский",desc:"Ароматный чёрный чай с чабрецом, чайник.",price:180,tags:[]}
+ ]},
+ {cat:"Десерты",items:[
+  {name:"Чурчхела",desc:"Орехи в загущённом виноградном соке — грузинский «сникерс».",price:220,tags:[]},
+  {name:"Пахлава",desc:"Слоёная восточная сладость с орехами и мёдом.",price:260,tags:[]},
+  {name:"Мороженое с грецким орехом",desc:"Пломбир с орехом и медовым соусом.",price:240,tags:[]}
+ ]}
+];
+const TAGMAP={"хит":"hit","вег":"veg","мангал":"mangal","остр":"spicy","18+":"age"};
+const TAGLABEL={"хит":"Хит","вег":"Вегетар.","мангал":"Мангал","остр":"Острое","18+":"18+"};
+const ornSVG='<div class="orn-div" aria-hidden="true"><svg viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#C9A24B" stroke-width="1.5"><path d="M2,12 C20,2 30,22 48,12 C58,6 62,6 60,12 C58,18 62,18 72,12 C90,2 100,22 118,12"/></g><circle cx="60" cy="12" r="3" fill="#B21E23"/></svg></div>';
+
+(function renderMenu(){
+  const wrap=document.getElementById('menuCats');
+  let html='';
+  MENU.forEach((c,ci)=>{
+    html+='<div class="menu-cat"><h3 class="cat-title">'+c.cat+'</h3><ul class="menu-list">';
+    c.items.forEach(it=>{
+      let tags='';
+      if(it.tags.length){tags='<span class="mi-tags">'+it.tags.map(t=>'<span class="tag '+(TAGMAP[t]||'')+'">'+(TAGLABEL[t]||t)+'</span>').join('')+'</span>';}
+      html+='<li class="menu-item"><span class="mi-main"><span class="mi-top"><span class="mi-name">'+it.name+'</span>'+tags+'</span><span class="mi-desc">'+it.desc+'</span></span><span class="mi-dots"></span><span class="mi-price">'+it.price+' ₽</span></li>';
+    });
+    html+='</ul></div>';
+    if(ci<MENU.length-1) html+=ornSVG;
+  });
+  wrap.innerHTML=html;
+})();
+
+/* ============ GALLERY ============ */
+const GALLERY=[
+  {src:"interior1.jpg",cls:"span-2",alt:"Красный караоке-зал ресторана МиМиНо"},
+  {src:"hall_0035.jpg",cls:"",alt:"Зал ресторана МиМиНо"},
+  {src:"photo_0021.jpg",cls:"",alt:"Белый зал в светлых тонах"},
+  {src:"photo_0028.jpg",cls:"tall",alt:"Интерьер ресторана МиМиНо"},
+  {src:"photo_0139.jpg",cls:"",alt:"Обеденный зал МиМиНо"},
+  {src:"photo_755.jpg",cls:"wide",alt:"Банкетный зал МиМиНо"},
+  {src:"photo_160.jpg",cls:"",alt:"Уютный уголок ресторана МиМиНо"}
+];
+(function renderGallery(){
+  const g=document.getElementById('galleryGrid');
+  g.innerHTML=GALLERY.map(p=>'<div class="g-item '+p.cls+'" data-src="assets/'+p.src+'"><img src="assets/'+p.src+'" alt="'+p.alt+'" loading="lazy" decoding="async" onerror="this.closest(\'.g-item\').style.display=\'none\'"><span class="g-zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 10-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg></span></div>').join('');
+})();
+
+/* ============ LIGHTBOX ============ */
+const lightbox=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbClose=document.getElementById('lbClose');
+document.getElementById('galleryGrid').addEventListener('click',e=>{
+  const item=e.target.closest('.g-item');if(!item)return;
+  lbImg.src=item.dataset.src;lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+});
+function closeLB(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+lbClose.addEventListener('click',closeLB);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLB();});
+
+/* ============ MOBILE MENU ============ */
+const burger=document.getElementById('burger'),mobileMenu=document.getElementById('mobileMenu');
+function openMenu(){document.body.classList.add('menu-open');mobileMenu.classList.add('open');mobileMenu.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');burger.setAttribute('aria-label','Закрыть меню');document.body.style.overflow='hidden';}
+function closeMenu(){document.body.classList.remove('menu-open');mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');document.body.style.overflow='';}
+burger.addEventListener('click',()=>{document.body.classList.contains('menu-open')?closeMenu():openMenu();});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ if(a.getAttribute('href')&&a.getAttribute('href').startsWith('#'))closeMenu(); }));
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeMenu();closeLB();if(modalOverlay.classList.contains('open'))closeModal();}
+});
+
+/* ============ BOOKING FORM ============ */
+const form=document.getElementById('bookingForm');
+const timeSel=document.getElementById('bTime');
+const dateInp=document.getElementById('bDate');
+const modalOverlay=document.getElementById('modalOverlay');
+const modalClose=document.getElementById('modalClose');
+
+// time slots 12:00 -> 06:00 (next day), every 30 min
+(function fillTimes(){
+  let opts='<option value="" disabled selected>Во сколько</option>';
+  let mins=12*60; // 12:00
+  const end=(24+6)*60; // 06:00 next day = 30:00
+  for(;mins<=end;mins+=30){
+    const h=Math.floor(mins/60)%24,m=mins%60;
+    const label=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+(mins>=24*60?' (ночь)':'');
+    const val=(h<10?'0':'')+h+':'+(m<10?'0':'')+m;
+    opts+='<option value="'+val+'">'+label+'</option>';
+  }
+  timeSel.innerHTML=opts;
+})();
+// min date = today
+(function setMinDate(){
+  const t=new Date();const y=t.getFullYear(),m=String(t.getMonth()+1).padStart(2,'0'),d=String(t.getDate()).padStart(2,'0');
+  const today=y+'-'+m+'-'+d;dateInp.min=today;dateInp.value=today;
+})();
+
+// anti-bot state
+const formLoadTime=Date.now();
+let humanInteracted=false;
+['mousemove','touchstart','keydown','scroll'].forEach(ev=>{
+  window.addEventListener(ev,()=>{humanInteracted=true;},{once:true,passive:true});
+});
+
+// phone validation RU
+function validPhoneRU(v){
+  const digits=v.replace(/\D/g,'');
+  return /^(7|8)\d{10}$/.test(digits) || /^\d{10}$/.test(digits) && digits.length===10;
+}
+function fieldError(id,on){
+  const f=document.getElementById(id).closest('.field');
+  if(on)f.classList.add('error');else f.classList.remove('error');
+}
+
+// rate limit
+function bookingsToday(){
+  try{
+    const raw=JSON.parse(localStorage.getItem('mimino_bookings')||'[]');
+    const dayAgo=Date.now()-24*60*60*1000;
+    const fresh=raw.filter(t=>t>dayAgo);
+    localStorage.setItem('mimino_bookings',JSON.stringify(fresh));
+    return fresh.length;
+  }catch(e){return 0;}
+}
+function recordBooking(){
+  try{
+    const raw=JSON.parse(localStorage.getItem('mimino_bookings')||'[]');
+    raw.push(Date.now());localStorage.setItem('mimino_bookings',JSON.stringify(raw));
+  }catch(e){}
+}
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  // (a) honeypot
+  if(form.company.value.trim()!==''){ return; } // silently reject bot
+
+  // (b) min fill time < 3s => bot
+  if(Date.now()-formLoadTime<3000){
+    // treat as bot, silently reject but nudge human
+    if(!humanInteracted) return;
+  }
+
+  // (c) human interaction gate
+  if(!humanInteracted){
+    const hint=form.querySelector('.form-hint');
+    hint.innerHTML='<b>Подтвердите, что вы человек:</b> подвигайте страницу или коснитесь экрана и повторите.';
+    return;
+  }
+
+  // (d) rate limit
+  if(bookingsToday()>=3){
+    const hint=form.querySelector('.form-hint');
+    hint.innerHTML='<b>Лимит броней.</b> Вы уже оформили 3 брони за сутки. Позвоните нам: 8 (831) 214-92-12.';
+    return;
+  }
+
+  // validation
+  let ok=true;
+  const name=form.name.value.trim();
+  if(name.length<2){fieldError('bName',true);ok=false;}else fieldError('bName',false);
+  if(!validPhoneRU(form.phone.value)){fieldError('bPhone',true);ok=false;}else fieldError('bPhone',false);
+  if(!form.zone.value){fieldError('bZone',true);ok=false;}else fieldError('bZone',false);
+  if(!form.guests.value){fieldError('bGuests',true);ok=false;}else fieldError('bGuests',false);
+  if(!form.date.value){fieldError('bDate',true);ok=false;}else fieldError('bDate',false);
+  if(!form.time.value){fieldError('bTime',true);ok=false;}else fieldError('bTime',false);
+
+  if(!ok){
+    const firstErr=form.querySelector('.field.error input,.field.error select');
+    if(firstErr)firstErr.focus();
+    return;
+  }
+
+  // success
+  recordBooking();
+  const dateFmt=new Date(form.date.value).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+  const rows=[
+    ['Имя',name],
+    ['Телефон',form.phone.value],
+    ['Зал',form.zone.value],
+    ['Дата',dateFmt],
+    ['Время',form.time.value],
+    ['Гостей',form.guests.value]
+  ];
+  if(form.occasion.value)rows.push(['Повод',form.occasion.value]);
+  if(form.wish.value.trim())rows.push(['Пожелания',form.wish.value.trim()]);
+  document.getElementById('bookDetails').innerHTML=rows.map(r=>'<dt>'+r[0]+'</dt><dd>'+r[1].replace(/</g,'&lt;')+'</dd>').join('');
+  openModal();
+  form.reset();
+  document.getElementById('bDate').value=dateInp.min;
+});
+
+function openModal(){modalOverlay.classList.add('open');modalOverlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeModal(){modalOverlay.classList.remove('open');modalOverlay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+modalClose.addEventListener('click',closeModal);
+modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal();});
+</script>
+</body>
+</html>

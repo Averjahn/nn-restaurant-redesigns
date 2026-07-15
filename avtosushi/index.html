@@ -1,310 +1,684 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Автосуши — доставка суши, роллов, пиццы и wok в Нижнем Новгороде</title>
-<meta name="description" content="Автосуши — доставка суши, роллов, пиццы, wok, бургеров и десертов в Нижнем Новгороде. Свежие ингредиенты, быстрая доставка. Заказ онлайн: 8 800 100-11-37.">
-<meta name="theme-color" content="#111318">
-<meta property="og:title" content="Автосуши — доставка суши и роллов в Нижнем Новгороде">
-<meta property="og:description" content="Роллы, суши, пицца, wok, бургеры. Быстрая доставка. Заказ онлайн.">
-<meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Автосуши Автопицца — доставка суши, роллов, пиццы и wok в Нижнем Новгороде</title>
+<meta name="description" content="Автосуши Автопицца — кафе самообслуживания с 2009 года и сеть из 75+ кафе по России. Доставка суши, роллов, пиццы, wok и поке на дом. Открытая кухня, честное качество, бонусы в приложении.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F36412'/%3E%3Cellipse cx='32' cy='34' rx='16' ry='11' fill='%23fff'/%3E%3Cellipse cx='32' cy='34' rx='7' ry='7' fill='%23F36412'/%3E%3Cellipse cx='32' cy='34' rx='3.4' ry='3.4' fill='%235EBC5E'/%3E%3Crect x='20' y='14' width='3' height='30' rx='1.5' transform='rotate(20 21 14)' fill='%23C24D0A'/%3E%3Crect x='41' y='14' width='3' height='30' rx='1.5' transform='rotate(-20 43 14)' fill='%23C24D0A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cart.css">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --bg:#ffffff;--bg2:#f6f4f0;--card:#ffffff;--line:#eceae5;--ink:#16130f;--muted:#7d7970;
-    --red:#e23b3b;--red-d:#c22a2a;--wasabi:#4a7c33;--gold:#f0a500;
-    --container:1180px;--radius:18px;
-  }
-  html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:hidden}
-  body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
-  img{display:block;max-width:100%}
-  a{color:inherit;text-decoration:none}
-  button{font-family:inherit;cursor:pointer;border:none;background:none}
-  .container{max-width:var(--container);margin:0 auto;padding:0 20px}
-  .display{font-family:'Unbounded',sans-serif}
-  /* header */
-  .hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .hdr-in{display:flex;align-items:center;gap:16px;height:64px}
-  .logo{font-family:'Unbounded';font-weight:800;font-size:22px;letter-spacing:-.02em;flex-shrink:0;white-space:nowrap}
-  .logo b{color:var(--red)}
-  .hdr-phone{margin-left:auto;font-weight:800;font-size:15px;white-space:nowrap;overflow-wrap:anywhere}
-  .hdr-phone span{color:var(--muted);font-weight:600;font-size:12px;display:block}
-  .cart-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:10px 16px;border-radius:12px;font-weight:800;font-size:14px;flex-shrink:0}
-  .cart-btn:hover{background:var(--red-d)}
-  .cart-btn .cnt{background:#fff;color:var(--red);border-radius:20px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;padding:0 6px}
-  /* hero */
-  .hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.25) 0%,rgba(10,8,6,.82) 100%);z-index:1}
-  .hero-in{position:relative;z-index:2;padding:56px 0 44px;max-width:640px}
-  .hero .eyebrow{display:inline-flex;gap:8px;align-items:center;background:var(--red);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:800;margin-bottom:16px}
-  .hero h1{font-size:clamp(32px,6vw,60px);font-weight:800;line-height:1.05;margin-bottom:14px;overflow-wrap:anywhere}
-  .hero p{font-size:clamp(15px,2vw,19px);opacity:.92;max-width:520px;margin-bottom:26px}
-  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:800;font-size:15px;transition:.2s}
-  .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
-  .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.5)}.btn-ghost:hover{background:rgba(255,255,255,.25)}
-  /* advantages */
-  .adv{background:var(--bg2);padding:22px 0}
-  .adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-  .adv-i{display:flex;gap:12px;align-items:center;min-width:0}
-  .adv-i .ic{font-size:26px;flex-shrink:0}
-  .adv-i b{font-size:15px}.adv-i span{font-size:12.5px;color:var(--muted);display:block}
-  /* menu */
-  .menu{padding:44px 0 60px}
-  .menu h2{font-size:clamp(26px,4vw,40px);font-weight:800;margin-bottom:6px}
-  .menu .sub{color:var(--muted);margin-bottom:22px}
-  .tabs{position:sticky;top:64px;z-index:40;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:8px;background:var(--bg);-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;padding:9px 16px;border-radius:20px;background:var(--bg2);color:var(--ink);font-weight:700;font-size:14px;white-space:nowrap;border:1.5px solid transparent}
-  .tab.active{background:var(--ink);color:#fff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:.2s}
-  .card:hover{box-shadow:0 12px 30px rgba(20,15,10,.09);transform:translateY(-3px)}
-  .card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
-  .card-media img{width:100%;height:100%;object-fit:cover}
-  .hit-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:20px}
-  .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1;min-width:0}
-  .card-body h3{font-size:15.5px;font-weight:700;margin-bottom:5px;overflow-wrap:anywhere}
-  .card-body p{font-size:12.5px;color:var(--muted);margin-bottom:14px;flex:1}
-  .card-foot{display:flex;align-items:center;gap:10px;margin-top:auto}
-  .price{font-family:'Unbounded';font-weight:700;font-size:18px;white-space:nowrap}
-  .add{margin-left:auto;background:var(--red);color:#fff;border-radius:10px;padding:9px 15px;font-weight:800;font-size:13px;flex-shrink:0}
-  .add:hover{background:var(--red-d)}
-  .add.inrow{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);color:var(--ink);padding:6px 8px}
-  .qbtn{width:26px;height:26px;border-radius:8px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:16px;display:inline-flex;align-items:center;justify-content:center}
-  .qn{min-width:18px;text-align:center;font-weight:800}
-  /* cart overlay (clipping context — предотвращает горизонтальный overflow) */
-  .ov{position:fixed;inset:0;z-index:200;background:rgba(10,8,6,.5);overflow:hidden;opacity:0;visibility:hidden;transition:.3s}
-  .ov.open{opacity:1;visibility:visible}
-  .cart{position:absolute;top:0;right:0;bottom:0;width:min(410px,100vw);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1)}
-  .ov.open .cart{transform:none}
-  .cart-h{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
-  .cart-h h3{font-size:19px;font-weight:800}
-  .x{width:36px;height:36px;border-radius:10px;background:var(--bg2);font-size:20px;display:flex;align-items:center;justify-content:center}
-  .cart-items{flex:1;overflow-y:auto;padding:8px 20px}
-  .ci{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
-  .ci img{width:60px;height:60px;border-radius:12px;object-fit:cover;flex-shrink:0}
-  .ci-b{flex:1;min-width:0}
-  .ci-b h4{font-size:14px;font-weight:700;overflow-wrap:anywhere}
-  .ci-b .p{color:var(--muted);font-size:13px}
-  .ci-q{display:flex;align-items:center;gap:8px;margin-top:6px}
-  .cart-empty{padding:60px 20px;text-align:center;color:var(--muted)}
-  .cart-f{padding:18px 20px;border-top:1px solid var(--line)}
-  .cart-total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:14px}
-  .cart-f .btn-red{width:100%;justify-content:center}
-  /* order modal */
-  .modal{position:fixed;inset:0;z-index:210;background:rgba(10,8,6,.55);display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
-  .modal.open{display:flex}
-  .modal-box{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:26px}
-  .modal-box h3{font-size:22px;font-weight:800;margin-bottom:6px}
-  .modal-box .sub{color:var(--muted);margin-bottom:18px;font-size:14px}
-  .fld{margin-bottom:12px}
-  .fld input{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit}
-  .fld input:focus{outline:none;border-color:var(--red)}
-  .ok{text-align:center;padding:20px 0}
-  .ok .em{font-size:52px}
-  .ok h3{margin:10px 0 6px}
-  /* footer */
-  .ftr{background:var(--ink);color:#cfc9c0;padding:44px 0 30px;margin-top:20px}
-  .ftr-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;margin-bottom:26px}
-  .ftr h4{color:#fff;font-size:16px;margin-bottom:12px}
-  .ftr a{color:#cfc9c0;display:block;margin-bottom:7px;font-size:14px;overflow-wrap:anywhere}
-  .ftr a:hover{color:#fff}
-  .ftr .logo{color:#fff;margin-bottom:10px}
-  .ftr-bottom{border-top:1px solid #2a2620;padding-top:18px;font-size:13px;color:#8b857c;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
-  @media(max-width:860px){.ftr-grid{grid-template-columns:1fr 1fr}.adv-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){
-    .hdr-phone{display:none}
-    .ftr-grid{grid-template-columns:1fr}
-    .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-    .card-body{padding:11px 12px 13px}
-    .add{padding:8px 12px}
-    .logo{font-size:19px}
-  }
+:root{
+  --brand:#F36412; --brand-2:#F4793B; --brand-ink:#C24D0A; --brand-soft:#FDEDE2;
+  --green:#5EBC5E; --green-ink:#3E9A47;
+  --ink:#0B0F17; --ink-2:#32231B; --muted:#6B7280; --line:#ECE7E1;
+  --bg:#FFFFFF; --surface:#F6F5F3; --surface-2:#FBF1E9; --peach:#F5E6DE;
+  --color-primary:#F36412; --color-accent:#F4793B; /* для cart.css */
+  --radius-sm:12px; --radius:18px; --radius-lg:28px; --radius-pill:999px;
+  --container:1180px; --shadow:0 10px 30px rgba(20,10,0,.08); --shadow-lg:0 24px 60px rgba(20,10,0,.14);
+  --font:'Inter Tight',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:clamp(15px,1.4vw,17px);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{margin:0;line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h2.display{font-size:clamp(28px,4.6vw,52px);font-weight:900}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{margin:0;padding:0;list-style:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,96px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);padding:7px 14px;border-radius:var(--radius-pill)}
+.lead{color:var(--muted);font-size:clamp(16px,1.7vw,19px);max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;font-weight:700;font-size:16px;padding:14px 26px;border-radius:var(--radius-pill);border:2px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-ink)}
+.btn-outline{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+.btn-ghost{background:var(--brand-soft);color:var(--brand-ink)}
+.btn-ghost:hover{background:#fbe0d0}
+.btn-lg{padding:17px 34px;font-size:17px}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+
+/* ============ HEADER ============ */
+.top-strip{background:var(--ink);color:#fff;font-size:13.5px}
+.top-strip .container{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px 20px;text-align:center}
+.top-strip b{color:var(--brand-2)}
+.site-header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:20px;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{height:38px;width:auto}
+.city{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14.5px;color:var(--ink);white-space:nowrap}
+.city svg{color:var(--brand)}
+.head-phone{font-weight:800;font-size:16px;white-space:nowrap;color:var(--ink)}
+.head-phone span{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.02em}
+.nav{display:flex;gap:22px;align-items:center;margin-left:auto}
+.nav a{font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap;transition:.15s}
+.nav a:hover{color:var(--brand)}
+.nav a.promo{color:var(--brand);background:var(--brand-soft);padding:6px 13px;border-radius:var(--radius-pill)}
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.cart-btn{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:700;border:none;font-family:inherit;font-size:15px;padding:11px 18px;border-radius:var(--radius-pill);cursor:pointer;transition:.15s}
+.cart-btn:hover{background:var(--brand-ink)}
+.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;background:var(--green);color:#fff;border-radius:999px;font-size:12px;font-weight:800;display:grid;place-items:center;border:2px solid #fff}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;background:var(--surface);border:1px solid var(--line);border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
+.burger span{width:22px;height:2.5px;background:var(--ink);border-radius:2px;transition:.25s}
+
+/* ============ MOBILE MENU ============ */
+.mnav{position:fixed;inset:0;z-index:120;background:#fff;transform:translateX(100%);transition:transform .34s cubic-bezier(.5,0,.2,1);display:flex;flex-direction:column;visibility:hidden}
+.mnav.open{transform:translateX(0);visibility:visible}
+.mnav__top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.mnav__close{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:22px;cursor:pointer;line-height:1}
+.mnav__body{flex:1;overflow-y:auto;padding:8px 20px 24px}
+.mnav__body a.mlink{display:block;font-size:22px;font-weight:800;padding:15px 4px;border-bottom:1px solid var(--line);color:var(--ink);opacity:0;transform:translateX(16px)}
+.mnav.open .mnav__body a.mlink{animation:mIn .4s forwards}
+.mnav.open .mnav__body a.mlink:nth-child(1){animation-delay:.05s}
+.mnav.open .mnav__body a.mlink:nth-child(2){animation-delay:.09s}
+.mnav.open .mnav__body a.mlink:nth-child(3){animation-delay:.13s}
+.mnav.open .mnav__body a.mlink:nth-child(4){animation-delay:.17s}
+.mnav.open .mnav__body a.mlink:nth-child(5){animation-delay:.21s}
+.mnav.open .mnav__body a.mlink:nth-child(6){animation-delay:.25s}
+.mnav.open .mnav__body a.mlink:nth-child(7){animation-delay:.29s}
+.mnav.open .mnav__body a.mlink:nth-child(8){animation-delay:.33s}
+@keyframes mIn{to{opacity:1;transform:none}}
+.mnav__phone{margin-top:22px;font-size:26px;font-weight:900;color:var(--brand);display:block}
+.mnav__phone small{display:block;font-size:13px;font-weight:600;color:var(--muted)}
+.mnav__socials{display:flex;gap:12px;margin-top:18px}
+.mnav__socials a{width:46px;height:46px;border-radius:14px;background:var(--surface);display:grid;place-items:center;color:var(--ink)}
+.mnav__cta{margin-top:22px;width:100%}
+body.menu-open{overflow:hidden}
+
+/* ============ HERO ============ */
+.hero{background:radial-gradient(120% 120% at 100% 0,var(--surface-2) 0,#fff 55%);position:relative;overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:clamp(40px,6vw,80px) 20px}
+.hero h1{font-size:clamp(34px,5.6vw,66px);font-weight:900;letter-spacing:-.03em}
+.hero h1 .o{color:var(--brand)} .hero h1 .g{color:var(--green)}
+.hero-sub{margin-top:18px;color:var(--muted);font-size:clamp(16px,1.9vw,20px);max-width:48ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px}
+.hero-badge{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+.hero-badge svg{color:var(--brand);flex-shrink:0}
+.hero-media{position:relative;min-height:340px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--surface)}
+.hero-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.hero-float{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);font-weight:700}
+.hero-float b{color:var(--brand);font-size:20px}
+.hero-float small{display:block;color:var(--muted);font-weight:600;font-size:12px}
+
+/* ============ ADVANTAGES ============ */
+.adv{background:var(--ink);color:#fff}
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.adv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px}
+.adv-card .ic{width:48px;height:48px;border-radius:14px;background:var(--brand);display:grid;place-items:center;margin-bottom:14px}
+.adv-card h3{font-size:19px;margin-bottom:6px}
+.adv-card p{color:#b7bcc6;font-size:14.5px}
+
+/* ============ SECTION HEADS ============ */
+.sec-head{max-width:720px;margin-bottom:36px}
+.sec-head .lead{margin-top:14px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .lead{margin-left:auto;margin-right:auto}
+
+/* ============ MENU ============ */
+#menu{background:var(--surface)}
+.menu-bar{position:sticky;top:64px;z-index:40;background:var(--surface);padding:14px 0;margin-bottom:8px}
+#filters{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.filter{flex:0 0 auto;font-family:inherit;font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:var(--radius-pill);border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;white-space:nowrap;transition:.15s}
+.filter:hover{border-color:var(--brand-2)}
+.filter.active{background:var(--brand);border-color:var(--brand);color:#fff}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card__media{position:relative;aspect-ratio:1/1;background:var(--peach)}
+.card__img{width:100%;height:100%;object-fit:cover}
+.card__media.noimg .card__img{display:none}
+.card__media.noimg::after{content:"🍣";position:absolute;inset:0;display:grid;place-items:center;font-size:44px;opacity:.5}
+.card__price{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-weight:800;font-size:15px;padding:6px 12px;border-radius:var(--radius-pill);box-shadow:var(--shadow)}
+.card__body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{align-self:flex-start;font-size:11.5px;font-weight:700;color:var(--brand-ink);background:var(--brand-soft);padding:4px 9px;border-radius:var(--radius-pill)}
+.card__name{font-size:16px;font-weight:800}
+.card__desc{font-size:13px;color:var(--muted);flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card__add{margin-top:2px;font-family:inherit;font-weight:700;font-size:14.5px;padding:11px;border-radius:var(--radius-pill);border:2px solid var(--brand);background:#fff;color:var(--brand);cursor:pointer;transition:.15s}
+.card__add:hover{background:var(--brand);color:#fff}
+.card__counter{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--brand);border-radius:var(--radius-pill);padding:5px}
+.card__counter .qty-btn{width:34px;height:34px;border:none;background:rgba(255,255,255,.2);color:#fff;font-size:20px;border-radius:50%;cursor:pointer;font-family:inherit;line-height:1}
+.card__counter .qty-val{color:#fff;font-weight:800}
+
+/* ============ ABOUT / STORY ============ */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.about-grid .lead{margin-top:16px}
+.about-grid p+p{margin-top:14px}
+.story-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--surface)}
+.story-media img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:44px}
+.stat{background:var(--surface-2);border-radius:var(--radius);padding:24px;text-align:center}
+.stat b{display:block;font-size:clamp(30px,4.4vw,44px);font-weight:900;color:var(--brand);letter-spacing:-.03em}
+.stat span{color:var(--ink-2);font-weight:600;font-size:14px}
+
+/* ============ VALUES ============ */
+#values{background:var(--surface)}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.value{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.value .ic{width:50px;height:50px;border-radius:14px;background:var(--brand-soft);display:grid;place-items:center;color:var(--brand);margin-bottom:16px}
+.value h3{font-size:20px;margin-bottom:8px}
+.value p{color:var(--muted);font-size:14.5px}
+
+/* ============ DELIVERY & PAYMENT ============ */
+#delivery{background:#fff}
+.deliv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.deliv-card{background:var(--surface);border-radius:var(--radius);padding:28px}
+.deliv-card .ic{width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:var(--shadow);display:grid;place-items:center;color:var(--brand);margin-bottom:16px}
+.deliv-card h3{font-size:20px;margin-bottom:8px}
+.deliv-card p{color:var(--muted);font-size:14.5px}
+.pay-methods{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.pay-methods span{background:#fff;border:1px solid var(--line);border-radius:var(--radius-pill);padding:8px 14px;font-weight:700;font-size:13.5px}
+
+/* ============ LOYALTY + APP (split) ============ */
+#loyalty{background:linear-gradient(120deg,var(--brand) 0,var(--brand-2) 100%);color:#fff}
+.loyal-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.loyal-list{margin-top:22px;display:grid;gap:14px}
+.loyal-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.loyal-list .n{flex:0 0 30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-weight:800}
+.app-card{background:#fff;color:var(--ink);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-lg)}
+.app-card h3{font-size:24px;margin-bottom:6px}
+.app-card p{color:var(--muted);margin-bottom:18px}
+.app-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.app-badge{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:14px;padding:11px 14px;font-weight:700;transition:.15s}
+.app-badge:hover{border-color:var(--brand);background:var(--surface)}
+.app-badge svg{flex-shrink:0;color:var(--ink)}
+.app-badge small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.app-badge b{font-size:15px}
+
+/* ============ PROMO ============ */
+#promo{background:var(--surface)}
+.promo-empty{background:#fff;border:2px dashed var(--line);border-radius:var(--radius-lg);padding:44px;text-align:center}
+.promo-empty .em{font-size:52px}
+.promo-empty h3{font-size:24px;margin:12px 0 8px}
+.promo-empty p{color:var(--muted);max-width:44ch;margin:0 auto 20px}
+
+/* ============ FRANCHISE + VACANCIES (2-up) ============ */
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px);position:relative;overflow:hidden}
+.panel.dark{background:var(--ink);color:#fff}
+.panel.peach{background:var(--surface-2)}
+.panel h2{font-size:clamp(24px,3vw,34px);font-weight:900;margin-bottom:12px}
+.panel p{font-size:15.5px;margin-bottom:22px;max-width:44ch}
+.panel.dark p{color:#c3c8d1}
+.panel .big{position:absolute;right:-10px;bottom:-20px;font-size:150px;opacity:.08;pointer-events:none;line-height:1}
+
+/* ============ CONTACTS ============ */
+#contacts{background:#fff}
+.contacts-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px}
+.contacts-info{display:grid;gap:16px;align-content:start}
+.ci-row{display:flex;gap:14px;align-items:flex-start}
+.ci-row .ic{flex:0 0 46px;height:46px;border-radius:14px;background:var(--brand-soft);display:grid;place-items:center;color:var(--brand)}
+.ci-row b{font-size:17px;font-weight:800}
+.ci-row a{font-size:17px;font-weight:800}
+.ci-row small{display:block;color:var(--muted);font-weight:600;font-size:13px}
+.socials{display:flex;gap:12px;margin-top:6px}
+.socials a{width:48px;height:48px;border-radius:14px;background:var(--surface);display:grid;place-items:center;color:var(--ink);transition:.15s}
+.socials a:hover{background:var(--brand);color:#fff}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);min-height:360px}
+.map-wrap iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.1)}
+
+/* ============ FEEDBACK ============ */
+#feedback{background:var(--surface)}
+.fb-form{background:#fff;border-radius:var(--radius-lg);padding:clamp(24px,4vw,40px);box-shadow:var(--shadow);max-width:640px;margin:0 auto;position:relative}
+.fb-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-weight:700;font-size:14px}
+.field input,.field textarea{font-family:inherit;font-size:15px;padding:13px 15px;border:2px solid var(--line);border-radius:12px;background:#fff;transition:.15s;width:100%}
+.field input:focus,.field textarea:focus{border-color:var(--brand);outline:none}
+.field textarea{resize:vertical;min-height:100px}
+.fb-ok{display:none;text-align:center;padding:20px;margin-top:14px;background:var(--brand-soft);border-radius:14px;color:var(--brand-ink);font-weight:700}
+.fb-ok.show{display:block}
+.fb-note{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--ink);color:#c3c8d1;padding:56px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer .brand img{height:40px;filter:brightness(0) invert(1);opacity:.95}
+.foot-col h4{color:#fff;font-size:15px;margin-bottom:14px}
+.foot-col a{display:block;padding:5px 0;font-size:14px;color:#c3c8d1;transition:.15s}
+.foot-col a:hover{color:var(--brand-2)}
+.foot-apps{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.foot-apps a{background:rgba(255,255,255,.08);border-radius:12px;padding:9px 12px;font-size:12.5px;font-weight:700;color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:13px;color:#8b90a0}
+.foot-bottom a{color:#8b90a0;text-decoration:underline}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1040px){
+  .nav,.city,.head-phone{display:none}
+  .burger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-media{min-height:280px;order:-1}
+  .about-grid,.loyal-grid,.contacts-grid{grid-template-columns:1fr;gap:28px}
+  .story-media{max-height:340px}
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deliv-grid{grid-template-columns:1fr}
+  .split2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .menu-bar{top:60px}
+}
+@media(max-width:560px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .adv-grid{grid-template-columns:1fr}
+  .fb-row{grid-template-columns:1fr}
+  .app-badges{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .top-strip .container{gap:6px 14px;font-size:12.5px}
+  #grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .card__body{padding:11px}
+  .card__name{font-size:14px}
+  .card__desc{display:none}
+}
 </style>
 </head>
-<body>
-<header class="hdr">
-  <div class="container hdr-in">
-    <a href="#top" class="logo">АВТО<b>СУШИ</b></a>
-    <a href="tel:88001001137" class="hdr-phone">8 (800) 100-11-37<span>ежедневно · доставка</span></a>
-    <button class="cart-btn" id="cartOpen">🛒 Корзина <span class="cnt" id="cnt">0</span></button>
+<body data-cart-key="avtosushi">
+
+<!-- top strip -->
+<div class="top-strip"><div class="container">
+  <span>🍣 Кафе самообслуживания с <b>2009 года</b> · <b>75+</b> кафе по России · открытая кухня</span>
+</div></div>
+
+<!-- header -->
+<header class="site-header" id="top">
+  <div class="header-inner container">
+    <a href="#top" class="brand" aria-label="Автосуши Автопицца"><img src="assets/logo_official.svg" alt="Автосуши Автопицца"></a>
+    <span class="city"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> Нижний Новгород</span>
+    <a href="tel:+78312170000" class="head-phone">+7 (831) 217-0000<span>Заказ и доставка</span></a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#menu">Меню</a>
+      <a href="#about">О нас</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#loyalty">Бонусы</a>
+      <a href="#franchise">Франшиза</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#promo" class="promo">Акции</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span>Корзина</span>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
-<section class="hero" id="top">
-  <img src="assets/hero.jpg" alt="Ассорти суши и роллов Автосуши" fetchpriority="high" onerror="this.style.opacity='0'">
-  <div class="container hero-in">
-    <span class="eyebrow">🚗 Доставка по Нижнему Новгороду</span>
-    <h1 class="display">Суши, роллы, пицца и wok — быстро и вкусно</h1>
-    <p>Свежие ингредиенты, честные порции и доставка к двери. Собирайте заказ прямо на сайте.</p>
-    <div class="hero-btns">
-      <a href="#menu" class="btn btn-red">Смотреть меню</a>
-      <a href="tel:88001001137" class="btn btn-ghost">📞 Позвонить</a>
+<!-- mobile menu -->
+<div class="mnav" id="mnav" aria-hidden="true">
+  <div class="mnav__top">
+    <img src="assets/logo_official.svg" alt="Автосуши Автопицца" style="height:36px">
+    <button class="mnav__close" id="mnavClose" aria-label="Закрыть меню">✕</button>
+  </div>
+  <div class="mnav__body">
+    <a class="mlink" href="#menu">Меню</a>
+    <a class="mlink" href="#about">О нас</a>
+    <a class="mlink" href="#delivery">Доставка и оплата</a>
+    <a class="mlink" href="#loyalty">Бонусы и приложение</a>
+    <a class="mlink" href="#promo">Акции</a>
+    <a class="mlink" href="#franchise">Франшиза</a>
+    <a class="mlink" href="#vacancies">Вакансии</a>
+    <a class="mlink" href="#contacts">Контакты</a>
+    <a class="mnav__phone" href="tel:+78312170000">+7 (831) 217-0000<small>Заказ и доставка · Нижний Новгород</small></a>
+    <div class="mnav__socials">
+      <a href="https://vk.com/avtosushi_avtopizza" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.3c-5.5 0-8.9-3.8-9-10.1h2.8c.1 4.6 2.2 6.6 3.8 7V7.2h2.6v3.9c1.6-.2 3.3-2 3.9-3.9h2.6c-.4 2.3-2.1 4.1-3.3 4.8 1.2.6 3.1 2.2 3.8 5.3h-2.9c-.6-1.8-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
+      <a href="https://t.me/marketerasap" target="_blank" rel="noopener" aria-label="Telegram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.5c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 5.9c.4-.3-.1-.5-.6-.2L6.6 12.4l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg></a>
+      <a href="https://dzen.ru/franchise_asap" target="_blank" rel="noopener" aria-label="Дзен"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.3 5 .8 7.7 3 9.9 2.2 2.2 4.9 2.7 9.9 3-5 .3-7.7.8-9.9 3-2.2 2.2-2.7 4.9-3 9.1-.3-4.2-.8-6.9-3-9.1-2.2-2.2-4.9-2.7-6.9-3 2-.3 4.7-.8 6.9-3C11.2 9.7 11.7 7 12 2z"/></svg></a>
+    </div>
+    <a class="btn btn-primary mnav__cta" href="#menu">Смотреть меню</a>
+  </div>
+</div>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner container">
+    <div>
+      <span class="eyebrow">🚚 Доставка на дом или в кафе</span>
+      <h1 style="margin-top:16px"><span class="o">Авто</span>суши <span class="g">Авто</span>пицца — быстро, свежо, вкусно</h1>
+      <p class="hero-sub">Суши, роллы, пицца, wok и поке от кафе самообслуживания с 2009 года. Открытая кухня, честное качество и бонусы за каждый заказ.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary btn-lg">Смотреть меню</a>
+        <a href="#delivery" class="btn btn-outline btn-lg">Доставка и оплата</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Готовим прямо сейчас</span>
+        <span class="hero-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Открытая кухня с камерами</span>
+        <span class="hero-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z"/></svg> Бонусы за заказы</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/hero.jpg" alt="Сеты роллов и суши Автосуши" fetchpriority="high" onerror="this.parentElement.style.background='var(--peach)'">
+      <div class="hero-float"><span>🔥</span><div><b>75+ кафе</b><small>по всей России</small></div></div>
     </div>
   </div>
 </section>
 
-<section class="adv">
-  <div class="container adv-grid">
-    <div class="adv-i"><span class="ic">🍣</span><div><b>Свежее каждый день</b><span>готовим под заказ</span></div></div>
-    <div class="adv-i"><span class="ic">🚀</span><div><b>Быстрая доставка</b><span>по всему городу</span></div></div>
-    <div class="adv-i"><span class="ic">💳</span><div><b>Удобная оплата</b><span>онлайн и при получении</span></div></div>
-    <div class="adv-i"><span class="ic">🎁</span><div><b>Акции и бонусы</b><span>программа лояльности</span></div></div>
+<!-- advantages -->
+<section class="adv section">
+  <div class="container">
+    <div class="adv-grid">
+      <div class="adv-card"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><h3>Честное качество</h3><p>Следим за продуктами на всех этапах — от закупки до доставки в ваши руки.</p></div>
+      <div class="adv-card"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Открытая кухня</h3><p>Камеры и сервис DOOGLYS — вы видите, как готовится ваш заказ, в реальном времени.</p></div>
+      <div class="adv-card"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Без официантов</h3><p>Самообслуживание позволяет держать цены ниже и чаще радовать вас бонусами.</p></div>
+      <div class="adv-card"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Рядом с вами</h3><p>Сеть из 75+ кафе по России — знакомый вкус в любом городе.</p></div>
+    </div>
   </div>
 </section>
 
-<section class="menu" id="menu">
+<!-- menu (ordering) -->
+<section id="menu" class="section">
   <div class="container">
-    <h2 class="display">Меню</h2>
-    <p class="sub">Более 250 позиций: роллы, суши, пицца, wok, бургеры и десерты</p>
-    <div class="tabs" id="tabs"></div>
-    <div class="grid" id="grid"></div>
+    <div class="sec-head">
+      <span class="eyebrow">🍱 Меню</span>
+      <h2 class="display" style="margin-top:14px">Выбирайте и добавляйте в корзину</h2>
+      <p class="lead">Роллы, суши, сеты, пицца, wok, поке, горячее, завтраки и напитки — более 290 позиций. Цены и фото — как в приложении.</p>
+    </div>
+    <div class="menu-bar"><div id="filters"></div></div>
+    <div id="grid"></div>
   </div>
 </section>
 
-<footer class="ftr">
+<!-- about / story -->
+<section id="about" class="section">
   <div class="container">
-    <div class="ftr-grid">
+    <div class="about-grid">
       <div>
-        <div class="logo display">АВТО<b style="color:var(--red)">СУШИ</b></div>
-        <p style="font-size:14px;color:#a8a299">Доставка суши, роллов, пиццы и wok в Нижнем Новгороде. Кафе самообслуживания с высокими стандартами качества.</p>
+        <span class="eyebrow">О нас</span>
+        <h2 class="display" style="margin-top:14px">Кафе с богатой историей и высокими стандартами</h2>
+        <p class="lead">В далёком 2009 году мы начали своё движение вперёд с первого кафе в Нижнем Новгороде. Шаг за шагом мы нашли свою философию и создали целую сеть кафе с доставкой на дом.</p>
+        <p>В наших кафе нет официантов — это даёт нам возможность чаще радовать вас акциями и бонусами, а вам — баловать себя вкусными роллами и пиццей. В 2010 году открылся первый филиал за пределами Нижнего Новгорода. Сегодня сеть насчитывает более 75 кафе по всей России.</p>
+        <p>Кафе с открытой кухней может стать ещё более востребованным — и всё зависит от вас: от вашей оценки и желания приобщиться к вкусным традициям японской кухни.</p>
       </div>
+      <div class="story-media"><img src="assets/hot.jpg" alt="Кухня Автосуши" loading="lazy" onerror="this.parentElement.style.background='var(--peach)'"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>2009</b><span>год основания в Нижнем Новгороде</span></div>
+      <div class="stat"><b>2010</b><span>первый филиал за пределами города</span></div>
+      <div class="stat"><b>75+</b><span>кафе по всей России</span></div>
+      <div class="stat"><b>0</b><span>официантов — только самообслуживание</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- values -->
+<section id="values" class="section">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Наши принципы</span>
+      <h2 class="display" style="margin-top:14px">Почему нам можно доверять</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Про качество</h3><p>Следим за качеством продуктов на всех этапах — от закупки ингредиентов до момента доставки. Высокие стандарты, которым можно доверять.</p></div>
+      <div class="value"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 3l3 4-3 4M7 21l-3-4 3-4"/></svg></div><h3>Наши стандарты</h3><p>Чебоксары, Пенза, Владимир — где бы ни было «Автосуши Автопицца», вкус будет знакомым, а качество — тем же.</p></div>
+      <div class="value"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Ответственность</h3><p>Сервис DOOGLYS: камеры на кухне, прозрачные технологии и отслеживание в реальном времени. Кухня не просто открытая — честная.</p></div>
+      <div class="value"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>Внимание к вам</h3><p>Читаем отзывы, разбираем предложения, вникаем в жалобы — потому что хотим становиться лучше, а не потому что «так надо».</p></div>
+      <div class="value"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div><h3>Открытость</h3><p>Если что-то пошло не так — скажите. Мы готовы пересобрать заказ или предложить замену. Веб-камеры и диалог — это про доверие.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- delivery & payment -->
+<section id="delivery" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">🚚 Доставка и оплата</span>
+      <h2 class="display" style="margin-top:14px">Привезём горячим — или заберёте сами</h2>
+    </div>
+    <div class="deliv-grid">
+      <div class="deliv-card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Доставка на дом</h3>
+        <p>Курьеры привозят заказ по городу. Точную зону, стоимость и время доставки по вашему адресу вы увидите при оформлении на сайте и в приложении.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Самовывоз из кафе</h3>
+        <p>Заберите заказ в любом из 75+ кафе сети — быстро и без ожидания. Кафе самообслуживания с открытой кухней.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+        <h3>Удобная оплата</h3>
+        <p>Платите так, как удобно — наличными или картой курьеру, онлайн на сайте, в приложении или через СБП.</p>
+        <div class="pay-methods"><span>💵 Наличные</span><span>💳 Картой</span><span>🌐 Онлайн</span><span>⚡ СБП</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- loyalty + app -->
+<section id="loyalty" class="section">
+  <div class="container">
+    <div class="loyal-grid">
       <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.2);color:#fff">🎁 Программа лояльности</span>
+        <h2 class="display" style="margin-top:14px">Копите бонусы за каждый заказ</h2>
+        <p style="margin-top:14px;font-size:18px;max-width:44ch;color:#fff;opacity:.95">В наших кафе нет официантов — поэтому мы чаще радуем вас приятными акциями и бонусами.</p>
+        <ul class="loyal-list">
+          <li><span class="n">1</span><span>Заказывайте суши, роллы и пиццу на сайте или в приложении.</span></li>
+          <li><span class="n">2</span><span>Получайте бонусы за каждый оплаченный заказ.</span></li>
+          <li><span class="n">3</span><span>Оплачивайте бонусами часть следующего заказа — больше выгоды в приложении.</span></li>
+        </ul>
+      </div>
+      <div class="app-card">
+        <h3>Заказывать ещё быстрее — в приложении</h3>
+        <p>Меню, бонусы, история заказов и статус доставки всегда под рукой.</p>
+        <div class="app-badges">
+          <a class="app-badge" href="https://apps.apple.com/app/id605507664?l=ru&ls=1" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.5c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 3 .7c1.2 0 2-1.1 2.7-2.1.8-1.2 1.2-2.4 1.2-2.4s-2.1-.8-2.1-3.3zM14.9 5.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.1z"/></svg><span><small>Загрузите в</small><b>App Store</b></span></a>
+          <a class="app-badge" href="https://play.google.com/store/apps/details?id=ru.inmixed.as" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3.5v17c0 .4.2.7.5.9l9.3-9.4L3.5 2.6c-.3.2-.5.5-.5.9zm12.1 5.6l2.6-2.6L6.5 1.9c-.3-.2-.7-.1-1 .1l9.6 7.1zm.9.9l3.4 1.9c.6.3.6 1.2 0 1.5l-3.4 1.9-2.9-2.7 2.9-2.5zm-.9 3.4L5.5 22c.3.2.7.2 1 0l11.2-6.5-2.6-2.6z"/></svg><span><small>Доступно в</small><b>Google Play</b></span></a>
+          <a class="app-badge" href="https://www.rustore.ru/catalog/app/ru.inmixed.as" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h13l3 4-8 12L2 8z"/></svg><span><small>Скачайте в</small><b>RuStore</b></span></a>
+          <a class="app-badge" href="https://appgallery.huawei.com/app/C102693559" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4c1.5 3 1.5 9 0 12-1.5-3-1.5-9 0-12z"/></svg><span><small>Есть в</small><b>AppGallery</b></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- promo -->
+<section id="promo" class="section">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">🔥 Акции</span>
+      <h2 class="display" style="margin-top:14px">Выгодные предложения</h2>
+    </div>
+    <div class="promo-empty">
+      <div class="em">🎁</div>
+      <h3>Скоро здесь появятся новые акции</h3>
+      <p>Следите за обновлениями — свежие предложения и скидки на роллы, сеты и пиццу выходят регулярно. Первыми о них узнают гости в приложении и подписчики соцсетей.</p>
+      <a href="#loyalty" class="btn btn-primary">Скачать приложение</a>
+    </div>
+  </div>
+</section>
+
+<!-- franchise + vacancies -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="split2">
+      <div class="panel dark" id="franchise">
+        <span class="big">🤝</span>
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Франшиза</span>
+        <h2 style="margin-top:14px">Откройте «Автосуши Автопицца» в своём городе</h2>
+        <p>Более 75 кафе по всей России и отлаженная модель самообслуживания с открытой кухней. Расскажем об условиях, поддержке и запуске — оставьте заявку.</p>
+        <a href="#feedback" class="btn btn-primary">Узнать про франшизу</a>
+      </div>
+      <div class="panel peach" id="vacancies">
+        <span class="big">👨‍🍳</span>
+        <span class="eyebrow">Вакансии</span>
+        <h2 style="margin-top:14px">Присоединяйтесь к команде</h2>
+        <p>Мы всегда ищем поваров, курьеров и сотрудников кафе. Открытая кухня, честные условия и дружная команда, которая любит своё дело.</p>
+        <a href="#feedback" class="btn btn-outline">Откликнуться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contacts -->
+<section id="contacts" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">📍 Контакты</span>
+      <h2 class="display" style="margin-top:14px">Свяжитесь с нами</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="ci-row"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></div><div><a href="tel:88001001137">8 (800) 100-11-37</a><small>Бесплатная горячая линия по России</small></div></div>
+        <div class="ci-row"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></div><div><a href="tel:+78312170000">+7 (831) 217-0000</a><small>Нижний Новгород · заказ и доставка</small></div></div>
+        <div class="ci-row"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div><div><a href="mailto:vk@avtosushi.ru">vk@avtosushi.ru</a><small>Отзывы и предложения</small></div></div>
+        <div class="ci-row"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><b>Ежедневно</b><small>Часы работы кафе уточняйте в приложении по вашему адресу</small></div></div>
+        <div>
+          <p style="font-weight:700;margin-bottom:6px">Мы в соцсетях</p>
+          <div class="socials">
+            <a href="https://vk.com/avtosushi_avtopizza" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.3c-5.5 0-8.9-3.8-9-10.1h2.8c.1 4.6 2.2 6.6 3.8 7V7.2h2.6v3.9c1.6-.2 3.3-2 3.9-3.9h2.6c-.4 2.3-2.1 4.1-3.3 4.8 1.2.6 3.1 2.2 3.8 5.3h-2.9c-.6-1.8-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
+            <a href="https://t.me/marketerasap" target="_blank" rel="noopener" aria-label="Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.5c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 5.9c.4-.3-.1-.5-.6-.2L6.6 12.4l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg></a>
+            <a href="https://dzen.ru/franchise_asap" target="_blank" rel="noopener" aria-label="Дзен"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.3 5 .8 7.7 3 9.9 2.2 2.2 4.9 2.7 9.9 3-5 .3-7.7.8-9.9 3-2.2 2.2-2.7 4.9-3 9.1-.3-4.2-.8-6.9-3-9.1-2.2-2.2-4.9-2.7-6.9-3 2-.3 4.7-.8 6.9-3C11.2 9.7 11.7 7 12 2z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2965,43.9361&z=11&hl=ru&output=embed" loading="lazy" title="Автосуши на карте Нижнего Новгорода" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- feedback -->
+<section id="feedback" class="section">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">✉️ Обратная связь</span>
+      <h2 class="display" style="margin-top:14px">Напишите нам</h2>
+      <p class="lead">Отзыв, предложение, вопрос о франшизе или вакансии — мы читаем каждое сообщение.</p>
+    </div>
+    <form class="fb-form" id="fbForm" novalidate>
+      <div class="fb-row">
+        <div class="field"><label for="fbName">Имя</label><input id="fbName" name="name" type="text" placeholder="Как к вам обращаться" required></div>
+        <div class="field"><label for="fbPhone">Телефон</label><input id="fbPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+      </div>
+      <div class="field"><label for="fbMsg">Сообщение</label><textarea id="fbMsg" name="message" placeholder="Ваш отзыв или вопрос" required></textarea></div>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Отправить</button>
+      <p class="fb-note">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Форма работает в демонстрационном режиме.</p>
+      <div class="fb-ok" id="fbOk">Спасибо! Сообщение отправлено — мы свяжемся с вами. 🧡</div>
+    </form>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand"><img src="assets/logo_official.svg" alt="Автосуши Автопицца"></a>
+        <p style="margin-top:14px;max-width:34ch;font-size:14px">Кафе самообслуживания с богатой историей и высокими стандартами качества. С 2009 года.</p>
+        <div class="foot-apps">
+          <a href="https://apps.apple.com/app/id605507664?l=ru&ls=1" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=ru.inmixed.as" target="_blank" rel="noopener">Google Play</a>
+          <a href="https://www.rustore.ru/catalog/app/ru.inmixed.as" target="_blank" rel="noopener">RuStore</a>
+          <a href="https://appgallery.huawei.com/app/C102693559" target="_blank" rel="noopener">AppGallery</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Меню и заказ</h4>
+        <a href="#menu">Меню</a>
+        <a href="#delivery">Доставка и оплата</a>
+        <a href="#loyalty">Программа лояльности</a>
+        <a href="#promo">Акции</a>
+      </div>
+      <div class="foot-col">
+        <h4>Компания</h4>
+        <a href="#about">О нас</a>
+        <a href="#franchise">Франшиза</a>
+        <a href="#vacancies">Вакансии</a>
+        <a href="#feedback">Обратная связь</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <div class="foot-col">
         <h4>Контакты</h4>
         <a href="tel:88001001137">8 (800) 100-11-37</a>
+        <a href="tel:+78312170000">+7 (831) 217-0000</a>
         <a href="mailto:vk@avtosushi.ru">vk@avtosushi.ru</a>
-        <a href="https://vk.com/avtosushi_avtopizza" target="_blank" rel="noopener">ВКонтакте</a>
-        <a href="https://t.me/marketerasap" target="_blank" rel="noopener">Telegram</a>
-      </div>
-      <div>
-        <h4>Информация</h4>
-        <a href="#menu">Меню</a>
-        <a href="#top">Доставка и оплата</a>
-        <a href="#top">Акции</a>
-        <a href="#top">Программа лояльности</a>
+        <div class="socials" style="margin-top:10px">
+          <a href="https://vk.com/avtosushi_avtopizza" target="_blank" rel="noopener" aria-label="ВКонтакте" style="width:40px;height:40px;background:rgba(255,255,255,.08);color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.3c-5.5 0-8.9-3.8-9-10.1h2.8c.1 4.6 2.2 6.6 3.8 7V7.2h2.6v3.9c1.6-.2 3.3-2 3.9-3.9h2.6c-.4 2.3-2.1 4.1-3.3 4.8 1.2.6 3.1 2.2 3.8 5.3h-2.9c-.6-1.8-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
+          <a href="https://t.me/marketerasap" target="_blank" rel="noopener" aria-label="Telegram" style="width:40px;height:40px;background:rgba(255,255,255,.08);color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.5c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 5.9c.4-.3-.1-.5-.6-.2L6.6 12.4l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.7.2 1.4 1.5z"/></svg></a>
+        </div>
       </div>
     </div>
-    <div class="ftr-bottom"><span>© 2026 Автосуши · Нижний Новгород</span><span>Доставка суши и роллов</span></div>
+    <div class="foot-bottom">
+      <span>© 2026 — Автосуши Автопицца. Все права защищены.</span>
+      <span><a href="#">Правовая информация</a> · <a href="#">Политика обработки персональных данных</a></span>
+    </div>
   </div>
 </footer>
 
-<!-- cart -->
-<div class="ov" id="cartOv">
-  <aside class="cart" id="cart">
-    <div class="cart-h"><h3>Корзина</h3><button class="x" id="cartClose">×</button></div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-f">
-      <div class="cart-total"><span>Итого</span><span id="total">0 ₽</span></div>
-      <button class="btn btn-red" id="checkout">Оформить заказ</button>
-    </div>
-  </aside>
-</div>
+<!-- cart drawer -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart" id="cart" aria-label="Корзина">
+  <div class="cart__head">
+    <span class="cart__title">Корзина</span>
+    <button class="cart__close" id="cartClose" aria-label="Закрыть">✕</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart__foot">
+    <div class="cart__total-row"><span>Итого</span><span id="cartTotal">0 ₽</span></div>
+    <button class="submit-btn" id="checkoutBtn" disabled>Оформить заказ</button>
+  </div>
+</aside>
 
 <!-- order modal -->
 <div class="modal" id="orderModal">
-  <div class="modal-box">
-    <div id="orderForm">
-      <h3>Оформление заказа</h3>
-      <p class="sub">Оставьте контакты — перезвоним и подтвердим</p>
-      <form id="form">
-        <div class="fld"><input type="text" placeholder="Ваше имя" required></div>
-        <div class="fld"><input type="tel" placeholder="Телефон" required></div>
-        <div class="fld"><input type="text" placeholder="Адрес доставки" required></div>
-        <button type="submit" class="btn btn-red" style="width:100%;justify-content:center">Отправить заказ</button>
-        <button type="button" class="btn" id="orderCancel" style="width:100%;justify-content:center;color:var(--muted);margin-top:8px">Отмена</button>
-      </form>
-    </div>
-    <div class="ok" id="orderOk" hidden>
-      <div class="em">✅</div>
-      <h3>Заказ принят!</h3>
-      <p class="sub">Мы перезвоним вам в ближайшее время для подтверждения.</p>
-      <button class="btn btn-red" id="okClose" style="justify-content:center">Хорошо</button>
+  <div class="modal__inner">
+    <div class="modal__head"><h3>Оформление заказа</h3><button class="modal__close" id="orderClose" aria-label="Закрыть">✕</button></div>
+    <form id="orderForm">
+      <div class="order-total-row">Сумма заказа: <b id="orderTotal">0 ₽</b></div>
+      <div class="form-group"><label>Имя</label><input type="text" name="name" required placeholder="Ваше имя"></div>
+      <div class="form-group"><label>Телефон</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__"></div>
+      <div class="form-group"><label>Адрес доставки</label><input type="text" name="address" required placeholder="Улица, дом, квартира"></div>
+      <div class="form-group"><label>Комментарий</label><input type="text" name="comment" placeholder="Пожелания к заказу"></div>
+      <button type="submit" class="submit-btn">Подтвердить заказ</button>
+    </form>
+    <div id="orderSuccess" hidden>
+      <div style="text-align:center;padding:20px">
+        <div style="font-size:52px">✅</div>
+        <h3 style="margin:12px 0 8px">Заказ принят!</h3>
+        <p style="color:var(--muted)">Спасибо! Менеджер перезвонит для подтверждения. Это демонстрационный режим — реальный заказ не оформлен.</p>
+        <button class="submit-btn" id="successClose" style="margin-top:18px">Хорошо</button>
+      </div>
     </div>
   </div>
 </div>
 
+<script src="data.js"></script>
+<script src="script.js"></script>
 <script>
-const MENU=[{"id": 1, "name": "Пицца С нектарином и дорблю", "price": 390, "cat": "pizza", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p1.jpg"}, {"id": 2, "name": "Ролл Филадельфия с нектарином", "price": 559, "cat": "rolls", "desc": "<span style=\\\\", "hit": true, "img": "assets/menu/p2.jpg"}, {"id": 3, "name": "Ролл Цунами", "price": 515, "cat": "rolls", "desc": "тортилья пшеничная, сливочный сыр, креветки, киви, угорь, манго консервированный, соус сли", "hit": true, "img": "assets/menu/p3.jpg"}, {"id": 4, "name": "Салат Токио", "price": 420, "cat": "poke", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p4.jpg"}, {"id": 5, "name": "Салат Эби Микс", "price": 490, "cat": "poke", "desc": "<span style=\\\\", "hit": true, "img": "assets/menu/p5.jpg"}, {"id": 6, "name": "Бабл-лимонад Клубника", "price": 217, "cat": "drink", "desc": "сироп клубника, вода газированная, джус боллы манго, лайм, мята \\\\", "hit": false, "img": "assets/menu/p6.jpg"}, {"id": 7, "name": "Пицца Мясной пир", "price": 400, "cat": "pizza", "desc": "тесто, соус томатный, соус сметанный, колбаса пепперони, карбонад, ветчина, томаты, бекон,", "hit": false, "img": "assets/menu/p7.jpg"}, {"id": 8, "name": "Пицца Бургер", "price": 390, "cat": "pizza", "desc": "тесто, соус томатный, красный лук, котлета говяжья, корнишоны маринованные, томаты, сыр мо", "hit": false, "img": "assets/menu/p8.jpg"}, {"id": 9, "name": "Пицца Змей Горыныч", "price": 400, "cat": "pizza", "desc": "тесто, соус чесночный, карбонад, соус сметанный, колбаса пепперони, сыр моцарелла, томаты ", "hit": false, "img": "assets/menu/p9.jpg"}, {"id": 10, "name": "Пицца Ницца", "price": 400, "cat": "pizza", "desc": "тесто, соус чесночный, соус сметанный, бекон, курица копчёная, томаты, сыр моцарелла \\\\", "hit": false, "img": "assets/menu/p10.jpg"}, {"id": 11, "name": "Пицца Цезарь", "price": 400, "cat": "pizza", "desc": "тесто, соус цезарь, соус сметанный, сыр моцарелла, курица копчёная, томаты, салат айсберг ", "hit": true, "img": "assets/menu/p11.jpg"}, {"id": 12, "name": "3 ролла", "price": 999, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p12.jpg"}, {"id": 13, "name": "Обед", "price": 990, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p13.jpg"}, {"id": 14, "name": "Очень много для двоих", "price": 2280, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p14.jpg"}, {"id": 15, "name": "Когда много работы", "price": 550, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p15.jpg"}, {"id": 16, "name": "Только для тебя", "price": 930, "cat": "other", "desc": "ролл Инь и ян, ролл Вулкан Спайс, Лимонад (0,3) (Манго-Маракуйя) \\\\", "hit": false, "img": "assets/menu/p16.jpg"}, {"id": 17, "name": "Блины с творогом", "price": 199, "cat": "breakfast", "desc": "молоко, мука пшеничная, яйцо, сахар, крахмал картофельный, масло подсолнечное, лимон, твор", "hit": false, "img": "assets/menu/p17.jpg"}, {"id": 18, "name": "Блины с вишней", "price": 199, "cat": "breakfast", "desc": "мука пшеничная , вишня , вода питьевая, сахар, масло растительное, молоко сухое, крахмал ,", "hit": false, "img": "assets/menu/p18.jpg"}, {"id": 19, "name": "Оладьи", "price": 179, "cat": "breakfast", "desc": "мука пшеничная ,вода ,сахар, молочная сыворотка, яйцо, масло подсолнечное ,соль, сахарная ", "hit": false, "img": "assets/menu/p19.jpg"}, {"id": 20, "name": "Сырники", "price": 219, "cat": "breakfast", "desc": "молоко, творог, масло сливочное, сахар, мука, масло подсолнечное, яйцо, соль, ванилин саха", "hit": false, "img": "assets/menu/p20.jpg"}, {"id": 21, "name": "Творожная запеканка", "price": 239, "cat": "breakfast", "desc": "молоко, творог, масло растительное, яйцо, сахар, крупа манная, масло подсолнечное, ванилин", "hit": false, "img": "assets/menu/p21.jpg"}, {"id": 22, "name": "Омлет с беконом и сыром", "price": 239, "cat": "breakfast", "desc": "яйцо, вода питьевая, молоко сухое , масло растительное, крахмал, соль, томаты, сыр моцарел", "hit": false, "img": "assets/menu/p22.jpg"}, {"id": 23, "name": "Омлет с ветчиной и сыром", "price": 239, "cat": "breakfast", "desc": "яйцо, вода питьевая, молоко сухое, масло растительное, крахмал, соль, ветчина, томаты, сыр", "hit": false, "img": "assets/menu/p23.jpg"}, {"id": 24, "name": "Трайфл Автосуши", "price": 450, "cat": "dessert", "desc": "рис, лосось, креветка, авокадо, огурец, тобико черная, микс\\u0026nbsp; салатов, соус манго", "hit": false, "img": "assets/menu/p24.jpg"}, {"id": 25, "name": "Трайфл с креветкой", "price": 400, "cat": "dessert", "desc": "рис, креветки, огурец, тобико черная, микс салатов, соус сладкий чили, соус для поке \\\\", "hit": false, "img": "assets/menu/p25.jpg"}, {"id": 26, "name": "Трайфл с лососем", "price": 420, "cat": "dessert", "desc": "рис, лосось, огурец, тобико черная, микс салатов, соус манго чили, соус для поке \\\\", "hit": false, "img": "assets/menu/p26.jpg"}, {"id": 27, "name": "Сэндвич ролл темпура с курицей (панко)", "price": 340, "cat": "hot", "desc": "копчёная курица, огурец, плавленный сыр, сливочный сыр, сухари панко, соус манго-спайс, со", "hit": false, "img": "assets/menu/p27.jpg"}, {"id": 28, "name": "Сэндвич ролл темпура с креветкой (панко)", "price": 350, "cat": "hot", "desc": "рис, нори, сливочный сыр, икра тобико микс, креветки, огурец, сухари панко, соус манго спа", "hit": false, "img": "assets/menu/p28.jpg"}, {"id": 29, "name": "Ролл Шанхай", "price": 480, "cat": "hot", "desc": "рис, нори, креветки темпура, сливочный сыр, огурец, икра тобико микс \\\\", "hit": false, "img": "assets/menu/p29.jpg"}, {"id": 30, "name": "Ролл Сакура", "price": 380, "cat": "hot", "desc": "тортилья пшеничная, сливочный сыр, курица копченая, огурец, такуан, томаты, соус сливочный", "hit": false, "img": "assets/menu/p30.jpg"}, {"id": 31, "name": "Ролл Эби Лава", "price": 430, "cat": "hot", "desc": "рис, нори, сливочный сыр, креветки, огурец, яблоко, соус сливочный с тобикой, соус манго-ч", "hit": false, "img": "assets/menu/p31.jpg"}, {"id": 32, "name": "Пицца Ветчина-грибы", "price": 400, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p32.jpg"}, {"id": 33, "name": "Пицца Сливочная пепперони", "price": 400, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p33.jpg"}, {"id": 34, "name": "Креветки в панко с соусом манго-спайс 6шт", "price": 430, "cat": "spice", "desc": "креветки, панко, соус манго-спайс, кунжут черный \\\\", "hit": false, "img": "assets/menu/p34.jpg"}, {"id": 35, "name": "Креветки в панко с соусом унаги 6шт", "price": 430, "cat": "hot", "desc": "креветки, панко, соус унаги, кунжут белый \\\\", "hit": false, "img": "assets/menu/p35.jpg"}, {"id": 36, "name": "Ролл Мураками (панко)", "price": 350, "cat": "hot", "desc": "рис, нори, сливочный сыр, креветки, огурец, икра тобико микс, сухари панко, соус манго спа", "hit": false, "img": "assets/menu/p36.jpg"}, {"id": 37, "name": "Ролл Унаги спайс темпура (панко)", "price": 430, "cat": "spice", "desc": "рис, нори, сливочный сыр, угорь, томаты, огурец, такуан, соус спайс, сухари панко \\\\", "hit": false, "img": "assets/menu/p37.jpg"}, {"id": 38, "name": "Эклер Сникерс", "price": 220, "cat": "dessert", "desc": "сыр творожный, сливки, арахис, карамель соленная, яйцо, мука, масло сливочное \\\\", "hit": false, "img": "assets/menu/p38.jpg"}, {"id": 39, "name": "Эклер Малина", "price": 220, "cat": "dessert", "desc": "мука, яйцо, сливки, малина, сахар \\\\", "hit": false, "img": "assets/menu/p39.jpg"}, {"id": 40, "name": "Эклер Ванильный", "price": 220, "cat": "dessert", "desc": "молоко, сливки, яйцо, мука, крахмал, масло сливочное, сахар \\\\", "hit": false, "img": "assets/menu/p40.jpg"}, {"id": 41, "name": "Ролл Марс", "price": 580, "cat": "hot", "desc": "острый соус для запекания спайс, рис, нори, снежный краб, креветки, огурец, икра тобико ми", "hit": true, "img": "assets/menu/p41.jpg"}, {"id": 42, "name": "Ролл Сицилия", "price": 430, "cat": "rolls", "desc": "рис, нори, сыр плавленый, сливочный сыр, креветки, манго, огурец, томаты, соус терияки, ку", "hit": false, "img": "assets/menu/p42.jpg"}, {"id": 43, "name": "Детский бокс 1", "price": 480, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p43.jpg"}, {"id": 44, "name": "Детский бокс 2", "price": 560, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p44.jpg"}, {"id": 45, "name": "Детский бокс 3", "price": 399, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p45.jpg"}, {"id": 46, "name": "Детский бокс 4", "price": 350, "cat": "set", "desc": "", "hit": false, "img": "assets/menu/p46.jpg"}, {"id": 47, "name": "Ролл Банан \\u0026 Киви", "price": 420, "cat": "rolls", "desc": "Банан, киви, сливочный сыр, рисовый пудинг, шоколадный топпинг, маменори \\\\ \\\\ \\u0026nbsp;", "hit": false, "img": "assets/menu/p47.jpg"}, {"id": 48, "name": "Ролл Тропик", "price": 410, "cat": "dessert", "desc": "Консервированный ананас, киви, сливочный сыр, рисовый пудинг, клубничный топпинг, маменори", "hit": false, "img": "assets/menu/p48.jpg"}, {"id": 49, "name": "Бургер Классика", "price": 330, "cat": "burger", "desc": "говяжья котлета, пшеничная булочка, плавленый сыр, томаты, салат айсберг, соус бургер, кра", "hit": false, "img": "assets/menu/p49.jpg"}, {"id": 50, "name": "Чикенбургер", "price": 310, "cat": "burger", "desc": "куриная котлета,\\u0026nbsp;пшеничная булочка,\\u0026nbsp;томат, салат Айсберг, консервирова", "hit": false, "img": "assets/menu/p50.jpg"}, {"id": 51, "name": "Чизбургер", "price": 310, "cat": "burger", "desc": "говяжья котлета, пшеничная булочка, плавленый сыр, консервированные корнишоны, соус Бургер", "hit": false, "img": "assets/menu/p51.jpg"}, {"id": 52, "name": "Бургер с жареным беконом", "price": 395, "cat": "burger", "desc": "говяжья котлета, бекон, плавленый сыр, пшеничная булочка, томаты, соус барбекю, соус бурге", "hit": false, "img": "assets/menu/p52.jpg"}, {"id": 53, "name": "Подарочный сертификат 1000р", "price": 1000, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p53.jpg"}, {"id": 54, "name": "Подарочный сертификат 2000р", "price": 2000, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p54.jpg"}, {"id": 55, "name": "Подарочный сертификат 3000р", "price": 3000, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p55.jpg"}, {"id": 56, "name": "Подарочный сертификат 5000р", "price": 5000, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p56.jpg"}, {"id": 57, "name": "Подарочный сертификат 7000р", "price": 7000, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p57.jpg"}, {"id": 58, "name": "Кружка сувенирная", "price": 299, "cat": "other", "desc": "* Дизайн кружки может отличаться в зависимости от города! Актуальную информацию о дизайне ", "hit": false, "img": "assets/menu/p58.jpg"}, {"id": 59, "name": "Удочка дразнилка для питомцев", "price": 365, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p59.jpg"}, {"id": 60, "name": "Набор игрушек для питомцев", "price": 449, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p60.jpg"}, {"id": 61, "name": "Сэндвич-ролл С креветкой", "price": 310, "cat": "hot", "desc": "Креветки, соус Манго-чили, огурец, сливочный сыр, рис, нори \\\\", "hit": false, "img": "assets/menu/p61.jpg"}, {"id": 62, "name": "Сэндвич-ролл С курицей", "price": 310, "cat": "hot", "desc": "Копчёная курица, соус Спайс, огурец, лук фри, рис, нори \\\\", "hit": false, "img": "assets/menu/p62.jpg"}, {"id": 63, "name": "Сэндвич-ролл С лососем", "price": 450, "cat": "hot", "desc": "Лосось, сливочный сыр, икра тобико микс, рис, нори \\\\ \\\\ \\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p63.jpg"}, {"id": 64, "name": "Тортилья-ролл С курицей", "price": 315, "cat": "hot", "desc": "Куриная котлета, пшеничная тортилья, салат Айсберг, соус Майо-спайс, сырный соус для запек", "hit": false, "img": "assets/menu/p64.jpg"}, {"id": 65, "name": "Тортилья-ролл С говядиной", "price": 340, "cat": "hot", "desc": "Говяжья котлета, пшеничная тортилья, сыр Пармезан, салат Айсберг, соус Барбекю, томаты, ог", "hit": false, "img": "assets/menu/p65.jpg"}, {"id": 66, "name": "Тортилья-ролл С креветкой", "price": 320, "cat": "hot", "desc": "креветки темпура, пшеничная тортилья, салат Айсберг, соус майо спайс, огурец, майонез, кра", "hit": false, "img": "assets/menu/p66.jpg"}, {"id": 67, "name": "Сет Ритм без авокадо (панко)", "price": 1530, "cat": "wok", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p67.jpg"}, {"id": 68, "name": "Сет Чемпион", "price": 1490, "cat": "set", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p68.jpg"}, {"id": 69, "name": "Сет Ритм (панко)", "price": 1530, "cat": "hot", "desc": "Ролл Филадельфия лайт с огурцом 1шт, ролл\\u0026nbsp;Калифорния 1шт, ролл Бургер (панко) 1ш", "hit": false, "img": "assets/menu/p69.jpg"}, {"id": 70, "name": "Сет Флоу (панко)", "price": 1890, "cat": "hot", "desc": "Ролл Калифорния 1шт, ролл \\u0026laquo;Запечёная филадельфия\\u0026raquo; 1шт, ролл \\u0026la", "hit": false, "img": "assets/menu/p70.jpg"}, {"id": 71, "name": "Сет Чилл (панко)", "price": 2225, "cat": "hot", "desc": "ролл Сакура 1шт, ролл \\u0026laquo;Евразия темпура\\u0026raquo; (панко) 1шт, ролл \\u0026laqu", "hit": false, "img": "assets/menu/p71.jpg"}, {"id": 72, "name": "Сет Инстинкт (панко)", "price": 1315, "cat": "hot", "desc": "Ролл Эби чеддер 1шт, ролл \\u0026laquo;Белый тигр\\u0026raquo; 1шт, ролл \\u0026laquo;Цезарь ", "hit": false, "img": "assets/menu/p72.jpg"}, {"id": 73, "name": "Сет Якудза (панко)", "price": 1300, "cat": "hot", "desc": "Ролл Запечённая филадельфия 1шт, ролл Вулкан сырный 1шт, ролл Джамп (панко) 1шт, ролл Эби ", "hit": false, "img": "assets/menu/p73.jpg"}, {"id": 74, "name": "Сет Умами (панко)", "price": 2040, "cat": "hot", "desc": "Ролл Чиз Эби 1шт, ролл Вулкан спайс 1шт, ролл Филадельфия Лайт с огурцом 1шт, ролл Чиз тем", "hit": false, "img": "assets/menu/p74.jpg"}, {"id": 75, "name": "Сет Океан вкуса (панко)", "price": 2280, "cat": "hot", "desc": "Ролл Филадельфия с огурцом 1шт, ролл Запечённая филадельфия 1шт, ролл Вулкан сырный 1шт, р", "hit": false, "img": "assets/menu/p75.jpg"}, {"id": 76, "name": "Сет 5", "price": 1410, "cat": "set", "desc": "Запеченный ролл Чиз Эби 1шт, запеченный ролл Вулкан сырный 1шт, запеченный ролл Белый тигр", "hit": false, "img": "assets/menu/p76.jpg"}, {"id": 77, "name": "Сет Вайб (панко)", "price": 2145, "cat": "hot", "desc": "Ролл Вулкан с креветками 1шт, ролл Эби Чеддер 1шт, ролл Терияки 1шт, ролл Бонито 1шт, ролл", "hit": false, "img": "assets/menu/p77.jpg"}, {"id": 78, "name": "Сет Вечеринка (панко)", "price": 2385, "cat": "hot", "desc": "Ролл Джамп (панко) 1шт, ролл Чиз Темпура (панко) 1шт, ролл Вулкан сырный 1шт, ролл Цезарь ", "hit": false, "img": "assets/menu/p78.jpg"}, {"id": 79, "name": "Сет Для себя", "price": 665, "cat": "set", "desc": "Ролл С жареным лососем 1шт,\\u0026nbsp;ролл С креветкой 1шт, гункан с тунцом 1шт (ОСТРЫЙ) \\", "hit": false, "img": "assets/menu/p79.jpg"}, {"id": 80, "name": "Сет Запечённый микс", "price": 1610, "cat": "baked", "desc": "Запеченный ролл Вулкан с креветками 1шт, Запеченная филадельфия 1шт, запеченный ролл Вулка", "hit": false, "img": "assets/menu/p80.jpg"}, {"id": 81, "name": "Сет Запечённый", "price": 1500, "cat": "baked", "desc": "Запеченный ролл Чиз Эби 1шт, запеченный ролл Белый тигр 1шт, запеченный ролл Вулкан сырный", "hit": false, "img": "assets/menu/p81.jpg"}, {"id": 82, "name": "Сет 1", "price": 520, "cat": "set", "desc": "Ролл С лососем 1/2 , ролл С тунцом 1/2 , ролл С угрём 1/2, ролл С креветкой 1/2\\u0026nbsp;", "hit": false, "img": "assets/menu/p82.jpg"}, {"id": 83, "name": "Сет Филадельфий (панко)", "price": 1320, "cat": "hot", "desc": "Ролл Филадельфия 1 шт.,\\u0026nbsp;ролл Филадельфия с огурцом 1 шт.,\\u0026nbsp;ролл Филадел", "hit": false, "img": "assets/menu/p83.jpg"}, {"id": 84, "name": "Сет Тёплый килограмм (панко)", "price": 1175, "cat": "hot", "desc": "Ролл Флорида Темпура 1 шт., ролл Евразия Темпура 1 шт., ролл Дары моря 1 шт.\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p84.jpg"}, {"id": 85, "name": "Сет 12 игрок", "price": 959, "cat": "set", "desc": "<p style=\\\\", "hit": false, "img": "assets/menu/p85.jpg"}, {"id": 86, "name": "Сет 3", "price": 1820, "cat": "set", "desc": "Ролл Вулкан сырный 1шт, ролл Креветка в шубе 1шт, ролл Филадельфия 1шт, ролл Королевский д", "hit": false, "img": "assets/menu/p86.jpg"}, {"id": 87, "name": "2 блюда (салат и горячее) + напиток.", "price": 450, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p87.jpg"}, {"id": 88, "name": "2 блюда (салат и суп) + напиток.", "price": 450, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p88.jpg"}, {"id": 89, "name": "2 блюда (суп и горячее) + напиток.", "price": 450, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p89.jpg"}, {"id": 90, "name": "3 блюда (салат, суп и горячее) + напиток.", "price": 530, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p90.jpg"}, {"id": 91, "name": "Поке с лососем", "price": 555, "cat": "poke", "desc": "рис, соус тобико,майонез, авокадо, манго, огурец, чука, ореховый соус, кунжут, микс салато", "hit": true, "img": "assets/menu/p91.jpg"}, {"id": 92, "name": "Поке с креветкой", "price": 555, "cat": "poke", "desc": "рис, соус тобико, авокадо, манго, огурец, чука, ореховый соус, кунжут, микс салатов, креве", "hit": true, "img": "assets/menu/p92.jpg"}, {"id": 93, "name": "Десерт Шоколатто", "price": 270, "cat": "dessert", "desc": "Крем сливочный, крем на растительных маслах, крем лесной орех, молочная шоколадная масса, ", "hit": false, "img": "assets/menu/p93.jpg"}, {"id": 94, "name": "Чизкейк Клубничный", "price": 285, "cat": "dessert", "desc": "мука пшеничная высшего сорта, сыр творожный, крахмал кукурузный, соль, крем на растительны", "hit": false, "img": "assets/menu/p94.jpg"}, {"id": 95, "name": "Чизкейк Шоколад", "price": 285, "cat": "dessert", "desc": "Пшеничная мука высшего сорта, творожный сыр, кукурузный крахмал, соль, крем на растительны", "hit": false, "img": "assets/menu/p95.jpg"}, {"id": 96, "name": "Кофе Капучино 300мл", "price": 175, "cat": "drink", "desc": "Зерновой молотый кофе, вода, молочный топпинг \\\\ \\\\ \\u0026nbsp;*Данный товар нельзя оформи", "hit": false, "img": "assets/menu/p96.jpg"}, {"id": 97, "name": "Кофе Американо 200мл", "price": 145, "cat": "drink", "desc": "Зерновой молотый кофе, вода\\u0026nbsp; \\\\ \\\\ *Данный товар нельзя оформить на доставку \\\\", "hit": false, "img": "assets/menu/p97.jpg"}, {"id": 98, "name": "Кофе Латте 300мл", "price": 175, "cat": "drink", "desc": "Зерновой молотый кофе, вода, молочный топпинг \\\\ \\\\ \\u0026nbsp;*Данный товар нельзя оформи", "hit": false, "img": "assets/menu/p98.jpg"}, {"id": 99, "name": "Чай Чёрный 200 мл", "price": 75, "cat": "drink", "desc": "Пакетированный чёрный чай (1 пакетик) \\\\ \\u0026nbsp;*Данный товар нельзя оформить на доста", "hit": false, "img": "assets/menu/p99.jpg"}, {"id": 100, "name": "Чай Зелёный 200 мл", "price": 75, "cat": "drink", "desc": "Пакетированный зелёный чай (1 пакетик) \\\\ \\u0026nbsp;*Данный товар нельзя оформить на дост", "hit": false, "img": "assets/menu/p100.jpg"}, {"id": 101, "name": "Чай в чайнике", "price": 210, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p101.jpg"}, {"id": 102, "name": "Крем-суп Грибной с шампиньонами", "price": 300, "cat": "wok", "desc": "Шампиньоны, сливки, репчатый лук, картофель, грибной бульон, растительное масло, соль, чёр", "hit": false, "img": "assets/menu/p102.jpg"}, {"id": 103, "name": "Суп Мисо с шиитаке", "price": 300, "cat": "wok", "desc": "Грибы шиитаке, сыр Тофу, водоросли Вакамэ, кунжут, бульон Мисо \\\\", "hit": false, "img": "assets/menu/p103.jpg"}, {"id": 104, "name": "Суп Мисо с креветкой", "price": 300, "cat": "wok", "desc": "Креветки, сыр Тофу, водоросли Вакамэ, кунжут, бульон Мисо \\\\", "hit": false, "img": "assets/menu/p104.jpg"}, {"id": 105, "name": "Суп Мисо с лососем", "price": 360, "cat": "wok", "desc": "Лосось, сыр Тофу, водоросли Вакамэ, кунжут, бульон Мисо\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p105.jpg"}, {"id": 106, "name": "Крем-суп Сырный с лососем", "price": 535, "cat": "wok", "desc": "Лосось, плавленый сыр, сливки, морковь, репчатый лук, картофель, овощной бульон, раститель", "hit": false, "img": "assets/menu/p106.jpg"}, {"id": 107, "name": "Суп Том кха с курицей", "price": 410, "cat": "wok", "desc": "Копчёная курица, шампиньоны, томаты черри, бульон том кха, рис, кунжут, кинза, лайм \\\\", "hit": false, "img": "assets/menu/p107.jpg"}, {"id": 108, "name": "Суп Том ям с креветками", "price": 480, "cat": "wok", "desc": "Креветки, паста том ям, кокосовое молоко, шампиньоны, томаты черри, красный лук, зеленый л", "hit": true, "img": "assets/menu/p108.jpg"}, {"id": 109, "name": "Суп Том ям кай с курицей и шиитаке", "price": 430, "cat": "wok", "desc": "Бульон том ям, грибы шиитаке, томаты черри, копчёная курица, красный лук, кинза, рис, кунж", "hit": true, "img": "assets/menu/p109.jpg"}, {"id": 110, "name": "Запеченные гунканы с лососем 2 шт", "price": 320, "cat": "baked", "desc": "Лосось, соус для запекания, рис, нори \\\\", "hit": false, "img": "assets/menu/p110.jpg"}, {"id": 111, "name": "Запеченные гунканы с угрем 2 шт", "price": 300, "cat": "baked", "desc": "Угорь, соус для запекания, рис, нори \\\\", "hit": false, "img": "assets/menu/p111.jpg"}, {"id": 112, "name": "Запеченные гунканы с тунцом 2 шт", "price": 300, "cat": "baked", "desc": "Тунец, соус для запекания, рис, нори \\\\", "hit": false, "img": "assets/menu/p112.jpg"}, {"id": 113, "name": "Запеченные гунканы с креветками 2 шт", "price": 300, "cat": "baked", "desc": "Креветки, соус для запекания, рис, нори \\\\", "hit": false, "img": "assets/menu/p113.jpg"}, {"id": 114, "name": "Суши С тунцом", "price": 155, "cat": "sushi", "desc": "Тунец, рис \\\\", "hit": false, "img": "assets/menu/p114.jpg"}, {"id": 115, "name": "Суши С угрём", "price": 155, "cat": "sushi", "desc": "Копчёный\\u0026nbsp;угорь, соус Унаги, кунжут, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p115.jpg"}, {"id": 116, "name": "Суши С креветкой", "price": 160, "cat": "sushi", "desc": "Креветки, рис \\\\ \\\\ \\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p116.jpg"}, {"id": 117, "name": "Суши С лососем", "price": 195, "cat": "sushi", "desc": "Лосось, рис \\\\", "hit": false, "img": "assets/menu/p117.jpg"}, {"id": 118, "name": "Гунканы с тунцом 2 шт", "price": 310, "cat": "sushi", "desc": "рис, нори, тунец, соус спайс\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p118.jpg"}, {"id": 119, "name": "Гунканы с угрем 2 шт", "price": 310, "cat": "sushi", "desc": "рис, нори, угорь, соус спайс\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p119.jpg"}, {"id": 120, "name": "Гунканы с креветкой 2 шт", "price": 310, "cat": "sushi", "desc": "рис, нори, креветки, соус спайс \\\\", "hit": false, "img": "assets/menu/p120.jpg"}, {"id": 121, "name": "Гунканы с лососем 2 шт", "price": 310, "cat": "sushi", "desc": "рис, нори, лосось, соус спайс \\\\", "hit": false, "img": "assets/menu/p121.jpg"}, {"id": 122, "name": "Ролл С огурцом", "price": 175, "cat": "rolls", "desc": "Огурец, кунжут, рис, нори \\\\", "hit": false, "img": "assets/menu/p122.jpg"}, {"id": 123, "name": "Ролл С тунцом", "price": 280, "cat": "rolls", "desc": "Тунец, рис, нори \\\\", "hit": false, "img": "assets/menu/p123.jpg"}, {"id": 124, "name": "Ролл С авокадо", "price": 185, "cat": "wok", "desc": "Авокадо, рис, нори \\\\", "hit": false, "img": "assets/menu/p124.jpg"}, {"id": 125, "name": "Ролл С креветкой и огурцом", "price": 240, "cat": "rolls", "desc": "Креветки, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p125.jpg"}, {"id": 126, "name": "Ролл С креветкой", "price": 230, "cat": "rolls", "desc": "Креветки, рис, нори \\\\", "hit": false, "img": "assets/menu/p126.jpg"}, {"id": 127, "name": "Ролл С лососем и огурцом", "price": 285, "cat": "rolls", "desc": "Лосось, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p127.jpg"}, {"id": 128, "name": "Ролл С лососем", "price": 285, "cat": "rolls", "desc": "Лосось, рис, нори \\\\", "hit": false, "img": "assets/menu/p128.jpg"}, {"id": 129, "name": "Ролл С угрём и огурцом", "price": 280, "cat": "rolls", "desc": "Копчёный угорь, огурец, кунжут, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p129.jpg"}, {"id": 130, "name": "Ролл С угрём", "price": 285, "cat": "rolls", "desc": "Копчёный\\u0026nbsp;угорь, соус Унаги, кунжут, рис, нори \\\\", "hit": false, "img": "assets/menu/p130.jpg"}, {"id": 131, "name": "Ролл Спайс с креветкой", "price": 250, "cat": "spice", "desc": "Креветка, соус Спайс, рис, нори \\\\", "hit": false, "img": "assets/menu/p131.jpg"}, {"id": 132, "name": "Ролл Спайс с тунцом", "price": 295, "cat": "spice", "desc": "Тунец, соус Спайс, рис, нори \\\\ \\\\ \\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p132.jpg"}, {"id": 133, "name": "Ролл Спайс с лососем", "price": 295, "cat": "spice", "desc": "Лосось, соус Спайс, рис, нори \\\\", "hit": false, "img": "assets/menu/p133.jpg"}, {"id": 134, "name": "Ролл Спайс с угрём", "price": 295, "cat": "spice", "desc": "Копчёный\\u0026nbsp;угорь, соус Спайс, рис, нори \\\\", "hit": false, "img": "assets/menu/p134.jpg"}, {"id": 135, "name": "Веган ролл", "price": 210, "cat": "rolls", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p135.jpg"}, {"id": 136, "name": "Ролл Тахини", "price": 285, "cat": "rolls", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p136.jpg"}, {"id": 137, "name": "Салат Пекинский микс", "price": 315, "cat": "poke", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p137.jpg"}, {"id": 138, "name": "Веган удон", "price": 360, "cat": "wok", "desc": "Лапша удон, цукини, болгарский перец, морковь, шампиньоны, соус Терияки, соус соевый, лук ", "hit": false, "img": "assets/menu/p138.jpg"}, {"id": 139, "name": "Рис Хойсин", "price": 360, "cat": "wok", "desc": "Болгарский перец, бобы эдамамэ, зеленый лук, кинза, томаты черри, соус хойсин, соус соевый", "hit": false, "img": "assets/menu/p139.jpg"}, {"id": 140, "name": "Ролл Джингл", "price": 640, "cat": "rolls", "desc": "Сливочный сыр, огурец, икра тобико микс, креветки, соус для запекания, рис. нори \\\\", "hit": false, "img": "assets/menu/p140.jpg"}, {"id": 141, "name": "Ролл Запечённая филадельфия", "price": 475, "cat": "baked", "desc": "Сливочный сыр, огурец, жареный лосось, соус для запекания, рис, нори \\\\", "hit": true, "img": "assets/menu/p141.jpg"}, {"id": 142, "name": "Ролл Вулкан с креветками", "price": 485, "cat": "rolls", "desc": "Креветки, соус для запекания, соус Унаги, кунжут, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p142.jpg"}, {"id": 143, "name": "Ролл Вулкан сырный", "price": 380, "cat": "rolls", "desc": "Сыр Моцарелла, соус для запекания, соус Унаги, кунжут, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p143.jpg"}, {"id": 144, "name": "Ролл Вулкан с тунцом и лососем", "price": 535, "cat": "rolls", "desc": "Лосось, тунец, соус для запекания, соус Унаги, кунжут, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p144.jpg"}, {"id": 145, "name": "Ролл Белый тигр", "price": 340, "cat": "rolls", "desc": "Копчёная курица, огурец, соус для запекания, соус Унаги, кунжут, рис, нори \\\\", "hit": false, "img": "assets/menu/p145.jpg"}, {"id": 146, "name": "Ролл Вулкан спайс", "price": 500, "cat": "spice", "desc": "Острый соус для запекания Спайс, креветки, сливочный сыр, икра тобико микс, соус Унаги, ку", "hit": false, "img": "assets/menu/p146.jpg"}, {"id": 147, "name": "Ролл Чиз эби", "price": 420, "cat": "rolls", "desc": "Креветки темпура, огурец, томаты, соус для запекания, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p147.jpg"}, {"id": 148, "name": "Салат Чука", "price": 240, "cat": "poke", "desc": "Водоросли чука, соус ореховый, лайм, кунжут \\\\", "hit": false, "img": "assets/menu/p148.jpg"}, {"id": 149, "name": "Салат С фунчозой, чукой и креветками", "price": 430, "cat": "poke", "desc": "Фунчоза, водоросли чука, огурец, бобы эдамамэ, морковь по-корейски, креветки, азиатская за", "hit": false, "img": "assets/menu/p149.jpg"}, {"id": 150, "name": "Салат Греческий", "price": 310, "cat": "poke", "desc": "Сыр Фета, томаты черри, салат Айсберг, огурец, болгарский перец, консервированные маслины,", "hit": false, "img": "assets/menu/p150.jpg"}, {"id": 151, "name": "Салат Цезарь с креветками", "price": 510, "cat": "poke", "desc": "<span style=\\\\", "hit": true, "img": "assets/menu/p151.jpg"}, {"id": 152, "name": "Салат Цезарь с курицей", "price": 420, "cat": "poke", "desc": "<span style=\\\\", "hit": true, "img": "assets/menu/p152.jpg"}, {"id": 153, "name": "Салат С тунцом", "price": 440, "cat": "poke", "desc": "\\u0026nbsp;микс салатов,томаты черри, тунец, кунжут, устричная заправка,авокадо \\\\", "hit": false, "img": "assets/menu/p153.jpg"}, {"id": 154, "name": "Трайфл Автосуши без авокадо", "price": 450, "cat": "dessert", "desc": "рис, лосось, креветка, огурец, тобико черная, микс\\u0026nbsp; салатов, соус манго чили, со", "hit": false, "img": "assets/menu/p154.jpg"}, {"id": 155, "name": "Ролл Канада без авокадо", "price": 645, "cat": "wok", "desc": "Копчёный угорь, лосось, сливочный сыр, соус Унаги, кунжут, огурец, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p155.jpg"}, {"id": 156, "name": "Ролл Автосуши без авокадо", "price": 615, "cat": "wok", "desc": "Копчёный угорь, лосось, копчёная курица, сливочный сыр, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p156.jpg"}, {"id": 157, "name": "Ролл Калифорния без авокадо", "price": 455, "cat": "wok", "desc": "Снежный краб, майонез, икра тобико микс, огурец, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p157.jpg"}, {"id": 158, "name": "Ролл Калифорния темпура без авокадо (панко)", "price": 465, "cat": "wok", "desc": "Снежный краб, огурец, икра тобико микс, соус Унаги, майонез, темпура, сухари Панко, рис, н", "hit": false, "img": "assets/menu/p158.jpg"}, {"id": 159, "name": "Ролл Филадельфия темпура без авокадо (панко)", "price": 585, "cat": "wok", "desc": "Сливочный\\u0026nbsp;сыр, лосось, копчёный\\u0026nbsp;угорь, огурец, соус Унаги, темпура, су", "hit": true, "img": "assets/menu/p159.jpg"}, {"id": 160, "name": "Ролл Инь и ян без авокадо", "price": 580, "cat": "wok", "desc": "Копчёный угорь, лосось, тунец, майонез, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p160.jpg"}, {"id": 161, "name": "Ролл Тахини без авокадо", "price": 285, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p161.jpg"}, {"id": 162, "name": "Салат с тунцом без авокадо", "price": 440, "cat": "wok", "desc": "<span style=\\\\", "hit": false, "img": "assets/menu/p162.jpg"}, {"id": 163, "name": "Поке с лососем без авокадо", "price": 555, "cat": "poke", "desc": "рис, соус тобико,майонез, манго, огурец, чука, ореховый соус, кунжут, микс салатов, лосось", "hit": true, "img": "assets/menu/p163.jpg"}, {"id": 164, "name": "Поке с креветкой без авокадо", "price": 555, "cat": "poke", "desc": "рис, соус тобико, манго, огурец, чука, ореховый соус, кунжут, микс салатов, креветки, тома", "hit": true, "img": "assets/menu/p164.jpg"}, {"id": 165, "name": "Сет Флоу панко без авокадо", "price": 1890, "cat": "wok", "desc": "Ролл Калифорния 1шт, ролл \\u0026laquo;Запечёная филадельфия\\u0026raquo; 1шт, ролл \\u0026la", "hit": false, "img": "assets/menu/p165.jpg"}, {"id": 166, "name": "Лапша Удон с овощами", "price": 350, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p166.jpg"}, {"id": 167, "name": "Лапша Удон с курицей и овощами", "price": 410, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p167.jpg"}, {"id": 168, "name": "Лапша Удон со свининой и овощами", "price": 440, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p168.jpg"}, {"id": 169, "name": "Лапша Удон с креветками и овощами", "price": 555, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p169.jpg"}, {"id": 170, "name": "Лапша Яичная с овощами", "price": 350, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p170.jpg"}, {"id": 171, "name": "Лапша Яичная с курицей и овощами", "price": 410, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p171.jpg"}, {"id": 172, "name": "Лапша Яичная со свининой и овощами", "price": 440, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p172.jpg"}, {"id": 173, "name": "Лапша Яичная с креветками и овощами", "price": 555, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p173.jpg"}, {"id": 174, "name": "Лапша Гречневая с овощами", "price": 350, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p174.jpg"}, {"id": 175, "name": "Лапша Гречневая с курицей и овощами", "price": 410, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p175.jpg"}, {"id": 176, "name": "Лапша Гречневая со свининой и овощами", "price": 440, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p176.jpg"}, {"id": 177, "name": "Лапша Гречневая с креветками и овощами .", "price": 555, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p177.jpg"}, {"id": 178, "name": "Рис С овощами", "price": 345, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p178.jpg"}, {"id": 179, "name": "Рис С курицей и овощами", "price": 410, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p179.jpg"}, {"id": 180, "name": "Рис Со свининой и овощами", "price": 450, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p180.jpg"}, {"id": 181, "name": "Рис С креветками и овощами", "price": 555, "cat": "wok", "desc": "", "hit": false, "img": "assets/menu/p181.jpg"}, {"id": 182, "name": "Удон Том Ям", "price": 510, "cat": "wok", "desc": "Креветки, кальмар, цукини, болгарский перец, морковь, лапша удон, сливки, паста том ям, ки", "hit": true, "img": "assets/menu/p182.jpg"}, {"id": 183, "name": "Паста Карбонара", "price": 405, "cat": "wok", "desc": "\\\\ Паста феттучини, бекон, сыр Пармезан, сливки, соль, черный молотый перец, яичный желток", "hit": false, "img": "assets/menu/p183.jpg"}, {"id": 184, "name": "Острая Фунчоза со свининой и овощами", "price": 430, "cat": "wok", "desc": "Фунчоза, свинина, цукини, болгарский перец, морковь, соус Терияки, соевый соус, соус Шрира", "hit": false, "img": "assets/menu/p184.jpg"}, {"id": 185, "name": "Паста Феттучини с креветками", "price": 530, "cat": "wok", "desc": "креветки, томаты черри, сливки, паста фетучини, сыр пармезан, соль, перец чёрный молотый \\", "hit": false, "img": "assets/menu/p185.jpg"}, {"id": 186, "name": "Паста Феттучини с курицей и грибами", "price": 430, "cat": "wok", "desc": "Паста феттучини, курица, шампиньоны, сыр Пармезан, сливки, яичный желток, соль, черный мол", "hit": false, "img": "assets/menu/p186.jpg"}, {"id": 187, "name": "Батат фри", "price": 170, "cat": "other", "desc": "батат фри, соль \\\\", "hit": false, "img": "assets/menu/p187.jpg"}, {"id": 188, "name": "Большой Снек бокс", "price": 790, "cat": "set", "desc": "сырные палочки (моцарелла), куриные наггетсы, куриные крылья, соус терияки, кунжут\\u0026nb", "hit": false, "img": "assets/menu/p188.jpg"}, {"id": 189, "name": "Картофель фри", "price": 150, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p189.jpg"}, {"id": 190, "name": "Снек бокс", "price": 260, "cat": "set", "desc": "Наггетсы 5шт, картофель фри мал. \\\\", "hit": false, "img": "assets/menu/p190.jpg"}, {"id": 191, "name": "Мидии запечённые 1 шт", "price": 185, "cat": "baked", "desc": "Мидии, соус Унаги, соус для запекания (майонез, икра тобико микс, сыр Пармезан), кунжут, р", "hit": false, "img": "assets/menu/p191.jpg"}, {"id": 192, "name": "Острые Крылья баффало 6 шт", "price": 420, "cat": "other", "desc": "Остро! \\\\ Куриные крылышки (крыло цыплёнка, вода, подсолнечное масло, сахар, кукурузный кр", "hit": false, "img": "assets/menu/p192.jpg"}, {"id": 193, "name": "Сырные палочки фри 6 шт", "price": 340, "cat": "other", "desc": "Сыр Моцарелла \\\\", "hit": false, "img": "assets/menu/p193.jpg"}, {"id": 194, "name": "Наггетсы 6 шт", "price": 170, "cat": "other", "desc": "Наггетсы куриные \\\\ \\\\ \\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p194.jpg"}, {"id": 195, "name": "Майонез", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p195.jpg"}, {"id": 196, "name": "Васаби", "price": 15, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p196.jpg"}, {"id": 197, "name": "Имбирь", "price": 15, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p197.jpg"}, {"id": 198, "name": "Соус Терияки", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p198.jpg"}, {"id": 199, "name": "Соус Соевый", "price": 15, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p199.jpg"}, {"id": 200, "name": "Соус Сливочный", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p200.jpg"}, {"id": 201, "name": "Соус Кетчуп", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p201.jpg"}, {"id": 202, "name": "Соус Цезарь", "price": 60, "cat": "other", "desc": "", "hit": true, "img": "assets/menu/p202.jpg"}, {"id": 203, "name": "Соус Ореховый", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p203.jpg"}, {"id": 204, "name": "Соус Унаги", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p204.jpg"}, {"id": 205, "name": "Соус Спайси", "price": 60, "cat": "spice", "desc": "", "hit": false, "img": "assets/menu/p205.jpg"}, {"id": 206, "name": "Соус Кимчи", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p206.jpg"}, {"id": 207, "name": "Соус Сырный", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p207.jpg"}, {"id": 208, "name": "Соус Кисло-сладкий", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p208.jpg"}, {"id": 209, "name": "Соус Барбекю", "price": 60, "cat": "other", "desc": "", "hit": false, "img": "assets/menu/p209.jpg"}, {"id": 210, "name": "Спагетти С ветчиной и сыром", "price": 235, "cat": "wok", "desc": "Спагетти, ветчина, сливки, сыр Моцарелла, растительное масло \\\\", "hit": false, "img": "assets/menu/p210.jpg"}, {"id": 211, "name": "Спагетти С сыром", "price": 175, "cat": "wok", "desc": "Спагетти, сливки, сыр Моцарелла, растительное масло \\\\", "hit": false, "img": "assets/menu/p211.jpg"}, {"id": 212, "name": "Спагетти С куриными фрикадельками", "price": 235, "cat": "wok", "desc": "Спагетти, куриные фрикадельки, сливки, сыр Моцарелла, растительное масло \\\\", "hit": false, "img": "assets/menu/p212.jpg"}, {"id": 213, "name": "Суп Куриный  с фрикадельками и лапшой", "price": 210, "cat": "wok", "desc": "Куриный бульон, куриные фрикадельки, яичная лапша, зеленый лук \\\\", "hit": false, "img": "assets/menu/p213.jpg"}, {"id": 214, "name": "Пицца Сыр-сыр", "price": 450, "cat": "pizza", "desc": "\\u0026nbsp; \\\\ \\\\ \\u0026nbsp; \\\\", "hit": true, "img": "assets/menu/p214.jpg"}, {"id": 215, "name": "Коктейль Ванильный", "price": 190, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p215.jpg"}, {"id": 216, "name": "Коктейль Карамельный", "price": 190, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p216.jpg"}, {"id": 217, "name": "Коктейль Клубничный", "price": 190, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p217.jpg"}, {"id": 218, "name": "Коктейль Банан", "price": 190, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p218.jpg"}, {"id": 219, "name": "Коктейль Шоколадный", "price": 190, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p219.jpg"}, {"id": 220, "name": "Ролл Бургер (панко)", "price": 380, "cat": "burger", "desc": "Котлета из говядины, плавленый сыр , консервированные корнишоны, томаты, сухари Панко, соу", "hit": false, "img": "assets/menu/p220.jpg"}, {"id": 221, "name": "Ролл Флорида темпура (панко)", "price": 430, "cat": "hot", "desc": "Сливочный сыр, креветки темпура, такуан, огурец, темпура,\\u0026nbsp;сухари Панко, рис, нор", "hit": false, "img": "assets/menu/p221.jpg"}, {"id": 222, "name": "Ролл Два сыра темпура (панко)", "price": 520, "cat": "hot", "desc": "Сливочный сыр, креветки, икра тобико микс, сыр Пармезан, темпура,\\u0026nbsp;сухари Панко, ", "hit": false, "img": "assets/menu/p222.jpg"}, {"id": 223, "name": "Ролл Чиз темпура (панко)", "price": 310, "cat": "hot", "desc": "Сливочный\\u0026nbsp;сыр, огурец, соус Унаги, темпура, сухари Панко, рис, нори \\\\", "hit": false, "img": "assets/menu/p223.jpg"}, {"id": 224, "name": "Ролл Джамп (панко)", "price": 340, "cat": "hot", "desc": "Копчёная курица, томаты, майонез, зелёный лук, соус Унаги, темпура,\\u0026nbsp;сухари Панко", "hit": false, "img": "assets/menu/p224.jpg"}, {"id": 225, "name": "Ролл Филадельфия темпура с креветками (панко)", "price": 530, "cat": "hot", "desc": "Сливочный\\u0026nbsp;сыр, креветки, соус Унаги, темпура, сухари Панко, рис, нори \\\\", "hit": true, "img": "assets/menu/p225.jpg"}, {"id": 226, "name": "Ролл Калифорния темпура (панко)", "price": 465, "cat": "hot", "desc": "Снежный краб, авокадо, огурец, икра тобико микс, соус Унаги, майонез, темпура,\\u0026nbsp;с", "hit": false, "img": "assets/menu/p226.jpg"}, {"id": 227, "name": "Ролл Евразия темпура (панко)", "price": 380, "cat": "hot", "desc": "Копчёная курица, сыр Моцарелла, соус Унаги, майонез, темпура,\\u0026nbsp;сухари Панко, рис,", "hit": false, "img": "assets/menu/p227.jpg"}, {"id": 228, "name": "Ролл Цезарь темпура (панко)", "price": 360, "cat": "hot", "desc": "Копчёная\\u0026nbsp;курица, томаты, салат Айсберг, майонез, соус Унаги, темпура, сухари Пан", "hit": true, "img": "assets/menu/p228.jpg"}, {"id": 229, "name": "Ролл Кантри темпура (панко)", "price": 380, "cat": "hot", "desc": "Бекон, копчёная\\u0026nbsp;курица, огурец, соус Унаги, майонез, темпура,\\u0026nbsp;сухари П", "hit": false, "img": "assets/menu/p229.jpg"}, {"id": 230, "name": "Ролл Фрай эби темпура (панко)", "price": 450, "cat": "hot", "desc": "Креветка, сливочный\\u0026nbsp;сыр, консервированное\\u0026nbsp;манго, салат Айсберг, темпур", "hit": false, "img": "assets/menu/p230.jpg"}, {"id": 231, "name": "Ролл Дары моря темпура (панко)", "price": 540, "cat": "hot", "desc": "Сливочный сыр, креветки, огурец, лосось, соус Унаги, темпура,\\u0026nbsp;сухари Панко, рис,", "hit": false, "img": "assets/menu/p231.jpg"}, {"id": 232, "name": "Ролл Филадельфия темпура (панко)", "price": 585, "cat": "hot", "desc": "Сливочный\\u0026nbsp;сыр, лосось, копчёный\\u0026nbsp;угорь, авокадо, соус Унаги, темпура,\\u", "hit": true, "img": "assets/menu/p232.jpg"}, {"id": 233, "name": "Пицца из половинок", "price": 0, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p233.jpg"}, {"id": 234, "name": "Пицца Цыпленок спайси", "price": 355, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p234.jpg"}, {"id": 235, "name": "Пицца Жюльен", "price": 380, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p235.jpg"}, {"id": 236, "name": "Пицца Попурри", "price": 865, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p236.jpg"}, {"id": 237, "name": "Пицца Микс", "price": 815, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p237.jpg"}, {"id": 238, "name": "Пицца Мозаика", "price": 865, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p238.jpg"}, {"id": 239, "name": "Пицца Бешеная курица", "price": 410, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p239.jpg"}, {"id": 240, "name": "Пицца Пепперони", "price": 410, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p240.jpg"}, {"id": 241, "name": "Пицца Карбонара", "price": 430, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p241.jpg"}, {"id": 242, "name": "Пицца Маргарита классик", "price": 400, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p242.jpg"}, {"id": 243, "name": "Пицца Цыплёнок терияки", "price": 400, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p243.jpg"}, {"id": 244, "name": "Пицца Остро-пёстрая", "price": 450, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p244.jpg"}, {"id": 245, "name": "Пицца Весёлая креветка", "price": 520, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p245.jpg"}, {"id": 246, "name": "Пицца Молодёжная", "price": 420, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p246.jpg"}, {"id": 247, "name": "Пицца Курица-грибы", "price": 430, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p247.jpg"}, {"id": 248, "name": "Пицца Гавайская", "price": 470, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p248.jpg"}, {"id": 249, "name": "Пицца Винегрет", "price": 450, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p249.jpg"}, {"id": 250, "name": "Пицца Барбекю", "price": 470, "cat": "pizza", "desc": "", "hit": false, "img": "assets/menu/p250.jpg"}, {"id": 251, "name": "Римская пицца Сырная", "price": 570, "cat": "pizza", "desc": "Сливочный соус, сыр Моцарелла, сыр Фета, сыр Дорблю, сырный соус,\\u0026nbsp;тесто \\\\", "hit": false, "img": "assets/menu/p251.jpg"}, {"id": 252, "name": "Римская пицца Пепперони", "price": 520, "cat": "pizza", "desc": "Томатный соус, сыр Моцарелла, колбаса Пепперони,\\u0026nbsp;тесто \\\\", "hit": false, "img": "assets/menu/p252.jpg"}, {"id": 253, "name": "Лимонад Манго-Маракуйа 0,5", "price": 285, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Манго-маракуйя\\u0026quot;, лайм, мята \\\\", "hit": false, "img": "assets/menu/p253.jpg"}, {"id": 254, "name": "Бабл-лимонад Манго-маракуйя", "price": 220, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p254.jpg"}, {"id": 255, "name": "Лимонад Клюква-можжевельник  0,5", "price": 285, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Клюква-можжевельник\\u0026quot;, лайм, мята ", "hit": false, "img": "assets/menu/p255.jpg"}, {"id": 256, "name": "Бабл-лимонад Клюква-можжевельник", "price": 220, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p256.jpg"}, {"id": 257, "name": "Лимонад Киви 0,5", "price": 285, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Киви\\u0026quot;, лайм, мята \\\\", "hit": false, "img": "assets/menu/p257.jpg"}, {"id": 258, "name": "Бабл-лимонад Киви", "price": 220, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p258.jpg"}, {"id": 259, "name": "Напиток  Кока-кола 0,5 л", "price": 145, "cat": "drink", "desc": "Очищенная газированная вода, сахар, натуральный краситель карамель, регулятор кислотности ", "hit": false, "img": "assets/menu/p259.jpg"}, {"id": 260, "name": "Лимонад Киви  0,3", "price": 220, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Киви\\u0026quot;, лайм, мята \\\\", "hit": false, "img": "assets/menu/p260.jpg"}, {"id": 261, "name": "Лимонад Манго-Маракуйа  0,3", "price": 220, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Манго-маракуйя\\u0026quot;, лайм, мята \\\\", "hit": false, "img": "assets/menu/p261.jpg"}, {"id": 262, "name": "Лимонад Клюква-можжевельник  0,3", "price": 220, "cat": "drink", "desc": "Газированная\\u0026nbsp; вода, сироп \\u0026quot;Клюква-можжевельник\\u0026quot;, лайм, мята ", "hit": false, "img": "assets/menu/p262.jpg"}, {"id": 263, "name": "Морс домашний Клубника-базилик", "price": 165, "cat": "drink", "desc": "Питьевая вода, клубника, базилик, сахар \\\\", "hit": false, "img": "assets/menu/p263.jpg"}, {"id": 264, "name": "Морс домашний Апельсин-облепиха", "price": 165, "cat": "drink", "desc": "Питьевая вода, апельсин, облепиха, имбирь, сахар \\\\", "hit": false, "img": "assets/menu/p264.jpg"}, {"id": 265, "name": "Морс домашний Чёрная смородина", "price": 165, "cat": "drink", "desc": "Питьевая вода, чёрная смородина, сахар \\\\", "hit": false, "img": "assets/menu/p265.jpg"}, {"id": 266, "name": "Морс домашний Малина-клюква", "price": 165, "cat": "drink", "desc": "Питьевая вода, малина, клюква, сахар \\\\", "hit": false, "img": "assets/menu/p266.jpg"}, {"id": 267, "name": "Морс домашний Лесные ягоды", "price": 165, "cat": "drink", "desc": "Питьевая вода, клюква, черника, ежевика, брусника, сахар \\\\", "hit": false, "img": "assets/menu/p267.jpg"}, {"id": 268, "name": "Морс домашний Клюква", "price": 165, "cat": "drink", "desc": "Вода питьевая, клюква, сахар \\\\", "hit": false, "img": "assets/menu/p268.jpg"}, {"id": 269, "name": "Морс домашний Вишня", "price": 165, "cat": "drink", "desc": "Вода питьевая, вишня, сахар \\\\", "hit": false, "img": "assets/menu/p269.jpg"}, {"id": 270, "name": "Сок Яблоко", "price": 115, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p270.jpg"}, {"id": 271, "name": "Сок Вишня/Черешня", "price": 90, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p271.jpg"}, {"id": 272, "name": "Сок Апельсин-мандарин", "price": 115, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p272.jpg"}, {"id": 273, "name": "Вода (негазированная)", "price": 110, "cat": "drink", "desc": "", "hit": false, "img": "assets/menu/p273.jpg"}, {"id": 274, "name": "Ролл Филадельфия", "price": 475, "cat": "rolls", "desc": "Лосось, сливочный сыр, рис, нори \\\\", "hit": true, "img": "assets/menu/p274.jpg"}, {"id": 275, "name": "Ролл Филадельфия лайт", "price": 410, "cat": "rolls", "desc": "Лосось, сливочный сыр, рис, нори \\\\", "hit": true, "img": "assets/menu/p275.jpg"}, {"id": 276, "name": "Ролл Филадельфия классика с огурцом", "price": 625, "cat": "rolls", "desc": "Лосось, сливочный сыр, огурец, рис, нори \\\\", "hit": true, "img": "assets/menu/p276.jpg"}, {"id": 277, "name": "Ролл Джакарта", "price": 530, "cat": "rolls", "desc": "Лосось, копчёный угорь, сливочный сыр, огурец, соус унаги, кунжут \\\\", "hit": false, "img": "assets/menu/p277.jpg"}, {"id": 278, "name": "Ролл Катана", "price": 470, "cat": "rolls", "desc": "Креветки, снежный краб, сливочный сыр, огурец, соус Терияки, кунжут, рис, нори \\\\", "hit": false, "img": "assets/menu/p278.jpg"}, {"id": 279, "name": "Ролл Нежная креветка", "price": 505, "cat": "rolls", "desc": "Креветки темпура, сливочный сыр, икра тобико микс, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p279.jpg"}, {"id": 280, "name": "Ролл Креветка в шубе", "price": 450, "cat": "rolls", "desc": "Креветки темпура, сливочный сыр, огурец, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p280.jpg"}, {"id": 281, "name": "Ролл Манго грин", "price": 430, "cat": "rolls", "desc": "Креветки темпура, консервированный манго, икра тобико микс, сливочный сыр, соус Терияки, о", "hit": false, "img": "assets/menu/p281.jpg"}, {"id": 282, "name": "Ролл Эби чеддер", "price": 430, "cat": "rolls", "desc": "Креветки темпура, сливочный сыр, плавленый сыр, соус Спайс, соус Барбекю, рис, нори\\u0026n", "hit": false, "img": "assets/menu/p282.jpg"}, {"id": 283, "name": "Ролл С жареным лососем", "price": 390, "cat": "hot", "desc": "Жареный лосось, майонез, зелёный лук, соус Унаги, кунжут, рис, нори \\\\", "hit": false, "img": "assets/menu/p283.jpg"}, {"id": 284, "name": "Ролл Цезарь", "price": 340, "cat": "rolls", "desc": "копчёная курица, плавленый сыр, салат айсберг, томаты, соус цезарь, рис, нори \\\\", "hit": true, "img": "assets/menu/p284.jpg"}, {"id": 285, "name": "Ролл Пари маки", "price": 390, "cat": "rolls", "desc": "Жареный лосось, бекон, сливочный сыр, соус Терияки, рис, нори \\\\", "hit": false, "img": "assets/menu/p285.jpg"}, {"id": 286, "name": "Ролл Терияки", "price": 350, "cat": "rolls", "desc": "Жареный лосось, сливочный сыр, соус Терияки, такуан, кунжут, огурец, рис, нори\\u0026nbsp; ", "hit": false, "img": "assets/menu/p286.jpg"}, {"id": 287, "name": "Ролл Филадельфия классика", "price": 625, "cat": "rolls", "desc": "Лосось, сливочный\\u0026nbsp;сыр, рис, нори\\u0026nbsp; \\\\ \\\\ \\u0026nbsp; \\\\", "hit": true, "img": "assets/menu/p287.jpg"}, {"id": 288, "name": "Ролл Филадельфия классика с креветками", "price": 665, "cat": "rolls", "desc": "Лосось, креветки, сливочный сыр, огурец, рис, нори\\u0026nbsp; \\\\", "hit": true, "img": "assets/menu/p288.jpg"}, {"id": 289, "name": "Ролл Филадельфия классика с авокадо", "price": 625, "cat": "wok", "desc": "Лосось, сливочный сыр, авокадо, рис, нори \\\\", "hit": true, "img": "assets/menu/p289.jpg"}, {"id": 290, "name": "Ролл Филадельфия лайт с огурцом", "price": 410, "cat": "rolls", "desc": "Лосось, сливочный сыр, огурец, рис, нори \\\\", "hit": true, "img": "assets/menu/p290.jpg"}, {"id": 291, "name": "Ролл Бонито", "price": 410, "cat": "rolls", "desc": "Тунец, сливочный сыр, огурец, стружка тунца, рис, нори \\\\", "hit": false, "img": "assets/menu/p291.jpg"}, {"id": 292, "name": "Ролл Королевский дракон", "price": 615, "cat": "rolls", "desc": "Копчёный угорь, креветки темпура, сливочный сыр, соус Унаги, кунжут, рис, нори\\u0026nbsp; ", "hit": false, "img": "assets/menu/p292.jpg"}, {"id": 293, "name": "Ролл Фараон", "price": 575, "cat": "rolls", "desc": "Лосось, креветки, сливочный сыр, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p293.jpg"}, {"id": 294, "name": "Ролл Филадельфия c авокадо", "price": 505, "cat": "wok", "desc": "Лосось, авокадо, сливочный сыр, рис, нори\\u0026nbsp; \\\\ \\\\ \\u0026nbsp; \\\\", "hit": true, "img": "assets/menu/p294.jpg"}, {"id": 295, "name": "Ролл Филадельфия с креветками", "price": 550, "cat": "rolls", "desc": "Лосось, креветки, сливочный сыр, огурец, рис, нори \\\\", "hit": true, "img": "assets/menu/p295.jpg"}, {"id": 296, "name": "Ролл Филадельфия с огурцом", "price": 470, "cat": "rolls", "desc": "Лосось, сливочный сыр, огурец, рис, нори \\\\", "hit": true, "img": "assets/menu/p296.jpg"}, {"id": 297, "name": "Ролл Канада", "price": 645, "cat": "rolls", "desc": "Копчёный угорь, лосось, авокадо, сливочный сыр, соус Унаги, кунжут, рис, нори\\u0026nbsp; \\", "hit": false, "img": "assets/menu/p297.jpg"}, {"id": 298, "name": "Ролл Инь и ян", "price": 580, "cat": "rolls", "desc": "Копчёный угорь, лосось, тунец, майонез, огурец, рис, нори \\\\", "hit": false, "img": "assets/menu/p298.jpg"}, {"id": 299, "name": "Ролл Автосуши", "price": 615, "cat": "sushi", "desc": "Копчёный угорь, лосось, копчёная курица, сливочный сыр, авокадо, огурец, рис, нори \\\\ \\\\ \\", "hit": false, "img": "assets/menu/p299.jpg"}, {"id": 300, "name": "Ролл Калифорния", "price": 455, "cat": "rolls", "desc": "Снежный краб, авокадо, майонез, икра тобико микс, майонез, огурец, рис, нори\\u0026nbsp; \\\\", "hit": false, "img": "assets/menu/p300.jpg"}];
-const CATS=[{"key": "all", "name": "Хиты"}, {"key": "set", "name": "Сеты и комбо"}, {"key": "rolls", "name": "Роллы"}, {"key": "spice", "name": "Спайс-роллы"}, {"key": "baked", "name": "Запечённые"}, {"key": "hot", "name": "Горячие роллы"}, {"key": "sushi", "name": "Суши и гунканы"}, {"key": "pizza", "name": "Пицца"}, {"key": "wok", "name": "Wok и лапша"}, {"key": "burger", "name": "Бургеры"}, {"key": "breakfast", "name": "Завтраки"}, {"key": "poke", "name": "Поке и салаты"}, {"key": "drink", "name": "Напитки"}, {"key": "dessert", "name": "Десерты"}, {"key": "other", "name": "Разное"}];
-let cart={};
-const $=s=>document.querySelector(s);
-const money=n=>n.toLocaleString('ru-RU')+' ₽';
-
-function renderTabs(active){
-  const box=$('#tabs');box.innerHTML='';
-  CATS.forEach(c=>{
-    const b=document.createElement('button');
-    b.className='tab'+(c.key===active?' active':'');
-    b.textContent=c.name;
-    b.onclick=()=>{renderTabs(c.key);renderGrid(c.key);};
-    box.appendChild(b);
+// mobile menu
+(function(){
+  const burger=document.getElementById('burger'), mnav=document.getElementById('mnav'), close=document.getElementById('mnavClose');
+  const open=()=>{mnav.classList.add('open');mnav.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');};
+  const shut=()=>{mnav.classList.remove('open');mnav.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');};
+  burger.onclick=open; close.onclick=shut;
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')shut();});
+})();
+// feedback form (demo + honeypot)
+(function(){
+  const f=document.getElementById('fbForm'), ok=document.getElementById('fbOk');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(f.company.value){f.reset();ok.classList.add('show');return;} // honeypot: bot
+    if(!f.name.value.trim()||!f.phone.value.trim()||!f.message.value.trim()){
+      [f.name,f.phone,f.message].forEach(i=>{if(!i.value.trim())i.style.borderColor='var(--brand)';});
+      return;
+    }
+    f.querySelector('button[type=submit]').style.display='none';
+    ok.classList.add('show'); f.reset();
   });
-}
-function renderGrid(cat){
-  const grid=$('#grid');grid.innerHTML='';
-  const list = cat==='all' ? MENU.filter(m=>m.hit).concat(MENU.filter(m=>!m.hit)) : MENU.filter(m=>m.cat===cat);
-  list.forEach(p=>{
-    const q=cart[p.id]||0;
-    const card=document.createElement('div');card.className='card';
-    card.innerHTML=`
-      <div class="card-media">${p.hit?'<span class="hit-badge">ХИТ</span>':''}<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.opacity='0'"></div>
-      <div class="card-body">
-        <h3>${p.name}</h3><p>${p.desc||''}</p>
-        <div class="card-foot">
-          <span class="price">${money(p.price)}</span>
-          ${q>0
-            ? `<span class="add inrow"><button class="qbtn" data-m="${p.id}">−</button><span class="qn">${q}</span><button class="qbtn" data-p="${p.id}">+</button></span>`
-            : `<button class="add" data-add="${p.id}">В корзину</button>`}
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
-  grid.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{addItem(+b.dataset.add);});
-  grid.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{addItem(+b.dataset.p);});
-  grid.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{removeItem(+b.dataset.m);});
-}
-function addItem(id){cart[id]=(cart[id]||0)+1;sync();}
-function removeItem(id){cart[id]=(cart[id]||0)-1;if(cart[id]<=0)delete cart[id];sync();}
-function count(){return Object.values(cart).reduce((a,b)=>a+b,0);}
-function total(){return Object.entries(cart).reduce((s,[id,q])=>s+MENU.find(m=>m.id==id).price*q,0);}
-function sync(){
-  $('#cnt').textContent=count();
-  $('#total').textContent=money(total());
-  const active=document.querySelector('.tab.active');renderGrid(active?active.textContent&&CATS.find(c=>c.name===active.textContent).key:'all');
-  renderCart();
-}
-function renderCart(){
-  const box=$('#cartItems');
-  const ids=Object.keys(cart);
-  if(!ids.length){box.innerHTML='<div class="cart-empty">🛒<br>Корзина пуста<br><small>Добавьте что-нибудь из меню</small></div>';return;}
-  box.innerHTML='';
-  ids.forEach(id=>{
-    const p=MENU.find(m=>m.id==id),q=cart[id];
-    const el=document.createElement('div');el.className='ci';
-    el.innerHTML=`<img src="${p.img}" alt="${p.name}" onerror="this.style.visibility='hidden'">
-      <div class="ci-b"><h4>${p.name}</h4><div class="p">${money(p.price)}</div>
-        <div class="ci-q"><button class="qbtn" data-m="${p.id}">−</button><span class="qn">${q}</span><button class="qbtn" data-p="${p.id}">+</button></div>
-      </div>`;
-    box.appendChild(el);
-  });
-  box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>addItem(+b.dataset.p));
-  box.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>removeItem(+b.dataset.m));
-}
-$('#cartOpen').onclick=()=>$('#cartOv').classList.add('open');
-$('#cartClose').onclick=()=>$('#cartOv').classList.remove('open');
-$('#cartOv').onclick=e=>{if(e.target.id==='cartOv')$('#cartOv').classList.remove('open');};
-$('#checkout').onclick=()=>{if(count()>0){$('#cartOv').classList.remove('open');$('#orderModal').classList.add('open');}};
-$('#orderCancel').onclick=()=>$('#orderModal').classList.remove('open');
-$('#form').onsubmit=e=>{e.preventDefault();$('#orderForm').hidden=true;$('#orderOk').hidden=false;cart={};sync();};
-$('#okClose').onclick=()=>{$('#orderModal').classList.remove('open');$('#orderForm').hidden=false;$('#orderOk').hidden=true;$('#form').reset();};
-renderTabs('all');renderGrid('all');renderCart();
+  ['fbName','fbPhone','fbMsg'].forEach(id=>document.getElementById(id).addEventListener('input',e=>e.target.style.borderColor=''));
+})();
 </script>
 </body>
 </html>
