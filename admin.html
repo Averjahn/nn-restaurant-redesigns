@@ -50,6 +50,9 @@
   .g-links{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   .g-links a{font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 11px;transition:.15s}
   .g-links a:hover{border-color:var(--fg)}
+  .g-orig{color:var(--warn);border-color:rgba(232,160,60,.35) !important}
+  .g-orig:hover{border-color:var(--warn) !important}
+  .g-orig--none{color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:600;cursor:default}
   .g-approve{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-left:auto;flex-shrink:0}
   .g-check{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap}
   .g-check.on{border-color:var(--good);color:var(--good)}
@@ -151,6 +154,10 @@
           ${v.variant ? `<span class="v">${v.variant}</span>` : ''}
         </div>`).join('');
       const links = g.variants.map(v => `<a href="${v.slug}/" target="_blank" rel="noopener">Открыть${v.variant ? ' ' + v.variant : ''}</a>`).join('');
+      const original = g.variants[0].original;
+      const origLink = original
+        ? `<a href="${original}" target="_blank" rel="noopener" class="g-orig">Оригинал ↗</a>`
+        : `<span class="g-orig--none">Своего сайта нет</span>`;
       row.innerHTML = `
         <div class="g-thumbs">${thumbs}</div>
         <div class="g-info">
@@ -160,7 +167,7 @@
             ${pub ? '<span class="badge pub">На сайте</span>' : '<span class="badge hid">Черновик · скрыт</span>'}
             <span class="badge" style="color:var(--muted)">${g.variants.length} вариант${g.variants.length>1?(g.variants.length<5?'а':'ов'):''}</span>
           </div>
-          <div class="g-links">${links}</div>
+          <div class="g-links">${links}${origLink}</div>
         </div>
         <div class="g-approve">
           <label class="g-check ${a.approved ? 'on' : ''}">
