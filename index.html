@@ -169,33 +169,6 @@
         <span class="lbl">18 проектов</span>
       </div>
       <div class="grid" id="grid">
-        <a class="card" href="mimino-a/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:#f5ece0">
-            <img class="card__frame" src="assets/thumbs/mimino-a.jpg" alt="Редизайн сайта: МиМиНо — Грузинская кухня и караоке (вариант A)" loading="lazy" decoding="async" width="1024" height="640">
-          </span>
-          <span class="card__meta">
-            <span class="card__name">МиМиНо — вариант A</span>
-            <span class="card__cat">Грузинская кухня · караоке</span>
-          </span>
-        </a>
-        <a class="card" href="mimino-b/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:#17110f">
-            <img class="card__frame" src="assets/thumbs/mimino-b.jpg" alt="Редизайн сайта: МиМиНо — Грузинская кухня и караоке (вариант B)" loading="lazy" decoding="async" width="1024" height="640">
-          </span>
-          <span class="card__meta">
-            <span class="card__name">МиМиНо — вариант B</span>
-            <span class="card__cat">Грузинская кухня · караоке</span>
-          </span>
-        </a>
-        <a class="card" href="mimino-c/" target="_blank" rel="noopener">
-          <span class="card__prev" style="background:#f3e9d8">
-            <img class="card__frame" src="assets/thumbs/mimino-c.jpg" alt="Редизайн сайта: МиМиНо — Грузинская кухня и караоке (вариант C)" loading="lazy" decoding="async" width="1024" height="640">
-          </span>
-          <span class="card__meta">
-            <span class="card__name">МиМиНо — вариант C</span>
-            <span class="card__cat">Грузинская кухня · караоке</span>
-          </span>
-        </a>
         <a class="card" href="avtosushi/" target="_blank" rel="noopener">
           <span class="card__prev" style="background:#fdede2">
             <img class="card__frame" src="assets/thumbs/avtosushi.jpg" alt="Редизайн сайта: Автосуши Автопицца — Доставка суши и пиццы" loading="lazy" decoding="async" width="1024" height="640">
@@ -423,117 +396,17 @@
   })();
 </script>
   <script>
-  /* Админ-режим: наберите q w e подряд */
+  /* Админка: наберите q w e подряд — откроет страницу со всеми редизайнами */
   (function () {
     const SEQ = ['q', 'w', 'e'];
-    const REPO = 'Averjahn/nn-restaurant-redesigns';
     let buf = [], bufTimer = null;
-    let adminOn = false, approvals = null, dirty = false;
-    function projectOf(href) {
-      const m = (href || '').match(/^([a-z0-9-]+?)(?:-([abc]))?\/$/);
-      if (!m) return null; return m[2] ? m[1] : m[1];
-    }
-    const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
     document.addEventListener('keydown', e => {
       if (e.target instanceof Element && e.target.matches('input, textarea')) return;
       buf.push(e.key.toLowerCase());
       clearTimeout(bufTimer);
       bufTimer = setTimeout(() => { buf = []; }, 2000);
-      if (buf.slice(-3).join('') === SEQ.join('')) { buf = []; toggleAdmin(); }
+      if (buf.slice(-3).join('') === SEQ.join('')) { buf = []; window.location.href = 'admin.html'; }
     });
-    async function toggleAdmin() {
-      if (adminOn) { teardown(); return; }
-      if (!approvals) {
-        try { const r = await fetch('approvals.json', { cache: 'no-store' }); approvals = await r.json(); }
-        catch (err) { approvals = {}; }
-        try { const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
-          for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]); } catch (err) {}
-      }
-      setup();
-    }
-    function setup() {
-      adminOn = true; document.body.classList.add('rd-admin');
-      if (!document.getElementById('rd-admin-css')) {
-        const st = document.createElement('style'); st.id = 'rd-admin-css';
-        st.textContent = `
-          .rd-check{position:absolute;top:10px;left:10px;z-index:5;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.8);border:1px solid #444;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;color:#ccc;cursor:pointer}
-          .rd-check input{accent-color:#3fb950;width:15px;height:15px;cursor:pointer}
-          .rd-check.on{border-color:#3fb950;color:#3fb950}
-          .rd-price{position:absolute;top:10px;right:10px;z-index:5;background:rgba(0,0,0,.8);border:1px solid #444;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;color:#e8a03c}
-          .card{position:relative}
-          #rd-panel{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#101014;border-top:2px solid #fff;padding:14px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px;color:#eee}
-          #rd-panel .rd-sum{font-weight:800;color:#3fb950;font-size:16px}
-          #rd-panel .rd-cnt{color:#999}
-          #rd-panel input[type=password]{background:#1a1a20;border:1px solid #333;border-radius:8px;color:#eee;padding:8px 12px;font-size:13px;width:220px}
-          #rd-panel button{background:#fff;border:none;border-radius:8px;color:#000;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
-          #rd-panel button.rd-ghost{background:transparent;border:1px solid #444;color:#aaa}
-          #rd-panel .rd-status{font-size:12px;color:#999}
-          body.rd-admin{padding-bottom:80px}`;
-        document.head.appendChild(st);
-      }
-      document.querySelectorAll('.card').forEach(card => {
-        const proj = projectOf(card.getAttribute('href'));
-        if (!proj || !approvals[proj]) return;
-        card.dataset.rdProj = proj;
-        const chk = document.createElement('label');
-        chk.className = 'rd-check' + (approvals[proj].approved ? ' on' : '');
-        chk.innerHTML = `<input type="checkbox" ${approvals[proj].approved ? 'checked' : ''}> одобрено`;
-        chk.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); toggle(proj); });
-        const price = document.createElement('span');
-        price.className = 'rd-price'; price.textContent = fmt(approvals[proj].price);
-        card.appendChild(chk); card.appendChild(price);
-      });
-      const panel = document.createElement('div'); panel.id = 'rd-panel';
-      panel.innerHTML = `
-        <span class="rd-cnt">Одобрено: <b id="rd-count">0</b> из <b>${Object.keys(approvals).length}</b></span>
-        <span class="rd-sum" id="rd-total">0 ₽</span>
-        <span style="flex:1"></span>
-        <input type="password" id="rd-token" placeholder="GitHub token" value="${localStorage.getItem('rd_token') || ''}">
-        <button id="rd-save">Сохранить в репо</button>
-        <button class="rd-ghost" id="rd-copy">Скопировать JSON</button>
-        <span class="rd-status" id="rd-status"></span>`;
-      document.body.appendChild(panel);
-      document.getElementById('rd-save').addEventListener('click', saveToRepo);
-      document.getElementById('rd-copy').addEventListener('click', () => {
-        navigator.clipboard.writeText(JSON.stringify(approvals, null, 2)); status('JSON в буфере — пришли его Claude'); });
-      recount();
-    }
-    function teardown() {
-      adminOn = false; document.body.classList.remove('rd-admin');
-      document.querySelectorAll('.rd-check, .rd-price').forEach(el => el.remove());
-      document.getElementById('rd-panel')?.remove();
-    }
-    function toggle(proj) {
-      const a = approvals[proj]; a.approved = !a.approved;
-      a.approvedAt = a.approved ? new Date().toISOString().slice(0, 10) : null; dirty = true;
-      localStorage.setItem('rd_approvals', JSON.stringify(approvals));
-      document.querySelectorAll(`.card[data-rd-proj="${proj}"] .rd-check`).forEach(chk => {
-        chk.classList.toggle('on', a.approved); chk.querySelector('input').checked = a.approved; });
-      recount();
-    }
-    function recount() {
-      let n = 0, sum = 0;
-      for (const k in approvals) if (approvals[k].approved) { n++; sum += approvals[k].price; }
-      document.getElementById('rd-count').textContent = n;
-      document.getElementById('rd-total').textContent = fmt(sum);
-    }
-    function status(msg) { const el = document.getElementById('rd-status'); el.textContent = msg;
-      setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 6000); }
-    async function saveToRepo() {
-      const token = document.getElementById('rd-token').value.trim();
-      if (!token) { status('Нужен GitHub token (contents:write)'); return; }
-      localStorage.setItem('rd_token', token); status('Сохраняю…');
-      try {
-        const api = `https://api.github.com/repos/${REPO}/contents/approvals.json`;
-        const head = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
-        const cur = await fetch(api, { headers: head }).then(r => r.json());
-        const body = { message: 'update approvals via admin panel',
-          content: btoa(unescape(encodeURIComponent(JSON.stringify(approvals, null, 2)))), sha: cur.sha };
-        const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify(body) });
-        if (res.ok) { dirty = false; localStorage.removeItem('rd_approvals'); status('Сохранено в репо'); }
-        else { const e = await res.json(); status('Ошибка: ' + (e.message || res.status)); }
-      } catch (err) { status('Ошибка сети: ' + err.message); }
-    }
   })();
   </script>
 </body>

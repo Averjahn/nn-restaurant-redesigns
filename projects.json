@@ -1,0 +1,36 @@
+[
+  { "slug": "avtosushi",     "group": "avtosushi",  "variant": null, "name": "Автосуши Автопицца", "cat": "Доставка · суши и пицца",        "published": true  },
+  { "slug": "vetdrug",       "group": "vetdrug",    "variant": null, "name": "ВетДруг",             "cat": "Ветклиника",                     "published": true  },
+  { "slug": "hygge",         "group": "hygge",      "variant": null, "name": "Кофехюгге",           "cat": "Кофейня",                        "published": true  },
+  { "slug": "oka",           "group": "oka",        "variant": null, "name": "Ресторан ОКА",        "cat": "Ресторан",                       "published": true  },
+  { "slug": "ps",            "group": "ps",         "variant": null, "name": "P.S.",                "cat": "Кондитерская",                   "published": true  },
+  { "slug": "samurai",       "group": "samurai",    "variant": null, "name": "Самурай",             "cat": "Детейлинг",                      "published": true  },
+  { "slug": "smailnn",       "group": "smailnn",    "variant": null, "name": "Смайл",               "cat": "Стоматология",                   "published": true  },
+  { "slug": "zoomir",        "group": "zoomir",     "variant": null, "name": "ЗооМир",              "cat": "Ветклиника",                     "published": true  },
+  { "slug": "kupets",        "group": "kupets",     "variant": null, "name": "Купеческий",          "cat": "Ресторан",                       "published": true  },
+  { "slug": "coffeemolly",   "group": "coffeemolly","variant": null, "name": "Coffee Molly",        "cat": "Кофейня",                        "published": true  },
+  { "slug": "chertochka",    "group": "chertochka", "variant": null, "name": "Чёрточка",            "cat": "Кофейня",                        "published": true  },
+  { "slug": "lagom",         "group": "lagom",      "variant": null, "name": "Lägom",               "cat": "Кофейня",                        "published": true  },
+  { "slug": "cuppcake",      "group": "cuppcake",   "variant": null, "name": "CuPPcake",            "cat": "Кондитерская",                   "published": true  },
+  { "slug": "shashlyk52",    "group": "shashlyk52", "variant": null, "name": "Шашлык52",            "cat": "Доставка",                       "published": true  },
+  { "slug": "vypechka",      "group": "vypechka",   "variant": null, "name": "Русская Выпечка",     "cat": "Доставка",                       "published": true  },
+
+  { "slug": "bogemia-a",     "group": "bogemia",    "variant": "A",  "name": "Богемия ŠKODA",       "cat": "Автосалон",                      "published": true  },
+  { "slug": "bogemia-b",     "group": "bogemia",    "variant": "B",  "name": "Богемия ŠKODA",       "cat": "Автосалон",                      "published": false },
+  { "slug": "bogemia-c",     "group": "bogemia",    "variant": "C",  "name": "Богемия ŠKODA",       "cat": "Автосалон",                      "published": false },
+
+  { "slug": "loghouse-a",    "group": "loghouse",   "variant": "A",  "name": "Gazebos Loghouse",    "cat": "Загородный отдых",               "published": true  },
+  { "slug": "loghouse-b",    "group": "loghouse",   "variant": "B",  "name": "Gazebos Loghouse",    "cat": "Загородный отдых",               "published": false },
+  { "slug": "loghouse-c",    "group": "loghouse",   "variant": "C",  "name": "Gazebos Loghouse",    "cat": "Загородный отдых",               "published": false },
+
+  { "slug": "macbookbro-a",  "group": "macbookbro", "variant": "A",  "name": "Макбучная",           "cat": "Apple-ритейл",                   "published": true  },
+  { "slug": "macbookbro-b",  "group": "macbookbro", "variant": "B",  "name": "Макбучная",           "cat": "Apple-ритейл",                   "published": false },
+  { "slug": "macbookbro-c",  "group": "macbookbro", "variant": "C",  "name": "Макбучная",           "cat": "Apple-ритейл",                   "published": false },
+
+  { "slug": "mimino-a",      "group": "mimino",     "variant": "A",  "name": "МиМиНо",              "cat": "Грузинская кухня · караоке",     "published": false },
+  { "slug": "mimino-b",      "group": "mimino",     "variant": "B",  "name": "МиМиНо",              "cat": "Грузинская кухня · караоке",     "published": false },
+  { "slug": "mimino-c",      "group": "mimino",     "variant": "C",  "name": "МиМиНо",              "cat": "Грузинская кухня · караоке",     "published": false },
+
+  { "slug": "legenda",       "group": "legenda",    "variant": null, "name": "Легенда Чайхана",     "cat": "Узбекская кухня · плов и тандыр","published": false },
+  { "slug": "onegin",        "group": "onegin",     "variant": null, "name": "Онегинъ",             "cat": "Клуб-ресторан",                  "published": false }
+]

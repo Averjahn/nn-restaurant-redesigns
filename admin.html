@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Админка — все редизайны</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#000;--fg:#fff;--muted:#8a8a8a;--line:#232323;--surface:#0d0d0d;--good:#3fb950;--warn:#e8a03c;--maxw:1180px}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;height:68px;gap:16px}
+  .mark{width:16px;height:16px;background:var(--fg);flex-shrink:0}
+  .hd .lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .hd .back{margin-left:auto;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:8px 14px;transition:.15s}
+  .hd .back:hover{color:var(--fg);border-color:var(--fg)}
+  main{padding:40px 0 120px}
+  h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .sub{color:var(--muted);font-size:15px;margin-bottom:36px}
+  .summary{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:36px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+  .summary .s{display:flex;flex-direction:column;gap:2px}
+  .summary .s b{font-size:22px;font-weight:800}
+  .summary .s span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .filters button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+  .filters button.on{background:var(--fg);color:#000;border-color:var(--fg)}
+  .groups{display:flex;flex-direction:column;gap:14px}
+  .group{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  .group.is-hidden-row{display:none}
+  .g-thumbs{display:flex;gap:8px;flex-shrink:0}
+  .g-thumb{position:relative;width:120px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#1a1a1a;border:1px solid var(--line)}
+  .g-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .g-thumb .v{position:absolute;bottom:4px;left:6px;font-size:10px;font-weight:800;background:rgba(0,0,0,.7);padding:2px 6px;border-radius:4px;letter-spacing:.05em}
+  .g-info{flex:1;min-width:220px}
+  .g-name{font-size:18px;font-weight:800;margin-bottom:2px}
+  .g-cat{font-size:13px;color:var(--muted)}
+  .g-badges{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line)}
+  .badge.pub{color:var(--good);border-color:var(--good)}
+  .badge.hid{color:var(--warn);border-color:var(--warn)}
+  .g-links{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .g-links a{font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 11px;transition:.15s}
+  .g-links a:hover{border-color:var(--fg)}
+  .g-approve{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-left:auto;flex-shrink:0}
+  .g-check{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap}
+  .g-check.on{border-color:var(--good);color:var(--good)}
+  .g-check input{accent-color:var(--good);width:15px;height:15px;cursor:pointer}
+  .g-price{font-size:13px;font-weight:700;color:var(--warn)}
+  #panel{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#101014;border-top:2px solid var(--fg);padding:14px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px}
+  #panel .sum{font-weight:800;color:var(--good);font-size:16px}
+  #panel .cnt{color:var(--muted)}
+  #panel input[type=password]{background:#1a1a20;border:1px solid #333;border-radius:8px;color:#eee;padding:8px 12px;font-size:13px;width:220px}
+  #panel button{background:var(--fg);border:none;border-radius:8px;color:#000;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
+  #panel button.ghost{background:transparent;border:1px solid #444;color:#aaa}
+  #panel .status{font-size:12px;color:var(--muted)}
+  body{padding-bottom:80px}
+  @media(max-width:640px){
+    .group{flex-direction:column}
+    .g-approve{align-items:flex-start;margin-left:0;width:100%}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <span class="mark"></span>
+    <span class="lbl">Веб-студия / Админка</span>
+    <a class="back" href="index.html">← На сайт</a>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h1>Все редизайны</h1>
+    <p class="sub">Полный список проектов студии — опубликованные на сайте и черновики, которые пока не показываем клиентам.</p>
+    <div class="summary" id="summary"></div>
+    <div class="filters">
+      <button class="on" data-f="all">Все</button>
+      <button data-f="pub">Опубликованные</button>
+      <button data-f="hid">Черновики</button>
+      <button data-f="app">Одобренные</button>
+    </div>
+    <div class="groups" id="groups"></div>
+  </div>
+</main>
+<div id="panel">
+  <span class="cnt">Одобрено: <b id="count">0</b> из <b id="total">0</b></span>
+  <span class="sum" id="sumTotal">0 ₽</span>
+  <span style="flex:1"></span>
+  <input type="password" id="token" placeholder="GitHub token">
+  <button id="save">Сохранить в репо</button>
+  <button class="ghost" id="copy">Скопировать JSON</button>
+  <span class="status" id="status"></span>
+</div>
+<script>
+(function(){
+  const REPO = 'Averjahn/nn-restaurant-redesigns';
+  const fmt = n => (n||0).toLocaleString('ru-RU') + ' ₽';
+  let projects = [], approvals = {}, groups = {};
+  let filter = 'all';
+
+  Promise.all([
+    fetch('projects.json', {cache:'no-store'}).then(r=>r.json()),
+    fetch('approvals.json', {cache:'no-store'}).then(r=>r.json()).catch(()=>({}))
+  ]).then(([proj, appr]) => {
+    projects = proj; approvals = appr;
+    try {
+      const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
+      for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]);
+    } catch (e) {}
+    groupProjects();
+    render();
+  });
+
+  function groupProjects() {
+    groups = {};
+    projects.forEach(p => {
+      if (!groups[p.group]) groups[p.group] = { group: p.group, name: p.name, cat: p.cat, variants: [] };
+      groups[p.group].variants.push(p);
+    });
+  }
+
+  function groupPublished(g) { return g.variants.some(v => v.published); }
+
+  function render() {
+    const box = document.getElementById('groups');
+    box.innerHTML = '';
+    const list = Object.values(groups);
+    let shownCount = 0;
+    list.forEach(g => {
+      const a = approvals[g.group] || { approved: false, price: 0 };
+      const pub = groupPublished(g);
+      const match = filter === 'all' || (filter === 'pub' && pub) || (filter === 'hid' && !pub) || (filter === 'app' && a.approved);
+      if (!match) return;
+      shownCount++;
+      const row = document.createElement('div');
+      row.className = 'group';
+      row.dataset.group = g.group;
+      const thumbs = g.variants.map(v => `
+        <div class="g-thumb">
+          <img src="assets/thumbs/${v.slug}.jpg" alt="${v.name}${v.variant ? ' ' + v.variant : ''}" loading="lazy"
+               onerror="this.parentElement.style.background='#1a1a1a'; this.remove()">
+          ${v.variant ? `<span class="v">${v.variant}</span>` : ''}
+        </div>`).join('');
+      const links = g.variants.map(v => `<a href="${v.slug}/" target="_blank" rel="noopener">Открыть${v.variant ? ' ' + v.variant : ''}</a>`).join('');
+      row.innerHTML = `
+        <div class="g-thumbs">${thumbs}</div>
+        <div class="g-info">
+          <div class="g-name">${g.name}</div>
+          <div class="g-cat">${g.cat}</div>
+          <div class="g-badges">
+            ${pub ? '<span class="badge pub">На сайте</span>' : '<span class="badge hid">Черновик · скрыт</span>'}
+            <span class="badge" style="color:var(--muted)">${g.variants.length} вариант${g.variants.length>1?(g.variants.length<5?'а':'ов'):''}</span>
+          </div>
+          <div class="g-links">${links}</div>
+        </div>
+        <div class="g-approve">
+          <label class="g-check ${a.approved ? 'on' : ''}">
+            <input type="checkbox" ${a.approved ? 'checked' : ''}> одобрено
+          </label>
+          <span class="g-price">${fmt(a.price)}</span>
+        </div>`;
+      row.querySelector('.g-check').addEventListener('click', e => {
+        e.preventDefault();
+        toggle(g.group);
+      });
+      box.appendChild(row);
+    });
+    recount();
+  }
+
+  function toggle(group) {
+    const a = approvals[group];
+    if (!a) return;
+    a.approved = !a.approved;
+    a.approvedAt = a.approved ? new Date().toISOString().slice(0,10) : null;
+    localStorage.setItem('rd_approvals', JSON.stringify(approvals));
+    render();
+  }
+
+  function recount() {
+    let n = 0, sum = 0, total = 0;
+    for (const k in approvals) { total++; if (approvals[k].approved) { n++; sum += approvals[k].price; } }
+    document.getElementById('count').textContent = n;
+    document.getElementById('total').textContent = total;
+    document.getElementById('sumTotal').textContent = fmt(sum);
+    const pubCount = projects.filter(p => p.published).length;
+    const hidCount = Object.values(groups).filter(g => !groupPublished(g)).length;
+    document.getElementById('summary').innerHTML = `
+      <div class="s"><b>${Object.keys(groups).length}</b><span>Проектов всего</span></div>
+      <div class="s"><b>${pubCount}</b><span>Публичных страниц</span></div>
+      <div class="s"><b>${hidCount}</b><span>Черновиков / скрыто</span></div>
+      <div class="s"><b>${n}</b><span>Одобрено клиентом</span></div>`;
+  }
+
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      filter = btn.dataset.f;
+      render();
+    });
+  });
+
+  function status(msg) {
+    const el = document.getElementById('status');
+    el.textContent = msg;
+    setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 6000);
+  }
+
+  document.getElementById('token').value = localStorage.getItem('rd_token') || '';
+  document.getElementById('copy').addEventListener('click', () => {
+    navigator.clipboard.writeText(JSON.stringify(approvals, null, 2));
+    status('JSON в буфере — пришли его Claude');
+  });
+  document.getElementById('save').addEventListener('click', async () => {
+    const token = document.getElementById('token').value.trim();
+    if (!token) { status('Нужен GitHub token (contents:write)'); return; }
+    localStorage.setItem('rd_token', token);
+    status('Сохраняю…');
+    try {
+      const api = `https://api.github.com/repos/${REPO}/contents/approvals.json`;
+      const head = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
+      const cur = await fetch(api, { headers: head }).then(r => r.json());
+      const body = {
+        message: 'update approvals via admin panel',
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(approvals, null, 2)))),
+        sha: cur.sha
+      };
+      const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify(body) });
+      if (res.ok) { localStorage.removeItem('rd_approvals'); status('Сохранено в репо'); }
+      else { const e = await res.json(); status('Ошибка: ' + (e.message || res.status)); }
+    } catch (err) { status('Ошибка сети: ' + err.message); }
+  });
+})();
+</script>
+</body>
+</html>

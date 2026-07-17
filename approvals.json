@@ -153,5 +153,10 @@
     "approved": false,
     "price": 110000,
     "approvedAt": null
+  },
+  "mimino": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
   }
 }
