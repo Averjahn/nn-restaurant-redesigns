@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КРАБЕР — завод металлообработки в Нижнем Новгороде | Лазерная резка, сварка, металлоконструкции</title>
+<meta name="description" content="Завод «КРАБЕР» — металлообработка полного цикла в Нижнем Новгороде: лазерная резка до 25 мм, гибка, сварка, механообработка, порошковая покраска, изготовление металлоконструкций и пресс-форм. Собственное производство, ОКБ, ISO 9001. 8 (800) 5000-429.">
+<meta name="theme-color" content="#14171c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Завод КРАБЕР — металлообработка полного цикла в Нижнем Новгороде">
+<meta property="og:description" content="Лазерная резка, гибка, сварка, механообработка, металлоконструкции и пресс-формы на собственном заводе. От единичных деталей до серии. ISO 9001.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#14171c;
+  --graphite-2:#1c2027;
+  --steel:#252b34;
+  --steel-line:#333b46;
+  --accent:#f7791e;
+  --accent-2:#ff8c3a;
+  --text:#eef1f5;
+  --muted:#a4adba;
+  --bg:#0f1216;
+  --surface:#181c22;
+  --white:#ffffff;
+  --radius-sm:6px;
+  --radius-md:12px;
+  --radius-lg:18px;
+  --container:1180px;
+  --gap:24px;
+  --header-h:72px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:clamp(15px,1.4vw,17px);line-height:1.65;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Oswald',Impact,sans-serif;line-height:1.08;text-transform:uppercase;letter-spacing:.01em;margin:0}
+h1{font-size:clamp(32px,6.2vw,68px);font-weight:700}
+h2{font-size:clamp(26px,4.4vw,46px);font-weight:600}
+h3{font-size:clamp(19px,2.4vw,24px);font-weight:600}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:13px;color:var(--accent);font-weight:600;margin-bottom:16px}
+.section-head{max-width:760px;margin-bottom:clamp(32px,4vw,56px)}
+.section-head p{color:var(--muted);margin-top:14px;margin-bottom:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-weight:600;font-size:15px;padding:15px 30px;border-radius:var(--radius-sm);cursor:pointer;border:2px solid transparent;transition:.2s;min-width:0;text-align:center}
+.btn-primary{background:var(--accent);color:#141414}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-outline{border-color:var(--steel-line);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(15,18,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--steel-line)}
+.header-inner{display:flex;align-items:center;gap:20px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{width:40px;height:40px;border-radius:6px;background:var(--accent);display:grid;place-items:center;font-family:'Oswald',sans-serif;font-weight:700;color:#141414;font-size:22px;flex-shrink:0}
+.brand-text{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;letter-spacing:.06em;white-space:nowrap}
+.brand-text small{display:block;font-size:10px;letter-spacing:.22em;color:var(--muted);font-weight:500}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.05em;color:var(--muted);font-weight:500;transition:.2s;white-space:nowrap}
+.nav a:hover{color:var(--text)}
+.header-phone{display:flex;flex-direction:column;line-height:1.15;white-space:nowrap;flex-shrink:0}
+.header-phone a{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--text)}
+.header-phone span{font-size:11px;color:var(--muted)}
+.header-cta{flex-shrink:0}
+.header-cta .btn{padding:12px 22px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;flex-shrink:0}
+.burger span{width:26px;height:2px;background:var(--text);transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;min-height:min(90vh,760px);display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--steel-line)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,13,17,.96) 0%,rgba(11,13,17,.82) 42%,rgba(11,13,17,.45) 100%)}
+.hero-inner{position:relative;z-index:1;padding:clamp(48px,7vw,90px) 0;max-width:800px}
+.hero h1{margin-bottom:20px}
+.hero h1 .hl{color:var(--accent)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:600px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px}
+.hero-badge{display:flex;align-items:center;gap:9px;background:rgba(37,43,52,.6);border:1px solid var(--steel-line);border-radius:var(--radius-sm);padding:9px 15px;font-size:13.5px;color:var(--text);font-weight:500}
+.hero-badge b{color:var(--accent);font-family:'Oswald',sans-serif;font-size:16px}
+
+/* Stats */
+.stats{background:var(--accent);color:#141414}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:38px 0}
+.stat{text-align:center;min-width:0}
+.stat b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1}
+.stat span{font-size:13.5px;font-weight:600;letter-spacing:.02em}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.adv-card{background:var(--surface);border:1px solid var(--steel-line);border-radius:var(--radius-md);padding:30px 26px;min-width:0}
+.adv-card .ico{width:52px;height:52px;border-radius:10px;background:rgba(247,121,30,.13);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.adv-card .ico svg{width:26px;height:26px}
+.adv-card h3{margin-bottom:10px}
+.adv-card p{color:var(--muted);margin:0;font-size:15px}
+
+/* Services */
+.services{background:var(--graphite)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc-card{background:var(--surface);border:1px solid var(--steel-line);border-radius:var(--radius-md);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:.2s}
+.svc-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.svc-media{aspect-ratio:16/10;background:var(--steel);position:relative;overflow:hidden}
+.svc-media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.svc-card:hover .svc-media img{transform:scale(1.05)}
+.svc-media.noimg{background:linear-gradient(135deg,var(--steel),var(--graphite-2))}
+.svc-num{position:absolute;top:12px;left:12px;font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;background:var(--accent);color:#141414;padding:3px 10px;border-radius:4px}
+.svc-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;min-width:0}
+.svc-body h3{margin-bottom:10px}
+.svc-body p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.svc-specs{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:7px}
+.svc-specs li{display:flex;gap:9px;font-size:13.5px;color:var(--text);align-items:flex-start;min-width:0}
+.svc-specs li::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0}
+.svc-price{margin-top:auto;font-family:'Oswald',sans-serif;font-size:15px;color:var(--accent);font-weight:600;padding-top:6px;border-top:1px solid var(--steel-line)}
+
+/* Capabilities */
+.cap-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.cap-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--steel-line);aspect-ratio:4/3;background:var(--steel)}
+.cap-media img{width:100%;height:100%;object-fit:cover}
+.cap-list{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:2px}
+.cap-list li{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--steel-line);min-width:0}
+.cap-list .k{font-weight:600;min-width:0;overflow-wrap:anywhere}
+.cap-list .v{color:var(--accent);font-family:'Oswald',sans-serif;font-weight:600;text-align:right;white-space:nowrap;flex-shrink:0}
+
+/* Portfolio */
+.portfolio{background:var(--graphite)}
+.pf-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:200px;gap:12px}
+.pf-item{position:relative;overflow:hidden;border-radius:var(--radius-sm);background:var(--steel);border:1px solid var(--steel-line)}
+.pf-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.pf-item:hover img{transform:scale(1.06)}
+.pf-item.wide{grid-column:span 2}
+.pf-item.tall{grid-row:span 2}
+.pf-cap{position:absolute;left:0;right:0;bottom:0;padding:24px 16px 12px;font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.04em;font-weight:600;background:linear-gradient(transparent,rgba(11,13,17,.9));opacity:0;transition:.25s}
+.pf-item:hover .pf-cap{opacity:1}
+
+/* Products */
+.prod-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px}
+.prod-card{background:var(--surface);border:1px solid var(--steel-line);border-radius:var(--radius-md);padding:26px;display:flex;gap:16px;align-items:flex-start;min-width:0}
+.prod-card .ico{width:46px;height:46px;flex-shrink:0;border-radius:9px;background:rgba(247,121,30,.13);color:var(--accent);display:grid;place-items:center}
+.prod-card .ico svg{width:24px;height:24px}
+.prod-card h3{font-size:19px;margin-bottom:6px}
+.prod-card p{color:var(--muted);font-size:14px;margin:0}
+
+/* About */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--steel-line);aspect-ratio:3/2;background:var(--steel)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-text h2{margin-bottom:18px}
+.about-text p{color:var(--muted)}
+.about-points{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.about-points li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.about-points svg{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.about-points b{font-weight:600}
+
+/* Reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.rev-card{background:var(--surface);border:1px solid var(--steel-line);border-radius:var(--radius-md);padding:28px;min-width:0}
+.rev-card .quote{color:var(--accent);font-family:'Oswald',sans-serif;font-size:44px;line-height:.6;height:26px}
+.rev-card p{font-size:14.5px;color:var(--text)}
+.rev-author{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;border-top:1px solid var(--steel-line);padding-top:14px;margin-top:6px;flex-wrap:wrap}
+.rev-author b{color:var(--text);font-weight:600}
+
+/* Contacts */
+.contacts{background:var(--graphite)}
+.contacts-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:stretch}
+.contacts-info{display:flex;flex-direction:column;gap:6px}
+.ci-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--steel-line);align-items:flex-start;min-width:0}
+.ci-row svg{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:3px}
+.ci-row .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.ci-row .val{font-size:16px;font-weight:500;overflow-wrap:anywhere}
+.ci-row .val a{color:var(--text)}
+.ci-row .val a:hover{color:var(--accent)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--steel-line);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+.lead{margin-top:38px;background:var(--surface);border:1px solid var(--steel-line);border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px)}
+.lead h3{font-size:clamp(22px,3vw,30px);margin-bottom:8px}
+.lead>p{color:var(--muted);margin-bottom:24px}
+.lead-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lead-form input,.lead-form textarea{width:100%;background:var(--bg);border:1px solid var(--steel-line);border-radius:var(--radius-sm);padding:14px 16px;color:var(--text);font-family:inherit;font-size:15px;min-width:0}
+.lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:var(--accent)}
+.lead-form .full{grid-column:1/-1}
+.lead-form .btn{grid-column:1/-1}
+.lead-note{font-size:12px;color:var(--muted);margin:12px 0 0}
+.form-done{display:none;background:rgba(247,121,30,.12);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:16px;margin-top:16px;color:var(--text)}
+
+/* Footer */
+.footer{background:var(--bg);border-top:1px solid var(--steel-line);padding:44px 0 30px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:30px}
+.footer-brand p{color:var(--muted);font-size:14px;max-width:320px;margin-top:14px}
+.footer h4{font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:.06em;margin-bottom:16px;color:var(--text)}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.footer ul a{color:var(--muted);font-size:14px}
+.footer ul a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--steel-line);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+
+/* Responsive */
+@media(max-width:1040px){
+  .nav,.header-phone{display:none}
+  .header-cta{margin-left:auto}
+  .burger{display:flex}
+  .nav.nav--open{display:flex;position:fixed;top:var(--header-h);left:0;right:0;bottom:0;flex-direction:column;gap:0;background:var(--graphite);padding:20px;margin:0;overflow-y:auto;border-top:1px solid var(--steel-line)}
+  .nav.nav--open a{font-size:20px;padding:16px 0;border-bottom:1px solid var(--steel-line);color:var(--text)}
+  .nav.nav--open .mob-phone{margin-top:20px;font-size:26px;color:var(--accent);font-weight:600;border:0}
+  .nav.nav--open .mob-cta{margin-top:16px;border:0;padding:0}
+  .nav.nav--open .mob-cta .btn{width:100%;padding:16px}
+}
+.mob-phone,.mob-cta{display:none}
+@media(max-width:1040px){.nav.nav--open .mob-phone,.nav.nav--open .mob-cta{display:block}}
+@media(max-width:980px){
+  .cap-wrap,.about-wrap,.contacts-grid{grid-template-columns:1fr;gap:28px}
+  .adv-grid,.svc-grid,.rev-grid,.prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
+  .adv-grid,.svc-grid,.rev-grid,.prod-grid{grid-template-columns:1fr}
+  .lead-form{grid-template-columns:1fr}
+  .pf-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
+  .pf-item.wide{grid-column:span 2}
+  .pf-item.tall{grid-row:span 1}
+  .hero-actions .btn{flex:1}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+@media(max-width:400px){
+  .header-cta .btn span{display:none}
+  .brand-text small{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="КРАБЕР — на главную">
+      <span class="brand-mark">К</span>
+      <span class="brand-text">КРАБЕР<small>ЗАВОД МЕТАЛЛООБРАБОТКИ</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#capabilities">Производство</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#products">Продукция</a>
+      <a href="#about">О заводе</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:88005000429" class="mob-phone">8 (800) 5000-429</a>
+      <div class="mob-cta"><a href="#contacts" class="btn btn-primary">Оставить заявку</a></div>
+    </nav>
+    <div class="header-phone">
+      <a href="tel:88005000429">8 (800) 5000-429</a>
+      <span>Звонок по России бесплатный</span>
+    </div>
+    <div class="header-cta">
+      <a href="#contacts" class="btn btn-primary"><span>Заявка</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/hero.jpg" alt="Сварочные работы на заводе КРАБЕР — искры от металлообработки в цеху" fetchpriority="high" onerror="this.style.opacity='0'">
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород, ул. Замкнутая, 26Б</p>
+      <h1>Металлообработка <span class="hl">полного цикла</span> на собственном заводе</h1>
+      <p class="hero-sub">Лазерная резка, гибка, сварка, механообработка и порошковая покраска. Проектируем, изготавливаем и собираем металлоконструкции любой сложности — от единичной детали до серийного выпуска.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Наши услуги</a>
+        <a href="#contacts" class="btn btn-outline">Рассчитать стоимость</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge"><b>~20</b> лет на рынке</span>
+        <span class="hero-badge"><b>ISO 9001</b> сертификация</span>
+        <span class="hero-badge"><b>5</b> лазерных комплексов</span>
+        <span class="hero-badge"><b>ГОСТ / ТУ</b> контроль качества</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><b>25 мм</b><span>лазерная резка стали</span></div>
+      <div class="stat"><b>±0,1 мм</b><span>точность реза и гиба</span></div>
+      <div class="stat"><b>15+ лет</b><span>опыт специалистов</span></div>
+      <div class="stat"><b>1 шт.</b><span>минимальный заказ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="advantages">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Почему КРАБЕР</p>
+      <h2>Свой завод, а не посредник</h2>
+      <p>Мощная материально-техническая база, собственное опытно-конструкторское бюро и штат специалистов с опытом более 15 лет. Полный цикл под одной крышей — от чертежа до готового изделия.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Собственное производство</h3>
+        <p>Пять лазерных комплексов, листогибочные прессы AMADA и BAYKAL, сварочные посты KEMPPI, механообрабатывающие центры и покрасочные печи — всё на одной площадке.</p>
+      </div>
+      <div class="adv-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6l2 4-3 2c1 3 3 5 6 6l2-3 4 2v6a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1"/></svg></div>
+        <h3>Любые объёмы</h3>
+        <p>Работаем с физическими и юридическими лицами. Возьмём как единичную деталь по вашему чертежу, так и крупную серию в сжатые сроки — с оптимальной ценой за тонну.</p>
+      </div>
+      <div class="adv-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Гарантия качества</h3>
+        <p>Изготовление строго по ГОСТ и ТУ, сертификация по ISO 9001, контроль на всех этапах. Собственное ОКБ проектирует конструкции под задачу заказчика.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Услуги завода</p>
+      <h2>Восемь направлений металлообработки</h2>
+      <p>Оказываем помощь полного цикла: с нуля спроектируем, изготовим и соберём специфические металлоизделия из чёрных и цветных металлов.</p>
+    </div>
+    <div class="svc-grid">
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">01</span><img src="assets/work-2962.jpg" alt="Лазерная резка листового металла на станке с ЧПУ, искры от реза" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Лазерная резка металла</h3>
+          <p>Сфокусированный луч режет лист, трубу и прокат без механического воздействия. Ровная кромка не требует доработки.</p>
+          <ul class="svc-specs">
+            <li>Сталь до 25 мм, нержавейка и алюминий до 20 мм</li>
+            <li>Стол 1500×3000 и 1500×6000 мм, до 6 кВт</li>
+            <li>Отклонение ±0,1 мм, любая геометрия</li>
+          </ul>
+          <div class="svc-price">Расчёт по чертежу →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">02</span><img src="assets/work-2889.jpg" alt="Листогибочный пресс AMADA HFE 100-3 в цеху завода КРАБЕР" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Гибка металла</h3>
+          <p>Гибка листа и труб любой сложности, включая отбортовку. Изделие без сварных швов — прочнее и не боится коррозии.</p>
+          <ul class="svc-specs">
+            <li>Толщина 0,5–10 мм, длина гиба до 3000 мм</li>
+            <li>Прессы AMADA HFE 100-3 и BAYKAL APHS</li>
+            <li>Автоматический трубогиб до Ø65 мм</li>
+          </ul>
+          <div class="svc-price">Расчёт по чертежу →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">03</span><img src="assets/metalkon.jpg" alt="Сварщик обрабатывает металлоконструкцию, сноп искр" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Сварочные работы</h3>
+          <p>Аргонодуговая, газовая, полуавтоматическая и ручная дуговая сварка. Работаем с нержавейкой, алюминием и титаном.</p>
+          <ul class="svc-specs">
+            <li>Полуавтоматы KEMPPI, плиты УСП 1500×3000</li>
+            <li>Контроль качества по ГОСТ, без дефектов</li>
+            <li>Срочные заказы любой сложности</li>
+          </ul>
+          <div class="svc-price">от 10 ₽ за см шва</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">04</span><img src="assets/work-3039.jpg" alt="Токарно-фрезерный центр с ЧПУ в работе на заводе" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Механообработка</h3>
+          <p>Точная обработка заготовок по вашим чертежам: точение, фрезерование, сверление чёрных и цветных металлов.</p>
+          <ul class="svc-specs">
+            <li>Токарно-фрезерный центр MOMENTUM MT352B, Ø до 350 мм</li>
+            <li>Вертикальный центр YIDA BMV1220</li>
+            <li>Прутковый автомат CNC-32B</li>
+          </ul>
+          <div class="svc-price">Расчёт по чертежу →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">05</span><img src="assets/work-3031.jpg" alt="Партия деталей из листового металла после лазерной резки и гибки" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Порошковая покраска</h3>
+          <p>Защитно-декоративное покрытие с подготовкой поверхности (обезжиривание, пескоструй). Любой цвет каталога RAL.</p>
+          <ul class="svc-specs">
+            <li>Три печи, изделия до 4000 мм длиной</li>
+            <li>Матовое, муар, шагрень, фактуры</li>
+            <li>По ГОСТ 9.410-88</li>
+          </ul>
+          <div class="svc-price">Расчёт по объёму →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">06</span><img src="assets/work-2858.jpg" alt="Гнутые металлические рамы каркасов, изготовленные на заводе" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Металлоконструкции</h3>
+          <p>Проектирование, изготовление и монтаж под ключ: колонны, балки, фермы, лестницы, ограждения, баки, корпуса и шкафы.</p>
+          <ul class="svc-specs">
+            <li>Сборка на стапелях, ЧПУ, болты и клёпка</li>
+            <li>Единичные заказы и серия</li>
+            <li>Чёрные и цветные металлы</li>
+          </ul>
+          <div class="svc-price">Расчёт по проекту →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">07</span><img src="assets/work-2940.jpg" alt="Металлорежущий инструмент и оснастка для механообработки" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Изготовление пресс-форм</h3>
+          <p>Полный цикл: чертёж, заготовки, механообработка, термообработка и закалка, сборка и испытания готового изделия.</p>
+          <ul class="svc-specs">
+            <li>Пресс-формы для литья и штампы</li>
+            <li>Стали 40Х13, 5ХНМ с закалкой</li>
+            <li>Изготовление образца в короткие сроки</li>
+          </ul>
+          <div class="svc-price">Расчёт по чертежу →</div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><span class="svc-num">08</span><img src="assets/work-2922.jpg" alt="Профильные металлические трубы, подготовленные к обработке" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg')"></div>
+        <div class="svc-body">
+          <h3>Галтовка, шлифование и уплотнение</h3>
+          <p>Финишная обработка поверхности и нанесение бесшовного полиуретанового уплотнения на изделия любого объёма.</p>
+          <ul class="svc-specs">
+            <li>Галтовка и шлифовальные работы</li>
+            <li>Полиуретановое уплотнение под задачу</li>
+            <li>Комплекс: резка + сварка + покраска</li>
+          </ul>
+          <div class="svc-price">Расчёт по задаче →</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="cap-wrap">
+      <div class="cap-media">
+        <img src="assets/work-2988.jpg" alt="Цех лазерной резки завода КРАБЕР — комплексы VNITEP Навигатор в работе" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+      </div>
+      <div>
+        <p class="eyebrow">Возможности производства</p>
+        <h2>Оборудование под серьёзные задачи</h2>
+        <p style="color:var(--muted)">Металлообработка полного цикла на современном парке станков. Пять лазерных комплексов КС-НАВИГАТОР, гибочные прессы, механообрабатывающие центры и покрасочные печи закрывают весь спектр работ по чёрному и цветному металлу.</p>
+        <ul class="cap-list">
+          <li><span class="k">Лазерная резка стали</span><span class="v">до 25 мм</span></li>
+          <li><span class="k">Резка нержавейки / алюминия</span><span class="v">до 20 мм</span></li>
+          <li><span class="k">Мощность лазера</span><span class="v">3–6 кВт</span></li>
+          <li><span class="k">Гибка листа</span><span class="v">до 10 мм · 3000 мм</span></li>
+          <li><span class="k">Токарно-фрезерная обработка</span><span class="v">Ø до 350 мм</span></li>
+          <li><span class="k">Покрасочные печи</span><span class="v">до 4000 мм</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Наши работы</p>
+      <h2>Объекты и изделия</h2>
+      <p>Металлоконструкции, детали теплообменников, корпуса, элементы рекламы и садовая мебель — реальные заказы, выполненные на нашем производстве.</p>
+    </div>
+    <div class="pf-grid">
+      <div class="pf-item wide tall"><img src="assets/work-2871.jpg" alt="Производственный цех завода КРАБЕР с мостовыми кранами" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Производственный цех</span></div>
+      <div class="pf-item"><img src="assets/work-2858.jpg" alt="Гнутые трубчатые каркасы металлоконструкций" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Гнутые каркасы</span></div>
+      <div class="pf-item"><img src="assets/work-3031.jpg" alt="Партия деталей после лазерной резки и гибки" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Детали лазерной резки</span></div>
+      <div class="pf-item"><img src="assets/work-2962.jpg" alt="Лазерная резка листа с ЧПУ" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Лазерная резка</span></div>
+      <div class="pf-item"><img src="assets/work-2922.jpg" alt="Профильная металлическая труба на производстве" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Профильный прокат</span></div>
+      <div class="pf-item wide"><img src="assets/work-2889.jpg" alt="Листогибочный пресс AMADA HFE 100-3" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Гибочный пресс AMADA</span></div>
+      <div class="pf-item"><img src="assets/work-3039.jpg" alt="Токарно-фрезерный центр с ЧПУ" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Механообработка ЧПУ</span></div>
+      <div class="pf-item"><img src="assets/work-2940.jpg" alt="Оснастка и режущий инструмент" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Оснастка и инструмент</span></div>
+      <div class="pf-item"><img src="assets/metalkon.jpg" alt="Обработка сварной металлоконструкции" loading="lazy" decoding="async" onerror="this.style.opacity='0'"><span class="pf-cap">Финишная обработка</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Собственная торговая марка</p>
+      <h2>Продукция для отдыха на природе</h2>
+      <p>Помимо контрактной металлообработки под собственным брендом мы производим садовую мебель и аксессуары.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18"/><path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M4 10l-1 9M20 10l1 9M6 14h12"/></svg></div>
+        <div><h3>Скамейки</h3><p>Дизайнерские садовые и парковые скамейки: серии Citadel, Azumi, Alikante, Karolina и другие.</p></div>
+      </div>
+      <div class="prod-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3v4M20 3v4M4 5h16"/><path d="M7 7l3 8M17 7l-3 8"/><path d="M9 15h6l1 6M9 15l-1 6"/></svg></div>
+        <div><h3>Садовые качели</h3><p>Прочные металлические качели для дачи и отдыха. Доступны комплекты матрасов и тенты.</p></div>
+      </div>
+      <div class="prod-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3"/><path d="M3 12a9 5 0 0 1 18 0"/><path d="M3 12h18"/><path d="M12 12v9"/></svg></div>
+        <div><h3>Тенты и зонты</h3><p>Навесные тенты для качелей, квадратные и восьмиугольные зонты для сада и террасы.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section services" id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-media">
+        <img src="assets/work-2871.jpg" alt="Интерьер производственного цеха завода КРАБЕР в Нижнем Новгороде" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">О заводе</p>
+        <h2>КРАБЕР — металлообработка полного цикла</h2>
+        <p>Мы работаем в сфере металлообработки почти 20 лет. Располагаем мощной материально-технической базой и штатом квалифицированных специалистов, большинство из которых заняты в отрасли более 15 лет. Строго соблюдаем ГОСТ и ТУ, сертифицированы по ISO 9001.</p>
+        <p>Собственное опытно-конструкторское бюро принимает заказы на проектирование металлоконструкций и металлоизделий с учётом требований заказчика и особенностей эксплуатации. Мы — ваш добросовестный партнёр от идеи и чертежа до готового изделия.</p>
+        <ul class="about-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Полный цикл под ключ</b> — проектирование, изготовление, сборка и монтаж</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Своё ОКБ</b> — разработка чертежей и конструкций под задачу</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Физлица и организации</b> — заказы любого объёма и сложности</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Отзывы</p>
+      <h2>Что говорят заказчики</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="quote">&ldquo;</div>
+        <p>Потребовалось проектирование от инженера и изготовление 9 металлоконструкций под ключ. Прислали чертежи на утверждение, внёс правки, согласовал и принял работу. Приятно общаться со всеми — от колл-центра до конструкторского бюро.</p>
+        <div class="rev-author"><b>Константин Андреевич</b><span>17.05.2020</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="quote">&ldquo;</div>
+        <p>Заказали партию рекламных вывесок необычного формата. КРАБЕР взял большой объём в сжатые сроки по оптимальной цене. Работу выполнили вовремя, все срезы ровные, без зазубрин. Спасибо за отзывчивость и индивидуальный подход.</p>
+        <div class="rev-author"><b>Рита</b><span>29.04.2020</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="quote">&ldquo;</div>
+        <p>Нужно было сварить и покрасить 300 металлических ворот для гаражного кооператива. Идеальная геометрия, покраска без подтёков и проплешин. Муж принимал работу — сказал, смотрится очень достойно. Соседи теперь спрашивают контакты.</p>
+        <div class="rev-author"><b>Тамара М.</b><span>11.03.2020</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section contacts" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как нас найти</h2>
+      <p>Приезжайте на завод или оставьте заявку — рассчитаем стоимость по вашему чертежу и перезвоним.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><div class="lbl">Адрес завода</div><div class="val">603040, Нижний Новгород,<br>ул. Замкнутая, д. 26Б</div></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6l2 4-3 2c1 3 3 5 6 6l2-3 4 2v6a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1"/></svg>
+          <div><div class="lbl">Телефоны</div><div class="val"><a href="tel:88005000429">8 (800) 5000-429</a> — бесплатно по РФ<br><a href="tel:+78312151652">(831) 215-16-52</a> — отдел продаж</div></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><div class="lbl">Почта</div><div class="val"><a href="mailto:zavod@kra-ber.ru">zavod@kra-ber.ru</a><br><a href="mailto:sales1@kra-ber.ru">sales1@kra-ber.ru</a> — заказы</div></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div><div class="lbl">Режим работы</div><div class="val">Пн–Пт: 08:00 – 17:00</div></div>
+        </div>
+        <div class="ci-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <div><div class="lbl">Соцсети</div><div class="val"><a href="https://vk.com/kraber52" target="_blank" rel="noopener">ВКонтакте</a> · <a href="https://www.instagram.com/kraber.zavod/" target="_blank" rel="noopener">Instagram</a></div></div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3573348,43.8487427&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта проезда к заводу КРАБЕР, ул. Замкнутая 26Б"></iframe>
+      </div>
+    </div>
+
+    <div class="lead">
+      <h3>Оставить заявку</h3>
+      <p>Опишите задачу или приложите чертёж — рассчитаем стоимость и сроки.</p>
+      <form class="lead-form" id="leadForm" novalidate>
+        <input type="text" name="name" placeholder="Ваше имя" required aria-label="Ваше имя">
+        <input type="tel" name="phone" placeholder="Телефон" required aria-label="Телефон">
+        <input type="text" name="topic" placeholder="Услуга (напр. лазерная резка)" aria-label="Услуга">
+        <textarea class="full" name="msg" rows="3" placeholder="Комментарий к заявке" aria-label="Комментарий"></textarea>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      </form>
+      <p class="lead-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      <div class="form-done" id="formDone">Спасибо! Заявка отправлена — менеджер перезвонит вам в рабочее время.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="brand" aria-label="КРАБЕР">
+          <span class="brand-mark">К</span>
+          <span class="brand-text">КРАБЕР<small>ЗАВОД МЕТАЛЛООБРАБОТКИ</small></span>
+        </a>
+        <p>Металлообработка полного цикла в Нижнем Новгороде: лазерная резка, гибка, сварка, механообработка, металлоконструкции и пресс-формы. ISO 9001.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Лазерная резка</a></li>
+          <li><a href="#services">Гибка металла</a></li>
+          <li><a href="#services">Сварочные работы</a></li>
+          <li><a href="#services">Металлоконструкции</a></li>
+          <li><a href="#services">Порошковая покраска</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:88005000429">8 (800) 5000-429</a></li>
+          <li><a href="tel:+78312151652">(831) 215-16-52</a></li>
+          <li><a href="mailto:zavod@kra-ber.ru">zavod@kra-ber.ru</a></li>
+          <li>ул. Замкнутая, 26Б, Нижний Новгород</li>
+          <li>Пн–Пт: 08:00 – 17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Завод «КРАБЕР». Все права защищены.</span>
+      <span>Нижний Новгород · ИНН 5259027739</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  function close(){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');document.body.style.overflow='';}
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+
+  var form=document.getElementById('leadForm'),done=document.getElementById('formDone');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.name.value.trim()||!form.phone.value.trim()){form.reportValidity&&form.reportValidity();return;}
+    form.style.display='none';done.style.display='block';
+  });
+})();
+</script>
+</body>
+</html>

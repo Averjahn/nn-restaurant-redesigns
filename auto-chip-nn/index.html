@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-Chip-NN — Чип-тюнинг и диагностика ЭБУ в Нижнем Новгороде</title>
+<meta name="description" content="Профессиональный чип-тюнинг, увеличение мощности, удаление сажевого фильтра, катализатора, отключение EGR и AdBlue в Нижнем Новгороде. Гарантия, тест-драйв 10 дней, более 700 машин в год.">
+<meta name="theme-color" content="#0d1014">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Auto-Chip-NN — Чип-тюнинг и диагностика ЭБУ в Нижнем Новгороде">
+<meta property="og:description" content="Увеличение мощности до 32%, удаление DPF/катализатора, отключение EGR и AdBlue. Гарантия и тест-драйв 10 дней. Родионова, Нижний Новгород.">
+<meta property="og:image" content="assets/dyno.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1014;
+  --surface:#151a21;
+  --surface-2:#1c232c;
+  --line:#28313d;
+  --text:#eef2f6;
+  --muted:#9aa7b4;
+  --accent:#e51937;
+  --accent-2:#ff3b30;
+  --electric:#28e0d0;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --container:1180px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:clamp(15px,1.4vw,17px);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Oswald','Inter',sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+h1{font-size:clamp(34px,6.4vw,72px);font-weight:700}
+h2{font-size:clamp(26px,4.2vw,46px);font-weight:700}
+h3{font-size:clamp(18px,2.4vw,23px);font-weight:600;text-transform:none}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;
+  letter-spacing:.18em;font-size:13px;font-weight:600;color:var(--electric)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent)}
+.lead{color:var(--muted);max-width:640px;font-size:clamp(15px,1.6vw,18px)}
+.accent{color:var(--accent)}
+.section-head{margin-bottom:clamp(30px,4vw,52px);max-width:720px}
+.section-head h2{margin:10px 0 14px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-weight:600;
+  font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);border:1.5px solid transparent;
+  cursor:pointer;transition:.18s ease;white-space:nowrap;min-width:0}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 26px -8px rgba(229,25,55,.7)}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--electric);color:var(--electric)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(13,16,20,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:20px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand .logo-mark{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#8a0f22);
+  display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.06) inset}
+.brand .logo-mark svg{width:22px;height:22px}
+.brand .logo-text{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;
+  letter-spacing:.02em;white-space:nowrap;line-height:1}
+.brand .logo-text span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:26px;margin-left:14px}
+.nav a{font-size:15px;color:var(--muted);font-weight:500;transition:.15s;white-space:nowrap}
+.nav a:hover{color:var(--text)}
+.header-phone{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;
+  font-size:20px;font-weight:600;white-space:nowrap;color:var(--text)}
+.header-phone svg{width:18px;height:18px;color:var(--accent)}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
+.burger span{width:26px;height:2.5px;background:var(--text);border-radius:2px;transition:.25s}
+.burger.is-open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav,.header-phone,.header-cta{display:none}
+  .burger{display:flex}
+  .nav.nav-open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:0;margin:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 20px 22px}
+  .nav.nav-open a{padding:14px 4px;border-bottom:1px solid var(--line);font-size:17px;color:var(--text)}
+  .nav.nav-open .mobile-phone{display:flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;
+    font-size:24px;font-weight:700;color:var(--accent);padding-top:18px;border:none}
+  .nav.nav-open .btn{margin-top:16px;width:100%}
+}
+.nav .mobile-phone,.nav .btn{display:none}
+@media(max-width:1040px){.nav.nav-open .mobile-phone,.nav.nav-open .btn{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.05)}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(13,16,20,.97) 0%,rgba(13,16,20,.86) 42%,rgba(13,16,20,.55) 100%)}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:60%;height:120%;z-index:1;pointer-events:none;
+  background:radial-gradient(circle at 60% 40%,rgba(229,25,55,.28),transparent 62%)}
+.hero-inner{position:relative;z-index:2;padding:110px 0 80px;max-width:760px}
+.hero h1{margin:16px 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent);display:inline-block}
+.hero-sub{color:#cfd8e0;font-size:clamp(16px,1.9vw,20px);max-width:600px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:42px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:14px 40px}
+.hero-stats .stat{min-width:0}
+.hero-stats .num{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700;color:#fff;line-height:1}
+.hero-stats .num b{color:var(--electric);font-weight:700}
+.hero-stats .lbl{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:5px}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px;
+  transition:.2s;min-width:0}
+.adv:hover{border-color:var(--accent);transform:translateY(-4px)}
+.adv .ic{width:46px;height:46px;border-radius:11px;background:var(--surface-2);display:grid;place-items:center;margin-bottom:16px}
+.adv .ic svg{width:24px;height:24px;color:var(--accent)}
+.adv h3{margin-bottom:8px}
+.adv p{color:var(--muted);font-size:14.5px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px 24px;
+  display:flex;flex-direction:column;transition:.2s;min-width:0;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:.3s}
+.svc:hover{border-color:var(--line);transform:translateY(-4px)}
+.svc:hover::before{transform:scaleX(1)}
+.svc.featured{background:linear-gradient(160deg,#1d2530,#141a21);border-color:var(--accent)}
+.svc.featured::before{transform:scaleX(1)}
+.svc .tag{align-self:flex-start;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--electric);border:1px solid var(--electric);border-radius:100px;
+  padding:4px 11px;margin-bottom:16px}
+.svc h3{margin-bottom:10px;font-size:21px}
+.svc p{color:var(--muted);font-size:14.5px;margin-bottom:20px;flex:1}
+.svc .price{font-family:'Oswald',sans-serif;font-size:15px;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:18px}
+.svc .price b{display:block;font-size:30px;color:#fff;margin-top:2px;letter-spacing:0}
+.svc .btn{width:100%}
+
+/* results / power gains */
+.results{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.results-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
+.gains{display:flex;flex-direction:column;gap:24px}
+.gain .gain-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;gap:12px;min-width:0}
+.gain .gain-name{font-weight:600;font-size:15.5px;min-width:0;overflow-wrap:anywhere}
+.gain .gain-val{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;color:var(--electric);white-space:nowrap}
+.bar{height:12px;background:var(--surface-2);border-radius:100px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  width:0;transition:width 1.3s cubic-bezier(.2,.8,.25,1)}
+.results-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);min-height:280px}
+.results-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(.15)}
+.results-media .badge{position:absolute;left:18px;bottom:18px;z-index:2;background:rgba(13,16,20,.85);
+  backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 16px}
+.results-media .badge .num{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;color:var(--electric);line-height:1}
+.results-media .badge .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* brands */
+.brands-grid{display:flex;flex-wrap:wrap;gap:12px}
+.brand-chip{background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:9px 18px;
+  font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.04em;color:var(--muted);
+  transition:.15s}
+.brand-chip:hover{border-color:var(--accent);color:var(--text)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);counter-reset:step}
+.step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:28px 22px;min-width:0}
+.step .n{counter-increment:step;font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;
+  color:var(--accent);line-height:1;margin-bottom:14px}
+.step .n::before{content:"0" counter(step)}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);position:relative;min-height:320px}
+.about-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(.3) brightness(.75)}
+.about-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,16,20,.75))}
+.about-list{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:14px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.about-list svg{width:22px;height:22px;color:var(--electric);flex-shrink:0;margin-top:2px}
+.about-list b{color:var(--text)}
+.about-list span{color:var(--muted);font-size:15px}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(26px,3vw,38px);
+  display:flex;flex-direction:column;gap:22px}
+.contacts-info .row{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.contacts-info .row svg{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:3px}
+.contacts-info .row .k{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:3px}
+.contacts-info .row .v{font-size:16px;overflow-wrap:anywhere}
+.contacts-info .row .v a{font-family:'Oswald',sans-serif;font-size:21px;font-weight:600;color:var(--text);
+  display:block;line-height:1.3;transition:.15s}
+.contacts-info .row .v a:hover{color:var(--accent)}
+.messengers{display:flex;flex-wrap:wrap;gap:10px;margin-top:2px}
+.messengers a{display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:10px 16px;font-weight:600;font-size:14px;transition:.15s}
+.messengers a:hover{border-color:var(--electric);color:var(--electric)}
+.messengers svg{width:18px;height:18px}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--surface)}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.4) invert(.92) hue-rotate(180deg) contrast(.9)}
+
+/* form */
+.lead-form{background:linear-gradient(160deg,#1a222c,#12171d);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:clamp(28px,4vw,44px);margin-top:var(--gap)}
+.lead-form h3{font-size:clamp(22px,3vw,30px);text-transform:uppercase;font-family:'Oswald',sans-serif;margin-bottom:8px}
+.lead-form p{color:var(--muted);margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
+.lead-form input,.lead-form select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 16px;color:var(--text);font-family:inherit;font-size:15px;min-width:0}
+.lead-form input:focus,.lead-form select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.lead-form .btn{width:100%;margin-top:6px;font-size:16px;padding:16px}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+.form-ok{display:none;background:rgba(40,224,208,.1);border:1px solid var(--electric);border-radius:var(--radius-sm);
+  padding:16px;color:var(--electric);text-align:center;font-weight:600;margin-top:14px}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:40px 0;background:#0a0d10}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.footer .brand{margin-bottom:0}
+.footer-meta{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+.footer-meta a{color:var(--muted)}
+.footer-meta a:hover{color:var(--text)}
+
+:focus-visible{outline:2px solid var(--electric);outline-offset:2px}
+
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .results-grid,.about-grid,.contacts-grid{grid-template-columns:1fr}
+  .about-media,.results-media{min-height:260px;order:-1}
+}
+@media(max-width:560px){
+  .adv-grid,.svc-grid,.steps{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .hero-stats{gap:18px 28px}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Auto-Chip-NN — на главную">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#fff"/></svg>
+      </span>
+      <span class="logo-text">AUTO-CHIP<span>·NN</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#results">Результаты</a>
+      <a href="#brands">Марки</a>
+      <a href="#process">Как проходит</a>
+      <a href="#about">О сервисе</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79200077118" class="mobile-phone">+7 920 007-71-18</a>
+      <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+    </nav>
+    <a href="tel:+79200077118" class="header-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      +7 920 007-71-18
+    </a>
+    <a href="#contacts" class="btn btn-primary header-cta">Заявка</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/dyno.jpg" alt="Автомобиль на диагностическом стенде для замера мощности" fetchpriority="high" onerror="this.style.opacity='0'">
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород · ул. Родионова</p>
+      <h1>Раскрываем <em>реальную мощность</em> вашего мотора</h1>
+      <p class="hero-sub">Профессиональный чип-тюнинг и диагностика ЭБУ. Прибавка до 32% мощности и крутящего момента без физического вмешательства в двигатель. Оригинальные прошивки, гарантия и тест-драйв 10 дней.</p>
+      <div class="hero-actions">
+        <a href="#contacts" class="btn btn-primary">Рассчитать прошивку</a>
+        <a href="#services" class="btn btn-outline">Услуги и цены</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num"><b>+32%</b></div><div class="lbl">Прирост мощности</div></div>
+        <div class="stat"><div class="num">700+</div><div class="lbl">Машин в год</div></div>
+        <div class="stat"><div class="num">10 <span style="font-size:.6em">дней</span></div><div class="lbl">Тест-драйв с возвратом</div></div>
+        <div class="stat"><div class="num">30+</div><div class="lbl">Марок авто</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему мы</span>
+      <h2>Точность инженера, а не «универсальный ремонт»</h2>
+      <p class="lead">Узкая специализация на прошивке и диагностике ЭБУ ДВС. Честная диагностика до работ, оригинальные калибровки и разумные цены.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+        <h3>Прибавка мощности</h3>
+        <p>Атмосферные — до 10%, турбобензин — 15–25%, турбодизель — до 32% мощности и момента.</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Оригинальные прошивки</h3>
+        <p>Работаем только с проверенными калибровками, выдаём сертификаты на прошивку.</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+        <h3>Гарантия и возврат</h3>
+        <p>10 дней тест-драйва: не устроил результат — вернём заводскую прошивку и деньги.</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 5-7"/></svg></div>
+        <h3>Диагностика до работ</h3>
+        <p>Полная компьютерная диагностика двигателя перед прошивкой — карта всех неисправностей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Услуги и цены</span>
+      <h2>Прошивка ЭБУ под вашу задачу</h2>
+      <p class="lead">Цены зависят от марки, модели и типа двигателя. Ниже — стартовые цены; точный расчёт по вашему VIN бесплатно.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc featured">
+        <span class="tag">Хит · Stage 1 / Stage 2</span>
+        <h3>Чип-тюнинг двигателя</h3>
+        <p>Перепрограммирование ЭБУ для роста мощности и крутящего момента. Stage 1 — гражданская прошивка, Stage 2 — максимально динамичная. Уходят провалы, улучшается отклик педали.</p>
+        <div class="price">Отечественные авто<b>от 2 700 ₽</b></div>
+        <a href="#contacts" class="btn btn-primary">Заказать</a>
+      </div>
+      <div class="svc">
+        <h3>Удаление сажевого фильтра (DPF)</h3>
+        <p>Программное отключение и удаление забитого сажевого фильтра. Восстановление тяги, экономия на замене оригинала (до 200 000 ₽).</p>
+        <div class="price">Только удаление DPF<b>от 1 500 ₽</b></div>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="svc">
+        <h3>Удаление катализатора</h3>
+        <p>Вырезание катализатора, установка пламегасителя и прошивка под Евро-2. Динамика восстанавливается, ошибки уходят навсегда.</p>
+        <div class="price">Под ключ<b>от 6 500 ₽</b></div>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="svc">
+        <h3>Отключение EGR</h3>
+        <p>Программное отключение клапана рециркуляции выхлопа. Стабильная работа мотора, снижение расхода масла, ровный отклик.</p>
+        <div class="price">EGR<b>от 6 900 ₽</b></div>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="svc">
+        <h3>Отключение AdBlue (мочевина)</h3>
+        <p>Корректная деактивация системы SCR/AdBlue для коммерческих и легковых дизелей — без ошибок и обратного отсчёта пробега.</p>
+        <div class="price">AdBlue<b>по запросу</b></div>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="svc">
+        <h3>Диагностика авто и ДВС</h3>
+        <p>Компьютерная диагностика без разбора мотора. Карта неисправностей по всем системам: двигатель, КПП, ABS, топливная, климат.</p>
+        <div class="price">Компьютерная диагностика<b>от 900 ₽</b></div>
+        <a href="#contacts" class="btn btn-outline">Записаться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section results" id="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Результаты</span>
+      <h2>Сколько мощности вы получите</h2>
+      <p class="lead">Реальный прирост зависит от типа двигателя. Замеры до и после — на диагностическом стенде.</p>
+    </div>
+    <div class="results-grid">
+      <div class="gains">
+        <div class="gain">
+          <div class="gain-top"><span class="gain-name">Атмосферный бензиновый</span><span class="gain-val">+10%</span></div>
+          <div class="bar"><span data-w="31%"></span></div>
+        </div>
+        <div class="gain">
+          <div class="gain-top"><span class="gain-name">Турбобензиновый</span><span class="gain-val">+15–25%</span></div>
+          <div class="bar"><span data-w="66%"></span></div>
+        </div>
+        <div class="gain">
+          <div class="gain-top"><span class="gain-name">Турбодизель</span><span class="gain-val">+32%</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
+        </div>
+        <div class="gain">
+          <div class="gain-top"><span class="gain-name">Плавность и отклик педали газа</span><span class="gain-val">↑ заметно</span></div>
+          <div class="bar"><span data-w="82%"></span></div>
+        </div>
+      </div>
+      <div class="results-media">
+        <img src="assets/turbo.jpg" alt="Турбина двигателя в разрезе" loading="lazy" onerror="this.style.opacity='0'">
+        <div class="badge"><div class="num">+32%</div><div class="lbl">крутящий момент, турбодизель</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="section" id="brands">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Марки авто</span>
+      <h2>Работаем со всеми марками</h2>
+      <p class="lead">Легковые, коммерческие авто и грузовики. Не нашли свою марку в списке — просто позвоните, мы работаем практически со всем.</p>
+    </div>
+    <div class="brands-grid">
+      <span class="brand-chip">Audi</span><span class="brand-chip">BMW</span><span class="brand-chip">Mercedes-Benz</span>
+      <span class="brand-chip">Volkswagen</span><span class="brand-chip">Škoda</span><span class="brand-chip">Toyota</span>
+      <span class="brand-chip">Nissan</span><span class="brand-chip">Mitsubishi</span><span class="brand-chip">Mazda</span>
+      <span class="brand-chip">Honda</span><span class="brand-chip">Subaru</span><span class="brand-chip">Suzuki</span>
+      <span class="brand-chip">Hyundai</span><span class="brand-chip">Kia</span><span class="brand-chip">Ford</span>
+      <span class="brand-chip">Opel</span><span class="brand-chip">Chevrolet</span><span class="brand-chip">Renault</span>
+      <span class="brand-chip">Peugeot</span><span class="brand-chip">Citroën</span><span class="brand-chip">Fiat</span>
+      <span class="brand-chip">Land Rover</span><span class="brand-chip">Jeep</span><span class="brand-chip">Infiniti</span>
+      <span class="brand-chip">Volvo</span><span class="brand-chip">SsangYong</span><span class="brand-chip">Great Wall</span>
+      <span class="brand-chip">Chery</span><span class="brand-chip">Geely</span><span class="brand-chip">Daewoo</span>
+      <span class="brand-chip">Lada / ВАЗ</span><span class="brand-chip">УАЗ</span><span class="brand-chip">ZAZ</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Как проходит</span>
+      <h2>4 шага до заряженного мотора</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n"></div><h3>Диагностика ЭБУ</h3><p>Считываем блок управления, проверяем двигатель и составляем карту неисправностей.</p></div>
+      <div class="step"><div class="n"></div><h3>Подбор прошивки</h3><p>Подбираем оригинальную калибровку под ваш двигатель и задачу — Stage 1, Stage 2 или Евро-2.</p></div>
+      <div class="step"><div class="n"></div><h3>Запись и проверка</h3><p>Записываем прошивку, тестируем на стенде и на дороге, контролируем параметры.</p></div>
+      <div class="step"><div class="n"></div><h3>10 дней гарантии</h3><p>Катаетесь и оцениваете результат. Не устроил — вернём сток и деньги.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">О сервисе</span>
+        <h2 style="margin:12px 0 16px">Ателье по репрогу и диагностике ЭБУ ДВС</h2>
+        <p class="lead">Мы не «универсальный автосервис». Мы узко занимаемся прошивкой блоков управления и диагностикой двигателей — и делаем это точно. Более 700 прошитых машин каждый год без жалоб от владельцев.</p>
+        <ul class="about-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Честная диагностика.</b> Мотор не разбираем — по ошибкам составляем карту неисправностей и находим слабые места.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Оригинальные прошивки.</b> С сертификатом. Никаких экспериментов на вашем моторе.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Разумные цены.</b> От 2 700 ₽ на отечественные авто, прозрачный расчёт под каждую модель.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Запись в удобном мессенджере.</b> WhatsApp, Telegram или звонок — как вам комфортнее.</span></li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="assets/hero.jpg" alt="Подкапотное пространство мощного двигателя" loading="lazy" onerror="this.style.opacity='0'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+      <p class="lead">Обслуживание по предварительной записи — по телефону или в удобном вам мессенджере.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          <div>
+            <div class="k">Телефоны</div>
+            <div class="v">
+              <a href="tel:+79200077118">+7 920 007-71-18</a>
+              <a href="tel:+79200173494">+7 920 017-34-94</a>
+              <a href="tel:+79306708587">+7 930 670-85-87</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="k">Адрес</div>
+            <div class="v" style="font-size:17px">603093, Нижний Новгород,<br>ул. Родионова</div>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div>
+            <div class="k">Режим работы</div>
+            <div class="v" style="font-size:16px">Пн–Пт 9:00–18:00<br>Сб, Вс — по договорённости · по записи</div>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+          <div style="min-width:0">
+            <div class="k">Мессенджеры</div>
+            <div class="messengers">
+              <a href="https://wa.me/79200173494" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.7-1.5-.7-2.2 0-.6.3-1.2.6-1.5.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.5l-.3.4c-.1.2-.2.3-.1.5.4.9 1.6 2 2.5 2.4.2.1.4.1.5-.1l.5-.6c.1-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.4Z"/></svg>
+                WhatsApp
+              </a>
+              <a href="https://t.me/Mic_Evil" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-.9.5l.3-4.6 8.3-7.5c.4-.3-.1-.5-.6-.2L6.8 13.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17.2-6.6c.8-.3 1.5.2 1.1 1.6-.1-.1-.1 0 0 0Z"/></svg>
+                Telegram
+              </a>
+              <a href="tel:+79200077118">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.5-1 1-1h3.4c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1l-2.1 2.3Z"/></svg>
+                Позвонить
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3207886,44.0460993&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта проезда — ул. Родионова, Нижний Новгород"></iframe>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="lead-form">
+      <h3>Рассчитать прошивку бесплатно</h3>
+      <p>Оставьте заявку — подберём прошивку под вашу марку и назовём точную цену.</p>
+      <form id="leadForm" novalidate>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+        </div>
+        <div class="form-row">
+          <input type="text" name="car" placeholder="Марка и модель авто">
+          <select name="service" aria-label="Услуга">
+            <option value="">Услуга…</option>
+            <option>Чип-тюнинг Stage 1 / Stage 2</option>
+            <option>Удаление сажевого фильтра (DPF)</option>
+            <option>Удаление катализатора</option>
+            <option>Отключение EGR</option>
+            <option>Отключение AdBlue</option>
+            <option>Диагностика</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Получить расчёт</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        <div class="form-ok" id="formOk">Спасибо! Заявка отправлена — перезвоним в рабочее время.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#fff"/></svg></span>
+      <span class="logo-text">AUTO-CHIP<span>·NN</span></span>
+    </a>
+    <div class="footer-meta">
+      Чип-тюнинг и диагностика ЭБУ · Нижний Новгород, ул. Родионова<br>
+      <a href="tel:+79200077118">+7 920 007-71-18</a> · Пн–Пт 9:00–18:00
+    </div>
+    <div class="footer-meta">© 2026 Auto-Chip-NN</div>
+  </div>
+</footer>
+
+<script>
+// burger
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('nav-open');
+    b.classList.toggle('is-open',open);
+    b.setAttribute('aria-expanded',open);
+    b.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
+    n.classList.remove('nav-open');b.classList.remove('is-open');b.setAttribute('aria-expanded','false');
+  });});
+})();
+// animate bars on scroll
+(function(){
+  var bars=document.querySelectorAll('.bar span');
+  if(!('IntersectionObserver' in window)){bars.forEach(function(s){s.style.width=s.dataset.w});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.style.width=e.target.dataset.w;io.unobserve(e.target);}
+  });},{threshold:.4});
+  bars.forEach(function(s){io.observe(s);});
+})();
+// form
+(function(){
+  var f=document.getElementById('leadForm'),ok=document.getElementById('formOk');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.name.value.trim()||!f.phone.value.trim()){f.reportValidity&&f.reportValidity();return;}
+    ok.style.display='block';f.reset();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Конный клуб «Валькирия» — конные прогулки, обучение и фотосессии в Нижнем Новгороде</title>
+<meta name="description" content="Конный клуб «Валькирия» в Нижнем Новгороде: шаговые прогулки в лес верхом, обучение верховой езде для детей и взрослых, фотосессии с лошадьми, детские праздники. Запись по телефону 8 (920) 073-00-75.">
+<meta name="theme-color" content="#3f5c3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Конный клуб «Валькирия» — Нижний Новгород">
+<meta property="og:description" content="Конные прогулки в лес, обучение верховой езде, фотосессии с лошадьми. Пос. Новое Доскино, Автозаводский р-н.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#3f5c3a;
+  --green-dark:#2c4227;
+  --green-light:#6d8a5a;
+  --sand:#e9e1d0;
+  --sand-light:#f6f1e6;
+  --wood:#8a5a3b;
+  --accent:#c8894a;
+  --text:#2a2620;
+  --muted:#6b6459;
+  --bg:#fbf8f1;
+  --surface:#ffffff;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1140px;
+  --gap:24px;
+  --shadow:0 12px 32px rgba(44,66,39,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  font-family:'Nunito Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand__name{font-family:'Prata',Georgia,serif;font-weight:400;line-height:1.15;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+section{scroll-margin-top:78px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:999px;font-weight:800;font-size:16px;
+  cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--wood)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-outline:hover{background:rgba(255,255,255,.15)}
+.btn-ghost{background:var(--green);color:#fff}
+.btn-ghost:hover{background:var(--green-dark)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,241,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--sand)}
+.header-inner{display:flex;align-items:center;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand__mark{width:38px;height:38px;border-radius:50%;background:var(--green);
+  display:grid;place-items:center;color:#fff;font-size:20px;flex-shrink:0}
+.brand__name{font-size:20px;color:var(--green-dark);white-space:nowrap}
+.brand__sub{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-family:'Nunito Sans',sans-serif}
+.nav{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav a{font-weight:600;font-size:15px;color:var(--text);transition:.2s}
+.nav a:hover{color:var(--accent)}
+.header__phone{font-weight:800;color:var(--green-dark);white-space:nowrap;font-size:15px}
+.header__cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;
+  border:none;background:transparent;cursor:pointer;padding:10px;margin-left:auto}
+.burger span{height:2px;background:var(--green-dark);border-radius:2px;transition:.3s}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg);
+    padding:20px;gap:18px;align-items:stretch;border-bottom:1px solid var(--sand);
+    box-shadow:var(--shadow);transform:translateY(-140%);transition:.35s;margin-left:0}
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{font-size:18px;padding:6px 0}
+  .nav .header__phone{font-size:22px;color:var(--accent)}
+  .nav .btn{width:100%}
+  .header__cta.desktop-cta{display:none}
+  .header__phone.desktop-phone{display:none}
+  .burger{display:flex;margin-left:auto}
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;min-height:640px;display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(44,66,39,.25) 0%,rgba(44,66,39,.75) 100%),url(assets/hero.jpg) center/cover no-repeat;
+  color:#fff}
+.hero-inner{padding:60px 0 70px;max-width:720px}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);
+  backdrop-filter:blur(4px);padding:7px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,6.5vw,68px);margin-bottom:18px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero-sub{font-size:clamp(16px,2vw,20px);max-width:560px;margin-bottom:30px;opacity:.95}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+
+/* Section basics */
+.section{padding:clamp(56px,8vw,96px) 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.section-head .kicker{color:var(--accent);font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;font-size:14px;display:block;margin-bottom:12px}
+.section-head h2{font-size:clamp(28px,4.5vw,46px);color:var(--green-dark)}
+.section-head p{color:var(--muted);margin-top:14px;font-size:17px}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--sand);border-radius:var(--radius-md);
+  padding:30px 24px;text-align:center;min-width:0}
+.adv__ic{font-size:34px;margin-bottom:14px}
+.adv h3{font-size:19px;color:var(--green-dark);margin-bottom:8px}
+.adv p{color:var(--muted);font-size:15px}
+
+/* Services (pricing) */
+.services{background:var(--sand-light)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.svc{background:var(--surface);border-radius:var(--radius-md);overflow:hidden;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.svc__media{aspect-ratio:16/10;overflow:hidden;background:var(--sand)}
+.svc__media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.svc:hover .svc__media img{transform:scale(1.05)}
+.svc__body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;min-width:0}
+.svc__body h3{font-size:23px;color:var(--green-dark);margin-bottom:6px}
+.svc__lead{color:var(--muted);font-size:15px;margin-bottom:18px}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:22px}
+.price-row{display:flex;align-items:baseline;gap:8px;font-size:15px;min-width:0}
+.price-row .pname{flex-shrink:1;min-width:0;overflow-wrap:anywhere}
+.price-row .dots{flex:1;border-bottom:1.5px dashed var(--sand);margin:0 4px;transform:translateY(-3px);min-width:14px}
+.price-row .pval{font-weight:800;color:var(--wood);white-space:nowrap;flex-shrink:0}
+.price-row .pval small{font-weight:600;color:var(--muted);font-size:12px}
+.svc .btn{margin-top:auto;align-self:flex-start}
+.svc__note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* Training table cards inside services handled by price-list */
+
+/* About */
+.about{background:var(--green);color:#fff}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.about h2{font-size:clamp(28px,4vw,44px);margin-bottom:20px}
+.about p{opacity:.92;margin-bottom:16px;font-size:17px}
+.about .stat-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:26px}
+.stat b{font-family:'Prata',serif;font-size:34px;display:block;color:var(--sand)}
+.stat span{font-size:14px;opacity:.85}
+.about-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.about-photos img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);aspect-ratio:1}
+.about-photos img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery-grid figure{margin:0;overflow:hidden;border-radius:var(--radius-sm);aspect-ratio:1;background:var(--sand)}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.gallery-grid figure:hover img{transform:scale(1.08)}
+
+/* Reviews */
+.reviews{background:var(--sand-light)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.rev{background:var(--surface);border-radius:var(--radius-md);padding:28px;border:1px solid var(--sand);min-width:0}
+.rev__stars{color:var(--accent);margin-bottom:12px;letter-spacing:2px}
+.rev p{font-style:italic;color:var(--text);margin-bottom:16px}
+.rev__author{display:flex;align-items:center;gap:12px}
+.rev__ava{width:42px;height:42px;border-radius:50%;background:var(--green-light);color:#fff;
+  display:grid;place-items:center;font-weight:800;flex-shrink:0}
+.rev__author b{font-size:15px}
+.rev__author span{font-size:13px;color:var(--muted);display:block}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:stretch}
+.contacts-info{min-width:0}
+.contacts-info h2{font-size:clamp(28px,4vw,42px);color:var(--green-dark);margin-bottom:22px}
+.cinfo{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;min-width:0}
+.cinfo .ic{font-size:22px;flex-shrink:0}
+.cinfo div{min-width:0;overflow-wrap:anywhere}
+.cinfo b{display:block;color:var(--green-dark);font-size:15px}
+.cinfo a{color:var(--accent);font-weight:700}
+.social-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.social-row a{padding:10px 18px;background:var(--green);color:#fff;border-radius:999px;font-weight:700;font-size:14px}
+.social-row a:hover{background:var(--green-dark)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow);min-height:380px}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+/* Booking form */
+.booking{background:var(--green-dark);color:#fff}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.booking h2{font-size:clamp(26px,4vw,40px);margin-bottom:16px}
+.booking p{opacity:.9;font-size:17px}
+.form-card{background:var(--surface);color:var(--text);border-radius:var(--radius-md);padding:30px}
+.form-card .fld{margin-bottom:16px}
+.form-card label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--green-dark)}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:12px 14px;border:1.5px solid var(--sand);
+  border-radius:var(--radius-sm);font-family:inherit;font-size:15px;background:var(--bg)}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--accent)}
+.form-card .btn{width:100%;margin-top:6px}
+.form-note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+.form-success{display:none;background:#eaf3e5;border:1.5px solid var(--green-light);color:var(--green-dark);
+  padding:16px;border-radius:var(--radius-sm);font-weight:700;text-align:center;margin-top:14px}
+
+/* Footer */
+.footer{background:#20301c;color:#cdd6c6;padding:44px 0 30px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer h4{color:#fff;font-family:'Prata',serif;font-weight:400;margin-bottom:14px;font-size:18px}
+.footer a{color:#cdd6c6;transition:.2s}
+.footer a:hover{color:#fff}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.footer .fbrand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer .fbrand .brand__mark{width:34px;height:34px;font-size:18px}
+.footer p{font-size:15px;opacity:.85;overflow-wrap:anywhere}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;
+  text-align:center;font-size:13px;opacity:.7}
+
+/* Responsive */
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contacts-grid,.booking-grid{grid-template-columns:1fr;gap:32px}
+  .rev-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .svc-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-inner{padding:40px 0 54px}
+  .about .stat-row{gap:20px}
+}
+@media(max-width:380px){
+  .adv-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Конный клуб Валькирия">
+      <span class="brand__mark" aria-hidden="true">🐎</span>
+      <span>
+        <span class="brand__name">Валькирия</span>
+        <span class="brand__sub">конный клуб</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#training">Обучение</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#about">О клубе</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79200730075" class="header__phone">8 (920) 073-00-75</a>
+      <a href="#booking" class="btn btn-ghost">Записаться</a>
+    </nav>
+    <a href="tel:+79200730075" class="header__phone desktop-phone">8 (920) 073-00-75</a>
+    <a href="#booking" class="btn btn-ghost header__cta desktop-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород, пос. Новое Доскино</p>
+      <h1>Верхом навстречу свободе и природе</h1>
+      <p class="hero-sub">Конные прогулки в лес, обучение верховой езде для детей и взрослых, фотосессии и праздники с лошадьми. Приезжайте почувствовать настоящую свободу.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">Записаться на прогулку</a>
+        <a href="#services" class="btn btn-outline">Услуги и цены</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Почему «Валькирия»</span>
+        <h2>Здесь начинается ваша дружба с лошадью</h2>
+      </div>
+      <div class="adv-grid">
+        <div class="adv">
+          <div class="adv__ic" aria-hidden="true">🌲</div>
+          <h3>Прогулки в лес</h3>
+          <p>Живописные шаговые маршруты верхом по лесу и полям вдали от города.</p>
+        </div>
+        <div class="adv">
+          <div class="adv__ic" aria-hidden="true">🎓</div>
+          <h3>Обучение с нуля</h3>
+          <p>Опытные инструкторы поставят вас в седло — от первого шага до галопа.</p>
+        </div>
+        <div class="adv">
+          <div class="adv__ic" aria-hidden="true">🛡️</div>
+          <h3>Безопасность</h3>
+          <p>Инструктаж, шлем и спокойные обученные лошади для новичков и детей.</p>
+        </div>
+        <div class="adv">
+          <div class="adv__ic" aria-hidden="true">📸</div>
+          <h3>Фото и праздники</h3>
+          <p>Фотосессии с лошадьми, романтические свидания и детские праздники.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / PRICING -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Услуги и цены</span>
+        <h2>Конные прогулки и прокат</h2>
+        <p>Цены указаны в формате «будни / выходные». Запись — по предварительной договорённости.</p>
+      </div>
+      <div class="svc-grid">
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse1.jpg" alt="Всадница верхом на лошади в конном клубе Валькирия" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Прогулки верхом</h3>
+            <p class="svc__lead">От первого знакомства до активной езды по лесным маршрутам.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">Катание в поводу, 30 мин</span><span class="dots"></span><span class="pval">1000 / 1300 ₽</span></li>
+              <li class="price-row"><span class="pname">«Знакомство» для новичков, 1 ч</span><span class="dots"></span><span class="pval">1500 / 1700 ₽</span></li>
+              <li class="price-row"><span class="pname">Программа №1, 1 ч 10 мин</span><span class="dots"></span><span class="pval">1750 / 2000 ₽</span></li>
+              <li class="price-row"><span class="pname">Программа №2, 1 ч 30 мин</span><span class="dots"></span><span class="pval">2000 / 2500 ₽</span></li>
+              <li class="price-row"><span class="pname">Программа №3, до 1 ч 50 мин</span><span class="dots"></span><span class="pval">2500 / 3000 ₽</span></li>
+              <li class="price-row"><span class="pname">Программа №4, активная езда</span><span class="dots"></span><span class="pval">3000 / 3500 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Записаться на прогулку</a>
+            <p class="svc__note">Услуга коновода — 300–500 ₽.</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/romantik1.jpg" alt="Романтическая прогулка на лошадях под шатром на природе" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Праздники и свидания</h3>
+            <p class="svc__lead">Особенные события под открытым небом с лошадьми, шатром и фотографом.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">«Романтик» для двоих, 2 ч 15 мин</span><span class="dots"></span><span class="pval">12 000 / 14 000 ₽</span></li>
+              <li class="price-row"><span class="pname">Детский праздник, 4 ч, до 10 чел.</span><span class="dots"></span><span class="pval">15 000 / 20 000 ₽</span></li>
+              <li class="price-row"><span class="pname">Корпоратив / выпускной, 6 ч</span><span class="dots"></span><span class="pval">25 000 / 30 000 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Заказать праздник</a>
+            <p class="svc__note">В стоимость входят аниматор/ведущий, фотограф, катание, шатёр и оборудование.</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/romantik2.jpg" alt="Фотосессия девушки с лошадью на природе" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Фотосессии с лошадьми</h3>
+            <p class="svc__lead">Тёплые кадры с лошадьми на фоне природы — с обработкой и ретушью.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">20 фото без обработки</span><span class="dots"></span><span class="pval">1500 ₽</span></li>
+              <li class="price-row"><span class="pname">60 фото с цветокоррекцией</span><span class="dots"></span><span class="pval">3000 ₽</span></li>
+              <li class="price-row"><span class="pname">100 фото + 20 с ретушью</span><span class="dots"></span><span class="pval">5500 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Записаться на фотосессию</a>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse9.jpg" alt="Зимнее катание на лошади в конном клубе" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Развлечения на природе</h3>
+            <p class="svc__lead">Активный отдых для компаний и семей в любое время года.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">Катание на ватрушке зимой</span><span class="dots"></span><span class="pval">по запросу</span></li>
+              <li class="price-row"><span class="pname">Квесты для компаний</span><span class="dots"></span><span class="pval">по запросу</span></li>
+              <li class="price-row"><span class="pname">Романтические свидания</span><span class="dots"></span><span class="pval">по запросу</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Узнать подробнее</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="section" id="training">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Обучение верховой езде</span>
+        <h2>Индивидуально и в группе, детям и взрослым</h2>
+        <p>Запись не менее чем за день. Цены указаны «будни / выходные».</p>
+      </div>
+      <div class="svc-grid">
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse2.jpg" alt="Занятие верховой ездой на манеже" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Групповые тренировки</h3>
+            <p class="svc__lead">От 3 человек — под контролем инструктора.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">Основы выездки, 45 мин</span><span class="dots"></span><span class="pval">1250 / 1500 ₽</span></li>
+              <li class="price-row"><span class="pname">Конкур до 60 см (10 прыжков)</span><span class="dots"></span><span class="pval">1500 / 1800 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Записаться</a>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse3.jpg" alt="Ребёнок учится верховой езде на лошади" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Индивидуальные занятия</h3>
+            <p class="svc__lead">Персональный темп — от 4 лет и старше.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">Дети от 4 лет, 25 мин</span><span class="dots"></span><span class="pval">1200 / 1500 ₽</span></li>
+              <li class="price-row"><span class="pname">Новичкам: шаг, рысь, 45 мин</span><span class="dots"></span><span class="pval">2000 / 2300 ₽</span></li>
+              <li class="price-row"><span class="pname">Выездка, галоп, 45 мин</span><span class="dots"></span><span class="pval">2000 / 2300 ₽</span></li>
+              <li class="price-row"><span class="pname">Конкур до 80 см, 45 мин</span><span class="dots"></span><span class="pval">2500 / 3000 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Записаться</a>
+          </div>
+        </article>
+
+      </div>
+      <div class="svc-grid" style="margin-top:24px">
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse7.jpg" alt="Лошадь и всадник на осенней прогулке" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Абонементы</h3>
+            <p class="svc__lead">Выгоднее заниматься регулярно — групповые абонементы на месяц.</p>
+            <ul class="price-list">
+              <li class="price-row"><span class="pname">4 занятия / месяц (основы)</span><span class="dots"></span><span class="pval">4000 ₽</span></li>
+              <li class="price-row"><span class="pname">8 занятий / месяц</span><span class="dots"></span><span class="pval">7000–8000 ₽</span></li>
+              <li class="price-row"><span class="pname">8 занятий выездка / конкур</span><span class="dots"></span><span class="pval">8000–10 000 ₽</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-ghost">Оформить абонемент</a>
+          </div>
+        </article>
+        <article class="svc">
+          <div class="svc__media"><img src="assets/horse8.jpg" alt="Лошадь крупным планом в конном клубе Валькирия" loading="lazy" decoding="async" onerror="this.style.opacity='0'"></div>
+          <div class="svc__body">
+            <h3>Польза для здоровья</h3>
+            <p class="svc__lead">Верховая езда — это не только удовольствие.</p>
+            <p style="color:var(--muted);font-size:15px;margin-bottom:18px">При езде задействуются почти все группы мышц, тепло лошади мягко массирует и разогревает тело, а общение с животным снимает стресс и дарит ощущение независимости и свободы.</p>
+            <a href="#booking" class="btn btn-ghost">Попробовать</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2>О конном клубе «Валькирия»</h2>
+          <p>Мы — небольшой семейный конный клуб в посёлке Новое Доскино под Нижним Новгородом. Здесь любят лошадей и людей, а каждый гость — от малыша до взрослого — находит своего коня и свой маршрут.</p>
+          <p>Наши лошади спокойны и обучены, инструкторы внимательны, а вокруг — только лес, поля и тишина. Приезжайте на прогулку, урок или праздник — и почувствуйте настоящую свободу.</p>
+          <div class="stat-row">
+            <div class="stat"><b>10+</b><span>лет с лошадьми</span></div>
+            <div class="stat"><b>4+</b><span>года для детей</span></div>
+            <div class="stat"><b>10–19</b><span>часы работы</span></div>
+          </div>
+        </div>
+        <div class="about-photos">
+          <img src="assets/horse5.jpg" alt="Группа гостей клуба с лошадьми на конюшне" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+          <img src="assets/horse4.jpg" alt="Всадница верхом на лошади летом" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+          <img src="assets/horse6.jpg" alt="Лошадь на осенней прогулке в лесу" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Галерея</span>
+        <h2>Наши лошади и гости</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure><img src="assets/horse1.jpg" alt="Всадница верхом на лошади" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/horse4.jpg" alt="Прогулка верхом летом" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/horse7.jpg" alt="Осенняя конная прогулка" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/romantik1.jpg" alt="Романтическая программа с лошадьми под шатром" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/horse2.jpg" alt="Занятие верховой ездой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/horse3.jpg" alt="Ребёнок на лошади" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/horse9.jpg" alt="Зимнее катание на лошади" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+        <figure><img src="assets/romantik2.jpg" alt="Фотосессия с лошадью на природе" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Отзывы</span>
+        <h2>Что говорят наши гости</h2>
+      </div>
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+          <p>«Первый раз села на лошадь именно здесь. Инструктор всё спокойно объяснил, было совсем не страшно. Прогулка по лесу — это что-то волшебное!»</p>
+          <div class="rev__author"><span class="rev__ava" aria-hidden="true">М</span><div><b>Мария</b><span>прогулка «Знакомство»</span></div></div>
+        </div>
+        <div class="rev">
+          <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+          <p>«Возим дочку на занятия с 5 лет. Лошади добрые, тренер терпеливый, ребёнок в полном восторге и ждёт каждой субботы.»</p>
+          <div class="rev__author"><span class="rev__ava" aria-hidden="true">Е</span><div><b>Елена</b><span>детские занятия</span></div></div>
+        </div>
+        <div class="rev">
+          <div class="rev__stars" aria-label="5 из 5">★★★★★</div>
+          <p>«Заказывали программу „Романтик“ на годовщину. Шатёр, фотограф, закат и лошади — вечер, который мы не забудем никогда. Спасибо!»</p>
+          <div class="rev__author"><span class="rev__ava" aria-hidden="true">А</span><div><b>Артём</b><span>программа «Романтик»</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <h2>Как нас найти</h2>
+          <div class="cinfo"><span class="ic" aria-hidden="true">📍</span><div><b>Адрес</b>г. Нижний Новгород, Автозаводский р-н, пос. Новое Доскино, ул. 22 линия, д. 24</div></div>
+          <div class="cinfo"><span class="ic" aria-hidden="true">📞</span><div><b>Телефон</b><a href="tel:+79200730075">8 (920) 073-00-75</a></div></div>
+          <div class="cinfo"><span class="ic" aria-hidden="true">✉️</span><div><b>Email</b><a href="mailto:KK-VALKIRIYA@yandex.ru">KK-VALKIRIYA@yandex.ru</a></div></div>
+          <div class="cinfo"><span class="ic" aria-hidden="true">🕐</span><div><b>Режим работы</b>Ежедневно 10:00–19:00, по предварительной записи</div></div>
+          <div class="social-row">
+            <a href="https://vk.com/valkiria_club" target="_blank" rel="noopener">ВКонтакте</a>
+            <a href="https://www.instagram.com/kk_valkiria_love/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=56.2642012,43.7594149&z=14&hl=ru&output=embed"
+            loading="lazy" allowfullscreen title="Карта — конный клуб Валькирия, пос. Новое Доскино"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section booking" id="booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div>
+          <h2>Записаться онлайн</h2>
+          <p>Оставьте заявку — мы перезвоним, подберём программу и удобное время. Запись ведётся заранее, минимум за день.</p>
+          <p style="margin-top:18px">Или звоните напрямую:<br><a href="tel:+79200730075" style="color:#fff;font-weight:800;font-size:22px">8 (920) 073-00-75</a></p>
+        </div>
+        <div class="form-card">
+          <form id="bookForm" novalidate>
+            <div class="fld">
+              <label for="bname">Ваше имя</label>
+              <input id="bname" name="name" type="text" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="fld">
+              <label for="bphone">Телефон</label>
+              <input id="bphone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="fld">
+              <label for="bsvc">Услуга</label>
+              <select id="bsvc" name="service">
+                <option>Конная прогулка</option>
+                <option>Обучение верховой езде</option>
+                <option>Фотосессия с лошадьми</option>
+                <option>Праздник / свидание</option>
+                <option>Занятия для ребёнка</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label for="bmsg">Комментарий</label>
+              <textarea id="bmsg" name="message" rows="3" placeholder="Желаемая дата, количество человек"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            <div class="form-success" id="formSuccess">Спасибо! Заявка принята — мы перезвоним вам в ближайшее время.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="fbrand"><span class="brand__mark" aria-hidden="true">🐎</span><span class="brand__name" style="color:#fff">Валькирия</span></div>
+        <p>Конный клуб в Нижнем Новгороде. Прогулки, обучение верховой езде, фотосессии и праздники с лошадьми.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#services">Услуги и цены</a></li>
+          <li><a href="#training">Обучение</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#about">О клубе</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79200730075">8 (920) 073-00-75</a></li>
+          <li><a href="mailto:KK-VALKIRIYA@yandex.ru">KK-VALKIRIYA@yandex.ru</a></li>
+          <li>пос. Новое Доскино, ул. 22 линия, 24</li>
+          <li><a href="https://vk.com/valkiria_club" target="_blank" rel="noopener">ВКонтакте</a> · <a href="https://www.instagram.com/kk_valkiria_love/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Конный клуб «Валькирия», Нижний Новгород · Верховая езда и конные прогулки</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+  var form=document.getElementById('bookForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.name.value.trim()||!form.phone.value.trim()){
+      form.reportValidity&&form.reportValidity();return;
+    }
+    document.getElementById('formSuccess').style.display='block';
+    form.querySelector('button').disabled=true;
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

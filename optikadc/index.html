@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ОПТИКА добрых цен — сеть оптик в Нижнем Новгороде | Очки от 1990 ₽</title>
+<meta name="description" content="ОПТИКА добрых цен — сеть салонов оптики в Нижнем Новгороде. Готовые очки (оправа + линзы + работа) от 1990 ₽, бесплатная проверка зрения, скидка 500 ₽ пенсионерам. Проспект Ленина, 33 и ещё 2 салона.">
+<meta name="theme-color" content="#0e7c8e">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="ОПТИКА добрых цен — очки от 1990 ₽ в Нижнем Новгороде">
+<meta property="og:description" content="Готовые очки от 1990 ₽, бесплатная проверка зрения, скидка пенсионерам 500 ₽. Сеть салонов оптики в Нижнем Новгороде.">
+<meta property="og:image" content="assets/photo1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0e7c8e;      /* тёплая бирюза */
+  --primary-dark:#0a5c6b;
+  --accent:#f5811f;       /* оранжевый из логотипа — «добрые цены» */
+  --accent-soft:#fff2e6;
+  --bg:#ffffff;
+  --surface:#f2f8f9;
+  --surface-2:#e6f2f4;
+  --text:#152227;
+  --muted:#5c6b70;
+  --line:#dbe7e9;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1140px;
+  --gap:24px;
+  --shadow:0 10px 30px rgba(14,124,142,.10);
+  --shadow-sm:0 4px 14px rgba(14,124,142,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:clamp(15px,1.5vw,17px);line-height:1.6;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Montserrat',Georgia,serif;line-height:1.15;margin:0 0 .4em;font-weight:700}
+h1{font-size:clamp(30px,6vw,60px)}
+h2{font-size:clamp(24px,4vw,42px)}
+h3{font-size:clamp(18px,2.4vw,24px)}
+p{margin:0 0 1em}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,88px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-weight:700;letter-spacing:.02em;
+  color:var(--primary);text-transform:uppercase;font-size:13px;margin:0 0 12px}
+.lead{color:var(--muted);max-width:640px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;
+  border:2px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#e0700f}
+.btn-outline{background:transparent;color:var(--primary-dark);border-color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-white{background:#fff;color:var(--primary-dark)}
+.btn-white:hover{background:var(--surface-2)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand img{height:42px;width:auto;border-radius:8px}
+.brand b{font-family:'Montserrat',serif;font-size:16px;color:var(--text);white-space:nowrap;line-height:1.05}
+.brand span{display:block;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.04em}
+.nav{display:flex;align-items:center;gap:22px;margin-left:auto}
+.nav a{color:var(--text);font-weight:600;font-size:15px}
+.nav a:hover{color:var(--primary)}
+.nav .m-phone,.nav>.btn{display:none}
+.header-phone{font-weight:700;white-space:nowrap;color:var(--primary-dark)}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;
+  border:0;background:transparent;cursor:pointer;padding:10px}
+.burger span{height:2.5px;background:var(--text);border-radius:2px;transition:.2s}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#e9f5f7 0%,#f7fbfc 60%,#fff 100%);overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,56px);
+  align-items:center;padding:clamp(40px,7vw,80px) 0;min-width:0}
+.hero-copy{min-width:0}
+.hero h1{color:var(--text)}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:520px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.hero-media{position:relative;min-width:0}
+.hero-media img{width:100%;height:clamp(320px,45vw,460px);object-fit:cover;
+  border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.hero-badge{position:absolute;left:-6px;bottom:18px;background:#fff;border-radius:var(--radius-md);
+  box-shadow:var(--shadow);padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:88%}
+.hero-badge .num{font-family:'Montserrat',serif;font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+.hero-badge small{color:var(--muted);font-size:13px}
+
+/* trust strip */
+.trust{background:var(--primary);color:#fff}
+.trust .container{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;
+  padding:22px 20px;text-align:center}
+.trust b{display:block;font-family:'Montserrat',serif;font-size:clamp(20px,3vw,30px)}
+.trust span{font-size:13px;opacity:.9}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px 22px;min-width:0}
+.adv .ic{width:52px;height:52px;border-radius:14px;background:var(--surface-2);
+  display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:14px}
+.adv h3{font-size:19px}
+.adv p{color:var(--muted);font-size:15px;margin:0}
+
+/* catalog */
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  overflow:hidden;min-width:0;box-shadow:var(--shadow-sm);transition:.18s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card__media{aspect-ratio:4/3;background:var(--surface-2);overflow:hidden}
+.card__media img{width:100%;height:100%;object-fit:cover}
+.card__media.noimg{display:flex;align-items:center;justify-content:center}
+.card__body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card__tag{font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.03em}
+.card h3{font-size:19px;margin:0}
+.card p{color:var(--muted);font-size:14px;margin:0;flex:1}
+.price{font-family:'Montserrat',serif;font-weight:800;font-size:20px;color:var(--text);margin-top:6px}
+.price small{font-size:13px;color:var(--muted);font-weight:600}
+
+/* brands */
+.brand-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.brand-pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;
+  padding:9px 18px;font-weight:700;font-size:14px;color:var(--text);display:flex;align-items:baseline;gap:8px}
+.brand-pill span{color:var(--accent);font-size:13px}
+
+/* services */
+.serv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.serv{border-left:4px solid var(--primary);background:var(--surface);border-radius:0 var(--radius-md) var(--radius-md) 0;
+  padding:22px 22px;min-width:0}
+.serv h3{font-size:18px}
+.serv p{margin:0;color:var(--muted);font-size:15px}
+
+/* promo */
+.promo{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff}
+.promo h2{color:#fff}
+.promo .eyebrow{color:#bfe6ec}
+.promo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.promo-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--radius-md);padding:26px 22px;min-width:0;backdrop-filter:blur(4px)}
+.promo-card .big{font-family:'Montserrat',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:#ffd9b0;line-height:1}
+.promo-card h3{color:#fff;font-size:19px;margin:12px 0 6px}
+.promo-card p{color:rgba(255,255,255,.85);font-size:14px;margin:0}
+.promo-card a{color:#fff}
+
+/* about + gallery */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,48px);align-items:center}
+.about-grid.rev{direction:rtl}
+.about-grid.rev>*{direction:ltr}
+.about-media{min-width:0}
+.about-media img{width:100%;height:clamp(280px,40vw,420px);object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.check{list-style:none;padding:0;margin:18px 0 0}
+.check li{position:relative;padding-left:32px;margin-bottom:12px;color:var(--text)}
+.check li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;
+  background:var(--primary);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px}
+.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius-sm)}
+
+/* stores + map */
+.stores-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,40px);align-items:start}
+.store-list{display:flex;flex-direction:column;gap:16px;min-width:0}
+.store{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:20px 22px;
+  box-shadow:var(--shadow-sm);min-width:0;overflow-wrap:anywhere}
+.store.main{border-color:var(--primary);border-width:2px}
+.store h3{font-size:18px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.store .flag{font-size:11px;background:var(--accent);color:#fff;padding:2px 10px;border-radius:999px;font-family:'Manrope';font-weight:700}
+.store .row{display:flex;gap:8px;color:var(--muted);font-size:15px;margin:3px 0}
+.store .row a{color:var(--primary-dark);font-weight:700}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow);min-width:0;border:1px solid var(--line)}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:440px;border:0}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.contact-card{background:var(--surface);border-radius:var(--radius-md);padding:26px 24px;min-width:0;overflow-wrap:anywhere}
+.contact-card .ic{font-size:26px;margin-bottom:8px}
+.contact-card h3{font-size:17px}
+.contact-card a{font-weight:700;color:var(--primary-dark)}
+.contact-card .lines a{display:block;margin:2px 0}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.socials a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+
+/* footer */
+.footer{background:var(--primary-dark);color:#cfe8ec;padding:36px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.footer b{color:#fff;font-family:'Montserrat',serif}
+.footer a{color:#fff}
+.footer .small{font-size:13px;opacity:.8;width:100%;margin-top:6px}
+
+/* responsive */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-media{order:-1}
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid,.serv-grid,.promo-grid,.contacts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.about-grid.rev,.stores-grid{grid-template-columns:1fr;direction:ltr}
+  .about-media{order:-1}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1040px){
+  .nav,.header-phone{display:none}
+  .header-cta{margin-left:auto}
+  .burger{display:flex}
+  .nav.nav--open{display:flex;position:fixed;inset:70px 0 auto 0;flex-direction:column;
+    background:#fff;padding:20px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);margin:0}
+  .nav.nav--open a{font-size:18px}
+  .nav.nav--open .m-phone,.nav.nav--open>.btn{display:flex}
+  .nav.nav--open .m-phone{font-size:22px;font-weight:800;color:var(--primary-dark)}
+  .nav.nav--open .btn{width:100%}
+}
+@media(max-width:560px){
+  .trust .container{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+  .adv-grid,.cat-grid,.serv-grid,.promo-grid,.contacts-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand b{font-size:14px}
+  .hero-badge{position:static;margin:16px auto 0;max-width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="ОПТИКА добрых цен — на главную">
+      <img src="assets/logo.jpg" alt="Логотип ОПТИКА добрых цен" onerror="this.style.display='none'">
+      <b>ОПТИКА<span>добрых цен</span></b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#catalog" class="nav-link">Каталог</a>
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#promo" class="nav-link">Акции</a>
+      <a href="#about" class="nav-link">О сети</a>
+      <a href="#stores" class="nav-link">Магазины</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+      <a href="tel:+79153543929" class="m-phone nav-link">+7 (915) 354-39-29</a>
+      <a href="#stores" class="btn btn-primary nav-link">Найти магазин</a>
+    </nav>
+    <a href="tel:+79153543929" class="header-phone">+7 (915) 354-39-29</a>
+    <a href="#catalog" class="btn btn-primary header-cta">Каталог</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">📍 Нижний Новгород, проспект Ленина, 33</p>
+      <h1>Очки, которые по <em>добрым ценам</em></h1>
+      <p class="hero-sub">Сеть салонов оптики в Нижнем Новгороде. Готовые очки — оправа, линзы и работа — от 1990 ₽. Проверим зрение бесплатно и подберём оправу под ваше лицо.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+        <a href="#services" class="btn btn-outline">Проверить зрение бесплатно</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/photo1.jpg" alt="Стильная металлическая оправа для очков крупным планом" fetchpriority="high" width="600" height="460">
+      <div class="hero-badge">
+        <span class="num">1990 ₽</span>
+        <small>оправа + линзы + работа<br>— готовые очки под ключ</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="container">
+    <div><b>5</b><span>салонов в городе</span></div>
+    <div><b>0 ₽</b><span>проверка зрения</span></div>
+    <div><b>−500 ₽</b><span>пенсионерам</span></div>
+    <div><b>от 1990 ₽</b><span>готовые очки</span></div>
+  </div>
+</div>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Почему выбирают нас</p>
+      <h2>Хорошее зрение без переплат</h2>
+      <p class="lead">Мы делаем качественную оптику доступной: честные цены, бесплатная проверка зрения и большой выбор оправ в каждом салоне.</p>
+    </div>
+    <div class="adv-grid" style="margin-top:40px">
+      <div class="adv">
+        <div class="ic">🏬</div>
+        <h3>5 салонов рядом</h3>
+        <p>Сеть магазинов в Нижнем Новгороде — заходите в ближайший к дому или работе.</p>
+      </div>
+      <div class="adv">
+        <div class="ic">👁️</div>
+        <h3>Проверка зрения бесплатно</h3>
+        <p>Проверим зрение и подберём линзы прямо в салоне — без записи и без оплаты.</p>
+      </div>
+      <div class="adv">
+        <div class="ic">🎁</div>
+        <h3>Скидка пенсионерам</h3>
+        <p>−500 ₽ на заказ для всех пенсионеров. Просто покажите пенсионное удостоверение.</p>
+      </div>
+      <div class="adv">
+        <div class="ic">💚</div>
+        <h3>Оправы от 1990 ₽</h3>
+        <p>Готовые очки под ключ: оправа, линзы и работа мастера уже в цене.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="section" id="catalog" style="background:var(--surface)">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Товары и услуги</p>
+      <h2>Каталог оптики</h2>
+      <p class="lead">Реальные позиции из наших салонов. Полный ассортимент — на примерке в магазине.</p>
+    </div>
+    <div class="cat-grid" style="margin-top:40px">
+      <article class="card">
+        <div class="card__media"><img src="assets/product1.jpg" alt="Тонкая металлическая оправа для зрения" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Оправы для зрения</span>
+          <h3>Готовые очки под ключ</h3>
+          <p>Оправа + линзы + работа мастера. Классические и лёгкие модели на каждый день.</p>
+          <div class="price">от 1990 ₽</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/product6.jpg" alt="Солнцезащитные очки с поляризацией" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Солнцезащитные</span>
+          <h3>Очки от солнца</h3>
+          <p>Поляризованные и брендовые модели с защитой от ультрафиолета.</p>
+          <div class="price">от 2990 ₽</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/product8.jpg" alt="Мужская оправа авиатор" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Компьютерные</span>
+          <h3>Очки для работы за экраном</h3>
+          <p>Снижают усталость глаз и защищают от синего света монитора.</p>
+          <div class="price">от 1590 ₽</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/product2.jpg" alt="Детская оправа" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Детские</span>
+          <h3>Детские оправы</h3>
+          <p>Прочные и лёгкие оправы — комфорт и здоровье глаз вашего ребёнка.</p>
+          <div class="price">от 3590 ₽</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/product3.jpg" alt="Очки два в одном с клипоном" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Очки «2 в 1»</span>
+          <h3>Оправа с солнцезащитным клипоном</h3>
+          <p>Универсальное решение: очки для зрения и от солнца в одной оправе. Polarized, Moretti, Merck.</p>
+          <div class="price">от 4990 ₽</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/product4.jpg" alt="Брендовая оправа" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.style.display='none'"></div>
+        <div class="card__body">
+          <span class="card__tag">Брендовые оправы</span>
+          <h3>Marc Jacobs, Tommy Hilfiger и другие</h3>
+          <p>Оригинальные оправы известных марок — стиль и качество на каждый день.</p>
+          <div class="price">от 7990 ₽</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="brand-list">
+      <span class="brand-pill">Marc Jacobs <span>16 990 ₽</span></span>
+      <span class="brand-pill">Tommy Hilfiger <span>19 990–23 990 ₽</span></span>
+      <span class="brand-pill">KARL LAGERFELD <span>14 990 ₽</span></span>
+      <span class="brand-pill">Ana Hickmann <span>12 990 ₽</span></span>
+      <span class="brand-pill">Christian Lacroix <span>12 990 ₽</span></span>
+      <span class="brand-pill">Pepe Jeans <span>7 990 ₽</span></span>
+      <span class="brand-pill">Polaroid <span>8 590 ₽</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Услуги салонов</p>
+      <h2>Всё для вашего зрения</h2>
+    </div>
+    <div class="serv-grid" style="margin-top:40px">
+      <div class="serv">
+        <h3>👁️ Проверка зрения — бесплатно</h3>
+        <p>Проверим остроту зрения и подберём подходящие линзы. Без записи и без оплаты в любом салоне сети.</p>
+      </div>
+      <div class="serv">
+        <h3>🛠️ Изготовление очков под ключ</h3>
+        <p>Оправа, линзы и работа мастера — соберём готовые очки от 1990 ₽ прямо в салоне.</p>
+      </div>
+      <div class="serv">
+        <h3>🔎 Подбор оправы</h3>
+        <p>Поможем выбрать оправу под форму лица и стиль — от классики до «кошачьего глаза».</p>
+      </div>
+      <div class="serv">
+        <h3>💻 Компьютерные очки</h3>
+        <p>Очки для работы за экраном: снижают усталость и защищают от синего света. От 1590 ₽.</p>
+      </div>
+      <div class="serv">
+        <h3>🕶️ Солнцезащитные очки</h3>
+        <p>Поляризованные и брендовые модели с защитой от УФ — на лето и на зиму.</p>
+      </div>
+      <div class="serv">
+        <h3>🎫 Подарочные карты</h3>
+        <p>Универсальный подарок близким — карта на любую сумму, чтобы выбрать очки самому.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="section promo" id="promo">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Акции и скидки</p>
+      <h2>Выгодно круглый год</h2>
+    </div>
+    <div class="promo-grid" style="margin-top:40px">
+      <div class="promo-card">
+        <div class="big">−30%</div>
+        <h3>На все солнцезащитные очки</h3>
+        <p>И −20% на брендовые модели. Успейте обновить очки к сезону.</p>
+      </div>
+      <div class="promo-card">
+        <div class="big">−500 ₽</div>
+        <h3>Всем пенсионерам</h3>
+        <p>Скидка на заказ по пенсионному удостоверению — в каждом салоне.</p>
+      </div>
+      <div class="promo-card">
+        <div class="big">0 ₽</div>
+        <h3>Проверка зрения</h3>
+        <p>Проверим зрение и подберём линзы бесплатно, без предварительной записи.</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:34px">
+      <a href="#stores" class="btn btn-white">Где нас найти</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">О сети</p>
+        <h2>ОПТИКА добрых цен в Нижнем Новгороде</h2>
+        <p class="lead">Мы — сеть салонов оптики, где хорошее зрение не бьёт по кошельку. Каждый день обновляем ассортимент оправ, помогаем подобрать очки быстро и качественно, чтобы служили долго.</p>
+        <ul class="check">
+          <li>Готовые очки (оправа + линзы + работа) от 1990 ₽</li>
+          <li>Бесплатная проверка зрения в каждом салоне</li>
+          <li>Скидка 500 ₽ всем пенсионерам</li>
+          <li>Большой выбор оправ: детские, компьютерные, брендовые, «2 в 1»</li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="assets/photo2.jpg" alt="Витрина оправ ОПТИКА добрых цен" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+      </div>
+    </div>
+    <div class="gallery">
+      <img src="assets/product1.jpg" alt="Металлическая оправа" loading="lazy" onerror="this.style.opacity='0'">
+      <img src="assets/photo1.jpg" alt="Золотистая оправа Santarelli" loading="lazy" onerror="this.style.opacity='0'">
+      <img src="assets/product6.jpg" alt="Солнцезащитные очки" loading="lazy" onerror="this.style.opacity='0'">
+      <img src="assets/product8.jpg" alt="Мужская оправа" loading="lazy" onerror="this.style.opacity='0'">
+    </div>
+  </div>
+</section>
+
+<!-- STORES + MAP -->
+<section class="section" id="stores" style="background:var(--surface)">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Наши магазины</p>
+      <h2>Салоны сети в Нижнем Новгороде</h2>
+      <p class="lead">Заходите в ближайший салон — проверим зрение и подберём очки. Ниже — карта главного салона на проспекте Ленина, 33.</p>
+    </div>
+    <div class="stores-grid" style="margin-top:40px">
+      <div class="store-list">
+        <div class="store main">
+          <h3>Проспект Ленина, 33 <span class="flag">главный салон</span></h3>
+          <p class="row">📍 Нижний Новгород, проспект Ленина, 33</p>
+          <p class="row">📞 <a href="tel:+79153543929">+7 (915) 354-39-29</a></p>
+          <p class="row">🕐 Ежедневно, 9:00–20:00</p>
+        </div>
+        <div class="store">
+          <h3>Проспект Ленина, 113, ТЦ «Окей»</h3>
+          <p class="row">📍 Нижний Новгород, пр. Ленина, 113, ТЦ «Окей»</p>
+          <p class="row">📞 <a href="tel:+79087694149">+7 (908) 769-41-49</a></p>
+          <p class="row">🕐 Пн–Вс, 9:00–20:00</p>
+        </div>
+        <div class="store">
+          <h3>Проспект Кораблестроителей, 4</h3>
+          <p class="row">📍 Нижний Новгород, пр. Кораблестроителей, 4</p>
+          <p class="row">📞 <a href="tel:+79519138855">+7 (951) 913-88-55</a></p>
+          <p class="row">🕐 Пн–Вс, 10:00–20:00</p>
+        </div>
+        <div class="store">
+          <h3>Другие салоны сети</h3>
+          <p class="row">☎️ Единая справочная по всем точкам:</p>
+          <p class="row lines" style="flex-direction:column;gap:4px;align-items:flex-start">
+            <a href="tel:+79867441162">+7 (986) 744-11-62</a>
+            <a href="tel:+79535701164">+7 (953) 570-11-64</a>
+            <a href="tel:+79087317470">+7 (908) 731-74-70</a>
+          </p>
+          <p class="row">Уточните адрес ближайшего салона по телефону.</p>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=56.2873215,43.9282504&z=16&hl=ru&output=embed"
+          width="100%" height="440" loading="lazy" allowfullscreen
+          title="Карта: ОПТИКА добрых цен, проспект Ленина, 33, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Контакты</p>
+      <h2>Свяжитесь с нами</h2>
+    </div>
+    <div class="contacts-grid" style="margin-top:40px">
+      <div class="contact-card">
+        <div class="ic">📞</div>
+        <h3>Телефон</h3>
+        <div class="lines">
+          <a href="tel:+79153543929">+7 (915) 354-39-29</a>
+          <a href="tel:+79087694149">+7 (908) 769-41-49</a>
+          <a href="tel:+79519138855">+7 (951) 913-88-55</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="ic">📍</div>
+        <h3>Главный салон</h3>
+        <p style="margin:0;color:var(--muted)">Нижний Новгород,<br>проспект Ленина, 33</p>
+        <p style="margin:8px 0 0;color:var(--muted)">Ежедневно 9:00–20:00</p>
+      </div>
+      <div class="contact-card">
+        <div class="ic">💬</div>
+        <h3>Мы в соцсетях</h3>
+        <div class="socials">
+          <a href="https://t.me/optika_dobrih_cen" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/club210912869" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span><b>ОПТИКА добрых цен</b> — сеть салонов оптики в Нижнем Новгороде</span>
+    <span>📍 пр. Ленина, 33 · <a href="tel:+79153543929">+7 (915) 354-39-29</a></span>
+    <span class="small">© 2026 ОПТИКА добрых цен. Готовые очки от 1990 ₽ · Бесплатная проверка зрения · Скидка пенсионерам 500 ₽</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('.nav-link').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

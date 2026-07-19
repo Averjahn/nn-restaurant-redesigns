@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stampler.ru — Срочное изготовление печатей и штампов в Нижнем Новгороде</title>
+<meta name="description" content="Изготовление печатей и штампов в Нижнем Новгороде за 15 минут. Печати для ИП, ООО, гербовые, по оттиску, факсимиле, датеры, нумераторы, оснастки Trodat и Colop. Доставка по городу и области. Тел. +7 (831) 230-31-30.">
+<meta name="theme-color" content="#1e3a8a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stampler.ru — печати и штампы в Нижнем Новгороде">
+<meta property="og:description" content="Срочное изготовление печатей и штампов из резины методом лазерной гравировки. Доставка по Н.Новгороду и области.">
+<meta property="og:image" content="assets/hero-stamps.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1e3a8a;      /* indigo-900 */
+  --primary-600:#2547b0;
+  --accent:#2563eb;       /* blue-600 */
+  --accent-light:#dbeafe;
+  --bg:#ffffff;
+  --surface:#f4f6fb;
+  --surface-2:#eef2fb;
+  --text:#0f172a;
+  --muted:#5b657a;
+  --border:#e2e8f0;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1160px;
+  --gap:24px;
+  --shadow:0 6px 24px rgba(15,23,42,.07);
+  --shadow-lg:0 18px 48px rgba(30,58,138,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:clamp(15px,1.5vw,17px);line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Manrope',Georgia,serif;line-height:1.15;margin:0 0 .4em;letter-spacing:-.02em}
+h1{font-size:clamp(30px,6vw,60px);font-weight:800}
+h2{font-size:clamp(25px,4vw,44px);font-weight:700}
+h3{font-size:clamp(18px,2.2vw,22px);font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,90px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.lead{color:var(--muted);max-width:640px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:15px;
+  cursor:pointer;border:1.5px solid transparent;transition:.18s;white-space:nowrap;font-family:'Manrope',sans-serif}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--primary-600)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-outline:hover{background:rgba(255,255,255,.14)}
+.btn-ghost{background:#fff;color:var(--primary);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;
+  font-weight:800;font-size:21px;color:var(--primary);flex-shrink:0;white-space:nowrap}
+.brand .dot{width:34px;height:34px;border-radius:9px;background:var(--primary);
+  color:#fff;display:grid;place-items:center;font-size:17px;box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;gap:26px;margin-left:8px}
+.nav a{color:var(--text);font-weight:500;font-size:15px}
+.nav a:hover{color:var(--accent)}
+.header-phone{margin-left:auto;font-family:'Manrope',sans-serif;font-weight:700;
+  font-size:17px;color:var(--primary);white-space:nowrap}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;
+  border:1px solid var(--border);border-radius:10px;background:#fff;cursor:pointer;
+  align-items:center;justify-content:center;flex-shrink:0}
+.burger span{width:20px;height:2px;background:var(--primary);border-radius:2px;transition:.2s}
+
+/* Hero */
+.hero{position:relative;color:#fff;overflow:hidden;
+  background:linear-gradient(120deg,#152a63 0%,#1e3a8a 48%,#2547b0 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  min-height:clamp(520px,80vh,660px);padding:56px 0}
+.hero .eyebrow{color:#93c5fd}
+.hero h1{color:#fff}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:#c7d5f5;max-width:520px;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:26px}
+.hero-facts .f{min-width:0}
+.hero-facts .n{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(24px,3vw,32px);color:#fff}
+.hero-facts .l{font-size:13px;color:#a9bce6}
+.hero-media{position:relative}
+.hero-media img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+  aspect-ratio:4/3;object-fit:cover}
+.hero-badge{position:absolute;left:-14px;bottom:22px;background:#fff;color:var(--primary);
+  border-radius:var(--radius-md);padding:14px 18px;box-shadow:var(--shadow-lg);
+  font-family:'Manrope',sans-serif;font-weight:700;line-height:1.2;max-width:200px}
+.hero-badge small{display:block;font-family:'Inter';font-weight:500;color:var(--muted);font-size:12px}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:28px 24px}
+.adv .ic{width:52px;height:52px;border-radius:13px;background:var(--accent-light);
+  color:var(--accent);display:grid;place-items:center;font-size:24px;margin-bottom:16px}
+.adv h3{margin-bottom:8px}
+.adv p{color:var(--muted);margin:0;font-size:15px}
+
+/* Catalog */
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:36px}
+.sec-head .lead{margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;display:flex;flex-direction:column;transition:.18s;min-width:0}
+.card:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-3px)}
+.card__media{aspect-ratio:1/1;background:var(--surface-2);display:grid;place-items:center;padding:18px}
+.card__media img{max-height:100%;width:auto;object-fit:contain;mix-blend-mode:multiply}
+.card__media.noimg::after{content:'🔵';font-size:40px;opacity:.4}
+.card__body{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;min-width:0}
+.card__tag{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+.card__title{font-family:'Manrope',sans-serif;font-weight:700;font-size:17px;margin-bottom:6px}
+.card__desc{font-size:13.5px;color:var(--muted);margin-bottom:14px;flex:1}
+.card__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
+.price{font-family:'Manrope',sans-serif;font-weight:800;font-size:20px;color:var(--primary)}
+.price small{font-weight:500;font-size:12px;color:var(--muted);display:block}
+.card .btn{padding:9px 16px;font-size:14px}
+
+/* Split (осн + about) */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center}
+.split img{border-radius:var(--radius-lg);box-shadow:var(--shadow);width:100%;aspect-ratio:5/4;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.chip{background:var(--surface);border:1px solid var(--border);border-radius:999px;
+  padding:8px 15px;font-size:14px;font-weight:500;color:var(--text)}
+.ul-check{list-style:none;padding:0;margin:18px 0}
+.ul-check li{position:relative;padding:0 0 12px 30px;color:var(--muted)}
+.ul-check li::before{content:'✓';position:absolute;left:0;top:-1px;width:20px;height:20px;
+  background:var(--accent-light);color:var(--accent);border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:700}
+.ul-check b{color:var(--text);font-weight:600}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);counter-reset:s}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px 22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);font-family:'Manrope',sans-serif;
+  font-weight:800;font-size:20px;width:44px;height:44px;border-radius:12px;background:var(--primary);
+  color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:14.5px;margin:0}
+.section--tint{background:var(--surface)}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:stretch}
+.contacts-info{display:flex;flex-direction:column;gap:14px}
+.info-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:18px 20px;min-width:0}
+.info-row .ic{width:42px;height:42px;flex-shrink:0;border-radius:11px;background:var(--accent-light);
+  color:var(--accent);display:grid;place-items:center;font-size:19px}
+.info-row .txt{min-width:0;overflow-wrap:anywhere}
+.info-row .txt b{font-family:'Manrope',sans-serif;display:block;margin-bottom:2px}
+.info-row .txt a{color:var(--primary);font-weight:600}
+.info-row.hl{background:var(--primary);border-color:var(--primary);color:#fff}
+.info-row.hl .ic{background:rgba(255,255,255,.16);color:#fff}
+.info-row.hl .txt a{color:#fff}
+.info-row.hl .txt span{color:#c7d5f5}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* Order form */
+.order{background:linear-gradient(120deg,#1e3a8a,#2547b0);color:#fff;border-radius:var(--radius-lg);
+  padding:clamp(28px,4vw,44px);margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.order h2{color:#fff;margin-bottom:10px}
+.order p{color:#c7d5f5;margin:0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid .full{grid-column:1/-1}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:13px 15px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:inherit;font-size:15px;min-width:0}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:#b6c6ea}
+.form-grid select{color:#fff}
+.form-grid select option{color:#0f172a}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:2px solid #93c5fd;border-color:transparent;background:rgba(255,255,255,.16)}
+.form-note{font-size:12.5px;color:#b6c6ea;margin:12px 0 0}
+.form-ok{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:12px;
+  padding:16px 18px;font-weight:600;margin-top:12px}
+
+/* Footer */
+.footer{background:#0d1a3d;color:#c7d5f5;padding:52px 0 26px;font-size:14.5px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer h4{font-family:'Manrope',sans-serif;color:#fff;font-size:15px;margin:0 0 14px}
+.footer a{color:#c7d5f5}.footer a:hover{color:#fff}
+.footer .brand{color:#fff;margin-bottom:14px}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.footer-bar{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;
+  flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:13px;color:#8ea3d6}
+
+/* ===== Responsive ===== */
+@media(max-width:1040px){
+  .nav{display:none}
+  .header-phone{display:none}
+  .header-cta{display:none}
+  .burger{display:flex;margin-left:auto}
+  .nav.nav--open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--border);padding:8px 20px 20px;box-shadow:var(--shadow)}
+  .nav.nav--open a{padding:13px 4px;border-bottom:1px solid var(--border);font-size:16px}
+  .nav.nav--open .m-phone{font-family:'Manrope',sans-serif;font-weight:800;font-size:20px;color:var(--primary);border:0;padding-top:16px}
+  .nav.nav--open .btn{margin-top:14px;border-bottom:0}
+}
+.nav .m-phone,.nav .m-cta{display:none}
+@media(max-width:1040px){.nav.nav--open .m-phone,.nav.nav--open .m-cta{display:block}}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;min-height:auto}
+  .hero-media{order:-1}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{grid-template-columns:1fr;gap:28px}
+  .split .split-media{order:-1}
+  .contacts-grid{grid-template-columns:1fr}
+  .order{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:600px){
+  .adv-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:26px}
+  .hero-actions .btn{flex:1}
+}
+@media(max-width:380px){
+  .cards{grid-template-columns:1fr}
+  .card .btn{width:100%}
+  .card__foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand"><span class="dot">S</span>Stampler.ru</a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#osnastki">Оснастки</a>
+      <a href="#how">Как заказать</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a class="m-phone" href="tel:+78312303130">+7 (831) 230-31-30</a>
+      <a class="btn btn-primary m-cta" href="#order">Заказать печать</a>
+    </nav>
+    <a class="header-phone" href="tel:+78312303130">+7 (831) 230-31-30</a>
+    <a class="btn btn-primary header-cta" href="#order">Заказать</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">📍 Нижний Новгород · с 1998 года</p>
+      <h1>Печати и штампы за&nbsp;15&nbsp;минут</h1>
+      <p class="hero-sub">Срочное изготовление печатей из резины методом лазерной гравировки. Чёткий оттиск, служит более 10 лет. Доставка в офис по Н.&nbsp;Новгороду и области.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+        <a href="#contacts" class="btn btn-outline">Как нас найти</a>
+      </div>
+      <div class="hero-facts">
+        <div class="f"><div class="n">от 250 ₽</div><div class="l">круглая печать ИП / ООО</div></div>
+        <div class="f"><div class="n">15 мин</div><div class="l">срочное изготовление</div></div>
+        <div class="f"><div class="n">10+ лет</div><div class="l">срок службы клише</div></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/hero-stamps.jpg" alt="Резиновая печать на деревянной оснастке и штемпельная подушка"
+        fetchpriority="high" width="1280" height="885"
+        onerror="this.style.opacity='0'">
+      <div class="hero-badge">Лазерная гравировка<small>высококачественная резина, не фотополимер</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Почему Stampler</p>
+        <h2>Качество, скорость и доставка</h2>
+      </div>
+      <p class="lead">Мы не предлагаем дешёвые печати из фотополимера — только профессиональное оборудование и качественная резина.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="ic">⚡</div>
+        <h3>Срочно — за 15 минут</h3>
+        <p>Изготовим печать или штамп в день обращения. Стандартные оснастки Trodat и Colop всегда в наличии.</p>
+      </div>
+      <div class="adv">
+        <div class="ic">🔍</div>
+        <h3>Точно по оттиску</h3>
+        <p>Восстановим печать по образцу оттиска или по вашему макету. Лазерная гравировка даёт чёткий и ровный контур.</p>
+      </div>
+      <div class="adv">
+        <div class="ic">🚚</div>
+        <h3>Доставка в офис</h3>
+        <p>Привезём заказ в любой район города и области. При заказе от 2500 ₽ доставка по Н. Новгороду — бесплатно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="section section--tint" id="catalog">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Каталог</p>
+        <h2>Печати и штампы</h2>
+      </div>
+      <p class="lead">Готовые изделия и оснастки Trodat, Colop. Цены указаны за печать «под ключ», с изготовлением клише.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card__media"><img src="assets/pechat-ip.gif" loading="lazy" decoding="async" alt="Круглая печать индивидуального предпринимателя" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Печать</div>
+          <div class="card__title">Печать предпринимателя</div>
+          <p class="card__desc">Круглая печать для ИП — Ф.И.О., ИНН, ОГРНИП, город. Соответствует требованиям банков.</p>
+          <div class="card__foot"><div class="price">350 ₽<small>с клише</small></div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/pechat-ooo.gif" loading="lazy" decoding="async" alt="Круглая печать организации ООО" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Печать</div>
+          <div class="card__title">Печать организации</div>
+          <p class="card__desc">Круглая печать для ООО и юрлиц — название, ИНН, ОГРН, адрес. Любой шаблон и оснастка.</p>
+          <div class="card__foot"><div class="price">350 ₽<small>с клише</small></div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/pechat-zaschita.gif" loading="lazy" decoding="async" alt="Круглая печать с защитой от подделки" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Печать</div>
+          <div class="card__title">Печать с защитой</div>
+          <p class="card__desc">Защитная сетка, микротекст, гильоширные элементы — затрудняют копирование оттиска.</p>
+          <div class="card__foot"><div class="price">450 ₽<small>с клише</small></div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/faksimile.gif" loading="lazy" decoding="async" alt="Факсимиле — печать подписи" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Печать</div>
+          <div class="card__title">Факсимиле подписи</div>
+          <p class="card__desc">Точное воспроизведение личной подписи на оснастке. Изготовление по образцу.</p>
+          <div class="card__foot"><div class="price">от 300 ₽<small>по оттиску</small></div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/trodat9440.jpg" loading="lazy" decoding="async" alt="Карманная печать Trodat 9440" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Оснастка + клише</div>
+          <div class="card__title">Trodat 9440</div>
+          <p class="card__desc">Карманная автоматическая печать, оттиск ⌀ 40 мм. Компактный корпус, защитная крышка.</p>
+          <div class="card__foot"><div class="price">400 ₽</div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/trodat4924.jpg" loading="lazy" decoding="async" alt="Печать Trodat 4924 с крышкой" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Оснастка + клише</div>
+          <div class="card__title">Trodat 4924 + крышка</div>
+          <p class="card__desc">Автоматическая печать, оттиск ⌀ 40 мм. Настольная оснастка с защитной крышкой.</p>
+          <div class="card__foot"><div class="price">350 ₽</div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/colop-mouse.jpg" loading="lazy" decoding="async" alt="Печать Stamp Mouse R40" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Оснастка + клише</div>
+          <div class="card__title">Stamp Mouse R40</div>
+          <p class="card__desc">Эргономичная оснастка Colop, оттиск ⌀ 40 мм. Мягкий ход, аккуратный отпечаток.</p>
+          <div class="card__foot"><div class="price">300 ₽</div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/colop-pocket.jpg" loading="lazy" decoding="async" alt="Карманная печать Pocket Stamp R40" onerror="this.closest('.card__media').classList.add('noimg')"></div>
+        <div class="card__body">
+          <div class="card__tag">Оснастка + клише</div>
+          <div class="card__title">Pocket Stamp R40</div>
+          <p class="card__desc">Складная карманная печать Colop, оттиск ⌀ 40 мм. Всегда с собой, защищена корпусом.</p>
+          <div class="card__foot"><div class="price">580 ₽</div><a href="#order" class="btn btn-primary">Заказать</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OSNASTKI / STAMPS -->
+<section class="section" id="osnastki">
+  <div class="container split">
+    <div class="split-media"><img src="assets/stock-stamp2.jpg" loading="lazy" decoding="async" alt="Самонаборный датер-нумератор с металлическими символами" onerror="this.style.opacity='0'"></div>
+    <div>
+      <p class="eyebrow">Штампы и оснастки</p>
+      <h2>Не только печати</h2>
+      <p class="lead">Полный ассортимент штемпельной продукции и оснасток под любые задачи офиса и производства.</p>
+      <div class="chips">
+        <span class="chip">Штампы от 120 ₽</span>
+        <span class="chip">Самонаборные печати</span>
+        <span class="chip">Самонаборные штампы</span>
+        <span class="chip">Датеры</span>
+        <span class="chip">Нумераторы</span>
+        <span class="chip">Факсимиле</span>
+        <span class="chip">Оснастки Trodat Printy</span>
+        <span class="chip">Professional Line</span>
+        <span class="chip">Оснастки оптом</span>
+      </div>
+      <ul class="ul-check">
+        <li><b>Оснастки для печатей и штампов</b> — пластиковые традиционные и автоматические, от 50 ₽.</li>
+        <li><b>Пломбировочные устройства</b> — пломбиры, пломбираторы, металлические печати под пластилин и сургуч.</li>
+        <li><b>Сопутствующие товары</b> — проволока, шпагат банковский, чашки пломбировочные, штемпельная краска.</li>
+      </ul>
+      <a href="#order" class="btn btn-ghost">Уточнить наличие и цену</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="section section--tint" id="how">
+  <div class="container">
+    <div class="sec-head center" style="flex-direction:column;align-items:center;text-align:center">
+      <div>
+        <p class="eyebrow">Как заказать</p>
+        <h2>Четыре простых шага</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Оставьте заявку</h3><p>Заполните форму на сайте или позвоните по телефону — опишите, какая печать нужна.</p></div>
+      <div class="step"><h3>Согласуем макет</h3><p>Подготовим и покажем макет оттиска. По оттиску восстановим печать по образцу.</p></div>
+      <div class="step"><h3>Изготовим</h3><p>Гравируем клише лазером и собираем на оснастке — стандартные заказы за 15 минут.</p></div>
+      <div class="step"><h3>Доставим</h3><p>Привезём в офис курьером или отправим в пункт выдачи СДЭК. Оплата наличными или по счёту.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">О компании</p>
+      <h2>Печати в Нижнем Новгороде с&nbsp;1998&nbsp;года</h2>
+      <p class="lead">Stampler.ru — онлайн-сервис по изготовлению печатей и штампов. Более 25 лет мы делаем штемпельную продукцию для предпринимателей, организаций и частных лиц Нижнего Новгорода.</p>
+      <ul class="ul-check">
+        <li>Клише из <b>высококачественной резины</b>, а не дешёвого фотополимера.</li>
+        <li>Изготовление методом <b>лазерной гравировки</b> на профессиональном оборудовании.</li>
+        <li>Чёткий и ровный оттиск, срок службы клише <b>более 10 лет</b>.</li>
+        <li>Работаем с ИП, ООО, бюджетными и коммерческими организациями.</li>
+      </ul>
+      <div class="hero-actions" style="margin:0">
+        <a href="#catalog" class="btn btn-primary" style="color:#fff">Выбрать печать</a>
+        <a href="#contacts" class="btn btn-ghost">Контакты</a>
+      </div>
+    </div>
+    <div class="split-media"><img src="assets/laser.png" loading="lazy" decoding="async" alt="Лазерная гравировка клише печати"
+      style="background:var(--surface-2);object-fit:contain;padding:24px" onerror="this.style.opacity='0'"></div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section--tint" id="contacts">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Контакты</p>
+        <h2>Как нас найти</h2>
+      </div>
+      <p class="lead">Пункт выдачи и приёма заказов — ул. Гордеевская, 7 (СДЭК). Работаем по всему городу и области.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row hl">
+          <div class="ic">📞</div>
+          <div class="txt"><b>Телефоны</b>
+            <a href="tel:+78312303130">+7 (831) 230-31-30</a><br>
+            <a href="tel:+78314151413">+7 (831) 415-14-13</a> · <a href="tel:+78314155996">+7 (831) 415-59-96</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">✉️</div>
+          <div class="txt"><b>E-mail</b><a href="mailto:info@stampler.ru">info@stampler.ru</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div class="txt"><b>Пункт выдачи</b><span>г. Нижний Новгород, ул. Гордеевская, 7, оф. 102 (СДЭК)</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕐</div>
+          <div class="txt"><b>Режим работы</b><span>Пн–Пт 10:00–20:00 · Сб–Вс 10:00–16:00</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🚚</div>
+          <div class="txt"><b>Доставка</b><span>По Н. Новгороду и области. От 2500 ₽ — бесплатно. По России — СДЭК, 2–5 дней.</span></div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.32504,43.9474&z=16&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта — ул. Гордеевская, 7, Нижний Новгород"></iframe>
+      </div>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="order" id="order">
+      <div>
+        <h2>Заказать печать онлайн</h2>
+        <p>Оставьте заявку — менеджер свяжется с вами, согласует макет и рассчитает доставку. Это ни к чему вас не обязывает.</p>
+        <p class="form-note">Отправляя форму, вы соглашаетесь на обработку персональных данных.</p>
+      </div>
+      <form id="orderForm" novalidate>
+        <div class="form-grid">
+          <input type="text" name="name" placeholder="Ваше имя" required aria-label="Ваше имя">
+          <input type="tel" name="phone" placeholder="Телефон" required aria-label="Телефон">
+          <select name="product" class="full" aria-label="Что нужно изготовить">
+            <option value="">Что изготовить?</option>
+            <option>Печать ИП</option>
+            <option>Печать организации (ООО)</option>
+            <option>Печать с защитой</option>
+            <option>Факсимиле</option>
+            <option>Штамп</option>
+            <option>Датер / нумератор</option>
+            <option>Оснастка</option>
+            <option>Другое</option>
+          </select>
+          <textarea name="comment" class="full" rows="3" placeholder="Комментарий или образец оттиска" aria-label="Комментарий"></textarea>
+          <button type="submit" class="btn btn-ghost full" style="justify-self:start;width:auto">Отправить заявку</button>
+        </div>
+        <div class="form-ok" id="orderOk" hidden>✓ Спасибо! Заявка принята — мы перезвоним в ближайшее время.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="brand" style="display:flex;align-items:center;gap:10px"><span class="dot">S</span>Stampler.ru</div>
+        <p style="margin:0;max-width:320px">Срочное изготовление печатей и штампов из резины в Нижнем Новгороде. Лазерная гравировка, доставка в офис.</p>
+      </div>
+      <div>
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="#catalog">Печати ИП и ООО</a></li>
+          <li><a href="#catalog">Печать с защитой</a></li>
+          <li><a href="#osnastki">Штампы и датеры</a></li>
+          <li><a href="#osnastki">Оснастки Trodat / Colop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+78312303130">+7 (831) 230-31-30</a></li>
+          <li><a href="mailto:info@stampler.ru">info@stampler.ru</a></li>
+          <li>ул. Гордеевская, 7, оф. 102</li>
+          <li>Нижний Новгород</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 1998–2025 Stampler.ru · ИП Зырянов М.Ю. · ИНН 524600386409</span>
+      <span>Нижний Новгород · +7 (831) 230-31-30</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  });
+  var form=document.getElementById('orderForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.name.value.trim()||!form.phone.value.trim()){form.reportValidity&&form.reportValidity();return;}
+    document.getElementById('orderOk').hidden=false;
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

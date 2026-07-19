@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Музыкальная школа «Виртуозы» — обучение вокалу и музыке в Нижнем Новгороде</title>
+<meta name="description" content="Частная музыкальная школа «Виртуозы» в Нижнем Новгороде: вокал, фортепиано, гитара, скрипка, барабаны, саксофон для детей и взрослых. Индивидуальные занятия и абонементы. Запись по телефону +7 (831) 424-98-00.">
+<meta name="theme-color" content="#2b0810">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Музыкальная школа «Виртуозы» — Нижний Новгород">
+<meta property="og:description" content="Вокал и музыкальные инструменты для детей и взрослых. Индивидуальные занятия, опытные педагоги, концерты и творческая атмосфера.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#4a0e1f;
+  --wine-deep:#2b0810;
+  --wine-soft:#611427;
+  --gold:#c9a86a;
+  --gold-bright:#e0c48a;
+  --gold-dim:#9b8352;
+  --cream:#f6efe4;
+  --cream-dim:#d8cbb6;
+  --ink:#1a0c10;
+  --text-dark:#f4 e9dd;
+  --muted-light:#c9b8a6;
+  --surface:#37101c;
+  --line:rgba(201,168,106,.28);
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:26px;
+  --container:1140px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--wine-deep);
+  color:#f2e6d8;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.15;color:var(--cream)}
+h1{font-size:clamp(34px,6.2vw,68px);letter-spacing:.5px}
+h2{font-size:clamp(27px,4.4vw,46px)}
+h3{font-size:clamp(19px,2.4vw,24px)}
+p{color:#e6d8c7}
+.container{max-width:var(--container);margin:0 auto;padding:0 22px}
+.section{padding:clamp(56px,8vw,104px) 0}
+.eyebrow{
+  display:inline-block;font-size:13px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-bright);font-weight:600;margin-bottom:16px;
+}
+.section-head{max-width:720px;margin-bottom:clamp(34px,5vw,58px)}
+.section-head p{margin-top:14px;color:var(--muted-light);font-size:clamp(15px,1.6vw,18px)}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;
+  cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+  white-space:nowrap;border:1px solid transparent;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold));
+  color:var(--wine-deep);box-shadow:0 8px 26px rgba(201,168,106,.28);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,106,.42)}
+.btn-outline{border:1px solid var(--gold);color:var(--gold-bright);background:transparent}
+.btn-outline:hover{background:rgba(201,168,106,.12);transform:translateY(-2px)}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(30,7,13,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;
+  border:1.5px solid var(--gold);color:var(--gold-bright);
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  background:radial-gradient(circle at 30% 25%,rgba(201,168,106,.22),transparent 70%);
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand-text b{font-family:'Playfair Display',serif;font-size:19px;color:var(--cream);letter-spacing:1px}
+.brand-text span{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dim)}
+.nav{display:flex;align-items:center;gap:28px;margin-left:auto}
+.nav a{font-size:15px;color:#e9dcc9;font-weight:500;transition:color .2s}
+.nav a:hover{color:var(--gold-bright)}
+.header-phone{font-weight:600;color:var(--cream);white-space:nowrap}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;
+  align-items:center;justify-content:center;background:none;border:none;cursor:pointer;margin-left:auto}
+.burger span{width:24px;height:2px;background:var(--gold-bright);border-radius:2px;transition:.3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav,.header-phone,.header-cta{display:none}
+  .burger{display:flex}
+  .nav.nav--open{
+    display:flex;flex-direction:column;align-items:flex-start;gap:20px;
+    position:absolute;top:72px;left:0;right:0;margin:0;
+    background:var(--wine-deep);border-bottom:1px solid var(--line);
+    padding:28px 22px 34px;box-shadow:0 22px 40px rgba(0,0,0,.5);
+  }
+  .nav.nav--open a{font-size:19px}
+  .nav.nav--open .mobile-phone{display:block;font-size:24px;font-family:'Playfair Display',serif;color:var(--gold-bright);margin-top:6px}
+  .nav.nav--open .btn{display:inline-flex;width:100%;margin-top:6px}
+}
+.mobile-phone,.nav .btn{display:none}
+@media(max-width:1040px){.nav.nav--open .mobile-phone,.nav.nav--open .btn{display:inline-flex}}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(30,7,13,.55) 0%,rgba(30,7,13,.72) 55%,var(--wine-deep) 100%),
+    url('assets/hero.jpg') center/cover no-repeat;
+}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 30%,rgba(74,14,31,.15),transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding-top:120px;padding-bottom:80px;max-width:760px}
+.hero .eyebrow{color:var(--gold-bright)}
+.hero h1{margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--gold-bright)}
+.hero-sub{font-size:clamp(16px,2vw,21px);color:#eaddcb;max-width:560px;margin-bottom:34px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:28px;flex-wrap:wrap;margin-top:46px}
+.hero-badge{min-width:0}
+.hero-badge b{display:block;font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,38px);color:var(--gold-bright);line-height:1}
+.hero-badge span{font-size:13px;color:var(--muted-light);letter-spacing:.5px}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv-card{
+  background:linear-gradient(160deg,var(--surface),var(--wine));
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:30px 26px;min-width:0;transition:transform .25s,border-color .25s;
+}
+.adv-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.adv-ico{font-size:30px;margin-bottom:16px}
+.adv-card h3{color:var(--gold-bright);margin-bottom:10px;font-size:20px}
+.adv-card p{font-size:15px;color:var(--cream-dim)}
+
+/* Directions */
+.dir-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.dir-card{
+  position:relative;border-radius:var(--radius-md);overflow:hidden;
+  border:1px solid var(--line);min-width:0;background:var(--surface);
+  display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;
+}
+.dir-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.dir-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--wine)}
+.dir-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:saturate(1.05)}
+.dir-card:hover .dir-media img{transform:scale(1.06)}
+.dir-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(43,8,16,.85))}
+.dir-media.noimg{background:linear-gradient(135deg,var(--wine),var(--wine-soft))}
+.dir-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;min-width:0}
+.dir-body h3{margin-bottom:10px;color:var(--cream)}
+.dir-body p{font-size:14.5px;color:var(--cream-dim);flex:1}
+.dir-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.dir-tags span{font-size:12px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--gold-bright)}
+
+/* Pricing */
+.price-wrap{background:linear-gradient(180deg,var(--wine) 0%,var(--wine-deep) 100%)}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.price-card{
+  background:linear-gradient(165deg,var(--surface),var(--wine-deep));
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:34px 30px;min-width:0;position:relative;display:flex;flex-direction:column;
+}
+.price-card.featured{border-color:var(--gold);box-shadow:0 16px 48px rgba(201,168,106,.18)}
+.price-card.featured::before{
+  content:"Популярно";position:absolute;top:-13px;left:30px;
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--wine-deep);
+  font-size:12px;font-weight:700;letter-spacing:1px;padding:5px 16px;border-radius:999px;
+}
+.price-card .plan{color:var(--gold-bright);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.price-card .amount{font-family:'Playfair Display',serif;font-size:44px;color:var(--cream);margin:14px 0 2px;line-height:1}
+.price-card .amount small{font-size:17px;color:var(--muted-light);font-family:'Manrope',sans-serif}
+.price-card .per{font-size:14px;color:var(--muted-light);margin-bottom:22px}
+.price-list{list-style:none;margin:0 0 26px;display:flex;flex-direction:column;gap:12px}
+.price-list li{font-size:14.5px;color:var(--cream-dim);padding-left:26px;position:relative}
+.price-list li::before{content:"♪";position:absolute;left:0;color:var(--gold);font-size:15px}
+.price-card .btn{margin-top:auto;width:100%}
+.price-note{margin-top:30px;text-align:center;color:var(--muted-light);font-size:14px}
+
+.price-table-wrap{margin-top:44px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-md)}
+table.price-table{width:100%;border-collapse:collapse;min-width:520px}
+.price-table caption{text-align:left;padding:18px 22px 6px;color:var(--gold-bright);
+  font-family:'Playfair Display',serif;font-size:20px}
+.price-table th,.price-table td{padding:13px 20px;text-align:left;font-size:14.5px;border-bottom:1px solid rgba(201,168,106,.14)}
+.price-table th{color:var(--gold-bright);font-weight:600;background:rgba(201,168,106,.06)}
+.price-table td{color:var(--cream-dim)}
+.price-table td:last-child{color:var(--cream);font-weight:600;white-space:nowrap}
+.price-table tr:last-child td{border-bottom:none}
+
+/* Audience */
+.aud-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.aud-card{
+  border-radius:var(--radius-lg);padding:clamp(30px,4vw,52px);min-width:0;
+  border:1px solid var(--line);
+}
+.aud-card.kids{background:linear-gradient(155deg,var(--wine-soft),var(--wine-deep))}
+.aud-card.adults{background:linear-gradient(155deg,var(--surface),var(--wine-deep))}
+.aud-card .aud-ico{font-size:38px;margin-bottom:18px}
+.aud-card h3{font-size:clamp(22px,2.6vw,30px);color:var(--cream);margin-bottom:14px}
+.aud-card p{color:var(--cream-dim);margin-bottom:18px}
+.aud-card ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.aud-card li{padding-left:26px;position:relative;font-size:15px;color:#e8dac8}
+.aud-card li::before{content:"✓";position:absolute;left:0;color:var(--gold-bright);font-weight:700}
+
+/* Teachers */
+.teach-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.teach-card{
+  background:linear-gradient(160deg,var(--surface),var(--wine-deep));
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px 22px;text-align:center;min-width:0;transition:transform .25s,border-color .25s;
+}
+.teach-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.teach-avatar{
+  width:74px;height:74px;border-radius:50%;margin:0 auto 16px;
+  display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:28px;
+  color:var(--wine-deep);font-weight:700;
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold));
+  box-shadow:0 6px 18px rgba(201,168,106,.3);
+}
+.teach-card h3{font-size:17px;color:var(--cream);margin-bottom:6px}
+.teach-card p{font-size:13px;color:var(--gold-bright);line-height:1.4}
+
+/* Process */
+.proc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.proc-step{min-width:0}
+.proc-num{
+  font-family:'Playfair Display',serif;font-size:46px;color:var(--gold);
+  line-height:1;margin-bottom:14px;opacity:.85;
+}
+.proc-step h3{font-size:19px;color:var(--cream);margin-bottom:8px}
+.proc-step p{font-size:14.5px;color:var(--cream-dim)}
+
+/* Schedule */
+.sched-wrap{background:linear-gradient(180deg,var(--wine-deep),var(--wine) 100%)}
+.sched-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,54px);align-items:start}
+.sched-hours{border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+.sched-hours .row{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:16px 24px;border-bottom:1px solid rgba(201,168,106,.14);min-width:0}
+.sched-hours .row:last-child{border-bottom:none}
+.sched-hours .row span:first-child{color:var(--cream-dim);font-size:15px}
+.sched-hours .row span:last-child{color:var(--cream);font-weight:600;white-space:nowrap}
+.sched-hours .row.hl{background:rgba(201,168,106,.08)}
+.sched-info h3{color:var(--gold-bright);margin-bottom:14px}
+.sched-info p{color:var(--cream-dim);margin-bottom:16px}
+.sched-info .btn{margin-top:6px}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--gap);align-items:stretch}
+.contacts-info{
+  background:linear-gradient(160deg,var(--surface),var(--wine-deep));
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:clamp(28px,4vw,42px);min-width:0;
+}
+.contacts-info .c-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px;min-width:0}
+.contacts-info .c-ico{font-size:22px;flex-shrink:0;line-height:1.4}
+.contacts-info .c-row .lbl{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:3px}
+.contacts-info .c-row .val{color:var(--cream);font-size:16px;overflow-wrap:anywhere}
+.contacts-info .c-row .val a{color:var(--cream)}
+.contacts-info .c-row .val a:hover{color:var(--gold-bright)}
+.phone-big{font-family:'Playfair Display',serif;font-size:clamp(24px,3.2vw,30px)!important;color:var(--gold-bright)!important}
+.contacts-info .btn{margin-top:8px;width:100%}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.2) contrast(1.05)}
+
+/* Footer */
+.footer{background:var(--ink);border-top:1px solid var(--line);padding:46px 0 34px}
+.footer-inner{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.footer .brand-text b{font-size:18px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:14px;color:var(--muted-light)}
+.footer-links a:hover{color:var(--gold-bright)}
+.footer-legal{width:100%;margin-top:24px;padding-top:22px;border-top:1px solid rgba(201,168,106,.14);
+  color:#8f7a6a;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Responsive */
+@media(max-width:960px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dir-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .teach-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .proc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sched-grid{grid-template-columns:1fr}
+  .contacts-grid{grid-template-columns:1fr}
+  .aud-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .adv-grid{grid-template-columns:1fr}
+  .dir-grid{grid-template-columns:1fr}
+  .teach-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proc-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .hero-badges{gap:20px 28px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Музыкальная школа Виртуозы">
+      <span class="brand-mark">В</span>
+      <span class="brand-text"><b>Виртуозы</b><span>Музыкальная школа</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#directions">Направления</a>
+      <a href="#prices">Стоимость</a>
+      <a href="#teachers">Педагоги</a>
+      <a href="#process">Занятия</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78314249800" class="mobile-phone">+7 (831) 424-98-00</a>
+      <a href="#contacts" class="btn btn-primary">Записаться</a>
+    </nav>
+    <a href="tel:+78314249800" class="header-phone">+7 (831) 424-98-00</a>
+    <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · пр. Ленина</p>
+    <h1>Раскройте свой <em>талант</em> — в любом возрасте</h1>
+    <p class="hero-sub">Частная музыкальная школа «Виртуозы»: вокал и инструменты для детей и взрослых. Индивидуальная программа, опытные педагоги и сцена для ваших первых выступлений.</p>
+    <div class="hero-actions">
+      <a href="#directions" class="btn btn-primary">Выбрать направление</a>
+      <a href="#contacts" class="btn btn-outline">Записаться на пробное</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><b>12+</b><span>лет в Нижнем Новгороде</span></div>
+      <div class="hero-badge"><b>3000+</b><span>учеников прошли обучение</span></div>
+      <div class="hero-badge"><b>12</b><span>концертов в год</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему «Виртуозы»</span>
+      <h2>Музыка, доступная каждому</h2>
+      <p>Мы верим, что музыка — универсальный язык, понятный любому. Здесь начинают с нуля и в 7, и в 40 лет.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-ico">🎯</div>
+        <h3>Индивидуальная программа</h3>
+        <p>Педагог составляет план под вашу цель, вкус и уровень — от первых нот до сольного номера.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🎓</div>
+        <h3>Отобранные педагоги</h3>
+        <p>Практикующие музыканты, прошедшие тщательный отбор. Учат понятно и вдохновляют играть.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🎤</div>
+        <h3>Сцена и концерты</h3>
+        <p>12 отчётных концертов в год — реальная практика выступлений и поддержка единомышленников.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🏠</div>
+        <h3>Тёплая атмосфера</h3>
+        <p>Творческая и дружеская среда — дом, двери которого всегда открыты для музыки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section class="section" id="directions">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Направления</span>
+      <h2>Выберите инструмент или голос</h2>
+      <p>Вокал всех стилей и полный спектр инструментов — для детей и взрослых, с любого уровня подготовки.</p>
+    </div>
+    <div class="dir-grid">
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/hero.jpg" alt="Вокальный класс музыкальной школы" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Вокал</h3>
+          <p>Постановка голоса, дыхание и сценическая речь. Классический, эстрадно-джазовый, народный и детский вокал.</p>
+          <div class="dir-tags"><span>Дети</span><span>Взрослые</span><span>Все стили</span></div>
+        </div>
+      </article>
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/piano.jpg" alt="Фортепиано для обучения" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Фортепиано и синтезатор</h3>
+          <p>Академическая база и современный репертуар. Учимся читать ноты, играть любимые произведения и импровизировать.</p>
+          <div class="dir-tags"><span>Дети</span><span>Взрослые</span></div>
+        </div>
+      </article>
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/guitar.jpg" alt="Акустическая гитара крупным планом" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Гитара и укулеле</h3>
+          <p>Акустическая и электрогитара, а также гавайская гитара укулеле. Аккорды, перебор, любимые песни уже с первых уроков.</p>
+          <div class="dir-tags"><span>Акустика</span><span>Электро</span><span>Укулеле</span></div>
+        </div>
+      </article>
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/drums.jpg" alt="Барабанная установка" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Ударные инструменты</h3>
+          <p>Барабанная установка с нуля: чувство ритма, техника, координация и драйв игры в ансамбле.</p>
+          <div class="dir-tags"><span>Дети</span><span>Взрослые</span></div>
+        </div>
+      </article>
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/violin.jpg" alt="Скрипка в футляре" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Скрипка</h3>
+          <p>Постановка руки, интонация и выразительность. Классический репертуар и ансамблевое музицирование.</p>
+          <div class="dir-tags"><span>Дети</span><span>Взрослые</span></div>
+        </div>
+      </article>
+      <article class="dir-card">
+        <div class="dir-media"><img src="assets/sax.jpg" alt="Игра на саксофоне" loading="lazy" decoding="async" onerror="this.closest('.dir-media').classList.add('noimg');this.remove()"></div>
+        <div class="dir-body">
+          <h3>Духовые: саксофон и флейта</h3>
+          <p>Дыхание, звук и фразировка. Джаз, эстрада и классика — от первых нот до сольных партий.</p>
+          <div class="dir-tags"><span>Саксофон</span><span>Флейта</span></div>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:28px;color:var(--muted-light);font-size:15px">
+      А также: аккордеон и баян, гармонь, сольфеджио и теория музыки, оркестр и ансамбли. Не нашли своё — <a href="#contacts" style="color:var(--gold-bright)">спросите нас</a>.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section price-wrap" id="prices">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Стоимость</span>
+      <h2>Абонементы и разовые занятия</h2>
+      <p>Чем больше занятий в абонементе — тем выгоднее каждый урок. В каждый абонемент входят групповые занятия по теории музыки и сольфеджио.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="plan">Пробное занятие</span>
+        <div class="amount">1 700 <small>₽</small></div>
+        <div class="per">разовое, индивидуально · 45 минут</div>
+        <ul class="price-list">
+          <li>Знакомство с педагогом</li>
+          <li>Определим ваш уровень и цель</li>
+          <li>Подберём направление</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Записаться</a>
+      </div>
+      <div class="price-card featured">
+        <span class="plan">Абонемент 8 занятий</span>
+        <div class="amount">12 000 <small>₽</small></div>
+        <div class="per">индивидуально · 60 минут · 1 500 ₽ / занятие</div>
+        <ul class="price-list">
+          <li>8 индивидуальных уроков</li>
+          <li>Групповое сольфеджио в подарок</li>
+          <li>Гибкое расписание на 1–2 месяца</li>
+          <li>Подготовка к отчётному концерту</li>
+        </ul>
+        <a href="#contacts" class="btn btn-primary">Выбрать абонемент</a>
+      </div>
+      <div class="price-card">
+        <span class="plan">Дуэт · вдвоём выгоднее</span>
+        <div class="amount">4 200 <small>₽</small></div>
+        <div class="per">4 занятия по 60 минут · 1 050 ₽ / чел.</div>
+        <ul class="price-list">
+          <li>Занятия в паре — с другом или в семье</li>
+          <li>Цена указана на одного человека</li>
+          <li>Отличный формат для взрослых</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Записаться дуэтом</a>
+      </div>
+    </div>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <caption>Индивидуальные занятия · 60 минут</caption>
+        <thead>
+          <tr><th>Абонемент</th><th>Всего</th><th>Цена за занятие</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Разово</td><td>1 900 ₽</td><td>1 900 ₽</td></tr>
+          <tr><td>1 месяц · 4 занятия</td><td>6 500 ₽</td><td>1 625 ₽</td></tr>
+          <tr><td>1–2 месяца · 8 занятий</td><td>12 000 ₽</td><td>1 500 ₽</td></tr>
+          <tr><td>1,5–3 месяца · 12 занятий</td><td>17 500 ₽</td><td>1 458 ₽</td></tr>
+          <tr><td>3–6 месяцев · 24 занятия</td><td>34 000 ₽</td><td>1 417 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <caption>Индивидуальные занятия · 45 минут</caption>
+        <thead>
+          <tr><th>Абонемент</th><th>Всего</th><th>Цена за занятие</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Разово</td><td>1 700 ₽</td><td>1 700 ₽</td></tr>
+          <tr><td>1 месяц · 4 занятия</td><td>5 600 ₽</td><td>1 400 ₽</td></tr>
+          <tr><td>1–2 месяца · 8 занятий</td><td>10 400 ₽</td><td>1 300 ₽</td></tr>
+          <tr><td>1,5–3 месяца · 12 занятий</td><td>14 700 ₽</td><td>1 225 ₽</td></tr>
+          <tr><td>3–6 месяцев · 24 занятия</td><td>28 300 ₽</td><td>1 179 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Дуэты (60 мин, цена на одного): 4 занятия — 4 200 ₽ · 8 занятий — 7 800 ₽ (975 ₽ / занятие).</p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Для кого</span>
+      <h2>Детям и взрослым</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="aud-card kids">
+        <div class="aud-ico">🎈</div>
+        <h3>Детям</h3>
+        <p>Мягкое погружение в музыку через игру и любимые песни. Развиваем слух, чувство ритма и уверенность на сцене.</p>
+        <ul>
+          <li>Детский вокал и первый инструмент</li>
+          <li>Занятия в темпе и настроении ребёнка</li>
+          <li>Выступления на отчётных концертах</li>
+          <li>Развитие слуха, памяти и дисциплины</li>
+        </ul>
+      </div>
+      <div class="aud-card adults">
+        <div class="aud-ico">🎶</div>
+        <h3>Взрослым</h3>
+        <p>Первая школа в Нижнем Новгороде для тех, кто решил исполнить давнюю мечту научиться музыке. Начинать никогда не поздно.</p>
+        <ul>
+          <li>Обучение с нуля в любом возрасте</li>
+          <li>Удобное вечернее расписание</li>
+          <li>Репертуар по вашему вкусу</li>
+          <li>Формат дуэта — играйте вдвоём</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="section" id="teachers" style="background:linear-gradient(180deg,var(--wine-deep),var(--wine) 100%)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Педагоги</span>
+      <h2>Наставники, влюблённые в музыку</h2>
+      <p>Практикующие музыканты, которые умеют объяснять просто и заряжать желанием играть.</p>
+    </div>
+    <div class="teach-grid">
+      <div class="teach-card"><div class="teach-avatar">АМ</div><h3>Анна Михайловна</h3><p>Вокал · сценическая речь · сольфеджио</p></div>
+      <div class="teach-card"><div class="teach-avatar">АВ</div><h3>Андрей Викторович</h3><p>Вокал</p></div>
+      <div class="teach-card"><div class="teach-avatar">ЕА</div><h3>Екатерина Максимовна</h3><p>Вокал · актёрское мастерство</p></div>
+      <div class="teach-card"><div class="teach-avatar">ТН</div><h3>Татьяна Николаевна</h3><p>Фортепиано</p></div>
+      <div class="teach-card"><div class="teach-avatar">МА</div><h3>Марьяна Александровна</h3><p>Вокал · фортепиано</p></div>
+      <div class="teach-card"><div class="teach-avatar">АБ</div><h3>Алексей Борисович</h3><p>Акустическая и электрогитара</p></div>
+      <div class="teach-card"><div class="teach-avatar">ВС</div><h3>Владимир Сергеевич</h3><p>Акустическая и электрогитара</p></div>
+      <div class="teach-card"><div class="teach-avatar">НК</div><h3>Наиль Камильевич</h3><p>Акустическая гитара</p></div>
+      <div class="teach-card"><div class="teach-avatar">АП</div><h3>Антон Павлович</h3><p>Ударные инструменты</p></div>
+      <div class="teach-card"><div class="teach-avatar">МА</div><h3>Максим Анатольевич</h3><p>Ударные инструменты</p></div>
+      <div class="teach-card"><div class="teach-avatar">ВД</div><h3>Виктория Дмитриевна</h3><p>Скрипка</p></div>
+      <div class="teach-card"><div class="teach-avatar">ЭА</div><h3>Элина Александровна</h3><p>Скрипка</p></div>
+      <div class="teach-card"><div class="teach-avatar">ИИ</div><h3>Ирина Ивановна</h3><p>Вокал · флейта</p></div>
+      <div class="teach-card"><div class="teach-avatar">ИА</div><h3>Иван Александрович</h3><p>Гармонь</p></div>
+      <div class="teach-card"><div class="teach-avatar">ДС</div><h3>Дарья Сергеевна</h3><p>Вокал</p></div>
+      <div class="teach-card"><div class="teach-avatar">ОС</div><h3>Олеся Сергеевна</h3><p>Вокал</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Как проходят занятия</span>
+      <h2>От первой ноты — к сцене</h2>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h3>Знакомство</h3>
+        <p>Пробное занятие: узнаём вашу цель, вкус и уровень, знакомим с педагогом и инструментом.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h3>Ваша программа</h3>
+        <p>Составляем индивидуальный план обучения и подбираем репертуар именно под вас.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h3>Регулярные уроки</h3>
+        <p>Индивидуальные занятия плюс групповое сольфеджио. Гибкое расписание в удобное время.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h3>Выступление</h3>
+        <p>Отчётные концерты каждый месяц — сцена, аплодисменты и уверенность в себе.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section sched-wrap" id="schedule">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Расписание</span>
+      <h2>Занимайтесь, когда удобно</h2>
+      <p>Индивидуальные уроки — по личному расписанию, которое мы согласуем при записи. Групповые занятия проходят по будням и выходным.</p>
+    </div>
+    <div class="sched-grid">
+      <div class="sched-hours">
+        <div class="row hl"><span>Понедельник — пятница</span><span>10:00 — 21:00</span></div>
+        <div class="row"><span>Суббота</span><span>10:00 — 20:00</span></div>
+        <div class="row"><span>Воскресенье</span><span>11:00 — 18:00</span></div>
+        <div class="row"><span>Сольфеджио (группа)</span><span>по будням, вечер</span></div>
+        <div class="row"><span>Оркестр и ансамбли</span><span>суббота</span></div>
+      </div>
+      <div class="sched-info">
+        <h3>Свободное время под вас</h3>
+        <p>Мы подбираем время занятий под работу, учёбу и график ребёнка. Взрослым удобны вечерние и выходные слоты, детям — время после школы.</p>
+        <p>Точное расписание и свободные окна педагогов уточняйте при записи по телефону.</p>
+        <a href="#contacts" class="btn btn-primary">Подобрать время</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти и записаться</h2>
+      <p>Позвоните нам — поможем выбрать направление, подберём педагога и удобное время первого занятия.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="c-row">
+          <span class="c-ico">📞</span>
+          <div><div class="lbl">Телефон</div><div class="val phone-big"><a href="tel:+78314249800">+7 (831) 424-98-00</a></div></div>
+        </div>
+        <div class="c-row">
+          <span class="c-ico">📍</span>
+          <div><div class="lbl">Адрес</div><div class="val">Нижний Новгород, проспект Ленина,<br>Автозаводский район</div></div>
+        </div>
+        <div class="c-row">
+          <span class="c-ico">✉️</span>
+          <div><div class="lbl">Email</div><div class="val"><a href="mailto:mail@muz-school.ru">mail@muz-school.ru</a></div></div>
+        </div>
+        <div class="c-row">
+          <span class="c-ico">🕐</span>
+          <div><div class="lbl">Часы работы</div><div class="val">Ежедневно, 10:00 — 21:00</div></div>
+        </div>
+        <a href="tel:+78314249800" class="btn btn-primary">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=56.2599029,43.9051658&z=15&hl=ru&output=embed"
+          width="100%" height="400" loading="lazy" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Музыкальная школа Виртуозы на карте, проспект Ленина, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">В</span>
+        <span class="brand-text"><b>Виртуозы</b><span>Музыкальная школа</span></span>
+      </a>
+      <nav class="footer-links" aria-label="Навигация в подвале">
+        <a href="#directions">Направления</a>
+        <a href="#prices">Стоимость</a>
+        <a href="#teachers">Педагоги</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="tel:+78314249800" class="btn btn-outline">+7 (831) 424-98-00</a>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Музыкальная школа «Виртуозы» · Нижний Новгород, пр. Ленина</span>
+      <span>Вокал · Фортепиано · Гитара · Скрипка · Барабаны · Духовые</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АКПП-центр — ремонт АКПП и вариаторов в Нижнем Новгороде</title>
+<meta name="description" content="Автосервис АКПП-центр в Нижнем Новгороде: ремонт АКПП и вариаторов CVT любой сложности, диагностика, замена масла. Опыт 18+ лет, гарантия до 2 лет / 100 000 км, бесплатный эвакуатор. ул. Коминтерна, 39Г. +7 (831) 414-74-25.">
+<meta name="theme-color" content="#0f1318">
+<meta property="og:type" content="website">
+<meta property="og:title" content="АКПП-центр — ремонт АКПП и вариаторов в Нижнем Новгороде">
+<meta property="og:description" content="Ремонт АКПП и вариаторов CVT любой сложности. Опыт 18+ лет, гарантия до 2 лет / 100 000 км, бесплатный эвакуатор. ул. Коминтерна, 39Г.">
+<meta property="og:image" content="assets/stock-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1318;
+  --bg-2:#161c24;
+  --surface:#1b232d;
+  --surface-2:#212b37;
+  --line:#2c3846;
+  --text:#eef2f6;
+  --muted:#9aa7b5;
+  --primary:#f56a00;
+  --primary-d:#d95c00;
+  --accent:#2f9fe0;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --container:1180px;
+  --gap:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:clamp(15px,1.4vw,17px);line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.1;margin:0;text-transform:uppercase;letter-spacing:.5px}
+h2{font-size:clamp(26px,4.4vw,44px)}
+h3{font-size:clamp(18px,2.4vw,24px);letter-spacing:.3px}
+p{margin:0 0 1em}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(52px,8vw,96px) 0}
+.section--alt{background:var(--bg-2)}
+.eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:3px;
+  color:var(--primary);font-size:13px;font-weight:600;margin:0 0 14px}
+.lead{color:var(--muted);max-width:720px}
+.sec-head{margin-bottom:clamp(28px,4vw,48px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px;
+  padding:14px 26px;border-radius:var(--radius-sm);cursor:pointer;border:2px solid transparent;
+  font-size:15px;transition:.18s;white-space:nowrap;min-width:0}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-d)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(15,19,24,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand__logo{width:40px;height:40px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--primary-d));
+  display:grid;place-items:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;color:#fff;flex-shrink:0}
+.brand__name{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;
+  letter-spacing:.5px;white-space:nowrap;line-height:1}
+.brand__name small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:500}
+.nav{display:flex;gap:26px;margin-left:22px}
+.nav a{font-size:15px;color:var(--muted);font-weight:500;transition:.15s;white-space:nowrap}
+.nav a:hover{color:var(--text)}
+.header__phone{margin-left:auto;display:flex;align-items:center;gap:8px;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:19px;white-space:nowrap;flex-shrink:0}
+.header__phone .ic{color:var(--primary)}
+.header__cta{flex-shrink:0}
+.burger{display:none;width:44px;height:44px;background:transparent;border:1px solid var(--line);
+  border-radius:9px;cursor:pointer;padding:0;flex-shrink:0}
+.burger span{display:block;width:20px;height:2px;background:var(--text);margin:4px auto;transition:.2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:0;margin:0;
+    background:var(--bg-2);border-bottom:1px solid var(--line);padding:8px 20px 22px;
+    transform:translateY(-140%);transition:transform .25s;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  .nav__phone{display:flex!important;font-size:22px;color:var(--primary);padding-top:18px!important;border:0!important}
+  .nav__cta{display:flex!important;margin-top:16px;width:100%}
+  .header__phone{margin-left:auto}
+  .header__cta{display:none}
+  .burger{display:block}
+}
+.nav__phone,.nav__cta{display:none}
+@media(max-width:560px){
+  .header__phone{display:none}
+  .nav{inset-block-start:68px}
+}
+
+/* HERO */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:center;
+  overflow:hidden;border-bottom:1px solid var(--line)}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.32}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,var(--bg) 30%,rgba(15,19,24,.72) 62%,rgba(15,19,24,.35) 100%)}
+.hero .container{position:relative;z-index:2;padding-top:60px;padding-bottom:60px}
+.hero__inner{max-width:760px}
+.hero h1{font-size:clamp(34px,7vw,72px);margin:14px 0 18px}
+.hero h1 .hl{color:var(--primary)}
+.hero__sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:600px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero__badges{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:34px;padding-top:26px;
+  border-top:1px solid var(--line)}
+.hero__badge{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted);min-width:0}
+.hero__badge b{color:var(--text);font-family:'Oswald',sans-serif;font-weight:600;font-size:16px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+.stat{background:var(--bg);padding:26px 18px;text-align:center}
+.stat b{display:block;font-family:'Oswald',sans-serif;font-weight:700;color:var(--primary);
+  font-size:clamp(30px,4.4vw,46px);line-height:1}
+.stat span{display:block;color:var(--muted);font-size:13px;margin-top:8px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ADVANTAGES */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px 24px;min-width:0}
+.adv .ic{width:46px;height:46px;border-radius:11px;background:var(--surface-2);
+  display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+.adv h3{font-size:19px;margin-bottom:10px}
+.adv p{color:var(--muted);margin:0;font-size:15px}
+@media(max-width:900px){.adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.adv-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:24px 22px;min-width:0;display:flex;flex-direction:column;transition:.18s}
+.svc:hover{border-color:var(--primary);transform:translateY(-3px)}
+.svc__num{font-family:'Oswald',sans-serif;color:var(--primary);font-weight:700;font-size:15px;
+  letter-spacing:1px;margin-bottom:12px}
+.svc h3{font-size:18px;margin-bottom:9px}
+.svc p{color:var(--muted);font-size:14px;margin:0 0 16px}
+.svc__price{margin-top:auto;font-family:'Oswald',sans-serif;font-weight:600;font-size:20px;color:var(--text)}
+.svc__price small{color:var(--muted);font-size:12px;font-weight:500;letter-spacing:1px;display:block;
+  text-transform:uppercase;font-family:'Inter',sans-serif}
+@media(max-width:980px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.svc-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* DIAGNOSTICS SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.split__media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:4/3;background:var(--surface)}
+.split__media img{width:100%;height:100%;object-fit:cover}
+.steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.steps li{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.steps .n{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;
+  font-family:'Oswald',sans-serif;font-weight:600;display:grid;place-items:center;font-size:14px}
+.steps .t{min-width:0}
+.steps .t b{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:15px}
+.steps .t span{color:var(--muted);font-size:14px}
+@media(max-width:820px){.split{grid-template-columns:1fr}.split__media{order:-1}}
+
+/* PRICE TABLE */
+.price-wrap{border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto}
+.price{width:100%;border-collapse:collapse;min-width:520px;font-size:15px}
+.price th,.price td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.price thead th{background:var(--surface-2);font-family:'Oswald',sans-serif;text-transform:uppercase;
+  letter-spacing:1px;font-size:13px;color:var(--muted)}
+.price tbody tr:nth-child(even){background:var(--surface)}
+.price td:last-child,.price th:last-child{text-align:right;white-space:nowrap;
+  font-family:'Oswald',sans-serif;font-weight:600;color:var(--primary)}
+.price td:last-child.free{color:var(--accent)}
+.price__note{color:var(--muted);font-size:14px;margin-top:14px}
+
+/* BRANDS */
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brand-pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;
+  padding:9px 16px;font-size:14px;color:var(--muted);font-weight:500}
+.brand-pill:hover{border-color:var(--primary);color:var(--text)}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery figure{margin:0;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:1;background:var(--surface)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.gallery figure:hover img{transform:scale(1.06)}
+@media(max-width:720px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* WARRANTY */
+.warr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.warr{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:28px 24px;min-width:0}
+.warr.hl{border-color:var(--primary);background:linear-gradient(160deg,rgba(245,106,0,.14),var(--bg-2))}
+.warr .k{font-family:'Oswald',sans-serif;font-weight:700;color:var(--primary);font-size:clamp(26px,3.4vw,36px);line-height:1}
+.warr h3{font-size:18px;margin:12px 0 8px}
+.warr p{color:var(--muted);font-size:14px;margin:0}
+@media(max-width:820px){.warr-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(120deg,var(--primary),var(--primary-d));border-radius:var(--radius-lg);
+  padding:clamp(30px,5vw,50px);display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.cta-strip h2{color:#fff;max-width:640px}
+.cta-strip p{color:rgba(255,255,255,.9);margin:8px 0 0}
+.cta-strip .btn{background:#101519;color:#fff}
+.cta-strip .btn:hover{background:#000}
+
+/* CONTACTS */
+.contacts-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:30px 28px}
+.c-row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);
+  overflow-wrap:anywhere;min-width:0}
+.c-row:last-child{border-bottom:0}
+.c-row .ic{flex-shrink:0;font-size:20px;width:26px;text-align:center}
+.c-row b{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;
+  font-size:13px;color:var(--muted);font-weight:600;margin-bottom:3px}
+.c-row a,.c-row span{font-size:16px}
+.c-row a{color:var(--text)}
+.c-row a:hover{color:var(--primary)}
+.phones a{display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:19px;margin-bottom:4px}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+@media(max-width:820px){.contacts-grid{grid-template-columns:1fr}}
+
+/* FOOTER */
+.footer{background:#0b0e12;border-top:1px solid var(--line);padding:40px 0 30px}
+.footer-inner{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:flex-start}
+.footer .brand__name{font-size:18px}
+.footer p{color:var(--muted);font-size:14px;margin:10px 0 0;max-width:360px}
+.footer__col b{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;
+  color:var(--muted);display:block;margin-bottom:10px}
+.footer__col a{display:block;color:var(--text);font-size:14px;padding:4px 0}
+.footer__col a:hover{color:var(--primary)}
+.footer__bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);
+  font-size:13px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="АКПП-центр, на главную">
+      <span class="brand__logo">А</span>
+      <span class="brand__name">АКПП-центр<small>Нижний Новгород</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="#warranty">Гарантия</a>
+      <a href="#brands">Марки</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav__phone" href="tel:+78314147425">+7 (831) 414-74-25</a>
+      <a class="btn btn-primary nav__cta" href="#contacts">Записаться на ремонт</a>
+    </nav>
+    <a class="header__phone" href="tel:+78314147425"><span class="ic">✆</span>+7 (831) 414-74-25</a>
+    <a class="btn btn-primary header__cta" href="#contacts">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"><img src="assets/stock-hero.jpg" alt="Разрез автоматической коробки передач" fetchpriority="high" onerror="this.style.display='none'"></div>
+  <div class="container">
+    <div class="hero__inner">
+      <p class="eyebrow">📍 Нижний Новгород, ул. Коминтерна, 39Г</p>
+      <h1>Ремонт <span class="hl">АКПП и вариаторов</span> любой сложности</h1>
+      <p class="hero__sub">Специализированный автосервис «АКПП-центр». Ремонтируем автоматические коробки передач и вариаторы CVT сами — без посредников и франшиз. Опыт более 18 лет.</p>
+      <div class="hero-actions">
+        <a href="#prices" class="btn btn-primary">Смотреть цены</a>
+        <a href="#contacts" class="btn btn-outline">Как нас найти</a>
+      </div>
+      <div class="hero__badges">
+        <div class="hero__badge">🛡️ <span>гарантия до <b>2 лет / 100 000 км</b></span></div>
+        <div class="hero__badge">🚚 <span>эвакуатор по городу <b>бесплатно</b></span></div>
+        <div class="hero__badge">💳 <span>рассрочка и <b>кредит</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:clamp(40px,6vw,64px);padding-bottom:0">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b>18+</b><span>лет ремонтируем АКПП</span></div>
+      <div class="stat"><b>35</b><span>марок автомобилей</span></div>
+      <div class="stat"><b>2&nbsp;года</b><span>гарантия на ремонт</span></div>
+      <div class="stat"><b>500&nbsp;₽</b><span>диагностика АКПП</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Почему к нам</p>
+      <h2>Специализируемся только на АКПП</h2>
+      <p class="lead">Мы не универсальный автосервис. Автоматические коробки и вариаторы — единственное, чем мы занимаемся, и делаем это по технологиям заводов-производителей.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv"><div class="ic">🔧</div><h3>Ремонтируем сами</h3><p>Никаких посредников, франшиз и сторонних сервисов. Вы не переплачиваете за чужие накрутки и доп.услуги.</p></div>
+      <div class="adv"><div class="ic">📋</div><h3>Технологии производителя</h3><p>Уникальное оборудование и техдокументация, только рекомендованные ремкомплекты, запчасти и трансмиссионные масла.</p></div>
+      <div class="adv"><div class="ic">👁️</div><h3>Никаких секретов</h3><p>Вы можете лично присутствовать на любом этапе работ по АКПП. Не можете приехать — пришлём фотоотчёт с дефектовки.</p></div>
+      <div class="adv"><div class="ic">🛡️</div><h3>Самая долгая гарантия в НН</h3><p>До 2 лет эксплуатации или 100 000 км пробега на капитальный ремонт. Подходит и для служебного автотранспорта.</p></div>
+      <div class="adv"><div class="ic">🚚</div><h3>Бесплатный эвакуатор</h3><p>Доставим ваш автомобиль в сервис по Нижнему Новгороду бесплатно. Работаем и с регионами — принимаем снятые АКПП.</p></div>
+      <div class="adv"><div class="ic">🅿️</div><h3>Охраняемая стоянка</h3><p>Бесплатная парковка с видеонаблюдением на время ремонта. Ваш автомобиль под присмотром, пока мы работаем.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--alt" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Услуги ремонта</p>
+      <h2>Что мы делаем с АКПП и CVT</h2>
+      <p class="lead">Полный спектр работ по автоматическим трансмиссиям: от диагностики за 500 ₽ до капитального ремонта коробки и вариатора любой сложности.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="svc__num">01</div><h3>Ремонт АКПП</h3><p>Капитальный ремонт классической ступенчатой коробки любой сложности с гарантией.</p><div class="svc__price">от 15 000 ₽<small>разборка-дефектовка-сборка</small></div></div>
+      <div class="svc"><div class="svc__num">02</div><h3>Ремонт вариаторов CVT</h3><p>Ремонт и восстановление вариаторов, восстановление поверхности конусов.</p><div class="svc__price">от 15 000 ₽<small>разборка-дефектовка-сборка</small></div></div>
+      <div class="svc"><div class="svc__num">03</div><h3>Ремонт гидротрансформатора</h3><p>Восстановление «бублика» АКПП и вариатора с балансировкой.</p><div class="svc__price">от 10 000 ₽<small>за узел</small></div></div>
+      <div class="svc"><div class="svc__num">04</div><h3>Ремонт гидроблока</h3><p>Ремонт гидравлического блока клапанов АКПП и вариатора CVT.</p><div class="svc__price">от 12 500 ₽<small>АКПП / CVT — от 16 500 ₽</small></div></div>
+      <div class="svc"><div class="svc__num">05</div><h3>Электроника управления</h3><p>Диагностика и ремонт электронных систем и блока управления вариатора.</p><div class="svc__price">от 20 000 ₽<small>ремонт ЭБУ вариатора</small></div></div>
+      <div class="svc"><div class="svc__num">06</div><h3>Замена масла в АКПП</h3><p>Замена масла с заменой фильтра и оценкой состояния коробки.</p><div class="svc__price">от 1 500 ₽<small>с фильтром — от 2 500 ₽</small></div></div>
+      <div class="svc"><div class="svc__num">07</div><h3>Восстановление после гаражей</h3><p>Исправляем последствия неквалифицированного ремонта в других сервисах.</p><div class="svc__price">по дефектовке<small>после осмотра</small></div></div>
+      <div class="svc"><div class="svc__num">08</div><h3>Слесарные работы</h3><p>Сопутствующий ремонт на выделенном посту. Гарантия на работы и запчасти.</p><div class="svc__price">по осмотру<small>подъёмник + дефектовка</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTICS / HOW WE WORK -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Как мы работаем</p>
+        <h2>Прозрачный ремонт по этапам</h2>
+        <p class="lead">Диагностика быстро находит неисправность или целый комплекс неисправностей. Стоимость работ и запчастей мы согласовываем с вами до начала ремонта — никаких сюрпризов в счёте.</p>
+        <ol class="steps">
+          <li><span class="n">1</span><span class="t"><b>Входная диагностика</b><span>Определяем неисправность. Возможен выезд диагноста к автомобилю.</span></span></li>
+          <li><span class="n">2</span><span class="t"><b>Снятие и дефектовка</b><span>Снимаем АКПП, разбираем и дефектуем узлы. Можно присутствовать лично.</span></span></li>
+          <li><span class="n">3</span><span class="t"><b>Калькуляция и согласование</b><span>Считаем стоимость и согласовываем счёт с вами до работ.</span></span></li>
+          <li><span class="n">4</span><span class="t"><b>Ремонт и сборка</b><span>Комплектуем качественными запчастями, собираем и устанавливаем АКПП.</span></span></li>
+          <li><span class="n">5</span><span class="t"><b>Выходная диагностика и выдача</b><span>Проверяем работу, окончательный расчёт и выдача автомобиля.</span></span></li>
+        </ol>
+      </div>
+      <div class="split__media">
+        <img src="assets/akpp202.jpg" alt="Мастер автосервиса ремонтирует автоматическую коробку передач" loading="lazy" decoding="async" onerror="this.closest('.split__media').style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="section section--alt" id="prices">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Прайс-лист</p>
+      <h2>Цены на ремонт и обслуживание АКПП</h2>
+      <p class="lead">Действует система скидок на все виды работ. Оплата наличным или безналичным платежом. Итоговая цена зависит от марки и года выпуска автомобиля.</p>
+    </div>
+    <div class="price-wrap">
+      <table class="price">
+        <thead><tr><th>Услуга</th><th>Стоимость</th></tr></thead>
+        <tbody>
+          <tr><td>Диагностика АКПП и вариатора CVT</td><td>500 ₽</td></tr>
+          <tr><td>Диагностика на подъёмнике</td><td>1 000 ₽</td></tr>
+          <tr><td>Входная-выходная диагностика при ремонте</td><td class="free">бесплатно</td></tr>
+          <tr><td>Адаптация АКПП и вариатора CVT</td><td>1 000 ₽</td></tr>
+          <tr><td>Снятие и установка АКПП / CVT (передний привод)</td><td>от 12 000 ₽</td></tr>
+          <tr><td>Снятие и установка (полный привод)</td><td>от 14 000 ₽</td></tr>
+          <tr><td>Разборка-дефектовка АКПП / CVT</td><td>5 000 ₽</td></tr>
+          <tr><td>Разборка-дефектовка-сборка АКПП</td><td>15 000–20 000 ₽</td></tr>
+          <tr><td>Разборка-дефектовка-сборка вариатора CVT</td><td>15 000–18 000 ₽</td></tr>
+          <tr><td>Ремонт гидротрансформатора</td><td>от 10 000 ₽</td></tr>
+          <tr><td>Ремонт гидроблока клапанов АКПП</td><td>от 12 500 ₽</td></tr>
+          <tr><td>Ремонт гидроблока клапанов CVT</td><td>от 16 500 ₽</td></tr>
+          <tr><td>Ремонт электронного блока управления вариатора</td><td>20 000 ₽</td></tr>
+          <tr><td>Замена масла в АКПП / CVT (без фильтра)</td><td>1 500 ₽</td></tr>
+          <tr><td>Замена масла с заменой фильтра</td><td>от 2 500 ₽</td></tr>
+          <tr><td>Ремонт корпуса АКПП / CVT</td><td>от 10 500 ₽</td></tr>
+          <tr><td>Ремонт масляного насоса</td><td>от 8 500 ₽</td></tr>
+          <tr><td>Восстановление поверхности конусов CVT</td><td>от 5 000 ₽</td></tr>
+          <tr><td>Консультация мастера по работе АКПП</td><td class="free">бесплатно</td></tr>
+          <tr><td>Эвакуатор до автосервиса</td><td class="free">бесплатно</td></tr>
+          <tr><td>Стоянка автомобиля на время ремонта</td><td class="free">бесплатно</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price__note">Цены варьируются в зависимости от марки и года выпуска автомобиля. Точную стоимость назовём после диагностики. Доступны рассрочка и кредит на ремонт АКПП и вариатора.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Наша работа</p>
+      <h2>Ремонт изнутри</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/akpp203.jpg" alt="Специалисты сервиса за работой под автомобилем" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/stock-zf.jpg" alt="Разрез 9-ступенчатой автоматической коробки передач" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/akpp302.jpg" alt="Разобранная АКПП: корпус и детали трансмиссии" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/akpp201.jpg" alt="Внутреннее устройство автоматической коробки передач в разрезе" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY -->
+<section class="section section--alt" id="warranty">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Гарантия</p>
+      <h2>Самые длительные и реальные сроки в НН</h2>
+      <p class="lead">Мы даём гарантию не только на коробку, но и на её узловые агрегаты. Точный срок подбираем вместе с вами, исходя из ваших предпочтений.</p>
+    </div>
+    <div class="warr-grid">
+      <div class="warr"><div class="k">18 мес</div><h3>Капремонт АКПП</h3><p>Классическая ступенчатая коробка любой сложности — до 18 месяцев эксплуатации или 60 000 км пробега.</p></div>
+      <div class="warr"><div class="k">1 год</div><h3>Капремонт вариатора CVT</h3><p>Вариатор любой сложности — 1 год эксплуатации автомобиля или 40 000 км пробега.</p></div>
+      <div class="warr hl"><div class="k">2 года</div><h3>Расширенная гарантия</h3><p>Спецпредложение — до 2 лет или 100 000 км. Отлично подходит для служебного автотранспорта.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="section" id="brands">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">С какими авто работаем</p>
+      <h2>Ремонт АКПП и вариаторов 35 марок</h2>
+      <p class="lead">Работаем с иномарками и отечественными автомобилями. Принимаем в ремонт и уже снятые коробки из регионов.</p>
+    </div>
+    <div class="brands">
+      <span class="brand-pill">Audi</span><span class="brand-pill">BMW</span><span class="brand-pill">Mercedes</span>
+      <span class="brand-pill">Volkswagen</span><span class="brand-pill">Opel</span><span class="brand-pill">Skoda</span>
+      <span class="brand-pill">Land Rover</span><span class="brand-pill">Jaguar</span><span class="brand-pill">Jeep</span>
+      <span class="brand-pill">Chevrolet</span><span class="brand-pill">Ford</span><span class="brand-pill">Cadillac</span>
+      <span class="brand-pill">Dodge</span><span class="brand-pill">Chrysler</span><span class="brand-pill">Acura</span>
+      <span class="brand-pill">Honda</span><span class="brand-pill">Nissan</span><span class="brand-pill">Toyota</span>
+      <span class="brand-pill">Mitsubishi</span><span class="brand-pill">Suzuki</span><span class="brand-pill">Hyundai</span>
+      <span class="brand-pill">Subaru</span><span class="brand-pill">Mazda</span><span class="brand-pill">Infiniti</span>
+      <span class="brand-pill">Isuzu</span><span class="brand-pill">Lexus</span><span class="brand-pill">SsangYong</span>
+      <span class="brand-pill">Kia</span><span class="brand-pill">Renault</span><span class="brand-pill">Peugeot</span>
+      <span class="brand-pill">Citroën</span><span class="brand-pill">Chery</span><span class="brand-pill">Daewoo</span>
+      <span class="brand-pill">Волга</span><span class="brand-pill">Lada</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-strip">
+      <div>
+        <h2>Не спешите менять коробку целиком</h2>
+        <p>Контрактная АКПП с разборки часто оказывается неисправной. Сначала покажите свою коробку специалистам — консультация и эвакуатор бесплатны.</p>
+      </div>
+      <a href="tel:+78314147425" class="btn">✆ +7 (831) 414-74-25</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section--alt" id="contacts">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как нас найти</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="c-row phones">
+          <span class="ic">✆</span>
+          <div>
+            <b>Телефоны</b>
+            <a href="tel:+78314147425">+7 (831) 414-74-25</a>
+            <a href="tel:+79036027425">+7 (903) 602-74-25</a>
+            <a href="tel:+79040665373">+7 (904) 066-53-73 — мастер</a>
+          </div>
+        </div>
+        <div class="c-row"><span class="ic">📍</span><div><b>Адрес</b><span>Нижний Новгород, ул. Коминтерна, 39Г</span></div></div>
+        <div class="c-row"><span class="ic">🕐</span><div><b>Часы работы</b><span>Пн–Пт: 10:00–19:00 · Сб: 11:00–13:00 · Вс: выходной</span></div></div>
+        <div class="c-row"><span class="ic">✉️</span><div><b>E-mail</b><a href="mailto:akpp-nn@yandex.ru">akpp-nn@yandex.ru</a></div></div>
+        <div class="c-row"><span class="ic">🔗</span><div><b>ВКонтакте</b><a href="https://vk.com/akppnn" target="_blank" rel="noopener">vk.com/akppnn</a></div></div>
+        <div class="c-row" style="border-bottom:0;padding-bottom:0">
+          <span class="ic">🚚</span><div><b>Доставка авто</b><span>Бесплатный эвакуатор по Нижнему Новгороду и охраняемая стоянка на время ремонта.</span></div>
+        </div>
+        <a href="tel:+78314147425" class="btn btn-primary" style="width:100%;margin-top:22px">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3469947,43.8895071&z=16&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта проезда к автосервису АКПП-центр на ул. Коминтерна, 39Г"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer__col" style="max-width:360px">
+        <a href="#top" class="brand" aria-label="АКПП-центр">
+          <span class="brand__logo">А</span>
+          <span class="brand__name">АКПП-центр<small>Нижний Новгород</small></span>
+        </a>
+        <p>Специализированный автосервис по ремонту автоматических коробок передач и вариаторов CVT. Опыт более 18 лет.</p>
+      </div>
+      <div class="footer__col">
+        <b>Разделы</b>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#warranty">Гарантия</a>
+        <a href="#brands">Марки</a>
+      </div>
+      <div class="footer__col">
+        <b>Контакты</b>
+        <a href="tel:+78314147425">+7 (831) 414-74-25</a>
+        <a href="mailto:akpp-nn@yandex.ru">akpp-nn@yandex.ru</a>
+        <a href="#contacts">ул. Коминтерна, 39Г</a>
+        <a href="https://vk.com/akppnn" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Автосервис «АКПП-центр», Нижний Новгород</span>
+      <span>Ремонт АКПП и вариаторов · Пн–Пт 10:00–19:00</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  function close(){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>

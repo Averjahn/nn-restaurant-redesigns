@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Вывоз мусора НН — вывоз мусора в Нижнем Новгороде, Бору и Дзержинске</title>
+<meta name="description" content="Вывоз строительного, бытового мусора, старой мебели и хлама в Нижнем Новгороде, Бору и Дзержинске. Газель, самосвал, КАМАЗ, контейнеры, ломовоз. Грузчики и демонтаж. Работаем с 8:00 до 21:00 без выходных. Тел. +7 (906) 359-23-44." />
+<meta name="theme-color" content="#1f8a4c" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Вывоз мусора НН — вывоз мусора в Нижнем Новгороде" />
+<meta property="og:description" content="Строительный, бытовой мусор, мебель, хлам. Газель, самосвал, КАМАЗ, контейнеры. Грузчики и демонтаж. Работаем в тот же день." />
+<meta property="og:image" content="assets/real-1.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green:#1f8a4c;
+  --green-dark:#166b3a;
+  --green-deep:#0f4c29;
+  --orange:#f36b1c;
+  --orange-dark:#d9560c;
+  --bg:#ffffff;
+  --surface:#f2f6f2;
+  --surface-2:#e7efe8;
+  --text:#152018;
+  --muted:#5c6b60;
+  --line:#d8e3da;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1140px;
+  --gap:24px;
+  --shadow:0 8px 30px rgba(15,76,41,.10);
+  --shadow-lg:0 18px 50px rgba(15,76,41,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{
+  margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.6;
+  font-size:clamp(15px,1.5vw,17px);overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Montserrat',system-ui,sans-serif;line-height:1.12;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(30px,6vw,60px)}
+h2{font-size:clamp(26px,4.4vw,44px)}
+h3{font-size:clamp(18px,2.4vw,23px)}
+p{margin:0 0 1em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,96px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:13px;color:var(--green);background:var(--surface-2);padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.section-head{max-width:720px;margin-bottom:40px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-family:'Montserrat',sans-serif;
+  padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:.18s;font-size:15px;white-space:nowrap}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-dark)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-outline:hover{background:rgba(255,255,255,.14)}
+.btn-ghost{background:#fff;color:var(--green-dark);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--green)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;font-family:'Montserrat',sans-serif;font-weight:900}
+.brand__mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--green),var(--green-dark));display:grid;place-items:center;color:#fff;font-size:22px;flex-shrink:0}
+.brand__text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand__text b{font-size:18px;letter-spacing:.01em}
+.brand__text span{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em;font-family:'Inter',sans-serif}
+.nav{display:flex;gap:26px;margin-left:22px}
+.nav a{font-weight:600;font-size:15px;color:var(--text);white-space:nowrap}
+.nav a:hover{color:var(--green)}
+.nav .mob-phone,.nav > .btn{display:none}
+.header-phone{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;flex-shrink:0}
+.header-phone a{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:var(--green-dark);white-space:nowrap}
+.header-phone span{font-size:11px;color:var(--muted);white-space:nowrap}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:44px;background:var(--surface);border:1px solid var(--line);border-radius:12px;cursor:pointer;flex-shrink:0}
+.burger span{display:block;width:22px;height:2.5px;background:var(--green-dark);margin:0 auto;border-radius:2px;transition:.2s}
+
+/* hero */
+.hero{position:relative;color:#fff;background:linear-gradient(120deg,rgba(15,76,41,.92),rgba(22,107,58,.78)),url(assets/real-1.jpg) center/cover no-repeat}
+.hero-inner{padding:clamp(56px,9vw,110px) 0;max-width:760px}
+.hero h1{color:#fff;margin-bottom:.35em}
+.hero h1 em{font-style:normal;color:#ffd8b0}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.92);max-width:600px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);padding:8px 15px;border-radius:999px;font-size:14px;font-weight:600}
+
+/* strip */
+.strip{background:var(--orange);color:#fff}
+.strip-inner{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:center;align-items:center;padding:16px 0;font-weight:700;font-size:15px;text-align:center}
+.strip-inner span{display:inline-flex;align-items:center;gap:8px}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px;min-width:0}
+.adv-card .ico{width:52px;height:52px;border-radius:14px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:26px;margin-bottom:14px}
+.adv-card h3{margin-bottom:.3em;font-size:19px}
+.adv-card p{margin:0;color:var(--muted);font-size:15px}
+
+/* services */
+.serv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.serv-card{position:relative;border-radius:var(--radius-md);overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.serv-card__media{position:relative;aspect-ratio:16/10;background:var(--surface-2);overflow:hidden}
+.serv-card__media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.serv-card:hover .serv-card__media img{transform:scale(1.05)}
+.serv-card__media.noimg{background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+.serv-tag{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px}
+.serv-body{padding:22px;display:flex;flex-direction:column;flex:1;min-width:0}
+.serv-body h3{margin-bottom:.35em}
+.serv-body p{color:var(--muted);font-size:15px;flex:1}
+.serv-price{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--green-dark);font-size:18px;margin-top:10px}
+.serv-price small{font-weight:600;color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
+
+/* tariffs */
+.tariffs{background:var(--surface)}
+.tariff-scroll{overflow-x:auto}
+.tariff-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.tariff-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px;text-align:center;min-width:0;display:flex;flex-direction:column}
+.tariff-card.feat{border-color:var(--orange);box-shadow:0 12px 34px rgba(243,107,28,.16)}
+.tariff-card .tico{font-size:34px;margin-bottom:8px}
+.tariff-card h3{font-size:20px;margin-bottom:4px}
+.tariff-card .cap{color:var(--muted);font-size:14px;margin-bottom:14px}
+.tariff-specs{list-style:none;padding:0;margin:0 0 16px;font-size:14px;color:var(--text);display:flex;flex-direction:column;gap:6px}
+.tariff-specs li{display:flex;justify-content:center;gap:6px}
+.tariff-price{font-family:'Montserrat',sans-serif;font-weight:900;color:var(--green-dark);font-size:26px;margin-top:auto}
+.tariff-price small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;color:var(--muted)}
+.feat .badge-feat{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:11px;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+.tariff-note{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+
+/* split (loaders / demolition) */
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.split.reverse .split-media{order:2}
+.split-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--surface-2)}
+.split-media img{width:100%;height:100%;object-fit:cover}
+.check-list{list-style:none;padding:0;margin:18px 0 24px;display:flex;flex-direction:column;gap:11px}
+.check-list li{position:relative;padding-left:34px;font-weight:500}
+.check-list li::before{content:"✓";position:absolute;left:0;top:-1px;width:23px;height:23px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}
+
+/* about stats */
+.about{background:linear-gradient(135deg,var(--green-deep),var(--green-dark));color:#fff}
+.about h2{color:#fff}
+.about .lead{color:rgba(255,255,255,.85)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:36px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-md);padding:24px 18px;text-align:center;min-width:0}
+.stat b{display:block;font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:900;color:#ffd8b0}
+.stat span{font-size:14px;color:rgba(255,255,255,.82)}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,4vw,44px);align-items:start}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(24px,3vw,34px)}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ii{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:22px}
+.info-row .lbl{font-size:13px;color:var(--muted);margin-bottom:2px}
+.info-row .val{font-weight:700;font-family:'Montserrat',sans-serif}
+.info-row .val a{color:var(--green-dark)}
+.info-row .val .big{font-size:22px;color:var(--green-dark)}
+.form-note{background:var(--surface-2);border-radius:var(--radius-md);padding:20px 22px;margin-top:22px}
+.quick-form{display:grid;gap:14px;margin-top:20px}
+.quick-form label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px}
+.quick-form input,.quick-form select,.quick-form textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--text)}
+.quick-form textarea{min-height:90px;resize:vertical}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);min-height:340px}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:340px;border:0}
+
+/* footer */
+.footer{background:#0f1a12;color:rgba(255,255,255,.72);padding:44px 0 30px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer .brand__text b,.footer .brand__text span{color:#fff}
+.footer h4{color:#fff;font-size:14px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+.footer a{color:rgba(255,255,255,.72)}
+.footer a:hover{color:#fff}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;font-size:15px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:13px;color:rgba(255,255,255,.5);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+/* responsive */
+@media(max-width:1040px){
+  .nav{display:none}
+  .header-phone{display:none}
+  .burger{display:flex;margin-left:auto}
+  .header-cta{display:none}
+  .nav--open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:8px 20px 20px}
+  .nav--open a{padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .nav--open .mob-phone{display:block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--green-dark);padding:16px 0 6px;border-bottom:none}
+  .nav--open > .btn{display:inline-flex;margin-top:12px;width:100%}
+}
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .serv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tariff-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{grid-template-columns:1fr}
+  .split.reverse .split-media{order:0}
+  .contacts-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .adv-grid{grid-template-columns:1fr}
+  .serv-grid{grid-template-columns:1fr}
+  .tariff-grid{grid-template-columns:1fr;min-width:0}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .strip-inner{font-size:14px;gap:8px 18px}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Вывоз мусора НН — на главную">
+      <span class="brand__mark" aria-hidden="true">♻</span>
+      <span class="brand__text"><b>Вывоз&nbsp;мусора&nbsp;НН</b><span>Нижний Новгород · Бор · Дзержинск</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#tariffs">Тарифы</a>
+      <a href="#loaders">Грузчики</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79063592344" class="mob-phone">+7 (906) 359-23-44</a>
+      <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+    </nav>
+    <div class="header-phone">
+      <a href="tel:+79063592344">+7 (906) 359-23-44</a>
+      <span>с 8:00 до 21:00 без выходных</span>
+    </div>
+    <a href="#contacts" class="btn btn-primary header-cta">Заявка</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff">📍 Нижний Новгород, Бор, Дзержинск</p>
+    <h1>Вывоз мусора <em>в тот же день</em> — быстро, чисто, недорого</h1>
+    <p class="hero-sub">Строительный и бытовой мусор, старая мебель и хлам. Своя техника: газели, самосвалы, КАМАЗ, контейнеры и ломовоз. Подадим машину и грузчиков в удобное время.</p>
+    <div class="hero-actions">
+      <a href="#contacts" class="btn btn-primary">Рассчитать вывоз</a>
+      <a href="tel:+79063592344" class="btn btn-outline">📞 +7 (906) 359-23-44</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hero-badge">✅ Работаем с 8:00 до 21:00</span>
+      <span class="hero-badge">🚛 Своя техника</span>
+      <span class="hero-badge">💪 Грузчики на объекте</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="container strip-inner">
+    <span>⚡ Подача техники в день обращения</span>
+    <span>💰 Лучшие цены в регионе</span>
+    <span>🗓 Без выходных</span>
+    <span>♻ Вывоз на лицензированный полигон</span>
+  </div>
+</div>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Почему выбирают нас</p>
+      <h2>Всё для быстрого вывоза мусора</h2>
+      <p class="lead">Берём на себя погрузку, вывоз и утилизацию. Вам остаётся только показать, что вывезти.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card"><div class="ico">⚡</div><h3>В тот же день</h3><p>Принимаем заявку и выезжаем в день обращения — не ждите неделями.</p></div>
+      <div class="adv-card"><div class="ico">💰</div><h3>Лучшие цены</h3><p>Честные тарифы без скрытых доплат. Стоимость известна заранее.</p></div>
+      <div class="adv-card"><div class="ico">🚛</div><h3>Своя техника</h3><p>Газели, самосвалы, КАМАЗ, ломовоз и контейнеры под любой объём.</p></div>
+      <div class="adv-card"><div class="ico">💪</div><h3>Грузчики</h3><p>Вынесем мусор с этажа, из квартиры, гаража или со стройплощадки.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Услуги</p>
+      <h2>Что мы вывозим</h2>
+      <p class="lead">Любой мусор из квартир, домов, офисов и строительных объектов в Нижнем Новгороде и области.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Стройка</span>
+          <img src="assets/stock-construction.jpg" loading="lazy" decoding="async" alt="Вывоз строительного мусора после демонтажа" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Строительный мусор</h3>
+          <p>Бой кирпича и бетона, штукатурка, плитка, оконные блоки, отходы после ремонта и демонтажа.</p>
+          <div class="serv-price">от 5 500 ₽ <small>/ газель</small></div>
+        </div>
+      </article>
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Быт</span>
+          <img src="assets/stock-gazelle.jpg" loading="lazy" decoding="async" alt="Газель для вывоза бытового мусора из квартиры" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Бытовой мусор и хлам</h3>
+          <p>Вывоз мусора из квартир, домов, гаражей и подвалов. Освобождаем помещения от старых вещей.</p>
+          <div class="serv-price">от 5 500 ₽ <small>/ газель</small></div>
+        </div>
+      </article>
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Мебель</span>
+          <img src="assets/real-2.jpg" loading="lazy" decoding="async" alt="Ломовоз с грейферным захватом для вывоза крупногабаритного мусора" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Старая мебель и КГМ</h3>
+          <p>Диваны, шкафы, кровати, бытовая техника и другой крупногабаритный мусор — вынесем и утилизируем.</p>
+          <div class="serv-price">от 5 500 ₽ <small>/ газель</small></div>
+        </div>
+      </article>
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Объём</span>
+          <img src="assets/real-1.jpg" loading="lazy" decoding="async" alt="Оранжевый самосвал КАМАЗ для вывоза большого объёма мусора" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Крупные объёмы</h3>
+          <p>Самосвалы и КАМАЗ для больших объёмов: расчистка территорий, вывоз грунта и снега.</p>
+          <div class="serv-price">от 11 000 ₽ <small>/ самосвал</small></div>
+        </div>
+      </article>
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Контейнер</span>
+          <img src="assets/stock-container.jpg" loading="lazy" decoding="async" alt="Самосвал с контейнером-бункером для мусора" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Контейнеры и бункеры</h3>
+          <p>Установим контейнер 8, 20 или 27 м³ на объекте — наполняйте в удобном темпе, вывезем по звонку.</p>
+          <div class="serv-price">от 12 000 ₽ <small>/ контейнер</small></div>
+        </div>
+      </article>
+      <article class="serv-card">
+        <div class="serv-card__media"><span class="serv-tag">Демонтаж</span>
+          <img src="assets/stock-construction.jpg" loading="lazy" decoding="async" alt="Демонтаж строений с последующим вывозом мусора" onerror="this.closest('.serv-card__media').classList.add('noimg');this.remove()"></div>
+        <div class="serv-body">
+          <h3>Демонтаж «под ключ»</h3>
+          <p>Снос сараев, перегородок, стяжки и старых конструкций с погрузкой и вывозом отходов.</p>
+          <div class="serv-price">по договорённости <small>/ выезд оценщика</small></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFFS -->
+<section class="section tariffs" id="tariffs">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Тарифы</p>
+      <h2>Техника и цены</h2>
+      <p class="lead">Подбираем машину под объём мусора. Ниже — стартовая стоимость подачи с вывозом.</p>
+    </div>
+    <div class="tariff-scroll">
+      <div class="tariff-grid">
+        <div class="tariff-card">
+          <div class="tico">🚐</div>
+          <h3>Газель</h3>
+          <p class="cap">Небольшой объём</p>
+          <ul class="tariff-specs"><li>📦 до 1,5 т</li><li>📐 5 м³</li><li>🏠 квартиры, ремонт</li></ul>
+          <div class="tariff-price">от 5 500 ₽<small>с вывозом</small></div>
+        </div>
+        <div class="tariff-card feat">
+          <span class="badge-feat">Хит</span>
+          <div class="tico">🚛</div>
+          <h3>Самосвал ГАЗ</h3>
+          <p class="cap">Средний объём</p>
+          <ul class="tariff-specs"><li>📦 до 5 т</li><li>📐 10 м³</li><li>🧱 стройка, грунт</li></ul>
+          <div class="tariff-price">от 11 000 ₽<small>с вывозом</small></div>
+        </div>
+        <div class="tariff-card">
+          <div class="tico">🚚</div>
+          <h3>КАМАЗ</h3>
+          <p class="cap">Большой объём</p>
+          <ul class="tariff-specs"><li>📦 до 13 т</li><li>📐 10 м³</li><li>🏗 крупные объекты</li></ul>
+          <div class="tariff-price">от 12 000 ₽<small>с вывозом</small></div>
+        </div>
+        <div class="tariff-card">
+          <div class="tico">📦</div>
+          <h3>Контейнер</h3>
+          <p class="cap">Стоит на объекте</p>
+          <ul class="tariff-specs"><li>📐 8 / 20 / 27 м³</li><li>🕓 удобное наполнение</li><li>♻ вывоз по звонку</li></ul>
+          <div class="tariff-price">от 12 000 ₽<small>установка + вывоз</small></div>
+        </div>
+        <div class="tariff-card">
+          <div class="tico">🏗</div>
+          <h3>Ломовоз</h3>
+          <p class="cap">Грейфер + большой кузов</p>
+          <ul class="tariff-specs"><li>📦 до 20 т</li><li>📐 30 м³</li><li>🌲 КГМ, металл, ветки</li></ul>
+          <div class="tariff-price">от 22 000 ₽<small>с вывозом</small></div>
+        </div>
+        <div class="tariff-card">
+          <div class="tico">💪</div>
+          <h3>Грузчики</h3>
+          <p class="cap">В дополнение к машине</p>
+          <ul class="tariff-specs"><li>🛗 вынос с этажа</li><li>📤 погрузка КГМ</li><li>🏠 расчистка помещений</li></ul>
+          <div class="tariff-price">от 500 ₽<small>/ час за грузчика</small></div>
+        </div>
+      </div>
+    </div>
+    <p class="tariff-note">Точная цена зависит от объёма, адреса и наличия грузчиков. Назовите, что нужно вывезти — рассчитаем стоимость по телефону <a href="tel:+79063592344" style="color:var(--green-dark);font-weight:700">+7 (906) 359-23-44</a>.</p>
+  </div>
+</section>
+
+<!-- LOADERS / DEMOLITION -->
+<section class="section" id="loaders">
+  <div class="container">
+    <div class="split">
+      <div class="split-media">
+        <img src="assets/real-2.jpg" loading="lazy" decoding="async" alt="Ломовоз с грейферным захватом грузит крупногабаритный мусор" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div>
+        <p class="eyebrow">Грузчики и демонтаж</p>
+        <h2>Вынесем и погрузим сами</h2>
+        <p class="lead">Не нужно таскать мусор к машине — наши грузчики вынесут всё с этажа, из квартиры или гаража и аккуратно погрузят.</p>
+        <ul class="check-list">
+          <li>Вынос мусора и хлама с любого этажа</li>
+          <li>Разбор и погрузка старой мебели и техники</li>
+          <li>Демонтаж перегородок, сараев, стяжки</li>
+          <li>Расчистка квартир, гаражей, подвалов и участков</li>
+          <li>Уборка территории после вывоза</li>
+        </ul>
+        <a href="#contacts" class="btn btn-green">Заказать грузчиков</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + STATS -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head" style="max-width:760px">
+      <p class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff">О компании</p>
+      <h2>«Вывоз мусора НН» — порядок без хлопот</h2>
+      <p class="lead">Мы вывозим мусор в Нижнем Новгороде, на Бору и в Дзержинске. Работаем с частными клиентами, строительными бригадами и организациями. Собственный парк техники позволяет подобрать машину под любой объём и подать её в день обращения — с грузчиками или без.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><b>8–21</b><span>работаем без выходных</span></div>
+      <div class="stat"><b>3</b><span>города: НН, Бор, Дзержинск</span></div>
+      <div class="stat"><b>6</b><span>видов техники под объём</span></div>
+      <div class="stat"><b>1</b><span>день — от заявки до вывоза</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Контакты</p>
+      <h2>Оставьте заявку на вывоз</h2>
+      <p class="lead">Позвоните или заполните форму — перезвоним, уточним детали и назовём точную цену.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <div class="info-row">
+          <div class="ii">📞</div>
+          <div><div class="lbl">Телефон</div><div class="val"><a href="tel:+79063592344" class="big">+7 (906) 359-23-44</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ii">📍</div>
+          <div><div class="lbl">Адрес</div><div class="val">Нижний Новгород, пр. Молодёжный, 80</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ii">🕐</div>
+          <div><div class="lbl">Режим работы</div><div class="val">Ежедневно с 8:00 до 21:00, без выходных</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ii">🗺</div>
+          <div><div class="lbl">Зона выезда</div><div class="val">Нижний Новгород · Бор · Дзержинск</div></div>
+        </div>
+
+        <form class="quick-form" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('formOk').hidden=false;">
+          <div>
+            <label for="fname">Ваше имя</label>
+            <input id="fname" name="name" type="text" placeholder="Как к вам обращаться" required>
+          </div>
+          <div>
+            <label for="fphone">Телефон</label>
+            <input id="fphone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div>
+            <label for="fserv">Что вывезти</label>
+            <select id="fserv" name="service">
+              <option>Строительный мусор</option>
+              <option>Бытовой мусор и хлам</option>
+              <option>Старая мебель / КГМ</option>
+              <option>Большой объём (самосвал/КАМАЗ)</option>
+              <option>Контейнер на объект</option>
+              <option>Демонтаж + вывоз</option>
+            </select>
+          </div>
+          <div>
+            <label for="fcomment">Комментарий</label>
+            <textarea id="fcomment" name="comment" placeholder="Адрес, объём, этаж, нужны ли грузчики"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Отправить заявку</button>
+        </form>
+        <div id="formOk" hidden class="form-note">
+          <strong>Спасибо! Заявка принята.</strong><br>Мы перезвоним в ближайшее время, чтобы уточнить детали и рассчитать стоимость. Если вопрос срочный — звоните <a href="tel:+79063592344" style="color:var(--green-dark);font-weight:700">+7 (906) 359-23-44</a>.
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2456142,43.8176167&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта: пр. Молодёжный, 80, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:14px">
+          <span class="brand__mark" aria-hidden="true">♻</span>
+          <span class="brand__text"><b>Вывоз&nbsp;мусора&nbsp;НН</b><span>Нижний Новгород · Бор · Дзержинск</span></span>
+        </a>
+        <p style="font-size:15px;max-width:340px">Вывоз строительного и бытового мусора, мебели и хлама. Своя техника и грузчики. Работаем в тот же день.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Строительный мусор</a></li>
+          <li><a href="#services">Бытовой мусор и хлам</a></li>
+          <li><a href="#services">Старая мебель и КГМ</a></li>
+          <li><a href="#loaders">Грузчики и демонтаж</a></li>
+          <li><a href="#tariffs">Контейнеры и техника</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79063592344">+7 (906) 359-23-44</a></li>
+          <li>пр. Молодёжный, 80, Нижний Новгород</li>
+          <li>Ежедневно 8:00–21:00</li>
+          <li><a href="#contacts">Оставить заявку</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Вывоз мусора НН. Вывоз мусора в Нижнем Новгороде, Бору и Дзержинске.</span>
+      <span>Нижний Новгород, пр. Молодёжный, 80</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

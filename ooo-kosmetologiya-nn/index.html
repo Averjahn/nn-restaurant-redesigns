@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ООО «Косметология» — косметологическая клиника в Нижнем Новгороде</title>
+<meta name="description" content="Медицинская косметология в Нижнем Новгороде на пр. Ленина, 7. Более 55 лет опыта: чистки, пилинги, лазерная и аппаратная косметология, инъекции, массаж. Запись по тел. +7 903 602-22-88.">
+<meta name="theme-color" content="#C08457">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ООО «Косметология» — косметологическая клиника в Нижнем Новгороде">
+<meta property="og:description" content="Медицинская косметология с 55-летним опытом. Чистки, пилинги, лазер, инъекции, массаж. Пр. Ленина, 7, Нижний Новгород.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-primary:#C08457;
+  --color-primary-dark:#A56A3F;
+  --color-accent:#E6B89C;
+  --color-bg:#FDFAF6;
+  --color-surface:#F6EDE4;
+  --color-surface-2:#F0E4D7;
+  --color-text:#3B2F28;
+  --color-muted:#8A7A6E;
+  --color-line:#E7D8C8;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1160px;
+  --gap:24px;
+  --shadow:0 18px 40px -24px rgba(90,60,35,.35);
+  --header-h:72px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--color-text);
+  background:var(--color-bg);
+  line-height:1.6;
+  font-size:clamp(15px,1.5vw,17px);
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;font-weight:600}
+h1{font-size:clamp(32px,6vw,60px)}
+h2{font-size:clamp(26px,4vw,44px)}
+h3{font-size:clamp(19px,2.4vw,24px)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,100px) 0}
+.eyebrow{
+  display:inline-block;text-transform:uppercase;letter-spacing:.18em;
+  font-size:12px;font-weight:700;color:var(--color-primary);margin-bottom:14px;
+}
+.section-head{max-width:640px;margin:0 auto clamp(36px,5vw,56px);text-align:center}
+.section-head p{color:var(--color-muted);margin-top:14px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:100px;font-weight:600;font-size:15px;
+  cursor:pointer;border:1.5px solid transparent;transition:.2s;white-space:nowrap;
+}
+.btn-primary{background:var(--color-primary);color:#fff}
+.btn-primary:hover{background:var(--color-primary-dark)}
+.btn-outline{background:transparent;border-color:var(--color-primary);color:var(--color-primary-dark)}
+.btn-outline:hover{background:var(--color-primary);color:#fff}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px}
+
+/* HEADER */
+.site-header{
+  position:sticky;top:0;z-index:100;background:rgba(253,250,246,.9);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--color-line);
+}
+.header-inner{display:flex;align-items:center;gap:20px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{height:34px;width:auto}
+.brand .brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand .brand-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;white-space:nowrap}
+.brand .brand-sub{font-size:11px;color:var(--color-muted);white-space:nowrap;letter-spacing:.04em}
+.nav{display:flex;gap:26px;margin-left:auto;align-items:center}
+.nav a{font-weight:500;font-size:15px;color:var(--color-text);transition:.2s;white-space:nowrap}
+.nav a:hover{color:var(--color-primary)}
+.header-phone{font-weight:700;color:var(--color-primary-dark);white-space:nowrap}
+.header-cta{margin-left:4px}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer}
+.burger span{display:block;height:2px;width:24px;background:var(--color-text);border-radius:2px;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{
+    position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;gap:18px;
+    background:var(--color-bg);padding:28px 24px 34px;margin-left:0;align-items:stretch;
+    border-bottom:1px solid var(--color-line);box-shadow:var(--shadow);
+    transform:translateY(-140%);transition:transform .3s ease;
+  }
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{font-size:18px;padding:6px 0}
+  .nav .header-phone{font-size:22px}
+  .nav .header-cta{margin:8px 0 0;width:100%}
+  .header-cta.desk,.header-phone.desk{display:none}
+  .burger{display:flex;margin-left:auto}
+}
+@media(max-width:600px){
+  .brand .brand-text{display:none}
+  .brand img{height:38px}
+}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(253,250,246,.97) 0%,rgba(253,250,246,.86) 42%,rgba(253,250,246,.35) 100%),
+             url(assets/hero.jpg) center/cover no-repeat;
+  z-index:-1;
+}
+.hero-inner{padding:clamp(48px,9vw,90px) 0;max-width:660px}
+.hero h1{margin:6px 0 18px}
+.hero h1 span{color:var(--color-primary-dark)}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--color-muted);max-width:540px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px}
+.hero-badges .b-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--color-primary-dark)}
+.hero-badges .b-lbl{font-size:13px;color:var(--color-muted)}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.feature{background:var(--color-surface);border-radius:var(--radius-md);padding:28px 24px;border:1px solid var(--color-line)}
+.feature .ic{width:46px;height:46px;border-radius:12px;background:var(--color-accent);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.feature h3{font-size:19px;margin-bottom:8px}
+.feature p{font-size:14.5px;color:var(--color-muted)}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.svc-card{
+  background:#fff;border:1px solid var(--color-line);border-radius:var(--radius-md);
+  padding:28px 26px;display:flex;flex-direction:column;box-shadow:var(--shadow);min-width:0;
+}
+.svc-card h3{margin-bottom:6px}
+.svc-card .svc-lead{font-size:14px;color:var(--color-muted);margin-bottom:18px}
+.svc-list{list-style:none;flex:1;margin-bottom:18px}
+.svc-list li{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-bottom:1px dashed var(--color-line);font-size:14.5px;min-width:0}
+.svc-list li:last-child{border-bottom:none}
+.svc-list .item-name{min-width:0;overflow-wrap:anywhere}
+.svc-list .dots{flex:1;border-bottom:1px dashed var(--color-line);transform:translateY(-3px);min-width:12px}
+.svc-list .item-price{font-weight:700;color:var(--color-primary-dark);white-space:nowrap}
+.svc-from{font-weight:600;color:var(--color-primary-dark)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
+.about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);min-width:0}
+.about-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.about-text h2{margin-bottom:18px}
+.about-text p{color:var(--color-muted);margin-bottom:16px}
+.about-points{list-style:none;margin-top:22px;display:grid;gap:12px}
+.about-points li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.about-points .chk{color:var(--color-primary);font-weight:700;flex-shrink:0}
+.license{margin-top:26px;font-size:13px;color:var(--color-muted);background:var(--color-surface);padding:12px 16px;border-radius:var(--radius-sm);border:1px solid var(--color-line)}
+
+/* DOCTORS */
+.doctors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.doc{background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md);padding:24px}
+.doc .avatar{
+  width:64px;height:64px;border-radius:50%;background:var(--color-accent);
+  display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;
+  font-size:24px;font-weight:700;color:var(--color-primary-dark);margin-bottom:16px;
+}
+.doc h3{font-size:20px;margin-bottom:4px}
+.doc .role{font-size:14px;color:var(--color-primary-dark);font-weight:600}
+
+/* REVIEWS */
+.reviews{background:var(--color-surface)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.review{background:#fff;border:1px solid var(--color-line);border-radius:var(--radius-md);padding:26px;display:flex;flex-direction:column}
+.review .stars{color:var(--color-primary);letter-spacing:2px;margin-bottom:12px}
+.review p{font-size:15px;color:var(--color-text);flex:1;margin-bottom:16px}
+.review .who{font-weight:700;font-size:14.5px}
+.review .who span{display:block;font-weight:500;font-size:13px;color:var(--color-muted)}
+
+/* CONTACTS */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md);padding:clamp(26px,4vw,40px);min-width:0}
+.contacts-info h2{margin-bottom:22px}
+.c-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--color-line);overflow-wrap:anywhere}
+.c-row:last-of-type{border-bottom:none}
+.c-row .c-ic{font-size:20px;flex-shrink:0}
+.c-row .c-lbl{display:block;font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-muted);margin-bottom:2px}
+.c-row a{font-weight:600;color:var(--color-primary-dark)}
+.c-row strong{font-weight:600}
+.contacts-info .btn{width:100%;margin-top:22px}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--color-line);min-height:380px}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+/* FOOTER */
+.footer{background:#2E241E;color:#E9DDD1;padding:44px 0 30px}
+.footer-inner{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start}
+.footer .f-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.footer a{color:#E9DDD1}
+.footer a:hover{color:var(--color-accent)}
+.footer .f-col p{font-size:14px;color:#C3B4A6;margin-bottom:6px;overflow-wrap:anywhere}
+.footer .f-bottom{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#A9998B;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+
+@media(max-width:900px){
+  .features-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .services-grid,.doctors-grid,.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{grid-template-columns:1fr}
+  .about-media img{aspect-ratio:16/10}
+  .contacts-grid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .features-grid,.services-grid,.doctors-grid,.reviews-grid{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1;min-width:0}
+  .hero-badges{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="ООО Косметология — на главную">
+      <img src="assets/logo.png" alt="Логотип ООО Косметология" onerror="this.style.display='none'">
+      <span class="brand-text">
+        <span class="brand-name">ООО «Косметология»</span>
+        <span class="brand-sub">Нижний Новгород · с 1968 года</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      <a href="#about">О клинике</a>
+      <a href="#doctors">Специалисты</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79036022288" class="header-phone">+7 903 602-22-88</a>
+      <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+    </nav>
+    <a href="#contacts" class="btn btn-primary header-cta desk">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · пр. Ленина, 7</p>
+    <h1>Медицинская косметология с <span>заботой о вашей коже</span></h1>
+    <p class="hero-sub">Клиника с более чем 55-летним опытом. Врачи-дерматокосметологи, современные аппаратные и лазерные технологии, инъекционные методики и уходовые процедуры — в центре Нижнего Новгорода.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary">Услуги и цены</a>
+      <a href="#contacts" class="btn btn-outline">Как нас найти</a>
+    </div>
+    <div class="hero-badges">
+      <div><div class="b-num">55+</div><div class="b-lbl">лет на рынке</div></div>
+      <div><div class="b-num">12</div><div class="b-lbl">специалистов</div></div>
+      <div><div class="b-num">100+</div><div class="b-lbl">процедур</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему выбирают нас</span>
+      <h2>Профессиональный подход к красоте</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="ic" aria-hidden="true">🩺</div>
+        <h3>Врачи, а не мастера</h3>
+        <p>Приём ведут дипломированные дерматовенерологи и косметологи со стажем от 5 до 35 лет.</p>
+      </div>
+      <div class="feature">
+        <div class="ic" aria-hidden="true">🔬</div>
+        <h3>Медицинская лицензия</h3>
+        <p>Работаем легально по лицензии № ЛО-52-01-006884 с полным контролем безопасности.</p>
+      </div>
+      <div class="feature">
+        <div class="ic" aria-hidden="true">✨</div>
+        <h3>Современное оборудование</h3>
+        <p>Неодимовый и СО₂-лазеры, SMAS-лифтинг, RF, фототерапия, аппаратная косметология.</p>
+      </div>
+      <div class="feature">
+        <div class="ic" aria-hidden="true">💬</div>
+        <h3>Честная консультация</h3>
+        <p>Подберём процедуры под вашу кожу и задачу — без навязывания лишнего.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background:var(--color-surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Услуги и цены</span>
+      <h2>Направления и стоимость процедур</h2>
+      <p>Ниже — популярные процедуры по каждому направлению. Полный прайс-лист уточняйте на приёме или по телефону.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <h3>Консультации</h3>
+        <p class="svc-lead">Диагностика кожи и составление плана ухода</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Приём врача-косметолога, первичный</span><span class="dots"></span><span class="item-price">2000 ₽</span></li>
+          <li><span class="item-name">Приём дерматовенеролога, первичный</span><span class="dots"></span><span class="item-price">2000 ₽</span></li>
+          <li><span class="item-name">Дерматоскопия новообразований</span><span class="dots"></span><span class="item-price">700 ₽</span></li>
+          <li><span class="item-name">Консультация онколога</span><span class="dots"></span><span class="item-price">2500 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 500 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Чистки и уход</h3>
+        <p class="svc-lead">Очищение, увлажнение и восстановление кожи</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Чистка ультразвуковая с маской</span><span class="dots"></span><span class="item-price">2700 ₽</span></li>
+          <li><span class="item-name">Чистка «Детокс»</span><span class="dots"></span><span class="item-price">3500 ₽</span></li>
+          <li><span class="item-name">Чистка механическая (лицо)</span><span class="dots"></span><span class="item-price">3000 ₽</span></li>
+          <li><span class="item-name">Интенсивное увлажнение и лифтинг</span><span class="dots"></span><span class="item-price">3800 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 400 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Химические пилинги</h3>
+        <p class="svc-lead">Обновление и выравнивание тона кожи</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Миндальный пилинг (лицо)</span><span class="dots"></span><span class="item-price">3000 ₽</span></li>
+          <li><span class="item-name">Гликолевый пилинг (лицо)</span><span class="dots"></span><span class="item-price">3500 ₽</span></li>
+          <li><span class="item-name">Ретиноевый пилинг (лицо)</span><span class="dots"></span><span class="item-price">5000 ₽</span></li>
+          <li><span class="item-name">PRX Т33</span><span class="dots"></span><span class="item-price">5000 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 2500 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Аппаратная косметология</h3>
+        <p class="svc-lead">Микротоки, RF-лифтинг, фототерапия</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Электромиостимуляция лица и шеи</span><span class="dots"></span><span class="item-price">3300 ₽</span></li>
+          <li><span class="item-name">Микротоковая терапия</span><span class="dots"></span><span class="item-price">2500 ₽</span></li>
+          <li><span class="item-name">RF-лифтинг (лицо)</span><span class="dots"></span><span class="item-price">3000 ₽</span></li>
+          <li><span class="item-name">Фотодинамическая терапия (омоложение)</span><span class="dots"></span><span class="item-price">3500 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 1000 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Лазерные технологии</h3>
+        <p class="svc-lead">Неодимовый и СО₂-лазеры, удаление сосудов и пигмента</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Лазерный карбоновый пилинг (лицо)</span><span class="dots"></span><span class="item-price">4500 ₽</span></li>
+          <li><span class="item-name">Дермальное омоложение Genesis (лицо)</span><span class="dots"></span><span class="item-price">6000 ₽</span></li>
+          <li><span class="item-name">Удаление сосудов (лицо)</span><span class="dots"></span><span class="item-price">6000 ₽</span></li>
+          <li><span class="item-name">Удаление гиперпигментации (лицо)</span><span class="dots"></span><span class="item-price">6500 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 1000 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Инъекции и контурная пластика</h3>
+        <p class="svc-lead">Биоревитализация, филлеры, ботулинотерапия</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Иал систем 1,1 мл</span><span class="dots"></span><span class="item-price">12000 ₽</span></li>
+          <li><span class="item-name">Белотеро баланс (1 мл)</span><span class="dots"></span><span class="item-price">20000 ₽</span></li>
+          <li><span class="item-name">Мезотерапия NCTF 135/135 HA</span><span class="dots"></span><span class="item-price">11500 ₽</span></li>
+          <li><span class="item-name">Ботулинотерапия (Релатокс, 1 ед.)</span><span class="dots"></span><span class="item-price">360 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 150 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Удаление новообразований</h3>
+        <p class="svc-lead">Электрокоагуляция, СО₂-лазер, криодеструкция</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Удаление папилломы (электрокоагуляция)</span><span class="dots"></span><span class="item-price">от 100 ₽</span></li>
+          <li><span class="item-name">Удаление бородавки (СО₂-лазер)</span><span class="dots"></span><span class="item-price">от 800 ₽</span></li>
+          <li><span class="item-name">Криодеструкция азотом</span><span class="dots"></span><span class="item-price">от 300 ₽</span></li>
+          <li><span class="item-name">Гистологическое исследование</span><span class="dots"></span><span class="item-price">2500 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 100 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Лифтинг и омоложение</h3>
+        <p class="svc-lead">SMAS-лифтинг, микроигольчатый RF, квантовое омоложение</p>
+        <ul class="svc-list">
+          <li><span class="item-name">SMAS-лифтинг, средняя треть лица</span><span class="dots"></span><span class="item-price">17500 ₽</span></li>
+          <li><span class="item-name">Микроигольчатый RF-лифтинг (лицо+шея)</span><span class="dots"></span><span class="item-price">27000 ₽</span></li>
+          <li><span class="item-name">Квантовое омоложение Corage (превент-эйдж)</span><span class="dots"></span><span class="item-price">15000 ₽</span></li>
+          <li><span class="item-name">Фракционное СО₂-омоложение (лицо)</span><span class="dots"></span><span class="item-price">20000 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 10000 ₽</span>
+      </div>
+
+      <div class="svc-card">
+        <h3>Массаж и карбокситерапия</h3>
+        <p class="svc-lead">Медицинский массаж и инъекционная CO₂-терапия</p>
+        <ul class="svc-list">
+          <li><span class="item-name">Остеопатический массаж лица и шеи</span><span class="dots"></span><span class="item-price">3300 ₽</span></li>
+          <li><span class="item-name">Лимфодренажный массаж тела</span><span class="dots"></span><span class="item-price">3500 ₽</span></li>
+          <li><span class="item-name">Карбокситерапия позвоночника</span><span class="dots"></span><span class="item-price">3000 ₽</span></li>
+          <li><span class="item-name">Массаж шейно-воротниковой зоны</span><span class="dots"></span><span class="item-price">1200 ₽</span></li>
+        </ul>
+        <span class="svc-from">от 1200 ₽</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media">
+        <img src="assets/care.jpg" alt="Косметолог демонстрирует уходовое средство" loading="lazy" decoding="async" onerror="this.closest('.about-media').style.display='none'">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">О клинике</span>
+        <h2>Более 55 лет в косметологии</h2>
+        <p>ООО «Косметология» — одна из старейших косметологических организаций Нижнего Новгорода. За десятилетия работы мы объединили классические врачебные методики с современными аппаратными и инъекционными технологиями.</p>
+        <p>Наша команда — врачи и медсёстры с образованием в дерматологии, косметологии, онкологии и медицинском массаже. Мы работаем по медицинской лицензии и уделяем особое внимание безопасности каждой процедуры.</p>
+        <ul class="about-points">
+          <li><span class="chk">✓</span><span>Индивидуальный план ухода после диагностики кожи</span></li>
+          <li><span class="chk">✓</span><span>Онкологическая настороженность при работе с новообразованиями</span></li>
+          <li><span class="chk">✓</span><span>Сертифицированные препараты и стерильность процедур</span></li>
+          <li><span class="chk">✓</span><span>Удобное расположение — у метро «Ленинская»</span></li>
+        </ul>
+        <p class="license">Лицензия № ЛО-52-01-006884 от 09.07.2020 г.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="doctors" style="background:var(--color-surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Специалисты</span>
+      <h2>Наша команда врачей</h2>
+      <p>Дерматовенерологи, косметологи и трихологи со стажем от 5 до 35 лет.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">ТЕ</div>
+        <h3>Тарунина Елена Александровна</h3>
+        <p class="role">Главный врач · дерматовенеролог, косметолог</p>
+      </div>
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">СН</div>
+        <h3>Сторожева Наталия Юрьевна</h3>
+        <p class="role">Врач-косметолог</p>
+      </div>
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">ЕД</div>
+        <h3>Евстафьева Дарья Сергеевна</h3>
+        <p class="role">Врач-косметолог, дерматовенеролог</p>
+      </div>
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">СЕ</div>
+        <h3>Сидоренко Елена Валериевна</h3>
+        <p class="role">Дерматовенеролог, косметолог, трихолог</p>
+      </div>
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">НА</div>
+        <h3>Николаева Анастасия Юрьевна</h3>
+        <p class="role">Дерматовенеролог, косметолог, трихолог</p>
+      </div>
+      <div class="doc">
+        <div class="avatar" aria-hidden="true">МВ</div>
+        <h3>Мурашова Вера Сергеевна</h3>
+        <p class="role">Врач-дерматовенеролог</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Отзывы</span>
+      <h2>Что говорят наши пациенты</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Наблюдаюсь у Елены Александровны несколько лет. Всегда честно скажет, какая процедура нужна, а какая — лишняя трата. Кожа заметно преобразилась после курса пилингов.»</p>
+        <div class="who">Ольга<span>лечение постакне</span></div>
+      </div>
+      <div class="review">
+        <div class="stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Удаляла новообразования лазером. Всё объяснили, отправили гистологию на исследование — чувствуешь, что здесь работают именно врачи, а не просто салон.»</p>
+        <div class="who">Марина<span>удаление новообразований</span></div>
+      </div>
+      <div class="review">
+        <div class="stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Ходила на аппаратную косметологию и биоревитализацию. Результат превзошёл ожидания, а цены заметно приятнее, чем в частных салонах города.»</p>
+        <div class="who">Анастасия<span>биоревитализация</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <span class="eyebrow">Контакты</span>
+        <h2>Запишитесь на приём</h2>
+        <div class="c-row">
+          <span class="c-ic" aria-hidden="true">📍</span>
+          <span><span class="c-lbl">Адрес</span><strong>г. Нижний Новгород, пр. Ленина, д. 7, корп. 1</strong><br><span style="color:var(--color-muted);font-size:14px">метро «Ленинская», выход на ул. Рубо</span></span>
+        </div>
+        <div class="c-row">
+          <span class="c-ic" aria-hidden="true">📞</span>
+          <span><span class="c-lbl">Телефон</span><a href="tel:+79036022288">+7 903 602-22-88</a></span>
+        </div>
+        <div class="c-row">
+          <span class="c-ic" aria-hidden="true">✉️</span>
+          <span><span class="c-lbl">E-mail</span><a href="mailto:kosmnn@mail.ru">kosmnn@mail.ru</a></span>
+        </div>
+        <div class="c-row">
+          <span class="c-ic" aria-hidden="true">🕐</span>
+          <span><span class="c-lbl">Режим работы</span><strong>Ежедневно, приём по записи</strong></span>
+        </div>
+        <a href="tel:+79036022288" class="btn btn-primary">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=56.2987474,43.9373449&z=17&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта: пр. Ленина, 7, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="f-col">
+      <div class="f-brand">ООО «Косметология»</div>
+      <p>Медицинская косметология в Нижнем Новгороде с 1968 года.</p>
+      <p>Лицензия № ЛО-52-01-006884</p>
+    </div>
+    <div class="f-col">
+      <p><strong style="color:#fff">Контакты</strong></p>
+      <p>пр. Ленина, д. 7, корп. 1</p>
+      <p><a href="tel:+79036022288">+7 903 602-22-88</a></p>
+      <p><a href="mailto:kosmnn@mail.ru">kosmnn@mail.ru</a></p>
+    </div>
+    <div class="f-col">
+      <p><strong style="color:#fff">Разделы</strong></p>
+      <p><a href="#services">Услуги и цены</a></p>
+      <p><a href="#about">О клинике</a></p>
+      <p><a href="#doctors">Специалисты</a></p>
+      <p><a href="#contacts">Контакты</a></p>
+    </div>
+  </div>
+  <div class="container f-bottom">
+    <span>© 2026 ООО «Косметология». Все права защищены.</span>
+    <span>Имеются противопоказания, необходима консультация специалиста.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  function close(){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>

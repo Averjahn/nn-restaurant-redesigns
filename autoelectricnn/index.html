@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АвтоэлектрикНН — диагностика и ремонт автоэлектрики в Нижнем Новгороде</title>
+<meta name="description" content="Автоэлектрик в Нижнем Новгороде: диагностика двигателя, ремонт ЭБУ, роботизированных коробок (EasyTronic, DSG, PowerShift, Durashift), корректировка одометра, разблокировка магнитол. Честная цена — называем стоимость до начала работ. +7 908 232-46-88.">
+<meta name="theme-color" content="#0d1520">
+<meta property="og:type" content="website">
+<meta property="og:title" content="АвтоэлектрikНН — диагностика и ремонт автоэлектрики">
+<meta property="og:description" content="Правильная диагностика вместо замены запчастей наугад. Роботизированные коробки, ЭБУ, электрика авто в Нижнем Новгороде.">
+<meta property="og:image" content="assets/stock_fusebox.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1520;
+  --bg-2:#121d2c;
+  --surface:#17263a;
+  --surface-2:#1e3450;
+  --border:#25384f;
+  --text:#eaf2fb;
+  --muted:#9db0c6;
+  --primary:#12c6c0;   /* teal — electrics */
+  --primary-2:#0aa8bd;
+  --accent:#2e7dff;    /* blue */
+  --warn:#ffb020;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1140px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  font-size:clamp(15px,1.5vw,17px);overflow-x:hidden;
+}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.1;letter-spacing:.5px;text-transform:uppercase}
+h1{font-size:clamp(30px,6vw,60px)}
+h2{font-size:clamp(24px,4vw,44px)}
+h3{font-size:clamp(17px,2.4vw,22px)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{padding:clamp(48px,7vw,88px) 0}
+.eyebrow{color:var(--primary);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:13px;margin-bottom:14px}
+.section-head{max-width:720px;margin-bottom:clamp(28px,4vw,48px)}
+.section-head p{color:var(--muted);margin-top:12px}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:600;font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);
+  cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap;line-height:1}
+.btn-primary{background:var(--primary);color:#05202a}
+.btn-primary:hover{background:var(--primary-2)}
+.btn-outline{border-color:var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.btn-lg{padding:16px 32px;font-size:16px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(13,21,32,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;font-family:'Oswald';font-weight:700;
+  font-size:20px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.brand .logo-mark{width:38px;height:38px;border-radius:9px;background:var(--primary);
+  display:grid;place-items:center;flex-shrink:0}
+.brand .logo-mark svg{width:24px;height:24px}
+.brand b{color:var(--primary)}
+.nav{display:flex;gap:26px;margin-left:12px}
+.nav a{color:var(--muted);font-weight:500;font-size:15px;transition:.15s}
+.nav a:hover{color:var(--text)}
+.header-phone{margin-left:auto;font-family:'Oswald';font-weight:600;font-size:19px;
+  color:var(--text);white-space:nowrap;letter-spacing:.5px}
+.header-cta{flex-shrink:0}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;
+  flex-direction:column;justify-content:center;gap:6px;margin-left:auto}
+.burger span{display:block;height:2px;width:26px;background:var(--text);border-radius:2px;transition:.25s}
+
+/* hero */
+.hero{position:relative;min-height:92svh;display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(13,21,32,.82),rgba(13,21,32,.92)),
+    url(assets/stock_fusebox.jpg) center/cover no-repeat;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(1200px 500px at 80% 0%,rgba(18,198,192,.18),transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:760px;padding:60px 0}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(18,198,192,.12);
+  border:1px solid rgba(18,198,192,.35);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{margin-bottom:20px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:600px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:22px}
+.hero-badges div{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:14px;font-weight:500}
+.hero-badges b{color:var(--primary);font-family:'Oswald';font-size:22px}
+
+/* features */
+.features{background:var(--bg-2)}
+.feat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:26px 22px;min-width:0}
+.feat .ic{width:48px;height:48px;border-radius:12px;background:rgba(18,198,192,.12);
+  display:grid;place-items:center;margin-bottom:16px}
+.feat .ic svg{width:26px;height:26px;stroke:var(--primary)}
+.feat h3{margin-bottom:8px;text-transform:none;font-family:'Inter';font-weight:700;font-size:17px;letter-spacing:0}
+.feat p{color:var(--muted);font-size:14.5px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.svc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:24px;display:flex;flex-direction:column;min-width:0;transition:.2s}
+.svc:hover{border-color:var(--primary);transform:translateY(-3px)}
+.svc .tag{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
+.svc h3{text-transform:none;font-family:'Inter';font-weight:700;font-size:18px;letter-spacing:0;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:14.5px;flex:1;margin-bottom:16px}
+.svc .price{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  border-top:1px solid var(--border);padding-top:14px;font-weight:600}
+.svc .price .amt{font-family:'Oswald';font-size:19px;color:var(--text);white-space:nowrap}
+.svc .price .call{color:var(--primary);font-size:14px}
+
+/* robots list */
+.robo{background:var(--bg-2)}
+.robo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.robo-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:16px 18px;min-width:0;overflow-wrap:anywhere}
+.robo-item b{display:block;font-family:'Oswald';font-size:16px;letter-spacing:.5px}
+.robo-item span{color:var(--muted);font-size:13px}
+
+/* split (equipment/diagnostics) */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,56px);align-items:center}
+.split.diag{background:var(--bg-2)}
+.split-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3}
+.split-media img{width:100%;height:100%;object-fit:cover}
+.split-body h2{margin-bottom:18px}
+.split-body p{color:var(--muted);margin-bottom:16px}
+.check{list-style:none;display:grid;gap:12px;margin-top:8px}
+.check li{display:flex;gap:12px;align-items:flex-start;color:var(--text);font-size:15px}
+.check li svg{width:22px;height:22px;flex-shrink:0;stroke:var(--primary);margin-top:1px}
+
+/* steps */
+.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.step{position:relative;padding:26px 22px;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-md);min-width:0}
+.step .num{font-family:'Oswald';font-size:34px;color:var(--primary);line-height:1;margin-bottom:12px}
+.step h3{text-transform:none;font-family:'Inter';font-weight:700;font-size:17px;letter-spacing:0;margin-bottom:6px}
+.step p{color:var(--muted);font-size:14px}
+
+/* about */
+.about{background:var(--bg-2)}
+.about-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,56px);align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);aspect-ratio:16/10}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about blockquote{border-left:3px solid var(--primary);padding-left:18px;margin:22px 0;
+  font-family:'Oswald';font-size:clamp(18px,2.4vw,24px);line-height:1.35;text-transform:none;letter-spacing:0}
+.about p{color:var(--muted);margin-bottom:14px}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,40px)}
+.contacts-info{display:flex;flex-direction:column;gap:18px}
+.info-row{display:flex;gap:14px;align-items:flex-start;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;min-width:0;overflow-wrap:anywhere}
+.info-row .ic{width:42px;height:42px;border-radius:10px;background:rgba(18,198,192,.12);
+  display:grid;place-items:center;flex-shrink:0}
+.info-row .ic svg{width:22px;height:22px;stroke:var(--primary)}
+.info-row .lbl{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.info-row .val{font-weight:600;font-size:17px}
+.info-row .val a{color:var(--text)}
+.info-row.hl{background:var(--primary);border-color:var(--primary)}
+.info-row.hl .ic{background:rgba(5,32,42,.18)}
+.info-row.hl .ic svg{stroke:#05202a}
+.info-row.hl .lbl{color:#05363f}
+.info-row.hl .val,.info-row.hl .val a{color:#05202a}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* lead form */
+.lead{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:clamp(24px,4vw,40px);margin-top:var(--gap)}
+.lead h3{text-transform:none;font-family:'Oswald';letter-spacing:.5px;margin-bottom:8px}
+.lead p{color:var(--muted);margin-bottom:20px;font-size:14.5px}
+.lead-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lead-form input,.lead-form textarea{width:100%;background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:14px 16px;color:var(--text);font-family:inherit;font-size:15px}
+.lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:var(--primary)}
+.lead-form .full{grid-column:1/-1}
+.lead-form textarea{resize:vertical;min-height:90px}
+.form-note{color:var(--muted);font-size:12.5px;margin-top:12px}
+.form-ok{display:none;background:rgba(18,198,192,.12);border:1px solid var(--primary);
+  border-radius:var(--radius-sm);padding:16px;color:var(--primary);font-weight:600;margin-top:14px}
+
+/* footer */
+.footer{background:var(--bg-2);border-top:1px solid var(--border);padding:40px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.footer-inner a{color:var(--muted)}
+.footer-inner a:hover{color:var(--primary)}
+.footer .brand{font-size:18px}
+
+/* responsive */
+@media(max-width:1040px){
+  .nav,.header-phone{display:none}
+  .header-cta{margin-left:auto}
+  .burger{display:flex;margin-left:14px}
+  .nav.nav--open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;
+    gap:0;background:var(--bg-2);border-bottom:1px solid var(--border);margin:0;padding:8px 0}
+  .nav.nav--open a{padding:14px 20px;font-size:16px;border-bottom:1px solid var(--border)}
+  .nav.nav--open .m-phone{color:var(--primary);font-family:'Oswald';font-size:22px}
+  .nav.nav--open .m-cta{color:var(--primary);font-weight:700}
+  .feat-grid,.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .robo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:768px){
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split,.about-inner,.contacts-grid{grid-template-columns:minmax(0,1fr)}
+  .split-media,.about-media{order:-1}
+  .robo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+  .feat-grid,.svc-grid,.steps-grid,.robo-grid,.lead-form{grid-template-columns:minmax(0,1fr)}
+  .hero-actions .btn{width:100%}
+  .hero-badges{gap:16px}
+}
+.m-phone,.m-cta{display:none}
+@media(max-width:1040px){.m-phone,.m-cta{display:block}}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05202a"/></svg>
+      </span>
+      Автоэлектрик<b>НН</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#robots">Коробки</a>
+      <a href="#diagnostics">Диагностика</a>
+      <a href="#how">Как работаем</a>
+      <a href="#about">О сервисе</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79082324688" class="m-phone">+7 908 232-46-88</a>
+      <a href="#contacts" class="m-cta">Оставить заявку</a>
+    </nav>
+    <a href="tel:+79082324688" class="header-phone">+7 908 232-46-88</a>
+    <a href="#contacts" class="btn btn-primary header-cta">Заявка</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · СНТ РАХМА, 53 (р-н Бекетова)</p>
+    <h1>Автоэлектрик, который сначала <span>находит причину</span></h1>
+    <p class="hero-sub">Диагностика двигателя, ремонт ЭБУ и роботизированных коробок передач. Называем стоимость до начала работ и не увеличиваем её после ремонта.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary btn-lg">Смотреть услуги</a>
+      <a href="tel:+79082324688" class="btn btn-outline btn-lg">📞 Позвонить</a>
+    </div>
+    <div class="hero-badges">
+      <div><b>10+</b> роботизированных КПП</div>
+      <div><b>ЭБУ</b> ремонт и прошивка</div>
+      <div><b>0 ₽</b> за замену наугад</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="why">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Почему к нам</p>
+      <h2>Работаем открыто</h2>
+      <p>«Мы не говорим: „Поверьте нам на слово“. А вместо этого работаем открыто». Консультируем до начала работ и в процессе — вы всегда в курсе, что и зачем делается.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+        <h3>Честная цена</h3>
+        <p>Называем стоимость ремонта до его проведения. После ремонта цену не увеличиваем.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <h3>Причина, а не симптом</h3>
+        <p>Ремонт строится на правильной диагностике первопричины, а не на замене запчастей наугад.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <h3>Понятные консультации</h3>
+        <p>Держим в курсе: что нужно сделать и сколько это будет стоить — до и во время ремонта.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3Z"/></svg></div>
+        <h3>Оплата за результат</h3>
+        <p>Платите за устранённую неисправность, а не за «посмотреть». Диагностика — это не просто чтение ошибок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Услуги</p>
+      <h2>Что мы делаем</h2>
+      <p>Специализация — электрика и электроника автомобиля: блоки управления, коробки, проводка, приборы. Точную стоимость называем по результатам диагностики.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <span class="tag">Двигатель</span>
+        <h3>Диагностика двигателя</h3>
+        <p>Первичная и полная диагностика: сужаем круг поиска и находим конкретную причину — сканером, манометром, проверкой электрики и исполнительных механизмов.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Электроника</span>
+        <h3>Ремонт ЭБУ двигателя</h3>
+        <p>Восстановление электронных блоков управления двигателем: пайка, замена компонентов, устранение отказов. Есть запчасти для ремонта ЭБУ.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Прошивка</span>
+        <h3>Прошивка ЭБУ Opel</h3>
+        <p>Программирование и восстановление прошивки блоков управления Opel, адаптация после ремонта или замены.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Сложные случаи</span>
+        <h3>Автоэлектрик-диагност</h3>
+        <p>Диагностика сложных неисправностей автомобилей и спецтехники, когда стандартные методы не помогают.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Комфорт</span>
+        <h3>Ремонт блока комфорта</h3>
+        <p>Ремонт блоков комфорта Lada Priora и Granta: стеклоподъёмники, центральный замок, освещение, электрика салона.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Мультимедиа</span>
+        <h3>Разблокировка магнитол</h3>
+        <p>Снятие блокировки штатных магнитол после отключения аккумулятора, восстановление кода и работоспособности.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Приборы</span>
+        <h3>Корректировка одометра</h3>
+        <p>Корректировка показаний одометра, в том числе на Opel, после замены приборной панели или ремонта.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">АКПП</span>
+        <h3>Устранение пинков АКПП</h3>
+        <p>Устранение рывков и пинков автоматических коробок Toyota (RAV4, Ipsum, Crown) через диагностику и адаптацию.</p>
+        <div class="price"><span class="amt">Цена — по результату</span><span class="call">Уточнить →</span></div>
+      </article>
+      <article class="svc">
+        <span class="tag">Запчасти</span>
+        <h3>Запчасти для ремонта ЭБУ</h3>
+        <p>Компоненты и восстановленные модули для ремонта блоков управления, в том числе актуатор Opel EasyTronic с гарантией.</p>
+        <div class="price"><span class="amt">В наличии</span><span class="call">Уточнить →</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ROBOTS -->
+<section class="robo" id="robots">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Роботизированные КПП</p>
+      <h2>Диагностика и ремонт роботов</h2>
+      <p>Работаем с роботизированными коробками ведущих марок — от EasyTronic до DSG. Диагностируем сцепление, актуаторы, блоки управления и восстанавливаем корректную работу.</p>
+    </div>
+    <div class="robo-grid">
+      <div class="robo-item"><b>EasyTronic</b><span>Opel / Vauxhall</span></div>
+      <div class="robo-item"><b>Durashift</b><span>Ford</span></div>
+      <div class="robo-item"><b>MMT</b><span>Toyota</span></div>
+      <div class="robo-item"><b>Selespeed / Dualogic</b><span>Fiat / Alfa Romeo</span></div>
+      <div class="robo-item"><b>i-Shift</b><span>Honda</span></div>
+      <div class="robo-item"><b>PowerShift 6DCT250</b><span>Ford DCT</span></div>
+      <div class="robo-item"><b>Easy'R</b><span>Renault</span></div>
+      <div class="robo-item"><b>DSG</b><span>VAG</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTICS split -->
+<section class="split diag" id="diagnostics">
+  <div class="container split">
+    <div class="split-body">
+      <p class="eyebrow">Диагностика</p>
+      <h2>Чтение ошибок — это ещё не диагностика</h2>
+      <p>Удаление кода ошибки не устраняет проблему. Мы находим первопричину, а устранение причины нередко занимает меньше времени, чем её поиск.</p>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Первичная диагностика — сужаем круг поиска и составляем план проверок</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Полная диагностика — выявляем конкретную причину неисправности</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Сканер, замер давления топлива, проверка электрики и исполнительных механизмов</li>
+      </ul>
+    </div>
+    <div class="split-media">
+      <img src="assets/stock_engine.jpg" alt="Автоэлектрик проводит диагностику двигателя под капотом" loading="lazy" decoding="async" onerror="this.closest('.split-media').style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT split -->
+<section class="split">
+  <div class="container split">
+    <div class="split-media">
+      <img src="assets/full_PfBdDzzM.jpg" alt="Аккумулятор с пусковыми проводами — проверка электрооборудования автомобиля" loading="lazy" decoding="async" onerror="this.closest('.split-media').style.display='none'">
+    </div>
+    <div class="split-body">
+      <p class="eyebrow">Электрооборудование</p>
+      <h2>Электрика авто — от проводки до блоков</h2>
+      <p>Проверяем и ремонтируем электрику и электронные системы: питание, проводку, предохранители, исполнительные механизмы и блоки управления. Ищем не «где горит лампочка», а почему.</p>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Поиск обрывов, замыканий и потерь массы в проводке</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Ремонт и восстановление электронных блоков управления</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Легковые автомобили и спецтехника</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Как работаем</p>
+      <h2>Прозрачно на каждом шаге</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><div class="num">01</div><h3>Заявка и осмотр</h3><p>Звоните или оставляете заявку — описываете симптомы, договариваемся о приёме автомобиля.</p></div>
+      <div class="step"><div class="num">02</div><h3>Диагностика</h3><p>Находим первопричину, а не просто читаем ошибки. Объясняем, что и почему неисправно.</p></div>
+      <div class="step"><div class="num">03</div><h3>Цена до работ</h3><p>Называем стоимость ремонта заранее. Вы решаете — после ремонта цена не растёт.</p></div>
+      <div class="step"><div class="num">04</div><h3>Ремонт</h3><p>Устраняем причину надёжно и экономично. Держим в курсе на всех этапах.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-body">
+      <p class="eyebrow">О сервисе</p>
+      <h2>Автоэлектрик в Нижнем Новгороде</h2>
+      <p>Специализируемся на диагностике и ремонте автоэлектрики легковых автомобилей: роботизированные коробки, электронные блоки управления и сложные неисправности, которые не берут в других сервисах.</p>
+      <blockquote>«Называем стоимость ремонта до его проведения. После ремонта цену не увеличиваем».</blockquote>
+      <p>Предлагаем надёжные и экономичные варианты ремонта, основанные на правильной диагностике первопричины, а не на замене запчастей. Спросить Алексея можно по телефону.</p>
+      <a href="#contacts" class="btn btn-primary">Связаться с нами</a>
+    </div>
+    <div class="about-media">
+      <img src="assets/full_gS74u09R.jpg" alt="Автомобиль на площадке автосервиса АвтоэлектрикНН" loading="lazy" decoding="async" onerror="this.closest('.about-media').style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как нас найти</h2>
+      <p>Нижний Новгород, СНТ РАХМА, 53 — район улицы Бекетова. Звоните, чтобы уточнить проезд и стоимость.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row hl">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div><div class="lbl">Телефон (Алексей)</div><div class="val"><a href="tel:+79082324688">+7 908 232-46-88</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Адрес</div><div class="val">Нижний Новгород, СНТ РАХМА, 53 (р-н Бекетова)</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><div class="lbl">Email</div><div class="val"><a href="mailto:jack-auto@nextmail.ru">jack-auto@nextmail.ru</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><div class="lbl">Приём</div><div class="val">По предварительному звонку</div></div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2916219,43.9836073&z=15&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта проезда к АвтоэлектрикНН, район улицы Бекетова, Нижний Новгород"></iframe>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="lead">
+      <h3>Оставить заявку</h3>
+      <p>Опишите проблему — перезвоним, уточним детали и назовём стоимость до начала работ.</p>
+      <form class="lead-form" id="leadForm" novalidate>
+        <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" aria-label="Телефон" required>
+        <input type="text" class="full" name="car" placeholder="Марка и модель авто" aria-label="Марка и модель авто">
+        <textarea class="full" name="msg" placeholder="Что беспокоит: симптомы, коды ошибок, что уже делали" aria-label="Описание проблемы"></textarea>
+        <button type="submit" class="btn btn-primary btn-lg full">Отправить заявку</button>
+      </form>
+      <div class="form-ok" id="formOk">Спасибо! Заявка принята — мы перезвоним по номеру +7 908 232-46-88.</div>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Форма демонстрационная.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">Автоэлектрик<b>НН</b></a>
+    <span>Нижний Новгород, СНТ РАХМА, 53 (р-н Бекетова)</span>
+    <a href="tel:+79082324688">+7 908 232-46-88</a>
+    <span>© 2025 АвтоэлектрикНН</span>
+  </div>
+</footer>
+
+<script>
+// burger
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('nav--open');
+    b.setAttribute('aria-expanded',open);
+    b.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  n.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){n.classList.remove('nav--open');
+      b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Открыть меню');}
+  });
+})();
+// lead form
+(function(){
+  var f=document.getElementById('leadForm'),ok=document.getElementById('formOk');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.name.value.trim()||!f.phone.value.trim()){f.reportValidity&&f.reportValidity();return;}
+    f.style.display='none';ok.style.display='block';
+  });
+})();
+</script>
+</body>
+</html>

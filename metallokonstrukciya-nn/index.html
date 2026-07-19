@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ООО «Металлоконструкция» — металлообработка и сварочные работы в Нижнем Новгороде</title>
+<meta name="description" content="Собственное производство металлоконструкций и деталей в Нижнем Новгороде: токарные, фрезерные, сварочные работы, резка и термообработка металла. 18+ лет опыта, 45+ станков с ЧПУ. Изготовление от 1 детали.">
+<meta name="theme-color" content="#16181d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ООО «Металлоконструкция» — металлообработка в Нижнем Новгороде">
+<meta property="og:description" content="Собственный цех металлообработки: токарка, фрезеровка, сварка, резка металла. Изготовление деталей от 1 штуки. 18+ лет опыта.">
+<meta property="og:image" content="assets/work3.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --steel-900:#16181d;
+  --steel-800:#1f232b;
+  --steel-700:#2b3038;
+  --steel-600:#3a4049;
+  --accent:#ff6a1a;
+  --accent-dark:#e2570d;
+  --bg:#f4f5f7;
+  --surface:#ffffff;
+  --text:#1a1d22;
+  --muted:#6b7280;
+  --line:#e2e5ea;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --container:1160px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{
+  font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.6;
+  font-size:clamp(15px,1.4vw,17px);overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:700;line-height:1.08;text-transform:uppercase;letter-spacing:.5px}
+h1{font-size:clamp(34px,6.5vw,68px)}
+h2{font-size:clamp(26px,4.2vw,46px)}
+h3{font-size:clamp(18px,2.4vw,23px);letter-spacing:.3px}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,96px) 0}
+.eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:600;font-size:14px;margin-bottom:14px}
+.lead{color:var(--muted);max-width:640px;font-size:clamp(15px,1.6vw,18px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);border:2px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{background:transparent;border-color:currentColor;color:#fff}
+.btn-outline:hover{background:#fff;color:var(--steel-900)}
+.btn-dark{background:var(--steel-900);color:#fff}
+.btn-dark:hover{background:var(--steel-700)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(22,24,29,.96);backdrop-filter:blur(8px);border-bottom:1px solid #000}
+.header-inner{display:flex;align-items:center;gap:18px;height:66px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand-mark{width:38px;height:38px;border-radius:7px;background:var(--accent);display:grid;place-items:center;flex-shrink:0;font-family:'Oswald';font-weight:700;color:#fff;font-size:20px}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap}
+.brand-text b{font-family:'Oswald';color:#fff;font-size:17px;letter-spacing:.5px;text-transform:uppercase}
+.brand-text span{color:#9aa1ac;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:#d3d7dd;font-weight:500;font-size:15px;transition:.15s;white-space:nowrap}
+.nav a:hover{color:var(--accent)}
+.header-phone{color:#fff;font-family:'Oswald';font-weight:600;font-size:17px;white-space:nowrap;letter-spacing:.5px}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;background:transparent;border:0;cursor:pointer;align-items:center;justify-content:center}
+.burger span{width:26px;height:2.5px;background:#fff;transition:.2s;border-radius:2px}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:66px 0 auto 0;flex-direction:column;gap:0;background:var(--steel-900);margin-left:0;border-bottom:1px solid #000;transform:translateY(-140%);transition:transform .28s;padding:8px 0 20px;max-height:calc(100vh - 66px);overflow-y:auto}
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{width:100%;padding:14px 24px;border-bottom:1px solid var(--steel-700);font-size:17px}
+  .nav .header-phone{padding-top:20px;font-size:22px;color:var(--accent)}
+  .nav .btn{margin:16px 24px 0;width:calc(100% - 48px)}
+  .desktop-phone{display:none}
+  .burger{display:flex;margin-left:auto}
+}
+.nav .btn,.nav .header-phone{display:none}
+@media(max-width:1040px){.nav .btn,.nav .header-phone{display:flex}}
+@media(max-width:560px){
+  .brand-text span{display:none}
+  .brand-text b{font-size:15px}
+  .brand-mark{width:34px;height:34px;font-size:18px}
+  .header-inner{gap:10px}
+}
+
+/* Hero */
+.hero{position:relative;min-height:min(88vh,720px);display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(16,18,22,.94) 0%,rgba(16,18,22,.82) 42%,rgba(16,18,22,.45) 100%)}
+.hero-inner{position:relative;z-index:1;padding:70px 0}
+.hero h1{max-width:15ch}
+.hero h1 .hl{color:var(--accent)}
+.hero-sub{margin:22px 0 32px;font-size:clamp(16px,2vw,20px);color:#d7dbe1;max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:26px;margin-top:44px}
+.hero-badge b{font-family:'Oswald';font-size:clamp(28px,4vw,40px);color:#fff;display:block;line-height:1}
+.hero-badge span{font-size:13px;color:#9aa1ac;text-transform:uppercase;letter-spacing:1px}
+
+/* Stats strip */
+.stats{background:var(--steel-900);color:#fff;border-top:3px solid var(--accent)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:40px 0}
+.stat{text-align:center}
+.stat b{font-family:'Oswald';font-size:clamp(30px,4.5vw,48px);color:var(--accent);display:block;line-height:1}
+.stat span{color:#c2c7ce;font-size:14px;margin-top:6px;display:block}
+@media(max-width:640px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:44px}
+.adv-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px 26px;min-width:0}
+.adv-icon{width:52px;height:52px;border-radius:12px;background:var(--steel-900);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.adv-icon svg{width:26px;height:26px}
+.adv-card h3{margin-bottom:10px}
+.adv-card p{color:var(--muted);font-size:15px}
+@media(max-width:860px){.adv-grid{grid-template-columns:1fr}}
+
+/* Services */
+.services{background:var(--steel-800);color:#fff}
+.services .lead{color:#aeb4bd}
+.serv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px}
+.serv-card{background:var(--steel-700);border:1px solid var(--steel-600);border-radius:var(--radius-md);padding:24px 20px;min-width:0;transition:.18s;position:relative}
+.serv-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.serv-card .num{font-family:'Oswald';font-size:13px;color:var(--accent);letter-spacing:2px}
+.serv-card h3{color:#fff;margin:12px 0 8px;font-size:19px}
+.serv-card p{color:#a9afb8;font-size:14px}
+@media(max-width:1040px){.serv-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.serv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.serv-grid{grid-template-columns:1fr}}
+
+/* Welding feature */
+.welding-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
+.welding-media{border-radius:var(--radius-lg);overflow:hidden;position:relative;aspect-ratio:4/3;background:var(--steel-700)}
+.welding-media img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05)}
+.welding-list{list-style:none;margin:26px 0 30px;display:grid;gap:12px}
+.welding-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.welding-list li::before{content:"";flex-shrink:0;width:22px;height:22px;margin-top:2px;border-radius:6px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/16px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/16px no-repeat}
+.welding-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.welding-tags span{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:7px 15px;font-size:13px;font-weight:500;color:var(--steel-800)}
+@media(max-width:820px){.welding-inner{grid-template-columns:1fr}.welding-media{order:-1}}
+
+/* Portfolio */
+.port-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px}
+.port-item{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:3/2;background:var(--steel-700)}
+.port-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.port-item:hover img{transform:scale(1.06)}
+.port-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;color:#fff;font-family:'Oswald';font-size:15px;letter-spacing:.5px;text-transform:uppercase;background:linear-gradient(transparent,rgba(16,18,22,.88))}
+@media(max-width:760px){.port-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.port-grid{grid-template-columns:1fr}}
+
+/* About */
+.about{background:var(--steel-900);color:#fff}
+.about-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,60px);align-items:center}
+.about p{color:#c2c7ce;margin-bottom:16px}
+.about .eyebrow{margin-bottom:14px}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:var(--steel-700)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-points{list-style:none;display:grid;gap:14px;margin-top:20px}
+.about-points li{display:flex;gap:12px;align-items:flex-start;color:#e4e7ea}
+.about-points b{font-family:'Oswald';color:var(--accent);font-size:20px;flex-shrink:0}
+@media(max-width:820px){.about-inner{grid-template-columns:1fr}}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:var(--gap);margin-top:44px}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(26px,4vw,40px);min-width:0}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.info-row:last-of-type{border-bottom:0}
+.info-row .ic{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--bg);color:var(--accent);display:grid;place-items:center}
+.info-row .ic svg{width:22px;height:22px}
+.info-row .lbl{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:2px}
+.info-row .val{font-weight:600;font-size:16px}
+.info-row a.val{color:var(--text)}
+.info-row a.val:hover{color:var(--accent)}
+.contacts-cta{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--steel-700)}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+@media(max-width:820px){.contacts-grid{grid-template-columns:1fr}}
+
+/* Footer */
+.footer{background:var(--steel-900);color:#9aa1ac;border-top:1px solid #000;padding:36px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.footer-inner .brand-text b{font-size:15px}
+.footer small{font-size:13px;color:#7c828c}
+.footer a{color:#c2c7ce}
+.footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="ООО Металлоконструкция — на главную">
+      <span class="brand-mark">М</span>
+      <span class="brand-text"><b>Металлоконструкция</b><span>Металлообработка · Нижний Новгород</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#welding">Сварка</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:88312414566" class="header-phone">+7 (831) 241-45-66</a>
+      <a href="#contacts" class="btn btn-primary">Заказать расчёт</a>
+    </nav>
+    <a href="tel:88312414566" class="header-phone desktop-phone">+7 (831) 241-45-66</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/work3.jpg" alt="Обработка крупной металлической детали на токарно-карусельном станке в цехе" fetchpriority="high" onerror="this.style.opacity='0'">
+  </div>
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · Московское шоссе, 83А</p>
+    <h1>Металлообработка и <span class="hl">сварочные работы</span> полного цикла</h1>
+    <p class="hero-sub">Собственный цех, 45+ станков с ЧПУ и опытные специалисты. Изготавливаем детали и металлоконструкции для промышленного, сельхоз- и строительного оборудования — от 1 штуки до серии.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary">Наши услуги</a>
+      <a href="#contacts" class="btn btn-outline">Рассчитать заказ</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><b>18+</b><span>лет опыта</span></div>
+      <div class="hero-badge"><b>45+</b><span>станков ЧПУ</span></div>
+      <div class="hero-badge"><b>700+</b><span>заказчиков</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Компания в цифрах">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><b>18+</b><span>лет на рынке</span></div>
+      <div class="stat"><b>45+</b><span>станков с ЧПУ</span></div>
+      <div class="stat"><b>51+</b><span>специалист в штате</span></div>
+      <div class="stat"><b>от 1</b><span>детали в заказ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="advantages">
+  <div class="container">
+    <p class="eyebrow">Почему мы</p>
+    <h2>Своё производство — <br>полный контроль качества</h2>
+    <p class="lead">Мы не посредники. Все операции выполняются на собственном оборудовании, поэтому держим сроки, цену и качество под контролем на каждом этапе.</p>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 9 12 2 2 9l10 4 8-3.2V15h2V9zM4 12.5V16c0 1.7 3.6 3.5 8 3.5s8-1.8 8-3.5v-3.5l-8 3.2-8-3.2z"/></svg></div>
+        <h3>Собственный цех</h3>
+        <p>Токарные, фрезерные, сварочные и слесарные участки под одной крышей. Заказ не «гуляет» по подрядчикам.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1.2 15L7 12.2l1.4-1.4 2.4 2.4 4.8-4.8L17 9.8 10.8 16z"/></svg></div>
+        <h3>18+ лет опыта</h3>
+        <p>С середины 2000-х изготавливаем детали для спецоборудования. Отработанные техпроцессы и контроль на каждом этапе.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></div>
+        <h3>От 1 детали до серии</h3>
+        <p>Берём и единичные заказы, и мелкосерийное производство. Работаем со всеми видами металлов и сплавов по чертежу или эскизу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="container">
+    <p class="eyebrow">Что мы делаем</p>
+    <h2>Услуги металлообработки</h2>
+    <p class="lead">Полный комплекс работ — от создания эскиза до готовой детали с контролем качества. Обрабатываем любые металлы и сплавы.</p>
+    <div class="serv-grid">
+      <article class="serv-card"><div class="num">01</div><h3>Токарные работы</h3><p>Валы, фланцы, втулки, кольца, гайки. Нарезание резьбы, точение, расточка, черновая и чистовая обработка.</p></article>
+      <article class="serv-card"><div class="num">02</div><h3>Фрезерные работы</h3><p>Обработка плоскостей, пазов и сложных профилей на фрезерных станках, в том числе с ЧПУ.</p></article>
+      <article class="serv-card"><div class="num">03</div><h3>Сварочные работы</h3><p>Аргонная, газовая, ручная электродуговая, полуавтоматическая и плазменная сварка с гарантией.</p></article>
+      <article class="serv-card"><div class="num">04</div><h3>Резка металла</h3><p>Ленточнопильная резка проката без деформаций и термического воздействия, с минимальными отходами.</p></article>
+      <article class="serv-card"><div class="num">05</div><h3>Расточные работы</h3><p>Высокоточная расточка отверстий и посадочных мест на расточном оборудовании.</p></article>
+      <article class="serv-card"><div class="num">06</div><h3>Термообработка</h3><p>Закалка, отпуск и улучшение свойств металла для повышения износостойкости деталей.</p></article>
+      <article class="serv-card"><div class="num">07</div><h3>Слесарные работы</h3><p>Доводка, сборка и подгонка узлов, ручная слесарная обработка деталей.</p></article>
+      <article class="serv-card"><div class="num">08</div><h3>Вальцовка</h3><p>Гибка листа и профиля, формовка обечаек и цилиндрических элементов конструкций.</p></article>
+      <article class="serv-card"><div class="num">09</div><h3>Лазерная маркировка</h3><p>Нанесение маркировки, номеров и логотипов на металлические изделия лазером.</p></article>
+      <article class="serv-card"><div class="num">10</div><h3>Зубонарезные работы</h3><p>Изготовление шестерён и зубчатых колёс методом нарезания зубьев.</p></article>
+      <article class="serv-card"><div class="num">11</div><h3>Зубодолбёжные работы</h3><p>Нарезание зубьев долблением, в том числе внутренних и труднодоступных зацеплений.</p></article>
+      <article class="serv-card"><div class="num">12</div><h3>Ленточнопильная резка</h3><p>Точный раскрой заготовок по размеру под дальнейшую механическую обработку.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WELDING -->
+<section class="section" id="welding">
+  <div class="container welding-inner">
+    <div class="welding-text">
+      <p class="eyebrow">Профессиональная сварка</p>
+      <h2>Сварочные работы в&nbsp;Нижнем Новгороде</h2>
+      <p class="lead">Услуги профессиональной сварки, востребованные в автомобилестроении и производстве станков. Работаем со всеми основными видами сварки — подберём метод под ваш металл и задачу.</p>
+      <div class="welding-tags">
+        <span>Аргонная</span><span>Газовая</span><span>Ручная электродуговая</span><span>Полуавтоматическая</span><span>Плазменная</span>
+      </div>
+      <ul class="welding-list">
+        <li>Сварщики высокой квалификации и гарантия на работы</li>
+        <li>Демократичные цены — стоимость зависит от вида сварки и числа соединений</li>
+        <li>Сварка на нашем участке или на объекте заказчика</li>
+        <li>Оплата по факту выполненной работы</li>
+      </ul>
+      <a href="#contacts" class="btn btn-dark">Заказать сварку</a>
+    </div>
+    <div class="welding-media">
+      <img src="assets/stock_welding.jpg" alt="Сварщик выполняет газовую сварку металлической детали в мастерской" loading="lazy" decoding="async" onerror="this.closest('.welding-media').style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section services" id="portfolio">
+  <div class="container">
+    <p class="eyebrow">Производство</p>
+    <h2>Наш цех и работы</h2>
+    <p class="lead">Реальные фото производственного участка: станочный парк, обработка деталей и изготовление металлоконструкций.</p>
+    <div class="port-grid">
+      <figure class="port-item"><img src="assets/work1.jpg" alt="Токарь за работой у станка в цехе металлообработки" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Токарный участок</figcaption></figure>
+      <figure class="port-item"><img src="assets/work3.jpg" alt="Крупная металлическая деталь в патроне токарно-карусельного станка" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Обработка крупных деталей</figcaption></figure>
+      <figure class="port-item"><img src="assets/work2.jpg" alt="Металлообрабатывающий станок в производственном цехе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Станочный парк</figcaption></figure>
+      <figure class="port-item"><img src="assets/work4.jpg" alt="Изготовление детали на станке в цехе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Механическая обработка</figcaption></figure>
+      <figure class="port-item"><img src="assets/work5.jpg" alt="Производственный участок металлообработки" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Производственный участок</figcaption></figure>
+      <figure class="port-item"><img src="assets/work6.jpg" alt="Работа на металлорежущем станке в цехе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"><figcaption>Серийное производство</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container about-inner">
+    <div>
+      <p class="eyebrow">О компании</p>
+      <h2>ООО «Металлоконструкция»</h2>
+      <p>Мы — производственная компания из Нижнего Новгорода с собственным цехом металлообработки. Более 18 лет изготавливаем детали и металлоконструкции для спецоборудования: промышленных станков, сельскохозяйственной и строительной техники.</p>
+      <p>В работе — свыше 45 станков с ЧПУ и штат из более чем 50 квалифицированных специалистов. Это позволяет выполнять весь комплекс работ от эскиза до готового изделия и брать заказы любого объёма — от единичной детали до мелкой серии.</p>
+      <ul class="about-points">
+        <li><b>700+</b><span>заказчиков из промышленности и машиностроения</span></li>
+        <li><b>Ø</b><span>обработка любых видов металлов и сплавов по чертежу или образцу</span></li>
+        <li><b>✓</b><span>контроль качества на черновом, чистовом и точном этапах</span></li>
+      </ul>
+    </div>
+    <div class="about-media">
+      <img src="assets/work4.jpg" alt="Специалист ООО Металлоконструкция за работой в цехе" loading="lazy" decoding="async" onerror="this.closest('.about-media').style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как с нами связаться</h2>
+    <p class="lead">Пришлите чертёж или опишите задачу — рассчитаем стоимость и сроки. Работаем с организациями и частными заказчиками.</p>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <div><div class="lbl">Адрес производства</div><div class="val">603079, Нижний Новгород,<br>Московское шоссе, 83А, корп. 8</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg></span>
+          <div><div class="lbl">Телефоны</div><a class="val" href="tel:88312414566">+7 (831) 241-45-66</a><br><a class="val" href="tel:88312416990">+7 (831) 241-69-90</a></div>
+        </div>
+        <div class="info-row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 7 8-5H4l8 5zm0 2.2L4 8.2V18h16V8.2l-8 5z"/></svg></span>
+          <div><div class="lbl">Почта</div><a class="val" href="mailto:1metkon@mail.ru">1metkon@mail.ru</a><br><a class="val" href="mailto:roman230580@rambler.ru">roman230580@rambler.ru</a></div>
+        </div>
+        <div class="info-row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 4 2.3-1 1.7-5-2.9V6h2v6.4z"/></svg></span>
+          <div><div class="lbl">Режим работы</div><div class="val">Пн–Пт, 8:00–17:00</div></div>
+        </div>
+        <div class="contacts-cta">
+          <a href="tel:88312414566" class="btn btn-primary">Позвонить в цех</a>
+          <a href="mailto:1metkon@mail.ru" class="btn btn-dark">Отправить чертёж</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3183025,43.9203198&z=16&hl=ru&output=embed" width="100%" height="400" loading="lazy" allowfullscreen title="Карта: ООО Металлоконструкция, Московское шоссе 83А, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">М</span>
+      <span class="brand-text"><b>Металлоконструкция</b><span>Металлообработка · Нижний Новгород</span></span>
+    </a>
+    <small>© 2026 ООО «Металлоконструкция». Московское шоссе, 83А, корп. 8, Нижний Новгород.<br>Тел. <a href="tel:88312414566">+7 (831) 241-45-66</a> · <a href="mailto:1metkon@mail.ru">1metkon@mail.ru</a></small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

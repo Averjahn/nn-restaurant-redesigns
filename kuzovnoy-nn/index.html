@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кузовной-Нижний Новгород — кузовной ремонт и покраска авто</title>
+<meta name="description" content="Кузовной ремонт и покраска автомобилей в Нижнем Новгороде на ул. Шекспира, 4г. Ремонт после ДТП, устранение вмятин, царапин, сколов, покраска, полировка. Срочный ремонт от 1 дня, бесплатный эвакуатор и оценка. Тел. +7 (952) 780-09-86.">
+<meta name="theme-color" content="#15181c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Кузовной-Нижний Новгород — кузовной ремонт и покраска">
+<meta property="og:description" content="Кузовной ремонт после ДТП, покраска, полировка в Нижнем Новгороде. Срочно от 1 дня. Бесплатный эвакуатор и оценка.">
+<meta property="og:image" content="assets/painting.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#15181c;
+  --surface:#1e232a;
+  --surface-2:#262d36;
+  --line:#333c47;
+  --text:#eef1f4;
+  --muted:#a3adba;
+  --accent:#e11d2a;
+  --accent-dark:#b3141f;
+  --accent-2:#2f6fed;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1160px;
+  --gap:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:clamp(15px,1.5vw,17px);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.1;margin:0;text-transform:uppercase;letter-spacing:.5px}
+h1{font-size:clamp(32px,6vw,64px)}
+h2{font-size:clamp(26px,4.2vw,46px)}
+h3{font-size:clamp(18px,2.2vw,24px)}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,90px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin:0 0 14px}
+.lead{color:var(--muted);max-width:640px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;padding:14px 26px;border-radius:var(--radius-sm);border:2px solid transparent;cursor:pointer;transition:.2s;font-size:15px;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{border-color:var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(21,24,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand__mark{width:38px;height:38px;border-radius:9px;background:var(--accent);display:grid;place-items:center;flex-shrink:0}
+.brand__mark svg{width:22px;height:22px;fill:#fff}
+.brand__text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand__text b{font-family:'Oswald',sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:.5px}
+.brand__text span{font-size:11px;color:var(--muted);letter-spacing:.5px}
+.nav{display:flex;gap:26px;margin-left:24px}
+.nav a{color:var(--muted);font-weight:500;font-size:15px;transition:.2s}
+.nav a:hover{color:var(--text)}
+.header__phone{margin-left:auto;font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.header__cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px;cursor:pointer;margin-left:auto;flex-shrink:0}
+.burger span{width:26px;height:3px;background:var(--text);border-radius:2px;transition:.25s}
+.burger.is-open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav,.header__phone,.header-inner .header__cta{display:none}
+  .burger{display:flex}
+  .nav--open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;margin:0;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 20px 22px}
+  .nav--open a{padding:13px 0;font-size:17px;border-bottom:1px solid var(--line);color:var(--text)}
+  .nav--open .mnav__phone{font-family:'Oswald',sans-serif;font-size:26px;color:var(--accent);border:0;padding-top:18px}
+  .nav--open .btn{margin-top:14px;width:100%}
+}
+.mnav__phone,.mnav__cta{display:none}
+@media(max-width:1040px){.mnav__phone,.mnav__cta{display:block}}
+
+/* Hero */
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:center;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url(assets/painting.jpg) center/cover no-repeat;transform:scale(1.03)}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,17,20,.96) 0%,rgba(15,17,20,.82) 42%,rgba(15,17,20,.45) 100%)}
+.hero-inner{position:relative;z-index:2;padding:70px 0;max-width:720px}
+.hero h1{margin-bottom:18px}
+.hero h1 .hl{color:var(--accent)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);margin:0 0 30px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.hero-badges span{background:rgba(255,255,255,.06);border:1px solid var(--line);padding:8px 15px;border-radius:100px;font-size:13px;font-weight:500;color:var(--text)}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:var(--gap);margin-top:44px}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;min-width:0}
+.adv__ico{width:48px;height:48px;border-radius:12px;background:var(--surface-2);display:grid;place-items:center;margin-bottom:16px}
+.adv__ico svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2}
+.adv h3{font-size:19px;margin-bottom:7px}
+.adv p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap);margin-top:44px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;min-width:0;display:flex;flex-direction:column}
+.svc--feature{background:linear-gradient(160deg,#2a1417,#1e232a);border-color:var(--accent-dark)}
+.svc__tag{display:inline-block;align-self:flex-start;background:var(--accent);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:100px;margin-bottom:16px}
+.svc h3{margin-bottom:14px}
+.price-list{list-style:none;margin:0 0 8px;padding:0}
+.price-list li{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.price-list li:last-child{border-bottom:0}
+.price-list .pname{color:var(--muted);min-width:0;overflow-wrap:anywhere}
+.price-list .dots{flex:1;border-bottom:1px dashed var(--line);transform:translateY(-3px);min-width:12px}
+.price-list .pval{font-family:'Oswald',sans-serif;font-weight:600;white-space:nowrap;color:var(--text)}
+.svc__note{margin:14px 0 0;font-size:12.5px;color:var(--muted)}
+
+/* full service list */
+.mini-svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px;margin-top:30px}
+.mini-svc div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;font-weight:500;font-size:14.5px;display:flex;align-items:center;gap:10px;min-width:0}
+.mini-svc div::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);flex-shrink:0}
+
+/* Before / After */
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:var(--gap);margin-top:44px}
+.ba{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;min-width:0}
+.ba__pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.ba__cell{position:relative;aspect-ratio:4/3;background:var(--surface-2);overflow:hidden}
+.ba__cell img{width:100%;height:100%;object-fit:cover}
+.ba__cell.noimg{display:flex;align-items:center;justify-content:center}
+.ba__label{position:absolute;top:10px;left:10px;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 11px;border-radius:100px;color:#fff}
+.ba__label--before{background:rgba(0,0,0,.72)}
+.ba__label--after{background:var(--accent)}
+.ba__cap{padding:16px 18px}
+.ba__cap b{font-family:'Oswald',sans-serif;font-size:17px}
+.ba__cap p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--gap);margin-top:44px;counter-reset:step}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 24px;position:relative;min-width:0}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--accent);display:block;margin-bottom:10px;line-height:1}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{margin:0;color:var(--muted);font-size:14px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/11;background:var(--surface-2)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about p{color:var(--muted);margin:0 0 16px}
+.about .sign{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.sign__av{width:52px;height:52px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-family:'Oswald',sans-serif;font-size:22px;color:var(--accent);flex-shrink:0}
+.sign b{font-family:'Oswald',sans-serif;font-size:17px}
+.sign span{display:block;color:var(--muted);font-size:13px}
+.marks{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.marks span{border:1px solid var(--line);color:var(--muted);border-radius:100px;padding:6px 13px;font-size:12.5px;font-weight:500}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:28px}}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--gap);margin-top:44px}
+@media(max-width:860px){.contacts-grid{grid-template-columns:1fr}}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;min-width:0}
+.crow{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);min-width:0}
+.crow:last-of-type{border-bottom:0}
+.crow__ico{width:40px;height:40px;border-radius:10px;background:var(--surface-2);display:grid;place-items:center;flex-shrink:0}
+.crow__ico svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2}
+.crow b{display:block;font-family:'Oswald',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:2px}
+.crow .cval{font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.crow a.cval{color:var(--text)}
+.crow a.cval:hover{color:var(--accent)}
+.contacts-info .btn{margin-top:20px;width:100%}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* Form */
+.lead-form{background:linear-gradient(160deg,#22262d,#1a1e23);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(28px,4vw,44px);margin-top:44px}
+.lead-form h3{margin-bottom:6px}
+.lead-form p{color:var(--muted);margin:0 0 22px}
+.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lead-form input,.lead-form textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;color:var(--text);font:inherit;font-size:15px;margin-bottom:14px}
+.lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:var(--accent)}
+.lead-form textarea{min-height:96px;resize:vertical}
+.lead-form .btn{width:100%}
+.form-ok{display:none;background:rgba(45,180,90,.12);border:1px solid #2db45a;color:#5fe08a;border-radius:var(--radius-sm);padding:14px 16px;font-weight:600;margin-top:6px}
+.form-ok.show{display:block}
+.form-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);background:var(--surface);padding:38px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.footer .brand__text b{font-size:16px}
+.footer__meta{color:var(--muted);font-size:13.5px;overflow-wrap:anywhere}
+.footer__meta a:hover{color:var(--accent)}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Кузовной-Нижний Новгород, на главную">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5zm3.5 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 12h13l-1.4-3.5H6.9L5.5 12z"/></svg>
+      </span>
+      <span class="brand__text"><b>Кузовной</b><span>Нижний Новгород</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      <a href="#works">Наши работы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#about">О сервисе</a>
+      <a href="#contacts">Контакты</a>
+      <a class="mnav__phone" href="tel:+79527800986">+7 (952) 780-09-86</a>
+      <a class="btn btn-primary mnav__cta" href="#contacts">Записаться</a>
+    </nav>
+    <a class="header__phone" href="tel:+79527800986">+7 (952) 780-09-86</a>
+    <a class="btn btn-primary header__cta" href="#contacts">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород · ул. Шекспира, 4г</p>
+      <h1>Кузовной ремонт<br>и <span class="hl">покраска</span> авто</h1>
+      <p class="hero-sub">Восстановим геометрию кузова, уберём вмятины, царапины и сколы, покрасим с точным подбором цвета. Ремонт после ДТП — срочно, от 1 дня.</p>
+      <div class="hero-actions">
+        <a href="#contacts" class="btn btn-primary">Бесплатная оценка</a>
+        <a href="#services" class="btn btn-outline">Услуги и цены</a>
+      </div>
+      <div class="hero-badges">
+        <span>Опыт мастеров 5+ лет</span>
+        <span>Цена не меняется в работе</span>
+        <span>Бесплатный эвакуатор</span>
+        <span>Услуги сертифицированы</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="advantages">
+  <div class="container">
+    <p class="eyebrow">Почему мы</p>
+    <h2>Ремонт, за который не стыдно</h2>
+    <p class="lead">Соблюдаем технологию покраски и восстановления кузова — без разводов, «шагрени» и облупившейся краски, которые ждут после гаражных мастеров.</p>
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="adv__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3 3-4 4 3 3 4-4 3 3a7 7 0 0 1-9 9L4 22l-2-2 8-8a7 7 0 0 1 2-10z"/></svg></div>
+        <h3>Профессиональное оборудование</h3>
+        <p>Стапель, покрасочно-сушильная камера, современный инструмент и качественные материалы.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7l-9 9-5-5"/></svg></div>
+        <h3>Опытные специалисты</h3>
+        <p>Стаж мастеров более 5 лет. Технология восстановления и окраски отработана до совершенства.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Цена не меняется</h3>
+        <p>Стоимость фиксируем после оценки и не поднимаем в процессе работ. Никаких сюрпризов в итоговом счёте.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/></svg></div>
+        <h3>Срочный ремонт от 1 дня</h3>
+        <p>Небольшие повреждения устраняем в день обращения. Работаем ежедневно, пн–вс с 09:00 до 18:00.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background:linear-gradient(180deg,#171b20,#15181c)">
+  <div class="container">
+    <p class="eyebrow">Услуги и цены</p>
+    <h2>Сколько стоит ремонт</h2>
+    <p class="lead">Цены указаны для автомобилей класса «Гольф» и являются ориентировочными — точную стоимость назовём после бесплатной оценки. Все цены с учётом материалов и разборки/сборки.</p>
+    <div class="svc-grid">
+
+      <div class="svc svc--feature">
+        <span class="svc__tag">Хит</span>
+        <h3>Покраска кузовных деталей</h3>
+        <ul class="price-list">
+          <li><span class="pname">Бампер (покраска)</span><span class="dots"></span><span class="pval">от 3 800 ₽</span></li>
+          <li><span class="pname">Дверь / крыло (покраска)</span><span class="dots"></span><span class="pval">от 4 100 ₽</span></li>
+          <li><span class="pname">Капот (покраска)</span><span class="dots"></span><span class="pval">от 5 400 ₽</span></li>
+          <li><span class="pname">Крыша (покраска)</span><span class="dots"></span><span class="pval">от 5 500 ₽</span></li>
+          <li><span class="pname">Покраска всего кузова</span><span class="dots"></span><span class="pval">от 35 000 ₽</span></li>
+        </ul>
+        <p class="svc__note">Точный подбор краски по коду и цвету автомобиля.</p>
+      </div>
+
+      <div class="svc">
+        <h3>Кузовной ремонт</h3>
+        <ul class="price-list">
+          <li><span class="pname">Снятие / установка детали</span><span class="dots"></span><span class="pval">от 400 ₽</span></li>
+          <li><span class="pname">Замена бампера</span><span class="dots"></span><span class="pval">от 500 ₽</span></li>
+          <li><span class="pname">Замена двери</span><span class="dots"></span><span class="pval">от 1 400 ₽</span></li>
+          <li><span class="pname">Ремонт лонжерона</span><span class="dots"></span><span class="pval">от 4 500 ₽</span></li>
+          <li><span class="pname">Разборка кузова</span><span class="dots"></span><span class="pval">от 7 500 ₽</span></li>
+        </ul>
+        <p class="svc__note">Восстановление геометрии на стапеле после ДТП.</p>
+      </div>
+
+      <div class="svc">
+        <h3>Полировка и мелкий ремонт</h3>
+        <ul class="price-list">
+          <li><span class="pname">Полировка кузова</span><span class="dots"></span><span class="pval">от 6 000 ₽</span></li>
+          <li><span class="pname">Ремонт вмятины без покраски</span><span class="dots"></span><span class="pval">от 1 500 ₽</span></li>
+          <li><span class="pname">Устранение царапин, сколов</span><span class="dots"></span><span class="pval">от 1 000 ₽</span></li>
+          <li><span class="pname">Подбор краски</span><span class="dots"></span><span class="pval">бесплатно</span></li>
+          <li><span class="pname">Оценка и расчёт по фото</span><span class="dots"></span><span class="pval">бесплатно</span></li>
+        </ul>
+        <p class="svc__note">Аэрография и антикоррозийная обработка — по запросу.</p>
+      </div>
+    </div>
+
+    <div class="mini-svc">
+      <div>Кузовной ремонт после ДТП</div>
+      <div>Покраска автомобиля</div>
+      <div>Ремонт и покраска бамперов</div>
+      <div>Ремонт вмятин, царапин, сколов</div>
+      <div>Полировка кузова</div>
+      <div>Подбор краски и аэрография</div>
+      <div>Бесплатный эвакуатор</div>
+      <div>Бесплатная оценка с выездом</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS / BEFORE-AFTER -->
+<section class="section" id="works">
+  <div class="container">
+    <p class="eyebrow">Наши работы</p>
+    <h2>До и после ремонта</h2>
+    <p class="lead">Реальные автомобили наших клиентов: вмятины, царапины и сколы — и результат после ремонта и покраски.</p>
+    <div class="ba-grid">
+
+      <div class="ba">
+        <div class="ba__pair">
+          <div class="ba__cell"><span class="ba__label ba__label--before">До</span><img src="assets/corolla-before.jpg" alt="Задний бампер Toyota Corolla с вмятиной и содранной краской до ремонта" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+          <div class="ba__cell"><span class="ba__label ba__label--after">После</span><img src="assets/corolla-after.jpg" alt="Задний бампер Toyota Corolla после ремонта и покраски, вмятина устранена" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+        </div>
+        <div class="ba__cap"><b>Toyota Corolla</b><p>Ремонт вмятины и покраска заднего бампера</p></div>
+      </div>
+
+      <div class="ba">
+        <div class="ba__pair">
+          <div class="ba__cell"><span class="ba__label ba__label--before">До</span><img src="assets/cruze-before.jpg" alt="Крыло Chevrolet Cruze с глубокими царапинами до покраски" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+          <div class="ba__cell"><span class="ba__label ba__label--after">После</span><img src="assets/cruze-after.jpg" alt="Кузовная деталь Chevrolet Cruze после покраски с ровным глянцевым покрытием" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+        </div>
+        <div class="ba__cap"><b>Chevrolet Cruze</b><p>Устранение царапин и покраска детали</p></div>
+      </div>
+
+      <div class="ba">
+        <div class="ba__pair">
+          <div class="ba__cell"><span class="ba__label ba__label--before">До</span><img src="assets/rav4-before.png" alt="Крыло Toyota RAV4 с царапинами и потёртостями до ремонта" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+          <div class="ba__cell"><span class="ba__label ba__label--after">После</span><img src="assets/rav4-after.png" alt="Кузовная деталь Toyota RAV4 после подготовки и покраски" loading="lazy" decoding="async" onerror="this.closest('.ba__cell').classList.add('noimg')"></div>
+        </div>
+        <div class="ba__cap"><b>Toyota RAV4</b><p>Подготовка и покраска повреждённой детали</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process" style="background:linear-gradient(180deg,#171b20,#15181c)">
+  <div class="container">
+    <p class="eyebrow">Как мы работаем</p>
+    <h2>От заявки до готового авто</h2>
+    <div class="steps">
+      <div class="step"><h3>Заявка или звонок</h3><p>Оставьте заявку на сайте или позвоните — ответим на вопросы и запишем на удобное время.</p></div>
+      <div class="step"><h3>Бесплатная оценка</h3><p>Эксперт осматривает авто и рассчитывает стоимость. Возможен расчёт по фото.</p></div>
+      <div class="step"><h3>Эвакуатор</h3><p>При необходимости бесплатно доставим авто в сервис эвакуатором с места ДТП.</p></div>
+      <div class="step"><h3>Договор</h3><p>Фиксируем объём работ, сроки и цену. Стоимость не меняется в процессе.</p></div>
+      <div class="step"><h3>Работа мастеров</h3><p>Ремонт, покраска и полировка. Срочные работы — от 1 дня. Выдаём готовое авто.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">О сервисе</p>
+        <h2>Центр кузовного ремонта в Нижнем Новгороде</h2>
+        <p>Обидно, когда кузов любимого авто получает повреждение. Даже маленькая царапина, оголившая металл, становится очагом коррозии, которая со временем «съедает» железо. Мы возвращаем автомобилю первоначальный вид — быстро и по технологии.</p>
+        <p>Ремонтируем автомобили большинства марок: Audi, BMW, Ford, Honda, Hyundai, Kia, Mazda, Mercedes, Nissan, Opel, Renault, Chevrolet, Skoda, Toyota, Volkswagen, ВАЗ и многие другие. Технология восстановительных и окрасочных работ отработана до совершенства.</p>
+        <div class="sign">
+          <div class="sign__av" aria-hidden="true">АК</div>
+          <div><b>Алексей Кузнецов</b><span>Директор центра «Кузовной-Нижний Новгород»</span></div>
+        </div>
+        <div class="marks" aria-label="Марки, которые мы ремонтируем">
+          <span>Toyota</span><span>BMW</span><span>Mercedes</span><span>Audi</span><span>Volkswagen</span><span>Kia</span><span>Hyundai</span><span>Nissan</span><span>ВАЗ</span>
+        </div>
+      </div>
+      <div class="about-media">
+        <img src="assets/bmwx5-before.png" alt="BMW X5 в боксе центра кузовного ремонта Кузовной-Нижний Новгород" loading="lazy" decoding="async" onerror="this.closest('.about-media').style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:linear-gradient(180deg,#171b20,#15181c)">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как нас найти</h2>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="crow">
+          <div class="crow__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><b>Адрес</b><span class="cval">Нижний Новгород, ул. Шекспира, д. 4г</span></div>
+        </div>
+        <div class="crow">
+          <div class="crow__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><b>Телефон</b><a class="cval" href="tel:+79527800986">+7 (952) 780-09-86</a></div>
+        </div>
+        <div class="crow">
+          <div class="crow__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+          <div><b>E-mail</b><a class="cval" href="mailto:info@kuzovnoy-nn.ru">info@kuzovnoy-nn.ru</a></div>
+        </div>
+        <div class="crow">
+          <div class="crow__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/></svg></div>
+          <div><b>Режим работы</b><span class="cval">Ежедневно, пн–вс · 09:00–18:00</span></div>
+        </div>
+        <a href="tel:+79527800986" class="btn btn-primary">Позвонить в сервис</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2637726,43.9411508&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта проезда к центру Кузовной-Нижний Новгород на ул. Шекспира, 4г"></iframe>
+      </div>
+    </div>
+
+    <div class="lead-form">
+      <h3>Оставить заявку</h3>
+      <p>Заполните форму — специалист перезвонит в течение 30 минут, ответит на вопросы и рассчитает стоимость.</p>
+      <form id="leadForm" novalidate>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" aria-label="Телефон" required>
+        </div>
+        <input type="text" name="car" placeholder="Марка и модель авто" aria-label="Марка и модель авто">
+        <textarea name="msg" placeholder="Опишите повреждение или задачу" aria-label="Комментарий"></textarea>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        <div class="form-ok" id="formOk">Спасибо! Заявка принята — мы перезвоним в течение 30 минут.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5zm3.5 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 12h13l-1.4-3.5H6.9L5.5 12z"/></svg>
+      </span>
+      <span class="brand__text"><b>Кузовной</b><span>Нижний Новгород</span></span>
+    </a>
+    <div class="footer__meta">
+      © 2026 Кузовной-Нижний Новгород · ул. Шекспира, 4г<br>
+      <a href="tel:+79527800986">+7 (952) 780-09-86</a> · <a href="mailto:info@kuzovnoy-nn.ru">info@kuzovnoy-nn.ru</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.classList.toggle('is-open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      nav.classList.remove('nav--open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    }
+  });
+  var form=document.getElementById('leadForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.name.value.trim()||!form.phone.value.trim()){
+      (form.name.value.trim()?form.phone:form.name).focus();
+      return;
+    }
+    document.getElementById('formOk').classList.add('show');
+    form.querySelector('button').textContent='Заявка отправлена';
+    form.name.value=form.phone.value=form.car.value=form.msg.value='';
+  });
+})();
+</script>
+</body>
+</html>

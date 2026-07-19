@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алгоритм Мебель — корпусная мебель и шкафы-купе на заказ в Нижнем Новгороде</title>
+<meta name="description" content="Собственное производство корпусной мебели в Нижнем Новгороде: шкафы-купе, гардеробные, прихожие, детская и мебель для гостиной на заказ. Бесплатный замер, гарантия 24 месяца, рассрочка.">
+<meta name="theme-color" content="#6b4f3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Алгоритм Мебель — корпусная мебель на заказ в Нижнем Новгороде">
+<meta property="og:description" content="Шкафы-купе, гардеробные и корпусная мебель по вашим размерам. Собственный цех, бесплатный замер, гарантия 24 месяца.">
+<meta property="og:image" content="assets/algoritm-vstroennyi-shkaf-kupe08.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#6b4f3a;
+  --primary-dark:#4b3728;
+  --accent:#c0824a;
+  --accent-dark:#a86a34;
+  --bg:#fdfbf7;
+  --surface:#f4ede2;
+  --surface-2:#ebe0d0;
+  --text:#2b2119;
+  --muted:#7c6f5f;
+  --line:#e3d8c7;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1140px;
+  --gap:24px;
+  --header-h:70px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--text);background:var(--bg);font-size:clamp(15px,1.5vw,17px);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Prata',Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(32px,6vw,60px)}
+h2{font-size:clamp(26px,4vw,44px)}
+h3{font-size:clamp(19px,2.4vw,24px)}
+p{margin:0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,100px) 0}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:14px}
+.lead{color:var(--muted);max-width:640px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:15px;cursor:pointer;border:1.5px solid transparent;transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{background:transparent;border-color:var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent-dark)}
+.btn-light{background:#fff;color:var(--primary-dark)}
+.btn-light:hover{background:var(--surface)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(253,251,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:20px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;white-space:nowrap}
+.brand-mark{width:38px;height:38px;border-radius:9px;background:var(--primary);color:#fff;display:grid;place-items:center;font-family:'Prata',serif;font-size:20px}
+.brand-name{font-family:'Prata',serif;font-size:20px;line-height:1}
+.brand-sub{display:block;font-family:'Manrope';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:15px;font-weight:500;color:var(--text)}
+.nav a:hover{color:var(--accent-dark)}
+.header-phone{font-weight:700;white-space:nowrap;font-size:15px}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0}
+.burger span{display:block;height:2px;width:24px;background:var(--text);border-radius:2px;transition:.25s}
+.nav-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-open .burger span:nth-child(2){opacity:0}
+.nav-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 20px;margin:0;transform:translateY(-120%);transition:transform .3s;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+  .nav-open .nav{transform:translateY(0)}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .nav .nav-phone{font-size:22px;font-weight:700;color:var(--accent-dark);border-bottom:none;padding-top:18px}
+  .nav .btn{width:100%;margin-top:14px}
+  .header-phone,.header-cta{display:none}
+  .burger{display:flex;margin-left:auto}
+}
+.nav-phone,.nav-menu-cta{display:none}
+@media(max-width:1040px){.nav-phone,.nav-menu-cta{display:block}}
+
+/* Hero */
+.hero{position:relative;min-height:min(88vh,720px);display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(43,33,25,.82) 0%,rgba(43,33,25,.5) 60%,rgba(43,33,25,.25) 100%);z-index:1}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-inner{position:relative;z-index:2;padding:80px 0;max-width:660px}
+.hero .eyebrow{color:#e7c9a6}
+.hero h1{color:#fff;margin-bottom:18px}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:#f0e6d8;margin-bottom:30px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:22px;margin-top:36px}
+.hero-badge{display:flex;align-items:baseline;gap:8px;min-width:0}
+.hero-badge b{font-family:'Prata',serif;font-size:26px;color:#fff}
+.hero-badge span{font-size:13px;color:#e0d3c0}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:44px}
+.adv-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px 26px}
+.adv-ico{width:52px;height:52px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:26px;margin-bottom:18px}
+.adv-card h3{font-family:'Manrope';font-weight:700;font-size:19px;margin-bottom:8px}
+.adv-card p{color:var(--muted);font-size:15px}
+
+/* Catalog */
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:44px}
+.cat-card{border-radius:var(--radius-md);overflow:hidden;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(75,55,40,.14)}
+.cat-media{aspect-ratio:4/3;background:var(--surface-2);position:relative;overflow:hidden}
+.cat-media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.cat-card:hover .cat-media img{transform:scale(1.05)}
+.cat-media.noimg::after{content:"🚪";position:absolute;inset:0;display:grid;place-items:center;font-size:44px;opacity:.4}
+.cat-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.cat-body h3{margin-bottom:8px}
+.cat-body p{color:var(--muted);font-size:14.5px;margin-bottom:16px;flex:1}
+.cat-price{display:flex;align-items:baseline;gap:6px;margin-top:auto}
+.cat-price .from{font-size:13px;color:var(--muted)}
+.cat-price .val{font-family:'Prata',serif;font-size:23px;color:var(--accent-dark)}
+
+/* Portfolio */
+.folio{background:var(--surface)}
+.folio-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:44px}
+.folio-item{aspect-ratio:1;border-radius:var(--radius-sm);overflow:hidden;background:var(--surface-2);position:relative}
+.folio-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.folio-item:hover img{transform:scale(1.06)}
+.folio-item.tall{grid-row:span 2;aspect-ratio:auto}
+
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:44px;counter-reset:step}
+.step{position:relative;padding:28px 24px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:'Prata',serif;font-size:34px;color:var(--accent);opacity:.55;display:block;margin-bottom:12px}
+.step h3{font-family:'Manrope';font-weight:700;font-size:18px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* About */
+.about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:5/4;background:var(--surface-2)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-txt h2{margin-bottom:20px}
+.about-txt p{color:var(--muted);margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.about-stat b{font-family:'Prata',serif;font-size:30px;color:var(--primary);display:block}
+.about-stat span{font-size:13.5px;color:var(--muted)}
+
+/* Contacts */
+.contacts{background:var(--primary-dark);color:#fff}
+.contacts .eyebrow{color:#e7c9a6}
+.contacts h2{color:#fff}
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(28px,4vw,48px);margin-top:44px;align-items:stretch}
+.contacts-info{display:flex;flex-direction:column;gap:22px;min-width:0}
+.ci-row{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.ci-ico{flex-shrink:0;font-size:22px;line-height:1.2}
+.ci-row .ci-body{min-width:0;overflow-wrap:anywhere}
+.ci-row .lbl{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#c9b39a;margin-bottom:4px}
+.ci-row a,.ci-row p{color:#fff}
+.ci-row .big{font-size:20px;font-weight:700}
+.ci-row a:hover{color:#e7c9a6}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;min-height:340px;border:1px solid rgba(255,255,255,.15)}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.lead-form{background:#fff;color:var(--text);border-radius:var(--radius-md);padding:26px;margin-top:26px}
+.lead-form h3{font-family:'Manrope';font-weight:700;font-size:19px;margin-bottom:6px}
+.lead-form p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.lead-form .fields{display:grid;gap:12px}
+.lead-form input{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:var(--radius-sm);font:inherit;font-size:15px;background:var(--bg)}
+.lead-form input:focus{outline:none;border-color:var(--accent)}
+.lead-form .btn{width:100%;margin-top:4px}
+.lead-form .note{font-size:12px;color:var(--muted);margin-top:12px}
+.form-ok{display:none;background:var(--surface);border-radius:var(--radius-sm);padding:16px;text-align:center;font-weight:600;color:var(--primary-dark)}
+
+/* Footer */
+.footer{background:#1f1710;color:#c9bcac;padding:44px 0 30px}
+.footer-inner{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+.footer .brand-name{color:#fff}
+.footer-col p,.footer-col a{font-size:14px;color:#c9bcac;margin-bottom:6px;display:block;overflow-wrap:anywhere}
+.footer-col a:hover{color:#fff}
+.footer-bottom{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#8f8272;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+@media(max-width:900px){
+  .adv-grid,.cat-grid,.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .folio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .about-wrap{grid-template-columns:1fr}
+  .about-media{order:-1}
+  .contacts-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .adv-grid,.cat-grid,.steps-grid{grid-template-columns:1fr}
+  .folio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .folio-item.tall{grid-row:span 1;aspect-ratio:1}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Алгоритм Мебель, на главную">
+      <span class="brand-mark">А</span>
+      <span><span class="brand-name">Алгоритм</span><span class="brand-sub">Мебель · Нижний Новгород</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#folio">Работы</a>
+      <a href="#steps">Как работаем</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312209430" class="nav-phone">+7 (831) 220-94-30</a>
+      <a href="#contacts" class="btn btn-primary nav-menu-cta">Бесплатный замер</a>
+    </nav>
+    <a href="tel:+78312209430" class="header-phone">+7 (831) 220-94-30</a>
+    <a href="#contacts" class="btn btn-primary header-cta">Бесплатный замер</a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="assets/algoritm-vstroennyi-shkaf-kupe08.jpg" alt="Встроенный шкаф-купе на заказ от Алгоритм Мебель" fetchpriority="high" onerror="this.style.display='none'">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород · ул. Бекетова, 13К</p>
+      <h1>Корпусная мебель и шкафы-купе по вашим размерам</h1>
+      <p class="hero-sub">Собственное производство полного цикла: от бесплатного замера до монтажа. Проектируем и делаем мебель, которая точно встанет в вашу квартиру.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+        <a href="#contacts" class="btn btn-light">Вызвать замерщика</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><b>16</b><span>лет<br>на рынке НН</span></div>
+        <div class="hero-badge"><b>24 мес</b><span>гарантия<br>на мебель</span></div>
+        <div class="hero-badge"><b>0 ₽</b><span>выезд<br>замерщика</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="advantages">
+  <div class="container">
+    <p class="eyebrow">Почему Алгоритм</p>
+    <h2>Свой цех, честный расчёт и гарантия</h2>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-ico">🏭</div>
+        <h3>Собственное производство</h3>
+        <p>Работаем без посредников уже 16 лет. Изготовили тысячи шкафов и корпусной мебели — цена от цеха, а не от салона.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">📐</div>
+        <h3>Бесплатный замер</h3>
+        <p>Замерщик приедет к вам на удобное время, снимет размеры и поможет с проектом. Выезд по Нижнему Новгороду — бесплатно.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🛡️</div>
+        <h3>Гарантия 24 месяца</h3>
+        <p>Даём гарантию 2 года на мебель и фурнитуру. Используем алюминиевый профиль и надёжные механизмы.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🏷️</div>
+        <h3>Скидки от 5 до 30%</h3>
+        <p>Действует система скидок на большие объёмы и комплексные заказы. Считаем стоимость прозрачно, до рубля.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">💳</div>
+        <h3>Рассрочка и кредит</h3>
+        <p>Оформим мебель в рассрочку или кредит — платите комфортными частями, забирайте готовый заказ сразу.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🔧</div>
+        <h3>Монтаж под ключ</h3>
+        <p>Привезём и соберём мебель у вас дома. Вы получаете готовое решение, а не коробки с деталями.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="catalog" style="background:var(--surface)">
+  <div class="container">
+    <p class="eyebrow">Каталог</p>
+    <h2>Что мы делаем на заказ</h2>
+    <p class="lead">Любая корпусная мебель по индивидуальным размерам — от встроенного шкафа до комплекта для всей квартиры.</p>
+    <div class="cat-grid">
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/algoritm-vstroennyi-shkaf-kupe01.jpg" alt="Встроенный шкаф-купе" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Встроенные шкафы-купе</h3>
+          <p>Занимают нишу или всю стену от пола до потолка. Максимум места хранения без лишних боковин.</p>
+          <div class="cat-price"><span class="from">от</span><span class="val">12 000 ₽</span></div>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/algoritm-uglovoi-shkaf-kupe10.jpg" alt="Угловой шкаф-купе" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Угловые шкафы-купе</h3>
+          <p>Задействуют угол комнаты и вмещают больше, чем прямой шкаф той же ширины. Идеальны для спальни.</p>
+          <div class="cat-price"><span class="from">от</span><span class="val">14 000 ₽</span></div>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/algoritm-shkaf-kupe-prihozhaya05.jpg" alt="Шкаф-купе для прихожей" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Шкафы для прихожей</h3>
+          <p>Компактные системы с местом для верхней одежды, обуви и мелочей. Аккуратно встают даже в узкий коридор.</p>
+          <div class="cat-price"><span class="from">от</span><span class="val">13 000 ₽</span></div>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/algoritm-korpusnyi-shkaf-kupe01.jpg" alt="Корпусный шкаф" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Корпусные шкафы</h3>
+          <p>Классические распашные и комбинированные шкафы любой конфигурации под ваш интерьер.</p>
+          <div class="cat-price"><span class="from">от</span><span class="val">15 000 ₽</span></div>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/algoritm-vstroennyi-shkaf-kupe07.jpg" alt="Гардеробная комната на заказ" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Гардеробные</h3>
+          <p>Полноценная гардеробная система: штанги, полки, ящики и обувницы, продуманные под ваши вещи.</p>
+          <div class="cat-price"><span class="from">по</span><span class="val">проекту</span></div>
+        </div>
+      </article>
+      <article class="cat-card">
+        <div class="cat-media"><img src="assets/korpusnye-uglovye-shkafy-kupe02.jpg" alt="Мебель для гостиной и детской" loading="lazy" decoding="async" onerror="this.closest('.cat-media').classList.add('noimg');this.remove()"></div>
+        <div class="cat-body">
+          <h3>Гостиные и детская мебель</h3>
+          <p>Стенки, тумбы, перегородки, детские и офисная мебель. Комплектуем комнату целиком в едином стиле.</p>
+          <div class="cat-price"><span class="from">по</span><span class="val">проекту</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section folio" id="folio">
+  <div class="container">
+    <p class="eyebrow">Наши работы</p>
+    <h2>Мебель, которую мы уже сделали</h2>
+    <p class="lead">Реальные проекты из нашего производства — шкафы-купе, гардеробные и корпусная мебель в квартирах нижегородцев.</p>
+    <div class="folio-grid">
+      <figure class="folio-item tall"><img src="assets/algoritm-vstroennyi-shkaf-kupe01.jpg" alt="Встроенный шкаф-купе с распашными секциями" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/algoritm-uglovoi-shkaf-kupe11.jpg" alt="Угловой шкаф-купе в спальне" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/algoritm-vstroennyi-shkaf-kupe02.jpg" alt="Встроенный шкаф-купе во всю стену" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/algoritm-uglovoi-shkaf-kupe12.jpg" alt="Угловой шкаф-купе с зеркальными дверями" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/shkaf-kupe-vstroennyi-priamoi01.jpg" alt="Прямой встроенный шкаф-купе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/algoritm-korpusnyi-shkaf-kupe01.jpg" alt="Корпусный шкаф в гостиной" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="folio-item"><img src="assets/algoritm-shkaf-kupe-prihozhaya05.jpg" alt="Шкаф-купе в прихожей" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="steps">
+  <div class="container">
+    <p class="eyebrow">Как мы работаем</p>
+    <h2>Четыре шага до готовой мебели</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <h3>Замер</h3>
+        <p>Бесплатно выезжаем к вам, снимаем точные размеры помещения и обсуждаем пожелания.</p>
+      </div>
+      <div class="step">
+        <h3>Проект и расчёт</h3>
+        <p>Готовим дизайн-проект, подбираем материалы и фурнитуру, фиксируем цену без скрытых доплат.</p>
+      </div>
+      <div class="step">
+        <h3>Изготовление</h3>
+        <p>Делаем мебель в собственном цехе из выбранных материалов — контролируем каждую деталь.</p>
+      </div>
+      <div class="step">
+        <h3>Доставка и монтаж</h3>
+        <p>Привозим и собираем мебель у вас дома. Проверяем работу механизмов и наводим порядок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" style="background:var(--surface)">
+  <div class="container about-wrap">
+    <div class="about-txt">
+      <p class="eyebrow">О компании</p>
+      <h2>«Алгоритм Мебель» — мебель на заказ с 2009 года</h2>
+      <p>Мы — нижегородское производство корпусной мебели полного цикла. За 16 лет работы изготовили тысячи шкафов-купе и комплектов мебели для квартир, офисов и детских комнат.</p>
+      <p>Делаем всё сами: проектируем, режем, кромим, собираем и монтируем. Поэтому отвечаем за результат на каждом этапе и держим цену от производителя. Работаем с алюминиевым профилем, качественными фасадами и надёжной фурнитурой.</p>
+      <div class="about-stats">
+        <div class="about-stat"><b>16</b><span>лет опыта</span></div>
+        <div class="about-stat"><b>1000+</b><span>готовых проектов</span></div>
+        <div class="about-stat"><b>2</b><span>салона в НН</span></div>
+      </div>
+    </div>
+    <div class="about-media">
+      <img src="assets/algoritm-vstroennyi-shkaf-kupe02.jpg" alt="Готовый встроенный шкаф-купе от Алгоритм Мебель" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--surface-2)'">
+    </div>
+  </div>
+</section>
+
+<section class="section contacts" id="contacts">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Закажите бесплатный замер</h2>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="ci-row">
+          <span class="ci-ico">📞</span>
+          <div class="ci-body">
+            <p class="lbl">Телефоны</p>
+            <p><a href="tel:+78312209430" class="big">+7 (831) 220-94-30</a></p>
+            <p><a href="tel:+78314108771">+7 (831) 410-87-71</a></p>
+          </div>
+        </div>
+        <div class="ci-row">
+          <span class="ci-ico">📍</span>
+          <div class="ci-body">
+            <p class="lbl">Салоны в Нижнем Новгороде</p>
+            <p>ул. Бекетова, 13К (МЦ БУМ, 4 этаж, левое крыло)</p>
+            <p>ул. Ларина, 7к3 (3 этаж, правое крыло)</p>
+          </div>
+        </div>
+        <div class="ci-row">
+          <span class="ci-ico">🕐</span>
+          <div class="ci-body">
+            <p class="lbl">Часы работы</p>
+            <p>Ежедневно, 10:00 – 20:00</p>
+          </div>
+        </div>
+        <div class="ci-row">
+          <span class="ci-ico">✉️</span>
+          <div class="ci-body">
+            <p class="lbl">Почта</p>
+            <p><a href="mailto:algoritmnn@yandex.ru">algoritmnn@yandex.ru</a></p>
+          </div>
+        </div>
+        <div class="lead-form">
+          <h3>Оставьте заявку на замер</h3>
+          <p>Перезвоним в течение рабочего дня и договоримся об удобном времени.</p>
+          <form id="leadForm" class="fields" novalidate>
+            <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
+            <input type="tel" name="phone" placeholder="Телефон" required autocomplete="tel">
+            <button type="submit" class="btn btn-primary">Заказать замер</button>
+          </form>
+          <div class="form-ok" id="formOk">Спасибо! Ваша заявка принята — мы перезвоним вам в ближайшее время.</div>
+          <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2905448,43.9977514&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта: Алгоритм Мебель, ул. Бекетова, 13К, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="brand" style="margin-bottom:12px">
+          <span class="brand-mark">А</span>
+          <span><span class="brand-name" style="font-size:19px">Алгоритм Мебель</span></span>
+        </div>
+        <p>Корпусная мебель и шкафы-купе<br>на заказ в Нижнем Новгороде.</p>
+        <p>Собственное производство с 2009 года.</p>
+      </div>
+      <div class="footer-col">
+        <p style="color:#fff;font-weight:600;margin-bottom:10px">Каталог</p>
+        <a href="#catalog">Шкафы-купе</a>
+        <a href="#catalog">Гардеробные</a>
+        <a href="#catalog">Прихожие</a>
+        <a href="#catalog">Гостиные и детская</a>
+      </div>
+      <div class="footer-col">
+        <p style="color:#fff;font-weight:600;margin-bottom:10px">Контакты</p>
+        <a href="tel:+78312209430">+7 (831) 220-94-30</a>
+        <a href="mailto:algoritmnn@yandex.ru">algoritmnn@yandex.ru</a>
+        <p>ул. Бекетова, 13К</p>
+        <p>Ежедневно 10:00–20:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Алгоритм Мебель · Нижний Новгород</span>
+      <span>Бесплатный замер · Гарантия 24 месяца</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header=document.querySelector('.site-header');
+  var burger=document.querySelector('.burger');
+  burger.addEventListener('click',function(){
+    var open=header.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  header.querySelectorAll('.nav a').forEach(function(a){
+    a.addEventListener('click',function(){
+      header.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+  var form=document.getElementById('leadForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    form.style.display='none';
+    document.getElementById('formOk').style.display='block';
+  });
+})();
+</script>
+</body>
+</html>

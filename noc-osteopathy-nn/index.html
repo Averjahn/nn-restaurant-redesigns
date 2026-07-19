@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Нижегородский Остеопатический Центр — остеопатия, реабилитация, мануальная терапия в Нижнем Новгороде</title>
+<meta name="description" content="Нижегородский Остеопатический Центр (НОЦ) — остеопатия для взрослых и детей, мануальная терапия, массаж, реабилитация. Работаем с 2009 года. Нижний Новгород, ул. Октябрьской Революции, 45. Запись: +7 831 282-00-24.">
+<meta name="theme-color" content="#2f9c95">
+<meta property="og:title" content="Нижегородский Остеопатический Центр — НОЦ">
+<meta property="og:description" content="Остеопатия, мануальная терапия, массаж и реабилитация для взрослых и детей в Нижнем Новгороде. Первый специализированный центр остеопатии в городе, с 2009 года.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#2f9c95;
+  --primary-dark:#1d6a67;
+  --accent:#4a9dc9;
+  --bg:#ffffff;
+  --surface:#eef7f5;
+  --surface-2:#f6fbfa;
+  --text:#1c2b2a;
+  --muted:#5c6f6d;
+  --line:#dceae7;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1140px;
+  --gap:24px;
+  --shadow:0 10px 30px rgba(29,106,103,.10);
+  --shadow-lg:0 20px 50px rgba(29,106,103,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;
+  font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Spectral',Georgia,serif;line-height:1.15;margin:0 0 .4em;font-weight:700}
+h1{font-size:clamp(30px,5.4vw,58px)}
+h2{font-size:clamp(26px,4vw,44px)}
+h3{font-size:clamp(19px,2.2vw,24px)}
+p{margin:0 0 1em}
+a{color:var(--primary-dark);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,104px) 0}
+.section--alt{background:var(--surface-2)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-dark);margin:0 0 14px}
+.lead{font-size:clamp(16px,1.7vw,19px);color:var(--muted);max-width:640px}
+.section-head{max-width:720px;margin:0 auto clamp(36px,5vw,56px);text-align:center}
+.section-head .lead{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-family:inherit;font-size:16px;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--primary-dark);border-color:var(--primary)}
+.btn-outline:hover{background:var(--surface)}
+.btn-light{background:#fff;color:var(--primary-dark)}
+.btn-light:hover{background:var(--surface)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand__mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:#fff;font-family:'Spectral',serif;font-weight:700;font-size:20px;flex-shrink:0}
+.brand__text{display:flex;flex-direction:column;line-height:1.1}
+.brand__name{font-family:'Spectral',serif;font-weight:700;font-size:18px;white-space:nowrap;color:var(--text)}
+.brand__sub{font-size:11px;color:var(--muted);letter-spacing:.04em}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:var(--text);font-weight:600;font-size:15px}
+.nav a:hover{color:var(--primary-dark)}
+.header__cta{display:inline-flex;align-items:center;gap:14px;flex-shrink:0}
+.header__phone{font-weight:700;color:var(--text);white-space:nowrap}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;border:0;background:transparent;cursor:pointer;padding:10px;border-radius:10px}
+.burger span{height:2px;background:var(--text);border-radius:2px;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:min(88svh,760px);display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:-2}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(20,72,70,.92) 0%,rgba(29,106,103,.82) 42%,rgba(29,106,103,.35) 100%)}
+.hero-inner{padding:clamp(48px,9vw,96px) 0;max-width:680px}
+.hero .eyebrow{color:#bdeee7}
+.hero h1{color:#fff}
+.hero-sub{font-size:clamp(16px,1.9vw,20px);color:#e6f5f2;max-width:560px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px}
+.hero-badge{display:flex;flex-direction:column}
+.hero-badge b{font-family:'Spectral',serif;font-size:26px;line-height:1}
+.hero-badge span{font-size:13px;color:#cdeae6}
+
+/* advantages */
+.grid{display:grid;gap:var(--gap)}
+.adv-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.adv{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;min-width:0}
+.adv .ico{width:48px;height:48px;border-radius:12px;background:var(--surface);display:grid;place-items:center;font-size:24px;margin-bottom:14px}
+.adv h3{font-size:19px;margin-bottom:6px}
+.adv p{color:var(--muted);font-size:15px;margin:0}
+
+/* services */
+.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.svc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.svc__media{aspect-ratio:16/10;background:var(--surface);overflow:hidden}
+.svc__media img{width:100%;height:100%;object-fit:cover}
+.svc.noimg .svc__media,.svc__media.noimg{display:none}
+.svc__body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;min-width:0}
+.svc__body h3{margin-bottom:8px}
+.svc__body p{color:var(--muted);font-size:15px;flex:1}
+.svc__foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.price{font-family:'Spectral',serif;font-weight:700;font-size:22px;color:var(--primary-dark);white-space:nowrap}
+.price small{font-size:13px;font-weight:500;color:var(--muted);font-family:'Manrope',sans-serif}
+.svc .btn{padding:10px 20px;font-size:15px}
+.svc-note{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
+
+/* list card services (compact) */
+.svc-list{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+.svc-mini{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;flex-wrap:wrap}
+.svc-mini b{font-weight:700;min-width:0;overflow-wrap:anywhere}
+.svc-mini .price{font-size:18px}
+
+/* indications */
+.ind-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.ind-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(24px,3vw,34px);min-width:0}
+.ind-card h3{display:flex;align-items:center;gap:10px}
+.ind-card ul{list-style:none;padding:0;margin:14px 0 0;columns:2;column-gap:26px}
+.ind-card li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:var(--muted);break-inside:avoid}
+.ind-card li::before{content:"✓";position:absolute;left:0;top:0;color:var(--primary);font-weight:800}
+
+/* doctors */
+.doc-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.doc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;text-align:center;min-width:0}
+.doc__ava{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:#fff;font-family:'Spectral',serif;font-size:26px;font-weight:700}
+.doc h3{font-size:18px;margin-bottom:2px}
+.doc__role{color:var(--primary-dark);font-weight:600;font-size:14px;margin-bottom:8px}
+.doc p{color:var(--muted);font-size:14px;margin:0}
+
+/* about */
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
+.about__media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);min-width:0}
+.about__media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.about__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.stat b{display:block;font-family:'Spectral',serif;font-size:clamp(28px,4vw,40px);color:var(--primary-dark);line-height:1}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* review */
+.rev-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rev{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;min-width:0}
+.rev__stars{color:#f2b705;margin-bottom:10px;letter-spacing:2px}
+.rev p{font-size:15px;color:var(--text)}
+.rev__name{font-weight:700;font-size:14px;color:var(--muted);margin-top:14px}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(24px,3vw,34px);min-width:0}
+.contacts-info .row{display:flex;gap:14px;margin-bottom:22px;min-width:0}
+.contacts-info .row .ico{width:42px;height:42px;flex-shrink:0;border-radius:11px;background:var(--surface);display:grid;place-items:center;font-size:20px}
+.contacts-info .row .txt{min-width:0;overflow-wrap:anywhere}
+.contacts-info .row .txt b{display:block;font-size:14px;color:var(--muted);font-weight:600;margin-bottom:2px}
+.contacts-info .row .txt a{color:var(--text);font-weight:700}
+.contacts-info .row .txt a:hover{color:var(--primary-dark)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;min-height:340px;border:1px solid var(--line)}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.office-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--primary-dark);background:var(--surface);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+
+/* CTA banner */
+.cta{background:linear-gradient(120deg,var(--primary-dark),var(--primary));color:#fff;border-radius:var(--radius-lg);padding:clamp(34px,5vw,56px);text-align:center}
+.cta h2{color:#fff}
+.cta p{color:#dbf1ed;max-width:560px;margin:0 auto 26px}
+.cta .btn-light{margin:0 6px 8px}
+.cta a.btn-light{color:var(--primary-dark)}
+
+/* footer */
+.footer{background:#132f2e;color:#cfe4e1;padding:48px 0 30px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.footer h4{font-family:'Spectral',serif;color:#fff;margin:0 0 14px;font-size:18px}
+.footer a{color:#cfe4e1}
+.footer a:hover{color:#fff}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin-bottom:9px;font-size:14px;overflow-wrap:anywhere}
+.footer .brand__name{color:#fff}
+.footer .brand__sub{color:#9dc0bc}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:13px;color:#9dc0bc;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ===== responsive ===== */
+@media(max-width:1040px){
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:8px 20px 20px}
+  .nav.nav--open{display:flex}
+  .nav a{padding:13px 4px;border-bottom:1px solid var(--line);font-size:17px}
+  .nav__phone{display:block;font-weight:800;font-size:20px;color:var(--primary-dark)!important;padding-top:16px!important;border-bottom:0!important}
+  .nav .btn{margin-top:14px;width:100%}
+  .header__cta{margin-left:auto}
+  .header__phone{display:none}
+  .burger{display:flex}
+}
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rev-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .about__media{order:-1}
+  .contacts-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .adv-grid,.svc-grid,.svc-list,.doc-grid,.ind-wrap{grid-template-columns:1fr}
+  .ind-card ul{columns:1}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .about__stats{gap:10px}
+}
+.nav__phone{display:none}
+.nav__cta{display:none}
+@media(max-width:1040px){.nav__phone{display:block}.nav__cta{display:inline-flex}}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Нижегородский Остеопатический Центр — на главную">
+      <span class="brand__mark">Н</span>
+      <span class="brand__text">
+        <span class="brand__name">НОЦ</span>
+        <span class="brand__sub">Остеопатический центр</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      <a href="#indications">Кому поможем</a>
+      <a href="#doctors">Специалисты</a>
+      <a href="#about">О центре</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312820024" class="nav__phone">+7 831 282-00-24</a>
+      <a href="#contacts" class="btn btn-primary nav__cta">Записаться</a>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:+78312820024" class="header__phone">+7 831 282-00-24</a>
+      <a href="#contacts" class="btn btn-primary">Записаться</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__bg">
+    <img src="assets/hero.jpg" alt="Сеанс остеопатического лечения — мягкая работа руками со спиной пациента" fetchpriority="high" onerror="this.style.opacity='0'">
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород, ул. Октябрьской Революции, 45</p>
+      <h1>Остеопатия, которая возвращает здоровье без лекарств</h1>
+      <p class="hero-sub">Нижегородский Остеопатический Центр — первый специализированный центр остеопатии в городе. Работаем с 2009 года. Мягко и бережно помогаем взрослым и детям при болях в спине, суставах и последствиях травм.</p>
+      <div class="hero-actions">
+        <a href="#contacts" class="btn btn-primary">Записаться на приём</a>
+        <a href="#services" class="btn btn-light">Услуги и цены</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><b>2009</b><span>с года основания</span></div>
+        <div class="hero-badge"><b>130+</b><span>заболеваний в работе</span></div>
+        <div class="hero-badge"><b>9</b><span>направлений помощи</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- advantages -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Почему к нам</p>
+      <h2>Спокойная медицина, которой доверяют</h2>
+      <p class="lead">Остеопатия — это наука, философия и искусство управления здоровьем. Мы находим причину недомогания, а не глушим симптомы.</p>
+    </div>
+    <div class="grid adv-grid">
+      <div class="adv">
+        <div class="ico">🤲</div>
+        <h3>Без лекарств</h3>
+        <p>Немедикаментозный подход: врач работает руками, мягко восстанавливая баланс тела.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">🔍</div>
+        <h3>Ищем причину</h3>
+        <p>Диагностика всего организма, а не отдельного симптома — устраняем источник боли.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">👶</div>
+        <h3>Взрослым и детям</h3>
+        <p>Отдельные программы детской остеопатии — от последствий родовых травм до осанки.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">🎓</div>
+        <h3>Опытные врачи</h3>
+        <p>Кандидаты медицинских наук, преподаватели остеопатических семинаров и мастер-классов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- services with prices -->
+<section id="services" class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Услуги и методики</p>
+      <h2>Направления помощи и цены</h2>
+      <p class="lead">Ключевые методики центра с ориентировочной стоимостью приёма. Точную цену врач называет после первичной диагностики.</p>
+    </div>
+    <div class="grid svc-grid">
+      <article class="svc">
+        <div class="svc__media"><img src="assets/therapy.jpg" alt="Остеопат мягко работает руками со спиной пациента" loading="lazy" decoding="async" onerror="this.closest('.svc__media').classList.add('noimg')"></div>
+        <div class="svc__body">
+          <h3>Приём остеопата</h3>
+          <p>Диагностика и мягкая коррекция всего тела: позвоночник, суставы, внутренние органы, последствия травм и операций.</p>
+          <div class="svc__foot">
+            <span class="price">от 3 000 ₽</span>
+            <a href="#contacts" class="btn btn-outline">Записаться</a>
+          </div>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="svc__media"><img src="assets/massage.jpg" alt="Сеанс лечебного массажа спины" loading="lazy" decoding="async" onerror="this.closest('.svc__media').classList.add('noimg')"></div>
+        <div class="svc__body">
+          <h3>Мануальная терапия</h3>
+          <p>Работа с позвоночником и суставами при остеохондрозе, радикулите, болях в спине и ограничении подвижности.</p>
+          <div class="svc__foot">
+            <span class="price">от 2 500 ₽</span>
+            <a href="#contacts" class="btn btn-outline">Записаться</a>
+          </div>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="svc__media"><img src="assets/spine.jpg" alt="Схематичное изображение позвоночника — детская остеопатия и осанка" loading="lazy" decoding="async" onerror="this.closest('.svc__media').classList.add('noimg')"></div>
+        <div class="svc__body">
+          <h3>Детский остеопат</h3>
+          <p>Помощь детям при последствиях родовых травм, нарушениях осанки, сколиозе, кривошее, задержках развития.</p>
+          <div class="svc__foot">
+            <span class="price">от 3 000 ₽</span>
+            <a href="#contacts" class="btn btn-outline">Записаться</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid svc-list">
+      <div class="svc-mini"><b>Лечебный массаж</b><span class="price">от 1 800 ₽</span></div>
+      <div class="svc-mini"><b>Тейпирование</b><span class="price">от 800 ₽</span></div>
+      <div class="svc-mini"><b>Гирудотерапия</b><span class="price">от 1 500 ₽</span></div>
+      <div class="svc-mini"><b>Консультация невролога</b><span class="price">от 2 000 ₽</span></div>
+      <div class="svc-mini"><b>Гомеопатия</b><span class="price">от 2 000 ₽</span></div>
+      <div class="svc-mini"><b>Реабилитация после COVID-19</b><span class="price">от 2 500 ₽</span></div>
+    </div>
+    <p class="svc-note">Цены ориентировочные. Первичная консультация помогает подобрать план лечения именно под вашу ситуацию.</p>
+  </div>
+</section>
+
+<!-- indications -->
+<section id="indications" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Кому поможем</p>
+      <h2>Показания к остеопатии</h2>
+      <p class="lead">Остеопатическая медицина эффективна при болезнях нервной системы, опорно-двигательного аппарата и внутренних органов.</p>
+    </div>
+    <div class="ind-wrap">
+      <div class="ind-card">
+        <h3>👨 Взрослым</h3>
+        <ul>
+          <li>Последствия травм и операций</li>
+          <li>Заболевания опорно-двигательного аппарата</li>
+          <li>Радикулиты</li>
+          <li>Межрёберные невралгии</li>
+          <li>Боли в суставах и позвоночнике</li>
+          <li>Остеохондроз</li>
+          <li>Гинекологические заболевания</li>
+          <li>Головные боли</li>
+          <li>Внутричерепная гипертензия</li>
+          <li>Некоторые ЛОР-заболевания</li>
+          <li>Бронхиты, астма</li>
+          <li>Заболевания внутренних органов</li>
+        </ul>
+      </div>
+      <div class="ind-card">
+        <h3>🧒 Детям</h3>
+        <ul>
+          <li>Последствия родовых травм и операций</li>
+          <li>Энцефалопатия</li>
+          <li>Минимальные мозговые дисфункции</li>
+          <li>Неврозы</li>
+          <li>Нарушения внимания и поведения</li>
+          <li>Задержка речевого и психомоторного развития</li>
+          <li>Головные боли</li>
+          <li>Гипертензионно-гидроцефальный синдром</li>
+          <li>Некоторые ЛОР-заболевания</li>
+          <li>Нарушения осанки, сколиозы</li>
+          <li>Кривошея, плоскостопие</li>
+          <li>Частые простудные заболевания</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- doctors -->
+<section id="doctors" class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Наши специалисты</p>
+      <h2>Врачи центра</h2>
+      <p class="lead">Приём ведут врачи-остеопаты и профильные специалисты. Ведущие врачи центра — преподаватели остеопатических семинаров.</p>
+    </div>
+    <div class="grid doc-grid">
+      <div class="doc">
+        <div class="doc__ava">СС</div>
+        <h3>С. В. Сысоев</h3>
+        <div class="doc__role">Невролог, остеопат</div>
+        <p>Кандидат медицинских наук, доцент. Ведущий преподаватель остеопатических семинаров центра.</p>
+      </div>
+      <div class="doc">
+        <div class="doc__ava">МА</div>
+        <h3>М. В. Абзалов</h3>
+        <div class="doc__role">Хирург, остеопат</div>
+        <p>Кандидат медицинских наук, доцент. Проводит мастер-классы по остеопатии и мануальной терапии.</p>
+      </div>
+      <div class="doc">
+        <div class="doc__ava">🤲</div>
+        <h3>Мануальный терапевт</h3>
+        <div class="doc__role">Позвоночник и суставы</div>
+        <p>Лечение остеохондроза, радикулита, болей в спине и ограничения подвижности суставов.</p>
+      </div>
+      <div class="doc">
+        <div class="doc__ava">🧒</div>
+        <h3>Детский остеопат</h3>
+        <div class="doc__role">Помощь детям</div>
+        <p>Родовые травмы, нарушения осанки, задержки развития, неврологические проблемы у детей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section id="about" class="section">
+  <div class="container about">
+    <div>
+      <p class="eyebrow">О центре</p>
+      <h2>Первый центр остеопатии в Нижнем Новгороде</h2>
+      <p>В 2009 году состоялось открытие первого в городе специализированного центра, основным направлением работы которого стала остеопатия. За годы работы мы помогли пациентам более чем со 130 видами заболеваний.</p>
+      <p>Остеопатия — самостоятельное направление в медицине, сформированное в США более 130 лет назад основателем А. Т. Стиллом. Сегодня это один из признанных в мире немедикаментозных подходов к лечению болезней нервной системы, опорно-двигательного аппарата и внутренних органов.</p>
+      <p>Под одной крышей работают остеопаты, мануальные терапевты, неврологи, специалисты по массажу, тейпированию, гирудотерапии и гомеопатии — для взрослых и детей.</p>
+      <div class="about__stats">
+        <div class="stat"><b>15+</b><span>лет практики</span></div>
+        <div class="stat"><b>2</b><span>филиала в городе</span></div>
+        <div class="stat"><b>9</b><span>направлений</span></div>
+      </div>
+    </div>
+    <div class="about__media">
+      <img src="assets/massage.jpg" alt="Кабинет остеопатии — работа врача с пациентом" loading="lazy" decoding="async" onerror="this.closest('.about__media').style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Отзывы</p>
+      <h2>Что говорят пациенты</h2>
+    </div>
+    <div class="grid rev-grid">
+      <div class="rev">
+        <div class="rev__stars">★★★★★</div>
+        <p>Пришла с постоянными болями в пояснице после травмы. Уже после нескольких сеансов вернулась к обычной жизни. Спокойный, бережный подход.</p>
+        <div class="rev__name">Ольга М.</div>
+      </div>
+      <div class="rev">
+        <div class="rev__stars">★★★★★</div>
+        <p>Водили сына к детскому остеопату из-за нарушения осанки. Врач всё подробно объяснил, ребёнку было комфортно, результат заметен.</p>
+        <div class="rev__name">Дмитрий и Анна К.</div>
+      </div>
+      <div class="rev">
+        <div class="rev__stars">★★★★★</div>
+        <p>После COVID-19 долго не мог восстановить дыхание. Курс реабилитации в центре реально помог. Благодарен врачам за внимание.</p>
+        <div class="rev__name">Сергей В.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contacts -->
+<section id="contacts" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как нас найти</h2>
+      <p class="lead">Два филиала в Нижнем Новгороде. Позвоните, чтобы записаться на приём и уточнить удобное время.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <span class="office-badge">Филиал 1 · главный</span>
+        <div class="row">
+          <div class="ico">📍</div>
+          <div class="txt"><b>Адрес</b><a href="https://maps.google.com/maps?q=56.3038943,43.9372030" target="_blank" rel="noopener">Нижний Новгород, ул. Октябрьской Революции, д. 45</a></div>
+        </div>
+        <div class="row">
+          <div class="ico">📞</div>
+          <div class="txt"><b>Телефоны</b><a href="tel:+78312820024">+7 831 282-00-24</a><br><a href="tel:+79159354411">+7 915 935-44-11</a></div>
+        </div>
+        <span class="office-badge">Филиал 2</span>
+        <div class="row">
+          <div class="ico">📍</div>
+          <div class="txt"><b>Адрес</b><span>Нижний Новгород, ул. Володарского, д. 40</span></div>
+        </div>
+        <div class="row">
+          <div class="ico">📞</div>
+          <div class="txt"><b>Телефоны</b><a href="tel:+78312151491">+7 831 215-14-91</a><br><a href="tel:+79308162936">+7 930 816-29-36</a></div>
+        </div>
+        <div class="row">
+          <div class="ico">🕐</div>
+          <div class="txt"><b>Часы работы</b><span>Приём по предварительной записи</span></div>
+        </div>
+        <a href="tel:+78312820024" class="btn btn-primary" style="width:100%;margin-top:6px">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3038943,43.9372030&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта: Нижегородский Остеопатический Центр, ул. Октябрьской Революции, 45"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta">
+      <h2>Запишитесь на приём остеопата</h2>
+      <p>Первый шаг к здоровью без лекарств — диагностика и подбор мягкого плана лечения. Позвоните нам сегодня.</p>
+      <a href="tel:+78312820024" class="btn btn-light">📞 +7 831 282-00-24</a>
+      <a href="#services" class="btn btn-light">Смотреть услуги</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:14px">
+          <span class="brand__mark">Н</span>
+          <span class="brand__text">
+            <span class="brand__name">НОЦ</span>
+            <span class="brand__sub">Нижегородский Остеопатический Центр</span>
+          </span>
+        </a>
+        <p style="color:#9dc0bc;font-size:14px;max-width:320px">Остеопатия — это наука, философия, искусство управления здоровьем. Помогаем взрослым и детям с 2009 года.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Приём остеопата</a></li>
+          <li><a href="#services">Мануальная терапия</a></li>
+          <li><a href="#services">Детский остеопат</a></li>
+          <li><a href="#services">Массаж и тейпирование</a></li>
+          <li><a href="#services">Реабилитация после COVID-19</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>ул. Октябрьской Революции, 45</li>
+          <li>ул. Володарского, 40</li>
+          <li><a href="tel:+78312820024">+7 831 282-00-24</a></li>
+          <li><a href="tel:+78312151491">+7 831 215-14-91</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Нижегородский Остеопатический Центр</span>
+      <span>Нижний Новгород · остеопатия и реабилитация</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

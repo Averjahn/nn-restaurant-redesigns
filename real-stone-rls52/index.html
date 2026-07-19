@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Stone — изделия из натурального и искусственного камня в Нижнем Новгороде</title>
+<meta name="description" content="Real Stone (РеалСтоун) — производство изделий из искусственного и натурального камня в Нижнем Новгороде: столешницы, подоконники, лестницы, барные стойки, камины, ресепшн. Кварц, гранит, мрамор, акрил. Бесплатный замер. Тел. +7 (831) 253-08-36.">
+<meta name="theme-color" content="#12100e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Real Stone — изделия из камня в Нижнем Новгороде">
+<meta property="og:description" content="Столешницы, подоконники, лестницы и другие изделия из кварца, гранита, мрамора и акрила. Более 13 лет опыта. Бесплатный выезд замерщика.">
+<meta property="og:image" content="assets/work-2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12100e;
+  --bg-2:#1a1714;
+  --surface:#211d19;
+  --surface-2:#2b2620;
+  --text:#f2ece3;
+  --muted:#a89f92;
+  --line:#39322a;
+  --gold:#c9a55c;
+  --gold-2:#e5c885;
+  --gold-deep:#a3833e;
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --container:1180px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Manrope',system-ui,-apple-system,sans-serif;
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:.3px}
+h2{font-size:clamp(30px,5vw,52px)}
+h3{font-size:clamp(20px,2.6vw,26px)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,9vw,110px) 0}
+.eyebrow{
+  font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:3px;
+  font-size:12px;font-weight:600;color:var(--gold);margin-bottom:16px;
+}
+.lead{color:var(--muted);max-width:640px}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:15px;
+  cursor:pointer;border:1px solid transparent;transition:.2s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(120deg,var(--gold-2),var(--gold-deep));color:#1a1409}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-outline{border-color:var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-2)}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(18,16,14,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{height:38px;width:auto}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand-text b{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.5px}
+.brand-text span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{font-size:15px;color:var(--muted);transition:.2s;white-space:nowrap}
+.nav a:hover{color:var(--gold-2)}
+.header-phone{font-weight:600;white-space:nowrap;color:var(--text)}
+.header-cta{flex-shrink:0}
+.burger{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px;margin-left:auto}
+.burger span{display:block;height:2px;width:24px;background:var(--text);margin:0 auto;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav,.header-phone,.header .header-cta{display:none}
+  .burger{display:flex}
+  .nav{
+    position:fixed;inset:72px 0 auto 0;flex-direction:column;gap:0;margin:0;
+    background:var(--bg-2);border-bottom:1px solid var(--line);
+    padding:8px 20px 24px;transform:translateY(-120%);transition:.3s;
+  }
+  .nav.nav--open{transform:translateY(0);display:flex}
+  .nav a{padding:14px 0;font-size:18px;border-bottom:1px solid var(--line)}
+  .nav .m-phone{color:var(--gold-2);font-weight:700;font-size:22px;font-family:'Cormorant Garamond',serif}
+  .nav .btn{margin-top:18px;width:100%}
+}
+
+/* hero */
+.hero{position:relative;min-height:92svh;min-height:640px;display:flex;align-items:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,16,14,.62),rgba(18,16,14,.9)),
+            url(assets/stock-marble.jpg) center/cover no-repeat;
+  filter:saturate(.85);
+}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 20% 20%,rgba(201,165,92,.14),transparent 60%)}
+.hero-inner{position:relative;z-index:2;max-width:760px;padding:60px 0}
+.hero h1{font-size:clamp(40px,8vw,86px);margin:14px 0 20px}
+.hero h1 em{font-style:italic;color:var(--gold-2)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:#d8cfc2;max-width:560px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:30px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid rgba(201,165,92,.25)}
+.hero-meta div b{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--gold-2);display:block;line-height:1}
+.hero-meta div span{font-size:13px;color:var(--muted)}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px 26px;min-width:0}
+.adv .ic{font-size:26px;margin-bottom:14px;display:block}
+.adv h3{margin-bottom:8px;color:var(--gold-2)}
+.adv p{color:var(--muted);font-size:15px}
+
+/* products */
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;transition:.25s;min-width:0}
+.card:hover{transform:translateY(-4px);border-color:var(--gold-deep)}
+.card__media{aspect-ratio:4/3;overflow:hidden;background:var(--surface-2)}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .card__media img{transform:scale(1.05)}
+.card__media.noimg{background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+.card__body{padding:22px}
+.card__body h3{margin-bottom:6px}
+.card__body p{color:var(--muted);font-size:14px;margin-bottom:12px}
+.card__price{color:var(--gold-2);font-weight:600;font-size:14px}
+
+/* materials */
+.mat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.mat{position:relative;border-radius:var(--radius-md);overflow:hidden;min-height:280px;display:flex;align-items:flex-end;min-width:0;border:1px solid var(--line)}
+.mat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.mat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,14,.1),rgba(18,16,14,.9));z-index:1}
+.mat__body{position:relative;z-index:2;padding:22px}
+.mat__body h3{color:var(--text)}
+.mat__body p{color:#d8cfc2;font-size:13px;margin-top:6px}
+
+/* portfolio */
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+.gallery a{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1;background:var(--surface-2);display:block}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.gallery a:hover img{transform:scale(1.06)}
+.gallery a:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+
+/* about */
+.about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about-list{display:grid;gap:18px;margin-top:26px}
+.about-list li{list-style:none;display:flex;gap:14px;align-items:flex-start;min-width:0}
+.about-list .chk{color:var(--gold-2);flex-shrink:0;font-weight:700}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4}
+.about-media img{width:100%;height:100%;object-fit:cover}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;margin-top:48px}
+.contacts-info p{margin-bottom:18px;display:flex;gap:12px;align-items:flex-start;overflow-wrap:anywhere}
+.contacts-info .ic{color:var(--gold-2);flex-shrink:0}
+.contacts-info a{color:var(--text);border-bottom:1px solid var(--gold-deep)}
+.contacts-info a:hover{color:var(--gold-2)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:360px}
+.map-wrap iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* lead form */
+.lead-form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(26px,4vw,44px);margin-top:56px}
+.lead-form h3{color:var(--gold-2);margin-bottom:6px}
+.lead-form p.lead{margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:13px;color:var(--muted)}
+.field input,.field textarea{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 14px;color:var(--text);font:inherit;font-size:15px;width:100%;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.form-bottom{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.form-note{font-size:12px;color:var(--muted);flex:1;min-width:180px}
+.form-ok{display:none;margin-top:18px;color:var(--gold-2);font-weight:600}
+
+/* footer */
+.footer{border-top:1px solid var(--line);background:var(--bg-2);padding:40px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.footer-inner a{color:var(--text)}
+.footer b{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold-2)}
+
+@media(max-width:900px){
+  .about-wrap,.contacts-grid{grid-template-columns:1fr;gap:32px}
+  .about-media{aspect-ratio:16/10;max-height:360px}
+  .mat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .adv-grid,.prod-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery a:nth-child(1){grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+}
+@media(max-width:420px){
+  .hero-meta{gap:20px}
+  .btn{width:100%}
+  .hero-actions{flex-direction:column}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Real Stone — на главную">
+      <img src="assets/logo.png" alt="Логотип Real Stone" onerror="this.style.display='none'">
+      <span class="brand-text"><b>Real Stone</b><span>изделия из камня</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#products">Изделия</a>
+      <a href="#materials">Материалы</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312530836" class="m-phone">+7 (831) 253-08-36</a>
+      <a href="#contacts" class="btn btn-primary">Заказать замер</a>
+    </nav>
+    <a href="tel:+78312530836" class="header-phone">+7 (831) 253-08-36</a>
+    <a href="#contacts" class="btn btn-primary header-cta">Заказать замер</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород, ул. Ковпака, 1а</p>
+    <h1>Камень, в котором <em>живёт</em> ваш интерьер</h1>
+    <p class="hero-sub">Производим изделия из искусственного и натурального камня более 13 лет: столешницы, подоконники, лестницы, барные стойки и не только. Материалы топовых брендов из Кореи, Европы и США.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-primary">Смотреть изделия</a>
+      <a href="#contacts" class="btn btn-outline">Бесплатный замер</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>13+</b><span>лет на рынке</span></div>
+      <div><b>25+</b><span>сертификатов</span></div>
+      <div><b>от 5</b><span>дней после замера</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="advantages">
+  <div class="container">
+    <p class="eyebrow">Почему Real Stone</p>
+    <h2>Качество, проверенное сертификатами</h2>
+    <div class="adv-grid">
+      <div class="adv"><span class="ic">🛡️</span><h3>Безопасные материалы</h3><p>Экологичный камень с сертификатами качества. Более 25 сертификатов от производителей-партнёров.</p></div>
+      <div class="adv"><span class="ic">⚙️</span><h3>Немецкое оборудование</h3><p>Обработка на станках Festool и Flex — точный рез, безупречные стыки и полировка.</p></div>
+      <div class="adv"><span class="ic">📐</span><h3>Бесплатный замер</h3><p>Выезд замерщика, расчёт и разработка дизайн-проекта — до старта работ и без обязательств.</p></div>
+      <div class="adv"><span class="ic">⏱️</span><h3>Срок от 5 дней</h3><p>Изготавливаем изделие всего за 5 дней после замера благодаря налаженному производству.</p></div>
+      <div class="adv"><span class="ic">🎨</span><h3>Сотни оттенков</h3><p>Акрил, кварц, полиэфир и керамогранит в широком диапазоне цветов и ценовых категорий.</p></div>
+      <div class="adv"><span class="ic">🔧</span><h3>Доставка и монтаж</h3><p>Берём на себя доставку, установку и гарантийное обслуживание готового изделия.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Каталог</p>
+        <h2>Изделия из камня</h2>
+      </div>
+      <p class="lead">Изготавливаем любые изделия из камня — от кухонной столешницы до лестницы и камина. Цена рассчитывается индивидуально по вашему проекту.</p>
+    </div>
+    <div class="prod-grid">
+      <article class="card">
+        <div class="card__media"><img src="assets/izd-stoleshnicy.jpg" alt="Кухонная столешница из искусственного камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Столешницы</h3><p>Кухонные и для ванных комнат: бесшовные, влагостойкие, с интегрированной мойкой.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/izd-mojki.jpg" alt="Кухонная мойка и раковина из камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Мойки и раковины</h3><p>Литые мойки и раковины из акрила без стыков — гигиеничны и легко моются.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/work-2.jpg" alt="Подоконник из искусственного камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Подоконники</h3><p>Прочные подоконники любой формы и длины, устойчивые к влаге и перепадам температур.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/work-4.jpg" alt="Лестница из натурального камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Лестницы и перила</h3><p>Ступени и перила из камня — долговечное и статусное решение для дома.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/izd-stoly.jpg" alt="Барная стойка и стойка ресепшн из камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Барные стойки и ресепшн</h3><p>Барные стойки, стойки ресепшн, обеденные и рабочие столы из камня под ваш интерьер.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/work-5.jpg" alt="Камин с облицовкой из камня" loading="lazy" decoding="async" onerror="this.closest('.card__media').classList.add('noimg');this.remove()"></div>
+        <div class="card__body"><h3>Камины и нестандарт</h3><p>Камины, барбекю, бассейны, радиаторные решётки и нестандартные изделия под заказ.</p><span class="card__price">Цена — по проекту</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="section" id="materials">
+  <div class="container">
+    <p class="eyebrow">Материалы</p>
+    <h2>Из чего мы создаём изделия</h2>
+    <p class="lead">Работаем со слэбами топовых производителей из Южной Кореи, Европы и США. Поможем выбрать материал под задачу и бюджет.</p>
+    <div class="mat-grid">
+      <div class="mat">
+        <img src="assets/mat-akril.jpg" alt="Образец акрилового камня" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div class="mat__body"><h3>Акриловый камень</h3><p>Grandex, Staron, HIMACS, Corian, Akrilika — бесшовный и пластичный.</p></div>
+      </div>
+      <div class="mat">
+        <img src="assets/mat-kvarc.jpg" alt="Образец кварцевого агломерата" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div class="mat__body"><h3>Кварцевый агломерат</h3><p>Caesarstone, Silestone, Vicostone, Technistone, АваРус и другие.</p></div>
+      </div>
+      <div class="mat">
+        <img src="assets/mat-poliefir.jpg" alt="Образец полиэфирного камня" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div class="mat__body"><h3>Полиэфирный камень</h3><p>Apietra, Flex, Neomarm, Opaly — доступное и практичное решение.</p></div>
+      </div>
+      <div class="mat">
+        <img src="assets/mat-keramika.jpg" alt="Образец керамогранита" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div class="mat__body"><h3>Керамогранит</h3><p>Сверхпрочные крупноформатные плиты для столешниц и облицовки.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio" style="background:var(--bg-2)">
+  <div class="container">
+    <p class="eyebrow">Портфолио</p>
+    <h2>Наши работы</h2>
+    <p class="lead">Реальные изделия, изготовленные и установленные командой Real Stone.</p>
+    <div class="gallery">
+      <a href="assets/work-2.jpg" target="_blank" rel="noopener"><img src="assets/work-2.jpg" alt="Кварцевая столешница, выполненный проект" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+      <a href="assets/work-1.jpg" target="_blank" rel="noopener"><img src="assets/work-1.jpg" alt="Изделие из кварца" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+      <a href="assets/work-3.jpg" target="_blank" rel="noopener"><img src="assets/work-3.jpg" alt="Акриловая раковина в ванной" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+      <a href="assets/work-4.jpg" target="_blank" rel="noopener"><img src="assets/work-4.jpg" alt="Столешница из акрилового камня" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+      <a href="assets/work-5.jpg" target="_blank" rel="noopener"><img src="assets/work-5.jpg" alt="Изделие из камня, деталь" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+      <a href="assets/work-6.jpg" target="_blank" rel="noopener"><img src="assets/work-6.jpg" alt="Готовое изделие из искусственного камня" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-wrap">
+    <div>
+      <p class="eyebrow">О компании</p>
+      <h2>ООО «РеалСтоун»</h2>
+      <p class="lead">Более 13 лет мы обрабатываем искусственный и натуральный камень и производим изделия любой сложности. Реализуем слэбы камня от топовых производителей Южной Кореи, Европы и США и сопровождаем клиента на каждом этапе — от выбора материала до монтажа.</p>
+      <ul class="about-list">
+        <li><span class="chk">✓</span><span>Консультация и помощь при выборе материала</span></li>
+        <li><span class="chk">✓</span><span>Предварительный расчёт и бесплатный выезд замерщика</span></li>
+        <li><span class="chk">✓</span><span>Разработка дизайн-проекта под ваш интерьер</span></li>
+        <li><span class="chk">✓</span><span>Доставка, установка и гарантийное обслуживание</span></li>
+      </ul>
+    </div>
+    <div class="about-media">
+      <img src="assets/work-3.jpg" alt="Изделие Real Stone из камня в интерьере" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:var(--bg-2)">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как нас найти</h2>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <p><span class="ic">📍</span><span>603053, г. Нижний Новгород,<br>ул. Ковпака, 1а</span></p>
+        <p><span class="ic">📞</span><a href="tel:+78312530836">+7 (831) 253-08-36</a></p>
+        <p><span class="ic">✉️</span><a href="mailto:Rls52@yandex.ru">Rls52@yandex.ru</a></p>
+        <p><span class="ic">🕐</span><span>Пн–Пт 9:00–18:00, Сб по договорённости</span></p>
+        <a href="#lead" class="btn btn-primary" style="margin-top:8px">Оставить заявку на замер</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2751874,43.8953252&z=16&hl=ru&output=embed" width="100%" height="400" loading="lazy" allowfullscreen title="Карта: Real Stone, ул. Ковпака, 1а, Нижний Новгород"></iframe>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <form class="lead-form" id="lead" onsubmit="return submitLead(event)">
+      <h3>Заявка на бесплатный замер</h3>
+      <p class="lead">Оставьте контакты — перезвоним, ответим на вопросы и согласуем удобное время выезда замерщика.</p>
+      <div class="form-row">
+        <div class="field"><label for="lf-name">Ваше имя</label><input id="lf-name" name="name" type="text" required autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="field"><label for="lf-phone">Телефон</label><input id="lf-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+        <div class="field"><label for="lf-type">Что нужно изготовить</label><input id="lf-type" name="type" type="text" placeholder="Например, столешница"></div>
+      </div>
+      <div class="field" style="margin-top:16px"><label for="lf-msg">Комментарий (необязательно)</label><textarea id="lf-msg" name="message" rows="3" placeholder="Размеры, материал, пожелания"></textarea></div>
+      <div class="form-bottom">
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        <span class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</span>
+      </div>
+      <p class="form-ok" id="leadOk">Спасибо! Заявка принята — мы свяжемся с вами в ближайшее время.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><b>Real Stone</b><br>© 2025 ООО «РеалСтоун». Изделия из камня.</div>
+    <div>603053, г. Нижний Новгород, ул. Ковпака, 1а<br><a href="tel:+78312530836">+7 (831) 253-08-36</a> · <a href="mailto:Rls52@yandex.ru">Rls52@yandex.ru</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  });
+})();
+function submitLead(e){
+  e.preventDefault();
+  e.target.querySelector('button[type=submit]').disabled=true;
+  document.getElementById('leadOk').style.display='block';
+  e.target.reset();
+  return false;
+}
+</script>
+</body>
+</html>

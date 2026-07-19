@@ -158,5 +158,300 @@
     "approved": false,
     "price": 70000,
     "approvedAt": null
+  },
+  "goldkey": {
+    "approved": false,
+    "price": 250000,
+    "approvedAt": null
+  },
+  "optikadc": {
+    "approved": false,
+    "price": 150000,
+    "approvedAt": null
+  },
+  "beermug": {
+    "approved": false,
+    "price": 120000,
+    "approvedAt": null
+  },
+  "taximustang": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "verberg": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "maliprince": {
+    "approved": false,
+    "price": 90000,
+    "approvedAt": null
+  },
+  "advokat-nnov": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "notarius-veselova": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "richevent": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "incolor-diski-nn": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "kombimag-zapchasti-nn": {
+    "approved": false,
+    "price": 85000,
+    "approvedAt": null
+  },
+  "step-evacuator-nn": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "autoelectricnn": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "auto-chip-nn": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "ass-diagnost-avto-nn": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "akpp-nn": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "kuzovnoy-nn": {
+    "approved": false,
+    "price": 75000,
+    "approvedAt": null
+  },
+  "52tonirovka": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "npo-technit": {
+    "approved": false,
+    "price": 80000,
+    "approvedAt": null
+  },
+  "promoborudovanie-snabnn": {
+    "approved": false,
+    "price": 72000,
+    "approvedAt": null
+  },
+  "chop-admiralnn": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "vetapteka-zoozoo": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "metallokonstrukciya-nn": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "vyvoz-musora-nnbezmusora": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "spectehprof-arenda": {
+    "approved": false,
+    "price": 62000,
+    "approvedAt": null
+  },
+  "svarka-kraber": {
+    "approved": false,
+    "price": 58000,
+    "approvedAt": null
+  },
+  "zoogostinica-vkozlovke": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "prizma-med-cosmetology": {
+    "approved": false,
+    "price": 80000,
+    "approvedAt": null
+  },
+  "ooo-kosmetologiya-nn": {
+    "approved": false,
+    "price": 75000,
+    "approvedAt": null
+  },
+  "noc-osteopathy-nn": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "krasivaya-rech-logoped": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "otrazhenie-psycholog": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "senso-solarium": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "assol-stomatology": {
+    "approved": false,
+    "price": 85000,
+    "approvedAt": null
+  },
+  "laktime-nails": {
+    "approved": false,
+    "price": 50000,
+    "approvedAt": null
+  },
+  "kamnegrad-ritual": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "rekcity-rs": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "stampler": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "algoritm-mebel": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "nn-kamin-morozov": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "tri-kuznetsa": {
+    "approved": false,
+    "price": 75000,
+    "approvedAt": null
+  },
+  "akvarel-baget": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "real-stone-rls52": {
+    "approved": false,
+    "price": 75000,
+    "approvedAt": null
+  },
+  "masterlux-krovlya": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "remonttehnik-byttehnika": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "sigma-elektromontazh": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "nizhstm-otoplenie": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "nnzabor": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "stroygarant-santeh": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "geomax-burenie": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "atrium-fasad": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "valkiriya-konny-klub": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
+  },
+  "strelkovy-klub-tir": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "shahmaty-pyatkovskogo": {
+    "approved": false,
+    "price": 55000,
+    "approvedAt": null
+  },
+  "zhivopisets-studiya": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "casa-di-arte": {
+    "approved": false,
+    "price": 65000,
+    "approvedAt": null
+  },
+  "montessori-sami-s-usami": {
+    "approved": false,
+    "price": 75000,
+    "approvedAt": null
+  },
+  "avtodrayv-avtoshkola": {
+    "approved": false,
+    "price": 70000,
+    "approvedAt": null
+  },
+  "virtuozy-muzshkola": {
+    "approved": false,
+    "price": 60000,
+    "approvedAt": null
   }
 }

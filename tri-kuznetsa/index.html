@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Три Кузнеца — художественная ковка в Нижнем Новгороде | Кованые изделия на заказ</title>
+<meta name="description" content="Кузница «Три Кузнеца» — художественная ковка на заказ в Нижнем Новгороде с 2003 года. Кованые ворота, заборы, калитки, перила, лестницы, козырьки, мебель. Эскиз, ковка, монтаж под ключ. Тел. +7 920 292-27-10.">
+<meta name="theme-color" content="#16181c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Три Кузнеца — художественная ковка в Нижнем Новгороде">
+<meta property="og:description" content="Кованые изделия на заказ: ворота, заборы, перила, лестницы, мебель. Собственное производство, монтаж под ключ.">
+<meta property="og:image" content="assets/pf-vorota3.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#16181c;
+  --charcoal:#1d2026;
+  --surface:#22262e;
+  --surface-2:#2a2f38;
+  --line:#343a44;
+  --bronze:#c2914f;
+  --bronze-2:#d9a86a;
+  --patina:#6f9184;
+  --text:#eceae5;
+  --muted:#a29e94;
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --container:1160px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--graphite);color:var(--text);line-height:1.6;
+  font-size:clamp(15px,1.5vw,17px);
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.12;font-weight:700}
+h1{font-size:clamp(34px,6.2vw,68px)}
+h2{font-size:clamp(27px,4.4vw,46px)}
+h3{font-size:clamp(19px,2.4vw,24px)}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,9vw,104px) 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bronze-2);font-weight:600;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--bronze)}
+.lead{color:var(--muted);max-width:60ch}
+:focus-visible{outline:2px solid var(--bronze-2);outline-offset:3px}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;
+  font-size:15px;cursor:pointer;border:1px solid transparent;
+  transition:.2s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--bronze),var(--bronze-2));color:#1a1508}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn-outline{border-color:var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--bronze);color:var(--bronze-2)}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(20,22,26,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:16px;height:70px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand__mark{
+  width:42px;height:42px;border-radius:9px;flex-shrink:0;
+  background:radial-gradient(circle at 30% 25%,var(--bronze-2),var(--bronze) 60%,#7a5a2c);
+  display:grid;place-items:center;color:#1a1508;font-family:'Playfair Display',serif;
+  font-weight:800;font-size:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
+}
+.brand__name{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;white-space:nowrap;line-height:1.05}
+.brand__sub{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:15px;font-weight:500;color:var(--text);position:relative;padding:4px 0}
+.nav a:hover{color:var(--bronze-2)}
+.nav .nav__phone,.nav>.btn{display:none}
+.header__phone{display:flex;flex-direction:column;text-align:right;line-height:1.15;white-space:nowrap}
+.header__phone b{font-size:16px;color:var(--text)}
+.header__phone span{font-size:11px;color:var(--muted)}
+.header__cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;
+  background:none;border:1px solid var(--line);border-radius:9px;cursor:pointer;align-items:center;justify-content:center}
+.burger span{width:22px;height:2px;background:var(--text);transition:.25s;border-radius:2px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{
+    position:fixed;inset:70px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--charcoal);border-bottom:1px solid var(--line);
+    padding:8px 20px 20px;margin-left:0;
+    transform:translateY(-140%);transition:.3s;pointer-events:none;
+    max-height:calc(100vh - 70px);overflow-y:auto;
+  }
+  .nav.nav--open{transform:translateY(0);pointer-events:auto}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .nav .nav__phone{display:block;color:var(--bronze-2);font-weight:700;font-size:20px;border-bottom:none}
+  .nav>.btn{display:flex;margin-top:14px;width:100%}
+  .header__phone,.header__cta{display:none}
+  .burger{display:flex;margin-left:auto}
+}
+
+/* hero */
+.hero{position:relative;min-height:min(90svh,760px);display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(20,22,26,.55) 0%,rgba(20,22,26,.35) 35%,rgba(20,22,26,.94) 100%),
+    #0f1114 center/cover no-repeat;
+  border-bottom:1px solid var(--line);
+}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero__scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(15,17,20,.55),rgba(15,17,20,.35) 35%,rgba(15,17,20,.95) 100%)}
+.hero-inner{position:relative;z-index:2;padding-top:60px;padding-bottom:clamp(48px,7vw,84px)}
+.hero h1{max-width:16ch;letter-spacing:-.01em}
+.hero h1 em{color:var(--bronze-2);font-style:normal}
+.hero-sub{margin:22px 0 30px;font-size:clamp(16px,2vw,20px);color:#d7d3ca;max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
+.hero-meta div{min-width:0}
+.hero-meta b{font-family:'Playfair Display',serif;font-size:30px;color:var(--bronze-2);display:block}
+.hero-meta span{font-size:13px;color:var(--muted)}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--charcoal);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px 24px;min-width:0}
+.adv__ico{width:48px;height:48px;border-radius:11px;display:grid;place-items:center;font-size:24px;
+  background:var(--surface-2);border:1px solid var(--line);margin-bottom:16px}
+.adv h3{font-size:19px;margin-bottom:8px}
+.adv p{color:var(--muted);font-size:14.5px}
+
+/* categories */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.cat{position:relative;border-radius:var(--radius-md);overflow:hidden;background:var(--surface);
+  border:1px solid var(--line);min-width:0;aspect-ratio:3/4;display:flex}
+.cat__media{position:absolute;inset:0}
+.cat__media img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(.92) contrast(1.02)}
+.cat:hover .cat__media img{transform:scale(1.06)}
+.cat.noimg{background:linear-gradient(135deg,var(--surface),var(--surface-2))}
+.cat.noimg img{opacity:0}
+.cat__body{position:relative;z-index:2;margin-top:auto;width:100%;padding:20px 18px;
+  background:linear-gradient(180deg,transparent,rgba(15,16,19,.9) 60%)}
+.cat__body h3{font-size:19px}
+.cat__body span{font-size:13px;color:var(--bronze-2);display:inline-flex;align-items:center;gap:6px;margin-top:4px}
+
+/* portfolio */
+.pf-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:200px;gap:14px}
+.pf{overflow:hidden;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--surface);min-width:0}
+.pf img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.pf:hover img{transform:scale(1.07)}
+.pf.tall{grid-row:span 2}
+.pf.wide{grid-column:span 2}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line)}
+.about-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.about-media .badge{position:absolute;left:20px;bottom:20px;background:rgba(18,20,24,.85);
+  backdrop-filter:blur(6px);border:1px solid var(--bronze);border-radius:var(--radius-sm);padding:14px 18px}
+.about-media .badge b{font-family:'Playfair Display',serif;color:var(--bronze-2);font-size:26px;display:block}
+.about-media .badge span{font-size:12px;color:var(--muted)}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.svc-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.svc-list span{background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:13.5px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{background:var(--charcoal);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px 24px;position:relative;min-width:0}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:'Playfair Display',serif;
+  font-size:40px;color:var(--bronze);opacity:.55;display:block;margin-bottom:12px}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--charcoal);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(24px,4vw,38px)}
+.c-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.c-row:last-of-type{border-bottom:none}
+.c-row .ico{font-size:20px;flex-shrink:0;width:26px}
+.c-row a{color:var(--text)}
+.c-row a:hover{color:var(--bronze-2)}
+.c-row .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.c-phones a{display:block;font-weight:600;font-size:17px;margin-top:2px}
+.c-phones a span{font-weight:400;font-size:13px;color:var(--muted)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* order form */
+.order{margin-top:44px;background:linear-gradient(135deg,var(--surface),var(--charcoal));
+  border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(26px,4vw,44px)}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.order-grid .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;color:var(--muted)}
+.field input,.field textarea,.field select{
+  background:var(--graphite);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 15px;color:var(--text);font-family:inherit;font-size:15px;width:100%}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--bronze)}
+.order .note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.form-ok{display:none;background:rgba(111,145,132,.14);border:1px solid var(--patina);
+  border-radius:var(--radius-sm);padding:16px;margin-top:16px;color:#cfe3db}
+.form-ok.show{display:block}
+
+/* footer */
+.footer{border-top:1px solid var(--line);background:var(--charcoal);padding:44px 0 30px}
+.footer-top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+.footer .brand__name{font-size:20px}
+.footer p{color:var(--muted);font-size:14px;max-width:42ch;margin-top:10px}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px 26px}
+.footer-links a{color:var(--muted);font-size:14.5px}
+.footer-links a:hover{color:var(--bronze-2)}
+.footer-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;color:var(--muted);font-size:13px}
+
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{grid-template-columns:1fr}
+  .about-media{order:-1;max-width:440px}
+  .contacts-grid{grid-template-columns:1fr}
+  .pf-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px}
+}
+@media(max-width:560px){
+  .order-grid{grid-template-columns:1fr}
+  .hero-meta{gap:20px}
+  .hero-meta b{font-size:25px}
+  .pf.wide{grid-column:span 2}
+}
+@media(max-width:420px){
+  .cat-grid{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Три Кузнеца — на главную">
+      <span class="brand__mark">3К</span>
+      <span>
+        <span class="brand__name">Три Кузнеца</span><br>
+        <span class="brand__sub">Художественная ковка</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#products">Изделия</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#about">Производство</a>
+      <a href="#steps">Как работаем</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav__phone" href="tel:+79202922710">+7 920 292-27-10</a>
+      <a href="#order" class="btn btn-primary">Заказать изделие</a>
+    </nav>
+    <div class="header__phone">
+      <b><a href="tel:+79202922710">+7 920 292-27-10</a></b>
+      <span>Александр · ежедневно 9:00–20:00</span>
+    </div>
+    <a href="#order" class="btn btn-primary header__cta">Заказать</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero__bg" src="assets/pf-vorota3.jpg" alt="Кованые откатные ворота ручной работы, изготовленные кузницей Три Кузнеца" fetchpriority="high" onerror="this.style.display='none'">
+  <div class="hero__scrim"></div>
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · Бор · с 2003 года</p>
+    <h1>Художественная ковка, в которой <em>виден ручной труд</em></h1>
+    <p class="hero-sub">Кузница «Три Кузнеца» — ворота, заборы, перила, лестницы, козырьки и мебель на заказ. Собственное производство полного цикла: от эскиза до монтажа.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn btn-primary">Рассчитать изделие</a>
+      <a href="#portfolio" class="btn btn-outline">Смотреть работы</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>20+</b><span>лет в кузнечном деле</span></div>
+      <div><b>5500+</b><span>выполненных заказов</span></div>
+      <div><b>7</b><span>станков собственного цеха</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Почему «Три Кузнеца»</p>
+    <h2>Мастерская, а не посредник</h2>
+    <div class="adv-grid" style="margin-top:38px">
+      <div class="adv">
+        <div class="adv__ico">⚒️</div>
+        <h3>Своё производство</h3>
+        <p>Полный цикл в собственном цехе — гибка, резка, лазер, сварка, ковка и покраска. Без перекупщиков.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">✏️</div>
+        <h3>Эскиз под вас</h3>
+        <p>Дизайнер составит эскиз по вашей идее или подберёт вариант из сотен готовых решений.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">🎨</div>
+        <h3>Порошковая окраска</h3>
+        <p>Любой цвет по палитре RAL, патина и эффект старения. Покрытие, которое держится годами.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">🚚</div>
+        <h3>Замер и монтаж</h3>
+        <p>Выезжаем на объект, снимаем размеры и устанавливаем изделие под ключ по Нижегородской области.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products" style="background:var(--charcoal);border-block:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Виды изделий</p>
+    <h2>Что мы куём</h2>
+    <p class="lead" style="margin-top:14px">Изготавливаем на заказ любые изделия из металла. Цена рассчитывается индивидуально по вашему проекту и размерам.</p>
+    <div class="cat-grid" style="margin-top:40px">
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-vorota.jpg" alt="Кованые ворота" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Кованые ворота</h3><span>Распашные и откатные →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-zabor.jpg" alt="Кованый забор" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Заборы</h3><span>Ковка и евроштакетник →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-kalitki.jpg" alt="Кованая калитка" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Калитки</h3><span>В единый стиль с воротами →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-perila.jpg" alt="Кованые перила для лестницы" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Перила</h3><span>Классика и стиль ЛОФТ →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-lestnicy.jpg" alt="Лестница на металлическом каркасе" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Лестницы</h3><span>На металлическом каркасе →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-kozyrki.jpg" alt="Кованый козырёк над крыльцом" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Козырьки</h3><span>Над крыльцом и входом →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-mebel.jpg" alt="Кованая мебель" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Кованая мебель</h3><span>Кровати, столы, подстолья →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-besedki.jpg" alt="Кованая беседка" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Беседки и веранды</h3><span>Для сада и участка →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-reshetki.jpg" alt="Кованые решётки на окна" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Решётки на окна</h3><span>Защита и декор →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-skameyki.jpg" alt="Кованая скамейка" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Скамейки</h3><span>Садовые и парковые →</span></div></a>
+      <a class="cat" href="#order"><div class="cat__media"><img src="assets/cat-panno.jpg" alt="Металлическое панно в стиле лофт" loading="lazy" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Панно в стиле ЛОФТ</h3><span>Декор для фасада и стен →</span></div></a>
+      <a class="cat noimg" href="#order"><div class="cat__media"><img src="" alt="" onerror="this.closest('.cat').classList.add('noimg')"></div><div class="cat__body"><h3>Ещё 20+ видов</h3><span>Навесы, ограждения, ритуальные изделия, сварные работы →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <p class="eyebrow">Портфолио</p>
+    <h2>Работы из нашего цеха</h2>
+    <p class="lead" style="margin-top:14px">Реальные изделия, установленные у заказчиков в Нижнем Новгороде и области.</p>
+    <div class="pf-grid" style="margin-top:36px">
+      <div class="pf wide tall"><img src="assets/work-1.jpg" alt="Кованая лестница с коваными перилами и растительным орнаментом" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/pf-vorota2.jpg" alt="Кованые ворота с узором" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/cat-kalitki.jpg" alt="Кованая калитка с бронзовыми акцентами" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf tall"><img src="assets/cat-mebel.jpg" alt="Кованая кровать ручной работы" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/pf-perila2.jpg" alt="Кованые перила для лестницы" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/pf-kozyrek2.jpg" alt="Кованый козырёк над входом" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf wide"><img src="assets/cat-zabor.jpg" alt="Кованый забор вокруг участка" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/pf-perila3.jpg" alt="Кованые перила с орнаментом" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/pf-zabor2.jpg" alt="Кованая секция забора" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf tall"><img src="assets/cat-reshetki.jpg" alt="Кованые решётки на окна" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/work-4.jpg" alt="Кованое изделие ручной работы" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/cat-panno.jpg" alt="Металлическое панно в стиле лофт" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+      <div class="pf"><img src="assets/work-5.jpg" alt="Художественная ковка ручной работы" loading="lazy" onerror="this.closest('.pf').style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / PRODUCTION -->
+<section class="section" id="about" style="background:var(--charcoal);border-block:1px solid var(--line)">
+  <div class="container about-grid">
+    <div class="about-text">
+      <p class="eyebrow">О мастерской</p>
+      <h2>Куём в Нижегородской области с 2003 года</h2>
+      <p style="margin-top:18px">Кузница «Три Кузнеца» — это собственный производственный цех под Нижним Новгородом. Мы сочетаем традиционные техники термической и механической обработки металла с современным оборудованием, поэтому беремся и за классическую художественную ковку, и за строгие изделия в стиле ЛОФТ.</p>
+      <p>Высококачественный металл позволяет получить любую фактуру — от имитации коры дерева до эффекта старения. Наши мастера создают композиции в виде виноградной лозы, изящных цветов и реалистичных фигур — то, что нельзя купить в магазине, но можно выковать под ваш проект.</p>
+      <div class="svc-list">
+        <span>Гибка металла (ЧПУ)</span>
+        <span>Лазерная резка</span>
+        <span>Рубка и резка</span>
+        <span>Вальцовка до 12 мм</span>
+        <span>Шлифовка</span>
+        <span>Аргонно-дуговая сварка</span>
+        <span>Порошковая окраска RAL</span>
+      </div>
+    </div>
+    <div class="about-media">
+      <img src="assets/work-3.jpg" alt="Кованое изделие ручной работы кузницы Три Кузнеца" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="badge"><b>с 2003</b><span>года в кузнечном деле</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section" id="steps">
+  <div class="container">
+    <p class="eyebrow">Как мы работаем</p>
+    <h2>От идеи до готового изделия</h2>
+    <div class="steps" style="margin-top:40px">
+      <div class="step"><h3>Заявка и замер</h3><p>Обсуждаем задачу по телефону, выезжаем на объект и снимаем точные размеры.</p></div>
+      <div class="step"><h3>Эскиз и расчёт</h3><p>Дизайнер готовит эскиз под ваш стиль, согласуем детали и фиксируем стоимость.</p></div>
+      <div class="step"><h3>Ковка и покраска</h3><p>Изготавливаем изделие в собственном цехе и покрываем порошковой краской по RAL.</p></div>
+      <div class="step"><h3>Монтаж под ключ</h3><p>Доставляем и устанавливаем изделие на объекте по Нижнему Новгороду и области.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:var(--charcoal);border-top:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как нас найти</h2>
+    <div class="contacts-grid" style="margin-top:36px">
+      <div class="contacts-info">
+        <div class="c-row">
+          <span class="ico">📍</span>
+          <div><span class="lbl">Адрес производства</span><br>Нижегородская обл., г. Бор,<br>пос. Толоконцево, ул. Вокзальная, д. 89</div>
+        </div>
+        <div class="c-row c-phones">
+          <span class="ico">📞</span>
+          <div style="min-width:0">
+            <span class="lbl">Телефоны</span>
+            <a href="tel:+79202922710">+7 920 292-27-10 <span>· Александр</span></a>
+            <a href="tel:+79524564375">+7 952 456-43-75 <span>· Максим</span></a>
+            <a href="tel:+79101465487">+7 910 146-54-87 <span>· Владимир</span></a>
+          </div>
+        </div>
+        <div class="c-row">
+          <span class="ico">✉️</span>
+          <div><span class="lbl">Почта</span><br><a href="mailto:3kuzneca@bk.ru">3kuzneca@bk.ru</a></div>
+        </div>
+        <div class="c-row">
+          <span class="ico">🕐</span>
+          <div><span class="lbl">Режим работы</span><br>Ежедневно, 9:00–20:00</div>
+        </div>
+        <div class="c-row">
+          <span class="ico">💬</span>
+          <div><span class="lbl">Мессенджеры и соцсети</span><br>WhatsApp · Viber · <a href="https://www.instagram.com/3kuznecann/" target="_blank" rel="noopener">Instagram</a> · <a href="https://vk.com/club94394600" target="_blank" rel="noopener">ВКонтакте</a></div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.4081,43.9805&z=14&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта — кузница Три Кузнеца, Толоконцево, Вокзальная 89"></iframe>
+      </div>
+    </div>
+
+    <!-- ORDER -->
+    <div class="order" id="order">
+      <p class="eyebrow" style="margin-bottom:8px">Заявка</p>
+      <h2 style="font-size:clamp(24px,3.4vw,36px)">Рассчитать стоимость изделия</h2>
+      <p class="lead" style="margin-top:12px">Оставьте контакты и опишите задумку — перезвоним, обсудим эскиз и назовём цену по вашему проекту.</p>
+      <form id="orderForm" novalidate>
+        <div class="order-grid">
+          <div class="field">
+            <label for="name">Ваше имя *</label>
+            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Как к вам обращаться">
+          </div>
+          <div class="field">
+            <label for="phone">Телефон *</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+7 ___ ___-__-__">
+          </div>
+          <div class="field full">
+            <label for="type">Что нужно изготовить</label>
+            <select id="type" name="type">
+              <option>Кованые ворота</option>
+              <option>Забор</option>
+              <option>Калитка</option>
+              <option>Перила / лестница</option>
+              <option>Козырёк</option>
+              <option>Кованая мебель</option>
+              <option>Беседка / веранда</option>
+              <option>Решётки на окна</option>
+              <option>Другое изделие</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="msg">Описание задачи</label>
+            <textarea id="msg" name="msg" placeholder="Размеры, стиль, пожелания, адрес объекта"></textarea>
+          </div>
+          <div class="field full">
+            <button type="submit" class="btn btn-primary" style="width:100%">Отправить заявку</button>
+          </div>
+        </div>
+        <p class="note">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Поля со звёздочкой (*) обязательны.</p>
+        <div class="form-ok" id="formOk">Спасибо! Заявка принята — мы перезвоним вам в ближайшее рабочее время по телефону <b>+7 920 292-27-10</b>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="brand">
+          <span class="brand__mark">3К</span>
+          <span><span class="brand__name">Три Кузнеца</span><br><span class="brand__sub">Художественная ковка</span></span>
+        </a>
+        <p>Кузница полного цикла в Нижегородской области. Кованые изделия на заказ — от эскиза до монтажа.</p>
+      </div>
+      <nav class="footer-links" aria-label="Навигация в подвале">
+        <a href="#products">Изделия</a>
+        <a href="#portfolio">Работы</a>
+        <a href="#about">Производство</a>
+        <a href="#steps">Как работаем</a>
+        <a href="#contacts">Контакты</a>
+        <a href="tel:+79202922710">+7 920 292-27-10</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2003–2025 Кузница «Три Кузнеца». Художественная ковка, Нижний Новгород.</span>
+      <span>г. Бор, пос. Толоконцево, ул. Вокзальная, 89</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+  var form=document.getElementById('orderForm'),ok=document.getElementById('formOk');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=form.name.value.trim(),p=form.phone.value.trim();
+    if(!n||!p){[form.name,form.phone].forEach(function(f){if(!f.value.trim())f.style.borderColor='#c25a4f'});return;}
+    ok.classList.add('show');form.reset();
+    ok.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

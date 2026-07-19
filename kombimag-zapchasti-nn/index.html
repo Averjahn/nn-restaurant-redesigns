@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КомбиМаг — автозапчасти для иномарок в Нижнем Новгороде</title>
+<meta name="description" content="КомбиМаг — сеть магазинов автозапчастей в Нижнем Новгороде, ул. Херсонская 14. Более 30 000 наименований в наличии, доставка от 2 часов, подбор по VIN. Тел. +7 (831) 266-00-01.">
+<meta name="theme-color" content="#0e0f12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="КомбиМаг — автозапчасти для иномарок в Нижнем Новгороде">
+<meta property="og:description" content="Более 30 000 наименований в наличии. Срок исполнения заказа от 2 часов. Доставка по НН и области.">
+<meta property="og:image" content="assets/hero-parts.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0f12;
+  --surface:#17191f;
+  --surface-2:#1f2229;
+  --text:#f3f4f6;
+  --muted:#9aa0ab;
+  --accent:#e11d2a;
+  --accent-hover:#c01621;
+  --line:#2a2e37;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --container:1180px;
+  --gap:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  font-size:clamp(15px,1.5vw,17px);
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand__name{font-family:'Oswald',Impact,sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+h1{font-size:clamp(32px,6vw,66px);font-weight:700}
+h2{font-size:clamp(26px,4.2vw,46px);font-weight:600}
+h3{font-size:clamp(18px,2.4vw,22px);font-weight:600}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(52px,8vw,96px) 0}
+.eyebrow{color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;
+  padding:14px 26px;border-radius:var(--radius-sm);cursor:pointer;border:1px solid transparent;
+  transition:.18s;font-size:15px;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--accent);color:#fff}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(14,15,18,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:20px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand img{height:40px;width:auto}
+.brand__name{font-size:22px;font-weight:700;white-space:nowrap}
+.brand__name b{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:var(--muted);font-weight:500;font-size:15px;transition:.15s}
+.nav a:hover{color:var(--text)}
+.header__phone{display:flex;flex-direction:column;line-height:1.15;white-space:nowrap}
+.header__phone .num{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:#fff}
+.header__phone .lbl{font-size:11px;color:var(--muted)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;margin-left:auto}
+.burger span{width:26px;height:2px;background:var(--text);transition:.2s}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:70px 0 auto 0;flex-direction:column;gap:0;background:var(--surface);
+    border-bottom:1px solid var(--line);padding:8px 0;margin:0;
+    transform:translateY(-130%);transition:transform .28s ease;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{width:100%;padding:14px 24px;font-size:17px;border-bottom:1px solid var(--line)}
+  .nav .nav__phone{display:flex;flex-direction:row;align-items:center;gap:10px;color:#fff;font-size:20px;font-weight:600}
+  .nav .nav__phone .num{color:var(--accent)}
+  .nav .btn{margin:14px 24px;width:calc(100% - 48px)}
+  .header__phone.desktop-phone{display:none}
+  .burger{display:flex}
+}
+.nav .nav__phone,.nav .nav__cta{display:none}
+@media(max-width:1040px){.nav .nav__phone,.nav .nav__cta{display:flex}}
+
+/* Hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;
+  background:linear-gradient(105deg,rgba(14,15,18,.97) 0%,rgba(14,15,18,.72) 55%,rgba(14,15,18,.45) 100%),
+  url('assets/hero-parts.jpg') center/cover no-repeat;}
+.hero-inner{padding:clamp(60px,10vw,110px) 0}
+.hero h1{max-width:16ch;margin:16px 0}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:52ch;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,56px);margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.hero-stats .stat b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,40px);color:#fff;line-height:1}
+.hero-stats .stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px}
+.adv .ico{width:46px;height:46px;border-radius:10px;background:rgba(225,29,42,.12);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.adv h3{margin-bottom:6px;text-transform:none;font-family:'Inter',sans-serif;font-size:17px}
+.adv p{font-size:14px;color:var(--muted)}
+
+/* Section head */
+.sec-head{margin-bottom:clamp(32px,5vw,52px);max-width:640px}
+.sec-head h2{margin:12px 0}
+.sec-head p{color:var(--muted)}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px;transition:.2s;position:relative;overflow:hidden;min-width:0}
+.cat:hover{border-color:var(--accent);transform:translateY(-4px)}
+.cat .cat__media{height:96px;display:flex;align-items:center;justify-content:flex-start;margin-bottom:18px}
+.cat .cat__media img{height:88px;width:auto;object-fit:contain}
+.cat.noimg .cat__media{display:none}
+.cat h3{text-transform:none;font-family:'Inter',sans-serif;font-size:19px;margin-bottom:8px}
+.cat p{font-size:14px;color:var(--muted)}
+.cat .cat__tag{display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px}
+
+/* Brands / marks */
+.marks{display:flex;flex-wrap:wrap;gap:10px}
+.mark{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;
+  padding:9px 16px;font-size:14px;font-weight:500;color:var(--text);white-space:nowrap}
+.mark:hover{border-color:var(--accent);color:#fff}
+.featured-brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);margin-top:38px}
+.fbrand{display:flex;gap:20px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:22px;align-items:center;min-width:0}
+.fbrand img{width:110px;height:74px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.fbrand h3{text-transform:none;font-family:'Inter',sans-serif;font-size:18px;margin-bottom:4px}
+.fbrand p{font-size:14px;color:var(--muted);min-width:0;overflow-wrap:anywhere}
+
+/* Delivery */
+.deliv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.deliv{background:linear-gradient(160deg,var(--surface),var(--surface-2));border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:30px 26px}
+.deliv .num{font-family:'Oswald',sans-serif;color:var(--accent);font-size:15px;font-weight:600;letter-spacing:.08em}
+.deliv h3{text-transform:none;font-family:'Inter',sans-serif;font-size:19px;margin:10px 0 8px}
+.deliv p{font-size:14.5px;color:var(--muted)}
+.pay-strip{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center}
+.pay-strip .lbl{font-weight:600;margin-right:6px}
+.pay{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 15px;font-size:14px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center}
+.about-media img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--line)}
+.about-list{list-style:none;margin-top:24px;display:grid;gap:14px}
+.about-list li{display:flex;gap:12px;font-size:15px}
+.about-list li::before{content:"—";color:var(--accent);font-weight:700}
+
+/* Contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(26px,4vw,40px)}
+.cline{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cline:last-child{border-bottom:0}
+.cline .ci{font-size:20px;color:var(--accent);flex-shrink:0}
+.cline .ct{min-width:0;overflow-wrap:anywhere}
+.cline .ct b{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.cline .ct .big{font-family:'Oswald',sans-serif;font-size:22px;color:#fff}
+.cline .ct a{color:#fff}
+.cline .ct a:hover{color:var(--accent)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);background:#0a0b0d;padding:40px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.footer-inner .brand__name{font-size:19px}
+
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deliv-grid{grid-template-columns:1fr}
+  .featured-brands{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .about-media{order:-1}
+  .contacts-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .adv-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 100%}
+  .fbrand{flex-direction:column;align-items:flex-start}
+  .fbrand img{width:100%;height:120px}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="Логотип КомбиМаг" onerror="this.style.display='none'">
+      <span class="brand__name">Комби<b>Маг</b></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#categories">Категории</a>
+      <a href="#brands">Бренды</a>
+      <a href="#delivery">Доставка и оплата</a>
+      <a href="#about">О магазине</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312660001" class="nav__phone">📞 <span class="num">+7 (831) 266-00-01</span></a>
+      <a href="#contacts" class="btn btn-primary nav__cta">Как нас найти</a>
+    </nav>
+    <a href="tel:+78312660001" class="header__phone desktop-phone">
+      <span class="num">+7 (831) 266-00-01</span>
+      <span class="lbl">Многоканальный · 8:00–21:00</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород, ул. Херсонская, 14</p>
+    <h1>Автозапчасти для иномарок <span>и отечественных авто</span></h1>
+    <p class="hero-sub">Сеть магазинов «КомбиМаг» — 30 лет вместе с вами. Более 30 000 наименований в наличии и свыше 100 000 под заказ. Подбор по VIN, оригинал и качественные аналоги.</p>
+    <div class="hero-actions">
+      <a href="#categories" class="btn btn-primary">Категории запчастей</a>
+      <a href="#contacts" class="btn btn-outline">Как нас найти</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>30 000+</b><span>в наличии</span></div>
+      <div class="stat"><b>от 2 ч.</b><span>срок заказа</span></div>
+      <div class="stat"><b>30 лет</b><span>на рынке НН</span></div>
+      <div class="stat"><b>до 20%</b><span>скидка по карте</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="ico">⚙️</div>
+        <h3>Огромный ассортимент</h3>
+        <p>Более 30 000 позиций в наличии и свыше 100 000 доступны под заказ.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">⚡</div>
+        <h3>Заказ от 2 часов</h3>
+        <p>Срок исполнения заказа — от двух часов. Работаем без обеда и выходных.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">🚚</div>
+        <h3>Бесплатная доставка</h3>
+        <p>При заказе от 3000 ₽ — бесплатно, с оплатой при получении. По НН, области и всей России.</p>
+      </div>
+      <div class="adv">
+        <div class="ico">🛡️</div>
+        <h3>Гарантия качества</h3>
+        <p>Оригинальные детали и проверенные аналоги. Гарантийный срок с момента получения товара.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories" style="background:#0a0b0d">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Каталог</span>
+      <h2>Категории запчастей</h2>
+      <p>Всё для планового ТО и ремонта — от расходников до узлов подвески и тормозной системы.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-oil.png" alt="Моторные масла" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Моторные масла</h3>
+        <p>Роснефть, Лукойл, Mobil, Shell, Rolf, Zic, Kixx. В том числе на розлив.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-transmission.png" alt="Трансмиссионные масла" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Трансмиссионные масла</h3>
+        <p>Жидкости для АКПП, МКПП и мостов. Оригинальные допуски производителей.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-akb.png" alt="Аккумуляторы" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Аккумуляторы (АКБ)</h3>
+        <p>Стартерные батареи под все марки и объёмы двигателя. Подбор по авто.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-lamps.png" alt="Автомобильные лампы" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Лампы и оптика</h3>
+        <p>Галоген, LED и ксенон для фар, габаритов и салона. Всегда в наличии.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-wipers.png" alt="Стеклоочистители" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Стеклоочистители</h3>
+        <p>Каркасные, бескаркасные и гибридные щётки по размеру вашего авто.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-otech1.png" alt="Запчасти для отечественных авто" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Отечественные авто</h3>
+        <p>Запчасти для LADA (ВАЗ), ГАЗ и УАЗ. Расходники, кузов, подвеска.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-otech2.png" alt="Запчасти для китайских авто" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Китайские автомобили</h3>
+        <p>Детали для популярных китайских брендов — в наличии и под заказ.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-akb.png" alt="Запчасти премиум-класса" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Премиум-класс</h3>
+        <p>Toyota, Mercedes-Benz, Porsche, Audi, Lexus, BMW, Volkswagen — оригинал.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+      <div class="cat">
+        <div class="cat__media"><img src="assets/cat-oil.png" alt="Автохимия и аксессуары" loading="lazy" decoding="async" onerror="this.closest('.cat').classList.add('noimg')"></div>
+        <h3>Автохимия и авточехлы</h3>
+        <p>Технические жидкости, автокосметика, инструмент и авточехлы для салона.</p>
+        <span class="cat__tag">Подобрать →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="section" id="brands">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Подбор по авто</span>
+      <h2>Запчасти по маркам</h2>
+      <p>Подбираем детали по каталогам TecDoc, Carbase и по VIN для 30+ марок иномарок.</p>
+    </div>
+    <div class="marks">
+      <span class="mark">Alfa Romeo</span><span class="mark">Audi</span><span class="mark">BMW</span>
+      <span class="mark">Chevrolet</span><span class="mark">Citroen</span><span class="mark">Daewoo</span>
+      <span class="mark">Fiat</span><span class="mark">Ford</span><span class="mark">Honda</span>
+      <span class="mark">Hyundai</span><span class="mark">Jaguar</span><span class="mark">Kia</span>
+      <span class="mark">Lada</span><span class="mark">Land Rover</span><span class="mark">Lexus</span>
+      <span class="mark">Mazda</span><span class="mark">Mercedes-Benz</span><span class="mark">Mitsubishi</span>
+      <span class="mark">Nissan</span><span class="mark">Opel</span><span class="mark">Peugeot</span>
+      <span class="mark">Renault</span><span class="mark">Saab</span><span class="mark">Skoda</span>
+      <span class="mark">SsangYong</span><span class="mark">Subaru</span><span class="mark">Suzuki</span>
+      <span class="mark">Toyota</span><span class="mark">Volkswagen</span><span class="mark">Volvo</span>
+    </div>
+
+    <div class="featured-brands">
+      <div class="fbrand">
+        <img src="assets/brand-miles.jpg" alt="Продукция бренда MILES" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div>
+          <h3>MILES</h3>
+          <p>Амортизаторы, катушки зажигания, радиаторы, тормозные диски и колодки, фильтры.</p>
+        </div>
+      </div>
+      <div class="fbrand">
+        <img src="assets/brand-ctr.jpg" alt="Продукция бренда CTR" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <div>
+          <h3>CTR</h3>
+          <p>Детали подвески, резино-металлические изделия, элементы рулевого управления.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="section" id="delivery" style="background:#0a0b0d">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Условия</span>
+      <h2>Доставка и оплата</h2>
+      <p>Привезём заказ туда, где вам удобно, и рассчитаемся так, как вам подходит.</p>
+    </div>
+    <div class="deliv-grid">
+      <div class="deliv">
+        <div class="num">01 / ДОСТАВКА</div>
+        <h3>Бесплатно от 3000 ₽</h3>
+        <p>При любом заказе на сумму от 3000 ₽ доставка бесплатна, с оплатой при получении.</p>
+      </div>
+      <div class="deliv">
+        <div class="num">02 / ГЕОГРАФИЯ</div>
+        <h3>НН, область и вся Россия</h3>
+        <p>Доставляем в любую точку Нижнего Новгорода и области, а также транспортными компаниями по всей стране.</p>
+      </div>
+      <div class="deliv">
+        <div class="num">03 / СРОКИ</div>
+        <h3>Заказ от 2 часов</h3>
+        <p>То, что есть в наличии, готовим к выдаче от двух часов. Позиции под заказ — в оговорённые сроки.</p>
+      </div>
+    </div>
+    <div class="pay-strip">
+      <span class="lbl">Оплата:</span>
+      <span class="pay">Наличные</span>
+      <span class="pay">Банковская карта</span>
+      <span class="pay">Оплата при получении</span>
+      <span class="pay">Дисконтная карта — скидка 5–20%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="eyebrow">О магазине</span>
+        <h2 style="margin:12px 0 18px">30 лет вместе с вами</h2>
+        <p class="muted">«КомбиМаг» — сеть фирменных магазинов автозапчастей в Нижнем Новгороде и Нижегородской области. Предлагаем широкий ассортимент деталей для автомобилей импортного производства (Audi, BMW, Renault, Toyota, Mercedes и других марок) и отечественных авто (ВАЗ, ГАЗ, УАЗ), а также моторные масла, технические жидкости, автохимию, аксессуары и инструмент.</p>
+        <ul class="about-list">
+          <li>Более 30 000 наименований всегда в наличии</li>
+          <li>Свыше 100 000 позиций доступны под заказ</li>
+          <li>Квалифицированный персонал поможет подобрать нужные детали</li>
+          <li>Оригинальные запчасти и качественные аналоги</li>
+          <li>Накопительная дисконтная карта со скидкой от 5 до 20%</li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="assets/about-mechanic.jpg" alt="Мастер проверяет двигатель автомобиля" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:#0a0b0d">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="cline">
+          <span class="ci">📍</span>
+          <span class="ct"><b>Адрес</b>603090, г. Нижний Новгород,<br>ул. Херсонская, дом 14</span>
+        </div>
+        <div class="cline">
+          <span class="ci">📞</span>
+          <span class="ct"><b>Телефон (многоканальный)</b><a class="big" href="tel:+78312660001">+7 (831) 266-00-01</a></span>
+        </div>
+        <div class="cline">
+          <span class="ci">✈️</span>
+          <span class="ct"><b>Telegram</b><a href="tel:+79087310086">+7 908 731-00-86</a></span>
+        </div>
+        <div class="cline">
+          <span class="ci">🕐</span>
+          <span class="ct"><b>Режим работы</b>Ежедневно с 8:00 до 21:00<br>без обеда и выходных</span>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2720633,43.9117649&z=16&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта: КомбиМаг, ул. Херсонская 14, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand__name">Комби<b style="color:var(--accent)">Маг</b> · автозапчасти</span>
+    <span>603090, г. Нижний Новгород, ул. Херсонская, 14 · +7 (831) 266-00-01</span>
+    <span>© 2025 КомбиМаг. 30 лет вместе с вами.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

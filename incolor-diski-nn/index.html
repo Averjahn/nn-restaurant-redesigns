@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ИнКолор — порошковая окраска колёсных дисков в Нижнем Новгороде</title>
+<meta name="description" content="ИнКолор — полимерно-порошковая окраска, алмазная проточка, правка и шиномонтаж литых дисков в Нижнем Новгороде. Более 200 цветов RAL, металлики, хамелеоны. Экспресс-окраска за 11 часов, гарантия. ул. Деловая, 7.">
+<meta name="theme-color" content="#14161a">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="ИнКолор — порошковая окраска колёсных дисков в Нижнем Новгороде">
+<meta property="og:description" content="Полимерно-порошковая окраска, алмазная проточка, правка и шиномонтаж дисков. 200+ цветов RAL, металлики, хамелеоны. Экспресс за 11 часов.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14161a;
+  --surface:#1c1f26;
+  --surface-2:#22262e;
+  --line:#2e333c;
+  --accent:#ff6a00;
+  --accent-2:#ff8c33;
+  --text:#f2f3f5;
+  --muted:#9aa0a8;
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1160px;
+  --gap:24px;
+  --header-h:70px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:clamp(15px,1.5vw,17px);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.1;text-transform:uppercase;letter-spacing:.5px}
+h1{font-size:clamp(34px,7vw,68px);font-weight:700}
+h2{font-size:clamp(26px,4.5vw,46px)}
+h3{font-size:clamp(19px,2.5vw,24px)}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,9vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:14px;color:var(--accent);font-weight:600;margin-bottom:16px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--accent)}
+.lead{color:var(--muted);max-width:640px}
+.accent{color:var(--accent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:15px;cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#111}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn-outline{border-color:var(--line);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(20,22,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:20px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:2px;font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;white-space:nowrap}
+.brand b{color:var(--accent)}
+.brand span{font-size:11px;letter-spacing:3px;color:var(--muted);font-weight:500;align-self:flex-end;margin-bottom:5px;margin-left:4px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:15px;color:var(--muted);transition:.2s}
+.nav a:hover{color:var(--text)}
+.header-phone{display:flex;flex-direction:column;line-height:1.2;white-space:nowrap}
+.header-phone a{font-family:'Oswald',sans-serif;font-weight:600;font-size:18px}
+.header-phone small{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:1px solid var(--line);border-radius:var(--radius-sm);cursor:pointer;flex-shrink:0}
+.burger span{display:block;width:22px;height:2px;background:var(--text);margin:0 auto;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - var(--header-h));display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,22,26,.97) 0%,rgba(20,22,26,.86) 45%,rgba(20,22,26,.55) 100%);z-index:2}
+.hero-bg{position:absolute;inset:0;z-index:1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-inner{position:relative;z-index:3;padding:60px 0;max-width:720px}
+.hero h1{margin-bottom:20px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);margin-bottom:34px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tags span{font-size:13px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line);padding:7px 14px;border-radius:100px}
+
+/* stats bar */
+.stats{background:var(--accent);color:#111}
+.stats-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:32px 0}
+.stat{text-align:center;min-width:0}
+.stat b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1}
+.stat span{font-size:13px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+
+/* advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.adv-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;min-width:0;transition:.2s}
+.adv-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.adv-ico{width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(255,106,0,.12);border-radius:var(--radius-sm);margin-bottom:18px}
+.adv-card h3{margin-bottom:10px;text-transform:none;letter-spacing:0}
+.adv-card p{color:var(--muted);font-size:15px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.svc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;min-width:0;position:relative;overflow:hidden}
+.svc-card::before{content:attr(data-n);position:absolute;top:14px;right:18px;font-family:'Oswald',sans-serif;font-size:56px;font-weight:700;color:var(--surface-2);line-height:1;z-index:0}
+.svc-card>*{position:relative;z-index:1}
+.svc-card h3{margin-bottom:12px;text-transform:none;letter-spacing:0}
+.svc-card p{color:var(--muted);font-size:14.5px}
+.svc-card .price{display:inline-block;margin-top:14px;font-family:'Oswald',sans-serif;color:var(--accent);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.5px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:48px}
+.gal-item{position:relative;overflow:hidden;border-radius:var(--radius-sm);aspect-ratio:1/1;background:var(--surface-2);border:1px solid var(--line)}
+.gal-item.wide{grid-column:span 2;aspect-ratio:2/1}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(transparent,rgba(20,22,26,.9));font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:13px}
+
+/* process */
+.proc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:48px;counter-reset:step}
+.proc-step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;min-width:0;counter-increment:step;position:relative}
+.proc-step::before{content:"0" counter(step);font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:var(--accent);display:block;margin-bottom:12px}
+.proc-step h3{text-transform:none;letter-spacing:0;font-size:20px;margin-bottom:8px}
+.proc-step p{color:var(--muted);font-size:14.5px}
+
+/* colors palette */
+.pal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);margin-top:48px}
+.pal-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;min-width:0}
+.pal-card h3{text-transform:none;letter-spacing:0;margin-bottom:6px;font-size:21px}
+.pal-card .cnt{font-family:'Oswald',sans-serif;color:var(--accent);font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.pal-card p{color:var(--muted);font-size:14.5px;margin-top:12px}
+.swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.swatches i{width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.12)}
+
+/* about with image */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,60px);align-items:center}
+.about-media{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-width:0}
+.about-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+.about-text .lead{margin-bottom:22px}
+.about-list{list-style:none;display:grid;gap:12px;margin-top:8px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.about-list li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
+.about-list li span{overflow-wrap:anywhere}
+
+/* price table */
+.price-wrap{margin-top:48px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-md)}
+table.price{width:100%;border-collapse:collapse;min-width:520px}
+table.price th,table.price td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+table.price thead th{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;color:var(--accent);background:var(--surface)}
+table.price td:last-child,table.price th:last-child{text-align:right;font-family:'Oswald',sans-serif;font-weight:600;white-space:nowrap}
+table.price tbody tr:last-child td{border-bottom:none}
+table.price tbody tr:hover{background:var(--surface)}
+.price-note{color:var(--muted);font-size:13.5px;margin-top:14px;overflow-wrap:anywhere}
+
+/* promo */
+.promo{background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 100%);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(28px,5vw,48px);margin-top:48px}
+.promo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.promo-item{text-align:center;min-width:0}
+.promo-item b{font-family:'Oswald',sans-serif;font-size:clamp(36px,7vw,58px);font-weight:700;color:var(--accent);display:block;line-height:1}
+.promo-item span{color:var(--muted);font-size:14.5px}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--gap);margin-top:48px}
+.contacts-info{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:32px;min-width:0}
+.info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.info-row:last-child{border-bottom:none}
+.info-row .ico{font-size:20px;flex-shrink:0;width:24px;text-align:center}
+.info-row .txt{min-width:0;overflow-wrap:anywhere}
+.info-row .txt b{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:12px;color:var(--muted);margin-bottom:2px}
+.info-row .txt a{font-weight:500}
+.info-row .txt a:hover{color:var(--accent)}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:340px;min-width:0}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.contacts-cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* footer */
+.footer{border-top:1px solid var(--line);background:var(--surface);padding:40px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.footer-inner .brand{font-size:20px}
+
+@media(max-width:1040px){
+  .nav,.header-phone,.header-cta{display:none}
+  .burger{display:flex;margin-left:auto}
+  .nav.nav--open{display:flex;position:absolute;top:var(--header-h);left:0;right:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 20px 20px;margin-left:0}
+  .nav.nav--open a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--text)}
+  .nav.nav--open .m-phone{display:block;font-family:'Oswald',sans-serif;font-size:24px;color:var(--accent);padding-top:16px;border:none}
+  .nav.nav--open .btn{margin-top:16px;width:100%}
+}
+@media(min-width:1041px){.nav .m-phone,.nav .btn{display:none}}
+@media(max-width:860px){
+  .adv-grid,.svc-grid,.proc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contacts-grid{grid-template-columns:1fr}
+  .about-media{order:-1}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gal-item.wide{grid-column:span 2}
+}
+@media(max-width:560px){
+  .stats-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
+  .adv-grid,.svc-grid,.proc-grid,.pal-grid,.promo-grid{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1;min-width:0}
+  .gal-item.wide{grid-column:span 2;aspect-ratio:16/10}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand">Ин<b>Колор</b><span>IN·COLOUR</span></a>
+    <nav class="nav" aria-label="Основная навигация" id="nav">
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#process">Технология</a>
+      <a href="#colors">Цвета</a>
+      <a href="#prices">Цены</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78314238482" class="m-phone">+7 (831) 423-84-82</a>
+      <a href="#contacts" class="btn btn-primary">Записаться</a>
+    </nav>
+    <div class="header-phone">
+      <small>Запись и консультация</small>
+      <a href="tel:+78314238482">+7 (831) 423-84-82</a>
+    </div>
+    <a href="#contacts" class="btn btn-primary header-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/hero.jpg" alt="Колёсный диск после полимерно-порошковой окраски в два цвета" fetchpriority="high" onerror="this.style.opacity='0'">
+  </div>
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород, ул. Деловая, 7</p>
+    <h1>Порошковая окраска<br><em>колёсных дисков</em></h1>
+    <p class="hero-sub">Полный комплекс: реставрация, полимерно-порошковая покраска, алмазная проточка, правка и шиномонтаж. Более 200 цветов RAL, металлики и хамелеоны. Гарантия на покрытие.</p>
+    <div class="hero-actions">
+      <a href="#contacts" class="btn btn-primary">Рассчитать окраску</a>
+      <a href="#works" class="btn btn-outline">Наши работы</a>
+    </div>
+    <div class="hero-tags">
+      <span>⚡ Экспресс за 11 часов</span>
+      <span>🅿️ Бесплатная стоянка</span>
+      <span>🛡️ Гарантия качества</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-inner">
+    <div class="stat"><b>200+</b><span>цветов по RAL</span></div>
+    <div class="stat"><b>11 ч</b><span>экспресс-окраска</span></div>
+    <div class="stat"><b>до 22"</b><span>шиномонтаж</span></div>
+    <div class="stat"><b>10 лет</b><span>опыта мастеров</span></div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="about">
+  <div class="container">
+    <p class="eyebrow">Почему ИнКолор</p>
+    <h2>Диски «под ключ»<br>за один визит</h2>
+    <p class="lead">Оставляете автомобиль на нашей бесплатной охраняемой стоянке — забираете на следующий день с окрашенными, отбалансированными и установленными колёсами. Пескоструй, сварка, правка, покраска и шиномонтаж — всё на одной площадке.</p>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-ico">🎨</div>
+        <h3>Полимерно-порошковое покрытие</h3>
+        <p>Глубокая адгезия к металлу, стойкость к сколам и коррозии, окрашивание в 4–5 слоёв без потери прочности — в разы долговечнее жидкой краски.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">⚙️</div>
+        <h3>Полный цикл на месте</h3>
+        <p>Абразивоструйная очистка, газодинамическое напыление, правка, алмазная проточка на ЧПУ и шиномонтаж — не нужно возить диски по разным сервисам.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">⚡</div>
+        <h3>Экспресс за 11 часов</h3>
+        <p>Отточенный технологический процесс позволяет выполнить весь спектр работ в кратчайшие сроки без потери качества — проверено годами.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🅿️</div>
+        <h3>Стоянка и тёплый бокс</h3>
+        <p>Автомобиль на время окраски бесплатно остаётся на подпорках в отапливаемом боксе под видеонаблюдением.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🏭</div>
+        <h3>Итальянское оборудование</h3>
+        <p>Шиномонтаж на станках Sice и Cemb, правка литых и кованых дисков на стендах Сибек. Материалы Maruni, Tip-Top, Loctite.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico">🛡️</div>
+        <h3>Гарантия на покрытие</h3>
+        <p>Даём гарантию на порошковую окраску. Каждый диск проходит предварительную подготовку в пескоструйной камере.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background:var(--surface-2)">
+  <div class="container">
+    <p class="eyebrow">Услуги</p>
+    <h2>Весь спектр работ<br>с дисками и металлом</h2>
+    <div class="svc-grid">
+      <div class="svc-card" data-n="01">
+        <h3>Полимерно-порошковая окраска</h3>
+        <p>Окраска с гарантией: более 200 цветов RAL, металлики, хамелеоны, эффекты Prisma и Candy, глянцевые и суперматовые лаки.</p>
+        <span class="price">Комбинированная и в 2 цвета</span>
+      </div>
+      <div class="svc-card" data-n="02">
+        <h3>Пескоструйная очистка</h3>
+        <p>Абразивоструйное удаление старой краски и следов коррозии. Создаёт шероховатую поверхность и усиливает адгезию нового покрытия.</p>
+        <span class="price">Подготовка перед покраской</span>
+      </div>
+      <div class="svc-card" data-n="03">
+        <h3>Алмазная проточка</h3>
+        <p>Diamond Cut на станке ЧПУ до зеркального блеска. Сканируем профиль диска и восстанавливаем заводскую риску с последующей защитой лаком.</p>
+        <span class="price">Восстановление заводского вида</span>
+      </div>
+      <div class="svc-card" data-n="04">
+        <h3>Газодинамика и аргон</h3>
+        <p>Газодинамическое напыление алюминия и аргонная сварка: устранение трещин, разрывов, сколов и наплавка утраченных частей без перегрева металла.</p>
+        <span class="price">Реставрация повреждений</span>
+      </div>
+      <div class="svc-card" data-n="05">
+        <h3>Правка дисков</h3>
+        <p>Восстановление геометрии литых и кованых дисков на гидравлических стендах Сибек. Работу выполняет специалист со стажем более 10 лет.</p>
+        <span class="price">Литые и кованые</span>
+      </div>
+      <div class="svc-card" data-n="06">
+        <h3>Аквабластинг и мото</h3>
+        <p>AquaBlasting — бережная очистка поверхностей. Красим и обслуживаем мотодиски, бампера, суппорта, детали обвеса и другой металл.</p>
+        <span class="price">Металл, обвес, мото</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS / GALLERY -->
+<section class="section" id="works">
+  <div class="container">
+    <p class="eyebrow">Наши работы</p>
+    <h2>Портфолио: до и после</h2>
+    <p class="lead">Реальные диски наших клиентов — оригинальные заводские цвета, алмазная проточка и комбинированная окраска в два цвета.</p>
+    <div class="gallery">
+      <div class="gal-item wide">
+        <img src="assets/work-1.jpg" alt="Диск, окрашенный в чёрный глянец с золотыми спицами" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Комбинированная окраска · чёрный + золото</span>
+      </div>
+      <div class="gal-item">
+        <img src="assets/work-2.jpg" alt="Диск с алмазной проточкой в тёмно-синем цвете" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Алмазная проточка</span>
+      </div>
+      <div class="gal-item">
+        <img src="assets/work-3.jpg" alt="Диск Jaguar в цвете графит-металлик" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Графит-металлик</span>
+      </div>
+      <div class="gal-item">
+        <img src="assets/work-4.jpg" alt="Пара дисков после алмазной проточки в цвете тёмное серебро" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Diamond Cut · тёмное серебро</span>
+      </div>
+      <div class="gal-item">
+        <img src="assets/work-5.jpg" alt="Восстановленный диск Mercedes в серебристом цвете" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Оригинальный заводской цвет</span>
+      </div>
+      <div class="gal-item">
+        <img src="assets/work-6.jpg" alt="Комплект кованых дисков в цвете Gun Metal" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Кованые · Gun Metal</span>
+      </div>
+      <div class="gal-item wide">
+        <img src="assets/work-7.jpg" alt="Ассортимент окрашенных дисков разных цветов" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+        <span class="gal-cap">Чёрный мат, белый, полировка — на любой вкус</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process" style="background:var(--surface-2)">
+  <div class="container">
+    <p class="eyebrow">Технология</p>
+    <h2>6 этапов окраски<br>по технологии</h2>
+    <p class="lead">Каждый диск проходит полный технологический цикл. Полимеризация покрытия идёт в печи при 170–200 °C — покрытие набирает максимальную прочность.</p>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <h3>Механическая подготовка</h3>
+        <p>Абразивоструйная очистка от старого ЛКП и коррозии. Бережный режим специально для деликатных колёсных дисков.</p>
+      </div>
+      <div class="proc-step">
+        <h3>Газодинамическое напыление</h3>
+        <p>Выравнивание вмятин, удаление сколов и заводского брака литья напылением алюминия без критического нагрева металла.</p>
+      </div>
+      <div class="proc-step">
+        <h3>Химическая подготовка</h3>
+        <p>Антикоррозийная обработка (хроматирование) — тончайший защитный слой — и обязательное обезжиривание поверхности.</p>
+      </div>
+      <div class="proc-step">
+        <h3>Порошковый грунт</h3>
+        <p>Адгезионный грунт наносится на всю поверхность: усиливает сцепление краски и выступает выравнивающим слоем.</p>
+      </div>
+      <div class="proc-step">
+        <h3>Порошковая окраска</h3>
+        <p>Электростатическое нанесение краски: диск заряжается «плюсом», порошок «минусом» — равномерное покрытие и полимеризация в печи.</p>
+      </div>
+      <div class="proc-step">
+        <h3>Лак и полимеризация</h3>
+        <p>Финишный глянцевый или матовый порошковый лак и повторный обжиг. Итог — прочное, стойкое к сколам покрытие.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section class="section" id="colors">
+  <div class="container">
+    <p class="eyebrow">Цветовая гамма</p>
+    <h2>Более 200 цветов<br>и спецэффектов</h2>
+    <p class="lead">Классической палитры RAL мало — мы находим решения у разных производителей и разрабатываем собственные процессы окраски. 90% цветов всегда в наличии.</p>
+    <div class="pal-grid">
+      <div class="pal-card">
+        <h3>Каталог RAL</h3>
+        <span class="cnt">200+ оттенков</span>
+        <div class="swatches"><i style="background:#c0392b"></i><i style="background:#2980b9"></i><i style="background:#27ae60"></i><i style="background:#f1c40f"></i><i style="background:#ecf0f1"></i><i style="background:#2c3e50"></i></div>
+        <p>Более 200 неметалликов. Любой цвет можно сделать матовым или супер-матовым.</p>
+      </div>
+      <div class="pal-card">
+        <h3>Металлики</h3>
+        <span class="cnt">Серия «Спец»</span>
+        <div class="swatches"><i style="background:#4a4a4a"></i><i style="background:#8a8f98"></i><i style="background:#3b3b42"></i><i style="background:#b8860b"></i><i style="background:#6b6f76"></i><i style="background:#c9c9cc"></i></div>
+        <p>Чёрное серебро, Графит, Мокрый асфальт, Млечный путь, Бархат, Муар, Золото.</p>
+      </div>
+      <div class="pal-card">
+        <h3>Спецэффекты</h3>
+        <span class="cnt">Candy · Prisma · Хром</span>
+        <div class="swatches"><i style="background:linear-gradient(135deg,#e0e0e0,#a0a0a0)"></i><i style="background:#7cff2a"></i><i style="background:#ff2ad4"></i><i style="background:#00e5ff"></i><i style="background:#ffcf40"></i><i style="background:#ff6a00"></i></div>
+        <p>Алмазная крошка, Gun Metal, ХРОМ, Кислотный лайм, серия Флюр и Candy Colors.</p>
+      </div>
+      <div class="pal-card">
+        <h3>Хамелеоны и оригинал</h3>
+        <span class="cnt">Chameleon · Salamandra</span>
+        <div class="swatches"><i style="background:linear-gradient(135deg,#8e44ad,#16a085)"></i><i style="background:linear-gradient(135deg,#2980b9,#8e44ad)"></i><i style="background:#b8860b"></i><i style="background:#8c6d3f"></i><i style="background:linear-gradient(135deg,#16a085,#f39c12)"></i></div>
+        <p>Salamandra-Gold, Salamandra-Bronze, серия Chameleon и оригинальные заводские цвета.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + SHOP PHOTO -->
+<section class="section" id="company" style="background:var(--surface-2)">
+  <div class="container about-grid">
+    <div class="about-text">
+      <p class="eyebrow">О компании</p>
+      <h2>ИнКолор Сервис</h2>
+      <p class="lead">Мы специализируемся на ремонте, реставрации и порошковой окраске колёсных дисков, а также красим изделия из металла — от элементов силового обвеса до мото-техники. Все изделия проходят предварительную подготовку в пескоструйной или дробеструйной камере.</p>
+      <ul class="about-list">
+        <li><span>Стационарный шиномонтаж: монтаж до 22", RunFlat, низкий профиль, накачка азотом, балансировка</span></li>
+        <li><span>Ремонт проколов, боковых порезов, удаление грыж, аргонная сварка</span></li>
+        <li><span>Обслуживание мотоколёс с адаптерами Haweka</span></li>
+        <li><span>Расходники Maruni (Япония), Tip-Top и Loctite (Германия), Polenghi (Италия)</span></li>
+      </ul>
+    </div>
+    <div class="about-media">
+      <img src="assets/shop.jpg" alt="Производственная площадка ИнКолор с автомобилями клиентов" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="section" id="prices">
+  <div class="container">
+    <p class="eyebrow">Цены</p>
+    <h2>Шиномонтаж окрашенных дисков</h2>
+    <p class="lead">Пакетная стоимость с учётом скидки 20% для дисков, окрашенных у нас. В пакет входят демонтаж и монтаж 4 колёс и 4 шин, балансировка и 4 вентиля.</p>
+    <div class="price-wrap">
+      <table class="price">
+        <thead>
+          <tr><th>Тип авто</th><th>Диаметр</th><th>Пакет услуг</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Легковая</td><td>R13–14</td><td>2 000 ₽</td></tr>
+          <tr><td>Легковая</td><td>R15–16</td><td>2 500 ₽</td></tr>
+          <tr><td>Легковая</td><td>R17–18</td><td>3 100 ₽</td></tr>
+          <tr><td>Легковая</td><td>R19–20</td><td>3 900 ₽</td></tr>
+          <tr><td>Легковая</td><td>R21–22</td><td>5 200 ₽</td></tr>
+          <tr><td>Джип</td><td>R15–16</td><td>2 600 ₽</td></tr>
+          <tr><td>Джип</td><td>R17–18</td><td>3 800 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">Предварительная стоимость без учёта самоклеек. Пакет не распространяется на низкий профиль и RunFlat. Стоимость покраски рассчитывается индивидуально — уточняйте по телефону <a href="tel:+78314238482" style="color:var(--accent)">+7 (831) 423-84-82</a>.</p>
+
+    <!-- PROMO / discounts -->
+    <div class="promo">
+      <p class="eyebrow">Скидки постоянным клиентам</p>
+      <div class="promo-grid">
+        <div class="promo-item"><b>10%</b><span>на каждый 2-й комплект дисков</span></div>
+        <div class="promo-item"><b>35%</b><span>на каждый 5-й комплект дисков</span></div>
+        <div class="promo-item"><b>15%</b><span>именная дисконтная карта после 5-го заказа</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts" style="background:var(--surface-2)">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как нас найти</h2>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row">
+          <span class="ico">📍</span>
+          <span class="txt"><b>Адрес</b>г. Нижний Новгород, ул. Деловая, д. 7 лит. П</span>
+        </div>
+        <div class="info-row">
+          <span class="ico">📞</span>
+          <span class="txt"><b>Телефоны</b>
+            <a href="tel:+78314238482">+7 (831) 423-84-82</a><br>
+            <a href="tel:+78314234292">+7 (831) 423-42-92</a><br>
+            <a href="tel:+78314236463">+7 (831) 423-64-63</a>
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="ico">💬</span>
+          <span class="txt"><b>WhatsApp</b>
+            <a href="https://api.whatsapp.com/send/?phone=79290536463">+7 (929) 053-64-63</a><br>
+            <a href="https://api.whatsapp.com/send/?phone=79308171720">+7 (930) 817-17-20</a>
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="ico">✉️</span>
+          <span class="txt"><b>Почта</b><a href="mailto:incolour@bk.ru">incolour@bk.ru</a></span>
+        </div>
+        <div class="info-row">
+          <span class="ico">🕐</span>
+          <span class="txt"><b>Режим работы</b>Пн–Пт: 9:00–18:00<br>Сб: 10:00–13:00 (по записи)<br>Вс: выходной</span>
+        </div>
+        <div class="contacts-cta">
+          <a href="tel:+78314238482" class="btn btn-primary">Позвонить</a>
+          <a href="https://api.whatsapp.com/send/?phone=79290536463" class="btn btn-outline">Написать в WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3070187,44.0616748&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="ИнКолор на карте Нижнего Новгорода, ул. Деловая, 7"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">Ин<b>Колор</b></a>
+    <span>ООО «ИнКолор Сервис» · Нижний Новгород, ул. Деловая, 7</span>
+    <span>© 2025 · Порошковая окраска дисков</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

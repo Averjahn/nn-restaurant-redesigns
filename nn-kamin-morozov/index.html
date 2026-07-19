@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Печник Морозов Олег — кладка каминов, печей и барбекю в Нижнем Новгороде</title>
+<meta name="description" content="Мастер-печник Морозов Олег: кладка и облицовка каминов, русских и отопительно-варочных печей, банных печей, барбекю и уличных комплексов в Нижнем Новгороде и области. Индивидуальные проекты, свои материалы, соблюдение пожарных норм. Тел. +7 903 603-76-05.">
+<meta name="theme-color" content="#8a3316">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Печник Морозов Олег — камины, печи, барбекю в Нижнем Новгороде">
+<meta property="og:description" content="Кладка и облицовка каминов, печей и барбекю. Индивидуальные проекты, свои материалы, гарантия качества. Нижний Новгород и область.">
+<meta property="og:image" content="assets/kamin-7.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brick:#8a3316;
+    --fire:#e0611c;
+    --ember:#f08a2b;
+    --wood:#2c1c14;
+    --wood-2:#3d2a1e;
+    --cream:#f6efe6;
+    --cream-2:#efe4d5;
+    --text:#241812;
+    --muted:#6d5a4d;
+    --line:#e2d4c2;
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:26px;
+    --container:1160px;
+    --gap:24px;
+    --shadow:0 18px 44px rgba(44,28,20,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{
+    margin:0;font-family:'PT Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--text);background:var(--cream);line-height:1.6;
+    font-size:clamp(15px,1.5vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Prata',Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+  h1{font-size:clamp(30px,6vw,60px)}
+  h2{font-size:clamp(26px,4.4vw,44px)}
+  h3{font-size:clamp(19px,2.4vw,24px)}
+  p{margin:0 0 1em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+  .section{padding:clamp(56px,8vw,100px) 0}
+  .eyebrow{font-family:'PT Sans',sans-serif;text-transform:uppercase;letter-spacing:.22em;
+    font-size:13px;font-weight:700;color:var(--fire);margin:0 0 14px}
+  .lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:640px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 28px;border-radius:999px;font-weight:700;font-size:16px;
+    cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap}
+  .btn-primary{background:var(--fire);color:#fff}
+  .btn-primary:hover{background:#c8500f}
+  .btn-outline{background:transparent;border-color:currentColor;color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .btn-ghost{background:#fff;color:var(--brick);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--fire);color:var(--fire)}
+  :focus-visible{outline:2px solid var(--fire);outline-offset:2px}
+
+  /* HEADER */
+  .site-header{position:sticky;top:0;z-index:100;background:rgba(44,28,20,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .header-inner{display:flex;align-items:center;gap:16px;min-height:66px}
+  .brand{display:flex;flex-direction:column;line-height:1.1;flex-shrink:0;color:#fff}
+  .brand b{font-family:'Prata',serif;font-size:19px;white-space:nowrap}
+  .brand span{font-size:12px;color:var(--ember);letter-spacing:.04em;white-space:nowrap}
+  .nav{display:flex;gap:26px;margin-left:auto}
+  .nav a{color:#f1e6da;font-weight:700;font-size:15px;transition:.2s}
+  .nav a:hover{color:var(--ember)}
+  .header-phone{color:#fff;font-weight:700;white-space:nowrap;font-size:15px}
+  .header-phone span{color:var(--ember)}
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;
+    width:44px;height:44px;background:none;border:0;cursor:pointer;margin-left:auto}
+  .burger span{display:block;height:3px;width:26px;background:#fff;border-radius:2px;transition:.25s}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+  @media(max-width:1040px){
+    .nav{position:fixed;inset:66px 0 auto 0;flex-direction:column;gap:0;
+      background:var(--wood);padding:8px 20px 24px;margin:0;
+      transform:translateY(-140%);transition:.3s;box-shadow:var(--shadow);
+      max-height:calc(100vh - 66px);overflow-y:auto}
+    .nav.nav--open{transform:translateY(0)}
+    .nav a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:17px}
+    .nav .m-phone{color:var(--ember);font-size:22px;font-family:'Prata',serif;border:0;padding-top:20px}
+    .nav .m-cta{margin-top:16px;border:0}
+    .header-phone{display:none}
+    .burger{display:flex}
+  }
+
+  /* HERO */
+  .hero{position:relative;min-height:min(90svh,720px);display:flex;align-items:flex-end;
+    color:#fff;background:#1a110b}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,12,7,.55) 0%,rgba(20,12,7,.35) 40%,rgba(20,12,7,.9) 100%),
+      url(assets/kamin-7.jpg) center/cover no-repeat}
+  .hero-inner{position:relative;z-index:1;padding:60px 0 clamp(48px,7vw,90px);max-width:760px}
+  .hero .eyebrow{color:var(--ember)}
+  .hero h1{margin-bottom:18px}
+  .hero p{color:#f0e5d8;font-size:clamp(16px,2vw,20px);max-width:600px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;
+    padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
+  .hero-badges div{min-width:0}
+  .hero-badges b{display:block;font-family:'Prata',serif;font-size:26px;color:var(--ember)}
+  .hero-badges span{font-size:13px;color:#e6d8c8}
+
+  /* FEATURES */
+  .features{background:var(--cream-2)}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:44px}
+  .feat{background:#fff;border-radius:var(--radius-md);padding:28px 24px;border:1px solid var(--line);
+    box-shadow:0 6px 18px rgba(44,28,20,.05)}
+  .feat .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:rgba(224,97,28,.12);font-size:26px;margin-bottom:16px}
+  .feat h3{font-size:19px;margin-bottom:8px}
+  .feat p{color:var(--muted);margin:0;font-size:15px}
+
+  /* SERVICES */
+  .serv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:44px}
+  .serv{position:relative;border-radius:var(--radius-md);overflow:hidden;background:var(--wood);
+    color:#fff;min-height:290px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
+  .serv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    transition:.4s;opacity:.86}
+  .serv:hover img{transform:scale(1.05);opacity:1}
+  .serv .ov{position:relative;z-index:1;width:100%;padding:22px;
+    background:linear-gradient(180deg,transparent,rgba(20,12,7,.9))}
+  .serv h3{margin-bottom:6px}
+  .serv p{margin:0;font-size:14px;color:#e8dccd}
+  .serv.noimg img{display:none}
+  .serv.noimg{background:linear-gradient(135deg,var(--brick),var(--wood))}
+
+  /* PORTFOLIO */
+  .portfolio{background:var(--wood);color:#fff}
+  .portfolio .eyebrow{color:var(--ember)}
+  .portfolio .lead{color:#dccebe}
+  .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:44px}
+  .gallery figure{margin:0;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:1;background:#241812}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery .tall{grid-row:span 2;aspect-ratio:auto}
+
+  /* MASTER */
+  .master-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
+  .master-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:4/5;background:var(--cream-2)}
+  .master-photo img{width:100%;height:100%;object-fit:cover}
+  .master-text .sign{margin-top:22px;font-family:'Prata',serif;font-size:22px;color:var(--brick)}
+  .master-text .sign span{display:block;font-family:'PT Sans';font-size:14px;color:var(--muted);font-weight:400}
+
+  /* STEPS */
+  .steps{background:var(--cream-2)}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-top:44px;counter-reset:s}
+  .step{background:#fff;border-radius:var(--radius-md);padding:28px 24px;border:1px solid var(--line);position:relative}
+  .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    font-family:'Prata',serif;font-size:30px;color:var(--ember);display:block;margin-bottom:12px}
+  .step h3{font-size:18px;margin-bottom:6px}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+
+  /* CONTACTS */
+  .contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin-top:44px}
+  .contacts-info{background:var(--wood);color:#fff;border-radius:var(--radius-md);padding:clamp(26px,4vw,40px);
+    display:flex;flex-direction:column;gap:20px}
+  .contacts-info .row{display:flex;gap:14px;align-items:flex-start;min-width:0;overflow-wrap:anywhere}
+  .contacts-info .row .ic{font-size:22px;flex-shrink:0;line-height:1.3}
+  .contacts-info .lbl{font-size:13px;color:var(--ember);text-transform:uppercase;letter-spacing:.08em}
+  .contacts-info a{color:#fff;font-weight:700}
+  .contacts-info a:hover{color:var(--ember)}
+  .contacts-info .big{font-family:'Prata',serif;font-size:clamp(22px,3vw,28px)}
+  .map-wrap{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow);min-height:380px}
+  .map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+  .socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+  .socials a{background:rgba(255,255,255,.1);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:700}
+  .socials a:hover{background:var(--fire);color:#fff}
+
+  /* FOOTER */
+  .footer{background:#1a110b;color:#cbb8a6;padding:34px 0}
+  .footer-inner{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;align-items:center}
+  .footer b{color:#fff;font-family:'Prata',serif;font-size:17px}
+  .footer a{color:var(--ember);font-weight:700}
+
+  @media(max-width:900px){
+    .feat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .serv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .master-grid,.contacts-grid{grid-template-columns:1fr}
+    .master-photo{max-width:440px;order:-1}
+  }
+  @media(max-width:560px){
+    .feat-grid,.serv-grid,.steps-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .gallery .tall{grid-row:auto}
+    .hero-actions .btn{flex:1 1 100%}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <b>Морозов Олег</b>
+      <span>Печник · Нижний Новгород</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services" class="nav-link">Виды работ</a>
+      <a href="#portfolio" class="nav-link">Портфолио</a>
+      <a href="#master" class="nav-link">О мастере</a>
+      <a href="#steps" class="nav-link">Этапы</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+      <a href="tel:+79036037605" class="m-phone nav-link">+7 903 603-76-05</a>
+      <a href="#contacts" class="btn btn-primary m-cta nav-link">Оставить заявку</a>
+    </nav>
+    <a href="tel:+79036037605" class="header-phone">📞 <span>+7 903 603-76-05</span></a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород и область</p>
+    <h1>Камины, печи и барбекю ручной кладки</h1>
+    <p>Мастер-печник Морозов Олег. Проектирую, кладу и облицовываю печи любых модификаций — от русской печи до каминов и уличных комплексов на дровах. Веду вас от первого звонка до первого огня.</p>
+    <div class="hero-actions">
+      <a href="#contacts" class="btn btn-primary">Обсудить проект</a>
+      <a href="#portfolio" class="btn btn-outline">Смотреть работы</a>
+    </div>
+    <div class="hero-badges">
+      <div><b>15+</b><span>лет за кладкой</span></div>
+      <div><b>8</b><span>видов печей и каминов</span></div>
+      <div><b>100%</b><span>индивидуальные проекты</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section features">
+  <div class="container">
+    <p class="eyebrow">Почему ко мне</p>
+    <h2>Мастер, а не формальный исполнитель</h2>
+    <p class="lead">Каждая печь — это автор-профессионал на всех этапах: проектирование, подбор материалов, строительство и первая растопка.</p>
+    <div class="feat-grid">
+      <div class="feat"><div class="ic">🧱</div><h3>Только качественные материалы</h3><p>Печной кирпич и фурнитуру подбираю сам, рассчитываю и организую доставку на объект.</p></div>
+      <div class="feat"><div class="ic">🔥</div><h3>Соблюдение пожарных норм</h3><p>Кладка дымоходов и топок по правилам — безопасная эксплуатация на десятилетия.</p></div>
+      <div class="feat"><div class="ic">📐</div><h3>Индивидуальные проекты</h3><p>Печь под ваш дом, интерьер и задачи — отопление, готовка, атмосфера или всё сразу.</p></div>
+      <div class="feat"><div class="ic">🚗</div><h3>Выезд на консультацию</h3><p>Приеду на объект в Нижнем Новгороде и области, оценю условия и предложу решение.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <p class="eyebrow">Виды работ</p>
+    <h2>Что я кладу и облицовываю</h2>
+    <p class="lead">Полный цикл печных работ — от классической русской печи до современных каминов и уличных зон отдыха.</p>
+    <div class="serv-grid">
+      <div class="serv"><img src="assets/kamin-1.jpg" alt="Камин ручной кладки в интерьере дома" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Камины</h3><p>Открытые и закрытые топки, облицовка кирпичом и камнем.</p></div></div>
+      <div class="serv"><img src="assets/russkaya-1.jpg" alt="Русская печь с лежанкой" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Русские печи</h3><p>Классическая печь с лежанкой, горнилом и варочной плитой.</p></div></div>
+      <div class="serv"><img src="assets/shvedka-1.jpg" alt="Отопительно-варочная печь Шведка" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Отопительно-варочные</h3><p>«Шведка» и «Голландка» — тепло и готовка в одной печи.</p></div></div>
+      <div class="serv"><img src="assets/bannaya-1.jpg" alt="Банная печь ручной кладки" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Банные печи</h3><p>Кирпичные каменки для лёгкого пара и долгого жара.</p></div></div>
+      <div class="serv"><img src="assets/barbecue-1.jpg" alt="Уличный комплекс на дровах с барбекю" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Барбекю и уличные комплексы</h3><p>Мангал, казан, коптильня и печь под навесом на участке.</p></div></div>
+      <div class="serv"><img src="assets/kaminopech-1.jpg" alt="Каминопечь и печь-камин" loading="lazy" decoding="async" onerror="this.closest('.serv').classList.add('noimg')"><div class="ov"><h3>Печи-камины · дымоходы · облицовка</h3><p>Каминопечи, кладка дымоходов и облицовка изразцами и камнем.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <p class="eyebrow">Портфолио</p>
+    <h2>Мои работы</h2>
+    <p class="lead">Реальные объекты в домах и на участках Нижегородской области. Каждый камин и печь сложены вручную.</p>
+    <div class="gallery">
+      <figure class="tall"><img src="assets/kamin-6.jpg" alt="Угловой камин из кирпича в загородном доме" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kamin-2.jpg" alt="Камин с топкой и облицовкой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kaminopech-2.jpg" alt="Каминопечь в интерьере" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/barbecue-3.jpg" alt="Уличный комплекс на дровах с барбекю" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kamin-4.jpg" alt="Кирпичный камин ручной кладки" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure class="tall"><img src="assets/russkaya-2.jpg" alt="Русская печь с лежанкой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/shvedka-2.jpg" alt="Отопительно-варочная печь Шведка" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/barbecue-4.jpg" alt="Барбекю-комплекс из кирпича на участке" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kamin-8.jpg" alt="Камин с каминной полкой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kaminopech-4.jpg" alt="Печь-камин в доме" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/barbecue-5.jpg" alt="Уличная печь с мангалом и казаном" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/russkaya-4.jpg" alt="Русская печь, облицовка" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/kamin-5.jpg" alt="Камин с фигурной кладкой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/shvedka-4.jpg" alt="Печь Шведка с варочной плитой" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/barbecue-6.jpg" alt="Барбекю-зона под навесом" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+      <figure><img src="assets/work-9.jpg" alt="Печь ручной кладки" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- MASTER -->
+<section class="section" id="master">
+  <div class="container master-grid">
+    <div class="master-text">
+      <p class="eyebrow">О мастере</p>
+      <h2>Морозов Олег</h2>
+      <p>Печник из Нижнего Новгорода. Кладу и облицовываю камины, печи и барбекю по всей области. Для меня печь — это не просто заказ, а живой очаг, вокруг которого собирается семья.</p>
+      <p>Я веду проект целиком: от первого звонка и выезда на объект до расчёта материалов, кладки и первой растопки. Работаю честно, показываю каждый этап и отвечаю за результат. Только качественные материалы, аккуратная кладка и обязательное соблюдение пожарных норм.</p>
+      <p class="sign">Морозов Олег<span>Мастер-печник, Нижний Новгород</span></p>
+    </div>
+    <div class="master-photo">
+      <img src="assets/work-7.jpg" alt="Готовая печь ручной кладки мастера Морозова Олега" loading="lazy" decoding="async" onerror="this.closest('.master-photo').style.background='linear-gradient(135deg,var(--brick),var(--wood))'">
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section steps" id="steps">
+  <div class="container">
+    <p class="eyebrow">Как мы работаем</p>
+    <h2>Этапы работы</h2>
+    <div class="steps-grid">
+      <div class="step"><h3>Звонок и выезд</h3><p>Обсуждаем задачу, приезжаю на объект, оцениваю условия и место под печь.</p></div>
+      <div class="step"><h3>Проект и смета</h3><p>Готовлю индивидуальный проект, рассчитываю материалы и честную стоимость.</p></div>
+      <div class="step"><h3>Материалы и кладка</h3><p>Заказываю и привожу кирпич и фурнитуру, кладу печь с соблюдением норм.</p></div>
+      <div class="step"><h3>Растопка и сдача</h3><p>Проверяю тягу, провожу первую растопку и передаю готовую печь вам.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Работаем по Нижнему Новгороду и области</h2>
+    <p class="lead">Позвоните или напишите — обсудим ваш камин, печь или барбекю и назначим выезд.</p>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="row"><span class="ic">📞</span><div><div class="lbl">Телефон</div><a href="tel:+79036037605" class="big">+7 903 603-76-05</a></div></div>
+        <div class="row"><span class="ic">✉️</span><div><div class="lbl">Почта</div><a href="mailto:morozoff.v2012@yandex.ru">morozoff.v2012@yandex.ru</a></div></div>
+        <div class="row"><span class="ic">📍</span><div><div class="lbl">Территория работ</div><span>Нижний Новгород и Нижегородская область. Выезд на объект.</span></div></div>
+        <div class="row"><span class="ic">💬</span><div><div class="lbl">Соцсети</div>
+          <div class="socials">
+            <a href="https://vk.com/id62915138" target="_blank" rel="noopener">ВКонтакте</a>
+            <a href="https://vk.com/club116317576" target="_blank" rel="noopener">Группа ВК</a>
+          </div>
+        </div></div>
+        <a href="tel:+79036037605" class="btn btn-primary" style="margin-top:6px">Позвонить мастеру</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3264816,44.0051395&z=11&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта: Нижний Новгород и область"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span><b>Печник Морозов Олег</b> · камины, печи, барбекю</span>
+    <span>© 2025 · Нижний Новгород и область · <a href="tel:+79036037605">+7 903 603-76-05</a></span>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('.nav-link').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+</script>
+</body>
+</html>

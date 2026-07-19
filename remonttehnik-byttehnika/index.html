@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>РемонтТехник НН — ремонт бытовой техники на дому в Нижнем Новгороде</title>
+<meta name="description" content="Ремонт бытовой техники на дому в Нижнем Новгороде: стиральные и посудомоечные машины, холодильники, телевизоры, духовые шкафы. Бесплатный выезд мастера и диагностика, гарантия до 1 года. Работаем с 08:00 до 22:00 без выходных. Тел. +7 (831) 291-53-28.">
+<meta name="theme-color" content="#0b4fc4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="РемонтТехник НН — ремонт бытовой техники на дому">
+<meta property="og:description" content="Выезд мастера и диагностика бесплатно, гарантия до 1 года. Нижний Новгород, Бульвар Мира, 12.">
+<meta property="og:image" content="assets/remont-tehniki-nnovgorod2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0b4fc4;
+  --primary-dark:#083a91;
+  --primary-light:#e8f0fe;
+  --accent:#ff7a00;
+  --accent-dark:#e26a00;
+  --bg:#ffffff;
+  --surface:#f4f7fb;
+  --text:#141b2e;
+  --muted:#5b6577;
+  --border:#e2e8f2;
+  --ok:#12a150;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --container:1140px;
+  --gap:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;
+  font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Montserrat',Georgia,serif;line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(30px,5.4vw,56px);font-weight:800}
+h2{font-size:clamp(24px,4vw,40px);font-weight:700}
+h3{font-size:clamp(18px,2.4vw,22px);font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,86px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--primary);
+  background:var(--primary-light);padding:7px 14px;border-radius:100px;font-size:14px;margin-bottom:18px}
+.center{text-align:center}
+.lead{color:var(--muted);max-width:640px;margin:0 auto 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;
+  font-family:'Montserrat',sans-serif;padding:14px 26px;border-radius:100px;cursor:pointer;
+  border:2px solid transparent;transition:.18s;font-size:16px;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.btn-outline:hover{background:rgba(255,255,255,.14)}
+.btn-ghost{background:#fff;color:var(--primary);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--primary)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:18px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;color:var(--text)}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--primary);color:#fff;
+  display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.brand-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;white-space:nowrap;line-height:1}
+.brand-text small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.3px}
+.nav{display:flex;align-items:center;gap:24px;margin-left:auto}
+.nav a{color:var(--text);font-weight:600;font-size:15px}
+.nav a:hover{color:var(--primary)}
+.nav .nav-phone,.nav .btn{display:none}
+.header-phone{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;white-space:nowrap}
+.header-phone a{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--text)}
+.header-phone span{font-size:12px;color:var(--muted)}
+.header-cta{flex-shrink:0}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;border:1px solid var(--border);
+  border-radius:10px;background:#fff;cursor:pointer;padding:0;align-items:center;justify-content:center;flex-shrink:0}
+.burger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.2s}
+
+/* HERO */
+.hero{position:relative;color:#fff;overflow:hidden;
+  background:linear-gradient(120deg,#083a91 0%,#0b4fc4 55%,#1466e0 100%)}
+.hero::after{content:"";position:absolute;inset:0;
+  background:url("assets/remont-tehniki-nnovgorod2.jpg") center/cover no-repeat;opacity:.16;mix-blend-mode:luminosity}
+.hero-inner{position:relative;z-index:1;padding:clamp(56px,9vw,110px) 0;max-width:760px}
+.hero .eyebrow{background:rgba(255,255,255,.16);color:#fff}
+.hero h1{color:#fff}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.9);max-width:600px;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:32px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:22px}
+.hero-badge{display:flex;align-items:center;gap:9px;font-weight:600;font-size:15px;min-width:0}
+.hero-badge b{font-family:'Montserrat',sans-serif}
+
+/* ADVANTAGES */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.adv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:28px 24px;min-width:0}
+.adv-ico{width:52px;height:52px;border-radius:14px;background:var(--primary-light);color:var(--primary);
+  display:grid;place-items:center;font-size:26px;margin-bottom:14px}
+.adv-card h3{margin-bottom:6px}
+.adv-card p{color:var(--muted);margin:0;font-size:15px}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
+  display:flex;flex-direction:column;min-width:0;transition:.18s}
+.svc-card:hover{box-shadow:0 12px 30px rgba(11,79,196,.12);transform:translateY(-3px)}
+.svc-media{aspect-ratio:16/10;background:var(--primary-light);position:relative;overflow:hidden}
+.svc-media img{width:100%;height:100%;object-fit:cover}
+.svc-media.noimg::after{content:"🔧";position:absolute;inset:0;display:grid;place-items:center;font-size:40px}
+.svc-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1;min-width:0}
+.svc-body h3{margin-bottom:6px}
+.svc-body p{color:var(--muted);font-size:14px;margin-bottom:16px;overflow-wrap:anywhere}
+.svc-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.svc-price{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--text)}
+.svc-price small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.svc-link{font-weight:700;color:var(--primary);font-size:14px;white-space:nowrap}
+
+/* STEPS */
+.steps{background:var(--surface)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.step{position:relative;min-width:0}
+.step-num{width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:14px;margin:0}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;min-width:0}
+.about-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.about-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.about-list .chk{color:var(--ok);font-weight:800;flex-shrink:0}
+.about-list span{overflow-wrap:anywhere}
+
+/* CONTACTS */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
+.contacts-info{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:clamp(24px,3vw,34px);min-width:0}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border);min-width:0}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ico{width:42px;height:42px;border-radius:12px;background:var(--primary-light);color:var(--primary);
+  display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.info-row .txt{min-width:0;overflow-wrap:anywhere}
+.info-row .txt b{display:block;font-family:'Montserrat',sans-serif;font-size:12px;text-transform:uppercase;
+  letter-spacing:.5px;color:var(--muted);margin-bottom:2px}
+.info-row .txt a{color:var(--text);font-weight:600;font-size:17px}
+.info-row.hl{background:var(--primary);border-radius:var(--radius-sm);padding:16px 18px;border:none;margin-top:8px}
+.info-row.hl .ico{background:rgba(255,255,255,.2);color:#fff}
+.info-row.hl .txt b{color:rgba(255,255,255,.75)}
+.info-row.hl .txt a{color:#fff}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* FORM CTA band */
+.cta-band{background:linear-gradient(120deg,#083a91,#0b4fc4);color:#fff;border-radius:var(--radius-lg);
+  padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px;margin-top:var(--gap)}
+.cta-band h3{color:#fff;font-size:clamp(20px,3vw,28px);margin:0}
+.cta-band p{margin:6px 0 0;color:rgba(255,255,255,.85)}
+.cta-band .actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* FOOTER */
+.footer{background:#0a1324;color:#c4cde0;padding:44px 0 26px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:var(--gap)}
+.footer h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:15px;margin:0 0 14px}
+.footer a{color:#c4cde0}
+.footer a:hover{color:#fff}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:14px}
+.footer-brand .brand-text{color:#fff}
+.footer-brand p{font-size:14px;color:#93a0bd;margin-top:12px;max-width:320px}
+.footer-bottom{border-top:1px solid #1e2b45;margin-top:32px;padding-top:20px;display:flex;
+  flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:13px;color:#8493b3}
+
+@media(max-width:1040px){
+  .nav,.header-phone,.header-cta{display:none}
+  .burger{display:flex;margin-left:auto}
+  .nav.nav--open{display:flex;position:fixed;inset:66px 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:#fff;padding:12px 20px 22px;border-bottom:1px solid var(--border);margin-left:0;
+    box-shadow:0 16px 30px rgba(0,0,0,.12);max-height:calc(100vh - 66px);overflow-y:auto}
+  .nav.nav--open a{padding:14px 4px;border-bottom:1px solid var(--border);font-size:17px}
+  .nav.nav--open .nav-phone{display:block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--primary);border-bottom:none;padding-top:18px}
+  .nav.nav--open .btn{display:flex;margin-top:14px;width:100%}
+}
+@media(max-width:900px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contacts-grid,.footer-top{grid-template-columns:1fr}
+  .about-media{order:-1}
+}
+@media(max-width:560px){
+  .adv-grid,.svc-grid,.steps-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .cta-band .actions .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="РемонтТехник НН — на главную">
+      <span class="brand-mark" aria-hidden="true">🔧</span>
+      <span class="brand-text">РемонтТехник НН<small>Ремонт бытовой техники</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      <a href="#how">Как работаем</a>
+      <a href="#about">О сервисе</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav-phone" href="tel:+78312915328">+7 (831) 291-53-28</a>
+      <a href="#contacts" class="btn btn-primary">Вызвать мастера</a>
+    </nav>
+    <div class="header-phone">
+      <a href="tel:+78312915328">+7 (831) 291-53-28</a>
+      <span>Ежедневно 08:00–22:00</span>
+    </div>
+    <a href="#contacts" class="btn btn-primary header-cta">Вызвать мастера</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород, Бульвар Мира, 12</p>
+    <h1>Ремонт бытовой техники на дому за один визит</h1>
+    <p class="hero-sub">Чиним стиральные и посудомоечные машины, холодильники, телевизоры, духовые шкафы и другую технику у вас дома. Выезд мастера и диагностика — бесплатно, гарантия до 1 года.</p>
+    <div class="hero-actions">
+      <a href="#contacts" class="btn btn-primary">Вызвать мастера</a>
+      <a href="#services" class="btn btn-outline">Услуги и цены</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">🚚 <span><b>Бесплатный</b> выезд мастера</span></div>
+      <div class="hero-badge">🛡️ <span>Гарантия <b>до 1 года</b></span></div>
+      <div class="hero-badge">⏱️ <span>Работаем <b>08:00–22:00</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="Преимущества">
+  <div class="container">
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">🚚</div>
+        <h3>Выезд на дом бесплатно</h3>
+        <p>Мастер приезжает в удобное время в любой район Нижнего Новгорода и области. Не нужно везти технику в сервис — ремонт прямо у вас дома.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">🔍</div>
+        <h3>Диагностика бесплатно</h3>
+        <p>При согласии на ремонт вызов мастера и диагностика неисправности не будут стоить ни рубля. Вы платите только за работу и запчасти.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">🛡️</div>
+        <h3>Гарантия до 1 года</h3>
+        <p>Гарантийный талон на выполненные работы и заменённые запчасти — от 6 до 12 месяцев. Отвечаем за результат.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">⚡</div>
+        <h3>Срочный ремонт</h3>
+        <p>Опытные мастера устраняют большинство поломок за один визит. Работаем ежедневно с 08:00 до 22:00, без выходных.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">🧰</div>
+        <h3>Оригинальные запчасти</h3>
+        <p>Используем качественные комплектующие и профессиональный инструмент. Диагностика — только квалифицированным мастером.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico" aria-hidden="true">🏅</div>
+        <h3>Опыт с 2012 года</h3>
+        <p>Сервисный центр бытовой техники в Нижнем Новгороде. Тысячи отремонтированной техники всех основных брендов и типов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background:var(--surface)">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow">Услуги и цены</span>
+      <h2>Ремонтируем любую бытовую технику</h2>
+      <p class="lead">Вызов мастера и диагностика при ремонте — бесплатно. Ниже — ориентировочные цены «от»; точную стоимость мастер называет после диагностики на месте.</p>
+    </div>
+    <div class="svc-grid">
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-stiralnyh-mashin.png" alt="Ремонт стиральных машин" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Стиральные машины</h3>
+          <p>Не сливает, не отжимает, не греет воду, шум, ошибки на дисплее — стандартный и крупный ремонт на дому.</p>
+          <div class="svc-foot"><span class="svc-price">от 700 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-posudomoechnyh-mashin.jpg" alt="Ремонт посудомоечных машин" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Посудомоечные машины</h3>
+          <p>Не набирает или не сливает воду, не сушит, течёт, не запускается. Ремонт встроенной и отдельностоящей техники.</p>
+          <div class="svc-foot"><span class="svc-price">от 700 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-holodilnikov.jpg" alt="Ремонт холодильников" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Холодильники</h3>
+          <p>Не морозит или перемораживает, снежная шуба, повышенный шум, вода внутри или снаружи, ошибки.</p>
+          <div class="svc-foot"><span class="svc-price">от 700 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-televizorov.jpg" alt="Ремонт телевизоров" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Телевизоры</h3>
+          <p>Не включается, нет изображения или звука, мигает и гаснет экран, помехи, нет сигнала, не переключает каналы.</p>
+          <div class="svc-foot"><span class="svc-price">от 500 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-kondicionerov.jpg" alt="Ремонт и установка кондиционеров" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Кондиционеры</h3>
+          <p>Ремонт, обслуживание и монтаж сплит-систем. Разборка и сборка внутреннего и наружного блока, заправка.</p>
+          <div class="svc-foot"><span class="svc-price">от 900 ₽<small>монтаж — по расчёту мастера</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-varochnyh-paneley.jpg" alt="Ремонт варочных панелей" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Варочные панели</h3>
+          <p>Не включаются конфорки, не регулируется мощность, ошибки индукции, не работает сенсор — стандартный и крупный ремонт.</p>
+          <div class="svc-foot"><span class="svc-price">от 700 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-duhovyh-shkafov.jpg" alt="Ремонт духовых шкафов" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Духовые шкафы</h3>
+          <p>Не греет, не держит температуру, не работает гриль или подсветка, неисправен таймер и терморегулятор.</p>
+          <div class="svc-foot"><span class="svc-price">от 500 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-mikrovolnovok.jpg" alt="Ремонт микроволновых печей" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Микроволновки</h3>
+          <p>Не греет, искрит, не крутится тарелка, не работает панель управления. Ремонт встроенных и отдельных СВЧ-печей.</p>
+          <div class="svc-foot"><span class="svc-price">от 300 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+      <article class="svc-card">
+        <div class="svc-media"><img src="assets/remont-pylesosov.jpg" alt="Ремонт пылесосов" loading="lazy" decoding="async" onerror="this.closest('.svc-media').classList.add('noimg');this.remove()"></div>
+        <div class="svc-body">
+          <h3>Пылесосы</h3>
+          <p>Слабо тянет, не включается, перегревается, шумит, не сматывается шнур. Ремонт обычных, моющих и роботов-пылесосов.</p>
+          <div class="svc-foot"><span class="svc-price">от 500 ₽<small>выезд + диагностика бесплатно</small></span><a class="svc-link" href="#contacts">Вызвать →</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section steps" id="how">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2>Ремонт в четыре простых шага</h2>
+      <p class="lead">От заявки до отремонтированной техники — без транспортировки в сервис и скрытых доплат.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">1</div><h3>Заявка</h3><p>Звоните или оставляете заявку. Уточняем технику, неисправность и выбираем удобное время визита.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Выезд и диагностика</h3><p>Мастер приезжает на дом, находит причину поломки и называет точную стоимость. Диагностика при ремонте — бесплатно.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Ремонт на месте</h3><p>Устраняем неисправность с оригинальными запчастями. Большинство поломок — за один визит.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Гарантия</h3><p>Выдаём гарантийный талон на работы и запчасти — от 6 до 12 месяцев.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">О сервисе</span>
+        <h2>Сервисный центр бытовой техники в Нижнем Новгороде</h2>
+        <p>С 2012 года ремонтируем бытовую технику на дому по всему Нижнему Новгороду и области. Ремонт на дому — это экономия времени и денег: не нужно демонтировать и везти тяжёлую технику в сервис.</p>
+        <p>Только квалифицированный мастер точно определит неисправность и выберет оптимальный способ её устранения. Мы работаем оперативно, аккуратно и с гарантией качества.</p>
+        <ul class="about-list">
+          <li><span class="chk">✓</span><span>Бесплатный выезд по Нижнему Новгороду и области</span></li>
+          <li><span class="chk">✓</span><span>Бесплатная диагностика при согласии на ремонт</span></li>
+          <li><span class="chk">✓</span><span>Гарантия на работы и запчасти до 1 года</span></li>
+          <li><span class="chk">✓</span><span>Ежедневно с 08:00 до 22:00, без выходных</span></li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="assets/remont-tehniki-nnovgorod2.jpg" alt="Мастер сервисного центра ремонтирует бытовую технику" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts" style="background:var(--surface)">
+  <div class="container">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow">Контакты</span>
+      <h2>Вызвать мастера</h2>
+      <p class="lead">Позвоните или оставьте заявку — перезвоним и согласуем удобное время выезда.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row">
+          <div class="ico" aria-hidden="true">📍</div>
+          <div class="txt"><b>Адрес</b><span style="font-weight:600">Нижний Новгород, ул. Бульвар Мира, 12<br>доп. пункт: пр-т Гагарина, 50</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ico" aria-hidden="true">🕐</div>
+          <div class="txt"><b>Часы работы</b><span style="font-weight:600">Ежедневно 08:00–22:00, без выходных</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ico" aria-hidden="true">✉️</div>
+          <div class="txt"><b>E-mail</b><a href="mailto:mail@remonttehnik.ru">mail@remonttehnik.ru</a></div>
+        </div>
+        <div class="info-row hl">
+          <div class="ico" aria-hidden="true">📞</div>
+          <div class="txt"><b>Телефон</b><a href="tel:+78312915328">+7 (831) 291-53-28</a></div>
+        </div>
+        <a href="tel:+78312915328" class="btn btn-primary" style="width:100%;margin-top:16px">Позвонить и вызвать мастера</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3278639,43.9531664&z=16&hl=ru&output=embed" width="100%" height="400" loading="lazy" allowfullscreen title="Карта: Нижний Новгород, Бульвар Мира, 12"></iframe>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <div>
+        <h3>Техника сломалась? Позвоните прямо сейчас</h3>
+        <p>Бесплатный выезд, бесплатная диагностика при ремонте и гарантия до 1 года.</p>
+      </div>
+      <div class="actions">
+        <a href="tel:+78312915328" class="btn btn-primary">+7 (831) 291-53-28</a>
+        <a href="https://vk.com/remont_v_nizhnemnovgorode" target="_blank" rel="noopener" class="btn btn-outline">Написать во ВКонтакте</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand" style="color:#fff">
+          <span class="brand-mark" aria-hidden="true">🔧</span>
+          <span class="brand-text" style="color:#fff">РемонтТехник НН<small style="color:#93a0bd">Ремонт бытовой техники</small></span>
+        </a>
+        <p>Сервисный центр бытовой техники в Нижнем Новгороде. Ремонт на дому с бесплатным выездом и гарантией до 1 года.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Стиральные машины</a></li>
+          <li><a href="#services">Холодильники</a></li>
+          <li><a href="#services">Телевизоры</a></li>
+          <li><a href="#services">Духовые шкафы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+78312915328">+7 (831) 291-53-28</a></li>
+          <li><a href="mailto:mail@remonttehnik.ru">mail@remonttehnik.ru</a></li>
+          <li>Бульвар Мира, 12, Нижний Новгород</li>
+          <li>Ежедневно 08:00–22:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2012–2026 РемонтТехник НН. Сервисный центр бытовой техники.</span>
+      <span>Выезд мастера · Бесплатная диагностика · Гарантия до 1 года</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  function close(){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кристина Верберг — организация свадеб и семейных событий в Нижнем Новгороде</title>
+<meta name="description" content="Кристина Верберг — премиальное свадебное агентство в Нижнем Новгороде. Организация свадеб под ключ, координация, декор и флористика. Победитель Wedding Awards Russia. Работаем с 2015 года.">
+<meta name="theme-color" content="#B8945F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Кристина Верберг — организация свадеб и семейных событий">
+<meta property="og:description" content="Премиальное свадебное агентство в Нижнем Новгороде. Победитель Wedding Awards Russia. Свадьбы под ключ, декор, координация.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF8F3;
+  --champagne:#F4EADB;
+  --powder:#F0E4E1;
+  --gold:#B8945F;
+  --gold-soft:#CBAE84;
+  --ink:#2E2A26;
+  --muted:#8A7F73;
+  --line:#E4D8C7;
+  --white:#ffffff;
+  --radius-sm:6px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --container:1180px;
+  --gap:24px;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Jost', -apple-system, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-weight:300;
+  color:var(--ink);
+  background:var(--ivory);
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(34px,7vw,78px);overflow-wrap:break-word}
+h2{font-size:clamp(30px,4.6vw,52px)}
+h3{font-size:clamp(21px,2.4vw,27px)}
+p{margin:0 0 1em}
+.container{max-width:var(--container);margin:0 auto;padding:0 22px}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:12px;font-weight:500;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 18px;
+}
+.section{padding:clamp(56px,9vw,110px) 0}
+.section--tint{background:linear-gradient(180deg,var(--champagne),var(--ivory))}
+.section--powder{background:var(--powder)}
+.sec-head{max-width:640px;margin:0 auto clamp(38px,5vw,64px);text-align:center}
+.sec-head p{color:var(--muted);margin-top:14px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;padding:15px 32px;border-radius:40px;
+  font-family:var(--sans);font-size:13px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+  cursor:pointer;border:1px solid transparent;
+  transition:all .25s ease;white-space:nowrap;
+}
+.btn-primary{background:var(--gold);color:var(--white)}
+.btn-primary:hover{background:var(--ink)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--white)}
+.btn-light{background:transparent;color:var(--white);border-color:rgba(255,255,255,.6)}
+.btn-light:hover{background:var(--white);color:var(--ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,248,243,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:18px;min-height:70px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--gold-soft)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.05}
+.brand-txt b{font-family:var(--serif);font-size:19px;font-weight:600;white-space:nowrap}
+.brand-txt span{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.nav{display:flex;gap:30px;margin-left:auto}
+.nav a{font-size:13px;letter-spacing:.08em;color:var(--ink);transition:color .2s;white-space:nowrap}
+.nav a:hover{color:var(--gold)}
+.header-cta{font-size:11px;padding:12px 24px}
+.burger{
+  display:none;width:44px;height:44px;margin-left:auto;
+  background:none;border:none;cursor:pointer;
+  flex-direction:column;justify-content:center;align-items:center;gap:5px;
+}
+.burger span{display:block;width:24px;height:1.6px;background:var(--ink);transition:.3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{
+    position:fixed;inset:70px 0 auto 0;
+    flex-direction:column;gap:0;margin:0;
+    background:var(--ivory);border-bottom:1px solid var(--line);
+    padding:8px 22px 26px;
+    transform:translateY(-140%);transition:transform .35s ease;
+    box-shadow:0 24px 40px -24px rgba(0,0,0,.25);
+  }
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.06em}
+  .nav .nav-phone{color:var(--gold);font-family:var(--serif);font-size:24px;font-weight:600;border:none;padding-top:20px}
+  .nav .nav-btn{margin-top:16px}
+  .nav .nav-btn .btn{width:100%}
+  .header-cta{display:none}
+  .burger{display:flex}
+}
+.nav-phone,.nav-btn{display:none}
+@media(max-width:1040px){.nav-phone,.nav-btn{display:block}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  color:var(--white);text-align:center;
+  background:linear-gradient(rgba(30,26,22,.42),rgba(30,26,22,.58)),url(assets/hero.jpg) center/cover no-repeat;
+}
+.hero-inner{max-width:820px;margin:0 auto;padding:90px 22px}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero h1{margin-bottom:22px;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero-sub{font-size:clamp(16px,2vw,20px);max-width:600px;margin:0 auto 34px;color:rgba(255,255,255,.9);font-weight:300}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(38px,6vw,60px);color:var(--gold);line-height:1}
+.stat span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
+
+/* ---------- services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.service{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:38px 30px;transition:transform .3s,box-shadow .3s;
+}
+.service:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(184,148,95,.5)}
+.service .num{font-family:var(--serif);font-size:20px;color:var(--gold);font-style:italic}
+.service h3{margin:14px 0 12px}
+.service p{color:var(--muted);font-size:15px;margin:0}
+
+/* ---------- portfolio mosaic ---------- */
+.mosaic{columns:4;column-gap:16px}
+.mosaic figure{margin:0 0 16px;break-inside:avoid;border-radius:var(--radius-sm);overflow:hidden;position:relative;background:var(--champagne)}
+.mosaic img{width:100%;height:auto;transition:transform .5s ease;filter:saturate(.92)}
+.mosaic figure:hover img{transform:scale(1.06)}
+.mosaic figure::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0),rgba(46,42,38,.25));opacity:0;transition:opacity .3s}
+.mosaic figure:hover::after{opacity:1}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(30px,5vw,66px);align-items:center}
+.about-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 60px -40px rgba(184,148,95,.6)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text .eyebrow{margin-bottom:14px}
+.about-text .sign{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold);margin-top:8px}
+.awards-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.awards-list li{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.awards-list .mark{color:var(--gold);font-family:var(--serif);font-size:22px;line-height:1;flex-shrink:0}
+.awards-list span{font-size:15px;color:var(--ink)}
+
+/* ---------- projects ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.project{
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:30px 28px;background:var(--white);position:relative;overflow:hidden;
+}
+.project::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.project .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.project h3{margin:12px 0 10px;font-size:24px}
+.project p{color:var(--muted);font-size:14.5px;margin:0}
+
+/* ---------- reviews / recognition ---------- */
+.rec-band{text-align:center;max-width:760px;margin:0 auto}
+.rec-quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.6vw,38px);line-height:1.32;color:var(--ink)}
+.rec-quote em{color:var(--gold)}
+.rec-sub{color:var(--muted);margin-top:24px}
+.rec-cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- contacts ---------- */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,4vw,52px);align-items:stretch}
+.contacts-info{display:flex;flex-direction:column;gap:22px}
+.c-row{display:flex;gap:16px;align-items:flex-start;min-width:0;overflow-wrap:anywhere}
+.c-row .ico{font-size:20px;color:var(--gold);flex-shrink:0;line-height:1.3}
+.c-row .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.c-row a,.c-row p{font-size:17px;color:var(--ink);margin:0}
+.c-row a:hover{color:var(--gold)}
+.socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.social-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border:1px solid var(--gold);border-radius:40px;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  transition:all .2s;
+}
+.social-btn:hover{background:var(--gold);color:var(--white)}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;min-height:380px;border:1px solid var(--line);box-shadow:0 30px 50px -34px rgba(0,0,0,.35)}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.25)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--ink);color:rgba(255,255,255,.72);padding:56px 0 32px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand b{font-family:var(--serif);font-size:24px;color:var(--white);display:block;margin-bottom:12px}
+.footer h4{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px}
+.footer a{display:block;color:rgba(255,255,255,.72);font-size:14px;margin-bottom:10px;transition:color .2s;overflow-wrap:anywhere}
+.footer a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .services-grid,.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mosaic{columns:3}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .about-img{max-height:440px;order:-1}
+  .contacts-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 16px}
+  .services-grid,.projects-grid{grid-template-columns:1fr}
+  .mosaic{columns:2;column-gap:12px}
+  .mosaic figure{margin-bottom:12px}
+  .footer-top{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+}
+@media(max-width:520px){
+  .hero h1{font-size:28px;letter-spacing:0;line-height:1.2}
+  .hero-sub{font-size:15px}
+}
+@media(max-width:380px){
+  .container{padding:0 16px}
+  .btn{padding:14px 22px;font-size:12px;letter-spacing:.1em}
+  .hero h1{font-size:25px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Кристина Верберг — на главную">
+      <img src="assets/logo.jpg" alt="Логотип Кристина Верберг" onerror="this.style.display='none'">
+      <span class="brand-txt"><b>Кристина Верберг</b><span>Семейные события</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#about">О Кристине</a>
+      <a href="#projects">Проекты</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79200102002" class="nav-phone">+7 (920) 010-20-02</a>
+      <div class="nav-btn"><a href="#contacts" class="btn btn-primary">Обсудить событие</a></div>
+    </nav>
+    <a href="#contacts" class="btn btn-primary header-cta">Обсудить событие</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Нижний Новгород · с 2015 года</p>
+    <h1>Свадьбы <em>вне&nbsp;времени,</em> шаблонов и&nbsp;границ</h1>
+    <p class="hero-sub">Премиальное агентство Кристины Верберг создаёт свадьбы и семейные события с безупречной режиссурой эмоций — от идеи до последнего аккорда праздника.</p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn btn-primary">Смотреть портфолио</a>
+      <a href="#contacts" class="btn btn-light">Обсудить событие</a>
+    </div>
+  </div>
+  <span class="hero-scroll">Wedding Awards Russia · Победитель</span>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b>9</b><span>лет опыта</span></div>
+      <div class="stat"><b>8</b><span>статуэток Wedding Awards</span></div>
+      <div class="stat"><b>7×</b><span>«Лучшее агентство» ПФО</span></div>
+      <div class="stat"><b>∞</b><span>счастливых пар</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Что мы делаем</p>
+      <h2>Услуги агентства</h2>
+      <p>Мы берём на себя все организационные хлопоты и дарим вам удовольствие от процесса подготовки. Стоимость — индивидуально, по договорённости.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service"><span class="num">01</span><h3>Свадьба под ключ</h3><p>Полный цикл организации: концепция, площадка, подрядчики, тайминг, бюджет и режиссура дня — от первой встречи до финала праздника.</p></div>
+      <div class="service"><span class="num">02</span><h3>Разработка концепции</h3><p>Индивидуальный сценарий и визуальный образ события «вне времени и шаблонов», отражающий характер и историю вашей пары.</p></div>
+      <div class="service"><span class="num">03</span><h3>Декор и флористика</h3><p>Авторское оформление пространства, флористические композиции и предметный декор в единой эстетике — работаем с лучшими декораторами региона.</p></div>
+      <div class="service"><span class="num">04</span><h3>Координация дня</h3><p>Команда координаторов держит весь тайминг и подрядчиков под контролем, чтобы вы и гости просто наслаждались праздником.</p></div>
+      <div class="service"><span class="num">05</span><h3>Свадьба за рубежом</h3><p>Организация выездных церемоний за границей — от Марокко до Черногории. Логистика, площадки и локальные подрядчики берём на себя.</p></div>
+      <div class="service"><span class="num">06</span><h3>Семейные события</h3><p>Камерные торжества, юбилеи и семейные праздники с той же вниманием к деталям и эмоциональной режиссурой, что и большие свадьбы.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="section section--tint" id="portfolio">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Наши работы</p>
+      <h2>Портфолио свадеб</h2>
+      <p>Каждое событие — авторская история. Собрали кадры из реализованных свадеб и семейных праздников агентства.</p>
+    </div>
+    <div class="mosaic">
+      <figure><img src="assets/w02.jpg" alt="Свадебное оформление церемонии" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w15.jpg" alt="Декор свадебного стола" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w04.jpg" alt="Свадебная фотосессия" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w06.jpg" alt="Свадебная церемония" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w03.jpg" alt="Флористика на свадьбе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w16.jpg" alt="Оформление банкетной зоны" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w11.jpg" alt="Свадебный декор" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w12.jpg" alt="Молодожёны на празднике" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w05.jpg" alt="Свадебная церемония на природе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w18.jpg" alt="Праздничная сервировка" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w07.jpg" alt="Свадебный образ" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w13.jpg" alt="Гости на свадьбе" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w10.jpg" alt="Свадебная арка и цветы" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w19.jpg" alt="Оформление зала" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w08.jpg" alt="Свадебная пара" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w20.jpg" alt="Детали свадебного декора" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w22.jpg" alt="Свадебная церемония" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w14.jpg" alt="Праздничный момент" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w23.jpg" alt="Свадебное торжество" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w24.jpg" alt="Флористическое оформление" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w17.jpg" alt="Свадебный банкет" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w26.jpg" alt="Свадебный декор и цветы" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w01.jpg" alt="Свадебная фотография" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+      <figure><img src="assets/w25.jpg" alt="Праздничное событие" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT + AWARDS ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="assets/feat_bouquet.jpg" alt="Свадебный букет из белых роз" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">О Кристине</p>
+        <h2>Свадьба как режиссура эмоций</h2>
+        <p>С 2015 года команда Кристины Верберг занимается организацией свадеб и семейных событий в Нижнем Новгороде и за его пределами. Наша задача — избавить вас от организационных забот и подарить радость от подготовки к самому важному дню.</p>
+        <p>Мы работаем с концепциями вне времени, шаблонов и границ, уделяя особое внимание эмоциональной режиссуре праздника. За плечами — свадьбы в Марокко и Черногории, десятки реализованных проектов и профессиональное признание индустрии.</p>
+        <p class="sign">— Кристина Верберг</p>
+        <ul class="awards-list">
+          <li><span class="mark">✦</span><span>Победитель Wedding Awards Russia — главной свадебной премии страны</span></li>
+          <li><span class="mark">✦</span><span>7 побед в номинации «Лучшее свадебное агентство» Приволжья</span></li>
+          <li><span class="mark">✦</span><span>Премия «Грани»: «Свадьба года — Статус» и «Лучший свадебный декор»</span></li>
+          <li><span class="mark">✦</span><span>Проект «Чёрный Бал» — лучший свадебный проект России (до 3 млн)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section section--powder" id="projects">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Избранное</p>
+      <h2>Знаковые проекты</h2>
+      <p>Свадьбы, о которых говорит индустрия — от камерных семейных торжеств до выездных церемоний за рубежом.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project"><span class="tag">Wedding Awards Russia</span><h3>«Чёрный Бал»</h3><p>Свадебное событие для творческой интеллигенции, отмеченное как лучший свадебный проект России в категории до 3 млн рублей.</p></div>
+      <div class="project"><span class="tag">Destination · Марокко</span><h3>Свадьба в Марракеше</h3><p>Выездная церемония в Марокко: атмосфера востока, роскошь и полная логистика от агентства под ключ.</p></div>
+      <div class="project"><span class="tag">Destination · Черногория</span><h3>Боко-Которский залив</h3><p>Романтическая свадьба на побережье Адриатики с видом на горы и старинные города Черногории.</p></div>
+      <div class="project"><span class="tag">Нижегородская ярмарка</span><h3>Церемония в павильоне</h3><p>Проект-победитель Wedding Awards Приволжье, реализованный в историческом павильоне Нижегородской ярмарки.</p></div>
+      <div class="project"><span class="tag">Классика</span><h3>Екатерина и Андрей</h3><p>Элегантная свадьба с авторским декором и флористикой — одна из любимых работ команды.</p></div>
+      <div class="project"><span class="tag">Семейное событие</span><h3>Анастасия и Александр</h3><p>Камерное торжество с вниманием к каждой детали и тёплой семейной атмосферой.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RECOGNITION / REVIEWS ===== -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="rec-band">
+      <p class="eyebrow" style="text-align:center">Признание</p>
+      <p class="rec-quote">«Лишить вас организационных хлопот и подарить <em>удовольствие от процесса</em> подготовки»</p>
+      <p class="rec-sub">Наши молодожёны делятся впечатлениями и отзывами в сообществе ВКонтакте и Telegram. Победы в Wedding Awards Russia и региональных премиях — лучшее подтверждение доверия пар.</p>
+      <div class="rec-cta">
+        <a href="https://vk.com/club17882543" target="_blank" rel="noopener" class="btn btn-outline">Отзывы во ВКонтакте</a>
+        <a href="https://t.me/+Is9p6FNlBX9kMDNi" target="_blank" rel="noopener" class="btn btn-primary">Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Обсудим ваше событие</h2>
+      <p>Расскажите о своей свадьбе — мы предложим концепцию и рассчитаем стоимость индивидуально.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="c-row"><span class="ico">📍</span><div><span class="lbl">Адрес</span><p>Нижний Новгород, ул. Пискунова, д.&nbsp;31, оф.&nbsp;6</p></div></div>
+        <div class="c-row"><span class="ico">📞</span><div><span class="lbl">Телефон</span><a href="tel:+79200102002">+7 (920) 010-20-02</a></div></div>
+        <div class="c-row"><span class="ico">✉️</span><div><span class="lbl">E-mail</span><a href="mailto:Kristina_verberg@mail.ru">Kristina_verberg@mail.ru</a></div></div>
+        <div class="c-row"><span class="ico">💬</span><div><span class="lbl">Мессенджеры и соцсети</span>
+          <div class="socials">
+            <a href="https://t.me/+Is9p6FNlBX9kMDNi" target="_blank" rel="noopener" class="social-btn">Telegram</a>
+            <a href="https://vk.com/club17882543" target="_blank" rel="noopener" class="social-btn">ВКонтакте</a>
+            <a href="https://wa.me/79200102002" target="_blank" rel="noopener" class="social-btn">WhatsApp</a>
+            <a href="viber://chat?number=%2B79200102002" class="social-btn">Viber</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.3246152,44.0105024&z=16&hl=ru&output=embed" loading="lazy" allowfullscreen title="Карта — ул. Пискунова, 31, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <b>Кристина Верберг</b>
+        <p style="margin:0;font-size:14px">Организация свадеб и семейных событий в Нижнем Новгороде. Работаем с 2015 года. Победитель Wedding Awards Russia.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#about">О Кристине</a>
+        <a href="#projects">Проекты</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79200102002">+7 (920) 010-20-02</a>
+        <a href="mailto:Kristina_verberg@mail.ru">Kristina_verberg@mail.ru</a>
+        <a href="https://t.me/+Is9p6FNlBX9kMDNi" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.com/club17882543" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Кристина Верберг. Семейные события</span>
+      <span>Нижний Новгород, ул. Пискунова, 31, оф. 6</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

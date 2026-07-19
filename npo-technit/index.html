@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>НПО «Технит» — резинотехнические изделия и металлообработка в Нижнем Новгороде</title>
+<meta name="description" content="ООО «НПО «Технит», Нижний Новгород — производство резинотехнических изделий (манжеты, кольца, прокладки, сальники) по ГОСТ и ТУ для нефтегаза, оборонной и атомной отрасли, а также металлообработка на станках с ЧПУ и корпусные изделия." />
+<meta name="theme-color" content="#0f1e33" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="НПО «Технит» — РТИ и металлообработка, Нижний Новгород" />
+<meta property="og:description" content="Свыше 40 000 наименований резинотехнических изделий по ГОСТ и ТУ. Металлообработка на 50+ станках, в том числе с ЧПУ. Изготовление по чертежам Заказчика." />
+<meta property="og:image" content="assets/rti-orings.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0f1e33;
+    --navy-2:#14263f;
+    --steel:#1c3050;
+    --steel-line:#294467;
+    --accent:#ff6b1a;
+    --accent-2:#ff8a44;
+    --bg:#ffffff;
+    --surface:#f4f6f9;
+    --surface-2:#eaeef3;
+    --text:#16202e;
+    --muted:#5c6b7d;
+    --on-dark:#e8eef6;
+    --on-dark-muted:#9db0c6;
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:22px;
+    --container:1160px;
+    --gap:24px;
+    --header-h:70px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    font-size:clamp(15px,1.5vw,17px);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Oswald','Inter',sans-serif;font-weight:600;line-height:1.12;text-transform:uppercase;letter-spacing:.01em;margin:0;}
+  h1{font-size:clamp(30px,5.4vw,60px);}
+  h2{font-size:clamp(24px,3.6vw,42px);}
+  h3{font-size:clamp(18px,2.2vw,24px);}
+  p{margin:0 0 1em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:var(--container);margin:0 auto;padding:0 20px;}
+  .section{padding:clamp(56px,8vw,104px) 0;}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;color:var(--accent);margin:0 0 14px;}
+  .lead{color:var(--muted);max-width:62ch;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-weight:600;font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);border:2px solid transparent;cursor:pointer;transition:.2s ease;white-space:nowrap;}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .btn-primary:hover{background:var(--accent-2);border-color:var(--accent-2);}
+  .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .btn-dark{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .btn-dark:hover{background:var(--steel);border-color:var(--steel);}
+
+  /* Header */
+  .site-header{position:sticky;top:0;z-index:100;background:rgba(15,30,51,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--steel-line);}
+  .header-inner{display:flex;align-items:center;gap:18px;min-height:var(--header-h);}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;color:#fff;}
+  .brand img{height:38px;width:auto;border-radius:4px;background:#fff;padding:2px;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap;}
+  .brand-text b{font-family:'Oswald',sans-serif;font-size:19px;letter-spacing:.04em;text-transform:uppercase;}
+  .brand-text span{font-size:11px;color:var(--on-dark-muted);letter-spacing:.04em;}
+  .nav{display:flex;align-items:center;gap:26px;margin-left:auto;}
+  .nav a{color:var(--on-dark);font-size:15px;font-weight:500;transition:.2s;white-space:nowrap;}
+  .nav a:hover{color:var(--accent-2);}
+  .header-phone{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;white-space:nowrap;flex-shrink:0;}
+  .header-phone a{color:#fff;font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:.02em;}
+  .header-phone span{font-size:11px;color:var(--on-dark-muted);}
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:transparent;border:1px solid var(--steel-line);border-radius:var(--radius-sm);cursor:pointer;flex-shrink:0;}
+  .burger span{display:block;height:2px;width:22px;margin:0 auto;background:#fff;transition:.25s;}
+
+  @media(max-width:1040px){
+    .nav{position:fixed;top:var(--header-h);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);border-bottom:1px solid var(--steel-line);padding:8px 20px 24px;transform:translateY(-140%);transition:transform .3s ease;margin-left:0;max-height:calc(100dvh - var(--header-h));overflow-y:auto;}
+    .nav.nav--open{transform:translateY(0);}
+    .nav a{padding:15px 4px;border-bottom:1px solid var(--steel-line);font-size:17px;}
+    .nav .nav-phone{color:var(--accent-2);font-family:'Oswald',sans-serif;font-size:22px;}
+    .nav .btn{margin-top:16px;width:100%;}
+    .header-phone{margin-left:auto;}
+    .burger{display:flex;}
+  }
+  @media(max-width:560px){
+    .header-phone{display:none;}
+    .nav{margin-left:0;}
+  }
+  .nav-mobile-only{display:none;}
+  @media(max-width:1040px){.nav-mobile-only{display:flex;}}
+
+  /* Hero */
+  .hero{position:relative;color:#fff;background:linear-gradient(180deg,rgba(11,23,40,.82),rgba(11,23,40,.92)),url('assets/metal-cnc.jpg') center/cover no-repeat,var(--navy);overflow:hidden;}
+  .hero-inner{min-height:min(88svh,760px);display:flex;flex-direction:column;justify-content:center;padding-top:clamp(70px,12vw,130px);padding-bottom:clamp(70px,12vw,130px);}
+  .hero h1{max-width:16ch;}
+  .hero h1 .hl{color:var(--accent);}
+  .hero-sub{color:var(--on-dark-muted);max-width:56ch;font-size:clamp(16px,2vw,20px);margin-top:20px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);}
+  .hero-badge{display:flex;flex-direction:column;min-width:0;}
+  .hero-badge b{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,38px);color:#fff;line-height:1;}
+  .hero-badge span{font-size:13px;color:var(--on-dark-muted);margin-top:6px;}
+
+  /* Advantages */
+  .adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);}
+  .adv-card{background:var(--surface);border:1px solid var(--surface-2);border-radius:var(--radius-md);padding:26px 22px;min-width:0;}
+  .adv-card .ic{width:46px;height:46px;border-radius:12px;background:var(--navy);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
+  .adv-card h3{font-size:19px;margin-bottom:8px;text-transform:none;letter-spacing:0;font-family:'Oswald',sans-serif;}
+  .adv-card p{color:var(--muted);font-size:15px;margin:0;}
+
+  /* Section head */
+  .sec-head{max-width:70ch;margin-bottom:clamp(32px,5vw,52px);}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* Catalog */
+  .cat-block{margin-top:44px;}
+  .cat-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+  .cat-head h3{color:var(--navy);}
+  .cat-tag{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:4px 12px;}
+  .prod-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .prod-item{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--surface-2);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:16px 18px;min-width:0;}
+  .prod-item .n{font-family:'Oswald',sans-serif;color:var(--accent);font-size:14px;flex-shrink:0;padding-top:2px;}
+  .prod-item .b{min-width:0;}
+  .prod-item .b b{display:block;font-weight:600;font-size:15px;color:var(--text);}
+  .prod-item .b span{font-size:13px;color:var(--muted);overflow-wrap:anywhere;}
+  .rti-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px;}
+  .rti-media figure{margin:0;border-radius:var(--radius-md);overflow:hidden;background:var(--surface-2);position:relative;aspect-ratio:16/10;}
+  .rti-media img{width:100%;height:100%;object-fit:cover;}
+
+  /* Services (metalworking) */
+  .services{background:var(--navy);color:var(--on-dark);}
+  .services .eyebrow{color:var(--accent-2);}
+  .services h2{color:#fff;}
+  .services .lead{color:var(--on-dark-muted);}
+  .srv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;}
+  .srv-card{background:var(--steel);border:1px solid var(--steel-line);border-radius:var(--radius-md);padding:24px 22px;min-width:0;transition:.2s;}
+  .srv-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .srv-card .num{font-family:'Oswald',sans-serif;color:var(--accent);font-size:14px;letter-spacing:.1em;}
+  .srv-card h3{color:#fff;font-size:19px;margin:10px 0 8px;text-transform:none;letter-spacing:0;font-family:'Oswald',sans-serif;}
+  .srv-card p{color:var(--on-dark-muted);font-size:14px;margin:0;}
+
+  /* Production / about split */
+  .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,60px);align-items:center;}
+  .split-media{border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-2);aspect-ratio:4/3;min-width:0;}
+  .split-media img{width:100%;height:100%;object-fit:cover;}
+  .stat-row{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:26px;}
+  .stat{min-width:0;}
+  .stat b{display:block;font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,36px);color:var(--navy);line-height:1;}
+  .stat span{font-size:14px;color:var(--muted);}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .chip{background:var(--surface);border:1px solid var(--surface-2);border-radius:100px;padding:8px 16px;font-size:14px;color:var(--text);}
+
+  /* Extra offers */
+  .offers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px;}
+  .offer{background:var(--surface);border:1px solid var(--surface-2);border-radius:var(--radius-md);padding:26px 24px;min-width:0;border-top:3px solid var(--accent);}
+  .offer h3{color:var(--navy);font-size:20px;text-transform:none;letter-spacing:0;font-family:'Oswald',sans-serif;margin-bottom:8px;}
+  .offer p{color:var(--muted);font-size:15px;margin:0;}
+
+  /* Contacts */
+  .contacts{background:var(--surface);}
+  .contacts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,44px);align-items:start;}
+  .contacts-info{min-width:0;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--surface-2);min-width:0;}
+  .info-row .ic{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:var(--navy);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:19px;}
+  .info-row .txt{min-width:0;overflow-wrap:anywhere;}
+  .info-row .txt b{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--muted);margin-bottom:3px;}
+  .info-row .txt a,.info-row .txt p{color:var(--text);font-size:17px;margin:0;}
+  .info-row .txt a:hover{color:var(--accent);}
+  .contacts .btn{margin-top:26px;}
+  .map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--surface-2);min-height:340px;background:var(--surface-2);}
+  .map-wrap iframe{display:block;width:100%;height:100%;min-height:340px;border:0;}
+
+  /* Footer */
+  .footer{background:var(--navy);color:var(--on-dark-muted);padding:44px 0;}
+  .footer-inner{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:center;}
+  .footer .brand-text b{color:#fff;}
+  .footer a{color:var(--on-dark);}
+  .footer a:hover{color:var(--accent-2);}
+  .footer-cols{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px;}
+
+  @media(max-width:900px){
+    .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .srv-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .offers-grid{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+    .split-media{order:-1;}
+    .contacts-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .adv-grid{grid-template-columns:1fr;}
+    .srv-grid{grid-template-columns:1fr;}
+    .prod-grid{grid-template-columns:1fr;}
+    .rti-media{grid-template-columns:1fr;}
+    .hero-actions .btn{width:100%;}
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="НПО Технит — на главную">
+      <img src="assets/logo.gif" alt="Логотип НПО Технит" onerror="this.style.display='none'" />
+      <span class="brand-text"><b>НПО «Технит»</b><span>Современные технологии сегодня</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#rti">РТИ</a>
+      <a href="#services">Металлообработка</a>
+      <a href="#production">Производство</a>
+      <a href="#offers">Предложения</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312136382" class="nav-phone nav-mobile-only">+7 (831) 213-63-82</a>
+      <a href="#contacts" class="btn btn-primary nav-mobile-only">Оставить заявку</a>
+    </nav>
+    <div class="header-phone">
+      <a href="tel:+78312136382">+7 (831) 213-63-82</a>
+      <span>Пн–Пт 9:00–18:00</span>
+    </div>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · ул. Лесная, 5</p>
+    <h1>Резинотехнические изделия и <span class="hl">металлообработка</span> для промышленности</h1>
+    <p class="hero-sub">ООО «НПО «Технит» — производство РТИ по ГОСТ и ТУ для нефтегазовой, оборонной и атомной отрасли, а также высокоточная механическая обработка металла и изготовление изделий по чертежам Заказчика.</p>
+    <div class="hero-actions">
+      <a href="#rti" class="btn btn-primary">Каталог продукции</a>
+      <a href="#contacts" class="btn btn-outline">Связаться с нами</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><b>40 000+</b><span>наименований РТИ</span></div>
+      <div class="hero-badge"><b>50+</b><span>единиц станков, в т.ч. ЧПУ</span></div>
+      <div class="hero-badge"><b>ГОСТ · ОСТ · ТУ</b><span>соответствие стандартам</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center">
+      <p class="eyebrow">Почему «Технит»</p>
+      <h2>Полный производственный цикл под одной крышей</h2>
+      <p class="lead" style="margin-inline:auto">От проектирования и разработки конструкторской документации до серийного изготовления — на собственной производственно-складской площадке.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="ic">🏭</div>
+        <h3>Свои мощности</h3>
+        <p>Производственно-складская площадка позволяет выполнять заказы больших объёмов без посредников.</p>
+      </div>
+      <div class="adv-card">
+        <div class="ic">⚙️</div>
+        <h3>Парк 50+ станков</h3>
+        <p>Современное оборудование, в том числе с ЧПУ, для высокоточной обработки металлов и сложных конструкций.</p>
+      </div>
+      <div class="adv-card">
+        <div class="ic">📐</div>
+        <h3>Конструкторское бюро</h3>
+        <p>Проектирование изделий, разработка КД и дизайна панелей, системотехники по РЭА и измерительной технике.</p>
+      </div>
+      <div class="adv-card">
+        <div class="ic">✅</div>
+        <h3>По ГОСТ и ТУ</h3>
+        <p>Изделия для нефтегаза, оборонного назначения и атомного сектора в строгом соответствии стандартам.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RTI catalog -->
+<section id="rti" class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Каталог · Резинотехнические изделия</p>
+      <h2>РТИ по ГОСТ, ОСТ и ТУ</h2>
+      <p class="lead">Отдельное направление компании — производство резинотехнических изделий. Мы выпускаем свыше 40 000 наименований для нефтегазовой промышленности, а также изделия оборонного назначения и для атомного сектора.</p>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-head"><h3>Манжеты</h3><span class="cat-tag">уплотнения валов и устройств</span></div>
+      <div class="prod-grid">
+        <div class="prod-item"><span class="n">01</span><div class="b"><b>Манжеты армированные для валов</b><span>Резиновые армированные · ГОСТ 8752-79</span></div></div>
+        <div class="prod-item"><span class="n">02</span><div class="b"><b>Манжеты для гидравлических устройств</b><span>Уплотнительные · ГОСТ 14896-84, ГОСТ 6969-54</span></div></div>
+        <div class="prod-item"><span class="n">03</span><div class="b"><b>Манжеты для пневматических устройств</b><span>Уплотнительные · ГОСТ 6678-53</span></div></div>
+        <div class="prod-item"><span class="n">04</span><div class="b"><b>Манжеты бескаркасные (НР, УР, УРД)</b><span>Резиновые · ТУ 38.105204-84</span></div></div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-head"><h3>Кольца и втулки</h3><span class="cat-tag">круглое сечение и по чертежам</span></div>
+      <div class="prod-grid">
+        <div class="prod-item"><span class="n">05</span><div class="b"><b>Кольца круглого сечения</b><span>Для гидравлических и пневматических устройств · ГОСТ 9833-73, ГОСТ 18829</span></div></div>
+        <div class="prod-item"><span class="n">06</span><div class="b"><b>Кольца по ГОСТ 9833-78</b><span>Резиновые уплотнительные кольца круглого сечения</span></div></div>
+        <div class="prod-item"><span class="n">07</span><div class="b"><b>Кольца для асбоцементных труб</b><span>Резиновые уплотнительные · ГОСТ 5228-89</span></div></div>
+        <div class="prod-item"><span class="n">08</span><div class="b"><b>Кольца и втулки по ГОСТ, ОСТ и ТУ</b><span>Широкая номенклатура типоразмеров</span></div></div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-head"><h3>Прокладки, сальники и специзделия</h3><span class="cat-tag">в том числе для атомной техники</span></div>
+      <div class="prod-grid">
+        <div class="prod-item"><span class="n">09</span><div class="b"><b>Втулки и прокладки</b><span>Резиновые · ОСТ В 38 0526-85</span></div></div>
+        <div class="prod-item"><span class="n">10</span><div class="b"><b>Сальники различных видов</b><span>Уплотнения для узлов и агрегатов</span></div></div>
+        <div class="prod-item"><span class="n">11</span><div class="b"><b>Изделия для атомной техники</b><span>Резинотехнические · ТУ 38 1051325-2008</span></div></div>
+        <div class="prod-item"><span class="n">12</span><div class="b"><b>РТИ по чертежам Заказчика</b><span>Изготовление под индивидуальные требования</span></div></div>
+      </div>
+    </div>
+
+    <div class="rti-media">
+      <figure><img src="assets/rti-orings.jpg" alt="Резиновые уплотнительные кольца круглого сечения" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'" /></figure>
+      <figure><img src="assets/rti-gaskets.jpg" alt="Резинотехнические изделия — прокладки и уплотнения" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Metalworking services -->
+<section id="services" class="section services">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Услуги · Металлообработка</p>
+      <h2>Высокоточная обработка металла</h2>
+      <p class="lead">Парк оборудования более 50 единиц современных станков, в том числе с ЧПУ, и квалифицированный персонал позволяют производить обработку металлов и изготовление сложных конструкций любой сложности.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="num">01</div><h3>Фрезерная обработка</h3><p>Обработка деталей и корпусов на фрезерных станках, в том числе с ЧПУ.</p></div>
+      <div class="srv-card"><div class="num">02</div><h3>Токарная обработка</h3><p>Изготовление тел вращения и точных деталей из металла и полимеров.</p></div>
+      <div class="srv-card"><div class="num">03</div><h3>Гибка металла</h3><p>Гибка листового металла для корпусов, панелей и металлоконструкций.</p></div>
+      <div class="srv-card"><div class="num">04</div><h3>Изготовление металлоконструкций</h3><p>Любые виды металлоконструкций по чертежам Заказчика.</p></div>
+      <div class="srv-card"><div class="num">05</div><h3>Электроэрозионная обработка</h3><p>Прошивка и вырезка сложных профилей с высокой точностью.</p></div>
+      <div class="srv-card"><div class="num">06</div><h3>Шлифовка</h3><p>Финишная обработка поверхностей до заданного класса точности.</p></div>
+      <div class="srv-card"><div class="num">07</div><h3>Изготовление литейной оснастки</h3><p>Проектирование и производство оснастки для литейного производства.</p></div>
+      <div class="srv-card"><div class="num">08</div><h3>Заказные изделия</h3><p>Изделия из металла, капролона, фторопласта и прочих материалов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Production / about -->
+<section id="production" class="section">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="eyebrow">О производстве</p>
+        <h2>Корпусные изделия, панели и промышленная мебель</h2>
+        <p class="lead">При необходимости компания осуществит проектирование изделия или конструкции, разработает конструкторскую документацию, а опытный дизайнер проработает внешний вид изделия и панелей. В составе КБ работают системотехники по созданию РЭА, средств связи, измерительной техники и специалисты по ПО.</p>
+        <div class="chips">
+          <span class="chip">Шкафы электрические</span>
+          <span class="chip">Шкафы технологические</span>
+          <span class="chip">Корпуса и панели для приборов</span>
+          <span class="chip">Приборные панели</span>
+          <span class="chip">Промышленная мебель</span>
+          <span class="chip">Медицинская мебель</span>
+          <span class="chip">Поверочные стенды</span>
+          <span class="chip">Стойки</span>
+          <span class="chip">Металлоконструкции</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>50+</b><span>единиц оборудования</span></div>
+          <div class="stat"><b>ЧПУ</b><span>станки с числовым управлением</span></div>
+          <div class="stat"><b>Полный цикл</b><span>от чертежа до изделия</span></div>
+        </div>
+      </div>
+      <div class="split-media">
+        <img src="assets/metal-lathe.jpg" alt="Металлообрабатывающий станок в цехе" loading="lazy" decoding="async" onerror="this.closest('.split-media').style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Extra offers -->
+<section id="offers" class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Наши предложения</p>
+      <h2>Специальные направления</h2>
+    </div>
+    <div class="offers-grid">
+      <div class="offer"><h3>Фильтры «ЭкоЭл»</h3><p>Промышленные фильтры для экономии электроэнергии на промышленных объектах.</p></div>
+      <div class="offer"><h3>РТИ на заказ</h3><p>Изготовление резинотехнических изделий по чертежам Заказчика — от единичных партий до серии.</p></div>
+      <div class="offer"><h3>Производство шестерней</h3><p>Изготовление мелкомодульных и крупногабаритных шестерней под задачи заказчика.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacts -->
+<section id="contacts" class="section contacts">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Контакты</p>
+      <h2>Как с нами связаться</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div class="txt"><b>Адрес</b><p>г. Нижний Новгород, ул. Лесная, д. 5, оф. 72</p></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div class="txt"><b>Телефон</b><a href="tel:+78312136382">+7 (831) 213-63-82</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">✉️</div>
+          <div class="txt"><b>E-mail</b><a href="mailto:info@technit.ru">info@technit.ru</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕐</div>
+          <div class="txt"><b>Режим работы</b><p>Будние дни: 9:00 — 18:00</p></div>
+        </div>
+        <a href="tel:+78312136382" class="btn btn-dark">Позвонить и обсудить заказ</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2696994,43.8979318&z=16&hl=ru&output=embed" width="100%" height="400" loading="lazy" allowfullscreen title="Карта — НПО Технит, ул. Лесная, 5, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand-text"><b>ООО «НПО «Технит»</b><span>Современные технологии сегодня</span></span>
+    <div class="footer-cols">
+      <a href="#rti">РТИ</a>
+      <a href="#services">Металлообработка</a>
+      <a href="#production">Производство</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78312136382">+7 (831) 213-63-82</a>
+    </div>
+    <span>© 2025 ООО «НПО «Технит», г. Нижний Новгород</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var burger=document.getElementById('burger');
+    var nav=document.getElementById('nav');
+    burger.addEventListener('click',function(){
+      var open=nav.classList.toggle('nav--open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+      burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        nav.classList.remove('nav--open');
+        burger.setAttribute('aria-expanded','false');
+        burger.setAttribute('aria-label','Открыть меню');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стоматология «Ассоль» — честные цены в Нижнем Новгороде, Сормово</title>
+<meta name="description" content="Стоматологическая клиника «Ассоль» в Сормовском районе Нижнего Новгорода. Лечение, имплантация, протезирование, брекеты, гигиена и детская стоматология по честным ценам. Работаем более 15 лет. Гарантия 1 год.">
+<meta name="theme-color" content="#1c86c9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Стоматология «Ассоль» — честные цены в Нижнем Новгороде">
+<meta property="og:description" content="Лечение, имплантация, протезирование и брекеты по честным ценам в Сормовском районе. Более 15 лет опыта, гарантия 1 год.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1c86c9;
+  --primary-dark:#136aa3;
+  --accent:#2fc4b2;
+  --accent-soft:#e6f7f4;
+  --sky:#eaf5fc;
+  --sky-2:#d6ecf9;
+  --pink:#e5588a;
+  --bg:#ffffff;
+  --text:#173142;
+  --muted:#5d7385;
+  --surface:#f4fafd;
+  --border:#e3eef5;
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1140px;
+  --gap:24px;
+  --shadow:0 12px 40px rgba(28,134,201,.10);
+  --shadow-sm:0 6px 20px rgba(28,134,201,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.6;
+  font-size:clamp(15px,1.4vw,17px);overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Nunito','Manrope',sans-serif;line-height:1.15;font-weight:800;color:var(--text)}
+h1{font-size:clamp(30px,5.2vw,58px)}
+h2{font-size:clamp(26px,4vw,44px)}
+h3{font-size:clamp(19px,2.4vw,25px)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,96px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--primary);
+  background:var(--sky);padding:7px 16px;border-radius:100px;font-size:14px;letter-spacing:.02em;text-transform:uppercase}
+.section-head{text-align:center;max-width:680px;margin:0 auto clamp(36px,5vw,56px)}
+.section-head p{color:var(--muted);margin-top:14px;font-size:clamp(15px,1.6vw,18px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;
+  font-family:'Manrope',sans-serif;padding:14px 26px;border-radius:100px;cursor:pointer;border:2px solid transparent;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;font-size:15px;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(28,134,201,.28)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-outline{background:#fff;color:var(--primary);border-color:var(--sky-2)}
+.btn-outline:hover{border-color:var(--primary);transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(47,196,178,.30)}
+.btn-accent:hover{transform:translateY(-2px);filter:brightness(1.04)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:18px;min-height:72px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:grid;place-items:center;color:#fff;font-family:'Nunito';font-weight:900;font-size:22px;flex-shrink:0}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
+.brand-text b{font-family:'Nunito';font-weight:900;font-size:20px;letter-spacing:.04em;color:var(--primary)}
+.brand-text span{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.nav{display:flex;gap:6px;margin-left:auto}
+.nav a{padding:9px 14px;border-radius:100px;font-weight:600;font-size:15px;color:var(--text);transition:background .16s,color .16s}
+.nav a:hover{background:var(--sky);color:var(--primary)}
+.header-cta{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.header-phone{font-weight:800;color:var(--text);white-space:nowrap;font-size:16px}
+.header-phone:hover{color:var(--primary)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;
+  border:1px solid var(--border);border-radius:12px;background:#fff;cursor:pointer;flex-shrink:0}
+.burger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;margin:0 auto;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;background:
+  radial-gradient(1200px 500px at 80% -10%,var(--sky-2),transparent 60%),
+  linear-gradient(180deg,var(--sky) 0%,#ffffff 100%);
+  overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  padding:clamp(40px,6vw,72px) 0 clamp(40px,6vw,64px)}
+.hero h1{margin:18px 0}
+.hero h1 .hl{color:var(--primary)}
+.hero-sub{font-size:clamp(16px,1.9vw,20px);color:var(--muted);max-width:520px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);
+  padding:8px 14px;border-radius:100px;font-size:13.5px;font-weight:600;color:var(--text);box-shadow:var(--shadow-sm)}
+.hero-badge b{color:var(--primary)}
+.hero-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  background:linear-gradient(180deg,var(--sky),#fff);box-shadow:var(--shadow);min-height:320px}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-media.noimg{background:linear-gradient(135deg,var(--sky-2),var(--accent-soft))}
+.hero-float{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+  border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm)}
+.hero-float .num{font-family:'Nunito';font-weight:900;font-size:24px;color:var(--primary);line-height:1}
+.hero-float .lbl{font-size:12.5px;color:var(--muted);line-height:1.25}
+
+/* Stats */
+.stats{background:var(--primary);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;text-align:center}
+.stat .num{font-family:'Nunito';font-weight:900;font-size:clamp(30px,4.4vw,46px);line-height:1}
+.stat .lbl{margin-top:6px;font-size:14px;color:rgba(255,255,255,.85)}
+
+/* Advantages */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.adv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:26px 24px;min-width:0;transition:transform .2s,box-shadow .2s}
+.adv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.adv-ic{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;
+  font-size:26px;margin-bottom:16px}
+.adv-card h3{margin-bottom:8px}
+.adv-card p{color:var(--muted);font-size:15px}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px 24px;
+  min-width:0;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.svc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));opacity:0;transition:opacity .2s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.svc-card:hover::before{opacity:1}
+.svc-ic{width:56px;height:56px;border-radius:16px;background:var(--sky);display:grid;place-items:center;font-size:28px;margin-bottom:16px}
+.svc-card h3{margin-bottom:10px}
+.svc-card ul{list-style:none;margin:0 0 18px;flex:1}
+.svc-card li{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:14.5px;min-width:0}
+.svc-card li:last-child{border-bottom:none}
+.svc-name{color:var(--text);min-width:0;overflow-wrap:anywhere}
+.dots{flex:1;border-bottom:1px dashed var(--sky-2);margin:0 6px;transform:translateY(-3px);min-width:12px}
+.svc-price{font-weight:800;color:var(--primary);white-space:nowrap;font-size:14.5px}
+.svc-foot{font-size:13px;color:var(--muted);margin-top:auto}
+.price-note{text-align:center;color:var(--muted);font-size:14px;margin-top:28px}
+
+/* Doctors */
+.doctors{background:var(--surface)}
+.doc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.doc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
+  min-width:0;transition:transform .2s,box-shadow .2s}
+.doc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.doc-photo{aspect-ratio:37/38;background:linear-gradient(135deg,var(--sky),var(--sky-2));overflow:hidden}
+.doc-photo img{width:100%;height:100%;object-fit:cover}
+.doc-photo.noimg{display:grid;place-items:center}
+.doc-photo.noimg::after{content:"🦷";font-size:42px;opacity:.5}
+.doc-body{padding:18px}
+.doc-body h3{font-size:17.5px;margin-bottom:5px}
+.doc-role{color:var(--primary);font-weight:700;font-size:14px;margin-bottom:6px}
+.doc-edu{color:var(--muted);font-size:13px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;
+  background:linear-gradient(135deg,var(--sky),var(--sky-2))}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-text h2{margin-bottom:18px}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.about-list{list-style:none;margin-top:20px;display:grid;gap:12px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.about-list .ck{color:var(--accent);font-weight:900;flex-shrink:0}
+
+/* Reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.rev-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px 24px;min-width:0}
+.rev-stars{color:#f5b301;font-size:17px;margin-bottom:12px;letter-spacing:2px}
+.rev-text{color:var(--text);font-size:15px;margin-bottom:16px}
+.rev-author{display:flex;align-items:center;gap:12px}
+.rev-ava{width:44px;height:44px;border-radius:50%;background:var(--sky-2);display:grid;place-items:center;
+  font-weight:800;color:var(--primary);flex-shrink:0;font-family:'Nunito'}
+.rev-author b{display:block;font-size:15px}
+.rev-author span{font-size:13px;color:var(--muted)}
+.rating-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.rating-pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);
+  padding:10px 18px;border-radius:100px;font-weight:700;font-size:14px}
+.rating-pill b{color:var(--primary)}
+
+/* Contacts */
+.contacts{background:var(--surface)}
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:stretch}
+.contacts-info{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:clamp(24px,3vw,36px);
+  display:flex;flex-direction:column;gap:20px}
+.ci-row{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.ci-ic{width:44px;height:44px;border-radius:12px;background:var(--sky);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.ci-row .lbl{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.ci-row .val{font-weight:700;font-size:16px;overflow-wrap:anywhere}
+.ci-row .val a{color:var(--text)}
+.ci-row .val a:hover{color:var(--primary)}
+.contacts-info .btn{margin-top:6px}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);min-height:380px;border:1px solid var(--border)}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+/* CTA band */
+.cta-band{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;text-align:center}
+.cta-band h2{color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,.92);max-width:560px;margin:0 auto 26px;font-size:17px}
+.cta-band .phone-big{font-family:'Nunito';font-weight:900;font-size:clamp(24px,3.6vw,36px);color:#fff;display:inline-block;margin-bottom:22px}
+.cta-band .btn-white{background:#fff;color:var(--primary)}
+.cta-band .btn-white:hover{transform:translateY(-2px)}
+
+/* Footer */
+.footer{background:#12303f;color:#c7d9e3;padding:48px 0 28px}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.footer .brand-text b{color:#fff}
+.footer .brand-text span{color:#8aa6b5}
+.footer h4{color:#fff;margin:0 0 14px;font-size:16px}
+.footer p,.footer a{color:#a9c2d0;font-size:14.5px;line-height:1.9}
+.footer a:hover{color:#fff}
+.footer-links{list-style:none;display:grid;gap:6px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#8aa6b5}
+
+/* Responsive */
+@media(max-width:1040px){
+  .nav,.header-phone{display:none}
+  .burger{display:flex}
+  .header-cta{margin-left:auto}
+  .header-cta .btn{display:none}
+  .nav.nav--open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:#fff;border-bottom:1px solid var(--border);padding:14px 20px;gap:4px;box-shadow:var(--shadow);margin-left:0}
+  .nav.nav--open a{padding:13px 12px;border-radius:12px}
+  .nav.nav--open .mobile-only{display:flex}
+  .mobile-only{display:none}
+}
+@media(min-width:1041px){.mobile-only{display:none}}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-media{order:-1;min-height:0;width:100%;aspect-ratio:16/10}
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .about-media{order:-1}
+  .doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contacts-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  .adv-grid,.svc-grid,.rev-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:26px}
+}
+@media(max-width:420px){
+  .doc-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Стоматология Ассоль — на главную">
+      <span class="brand-mark">А</span>
+      <span class="brand-text">
+        <b>АССОЛЬ</b>
+        <span>стоматологическая клиника</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги и цены</a>
+      <a href="#doctors">Врачи</a>
+      <a href="#about">О клинике</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78314238023" class="mobile-only" style="color:var(--primary);font-weight:800">📞 +7 (831) 423-80-23</a>
+      <a href="#contacts" class="btn btn-primary mobile-only" style="margin-top:8px">Записаться на приём</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+78314238023" class="header-phone">+7 (831) 423-80-23</a>
+      <a href="#contacts" class="btn btn-primary">Записаться</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">📍 Сормовский район, ул. Павла Мочалова, 9</span>
+      <h1>Стоматология <span class="hl">по честным ценам</span> в Нижнем Новгороде</h1>
+      <p class="hero-sub">Лечим быстро, безболезненно и качественно. Более 15 лет заботимся о здоровье и улыбках жителей Сормова — от первого визита до сложной имплантации.</p>
+      <div class="hero-actions">
+        <a href="#contacts" class="btn btn-primary">Записаться на приём</a>
+        <a href="#services" class="btn btn-outline">Услуги и цены</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge">🛡️ Гарантия <b>1 год</b> на лечение</span>
+        <span class="hero-badge">💳 Рассрочка <b>0%</b></span>
+        <span class="hero-badge">⭐ <b>5,0</b> на Яндекс.Картах</span>
+      </div>
+    </div>
+    <div class="hero-media" id="heroMedia">
+      <img src="assets/hero.jpg" alt="Врачи стоматологической клиники Ассоль" fetchpriority="high"
+           onerror="this.closest('.hero-media').classList.add('noimg');this.style.display='none'">
+      <div class="hero-float">
+        <span class="num">40 000+</span>
+        <span class="lbl">довольных<br>пациентов</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats section" style="padding:clamp(36px,5vw,52px) 0">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">15+</div><div class="lbl">лет опыта</div></div>
+      <div class="stat"><div class="num">11</div><div class="lbl">врачей-специалистов</div></div>
+      <div class="stat"><div class="num">40 000+</div><div class="lbl">довольных пациентов</div></div>
+      <div class="stat"><div class="num">1 год</div><div class="lbl">гарантия на услуги</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему «Ассоль»</span>
+      <h2>Клиника, которой доверяют с 2008 года</h2>
+      <p>Мы выросли на базе Нижегородского медицинского колледжа и сохранили главное — сильную школу, разумные цены и человеческое отношение к каждому пациенту.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-ic">💙</div>
+        <h3>Честные цены</h3>
+        <p>Прозрачный прайс без навязанных услуг. Скидки пенсионерам, студентам и семьям, беспроцентная рассрочка платежа.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ic">👨‍⚕️</div>
+        <h3>Опытная команда</h3>
+        <p>11 специалистов высокой квалификации: терапевты, хирурги-имплантологи, ортопеды и ортодонты. Постоянное повышение квалификации.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ic">🦷</div>
+        <h3>Комплексный подход</h3>
+        <p>От гигиены и лечения кариеса до имплантации, протезирования и исправления прикуса — полный спектр в одном месте.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ic">🛡️</div>
+        <h3>Гарантия и качество</h3>
+        <p>Современные методики и материалы ведущих мировых производителей. На все услуги — официальная гарантия 1 год.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ic">🩻</div>
+        <h3>Своя диагностика</h3>
+        <p>Компьютерная томография, ОПТГ и прицельные снимки прямо в клинике — точный план лечения без лишних поездок.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ic">😌</div>
+        <h3>Без боли и стресса</h3>
+        <p>Бережная анестезия и спокойная атмосфера. Лечим быстро и безболезненно — так, чтобы к нам хотелось вернуться.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Услуги и цены</span>
+      <h2>Всё для здоровья ваших зубов</h2>
+      <p>Основные направления и ориентировочные цены. Точная стоимость определяется после бесплатной консультации и диагностики.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-ic">🦷</div>
+        <h3>Лечение и терапия</h3>
+        <ul>
+          <li><span class="svc-name">Лечение кариеса</span><span class="dots"></span><span class="svc-price">от 5 000 ₽</span></li>
+          <li><span class="svc-name">Лечение пульпита</span><span class="dots"></span><span class="svc-price">от 5 450 ₽</span></li>
+          <li><span class="svc-name">Лечение периодонтита</span><span class="dots"></span><span class="svc-price">от 6 600 ₽</span></li>
+          <li><span class="svc-name">Худож. реставрация</span><span class="dots"></span><span class="svc-price">от 6 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Анестезия — 300 ₽</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">🔧</div>
+        <h3>Хирургия и удаление</h3>
+        <ul>
+          <li><span class="svc-name">Удаление зуба</span><span class="dots"></span><span class="svc-price">от 2 600 ₽</span></li>
+          <li><span class="svc-name">Удаление зуба мудрости</span><span class="dots"></span><span class="svc-price">5 500 ₽</span></li>
+          <li><span class="svc-name">Сложное удаление</span><span class="dots"></span><span class="svc-price">от 3 600 ₽</span></li>
+          <li><span class="svc-name">Пластика уздечки</span><span class="dots"></span><span class="svc-price">от 1 500 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Пародонтология и вестибулопластика</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">⚙️</div>
+        <h3>Имплантация</h3>
+        <ul>
+          <li><span class="svc-name">Имплант NeoBiotec (Корея)</span><span class="dots"></span><span class="svc-price">30 000 ₽</span></li>
+          <li><span class="svc-name">Имплант Riellen's</span><span class="dots"></span><span class="svc-price">30 000 ₽</span></li>
+          <li><span class="svc-name">Имплант MIS (Израиль)</span><span class="dots"></span><span class="svc-price">40 000 ₽</span></li>
+          <li><span class="svc-name">Формирователь десны</span><span class="dots"></span><span class="svc-price">5 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Импланты ведущих мировых брендов</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">👑</div>
+        <h3>Протезирование и коронки</h3>
+        <ul>
+          <li><span class="svc-name">Металлокерамика</span><span class="dots"></span><span class="svc-price">от 15 000 ₽</span></li>
+          <li><span class="svc-name">Циркониевая коронка</span><span class="dots"></span><span class="svc-price">26 000 ₽</span></li>
+          <li><span class="svc-name">Съёмный протез</span><span class="dots"></span><span class="svc-price">от 36 000 ₽</span></li>
+          <li><span class="svc-name">Бюгельный протез</span><span class="dots"></span><span class="svc-price">от 64 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Виниры E-Max / керамика — 30 000 ₽</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">✨</div>
+        <h3>Гигиена и отбеливание</h3>
+        <ul>
+          <li><span class="svc-name">Комплексная профгигиена</span><span class="dots"></span><span class="svc-price">5 000 ₽</span></li>
+          <li><span class="svc-name">Чистка Air Flow</span><span class="dots"></span><span class="svc-price">от 5 000 ₽</span></li>
+          <li><span class="svc-name">Отбеливание Opalescence</span><span class="dots"></span><span class="svc-price">18 000 ₽</span></li>
+          <li><span class="svc-name">Домашнее отбеливание</span><span class="dots"></span><span class="svc-price">3 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Профессиональное отбеливание Fläsh — 29 000 ₽</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">😁</div>
+        <h3>Исправление прикуса</h3>
+        <ul>
+          <li><span class="svc-name">Брекеты Damon Q (металл)</span><span class="dots"></span><span class="svc-price">от 75 000 ₽</span></li>
+          <li><span class="svc-name">Брекеты Damon Clear</span><span class="dots"></span><span class="svc-price">от 110 000 ₽</span></li>
+          <li><span class="svc-name">Элайнеры (капы)</span><span class="dots"></span><span class="svc-price">от 270 000 ₽</span></li>
+          <li><span class="svc-name">Диагностика ортодонта</span><span class="dots"></span><span class="svc-price">2 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Консультация ортодонта — бесплатно</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">🩻</div>
+        <h3>Диагностика (рентген)</h3>
+        <ul>
+          <li><span class="svc-name">Прицельный снимок (РВГ)</span><span class="dots"></span><span class="svc-price">300 ₽</span></li>
+          <li><span class="svc-name">ОПТГ (панорама)</span><span class="dots"></span><span class="svc-price">1 200 ₽</span></li>
+          <li><span class="svc-name">КТ двух челюстей</span><span class="dots"></span><span class="svc-price">3 000 ₽</span></li>
+          <li><span class="svc-name">КТ 2–3 зубов</span><span class="dots"></span><span class="svc-price">1 000 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Собственный томограф в клинике</div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ic">🧸</div>
+        <h3>Детская стоматология</h3>
+        <ul>
+          <li><span class="svc-name">Удаление молочного зуба</span><span class="dots"></span><span class="svc-price">1 200 ₽</span></li>
+          <li><span class="svc-name">Лечение кариеса</span><span class="dots"></span><span class="svc-price">от 5 000 ₽</span></li>
+          <li><span class="svc-name">Профгигиена</span><span class="dots"></span><span class="svc-price">от 5 000 ₽</span></li>
+          <li><span class="svc-name">Пластика уздечки</span><span class="dots"></span><span class="svc-price">от 1 500 ₽</span></li>
+        </ul>
+        <div class="svc-foot">Бережный подход к маленьким пациентам</div>
+      </div>
+
+      <div class="svc-card" style="background:linear-gradient(135deg,var(--sky),var(--accent-soft));border:none">
+        <div class="svc-ic" style="background:#fff">🎁</div>
+        <h3>Акции этого месяца</h3>
+        <ul>
+          <li><span class="svc-name">Консультация ортопеда + КТ</span><span class="dots"></span><span class="svc-price">0 ₽</span></li>
+          <li><span class="svc-name">Имплантация Riellen's</span><span class="dots"></span><span class="svc-price">24 900 ₽</span></li>
+          <li><span class="svc-name">Отбеливание Fläsh</span><span class="dots"></span><span class="svc-price">29 000 ₽</span></li>
+          <li><span class="svc-name">Консультация ортодонта</span><span class="dots"></span><span class="svc-price">0 ₽</span></li>
+        </ul>
+        <a href="#contacts" class="btn btn-accent" style="width:100%">Записаться на акцию</a>
+      </div>
+
+    </div>
+    <p class="price-note">Цены указаны в рублях и не являются публичной офертой. Полный прайс-лист уточняйте по телефону. На все услуги предоставляется гарантия 1 год.</p>
+  </div>
+</section>
+
+<!-- Doctors -->
+<section class="section doctors" id="doctors">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Наши врачи</span>
+      <h2>Команда, которой можно доверять</h2>
+      <p>Терапевты, хирурги-имплантологи, ортопеды и ортодонты с образованием ведущих медицинских вузов и многолетним стажем.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-dobrodiy.jpg" alt="Добродий Илья Сергеевич" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Добродий Илья Сергеевич</h3><div class="doc-role">Хирург-имплантолог</div><div class="doc-edu">Чувашский ГУ им. Ульянова, 2015</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-shvetsov.jpg" alt="Швецов Максим Олегович" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Швецов Максим Олегович</h3><div class="doc-role">Хирург-имплантолог</div><div class="doc-edu">НГМА, «Стоматология», 2017</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-agafonova.png" alt="Агафонова Ольга Александровна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Агафонова Ольга Александровна</h3><div class="doc-role">Стоматолог-ортопед</div><div class="doc-edu">НГМА, 1997</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-chekmaev.jpg" alt="Чекмаев Алексей Александрович" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Чекмаев Алексей Александрович</h3><div class="doc-role">Стоматолог-ортопед</div><div class="doc-edu">НижГМА, 2012</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-dubov.jpg" alt="Дубов Алексей Александрович" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Дубов Алексей Александрович</h3><div class="doc-role">Стоматолог-ортопед</div><div class="doc-edu">НГМА, 2015</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-yuhnovskaya.jpg" alt="Юхновская Анна Владимировна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Юхновская Анна Владимировна</h3><div class="doc-role">Терапевт, хирург</div><div class="doc-edu">Стоматологический ф-т, 2013</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-kakosyan.jpg" alt="Какосян Назик Горовна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Какосян Назик Горовна</h3><div class="doc-role">Стоматолог-терапевт</div><div class="doc-edu">Нижегородский мед. колледж, 2010</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-nazarova.jpg" alt="Назарова Виктория Романовна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Назарова Виктория Романовна</h3><div class="doc-role">Терапевт, гигиенист</div><div class="doc-edu">Лечение кариеса, профгигиена</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-dunio.jpg" alt="Дунио Дарья Анатольевна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Дунио Дарья Анатольевна</h3><div class="doc-role">Стоматолог-терапевт</div><div class="doc-edu">Казанский ГМУ, 2021</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-kvasnikova.png" alt="Квасникова Анастасия Михайловна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Квасникова Анастасия Михайловна</h3><div class="doc-role">Стоматолог-ортодонт</div><div class="doc-edu">Брекеты и элайнеры</div></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo"><img src="assets/doc-chudenkova.png" alt="Чуденкова Виктория Львовна" loading="lazy" decoding="async" onerror="this.closest('.doc-photo').classList.add('noimg');this.remove()"></div>
+        <div class="doc-body"><h3>Чуденкова Виктория Львовна</h3><div class="doc-role">Стоматолог-ортодонт</div><div class="doc-edu">Исправление прикуса</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media">
+        <img src="assets/interior-001.jpg" alt="Ресепшн стоматологической клиники Ассоль" loading="lazy" decoding="async" onerror="this.closest('.about-media').style.background='linear-gradient(135deg,var(--sky),var(--sky-2))';this.remove()">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">О клинике</span>
+        <h2>«Ассоль» — стоматология с характером и заботой</h2>
+        <p>Наша клиника работает в Сормовском районе Нижнего Новгорода, в здании Нижегородского медицинского колледжа (центральный вход). За 15 с лишним лет мы заслужили репутацию места, где лечат быстро, безболезненно и качественно — по действительно доступным ценам.</p>
+        <p>Мы предоставляем полный спектр стоматологических услуг: реставрация, лечение и удаление зубов, протезирование, имплантация и установка брекет-систем. Используем современное оборудование и материалы ведущих мировых производителей.</p>
+        <ul class="about-list">
+          <li><span class="ck">✓</span> Скидки пенсионерам, студентам и семьям</li>
+          <li><span class="ck">✓</span> Беспроцентная рассрочка платежа</li>
+          <li><span class="ck">✓</span> Гарантия 1 год на все услуги</li>
+          <li><span class="ck">✓</span> Постоянное повышение квалификации врачей</li>
+        </ul>
+        <div class="hero-actions">
+          <a href="#contacts" class="btn btn-primary">Записаться на приём</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section" id="reviews" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Отзывы пациентов</span>
+      <h2>Нам доверяют улыбки</h2>
+      <p>Более 40 000 пациентов за годы работы. Вот что говорят о нас на картах и сервисах отзывов.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Лечила зубы всей семьёй. Врачи внимательные, всё объясняют, цены честные — без навязанных услуг. Совершенно не больно, ребёнок даже не испугался.</p>
+        <div class="rev-author"><span class="rev-ava">Е</span><div><b>Елена М.</b><span>Пациент клиники</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Ставил импланты у хирурга. Всё сделали аккуратно, дали гарантию, объяснили уход. КТ прямо в клинике — удобно, никуда ездить не нужно.</p>
+        <div class="rev-author"><span class="rev-ava">А</span><div><b>Алексей К.</b><span>Пациент клиники</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Отличная клиника в Сормове. Записалась на гигиену, осталась очень довольна результатом. Приятная атмосфера и адекватные цены. Рекомендую!</p>
+        <div class="rev-author"><span class="rev-ava">О</span><div><b>Ольга С.</b><span>Пациент клиники</span></div></div>
+      </div>
+    </div>
+    <div class="rating-row">
+      <span class="rating-pill">⭐ <b>5,0</b> · Яндекс</span>
+      <span class="rating-pill">⭐ <b>5,0</b> · 32top</span>
+      <span class="rating-pill">⭐ <b>4,7</b> · Google</span>
+      <span class="rating-pill">🏆 «Хорошее место» · Яндекс</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="section cta-band">
+  <div class="container">
+    <h2>Запишитесь на бесплатную консультацию</h2>
+    <p>Врач осмотрит, ответит на вопросы и составит план лечения. Без давления и лишних процедур — только то, что действительно нужно.</p>
+    <a href="tel:+78314238023" class="phone-big">+7 (831) 423-80-23</a><br>
+    <a href="#contacts" class="btn btn-white">Как нас найти</a>
+  </div>
+</section>
+
+<!-- Contacts -->
+<section class="section contacts" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+      <p>Мы в центре Сормова — в здании Нижегородского медицинского колледжа, центральный вход.</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="ci-row">
+          <div class="ci-ic">📍</div>
+          <div><div class="lbl">Адрес</div><div class="val">Нижний Новгород, ул. Павла Мочалова, 9<br><span style="font-weight:500;color:var(--muted)">Центр Сормово, здание мед. колледжа</span></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic">📞</div>
+          <div><div class="lbl">Телефоны</div><div class="val">
+            <a href="tel:+78314238023">+7 (831) 423-80-23</a><br>
+            <a href="tel:+78312818251">+7 (831) 281-82-51</a>
+          </div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic">✉️</div>
+          <div><div class="lbl">E-mail</div><div class="val"><a href="mailto:dir@assoldent.ru">dir@assoldent.ru</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic">🕐</div>
+          <div><div class="lbl">Часы работы</div><div class="val">Пн–Пт: 8:00–20:00<br>Сб–Вс: 9:00–17:00</div></div>
+        </div>
+        <a href="tel:+78314238023" class="btn btn-primary">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.347629,43.862975&z=17&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта: стоматология Ассоль, ул. Павла Мочалова, 9"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:16px">
+          <span class="brand-mark">А</span>
+          <span class="brand-text"><b>АССОЛЬ</b><span>стоматологическая клиника</span></span>
+        </a>
+        <p>Стоматология по честным ценам в Сормовском районе Нижнего Новгорода. Более 15 лет заботимся о вашей улыбке.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Услуги и цены</a></li>
+          <li><a href="#doctors">Врачи</a></li>
+          <li><a href="#about">О клинике</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p style="overflow-wrap:anywhere">
+          ул. Павла Мочалова, 9<br>
+          <a href="tel:+78314238023">+7 (831) 423-80-23</a><br>
+          <a href="mailto:dir@assoldent.ru">dir@assoldent.ru</a><br>
+          Пн–Пт 8:00–20:00 · Сб–Вс 9:00–17:00
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Стоматологическая клиника «Ассоль». Нижний Новгород.</span>
+      <span>Информация на сайте не является публичной офертой.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

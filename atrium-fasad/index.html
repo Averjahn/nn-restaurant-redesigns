@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АТРИУМ — Утепление фасадов и стен снаружи в Нижнем Новгороде</title>
+<meta name="description" content="ООО «АТРИУМ» — утепление стен снаружи и штукатурные (мокрые) фасады в Нижнем Новгороде и области. Опыт более 12 лет, гарантия 5 лет на работы и 30 лет на материалы. Цены от 1386 ₽/м². Тел. +7 (831) 410-01-47.">
+<meta name="theme-color" content="#c56a2c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="АТРИУМ — Утепление фасадов в Нижнем Новгороде">
+<meta property="og:description" content="Штукатурные фасады и утепление стен снаружи под ключ. Опыт 12+ лет, гарантия до 30 лет на материалы. Более 60 выполненных объектов.">
+<meta property="og:image" content="assets/fasadnye-raboty.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#2b2723;
+  --accent:#c56a2c;
+  --accent-dark:#a5551f;
+  --bg:#faf7f2;
+  --surface:#f0ebe3;
+  --surface-2:#e7e0d5;
+  --text:#2b2723;
+  --muted:#726a60;
+  --line:#ddd4c7;
+  --white:#ffffff;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --container:1140px;
+  --gap:24px;
+  --header-h:72px;
+  --shadow:0 8px 30px rgba(43,39,35,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{margin:0;font-family:'PT Sans',Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;font-size:clamp(15px,1.5vw,17px);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Oswald',Arial,sans-serif;font-weight:600;line-height:1.15;margin:0 0 .5em;letter-spacing:.01em}
+h1{font-size:clamp(30px,5.5vw,58px);text-transform:uppercase}
+h2{font-size:clamp(25px,4vw,42px);text-transform:uppercase}
+h3{font-size:clamp(19px,2.4vw,24px)}
+p{margin:0 0 1em}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(48px,7vw,88px) 0}
+.section--surface{background:var(--surface)}
+.eyebrow{display:inline-block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:14px;color:var(--accent);font-weight:600;margin-bottom:10px}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:640px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);border:2px solid transparent;cursor:pointer;transition:.2s;text-align:center}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-light{background:#fff;color:var(--primary)}
+.btn-light:hover{background:var(--surface-2)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:18px;min-height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand__logo{width:42px;height:42px;background:var(--accent);color:#fff;border-radius:9px;display:grid;place-items:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:22px}
+.brand__text{display:flex;flex-direction:column;line-height:1.05}
+.brand__name{font-family:'Oswald',sans-serif;font-weight:700;font-size:21px;color:var(--primary);letter-spacing:.06em;white-space:nowrap}
+.brand__tag{font-size:11px;color:var(--muted);letter-spacing:.02em;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:var(--primary);font-weight:700;font-size:15px}
+.nav a:hover{color:var(--accent)}
+.header__phone{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;flex-shrink:0}
+.header__phone a{font-family:'Oswald',sans-serif;font-weight:600;font-size:19px;color:var(--primary);white-space:nowrap}
+.header__phone span{font-size:11px;color:var(--muted)}
+.header__cta{flex-shrink:0}
+.burger{display:none;width:44px;height:44px;border:none;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;padding:10px}
+.burger span{display:block;height:2px;background:var(--primary);border-radius:2px;transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 20px;margin-left:0;transform:translateY(-140%);transition:transform .3s;box-shadow:var(--shadow);max-height:calc(100vh - var(--header-h));overflow-y:auto}
+  .nav.nav--open{transform:translateY(0)}
+  .nav a{padding:14px 4px;border-bottom:1px solid var(--line);font-size:17px}
+  .nav .nav__phone{font-family:'Oswald',sans-serif;font-size:24px;color:var(--accent);border-bottom:none;padding-top:18px}
+  .nav .btn{margin-top:14px;width:100%}
+  .header__phone,.header__cta{display:none}
+  .burger{display:flex;margin-left:auto}
+  .nav__mobile-only{display:block}
+}
+@media(min-width:1041px){.nav__mobile-only{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:clamp(520px,78vh,680px);display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(30,26,22,.72),rgba(30,26,22,.55)),url('assets/fasadnye-raboty.jpg') center/cover no-repeat}
+.hero__inner{max-width:720px;padding:60px 0}
+.hero .eyebrow{color:#ffd9b3}
+.hero h1{color:#fff}
+.hero__sub{font-size:clamp(16px,2vw,20px);color:#f2e9df;margin-bottom:28px;max-width:600px}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero__badges{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px}
+.hero__badge{min-width:0}
+.hero__badge b{font-family:'Oswald',sans-serif;font-size:28px;display:block;color:#fff}
+.hero__badge span{font-size:13px;color:#e8ddd0}
+
+/* ADVANTAGES */
+.adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.adv{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px;min-width:0}
+.adv__ico{width:52px;height:52px;border-radius:12px;background:var(--surface);color:var(--accent);display:grid;place-items:center;font-size:26px;margin-bottom:14px}
+.adv h3{font-size:19px;margin-bottom:6px}
+.adv p{margin:0;color:var(--muted);font-size:15px}
+
+/* PROBLEMS strip */
+.prob-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:34px}
+.prob{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.prob__ico{font-size:30px;flex-shrink:0}
+.prob b{display:block;font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:2px}
+.prob p{margin:0;color:var(--muted);font-size:15px}
+
+/* SERVICES / PRICING */
+.section-head{margin-bottom:38px;max-width:720px}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.pcard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px 24px;display:flex;flex-direction:column;min-width:0;position:relative;overflow:hidden}
+.pcard--hl{border-color:var(--accent);box-shadow:var(--shadow)}
+.pcard--hl::before{content:"Хит";position:absolute;top:16px;right:-30px;background:var(--accent);color:#fff;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:4px 34px;transform:rotate(45deg)}
+.pcard__name{font-family:'Oswald',sans-serif;font-weight:600;font-size:22px;text-transform:uppercase;margin-bottom:4px}
+.pcard__for{color:var(--muted);font-size:14px;min-height:40px}
+.pcard__price{font-family:'Oswald',sans-serif;font-size:34px;color:var(--accent);margin:12px 0 2px}
+.pcard__price small{font-size:15px;color:var(--muted)}
+.pcard__term{font-size:14px;color:var(--muted);margin-bottom:16px}
+.pcard ul{list-style:none;margin:0 0 22px;padding:0;flex:1}
+.pcard li{padding:7px 0 7px 26px;position:relative;font-size:15px;border-top:1px solid var(--line)}
+.pcard li:first-child{border-top:none}
+.pcard li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.pcard .btn{width:100%}
+
+/* SYSTEMS */
+.sys-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.sys{display:flex;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;min-width:0}
+.sys__num{font-family:'Oswald',sans-serif;font-size:34px;color:var(--surface-2);font-weight:700;line-height:1;flex-shrink:0}
+.sys h3{margin-bottom:6px}
+.sys p{margin:0;color:var(--muted);font-size:15px}
+
+/* OBJECTS */
+.obj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.obj{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;background:var(--surface-2)}
+.obj img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.obj:hover img{transform:scale(1.06)}
+.obj__cap{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 14px;background:linear-gradient(transparent,rgba(30,26,22,.85));color:#fff;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:.02em}
+.obj.noimg img{opacity:0}
+.obj-more{text-align:center;margin-top:34px;color:var(--muted)}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap);counter-reset:step}
+.step{min-width:0}
+.step__n{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;display:grid;place-items:center;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{margin:0;color:var(--muted);font-size:14px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:center}
+.about__media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.about__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.about__stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.about__stat{background:var(--surface);border-radius:var(--radius-md);padding:18px 20px;min-width:0}
+.about__stat b{font-family:'Oswald',sans-serif;font-size:30px;color:var(--accent);display:block;line-height:1}
+.about__stat span{font-size:14px;color:var(--muted)}
+
+/* CONTACTS */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.contacts-info{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:clamp(24px,3vw,36px);overflow-wrap:anywhere}
+.crow{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);min-width:0}
+.crow:first-of-type{border-top:none}
+.crow__ico{font-size:22px;flex-shrink:0}
+.crow b{font-family:'Oswald',sans-serif;font-weight:600;display:block}
+.crow a{color:var(--primary);font-size:20px;font-family:'Oswald',sans-serif}
+.crow a:hover{color:var(--accent)}
+.crow span,.crow p{color:var(--muted);font-size:15px;margin:0}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.cform{margin-top:20px;display:grid;gap:12px}
+.cform input,.cform textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:var(--radius-sm);font:inherit;background:var(--bg)}
+.cform textarea{min-height:90px;resize:vertical}
+.cform .btn{width:100%}
+.cform__note{font-size:12px;color:var(--muted);margin:0}
+
+/* FOOTER */
+.footer{background:var(--primary);color:#d9d0c5;padding:48px 0 26px}
+.footer a{color:#f0e6da}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gap);padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer h4{color:#fff;font-size:16px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.footer p{margin:0 0 8px;font-size:14px}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links li{margin-bottom:8px;font-size:14px}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding-top:22px;font-size:13px;color:#a99e90}
+.footer-bottom span{min-width:0}
+
+@media(max-width:960px){
+  .adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .price-grid,.sys-grid,.prob-grid,.obj-grid,.contacts-grid{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:1fr}
+  .about__stats{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  .hero__badges{gap:20px}
+  .hero__actions .btn{width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="АТРИУМ — на главную">
+      <span class="brand__logo">А</span>
+      <span class="brand__text">
+        <span class="brand__name">АТРИУМ</span>
+        <span class="brand__tag">Фасады и утепление · Нижний Новгород</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#services" class="nav__link">Услуги и цены</a>
+      <a href="#systems">Фасадные системы</a>
+      <a href="#objects">Объекты</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+78314100147" class="nav__phone nav__mobile-only">+7 (831) 410-01-47</a>
+      <a href="#contacts" class="btn btn-primary nav__mobile-only">Оставить заявку</a>
+    </nav>
+    <div class="header__phone">
+      <a href="tel:+78314100147">+7 (831) 410-01-47</a>
+      <span>Пн–Сб, звоните — рассчитаем смету</span>
+    </div>
+    <a href="#contacts" class="btn btn-primary header__cta">Заявка</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__inner">
+    <p class="eyebrow">📍 Нижний Новгород и область · работаем с 2012 года</p>
+    <h1>Утепление фасадов и стен снаружи под ключ</h1>
+    <p class="hero__sub">Штукатурные («мокрые») фасады, наружное утепление квартир и домов, ремонт межпанельных швов. Тёплый, тихий и красивый дом за 2–6 дней — с гарантией до 30 лет на материалы.</p>
+    <div class="hero__actions">
+      <a href="#services" class="btn btn-primary">Услуги и цены</a>
+      <a href="#contacts" class="btn btn-light">Рассчитать стоимость</a>
+    </div>
+    <div class="hero__badges">
+      <div class="hero__badge"><b>12+</b><span>лет на рынке</span></div>
+      <div class="hero__badge"><b>60+</b><span>сданных объектов</span></div>
+      <div class="hero__badge"><b>5 лет</b><span>гарантия на работы</span></div>
+      <div class="hero__badge"><b>от 1386 ₽</b><span>за м² фасада</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Почему АТРИУМ</span>
+      <h2>Отделка фасада, за которую не стыдно</h2>
+      <p class="lead">Собственная бригада, проверенные материалы и честная смета без скрытых доплат. Делаем аккуратно и в срок.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="adv__ico">🛡️</div>
+        <h3>Гарантия 5 лет</h3>
+        <p>На все выполненные работы. На фасадные материалы — до 30 лет.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">👷</div>
+        <h3>Своя бригада</h3>
+        <p>Опытные мастера без субподряда и «шабашников». Опыт более 12 лет.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">⏱️</div>
+        <h3>Сроки 2–6 дней</h3>
+        <p>Стандартный объект утепляем и отделываем за несколько дней.</p>
+      </div>
+      <div class="adv">
+        <div class="adv__ico">📋</div>
+        <h3>Честная смета</h3>
+        <p>Фиксируем цену в договоре. Считаем по факту площади, без накруток.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Что решает наружное утепление</span>
+      <h2>Тёплые, сухие и тихие стены</h2>
+      <p class="lead">Утепление снаружи выносит «точку росы» за пределы стены — влага и холод остаются на улице, а не в квартире.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob">
+        <div class="prob__ico">🍄</div>
+        <div><b>Плесень и грибок</b><p>Уходит сырость на стенах и в углах — стена больше не промерзает и не отпотевает.</p></div>
+      </div>
+      <div class="prob">
+        <div class="prob__ico">🔊</div>
+        <div><b>Шум с улицы</b><p>Фасадная система гасит уличный шум — в доме становится заметно тише.</p></div>
+      </div>
+      <div class="prob">
+        <div class="prob__ico">❄️</div>
+        <div><b>Промерзание и холод</b><p>Стены держат тепло, счета за отопление снижаются, зимой комфортно.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / PRICING -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Утепление стен снаружи</span>
+      <h2>Тарифы на наружное утепление</h2>
+      <p class="lead">Цена за м² «под ключ»: утеплитель, армирование, декоративная штукатурка и работы. Точную смету считаем после замера.</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard">
+        <div class="pcard__name">Эконом</div>
+        <div class="pcard__for">Дачи, временные и хозяйственные постройки</div>
+        <div class="pcard__price">от 2550 ₽<small> /м²</small></div>
+        <div class="pcard__term">Срок ~2 дня</div>
+        <ul>
+          <li>Пенопласт / минплита</li>
+          <li>Армирующая сетка</li>
+          <li>Базовое декоративное покрытие</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard pcard--hl">
+        <div class="pcard__name">Стандарт</div>
+        <div class="pcard__for">Квартиры и дома постоянного проживания</div>
+        <div class="pcard__price">от 2750 ₽<small> /м²</small></div>
+        <div class="pcard__term">Срок ~2 дня</div>
+        <ul>
+          <li>Утеплитель повышенной плотности</li>
+          <li>Двойное армирование углов</li>
+          <li>Декоративная штукатурка «короед»</li>
+        </ul>
+        <a href="#contacts" class="btn btn-primary">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Стандарт +</div>
+        <div class="pcard__for">Квартиры с повышенными требованиями</div>
+        <div class="pcard__price">от 2950 ₽<small> /м²</small></div>
+        <div class="pcard__term">Срок 2–3 дня</div>
+        <ul>
+          <li>Усиленная фасадная система</li>
+          <li>Грунт + фасадная краска</li>
+          <li>Аккуратные откосы и примыкания</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Комфорт</div>
+        <div class="pcard__for">Дома и коттеджи, большие площади</div>
+        <div class="pcard__price">от 3400 ₽<small> /м²</small></div>
+        <div class="pcard__term">Срок 3–4 дня</div>
+        <ul>
+          <li>Премиальные утеплитель и клей</li>
+          <li>Штукатурка с колеровкой в массе</li>
+          <li>Защита цоколя и отливов</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Премиум</div>
+        <div class="pcard__for">Коттеджи с фасадным декором</div>
+        <div class="pcard__price">от 3650 ₽<small> /м²</small></div>
+        <div class="pcard__term">Срок 4–6 дней</div>
+        <ul>
+          <li>Многослойная система «Сэнарджи»</li>
+          <li>Фасадный декор и молдинги</li>
+          <li>Дизайн-проект отделки фасада</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Ремонт швов</div>
+        <div class="pcard__for">Ремонт рустов и температурных швов</div>
+        <div class="pcard__price">по замеру</div>
+        <div class="pcard__term">Промышленный альпинизм</div>
+        <ul>
+          <li>Заделка межпанельных швов (рустов)</li>
+          <li>Ремонт температурных швов</li>
+          <li>Устранение продувания и течей</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEMS -->
+<section class="section section--surface" id="systems">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Штукатурный (мокрый) фасад</span>
+      <h2>Фасадные системы и тарифы</h2>
+      <p class="lead">Штукатурный фасад выбирают более 80% домовладельцев: надёжно, красиво и доступно. Не пропускает влагу, «дышит», служит до 35 лет.</p>
+    </div>
+    <div class="price-grid" style="margin-bottom:36px">
+      <div class="pcard">
+        <div class="pcard__name">Практичный</div>
+        <div class="pcard__for">Временные и хозяйственные постройки</div>
+        <div class="pcard__price">от 1386 ₽<small> /м²</small></div>
+        <ul><li>Штукатурная фасадная система</li><li>Базовое декоративное покрытие</li></ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard pcard--hl">
+        <div class="pcard__name">Эстетик</div>
+        <div class="pcard__for">Дома постоянного проживания</div>
+        <div class="pcard__price">от 1542 ₽<small> /м²</small></div>
+        <ul><li>Декоративная штукатурка</li><li>Фасадная краска на выбор</li></ul>
+        <a href="#contacts" class="btn btn-primary">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Перфект</div>
+        <div class="pcard__for">Многоэтажные дома</div>
+        <div class="pcard__price">от 1844 ₽<small> /м²</small></div>
+        <ul><li>Усиленная система для высотных работ</li><li>Промышленный альпинизм</li></ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard__name">Индивидуал</div>
+        <div class="pcard__for">Фасады с архитектурным декором</div>
+        <div class="pcard__price">от 2143 ₽<small> /м²</small></div>
+        <ul><li>Фасадный декор и лепнина</li><li>Индивидуальный проект отделки</li></ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+    </div>
+    <div class="sys-grid">
+      <div class="sys"><span class="sys__num">01</span><div><h3>Штукатурный фасад</h3><p>Утеплитель, армирующая сетка и декоративная штукатурка на прочном основании. Не пропускает влагу, но «дышит».</p></div></div>
+      <div class="sys"><span class="sys__num">02</span><div><h3>Утепление стен снаружи</h3><p>Наружное утепление квартир и домов минплитой или пенополистиролом. Точка росы выносится за стену.</p></div></div>
+      <div class="sys"><span class="sys__num">03</span><div><h3>Отделка и покраска фасада</h3><p>Декоративная штукатурка «короед», фасадная краска, колеровка в массе — аккуратный внешний вид на годы.</p></div></div>
+      <div class="sys"><span class="sys__num">04</span><div><h3>Ремонт швов и рустов</h3><p>Заделка межпанельных и температурных швов, устранение продувания и промерзания — с высотными работами.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTS -->
+<section class="section" id="objects">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Наши работы</span>
+      <h2>Выполненные объекты</h2>
+      <p class="lead">Более 60 фасадов и утеплённых домов в Нижнем Новгороде, на Бору, в Кстово, Богородске и области. Несколько примеров:</p>
+    </div>
+    <div class="obj-grid">
+      <figure class="obj"><img src="assets/obj-pamirskaya.jpg" alt="Фасадные работы, Нижний Новгород, ул. Памирская 11к" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">Нижний Новгород, ул. Памирская 11к</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-kazanskoe.jpg" alt="Утепление стен снаружи, Казанское шоссе 21" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">Казанское шоссе, 21</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-golovanova.jpg" alt="Утепление стен снаружи, ул. Голованова 55" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">Нижний Новгород, ул. Голованова 55</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-korsakova.jpg" alt="Утепление стен снаружи, ул. Римского-Корсакова 53" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">ул. Римского-Корсакова, 53</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-satis.jpg" alt="Фасадные работы, п. Сатис, ул. Гаражная 3" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">п. Сатис, ул. Гаражная 3</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-bor-frunze.jpg" alt="Утепление стен снаружи, Бор, ул. Фрунзе 75" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">Бор, ул. Фрунзе 75</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-akimova.jpg" alt="Утепление стен снаружи, ул. Сергея Акимова 27" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">ул. Сергея Акимова, 27</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-kosmosa.jpg" alt="Утепление стен снаружи, ул. Героев Космоса 16" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">ул. Героев Космоса, 16</figcaption></figure>
+      <figure class="obj"><img src="assets/obj-bogorodsk.jpg" alt="Утепление стен снаружи, Богородск, ул. Комсомольская 22" loading="lazy" decoding="async" onerror="this.closest('.obj').classList.add('noimg')"><figcaption class="obj__cap">Богородск, ул. Комсомольская 22</figcaption></figure>
+    </div>
+    <p class="obj-more">И ещё более 50 объектов: детский санаторий «Большая Ельня», Выксунский металлургический завод, ОАО «Лукойл», Домик Каширина и десятки жилых домов.</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2>Этапы работ</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step__n">1</div><h3>Заявка</h3><p>Звонок или форма на сайте, обсуждаем задачу и адрес объекта.</p></div>
+      <div class="step"><div class="step__n">2</div><h3>Замер и смета</h3><p>Выезжаем, замеряем, считаем честную стоимость по площади.</p></div>
+      <div class="step"><div class="step__n">3</div><h3>Договор</h3><p>Фиксируем цену, сроки и гарантию в договоре.</p></div>
+      <div class="step"><div class="step__n">4</div><h3>Монтаж и отделка</h3><p>Утепление, армирование и декоративная штукатурка за 2–6 дней.</p></div>
+      <div class="step"><div class="step__n">5</div><h3>Сдача объекта</h3><p>Принимаете работу, получаете гарантию до 30 лет на материалы.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">О компании</span>
+      <h2>ООО «АТРИУМ» — фасады Нижнего Новгорода</h2>
+      <p>Мы более 12 лет занимаемся утеплением домов, квартир и зданий в Нижнем Новгороде и области. Специализация — штукатурные («мокрые») фасады, наружное утепление стен, ремонт межпанельных и температурных швов.</p>
+      <p>Работаем собственной бригадой, без субподряда. Используем проверенные фасадные системы и материалы, даём гарантию 5 лет на работы и до 30 лет — на материалы. Каждому объекту — индивидуальный подход и честная смета.</p>
+      <div class="about__stats">
+        <div class="about__stat"><b>2012</b><span>год начала работы</span></div>
+        <div class="about__stat"><b>60+</b><span>сданных объектов</span></div>
+        <div class="about__stat"><b>до 35 лет</b><span>срок службы фасада</span></div>
+        <div class="about__stat"><b>5 лет</b><span>гарантия на работы</span></div>
+      </div>
+    </div>
+    <div class="about__media">
+      <img src="assets/obj-golovanova.jpg" alt="Готовый утеплённый фасад жилого дома, выполненный компанией АТРИУМ" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section--surface" id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Контакты</span>
+      <h2>Оставьте заявку — рассчитаем смету</h2>
+      <p class="lead">Позвоните или оставьте контакты — перезвоним, ответим на вопросы и посчитаем стоимость по вашему объекту.</p>
+    </div>
+    <div class="contacts-grid">
+      <div>
+        <div class="contacts-info">
+          <div class="crow"><span class="crow__ico">📍</span><div><b>Адрес</b><p>Нижний Новгород, ул. Адмирала Макарова, 8</p></div></div>
+          <div class="crow"><span class="crow__ico">📞</span><div><b>Телефоны</b><a href="tel:+78314100147">+7 (831) 410-01-47</a><a href="tel:+79648380135">+7 (964) 838-01-35</a></div></div>
+          <div class="crow"><span class="crow__ico">🕐</span><div><b>Режим работы</b><span>Пн–Сб, выезд на замер по договорённости</span></div></div>
+          <div class="crow"><span class="crow__ico">🏢</span><div><b>Реквизиты</b><span>ООО «АТРИУМ» · ИНН 5258128710 · ОГРН 1165258050979 · КПП 525801001</span></div></div>
+          <form class="cform" onsubmit="this.querySelector('.cform__ok').hidden=false;this.reset();return false;">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <textarea name="msg" placeholder="Адрес объекта, площадь, вопрос"></textarea>
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            <p class="cform__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            <p class="cform__ok" hidden style="color:var(--accent);font-weight:700;margin:4px 0 0">Спасибо! Мы перезвоним в ближайшее время.</p>
+          </form>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=56.2858974,43.9444835&z=16&hl=ru&output=embed" width="100%" height="400" style="border:0" loading="lazy" allowfullscreen title="Карта: Нижний Новгород, ул. Адмирала Макарова, 8"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <h4>АТРИУМ</h4>
+        <p>Утепление фасадов и стен снаружи в Нижнем Новгороде и области. Штукатурные фасады, наружное утепление, ремонт швов. С 2012 года.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Услуги и цены</a></li>
+          <li><a href="#systems">Фасадные системы</a></li>
+          <li><a href="#objects">Объекты</a></li>
+          <li><a href="#about">О компании</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>Нижний Новгород,<br>ул. Адмирала Макарова, 8</p>
+        <p><a href="tel:+78314100147">+7 (831) 410-01-47</a></p>
+        <p><a href="tel:+79648380135">+7 (964) 838-01-35</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ООО «АТРИУМ». Фасадные работы и утепление, Нижний Новгород.</span>
+      <span>ИНН 5258128710 · ОГРН 1165258050979</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('nav--open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Открыть меню');
+    });
+  });
+})();
+</script>
+</body>
+</html>

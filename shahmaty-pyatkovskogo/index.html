@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Школа шахмат Ивана Пятковского — обучение шахматам в Нижнем Новгороде</title>
+<meta name="description" content="Обучение шахматам для детей от 3 лет и взрослых в Нижнем Новгороде. Тренер — кандидат в мастера спорта Иван Пятковский, автор книги «Шахматы — быстро и просто!». Индивидуальные, групповые и онлайн-занятия. Запись: +7 904 048-25-62.">
+<meta name="theme-color" content="#15171d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Школа шахмат Ивана Пятковского — Нижний Новгород">
+<meta property="og:description" content="Индивидуальные, групповые и онлайн-занятия по шахматам для детей и взрослых. Тренер — КМС, автор книги по шахматам.">
+<meta property="og:image" content="assets/hero-chess.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#15171d;
+  --graphite-2:#1e2129;
+  --graphite-3:#272b35;
+  --wood:#2a2018;
+  --gold:#c9a227;
+  --gold-soft:#d9be55;
+  --cream:#f3eee3;
+  --text:#e9e6df;
+  --muted:#a7a297;
+  --line:rgba(201,162,39,.22);
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --container:1120px;
+  --gap:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;
+  font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--graphite);
+  color:var(--text);
+  font-size:clamp(15px,1.4vw,17px);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;margin:0;font-weight:700}
+h1{font-size:clamp(32px,6vw,64px)}
+h2{font-size:clamp(26px,4vw,44px)}
+h3{font-size:clamp(19px,2.4vw,24px)}
+p{margin:0 0 1em}
+a{color:var(--gold-soft);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:clamp(56px,8vw,96px) 0}
+.eyebrow{
+  font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin:0 0 14px
+}
+.lead{color:var(--muted);max-width:60ch}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:var(--radius-sm);font-weight:600;font-size:15px;
+  cursor:pointer;border:1px solid transparent;transition:.2s;white-space:nowrap;text-align:center
+}
+.btn-primary{background:var(--gold);color:#1a150a}
+.btn-primary:hover{background:var(--gold-soft)}
+.btn-outline{border-color:var(--line);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(21,23,29,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)
+}
+.header-inner{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);flex-shrink:0}
+.brand-mark{
+  width:38px;height:38px;border-radius:9px;flex-shrink:0;
+  background:
+    conic-gradient(var(--graphite) 90deg,var(--gold) 90deg 180deg,var(--graphite) 180deg 270deg,var(--gold) 270deg);
+  border:1px solid var(--gold)
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap}
+.brand-text b{font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+.brand-text span{font-size:11px;color:var(--muted);letter-spacing:.04em}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{color:var(--text);font-size:15px;font-weight:500}
+.nav a:hover{color:var(--gold-soft)}
+.header-cta{display:flex;align-items:center;gap:14px}
+.header-phone{color:var(--text);font-weight:600;white-space:nowrap;font-size:15px}
+.header-phone:hover{color:var(--gold-soft)}
+.burger{
+  display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;
+  background:transparent;cursor:pointer;padding:0;flex-direction:column;gap:5px;
+  align-items:center;justify-content:center
+}
+.burger span{width:20px;height:2px;background:var(--text);transition:.25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:1040px){
+  .nav{
+    position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--graphite-2);border-bottom:1px solid var(--line);
+    margin-left:0;padding:8px 20px 20px;
+    transform:translateY(-140%);transition:transform .3s;visibility:hidden
+  }
+  .nav.nav--open{transform:translateY(0);visibility:visible}
+  .nav a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:17px}
+  .nav .nav-phone{color:var(--gold-soft);font-weight:700;font-size:20px}
+  .nav .btn{margin-top:16px;width:100%}
+  .nav .mobile-only{display:block}
+  .header-cta .header-phone,.header-cta .btn{display:none}
+  .header-cta{margin-left:auto}
+  .burger{display:flex}
+}
+.mobile-only{display:none}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;min-height:92svh;min-height:640px;display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(21,23,29,.82),rgba(21,23,29,.7) 55%,rgba(21,23,29,.96)),
+    url(assets/hero-chess.jpg) center/cover no-repeat;
+}
+.hero-inner{max-width:760px;padding:80px 0}
+.hero h1{margin-bottom:20px}
+.hero h1 em{color:var(--gold-soft);font-style:normal}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:52ch;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.badge{
+  font-size:13px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;
+  color:var(--cream);background:rgba(201,162,39,.08)
+}
+
+/* ---------- Stats ---------- */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--graphite-2)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:40px 0}
+.stat{text-align:center;min-width:0}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,46px);color:var(--gold-soft);line-height:1}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* ---------- Advantages ---------- */
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.adv-card{
+  background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:28px;min-width:0
+}
+.adv-icon{font-size:26px;margin-bottom:14px}
+.adv-card h3{margin-bottom:8px}
+.adv-card p{color:var(--muted);margin:0}
+
+/* ---------- Programs ---------- */
+.prog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.prog-card{
+  position:relative;background:var(--graphite-2);border:1px solid var(--line);
+  border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;min-width:0
+}
+.prog-card.featured{border-color:var(--gold);background:linear-gradient(180deg,var(--graphite-3),var(--graphite-2))}
+.prog-tag{
+  position:absolute;top:22px;right:22px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--line);border-radius:100px;padding:4px 10px
+}
+.prog-card h3{margin-bottom:6px;padding-right:70px}
+.prog-audience{font-size:13px;color:var(--gold-soft);letter-spacing:.04em;margin-bottom:14px;text-transform:uppercase}
+.prog-card ul{list-style:none;padding:0;margin:0 0 22px}
+.prog-card li{padding:7px 0 7px 26px;position:relative;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.05)}
+.prog-card li::before{content:"♟";position:absolute;left:0;color:var(--gold)}
+.prog-price{margin-top:auto;display:flex;align-items:baseline;gap:8px;margin-bottom:18px}
+.prog-price b{font-family:'Playfair Display',serif;font-size:30px;color:var(--cream)}
+.prog-price span{color:var(--muted);font-size:14px}
+.prog-card .btn{width:100%}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:22px}
+
+/* ---------- Trainer ---------- */
+.trainer{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:center}
+.trainer-photo{position:relative;min-width:0}
+.trainer-photo img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover}
+.trainer-photo .frame{position:absolute;inset:14px;border:1px solid var(--gold);border-radius:var(--radius-lg);pointer-events:none;mix-blend-mode:screen;opacity:.5}
+.trainer-body h2{margin-bottom:16px}
+.trainer-body p{color:var(--muted)}
+.creds{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.cred{font-size:13px;padding:8px 14px;background:var(--graphite-2);border:1px solid var(--line);border-radius:100px;color:var(--cream)}
+
+/* ---------- Achievements ---------- */
+.ach{background:var(--graphite-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.ach-card{padding:26px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--graphite);min-width:0}
+.ach-card h3{color:var(--gold-soft);margin-bottom:8px;font-size:20px}
+.ach-card p{color:var(--muted);margin:0}
+
+/* ---------- Schedule ---------- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-md)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+thead th{background:var(--graphite-3);color:var(--gold-soft);font-family:'Playfair Display',serif;font-weight:600;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{color:var(--cream);font-weight:600;white-space:nowrap}
+.sched-note{color:var(--muted);font-size:14px;margin-top:16px}
+
+/* ---------- Reviews ---------- */
+.rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.rev-card{background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;min-width:0}
+.rev-stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+.rev-card p{color:var(--text);font-style:italic}
+.rev-author{display:flex;align-items:center;gap:12px;margin-top:18px}
+.rev-avatar{width:42px;height:42px;border-radius:50%;background:var(--graphite-3);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-soft);font-weight:700;flex-shrink:0}
+.rev-author b{font-size:15px;display:block}
+.rev-author span{font-size:13px;color:var(--muted)}
+
+/* ---------- Contacts ---------- */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.contacts-info{min-width:0}
+.info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.info-row .ico{font-size:20px;flex-shrink:0}
+.info-row b{display:block;font-size:13px;color:var(--muted);font-weight:500;letter-spacing:.04em}
+.info-row a,.info-row span{color:var(--text);font-size:17px}
+.info-row a:hover{color:var(--gold-soft)}
+.contacts-info .btn{margin-top:26px;width:100%}
+.map-wrap{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--graphite-2);border-top:1px solid var(--line);padding:40px 0}
+.footer-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.footer-inner .brand-text b{font-size:15px}
+.footer p{margin:0;color:var(--muted);font-size:14px}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--gold-soft)}
+
+@media(max-width:860px){
+  .adv-grid,.ach-grid,.rev-grid{grid-template-columns:1fr}
+  .prog-grid{grid-template-columns:1fr}
+  .trainer{grid-template-columns:1fr}
+  .trainer-photo{max-width:360px;margin:0 auto}
+  .contacts-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}
+}
+@media(max-width:420px){
+  .adv-card,.prog-card,.rev-card,.ach-card{padding:22px}
+  .hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="На главную">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text"><b>Шахматы</b><span>школа Ивана Пятковского</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#programs">Программы</a>
+      <a href="#trainer">О тренере</a>
+      <a href="#achievements">Достижения</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79040482562" class="nav-phone mobile-only">+7 904 048-25-62</a>
+      <a href="#contacts" class="btn btn-primary mobile-only">Записаться на занятие</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+79040482562" class="header-phone">+7 904 048-25-62</a>
+      <a href="#contacts" class="btn btn-primary">Записаться</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">📍 Нижний Новгород · ул. Родионова, 187в</p>
+    <h1>Шахматы, которым <em>учат мастера</em></h1>
+    <div class="hero-badges">
+      <span class="badge">♟ Дети от 3 лет</span>
+      <span class="badge">♞ Взрослые с нуля</span>
+      <span class="badge">♜ Онлайн-занятия</span>
+    </div>
+    <p class="hero-sub">Школа шахмат Ивана Пятковского — кандидата в мастера спорта и автора книги «Шахматы — быстро и просто!». Индивидуальный и групповой подход, развитие логики, внимания и характера через игру.</p>
+    <div class="hero-actions">
+      <a href="#programs" class="btn btn-primary">Выбрать программу</a>
+      <a href="#contacts" class="btn btn-outline">Как записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><b>15+</b><span>лет обучаю детей и взрослых</span></div>
+      <div class="stat"><b>КМС</b><span>кандидат в мастера спорта</span></div>
+      <div class="stat"><b>3+</b><span>возраст, с которого берём в группу</span></div>
+      <div class="stat"><b>1</b><span>авторская книга по шахматам</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section" id="advantages">
+  <div class="container">
+    <p class="eyebrow">Почему у нас</p>
+    <h2>Обучение, в котором виден результат</h2>
+    <p class="lead" style="margin-bottom:38px">Не просто «двигать фигуры», а системно ставить мышление: от первых правил до уверенной турнирной игры.</p>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">🎯</div>
+        <h3>Индивидуальный подход</h3>
+        <p>Программа под уровень и цель ученика — от знакомства с доской до подготовки к разрядным турнирам.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">🧠</div>
+        <h3>Развитие мышления</h3>
+        <p>Шахматы тренируют логику, концентрацию, память и умение просчитывать последствия решений.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">👨‍🏫</div>
+        <h3>Опытный тренер</h3>
+        <p>Кандидат в мастера спорта, призёр областных турниров, стаж работы с детьми более 15 лет.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">🏆</div>
+        <h3>Турнирная практика</h3>
+        <p>Регулярно проводим внутренние турниры — ученики играют, а не только разбирают партии.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">💻</div>
+        <h3>Онлайн-формат</h3>
+        <p>Дистанционные занятия по аудио- и видеосвязи — заниматься можно из любой точки.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon" aria-hidden="true">📖</div>
+        <h3>Авторская методика</h3>
+        <p>В основе — книга тренера «Шахматы — быстро и просто!»: правила и приёмы понятным языком.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section" id="programs" style="background:var(--graphite-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Программы обучения</p>
+    <h2>Выберите формат занятий</h2>
+    <p class="lead" style="margin-bottom:38px">Занятия для детей и взрослых, в группе или один на один, очно в Нижнем Новгороде или онлайн.</p>
+    <div class="prog-grid">
+
+      <div class="prog-card">
+        <span class="prog-tag">Дети</span>
+        <h3>Групповые занятия для детей</h3>
+        <p class="prog-audience">от 3 лет · начинающие и с опытом</p>
+        <ul>
+          <li>Знакомство с фигурами и правилами в игровой форме</li>
+          <li>Группы по уровню и возрасту, до 6 человек</li>
+          <li>Тактика, дебюты и разбор партий</li>
+          <li>Участие во внутренних турнирах школы</li>
+        </ul>
+        <div class="prog-price"><b>от 500 ₽</b><span>/ занятие</span></div>
+        <a href="#contacts" class="btn btn-outline">Записать ребёнка</a>
+      </div>
+
+      <div class="prog-card featured">
+        <span class="prog-tag">Хит</span>
+        <h3>Индивидуальные занятия</h3>
+        <p class="prog-audience">дети и взрослые · любой уровень</p>
+        <ul>
+          <li>Персональная программа под цель ученика</li>
+          <li>Максимальный темп прогресса</li>
+          <li>Гибкое расписание, удобное время</li>
+          <li>Подготовка к разрядам и турнирам</li>
+        </ul>
+        <div class="prog-price"><b>от 800 ₽</b><span>/ занятие</span></div>
+        <a href="#contacts" class="btn btn-primary">Записаться</a>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-tag">Взрослые</span>
+        <h3>Шахматы для взрослых с нуля</h3>
+        <p class="prog-audience">без опыта или с базовыми навыками</p>
+        <ul>
+          <li>Освоение правил и базовой стратегии</li>
+          <li>Понятная методика «быстро и просто»</li>
+          <li>Тренировка логики и концентрации</li>
+          <li>Занятия в комфортном темпе</li>
+        </ul>
+        <div class="prog-price"><b>от 700 ₽</b><span>/ занятие</span></div>
+        <a href="#contacts" class="btn btn-outline">Начать обучение</a>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-tag">Онлайн</span>
+        <h3>Дистанционное обучение</h3>
+        <p class="prog-audience">видео- и аудиосвязь · из любого города</p>
+        <ul>
+          <li>Занятия по видеосвязи в удобное время</li>
+          <li>Разбор партий на онлайн-доске</li>
+          <li>Домашние задания и обратная связь</li>
+          <li>Подходит детям и взрослым</li>
+        </ul>
+        <div class="prog-price"><b>от 600 ₽</b><span>/ занятие</span></div>
+        <a href="#contacts" class="btn btn-outline">Заниматься онлайн</a>
+      </div>
+
+    </div>
+    <p class="note">Действуют скидки: 30% при записи через сайт и сезонная акция −50% на обучение. Точную стоимость и абонементы уточняйте по телефону.</p>
+  </div>
+</section>
+
+<!-- TRAINER -->
+<section class="section" id="trainer">
+  <div class="container trainer">
+    <div class="trainer-photo">
+      <img src="assets/trener.jpg" alt="Тренер Иван Пятковский за шахматной доской" loading="lazy" decoding="async" onerror="this.style.opacity='0'">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+    <div class="trainer-body">
+      <p class="eyebrow">О тренере</p>
+      <h2>Иван Пятковский</h2>
+      <p>Научился играть в шахматы в 5 лет благодаря родителям. В 2000-х годах становился призёром областных и городских турниров по классическим, быстрым шахматам и блицу. С 2008 года профессионально занимаюсь обучением детей.</p>
+      <p>Преподавал в нескольких образовательных и спортивных центрах Нижнего Новгорода, работаю с начинающими и опытными учениками, применяя индивидуальный подход. Регулярно провожу шахматные турниры. Автор книги «Шахматы — быстро и просто!» с основными правилами и приёмами для самостоятельного обучения.</p>
+      <div class="creds">
+        <span class="cred">♔ Кандидат в мастера спорта</span>
+        <span class="cred">♖ Призёр областных турниров</span>
+        <span class="cred">♘ 15+ лет с детьми</span>
+        <span class="cred">♗ Автор книги по шахматам</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section ach" id="achievements">
+  <div class="container">
+    <p class="eyebrow">Достижения</p>
+    <h2>Мастерство, подтверждённое игрой</h2>
+    <div class="ach-grid" style="margin-top:34px">
+      <div class="ach-card">
+        <h3>Кандидат в мастера спорта</h3>
+        <p>Спортивная квалификация тренера — уровень, до которого мы помогаем расти и ученикам.</p>
+      </div>
+      <div class="ach-card">
+        <h3>Призёр турниров</h3>
+        <p>Победы и призовые места на областных и городских турнирах по классике, рапиду и блицу.</p>
+      </div>
+      <div class="ach-card">
+        <h3>Автор книги</h3>
+        <p>«Шахматы — быстро и просто!» — учебное пособие с правилами и приёмами для новичков.</p>
+      </div>
+      <div class="ach-card">
+        <h3>15+ лет практики</h3>
+        <p>Обучение детей с 2008 года в образовательных и спортивных центрах Нижнего Новгорода.</p>
+      </div>
+      <div class="ach-card">
+        <h3>Свои турниры</h3>
+        <p>Регулярные внутренние турниры школы — ученики набирают реальный игровой опыт.</p>
+      </div>
+      <div class="ach-card">
+        <h3>Библиотека шахмат</h3>
+        <p>Доступ к подборке материалов и книг для самостоятельной подготовки между занятиями.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="container">
+    <p class="eyebrow">Расписание</p>
+    <h2>Когда проходят занятия</h2>
+    <p class="lead" style="margin-bottom:30px">Ориентировочная сетка групп. Индивидуальные и онлайн-занятия назначаются в удобное вам время — согласуем по телефону.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Дни</th><th>Время</th><th>Группа</th><th>Формат</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Пн · Ср · Пт</td><td>16:00 – 17:00</td><td>Дети, начинающие (3–7 лет)</td><td>Группа</td></tr>
+          <tr><td>Пн · Ср · Пт</td><td>17:15 – 18:15</td><td>Дети, с опытом (8–14 лет)</td><td>Группа</td></tr>
+          <tr><td>Вт · Чт</td><td>18:30 – 19:45</td><td>Взрослые, любой уровень</td><td>Группа</td></tr>
+          <tr><td>Сб</td><td>11:00 – 14:00</td><td>Индивидуальные занятия</td><td>По записи</td></tr>
+          <tr><td>По договорённости</td><td>Гибко</td><td>Онлайн, дети и взрослые</td><td>Видеосвязь</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sched-note">Место занятий: Нижний Новгород, ул. Родионова, 187в. Точное время в вашей группе подтверждаем при записи.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews" style="background:var(--graphite-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Отзывы</p>
+    <h2>Что говорят ученики и родители</h2>
+    <div class="rev-grid" style="margin-top:34px">
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Сын занимается второй год. Стал усидчивее, лучше считает ходы наперёд — это видно и в учёбе. Иван находит подход к ребёнку, занятия проходят на одном дыхании.»</p>
+        <div class="rev-author"><span class="rev-avatar">Е</span><span><b>Елена</b><span>мама ученика, 8 лет</span></span></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Пришёл учиться шахматам с нуля во взрослом возрасте. За несколько месяцев уверенно играю и понимаю логику партии. Объясняет спокойно и по делу.»</p>
+        <div class="rev-author"><span class="rev-avatar">Д</span><span><b>Дмитрий</b><span>ученик, взрослая группа</span></span></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5">★★★★★</div>
+        <p>«Занимаемся онлайн из другого города. Дочка ждёт каждое занятие, а к турнирам готовимся по домашним заданиям. Удобно и результативно.»</p>
+        <div class="rev-author"><span class="rev-avatar">О</span><span><b>Ольга</b><span>мама ученицы, онлайн</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2>Записаться на занятие</h2>
+    <p class="lead" style="margin-bottom:34px">Позвоните или напишите — подберём программу, группу и удобное время. Первое занятие поможет определить уровень.</p>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">📍</span>
+          <span><b>Адрес</b><span>г. Нижний Новгород, ул. Родионова, 187в</span></span>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">📞</span>
+          <span><b>Телефон / запись</b><a href="tel:+79040482562">+7 904 048-25-62</a></span>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">✉️</span>
+          <span><b>E-mail</b><a href="mailto:ronniesullivan@mail.ru">ronniesullivan@mail.ru</a></span>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">💬</span>
+          <span><b>Skype</b><span>pyatkovskiyivan</span></span>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true">🌐</span>
+          <span><b>ВКонтакте</b><a href="https://vk.com/chessnn" target="_blank" rel="noopener">vk.com/chessnn</a></span>
+        </div>
+        <a href="tel:+79040482562" class="btn btn-primary">Позвонить и записаться</a>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=56.3077911,44.0733196&z=16&hl=ru&output=embed"
+          loading="lazy" allowfullscreen title="Карта: школа шахмат на ул. Родионова, 187в, Нижний Новгород"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text"><b>Школа шахмат Ивана Пятковского</b><span>Нижний Новгород · ул. Родионова, 187в</span></span>
+    </a>
+    <p>© 2026 · <a href="tel:+79040482562">+7 904 048-25-62</a> · <a href="https://vk.com/chessnn" target="_blank" rel="noopener">ВКонтакте</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  function close(){nav.classList.remove('nav--open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>
