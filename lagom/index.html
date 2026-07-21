@@ -12,6 +12,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Заставка загрузки: две книги «с торца» разлетаются страницами и сходятся
+       в одну — обыгрываем, что сайт вдохновлён книгой Lagom. Пропускается по
+       клику/Esc и при prefers-reduced-motion. -->
+  <div id="pageLoader" class="loader" role="status" aria-label="Загрузка страницы">
+    <div class="loader__stage">
+      <div class="book book--left">
+        <div class="book__pages">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="book__cover"></div>
+      </div>
+      <div class="book book--right">
+        <div class="book__pages">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="book__cover"></div>
+      </div>
+      <div class="loader__word" aria-hidden="true">Lägom</div>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container header__inner">
       <a href="#" class="logo">Lä<span>gom</span></a>

@@ -82,4 +82,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", () => spawnWeather(document.body.dataset.season));
+
+  initLoader();
 });
+
+// Заставка загрузки: две книги «с торца» разлетаются страницами и сходятся в одну.
+function initLoader() {
+  const loader = document.getElementById("pageLoader");
+  if (!loader) return;
+
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    loader.remove();
+    return;
+  }
+
+  document.body.classList.add("is-loading");
+  let finished = false;
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    loader.classList.add("is-done");
+    document.body.classList.remove("is-loading");
+    setTimeout(() => loader.remove(), 900);
+  }
+
+  // книги подлетают и «шелестят» страницами ~1.3с, затем сходятся к центру ~0.9с,
+  // затем выравниваются в одну обложку и проступает надпись, и всё гаснет
+  const t1 = setTimeout(() => loader.classList.add("is-merging"), 1300);
+  const t2 = setTimeout(() => loader.classList.add("is-merged"), 2150);
+  const t3 = setTimeout(finish, 3050);
+
+  // пропустить по клику или Esc — не запирать пользователя в анимации
+  loader.addEventListener("click", () => {
+    clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
+    finish();
+  });
+  document.addEventListener("keydown", function onKey(e) {
+    if (e.key === "Escape") {
+      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
+      finish();
+      document.removeEventListener("keydown", onKey);
+    }
+  });
+}
