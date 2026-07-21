@@ -112,4 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   $("#successClose").onclick = closeOrder;
   if (activeFilter) renderMenu();
+
+  // видео в hero — грузим iframe только по клику, чтобы не нагружать страницу автоплеем
+  const videoBtn = $("#heroVideoBtn"), videoModal = $("#videoModal"), videoFrame = $("#videoModalFrame");
+  if (videoBtn && videoModal && videoFrame) {
+    videoBtn.onclick = () => {
+      videoFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/fCgk92u0728?autoplay=1&rel=0" title="Coffee Molly" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      videoModal.classList.add("open");
+    };
+    const closeVideo = () => { videoModal.classList.remove("open"); videoFrame.innerHTML = ""; };
+    $("#videoModalClose").onclick = closeVideo;
+    videoModal.onclick = (e) => { if (e.target === videoModal) closeVideo(); };
+  }
 });

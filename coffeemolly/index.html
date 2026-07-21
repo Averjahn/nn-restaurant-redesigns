@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="container header__inner">
-      <a href="#" class="logo">Coffee <span>Molly</span></a>
+      <a href="#" class="logo"><img src="images/logo_main.png" alt="Coffee Molly" class="logo__img"></a>
       <nav class="nav">
         <a href="#menu">Меню</a>
         <a href="#school">Школа бариста</a>
@@ -26,21 +26,56 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero__inner">
+  <section class="hero hero--video">
+    <div class="hero__bg" aria-hidden="true">
+      <img class="hero__bg-poster" src="images/hero-video-poster.jpg" alt="">
+      <div class="hero__bg-overlay"></div>
+    </div>
+    <div class="container hero__inner hero__inner--video">
       <div class="hero__text">
-        <span class="hero__eyebrow">☕ Сеть кофеен · с 2014 года</span>
+        <span class="hero__eyebrow">☕ Сеть кофеен · с 2014 года · Нижний Новгород</span>
         <h1>Кофе, в который<br><em>влюбляешься</em></h1>
         <p>8 уютных кофеен в Нижнем Новгороде, своя школа бариста и кофе, который мы готовим с любовью. Заходите на чашечку — или научитесь варить такой сами.</p>
         <div class="hero__actions">
           <a href="#menu" class="btn btn--teal">Смотреть меню</a>
-          <a href="#school" class="btn btn--outline">Школа бариста</a>
+          <button type="button" id="heroVideoBtn" class="btn btn--outline btn--outline-light hero__play"><span class="hero__play-ico">▶</span> Смотреть видео</button>
         </div>
         <div class="hero__chips">
-          <span>★ 4.8 на Яндексе</span><span>🐶 dog-friendly</span><span>🧸 детская комната</span>
+          <span>★ 4.8 на Яндексе</span><span>🐶 dog-friendly</span><span>🧸 детская комната</span><span class="hero__chip--new">📋 меню с фото на сайте</span>
         </div>
       </div>
-      <div class="hero__img" style="background-image:url('images/677db856cf85.jpg')"></div>
+    </div>
+  </section>
+
+  <div id="videoModal" class="modal video-modal">
+    <div class="modal__inner video-modal__inner">
+      <button type="button" id="videoModalClose" class="close-btn video-modal__close">✕</button>
+      <div class="video-modal__frame" id="videoModalFrame"></div>
+    </div>
+  </div>
+
+  <section class="perks">
+    <div class="container perks__inner">
+      <div class="perk">
+        <span class="perk__ico">📋</span>
+        <b>Меню с фото на сайте</b>
+        <p>Раньше меню не было онлайн вовсе — теперь видно каждую позицию с фото и ценой заранее</p>
+      </div>
+      <div class="perk">
+        <span class="perk__ico">🛒</span>
+        <b>Заказ в 2 клика</b>
+        <p>Собрали корзину — оформили заказ прямо с телефона, без звонков и переписок</p>
+      </div>
+      <div class="perk">
+        <span class="perk__ico">🎓</span>
+        <b>Запись на курс онлайн</b>
+        <p>Программа, стоимость и формат курса бариста — сразу на сайте, с онлайн-заявкой</p>
+      </div>
+      <div class="perk">
+        <span class="perk__ico">🎁</span>
+        <b>Подарочный сертификат</b>
+        <p>Оформите обучение бариста в подарок близкому — прямо здесь, без похода в кофейню</p>
+      </div>
     </div>
   </section>
 
@@ -55,22 +90,43 @@
   <!-- BARISTA SCHOOL -->
   <section id="school" class="school">
     <div class="container school__inner">
-      <div class="school__img" style="background-image:url('images/d0ee68399d4d.jpg')"></div>
+      <div class="school__img" style="background-image:url('images/d0ee68399d4d.jpg')">
+        <span class="school__img-badge">🎓 850+ выпускников</span>
+      </div>
       <div class="school__text">
         <span class="section-eyebrow light">Школа бариста</span>
-        <h2 class="section-title light">Научитесь варить кофе как профи</h2>
-        <p>Мы не только готовим кофе — мы учим этому. Практика на профессиональном оборудовании, дегустации и колесо вкусов. После курса вы сможете работать бариста или радовать близких дома.</p>
-        <div class="courses">
-          <div class="course">
-            <div class="course__head"><b>Начинающий бариста</b><span class="course__price">7 000 ₽</span></div>
-            <p>Групповой формат · основы эспрессо, молока и латте-арта</p>
+        <h2 class="section-title light">Курс «Начинающий бариста»</h2>
+        <p>Полностью разберётесь в кофе и получите востребованную профессию за один день. Расскажем про сорта зерна, дадим попробовать арабику и робусту, вы лично приготовите эспрессо и освоите технику взбивания молока. Занятия — по субботам и воскресеньям в кофейне на ул. Керченская, 13 (напротив стадиона).</p>
+        <div class="school__steps">
+          <div class="school__step">
+            <span class="school__step-num">1</span>
+            <div>
+              <b>Онлайн-теория</b>
+              <p>130 минут видео с закрепляющим тестом — путь кофе от ягоды до чашки</p>
+            </div>
           </div>
-          <div class="course">
-            <div class="course__head"><b>Мастерство бариста</b><span class="course__price">15 000 ₽</span></div>
-            <p>Индивидуальный формат · глубокое погружение в профессию</p>
+          <div class="school__step">
+            <span class="school__step-num">2</span>
+            <div>
+              <b>Практика — 2,5 часа</b>
+              <p>Настройка помола, эспрессо, капучино, латте, взбивание молочной пенки и простые узоры латте-арта на профессиональной кофемашине</p>
+            </div>
           </div>
         </div>
-        <a href="#contacts" class="btn btn--cream">Записаться на курс</a>
+        <div class="courses">
+          <div class="course">
+            <div class="course__head"><b>Групповое обучение</b><span class="course__price">7 000 ₽</span></div>
+            <p>Занятие вместе с другими студентами — тёплая атмосфера, живой обмен опытом</p>
+          </div>
+          <div class="course">
+            <div class="course__head"><b>Индивидуальное обучение</b><span class="course__price">15 000 ₽</span></div>
+            <p>Персональный формат — весь фокус тренера только на вас</p>
+          </div>
+        </div>
+        <div class="school__actions">
+          <a href="#contacts" class="btn btn--cream">Записаться на курс</a>
+          <a href="#contacts" class="school__cert-link">🎁 Подарочный сертификат — от 7 000 ₽, действует 3 месяца</a>
+        </div>
       </div>
     </div>
   </section>
@@ -148,7 +204,7 @@
     </div>
   </div>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script src="data.js?v=2"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
