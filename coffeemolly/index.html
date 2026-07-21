@@ -170,6 +170,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© 2025 Coffee Molly · сеть кофеен и школа бариста · Нижний Новгород</span>
+      <a class="footer__music" href="https://archive.org/details/DreamingBluesJosephSamuelsJazzBand" target="_blank" rel="noopener">♪ Dreaming Blues, 1920 — Joseph Samuels' Jazz Band (public domain)</a>
       <span class="footer__demo">Демо-редизайн · данные с Яндекс.Карт</span>
     </div>
   </footer>
@@ -203,6 +204,17 @@
       </div>
     </div>
   </div>
+
+  <audio id="bgMusic" loop preload="none">
+    <source src="audio/dreaming-blues-1920-jazz.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" id="musicBtn" title="Винтажный джаз Coffee Molly">
+    <span class="music-btn__bars">
+      <i></i><i></i><i></i>
+    </span>
+    <span class="music-btn__label">jazz</span>
+  </button>
 
   <script src="data.js?v=2"></script>
   <script src="script.js?v=2"></script>

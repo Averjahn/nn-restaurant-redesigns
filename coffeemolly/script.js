@@ -124,4 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#videoModalClose").onclick = closeVideo;
     videoModal.onclick = (e) => { if (e.target === videoModal) closeVideo(); };
   }
+
+  // фоновый винтажный джаз — стартует по первому взаимодействию (браузеры блокируют автоплей со звуком)
+  const music = $("#bgMusic"), musicBtn = $("#musicBtn");
+  if (music && musicBtn) {
+    let playing = false;
+    const startEvents = ["click", "scroll", "touchstart", "keydown"];
+    const removeAutoStart = () => startEvents.forEach((ev) => document.removeEventListener(ev, startMusicOnce));
+    function startMusicOnce(e) {
+      if (musicBtn.contains(e.target)) return; // кнопка управляет сама
+      removeAutoStart();
+      music.play().catch(() => {});
+      musicBtn.classList.add("is-playing");
+      playing = true;
+    }
+    startEvents.forEach((ev) => document.addEventListener(ev, startMusicOnce, { passive: true }));
+    musicBtn.onclick = () => {
+      removeAutoStart();
+      if (playing) { music.pause(); musicBtn.classList.remove("is-playing"); }
+      else { music.play().catch(() => {}); musicBtn.classList.add("is-playing"); }
+      playing = !playing;
+    };
+  }
 });
