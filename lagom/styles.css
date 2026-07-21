@@ -1,16 +1,34 @@
-/* ===== Lägom Coffee — стиль обложки книги ===== */
+/* ===== Lägom Coffee — палитра настоящей обложки книги Lagom (Linnea Dunne) =====
+   Приглушённый шалфейно-бирюзовый фон, терракота, кремовый, тёмно-графитовый, горчичный. */
 :root {
   --bg:       #f5f4f0;
   --paper:    #fbfbf8;
   --ink:      #1c1f22;
   --muted:    #8a8d8f;
   --line:     #d9d8d1;
-  --blue:     #1bb4ea;
-  --blue-dk:  #1598cb;
-  --nord:     #1598cb;
-  --nord-dark:#0e7aab;
+  --blue:     #6fa393;
+  --blue-dk:  #4f8172;
+  --nord:     #4f8172;
+  --nord-dark:#3d685c;
   --shadow:   0 20px 50px rgba(28,31,34,.08);
+
+  /* палитра иконок обложки */
+  --book-coral:    #c9673f;
+  --book-cream:    #f6efe0;
+  --book-charcoal: #2c3a3a;
+  --book-mustard:  #d9a13c;
+  --book-sage:     #8fc0b4;
+  --book-sage-dk:  #5f8b7f;
+
+  /* сезонный акцент hero (переопределяется по body[data-season]) */
+  --season-a: #8fc0b4;
+  --season-b: #6fa393;
 }
+
+body[data-season="spring"] { --season-a: #f0c9c2; --season-b: #d99a91; }
+body[data-season="summer"] { --season-a: #9fd0c2; --season-b: #6fa393; }
+body[data-season="autumn"] { --season-a: #dd9a5e; --season-b: #c9673f; }
+body[data-season="winter"] { --season-a: #a9c2c9; --season-b: #7c94a0; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -47,11 +65,12 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
 /* ─── ГЕРОЙ — обложка книги ─── */
 .hero {
   position: relative;
-  background: var(--blue);
+  background: linear-gradient(155deg, var(--season-a), var(--season-b) 70%);
   color: #fff;
   padding: 96px 0 86px;
   text-align: center;
   overflow: hidden;
+  transition: background 1.1s ease;
 }
 
 /* Разбросанные фигурки — абсолютно позиционированные */
@@ -67,6 +86,44 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
   line-height: 0;
   display: block;
 }
+
+/* ─── погодные частицы сезона (листья / снег / лепестки / пыльца) ─── */
+.hero__weather {
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none; overflow: hidden;
+}
+.wp {
+  position: absolute; top: -40px;
+  will-change: transform, opacity;
+  animation: wpFall linear infinite;
+}
+@keyframes wpFall {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  6%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translate(var(--drift, 40px), var(--fall, 560px)) rotate(var(--spin, 220deg)); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wp { animation: none; display: none; }
+}
+
+/* ─── переключатель сезона ─── */
+.season-switch {
+  position: relative; z-index: 2;
+  display: flex; gap: 8px; justify-content: center;
+  margin: 0 0 28px;
+}
+.season-switch button {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.1);
+  font-size: 17px; cursor: pointer; line-height: 1;
+  transition: background .2s, border-color .2s, transform .2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.season-switch button:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.7); }
+.season-switch button.is-active { background: rgba(255,255,255,.92); border-color: #fff; }
+.season-switch button.is-active span { filter: none; }
 
 .hero > .container { position: relative; z-index: 1; }
 
@@ -222,13 +279,16 @@ h1, h2, h3, .logo { font-family: "Spectral", Georgia, serif; font-weight: 500; l
   .board { grid-template-columns: 1fr; padding: 32px 28px; }
   .about { grid-template-columns: 1fr; }
   .nav, .nav-tag { display: none; }
-  .hf { font-size: 20px; opacity: .55; }
+  .hf { opacity: .3; }
 }
 @media (max-width: 560px) {
   .bake2 { grid-template-columns: 1fr; }
   .hero { padding: 72px 0 56px; }
   .hero h1 { font-size: clamp(44px, 11vw, 68px); }
-  .hf { font-size: 17px; }
+  /* фигурки, которые попадали бы прямо на текст абзаца/кнопок — на узких
+     экранах текст в одну колонку занимает всю высоту hero, поэтому убираем */
+  .hf--mid { display: none; }
+  .hf { opacity: .25; }
 }
 @media (max-width: 400px) {
   .container { width: 92%; }
