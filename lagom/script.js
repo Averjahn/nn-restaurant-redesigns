@@ -13,6 +13,17 @@ function detectSeason() {
   return "winter";
 }
 
+// Цвет хедера по сезону (дублирует --season-b из CSS). Ставим напрямую через
+// JS, а не полагаемся на каскад var() до .header — в паре браузеров замечен
+// баг, когда background sticky-элемента, завязанный на CSS-переменную,
+// не перерисовывается при повторных сменах значения переменной.
+const HEADER_COLOR = {
+  spring: "#8fb8dd",
+  summer: "#2f8fce",
+  autumn: "#cc3355",
+  winter: "#6ba8cf",
+};
+
 // Форма и цвет частиц под каждый сезон — палитра книги Lagom.
 const WEATHER = {
   spring: { count: 16, colors: ["#f0c9c2", "#f6efe0", "#e8a89a"], shape: "petal", duration: [7, 12] },
@@ -67,6 +78,8 @@ function applySeason(season, persist) {
   document.querySelectorAll("#seasonSwitch button").forEach((b) => {
     b.classList.toggle("is-active", b.dataset.season === season);
   });
+  const header = document.querySelector(".header");
+  if (header && HEADER_COLOR[season]) header.style.backgroundColor = HEADER_COLOR[season];
   spawnWeather(season);
   if (persist) { try { localStorage.setItem(STORAGE_KEY, season); } catch (e) {} }
 }
