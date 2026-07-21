@@ -1,34 +1,36 @@
-/* ===== Lägom Coffee — палитра настоящей обложки книги Lagom (Linnea Dunne) =====
-   Приглушённый шалфейно-бирюзовый фон, терракота, кремовый, тёмно-графитовый, горчичный. */
+/* ===== Lägom Coffee — палитра настоящей обложки «Lagom: The Swedish Secret
+   of Living Well» (Lola A. Åkerström) — яркий небесно-голубой фон, белые
+   заголовок и акценты-ростки, фигурки людей в коралловом/горчичном/синем. */
 :root {
   --bg:       #f5f4f0;
   --paper:    #fbfbf8;
   --ink:      #1c1f22;
   --muted:    #8a8d8f;
   --line:     #d9d8d1;
-  --blue:     #6fa393;
-  --blue-dk:  #4f8172;
-  --nord:     #4f8172;
-  --nord-dark:#3d685c;
+  --blue:     #2f8fce;
+  --blue-dk:  #1f70a8;
+  --nord:     #2f8fce;
+  --nord-dark:#1f70a8;
   --shadow:   0 20px 50px rgba(28,31,34,.08);
 
   /* палитра иконок обложки */
-  --book-coral:    #c9673f;
+  --book-coral:    #cc3355;
   --book-cream:    #f6efe0;
-  --book-charcoal: #2c3a3a;
-  --book-mustard:  #d9a13c;
-  --book-sage:     #8fc0b4;
-  --book-sage-dk:  #5f8b7f;
+  --book-charcoal: #23406e;
+  --book-mustard:  #deb44a;
+  --book-navy:     #4472b0;
+  --book-skin:     #e3a878;
 
-  /* сезонный акцент hero (переопределяется по body[data-season]) */
-  --season-a: #8fc0b4;
-  --season-b: #6fa393;
+  /* сезонный акцент hero (переопределяется по body[data-season]) — лето
+     ровно того самого небесно-голубого цвета, что на обложке */
+  --season-a: #63c1f0;
+  --season-b: #2f8fce;
 }
 
-body[data-season="spring"] { --season-a: #f0c9c2; --season-b: #d99a91; }
-body[data-season="summer"] { --season-a: #9fd0c2; --season-b: #6fa393; }
-body[data-season="autumn"] { --season-a: #dd9a5e; --season-b: #c9673f; }
-body[data-season="winter"] { --season-a: #a9c2c9; --season-b: #7c94a0; }
+body[data-season="spring"] { --season-a: #bcd8ef; --season-b: #8fb8dd; }
+body[data-season="summer"] { --season-a: #63c1f0; --season-b: #2f8fce; }
+body[data-season="autumn"] { --season-a: #e0a15c; --season-b: #cc3355; }
+body[data-season="winter"] { --season-a: #a9d3ea; --season-b: #6ba8cf; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
