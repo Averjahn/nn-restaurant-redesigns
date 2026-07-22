@@ -10,4 +10,8 @@
 - dogwalk.svg — https://www.svgrepo.com/svg/144457/walking-the-dog
 - house.svg — https://www.svgrepo.com/svg/126581/home-silhouette
 - family.svg — https://www.svgrepo.com/svg/151174/family-silhouette
+- hotcup.svg — https://www.svgrepo.com/svg/104081/hot-coffee-cup (заменил coffeewoman.svg — та была слишком тонкой/мелкой в масштабе)
+- balloons.svg — https://www.svgrepo.com/svg/303806/balloons (заменил самодельный рисунок)
+
+Устаревшее (оставлено в репозитории для истории, в index.html больше не используется):
 - coffeewoman.svg — https://www.svgrepo.com/svg/19793/woman-holding-cup
