@@ -149,28 +149,37 @@
   .empty-state{padding:60px 20px;text-align:center;color:var(--text-secondary);background:#fff;border:1px dashed var(--border);border-radius:var(--radius-lg)}
 
   /* chess view */
-  .chess-scroll{overflow-x:auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:8px}
-  .chess-block{padding:18px 14px 22px}
+  .chess-scroll{overflow-x:auto;background:linear-gradient(180deg,#fdfcfa,#f3efe6);border:1px solid var(--border);border-radius:var(--radius-lg);padding:10px}
+  .chess-block{padding:24px 16px 28px}
   .chess-block + .chess-block{border-top:1px solid var(--border)}
-  .chess-block__head{display:flex;align-items:baseline;gap:10px;padding:6px 8px 14px;flex-wrap:wrap}
-  .chess-block__head h4{font-size:16px;font-weight:800}
+  .chess-block__head{display:flex;align-items:baseline;gap:10px;padding:4px 8px 18px;flex-wrap:wrap}
+  .chess-block__head h4{font-size:17px;font-weight:800}
   .chess-block__head span{font-size:13px;color:var(--text-secondary)}
-  .chess-floor{display:flex;align-items:center;gap:10px;padding:3px 8px}
-  .chess-floor__n{width:34px;flex-shrink:0;font-size:12.5px;color:var(--text-secondary);font-weight:600;text-align:right}
+  .entrance-row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+  .entrance-card{flex-shrink:0;background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px 14px 10px;box-shadow:0 3px 14px rgba(33,31,26,.05)}
+  .entrance-card__head{display:flex;align-items:center;gap:9px;padding:0 4px 14px;font-size:12px;font-weight:800;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.06em}
+  .entrance-card__head .ic{width:24px;height:24px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800}
+  .entrance-card__floors{position:relative}
+  .entrance-card__floors::before{content:'';position:absolute;left:19px;top:2px;bottom:2px;width:2px;background:var(--border);z-index:0}
+  .chess-floor{position:relative;z-index:1;display:flex;align-items:center;gap:11px;padding:4px 6px;border-radius:10px;transition:background .15s}
+  .chess-floor:hover{background:var(--accent-soft)}
+  .chess-floor__n{width:32px;height:26px;flex-shrink:0;border-radius:8px;background:#fff;border:1.5px solid var(--border);font-size:11.5px;color:var(--text-secondary);font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s,color .15s}
+  .chess-floor:hover .chess-floor__n{background:var(--accent);border-color:var(--accent);color:#fff}
   .chess-floor__cells{display:flex;gap:6px}
-  .cell{width:52px;height:40px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;border:none;flex-shrink:0;transition:transform .12s,box-shadow .12s}
-  .cell:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:2;position:relative}
-  .cell .cell__rooms{font-size:10px;font-weight:600;opacity:.85}
+  .cell{width:54px;height:42px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;border:1px solid rgba(20,18,14,.05);flex-shrink:0;box-shadow:0 1px 2px rgba(33,31,26,.07);transition:transform .12s,box-shadow .12s}
+  .cell:hover{transform:translateY(-3px) scale(1.07);box-shadow:0 10px 20px rgba(33,31,26,.2);z-index:2;position:relative}
+  .cell .cell__rooms{font-size:9.5px;font-weight:600;opacity:.8}
   .cell--free{background:var(--free-bg);color:#1c6b3c}
   .cell--booked{background:var(--booked-bg);color:#8a611c}
   .cell--sold{background:var(--sold-bg);color:#75726a;cursor:pointer}
-  .legend{display:flex;gap:22px;flex-wrap:wrap;padding:14px 8px 4px;font-size:13px;color:var(--text-secondary)}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;padding:16px 8px 4px;font-size:13px;color:var(--text-secondary)}
   .legend span{display:inline-flex;align-items:center;gap:7px}
   .legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
   .legend .i-free{background:var(--free)}
   .legend .i-booked{background:var(--booked)}
   .legend .i-sold{background:var(--sold)}
   .legend .i-grad{background:linear-gradient(90deg,#bfe4cb,#2f9e58)}
+  @media(max-width:640px){.entrance-card{padding:12px 10px 8px}.chess-floor__n{width:28px;height:24px}.cell{width:48px;height:38px}}
 
   /* list view */
   .list-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
@@ -186,10 +195,11 @@
 
   /* plans view */
   .plans-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-  .plan-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:center}
-  .plan-card svg{margin:0 auto 10px}
+  .plan-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:center;box-shadow:0 2px 10px rgba(33,31,26,.04)}
+  .plan-card svg{margin:0 auto 10px;filter:drop-shadow(0 2px 6px rgba(33,31,26,.08))}
   .plan-card h4{font-size:14.5px;margin-bottom:4px}
   .plan-card span{font-size:12.5px;color:var(--text-secondary)}
+  .plan-card .plan-zones{display:block;margin-top:6px;font-size:11px;color:var(--text-secondary);opacity:.8;line-height:1.5}
   @media(max-width:900px){.plans-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
   @media(max-width:560px){.plans-grid{grid-template-columns:1fr 1fr}}
 
@@ -199,7 +209,8 @@
   .modal{background:#fff;border-radius:var(--radius-lg);max-width:640px;width:100%;padding:0;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.3)}
   .modal__close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2}
   .modal__top{display:flex;gap:24px;padding:26px 26px 0;flex-wrap:wrap}
-  .modal__plan{flex-shrink:0;width:190px}
+  .modal__plan{flex-shrink:0;width:210px}
+  .modal__plan svg{filter:drop-shadow(0 3px 8px rgba(33,31,26,.1))}
   .modal__info{flex:1;min-width:200px}
   .modal__info h3{font-size:21px;margin-bottom:4px}
   .modal__info .loc{font-size:13.5px;color:var(--text-secondary);margin-bottom:14px}
@@ -208,6 +219,8 @@
   .modal__specs{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;font-size:14px;margin-bottom:6px}
   .modal__specs div span{display:block;color:var(--text-secondary);font-size:12px}
   .modal__specs div b{font-weight:700}
+  .modal__rooms{margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);font-size:12.5px;color:var(--text-secondary);line-height:1.7}
+  .modal__rooms b{color:var(--text);font-weight:700}
   .modal__body{padding:20px 26px 26px}
   .modal__chart-wrap{margin-top:6px;padding-top:18px;border-top:1px solid var(--border)}
   .modal__chart-wrap h4{font-size:14.5px;margin-bottom:4px}
@@ -272,7 +285,7 @@
     .hero-actions .btn{width:100%}
     .adv-grid,.cx-grid{grid-template-columns:1fr}
     .modal__top{flex-direction:column}
-    .modal__plan{width:140px;margin:0 auto}
+    .modal__plan{width:170px;margin:0 auto}
   }
   .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;padding:13px 22px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:600}
@@ -522,6 +535,7 @@
           <div><span>Статус</span><b id="aptStatus">—</b></div>
           <div><span>Срок сдачи</span><b id="aptDeadline">—</b></div>
         </div>
+        <div class="modal__rooms" id="aptRooms"></div>
       </div>
     </div>
     <div class="modal__body">
@@ -774,35 +788,55 @@ function renderChess(filtered){
     const c = CX[cid];
     const apts = byComplex[cid];
     const freeApts = APARTMENTS.filter(a=>a.complex===cid && effectiveStatus(a)==='free');
-    const byFloor = {};
-    apts.forEach(a=>{ (byFloor[a.floor] = byFloor[a.floor]||[]).push(a); });
-    const floors = Object.keys(byFloor).map(Number).sort((a,b)=>b-a);
+    const byEntrance = {};
+    apts.forEach(a=>{ (byEntrance[a.entrance] = byEntrance[a.entrance]||[]).push(a); });
+    const entrances = Object.keys(byEntrance).map(Number).sort((a,b)=>a-b);
+
     const block = document.createElement('div');
     block.className = 'chess-block';
     const head = document.createElement('div');
     head.className = 'chess-block__head';
-    head.innerHTML = `<h4>${c.name}</h4><span>${c.address} · ${c.floors} этажей · сдача ${c.deadline}</span>`;
+    const entrWord = c.entrances===1 ? 'подъезд' : (c.entrances<5 ? 'подъезда' : 'подъездов');
+    head.innerHTML = `<h4>${c.name}</h4><span>${c.address} · ${c.floors} этажей · ${c.entrances} ${entrWord} · сдача ${c.deadline}</span>`;
     block.appendChild(head);
-    floors.forEach(fl=>{
-      const row = document.createElement('div');
-      row.className = 'chess-floor';
-      row.innerHTML = `<div class="chess-floor__n">${fl}</div>`;
-      const cells = document.createElement('div');
-      cells.className = 'chess-floor__cells';
-      byFloor[fl].sort((a,b)=>a.number-b.number).forEach(apt=>{
-        const st = effectiveStatus(apt);
-        const cell = document.createElement('button');
-        cell.type = 'button';
-        cell.className = 'cell cell--'+st;
-        cell.dataset.id = apt.id;
-        if (st === 'free') cell.style.background = priceGradient(apt, freeApts);
-        cell.innerHTML = `${apt.number}<span class="cell__rooms">${apt.roomsKey==='studio'?'Ст':apt.roomsKey+'к'}</span>`;
-        cell.title = `Кв. ${apt.number} · ${apt.roomsLabel} · ${apt.area} м² · ${fmtRub(apt.price)}`;
-        cells.appendChild(cell);
+
+    const erow = document.createElement('div');
+    erow.className = 'entrance-row';
+    entrances.forEach(en=>{
+      const eapts = byEntrance[en];
+      const byFloor = {};
+      eapts.forEach(a=>{ (byFloor[a.floor] = byFloor[a.floor]||[]).push(a); });
+      const floors = Object.keys(byFloor).map(Number).sort((a,b)=>b-a);
+
+      const ecard = document.createElement('div');
+      ecard.className = 'entrance-card';
+      ecard.innerHTML = `<div class="entrance-card__head"><span class="ic">${en}</span>Подъезд ${en}</div>`;
+      const floorsWrap = document.createElement('div');
+      floorsWrap.className = 'entrance-card__floors';
+      floors.forEach(fl=>{
+        const row = document.createElement('div');
+        row.className = 'chess-floor';
+        row.innerHTML = `<div class="chess-floor__n">${fl}</div>`;
+        const cells = document.createElement('div');
+        cells.className = 'chess-floor__cells';
+        byFloor[fl].sort((a,b)=>a.number-b.number).forEach(apt=>{
+          const st = effectiveStatus(apt);
+          const cell = document.createElement('button');
+          cell.type = 'button';
+          cell.className = 'cell cell--'+st;
+          cell.dataset.id = apt.id;
+          if (st === 'free') cell.style.background = priceGradient(apt, freeApts);
+          cell.innerHTML = `${apt.number}<span class="cell__rooms">${apt.roomsKey==='studio'?'Ст':apt.roomsKey+'к'}</span>`;
+          cell.title = `Кв. ${apt.number} · ${apt.roomsLabel} · ${apt.area} м² · ${fmtRub(apt.price)}`;
+          cells.appendChild(cell);
+        });
+        row.appendChild(cells);
+        floorsWrap.appendChild(row);
       });
-      row.appendChild(cells);
-      block.appendChild(row);
+      ecard.appendChild(floorsWrap);
+      erow.appendChild(ecard);
     });
+    block.appendChild(erow);
     container.appendChild(block);
   });
 }
@@ -829,21 +863,134 @@ function renderList(filtered){
   });
 }
 
+/* Схематичные планировки: подписанные зоны, площадь по каждой комнате
+   (доля от фактической площади квартиры), окна на внешних стенах, балкон, входная дверь. */
+const ROOM_META = {
+  main:    {label:'Кухня-гостиная', fill:'#fbf1de'},
+  living:  {label:'Гостиная',       fill:'#f6efdf'},
+  kitchen: {label:'Кухня',          fill:'#fbf1de'},
+  bed:     {label:'Спальня',        fill:'#eaf0f7'},
+  bed2:    {label:'Спальня 2',      fill:'#eaf0f7'},
+  bed3:    {label:'Спальня 3',      fill:'#eaf0f7'},
+  wc:      {label:'С/у',            fill:'#e7f2ee'},
+  hall:    {label:'Прихожая',       fill:'#f1efe8'}
+};
+const PLAN_LAYOUTS = {
+  studio: {
+    rooms: [
+      {type:'main', x:.04,y:.05,w:.92,h:.55, window:'top'},
+      {type:'wc',   x:.04,y:.64,w:.38,h:.31},
+      {type:'hall', x:.46,y:.64,w:.50,h:.31, door:true}
+    ],
+    balcony:{x:.18,w:.64}
+  },
+  "1": {
+    rooms:[
+      {type:'main', x:.04,y:.05,w:.56,h:.52, window:'top'},
+      {type:'bed',  x:.64,y:.05,w:.32,h:.52, window:'top'},
+      {type:'wc',   x:.04,y:.61,w:.28,h:.34},
+      {type:'hall', x:.36,y:.61,w:.60,h:.34, door:true}
+    ],
+    balcony:{x:.04,w:.56}
+  },
+  "2": {
+    rooms:[
+      {type:'living', x:.04,y:.05,w:.42,h:.40, window:'top'},
+      {type:'kitchen',x:.50,y:.05,w:.46,h:.40, window:'top'},
+      {type:'bed',    x:.04,y:.49,w:.38,h:.46, window:'bottom'},
+      {type:'wc',     x:.46,y:.49,w:.24,h:.22},
+      {type:'hall',   x:.72,y:.49,w:.24,h:.46, door:true}
+    ],
+    balcony:{x:.04,w:.42}
+  },
+  "3": {
+    rooms:[
+      {type:'living', x:.03,y:.05,w:.40,h:.36, window:'top'},
+      {type:'kitchen',x:.47,y:.05,w:.50,h:.36, window:'top'},
+      {type:'bed',    x:.03,y:.45,w:.33,h:.50, window:'bottom'},
+      {type:'bed2',   x:.39,y:.45,w:.33,h:.50, window:'bottom'},
+      {type:'wc',     x:.76,y:.45,w:.21,h:.23},
+      {type:'hall',   x:.76,y:.72,w:.21,h:.23, door:true}
+    ],
+    balcony:{x:.03,w:.40}
+  },
+  "4": {
+    rooms:[
+      {type:'living', x:.03,y:.04,w:.32,h:.34, window:'top'},
+      {type:'kitchen',x:.38,y:.04,w:.28,h:.34, window:'top'},
+      {type:'bed',    x:.69,y:.04,w:.28,h:.34, window:'top'},
+      {type:'bed2',   x:.03,y:.41,w:.30,h:.55, window:'bottom'},
+      {type:'bed3',   x:.36,y:.41,w:.30,h:.55, window:'bottom'},
+      {type:'wc',     x:.69,y:.41,w:.28,h:.25},
+      {type:'hall',   x:.69,y:.69,w:.28,h:.27, door:true}
+    ],
+    balcony:{x:.03,w:.32}
+  }
+};
+const AREA_DEFAULT = {studio:20, "1":34, "2":50, "3":72, "4":100};
+
+function roomAreaBreakdown(roomsKey, apartmentArea){
+  const layout = PLAN_LAYOUTS[roomsKey] || PLAN_LAYOUTS.studio;
+  const totalFrac = layout.rooms.reduce((s,r)=>s + r.w*r.h, 0);
+  const area = apartmentArea || AREA_DEFAULT[roomsKey] || AREA_DEFAULT.studio;
+  return layout.rooms.map(r=>({
+    type:r.type,
+    label:ROOM_META[r.type].label,
+    area:(r.w*r.h/totalFrac*area)
+  }));
+}
+
 function planSvg(roomsKey, opts){
   opts = opts || {};
-  const w = opts.w || 160, h = opts.h || 120;
-  const cfgs = {
-    studio: [[6,6,w-12,h-12]],
-    "1": [[6,6,w*0.6,h-12],[w*0.62,6,w*0.36,h*0.45-6],[w*0.62,h*0.48,w*0.36,h*0.5]],
-    "2": [[6,6,w*0.42,h*0.46],[w*0.46,6,w*0.5,h*0.46],[6,h*0.5,w*0.42,h*0.46],[w*0.46,h*0.5,w*0.5,h*0.46]],
-    "3": [[6,6,w*0.4,h*0.44],[w*0.44,6,w*0.5,h*0.3],[w*0.44,h*0.34,w*0.5,h*0.2],[6,h*0.5,w*0.4,h*0.44],[w*0.44,h*0.56,w*0.5,h*0.4]],
-    "4": [[6,6,w*0.32,h*0.44],[w*0.36,6,w*0.3,h*0.44],[w*0.68,6,w*0.28,h*0.44],[6,h*0.5,w*0.44,h*0.44],[w*0.5,h*0.5,w*0.46,h*0.44]]
-  };
-  const rects = cfgs[roomsKey] || cfgs.studio;
-  const inner = rects.map(r=>`<rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}" fill="#f1ece3" stroke="#c9c2b0" stroke-width="1.5" rx="2"/>`).join('');
-  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схематичная планировка">
-    <rect x="1" y="1" width="${w-2}" height="${h-2}" fill="#fff" stroke="#e1dbcd" stroke-width="2" rx="6"/>
-    ${inner}
+  const w = opts.w || 170, h = opts.h || 130;
+  const area = opts.area || AREA_DEFAULT[roomsKey] || AREA_DEFAULT.studio;
+  const layout = PLAN_LAYOUTS[roomsKey] || PLAN_LAYOUTS.studio;
+  const balconyH = layout.balcony ? h * 0.16 : 0;
+  const livingH = h - balconyH;
+  const totalFrac = layout.rooms.reduce((s,r)=>s + r.w*r.h, 0);
+
+  let rooms = '', labels = '', windows = '', extras = '';
+  layout.rooms.forEach(r=>{
+    const meta = ROOM_META[r.type];
+    const rx = r.x*w, ry = r.y*livingH, rw = r.w*w, rh = r.h*livingH;
+    rooms += `<rect x="${rx.toFixed(1)}" y="${ry.toFixed(1)}" width="${rw.toFixed(1)}" height="${rh.toFixed(1)}" fill="${meta.fill}" stroke="#c9c2b0" stroke-width="1.3" rx="3"/>`;
+    const roomArea = r.w*r.h/totalFrac*area;
+    if (rw > 24 && rh > 17){
+      const fontSize = Math.min(9.5, rw/6.5).toFixed(1);
+      labels += `<text x="${(rx+rw/2).toFixed(1)}" y="${(ry+rh/2-3).toFixed(1)}" text-anchor="middle" font-size="${fontSize}" font-weight="700" fill="#4a4638" font-family="Inter,sans-serif">${meta.label}</text>`;
+      labels += `<text x="${(rx+rw/2).toFixed(1)}" y="${(ry+rh/2+9).toFixed(1)}" text-anchor="middle" font-size="${(fontSize-1.2).toFixed(1)}" fill="#8c8878" font-family="Inter,sans-serif">${roomArea.toFixed(1)} м²</text>`;
+    }
+    if (r.window === 'top'){
+      windows += `<rect x="${(rx+rw*0.18).toFixed(1)}" y="${Math.max(ry,0).toFixed(1)}" width="${(rw*0.64).toFixed(1)}" height="3" fill="#7fa8cc"/>`;
+    }
+    if (r.window === 'bottom'){
+      windows += `<rect x="${(rx+rw*0.18).toFixed(1)}" y="${(ry+rh-3).toFixed(1)}" width="${(rw*0.64).toFixed(1)}" height="3" fill="#7fa8cc"/>`;
+    }
+    if (r.door){
+      const dx = rx+7, dy = ry+7;
+      extras += `<path d="M ${dx.toFixed(1)} ${dy.toFixed(1)} L ${dx.toFixed(1)} ${(dy+15).toFixed(1)} A 15 15 0 0 1 ${(dx+15).toFixed(1)} ${dy.toFixed(1)}" fill="none" stroke="#c9ab6f" stroke-width="1" stroke-dasharray="2 2"/>`;
+      extras += `<line x1="${dx.toFixed(1)}" y1="${dy.toFixed(1)}" x2="${dx.toFixed(1)}" y2="${(dy+15).toFixed(1)}" stroke="#b8893f" stroke-width="1.6"/>`;
+    }
+  });
+
+  let balconyMark = '';
+  if (layout.balcony){
+    const bx = layout.balcony.x*w, bw = layout.balcony.w*w;
+    const rails = Math.max(3, Math.round(bw/14));
+    let hatch = '';
+    for (let i=0;i<rails;i++){
+      const lx = bx + 7 + i*((bw-14)/(rails-1||1));
+      hatch += `<line x1="${lx.toFixed(1)}" y1="${(livingH+3).toFixed(1)}" x2="${lx.toFixed(1)}" y2="${(h-3).toFixed(1)}" stroke="#d8d2c2" stroke-width="1"/>`;
+    }
+    balconyMark = `
+      <rect x="${bx.toFixed(1)}" y="${(livingH+1.5).toFixed(1)}" width="${bw.toFixed(1)}" height="${(balconyH-3).toFixed(1)}" fill="#f5f6f2" stroke="#c9c2b0" stroke-width="1.2" rx="2"/>
+      ${hatch}
+      <text x="${(bx+bw/2).toFixed(1)}" y="${(h-4.5).toFixed(1)}" text-anchor="middle" font-size="7" fill="#8c8878" font-family="Inter,sans-serif">Балкон</text>`;
+  }
+
+  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схематичная планировка ${roomsKey==='studio'?'студии':roomsKey+'-комнатной квартиры'}">
+    <rect x="1" y="1" width="${w-2}" height="${(livingH-2).toFixed(1)}" fill="#fff" stroke="#a89f8a" stroke-width="2.2" rx="7"/>
+    ${rooms}${windows}${extras}${labels}${balconyMark}
   </svg>`;
 }
 
@@ -855,9 +1002,11 @@ function renderPlans(filtered){
     if (!examples.length) return;
     const areas = examples.map(a=>a.area);
     const minA = Math.min(...areas).toFixed(1), maxA = Math.max(...areas).toFixed(1);
+    const avgA = areas.reduce((a,b)=>a+b,0)/areas.length;
+    const zones = (PLAN_LAYOUTS[rt.key]||PLAN_LAYOUTS.studio).rooms.map(r=>ROOM_META[r.type].label).join(' · ');
     const card = document.createElement('div');
     card.className = 'plan-card';
-    card.innerHTML = `${planSvg(rt.key)}<h4>${rt.label}</h4><span>${minA}–${maxA} м² · ${examples.length} в наличии</span>`;
+    card.innerHTML = `${planSvg(rt.key,{area:avgA})}<h4>${rt.label}</h4><span>${minA}–${maxA} м² · ${examples.length} в наличии</span><span class="plan-zones">${zones}</span>`;
     grid.appendChild(card);
   });
   if (!grid.children.length){
@@ -895,7 +1044,9 @@ function openApartment(id){
   $('#aptFloor').textContent = apt.floor + ' из ' + apt.floorsTotal;
   $('#aptStatus').textContent = stLabel;
   $('#aptDeadline').textContent = apt.deadline;
-  $('#aptPlan').innerHTML = planSvg(apt.roomsKey, {w:190,h:150});
+  $('#aptPlan').innerHTML = planSvg(apt.roomsKey, {w:210,h:160,area:apt.area});
+  $('#aptRooms').innerHTML = roomAreaBreakdown(apt.roomsKey, apt.area)
+    .map(r=>`<b>${r.label}</b> ${r.area.toFixed(1)} м²`).join(' · ');
 
   const bookBtn = $('#aptBookBtn');
   bookBtn.disabled = st !== 'free';
