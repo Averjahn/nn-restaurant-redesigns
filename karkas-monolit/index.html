@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Каркас Монолит — квартиры в новостройках Нижнего Новгорода: шахматка, цены, ипотечный калькулятор</title>
+<meta name="description" content="Группа компаний «Каркас Монолит»: 6 жилых комплексов в Нижнем Новгороде. Единая шахматка свободных квартир, фильтры по цене и метражу, ипотечный калькулятор и график роста стоимости лота." />
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#faf8f4;
+    --surface:#f1ece3;
+    --surface-2:#e9e2d5;
+    --text:#211f1a;
+    --text-secondary:#6b6a62;
+    --accent:#1f3a5f;
+    --accent-hover:#284c7a;
+    --accent-soft:#e7ecf2;
+    --gold:#b8893f;
+    --border:#e1dbcd;
+    --free:#2f9e58;
+    --free-bg:#e5f5ea;
+    --booked:#d99a2b;
+    --booked-bg:#fdf1dc;
+    --sold:#9a978d;
+    --sold-bg:#eeece5;
+    --radius-sm:8px;
+    --radius-md:16px;
+    --radius-lg:24px;
+    --container:1180px;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    --shadow:0 8px 30px rgba(33,31,26,.08);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit}
+  button{font-family:inherit;cursor:pointer}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{letter-spacing:-.02em;font-weight:800;line-height:1.12}
+  h2{font-size:clamp(26px,4vw,42px)}
+  h3{font-size:clamp(18px,2.4vw,22px)}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .section{padding:76px 0}
+  .section-head{max-width:640px;margin-bottom:38px}
+  .section-head p{color:var(--text-secondary);margin-top:12px;font-size:16px}
+  .muted{color:var(--text-secondary)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s,background .2s,border-color .2s;text-decoration:none}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .btn-outline{border-color:var(--border);color:var(--text);background:#fff}
+  .btn-outline:hover{border-color:var(--accent)}
+  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-block{width:100%}
+
+  /* ===== HEADER ===== */
+  .site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,244,.9);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .header-inner{display:flex;align-items:center;height:72px;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap;color:var(--text)}
+  .brand__mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+  .nav a{font-size:14.5px;font-weight:500;text-decoration:none;color:var(--text);white-space:nowrap;transition:color .2s}
+  .nav a:hover{color:var(--accent)}
+  .header__cta{white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;margin-left:auto}
+  .burger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.25s}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:1040px){
+    .nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--border);z-index:150}
+    .nav.nav--open{display:flex}
+    .nav a{width:100%;padding:12px 0;border-bottom:1px solid var(--border)}
+    .header__cta{display:none}
+    .nav .header__cta--mobile{display:inline-flex;margin-top:14px}
+    .burger{display:flex;margin-left:auto}
+  }
+  @media(max-width:400px){
+    .brand{font-size:16px}
+    .brand__mark{width:28px;height:28px;font-size:13px}
+  }
+
+  /* ===== HERO ===== */
+  .hero{padding:70px 0 60px;border-bottom:1px solid var(--border);background:
+    radial-gradient(1100px 460px at 85% -10%, var(--accent-soft), transparent 60%);}
+  .hero-inner{max-width:760px}
+  .hero h1{font-size:clamp(34px,5.4vw,58px);margin:16px 0 20px}
+  .hero-sub{font-size:clamp(16px,1.8vw,19px);color:var(--text-secondary);max-width:620px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+  .hero-stat{background:#fff;padding:20px 18px}
+  .hero-stat b{display:block;font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-.02em;color:var(--accent)}
+  .hero-stat span{font-size:13px;color:var(--text-secondary)}
+  @media(max-width:768px){.hero-stats{grid-template-columns:1fr 1fr}}
+
+  /* ===== ADVANTAGES ===== */
+  .adv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .adv-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px 22px}
+  .adv-card .ic{width:42px;height:42px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+  .adv-card h3{font-size:16.5px;margin-bottom:8px}
+  .adv-card p{font-size:14px;color:var(--text-secondary)}
+  @media(max-width:900px){.adv-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
+
+  /* ===== COMPLEXES ===== */
+  .cx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .cx-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .cx-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .cx-card__art{height:150px;position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff}
+  .cx-card__art::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.45));}
+  .cx-card__badge{position:relative;z-index:1;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600}
+  .cx-card__body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .cx-card__name{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .cx-card__loc{font-size:13.5px;color:var(--text-secondary)}
+  .cx-card__row{display:flex;justify-content:space-between;font-size:13.5px;color:var(--text-secondary);border-top:1px dashed var(--border);padding-top:10px;margin-top:4px}
+  .cx-card__row b{color:var(--text);font-weight:600}
+  .cx-card__cta{margin-top:12px;font-size:14px;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;text-align:left}
+  .cx-card__cta:hover{gap:10px}
+  @media(max-width:900px){.cx-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.cx-grid{grid-template-columns:1fr}}
+
+  /* ===== FLATS / SHAHMATKA ===== */
+  .flats-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+  .view-tabs{display:inline-flex;background:var(--surface);border-radius:999px;padding:4px;gap:2px}
+  .view-tab{border:none;background:none;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:600;color:var(--text-secondary)}
+  .view-tab.is-active{background:#fff;color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .found-count{font-size:14.5px;color:var(--text-secondary)}
+  .found-count b{color:var(--text);font-weight:700}
+
+  .filters{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:26px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+  .f-group{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .f-group label{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary)}
+  .f-group select,.f-group input[type=number]{width:100%;border:1px solid var(--border);border-radius:10px;padding:9px 10px;font-size:14px;font-family:inherit;color:var(--text);background:#fff}
+  .f-range{display:flex;align-items:center;gap:6px}
+  .f-range input{width:100%;min-width:0}
+  .f-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .f-chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;color:var(--text-secondary)}
+  .f-chip.is-active{border-color:var(--accent);background:var(--accent);color:#fff}
+  .f-actions{grid-column:1/-1;display:flex;justify-content:flex-end;gap:10px;border-top:1px solid var(--border);padding-top:16px;margin-top:2px}
+  .f-reset{background:none;border:none;font-size:14px;font-weight:600;color:var(--text-secondary);text-decoration:underline}
+  @media(max-width:1040px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:640px){.filters{grid-template-columns:1fr 1fr}}
+
+  .empty-state{padding:60px 20px;text-align:center;color:var(--text-secondary);background:#fff;border:1px dashed var(--border);border-radius:var(--radius-lg)}
+
+  /* chess view */
+  .chess-scroll{overflow-x:auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:8px}
+  .chess-block{padding:18px 14px 22px}
+  .chess-block + .chess-block{border-top:1px solid var(--border)}
+  .chess-block__head{display:flex;align-items:baseline;gap:10px;padding:6px 8px 14px;flex-wrap:wrap}
+  .chess-block__head h4{font-size:16px;font-weight:800}
+  .chess-block__head span{font-size:13px;color:var(--text-secondary)}
+  .chess-floor{display:flex;align-items:center;gap:10px;padding:3px 8px}
+  .chess-floor__n{width:34px;flex-shrink:0;font-size:12.5px;color:var(--text-secondary);font-weight:600;text-align:right}
+  .chess-floor__cells{display:flex;gap:6px}
+  .cell{width:52px;height:40px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;border:none;flex-shrink:0;transition:transform .12s,box-shadow .12s}
+  .cell:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:2;position:relative}
+  .cell .cell__rooms{font-size:10px;font-weight:600;opacity:.85}
+  .cell--free{background:var(--free-bg);color:#1c6b3c}
+  .cell--booked{background:var(--booked-bg);color:#8a611c}
+  .cell--sold{background:var(--sold-bg);color:#75726a;cursor:pointer}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;padding:14px 8px 4px;font-size:13px;color:var(--text-secondary)}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
+  .legend .i-free{background:var(--free)}
+  .legend .i-booked{background:var(--booked)}
+  .legend .i-sold{background:var(--sold)}
+  .legend .i-grad{background:linear-gradient(90deg,#bfe4cb,#2f9e58)}
+
+  /* list view */
+  .list-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+  .list-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary);padding:12px 14px;background:var(--surface);white-space:nowrap}
+  .list-table td{padding:13px 14px;border-top:1px solid var(--border);font-size:14px;white-space:nowrap}
+  .list-table tr{cursor:pointer}
+  .list-table tr:hover td{background:var(--surface)}
+  .status-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;font-size:12.5px;font-weight:700}
+  .status-pill.free{background:var(--free-bg);color:#1c6b3c}
+  .status-pill.booked{background:var(--booked-bg);color:#8a611c}
+  .status-pill.sold{background:var(--sold-bg);color:#75726a}
+  .list-wrap{overflow-x:auto}
+
+  /* plans view */
+  .plans-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+  .plan-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:center}
+  .plan-card svg{margin:0 auto 10px}
+  .plan-card h4{font-size:14.5px;margin-bottom:4px}
+  .plan-card span{font-size:12.5px;color:var(--text-secondary)}
+  @media(max-width:900px){.plans-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:560px){.plans-grid{grid-template-columns:1fr 1fr}}
+
+  /* ===== MODAL (apartment) ===== */
+  .modal-overlay{position:fixed;inset:0;background:rgba(20,18,14,.55);z-index:500;display:none;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow-y:auto}
+  .modal-overlay.is-open{display:flex}
+  .modal{background:#fff;border-radius:var(--radius-lg);max-width:640px;width:100%;padding:0;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+  .modal__close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2}
+  .modal__top{display:flex;gap:24px;padding:26px 26px 0;flex-wrap:wrap}
+  .modal__plan{flex-shrink:0;width:190px}
+  .modal__info{flex:1;min-width:200px}
+  .modal__info h3{font-size:21px;margin-bottom:4px}
+  .modal__info .loc{font-size:13.5px;color:var(--text-secondary);margin-bottom:14px}
+  .modal__price{font-size:26px;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+  .modal__ppm{font-size:13px;color:var(--text-secondary);margin-bottom:14px}
+  .modal__specs{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;font-size:14px;margin-bottom:6px}
+  .modal__specs div span{display:block;color:var(--text-secondary);font-size:12px}
+  .modal__specs div b{font-weight:700}
+  .modal__body{padding:20px 26px 26px}
+  .modal__chart-wrap{margin-top:6px;padding-top:18px;border-top:1px solid var(--border)}
+  .modal__chart-wrap h4{font-size:14.5px;margin-bottom:4px}
+  .modal__chart-wrap p{font-size:13px;color:var(--text-secondary);margin-bottom:10px}
+  .modal__actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .booking-form{margin-top:18px;padding-top:18px;border-top:1px solid var(--border);display:none}
+  .booking-form.is-open{display:block}
+  .booking-form .row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .booking-form input{flex:1;min-width:160px;border:1px solid var(--border);border-radius:10px;padding:11px 13px;font-size:14px;font-family:inherit}
+  .booking-success{display:none;background:var(--free-bg);color:#1c6b3c;border-radius:12px;padding:16px;font-size:14px;font-weight:600;margin-top:14px}
+  .booking-success.is-open{display:block}
+
+  /* ===== MORTGAGE ===== */
+  .mortgage-panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px}
+  .m-field{margin-bottom:22px}
+  .m-field label{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:10px}
+  .m-field label b{font-weight:800;color:var(--accent)}
+  .m-field input[type=range]{width:100%;accent-color:var(--accent)}
+  .m-num{display:flex;gap:10px;margin-top:8px}
+  .m-num input{flex:1;border:1px solid var(--border);border-radius:10px;padding:9px 11px;font-size:14px;font-family:inherit;min-width:0}
+  .rate-toggle{display:flex;gap:8px;margin-top:6px}
+  .rate-btn{flex:1;border:1px solid var(--border);background:#fff;border-radius:12px;padding:12px;text-align:left;font-size:13px}
+  .rate-btn b{display:block;font-size:16px;margin-bottom:2px}
+  .rate-btn.is-active{border-color:var(--accent);background:var(--accent-soft)}
+  .m-results{background:var(--surface);border-radius:var(--radius-md);padding:24px}
+  .m-result-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed var(--border)}
+  .m-result-row:last-child{border-bottom:none}
+  .m-result-row span{font-size:13.5px;color:var(--text-secondary)}
+  .m-result-row b{font-size:19px;font-weight:800}
+  .m-result-row.hl b{color:var(--accent);font-size:24px}
+  .m-compare{margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+  .m-compare h4{font-size:14px;margin-bottom:10px}
+  .m-compare-row{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0}
+  .m-compare-row b{font-weight:700}
+  @media(max-width:900px){.mortgage-panel{grid-template-columns:1fr}}
+
+  /* ===== PORTFOLIO ===== */
+  .pf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .pf-card{display:flex;gap:20px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;align-items:center}
+  .pf-card__art{width:84px;height:84px;border-radius:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:22px}
+  .pf-card h3{font-size:17px;margin-bottom:4px}
+  .pf-card p{font-size:13.5px;color:var(--text-secondary)}
+  .pf-card .pf-stat{margin-top:8px;font-size:13px;font-weight:700;color:var(--accent)}
+  @media(max-width:640px){.pf-grid{grid-template-columns:1fr}}
+
+  /* ===== CONTACTS ===== */
+  .contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+  .contacts-info{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px}
+  .contacts-info p{margin-bottom:14px;font-size:15px}
+  .contacts-info a{text-decoration:none;font-weight:600}
+  .map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);min-height:300px}
+  .map-wrap iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+  @media(max-width:768px){.contacts-grid{grid-template-columns:1fr}}
+
+  footer.footer{border-top:1px solid var(--border);padding:26px 0}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13.5px;color:var(--text-secondary)}
+
+  /* mobile bulletproofing */
+  @media(max-width:768px){
+    .section{padding:52px 0}
+    .hero{padding:44px 0 40px}
+    .hero-actions .btn{width:100%}
+    .adv-grid,.cx-grid{grid-template-columns:1fr}
+    .modal__top{flex-direction:column}
+    .modal__plan{width:140px;margin:0 auto}
+  }
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;padding:13px 22px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:600}
+  .toast.is-open{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand"><span class="brand__mark">КМ</span> Каркас Монолит</a>
+    <nav class="nav" id="mainNav" aria-label="Основная навигация">
+      <a href="#complexes">Жилые комплексы</a>
+      <a href="#flats">Квартиры</a>
+      <a href="#mortgage">Ипотека</a>
+      <a href="#portfolio">Сдано</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#flats" class="btn btn-primary header__cta--mobile">Подобрать квартиру</a>
+    </nav>
+    <a href="#flats" class="btn btn-primary header__cta">Подобрать квартиру</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">📍 Нижний Новгород</p>
+      <h1>Единая шахматка квартир по всем жилым комплексам «Каркас Монолит»</h1>
+      <p class="hero-sub">6 действующих проектов группы компаний — на одной странице. Фильтры по цене, метражу и сроку сдачи, статус каждой квартиры и ипотечный калькулятор — без звонка в отдел продаж.</p>
+      <div class="hero-actions">
+        <a href="#flats" class="btn btn-primary">Смотреть шахматку квартир →</a>
+        <a href="#mortgage" class="btn btn-outline">Рассчитать ипотеку</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>6</b><span>действующих ЖК в Нижнем Новгороде</span></div>
+        <div class="hero-stat"><b id="statTotal">—</b><span>квартир в единой базе</span></div>
+        <div class="hero-stat"><b id="statFree">—</b><span>свободно для брони сейчас</span></div>
+        <div class="hero-stat"><b>22–29%</b><span>рост цены лота в год по проектам</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="advantages">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Почему «Каркас Монолит»</p>
+        <h2>Строим по 214-ФЗ, продаём через эскроу</h2>
+        <p>Группа компаний ведёт одновременно 6 проектов в разных районах Нижнего Новгорода — от компактных студий у метро до клубного дома на набережной.</p>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-card"><div class="ic">🏗️</div><h3>214-ФЗ и эскроу-счета</h3><p>Деньги дольщиков хранятся в банке и переходят застройщику только после ввода дома в эксплуатацию.</p></div>
+        <div class="adv-card"><div class="ic">🏦</div><h3>Аккредитация ведущих банков</h3><p>Ипотека одобряется в банках-партнёрах по льготным и семейным программам без переплаты за аккредитацию.</p></div>
+        <div class="adv-card"><div class="ic">📈</div><h3>Рост стоимости 22–29% в год</h3><p>Цена лота растёт по мере строительства — чем раньше бронь на старте продаж, тем выгоднее вход.</p></div>
+        <div class="adv-card"><div class="ic">🔑</div><h3>2 сданных проекта</h3><p>Tower Plaza и KM Residence Prime построены и заселены в срок — репутация подтверждена сданными объектами.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="complexes" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Портфель проектов</p>
+        <h2>6 жилых комплексов в работе</h2>
+        <p>У каждого проекта — своя шахматка ниже. Кликните «Смотреть квартиры», чтобы отфильтровать единую базу только по этому ЖК.</p>
+      </div>
+      <div class="cx-grid" id="complexGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="flats">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Подбор квартиры</p>
+        <h2>Единая шахматка: 6 ЖК, одна база</h2>
+        <p>Свободные квартиры — зелёным (чем ярче, тем ниже цена за м² внутри свободных), бронь — жёлтым, проданные — серым. Кликните по ячейке или строке списка, чтобы открыть карточку квартиры.</p>
+      </div>
+
+      <div class="filters" id="filters">
+        <div class="f-group">
+          <label for="fComplex">Жилой комплекс</label>
+          <select id="fComplex" multiple size="1"></select>
+        </div>
+        <div class="f-group">
+          <label>Комнатность</label>
+          <div class="f-chips" id="fRooms"></div>
+        </div>
+        <div class="f-group">
+          <label for="fFloorMin">Этаж</label>
+          <div class="f-range"><input type="number" id="fFloorMin" placeholder="от" min="1"><span>—</span><input type="number" id="fFloorMax" placeholder="до" min="1"></div>
+        </div>
+        <div class="f-group">
+          <label for="fAreaMin">Метраж, м²</label>
+          <div class="f-range"><input type="number" id="fAreaMin" placeholder="от" min="0"><span>—</span><input type="number" id="fAreaMax" placeholder="до" min="0"></div>
+        </div>
+        <div class="f-group">
+          <label for="fPriceMin">Цена, млн ₽</label>
+          <div class="f-range"><input type="number" id="fPriceMin" placeholder="от" min="0" step="0.1"><span>—</span><input type="number" id="fPriceMax" placeholder="до" min="0" step="0.1"></div>
+        </div>
+        <div class="f-group">
+          <label for="fDeadline">Срок сдачи</label>
+          <select id="fDeadline"><option value="">Любой</option></select>
+        </div>
+        <div class="f-actions">
+          <button class="f-reset" id="fReset">Сбросить фильтры</button>
+        </div>
+      </div>
+
+      <div class="flats-toolbar">
+        <div class="view-tabs" role="tablist" aria-label="Вид отображения квартир">
+          <button class="view-tab is-active" data-view="chess">Шахматка</button>
+          <button class="view-tab" data-view="list">Список</button>
+          <button class="view-tab" data-view="plans">Планировки</button>
+        </div>
+        <div class="found-count">Найдено: <b id="foundCount">0</b> квартир</div>
+      </div>
+
+      <div id="viewChess">
+        <div class="chess-scroll"><div id="chessContainer"></div></div>
+        <div class="legend">
+          <span><i class="i-free"></i>Свободна <span class="muted">(градиент = цена м²: ярче — дешевле)</span></span>
+          <span><i class="i-booked"></i>Бронь</span>
+          <span><i class="i-sold"></i>Продана</span>
+        </div>
+      </div>
+
+      <div id="viewList" style="display:none">
+        <div class="list-wrap">
+          <table class="list-table">
+            <thead><tr><th>ЖК</th><th>№ кв.</th><th>Комнат</th><th>Площадь</th><th>Этаж</th><th>Цена</th><th>₽/м²</th><th>Срок сдачи</th><th>Статус</th></tr></thead>
+            <tbody id="listBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="viewPlans" style="display:none">
+        <div class="plans-grid" id="plansGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="mortgage" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Расчёт стоимости владения</p>
+        <h2>Ипотечный калькулятор</h2>
+        <p>Подставьте цену выбранной квартиры или введите свою. Платёж пересчитывается сразу при изменении любого поля.</p>
+      </div>
+      <div class="mortgage-panel">
+        <div>
+          <div class="m-field">
+            <label>Стоимость квартиры <span id="mPriceApt" class="muted" style="font-weight:400"></span></label>
+            <input type="range" id="mPriceRange" min="1800000" max="20000000" step="50000">
+            <div class="m-num"><input type="number" id="mPriceNum" step="10000"><span style="align-self:center">₽</span></div>
+          </div>
+          <div class="m-field">
+            <label>Первоначальный взнос <b id="mDownPct">20%</b></label>
+            <input type="range" id="mDownRange" min="10" max="70" step="1">
+            <div class="m-num"><input type="number" id="mDownNum" step="10000"><span style="align-self:center">₽</span></div>
+          </div>
+          <div class="m-field">
+            <label>Ставка</label>
+            <div class="rate-toggle">
+              <button class="rate-btn is-active" data-rate="6" id="rateFamily"><b>6%</b>Семейная ипотека</button>
+              <button class="rate-btn" data-rate="19" id="rateBase"><b>19%</b>Базовая ставка 2026</button>
+            </div>
+          </div>
+          <div class="m-field">
+            <label>Срок кредита <b id="mTermVal">20 лет</b></label>
+            <input type="range" id="mTermRange" min="3" max="30" step="1">
+          </div>
+        </div>
+        <div>
+          <div class="m-results">
+            <div class="m-result-row hl"><span>Ежемесячный платёж</span><b id="rMonthly">—</b></div>
+            <div class="m-result-row"><span>Сумма кредита</span><b id="rLoan">—</b></div>
+            <div class="m-result-row"><span>Переплата за весь срок</span><b id="rOverpay">—</b></div>
+            <div class="m-result-row"><span>Итого выплат</span><b id="rTotal">—</b></div>
+            <div class="m-compare">
+              <h4>Сравнение с рассрочкой от застройщика (0% на 24 мес.)</h4>
+              <div class="m-compare-row"><span>Платёж по рассрочке / мес.</span><b id="rInstMonthly">—</b></div>
+              <div class="m-compare-row"><span>Переплата по рассрочке</span><b style="color:var(--free)">0 ₽</b></div>
+              <div class="m-compare-row"><span>Экономия vs ипотека</span><b id="rSaving" style="color:var(--accent)">—</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Уже построено</p>
+        <h2>Сданные проекты группы</h2>
+        <p>Все квартиры реализованы — оставили для наглядности динамику роста цены с начала продаж до сдачи.</p>
+      </div>
+      <div class="pf-grid" id="pfGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Контакты</p>
+        <h2>Отдел продаж</h2>
+      </div>
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <p>📍 <address style="display:inline">г. Нижний Новгород, ул. Тимирязева, 15/2 (офис продаж)</address></p>
+          <p>📞 <a href="tel:+78312013201">+7 (831) 201-32-01</a></p>
+          <p>✉️ <a href="mailto:info@karkasmonolit.ru">info@karkasmonolit.ru</a></p>
+          <p>🕐 Ежедневно 9:00–20:00</p>
+          <a href="#flats" class="btn btn-primary" style="margin-top:10px">Смотреть свободные квартиры</a>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=56.283,43.936&z=13&hl=ru&output=embed" loading="lazy" title="Карта расположения жилых комплексов Каркас Монолит" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 ГК «Каркас Монолит» · Нижний Новгород</span>
+    <span>Информация не является публичной офертой</span>
+  </div>
+</footer>
+
+<!-- Apartment modal -->
+<div class="modal-overlay" id="aptOverlay" role="dialog" aria-modal="true" aria-labelledby="aptTitle">
+  <div class="modal">
+    <button class="modal__close" id="aptClose" aria-label="Закрыть">✕</button>
+    <div class="modal__top">
+      <div class="modal__plan" id="aptPlan"></div>
+      <div class="modal__info">
+        <h3 id="aptTitle">—</h3>
+        <div class="loc" id="aptLoc">—</div>
+        <div class="modal__price" id="aptPrice">—</div>
+        <div class="modal__ppm" id="aptPpm">—</div>
+        <div class="modal__specs">
+          <div><span>Площадь</span><b id="aptArea">—</b></div>
+          <div><span>Этаж</span><b id="aptFloor">—</b></div>
+          <div><span>Статус</span><b id="aptStatus">—</b></div>
+          <div><span>Срок сдачи</span><b id="aptDeadline">—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__body">
+      <div class="modal__actions">
+        <button class="btn btn-primary btn-block" id="aptBookBtn">Забронировать квартиру</button>
+        <button class="btn btn-outline" id="aptMortgageBtn">Рассчитать ипотеку</button>
+      </div>
+      <form class="booking-form" id="bookingForm">
+        <div class="row">
+          <input type="text" id="bName" placeholder="Ваше имя" required>
+          <input type="tel" id="bPhone" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Отправить заявку на бронь</button>
+      </form>
+      <div class="booking-success" id="bookingSuccess">✅ Заявка принята. Квартира зарезервирована за вами на 48 часов — менеджер свяжется в течение часа.</div>
+      <div class="modal__chart-wrap">
+        <h4>Динамика стоимости этого лота</h4>
+        <p>Прогноз роста цены от старта продаж до сдачи дома по заявленным темпам застройщика.</p>
+        <div id="aptChart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+
+/* ================= DATA ================= */
+const COMPLEXES = [
+  {id:"ankudinovka", name:"КМ Анкудиновский Парк", district:"Анкудиновка / Приокский р-н", address:"ул. Анкудиновское шоссе, 2", floors:17, entrances:2, deadline:"4 кв. 2027", deadlineSort:"2027-12", growth:23, basePpm:118000, color:"#2f5233"},
+  {id:"timiryazevskiy", name:"КМ Тимирязевский", district:"Ленинский р-н", address:"ул. Тимирязева, 15", floors:12, entrances:2, deadline:"4 кв. 2026", deadlineSort:"2026-12", growth:22, basePpm:126000, color:"#1f3a5f"},
+  {id:"gagarinpark", name:"КМ Гагарин Парк", district:"Нижегородский р-н, ул. Гагарина", address:"ул. Гагарина, 97", floors:22, entrances:3, deadline:"2 кв. 2028", deadlineSort:"2028-06", growth:25, basePpm:121000, color:"#5c3d2e"},
+  {id:"riverpark", name:"КМ Ривер Парк", district:"Нижневолжская наб.", address:"Нижневолжская наб., 12", floors:25, entrances:2, deadline:"4 кв. 2028", deadlineSort:"2028-12", growth:29, basePpm:152000, color:"#0f4c5c"},
+  {id:"barminskaya", name:"КМ Дом на Барминской", district:"Приокский р-н, клубный дом", address:"ул. Барминская, 8", floors:9, entrances:1, deadline:"2 кв. 2026", deadlineSort:"2026-06", growth:24, basePpm:139000, color:"#4a3b52"},
+  {id:"pecherskiy", name:"КМ Печерский", district:"Печёрские Пески", address:"ул. Черниговская, 21", floors:16, entrances:2, deadline:"2 кв. 2027", deadlineSort:"2027-06", growth:26, basePpm:129000, color:"#6b4423"}
+];
+const DONE_COMPLEXES = [
+  {id:"towerplaza", name:"КМ Tower Plaza", district:"Нижегородский р-н, пл. Свободы", deadline:"сдан в 2023 году", years:3, growth:27, color:"#2b2b2b"},
+  {id:"residenceprime", name:"KM Residence Prime", district:"Советский р-н, ул. Белинского", deadline:"сдан в 2021 году", years:5, growth:23, color:"#3d3d3d"}
+];
+const ROOM_TYPES = [
+  {key:"studio", label:"Студия"},
+  {key:"1", label:"1-комнатная"},
+  {key:"2", label:"2-комнатная"},
+  {key:"3", label:"3-комнатная"},
+  {key:"4", label:"4-комнатная и больше"}
+];
+const CX = Object.fromEntries(COMPLEXES.map(c=>[c.id,c]));
+const APARTMENTS = [{"id": "a1", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 2, "floor": 8, "floorsTotal": 17, "number": 133, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 18.6, "price": 2420000, "ppm": 130000, "status": "booked", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a2", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 14, "floorsTotal": 17, "number": 58, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 65.6, "price": 8130000, "ppm": 124000, "status": "free", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a3", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 14, "floorsTotal": 17, "number": 59, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 47.9, "price": 6370000, "ppm": 133000, "status": "sold", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a4", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 14, "floorsTotal": 17, "number": 60, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 19.4, "price": 2420000, "ppm": 125000, "status": "sold", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a5", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 13, "floorsTotal": 17, "number": 53, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 30.8, "price": 4190000, "ppm": 136000, "status": "booked", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a6", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 2, "floor": 4, "floorsTotal": 17, "number": 118, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 84.5, "price": 10140000, "ppm": 120000, "status": "booked", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a7", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 2, "floor": 7, "floorsTotal": 17, "number": 131, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 79.1, "price": 9250000, "ppm": 117000, "status": "free", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a8", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 8, "floorsTotal": 17, "number": 36, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 36.9, "price": 4580000, "ppm": 124000, "status": "free", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a9", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 12, "floorsTotal": 17, "number": 49, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 72.1, "price": 9520000, "ppm": 132000, "status": "booked", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a10", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 6, "floorsTotal": 17, "number": 26, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 51.9, "price": 6230000, "ppm": 120000, "status": "free", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a11", "complex": "ankudinovka", "building": "Корпус 1", "entrance": 1, "floor": 11, "floorsTotal": 17, "number": 47, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 36.7, "price": 4880000, "ppm": 133000, "status": "free", "deadline": "4 кв. 2027", "deadlineSort": "2027-12"}, {"id": "a12", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 2, "floor": 5, "floorsTotal": 12, "number": 121, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 66.3, "price": 9350000, "ppm": 141000, "status": "booked", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a13", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 11, "floorsTotal": 12, "number": 46, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 51.5, "price": 7670000, "ppm": 149000, "status": "booked", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a14", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 4, "floorsTotal": 12, "number": 19, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 22.2, "price": 2950000, "ppm": 133000, "status": "booked", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a15", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 2, "floor": 6, "floorsTotal": 12, "number": 128, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 31.8, "price": 4580000, "ppm": 144000, "status": "free", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a16", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 12, "number": 9, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 18.1, "price": 2240000, "ppm": 124000, "status": "booked", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a17", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 2, "floor": 7, "floorsTotal": 12, "number": 130, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 52.7, "price": 7170000, "ppm": 136000, "status": "free", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a18", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 11, "floorsTotal": 12, "number": 47, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 54.4, "price": 7890000, "ppm": 145000, "status": "free", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a19", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 2, "floor": 2, "floorsTotal": 12, "number": 112, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 32.3, "price": 4010000, "ppm": 124000, "status": "free", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a20", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 2, "floor": 9, "floorsTotal": 12, "number": 137, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 54.9, "price": 7630000, "ppm": 139000, "status": "free", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a21", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 3, "floorsTotal": 12, "number": 14, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 49.9, "price": 6240000, "ppm": 125000, "status": "sold", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a22", "complex": "timiryazevskiy", "building": "Корпус 1", "entrance": 1, "floor": 10, "floorsTotal": 12, "number": 43, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 99.7, "price": 13060000, "ppm": 131000, "status": "sold", "deadline": "4 кв. 2026", "deadlineSort": "2026-12"}, {"id": "a23", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 19, "floorsTotal": 22, "number": 77, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 37.6, "price": 4780000, "ppm": 127000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a24", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 3, "floor": 5, "floorsTotal": 22, "number": 222, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 17.9, "price": 2240000, "ppm": 125000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a25", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 3, "floor": 14, "floorsTotal": 22, "number": 259, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 37.7, "price": 5240000, "ppm": 139000, "status": "booked", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a26", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 3, "floor": 10, "floorsTotal": 22, "number": 244, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 50.2, "price": 6630000, "ppm": 132000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a27", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 2, "floor": 4, "floorsTotal": 22, "number": 117, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 70.0, "price": 8190000, "ppm": 117000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a28", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 3, "floor": 8, "floorsTotal": 22, "number": 234, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 45.1, "price": 5910000, "ppm": 131000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a29", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 11, "floorsTotal": 22, "number": 47, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 17.5, "price": 2190000, "ppm": 125000, "status": "booked", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a30", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 19, "floorsTotal": 22, "number": 80, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 34.6, "price": 4500000, "ppm": 130000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a31", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 4, "floorsTotal": 22, "number": 17, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 35.3, "price": 4310000, "ppm": 122000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a32", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 22, "floorsTotal": 22, "number": 90, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 78.1, "price": 10930000, "ppm": 140000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a33", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 8, "floorsTotal": 22, "number": 35, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 47.5, "price": 6080000, "ppm": 128000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a34", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 2, "floor": 8, "floorsTotal": 22, "number": 136, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 23.1, "price": 2770000, "ppm": 120000, "status": "sold", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a35", "complex": "gagarinpark", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 22, "number": 9, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 78.0, "price": 9670000, "ppm": 124000, "status": "free", "deadline": "2 кв. 2028", "deadlineSort": "2028-06"}, {"id": "a36", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 6, "floorsTotal": 25, "number": 25, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 102.2, "price": 16150000, "ppm": 158000, "status": "sold", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a37", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 13, "floorsTotal": 25, "number": 54, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 65.0, "price": 10460000, "ppm": 161000, "status": "sold", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a38", "complex": "riverpark", "building": "Корпус 1", "entrance": 2, "floor": 14, "floorsTotal": 25, "number": 159, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 78.9, "price": 13330000, "ppm": 169000, "status": "booked", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a39", "complex": "riverpark", "building": "Корпус 1", "entrance": 2, "floor": 5, "floorsTotal": 25, "number": 124, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 47.5, "price": 7170000, "ppm": 151000, "status": "free", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a40", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 24, "floorsTotal": 25, "number": 97, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 49.1, "price": 7910000, "ppm": 161000, "status": "free", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a41", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 25, "number": 10, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 118.8, "price": 17340000, "ppm": 146000, "status": "free", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a42", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 13, "floorsTotal": 25, "number": 55, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 46.6, "price": 8020000, "ppm": 172000, "status": "free", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a43", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 14, "floorsTotal": 25, "number": 60, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 53.5, "price": 8830000, "ppm": 165000, "status": "free", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a44", "complex": "riverpark", "building": "Корпус 1", "entrance": 2, "floor": 8, "floorsTotal": 25, "number": 133, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 32.1, "price": 4850000, "ppm": 151000, "status": "booked", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a45", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 1, "floorsTotal": 25, "number": 6, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 33.7, "price": 5560000, "ppm": 165000, "status": "sold", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a46", "complex": "riverpark", "building": "Корпус 1", "entrance": 1, "floor": 17, "floorsTotal": 25, "number": 71, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 18.9, "price": 3330000, "ppm": 176000, "status": "sold", "deadline": "4 кв. 2028", "deadlineSort": "2028-12"}, {"id": "a47", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 8, "floorsTotal": 9, "number": 33, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 36.7, "price": 5870000, "ppm": 160000, "status": "booked", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a48", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 9, "floorsTotal": 9, "number": 38, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 99.0, "price": 15940000, "ppm": 161000, "status": "sold", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a49", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 9, "number": 11, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 22.2, "price": 3040000, "ppm": 137000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a50", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 4, "floorsTotal": 9, "number": 20, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 35.5, "price": 5500000, "ppm": 155000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a51", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 9, "number": 9, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 35.1, "price": 5300000, "ppm": 151000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a52", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 5, "floorsTotal": 9, "number": 22, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 31.3, "price": 4660000, "ppm": 149000, "status": "booked", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a53", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 2, "floorsTotal": 9, "number": 11, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 57.3, "price": 8480000, "ppm": 148000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a54", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 9, "floorsTotal": 9, "number": 40, "roomsKey": "studio", "roomsLabel": "Студия", "rooms": 0, "area": 18.0, "price": 2680000, "ppm": 149000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a55", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 6, "floorsTotal": 9, "number": 25, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 69.2, "price": 10100000, "ppm": 146000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a56", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 3, "floorsTotal": 9, "number": 14, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 83.5, "price": 11770000, "ppm": 141000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a57", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 7, "floorsTotal": 9, "number": 31, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 65.5, "price": 10410000, "ppm": 159000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a58", "complex": "barminskaya", "building": "Корпус 1", "entrance": 1, "floor": 5, "floorsTotal": 9, "number": 24, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 94.8, "price": 14600000, "ppm": 154000, "status": "free", "deadline": "2 кв. 2026", "deadlineSort": "2026-06"}, {"id": "a59", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 7, "floorsTotal": 16, "number": 29, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 81.3, "price": 11060000, "ppm": 136000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a60", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 8, "floorsTotal": 16, "number": 34, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 65.5, "price": 8650000, "ppm": 132000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a61", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 2, "floor": 12, "floorsTotal": 16, "number": 151, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 77.8, "price": 10890000, "ppm": 140000, "status": "sold", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a62", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 4, "floorsTotal": 16, "number": 20, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 56.4, "price": 7330000, "ppm": 130000, "status": "booked", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a63", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 4, "floorsTotal": 16, "number": 17, "roomsKey": "4", "roomsLabel": "4-комнатная и больше", "rooms": 4, "area": 107.9, "price": 14130000, "ppm": 131000, "status": "booked", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a64", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 13, "floorsTotal": 16, "number": 54, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 37.2, "price": 5100000, "ppm": 137000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a65", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 12, "floorsTotal": 16, "number": 51, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 33.5, "price": 5060000, "ppm": 151000, "status": "sold", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a66", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 10, "floorsTotal": 16, "number": 44, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 51.6, "price": 7380000, "ppm": 143000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a67", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 1, "floor": 7, "floorsTotal": 16, "number": 29, "roomsKey": "2", "roomsLabel": "2-комнатная", "rooms": 2, "area": 50.5, "price": 7370000, "ppm": 146000, "status": "booked", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a68", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 2, "floor": 13, "floorsTotal": 16, "number": 154, "roomsKey": "3", "roomsLabel": "3-комнатная", "rooms": 3, "area": 76.0, "price": 10110000, "ppm": 133000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}, {"id": "a69", "complex": "pecherskiy", "building": "Корпус 1", "entrance": 2, "floor": 15, "floorsTotal": 16, "number": 163, "roomsKey": "1", "roomsLabel": "1-комнатная", "rooms": 1, "area": 33.5, "price": 4960000, "ppm": 148000, "status": "free", "deadline": "2 кв. 2027", "deadlineSort": "2027-06"}];
+
+/* ================= UTIL ================= */
+const fmtRub = n => n.toLocaleString('ru-RU') + ' ₽';
+const fmtRubShort = n => (n/1000000).toLocaleString('ru-RU',{maximumFractionDigits:1}) + ' млн ₽';
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+let bookings = {};
+try { bookings = JSON.parse(localStorage.getItem('km_bookings')||'{}'); } catch(e){ bookings = {}; }
+
+function effectiveStatus(apt){
+  if (bookings[apt.id] && apt.status === 'free') return 'booked';
+  return apt.status;
+}
+
+function showToast(msg){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('is-open');
+  clearTimeout(showToast._tm);
+  showToast._tm = setTimeout(()=>t.classList.remove('is-open'), 2600);
+}
+
+/* ================= HEADER / NAV ================= */
+const burger = $('#burger'), nav = $('#mainNav');
+burger.addEventListener('click', ()=>{
+  const open = !nav.classList.contains('nav--open');
+  nav.classList.toggle('nav--open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+});
+$$('.nav a').forEach(a=>a.addEventListener('click', ()=>{
+  nav.classList.remove('nav--open'); burger.setAttribute('aria-expanded','false');
+}));
+
+/* ================= HERO STATS ================= */
+$('#statTotal').textContent = APARTMENTS.length;
+$('#statFree').textContent = APARTMENTS.filter(a=>effectiveStatus(a)==='free').length;
+
+/* ================= COMPLEX CARDS ================= */
+const cxGrid = $('#complexGrid');
+COMPLEXES.forEach(c=>{
+  const total = APARTMENTS.filter(a=>a.complex===c.id).length;
+  const free = APARTMENTS.filter(a=>a.complex===c.id && effectiveStatus(a)==='free').length;
+  const minPrice = Math.min(...APARTMENTS.filter(a=>a.complex===c.id).map(a=>a.price));
+  const el = document.createElement('div');
+  el.className = 'cx-card';
+  el.innerHTML = `
+    <div class="cx-card__art" style="background:linear-gradient(135deg, ${c.color}, ${c.color}cc)">
+      <span class="cx-card__badge">Сдача: ${c.deadline}</span>
+    </div>
+    <div class="cx-card__body">
+      <div class="cx-card__name">${c.name}</div>
+      <div class="cx-card__loc">${c.district}</div>
+      <div class="cx-card__row"><span>Квартир свободно</span><b>${free} из ${total}</b></div>
+      <div class="cx-card__row"><span>Цена от</span><b>${fmtRubShort(minPrice)}</b></div>
+      <div class="cx-card__row"><span>Рост цены лота</span><b>+${c.growth}% в год</b></div>
+      <button class="cx-card__cta" data-complex="${c.id}">Смотреть квартиры →</button>
+    </div>`;
+  cxGrid.appendChild(el);
+});
+cxGrid.addEventListener('click', e=>{
+  const btn = e.target.closest('[data-complex]');
+  if (!btn) return;
+  state.complex = new Set([btn.dataset.complex]);
+  syncComplexSelect();
+  render();
+  document.getElementById('flats').scrollIntoView({behavior:'smooth'});
+});
+
+/* ================= FILTERS ================= */
+const fComplex = $('#fComplex');
+COMPLEXES.forEach(c=>{
+  const o = document.createElement('option');
+  o.value = c.id; o.textContent = c.name;
+  fComplex.appendChild(o);
+});
+const fDeadline = $('#fDeadline');
+[...new Set(COMPLEXES.map(c=>c.deadlineSort))].sort().forEach(ds=>{
+  const c = COMPLEXES.find(x=>x.deadlineSort===ds);
+  const o = document.createElement('option');
+  o.value = ds; o.textContent = c.deadline;
+  fDeadline.appendChild(o);
+});
+const fRoomsWrap = $('#fRooms');
+ROOM_TYPES.forEach(rt=>{
+  const b = document.createElement('button');
+  b.type='button'; b.className='f-chip'; b.dataset.room = rt.key; b.textContent = rt.label;
+  fRoomsWrap.appendChild(b);
+});
+
+const state = {
+  complex: new Set(),
+  rooms: new Set(),
+  floorMin: null, floorMax: null,
+  areaMin: null, areaMax: null,
+  priceMin: null, priceMax: null,
+  deadline: '',
+  view: 'chess'
+};
+
+function syncComplexSelect(){
+  Array.from(fComplex.options).forEach(o=> o.selected = state.complex.has(o.value));
+}
+
+fComplex.addEventListener('change', ()=>{
+  state.complex = new Set(Array.from(fComplex.selectedOptions).map(o=>o.value));
+  render();
+});
+fRoomsWrap.addEventListener('click', e=>{
+  const b = e.target.closest('.f-chip'); if(!b) return;
+  const key = b.dataset.room;
+  if (state.rooms.has(key)) state.rooms.delete(key); else state.rooms.add(key);
+  b.classList.toggle('is-active');
+  render();
+});
+['fFloorMin','fFloorMax','fAreaMin','fAreaMax','fPriceMin','fPriceMax'].forEach(id=>{
+  $('#'+id).addEventListener('input', e=>{
+    const key = id.replace('f','').replace(/^./,c=>c.toLowerCase());
+    let v = e.target.value === '' ? null : parseFloat(e.target.value);
+    if (id.startsWith('fPrice') && v!==null) v = v * 1000000;
+    state[key] = v;
+    render();
+  });
+});
+fDeadline.addEventListener('change', ()=>{ state.deadline = fDeadline.value; render(); });
+$('#fReset').addEventListener('click', ()=>{
+  state.complex = new Set(); state.rooms = new Set();
+  state.floorMin=state.floorMax=state.areaMin=state.areaMax=state.priceMin=state.priceMax=null;
+  state.deadline = '';
+  syncComplexSelect();
+  fRoomsWrap.querySelectorAll('.f-chip').forEach(b=>b.classList.remove('is-active'));
+  ['fFloorMin','fFloorMax','fAreaMin','fAreaMax','fPriceMin','fPriceMax'].forEach(id=>$('#'+id).value='');
+  fDeadline.value='';
+  render();
+});
+
+function matches(apt){
+  if (state.complex.size && !state.complex.has(apt.complex)) return false;
+  if (state.rooms.size && !state.rooms.has(apt.roomsKey)) return false;
+  if (state.floorMin!==null && apt.floor < state.floorMin) return false;
+  if (state.floorMax!==null && apt.floor > state.floorMax) return false;
+  if (state.areaMin!==null && apt.area < state.areaMin) return false;
+  if (state.areaMax!==null && apt.area > state.areaMax) return false;
+  if (state.priceMin!==null && apt.price < state.priceMin) return false;
+  if (state.priceMax!==null && apt.price > state.priceMax) return false;
+  if (state.deadline && apt.deadlineSort !== state.deadline) return false;
+  return true;
+}
+
+/* ================= VIEW TABS ================= */
+$$('.view-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    $$('.view-tab').forEach(t=>t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+    state.view = tab.dataset.view;
+    ['Chess','List','Plans'].forEach(v=>{
+      $('#view'+v).style.display = ('view'+v.toLowerCase()) === ('view'+state.view) ? '' : 'none';
+    });
+    $('#viewChess').style.display = state.view==='chess' ? '' : 'none';
+    $('#viewList').style.display = state.view==='list' ? '' : 'none';
+    $('#viewPlans').style.display = state.view==='plans' ? '' : 'none';
+    render();
+  });
+});
+
+/* ================= RENDER ================= */
+function priceGradient(apt, freeInComplex){
+  if (!freeInComplex.length) return '';
+  const ppms = freeInComplex.map(a=>a.ppm);
+  const min = Math.min(...ppms), max = Math.max(...ppms);
+  const t = max===min ? 0.5 : 1 - (apt.ppm - min) / (max - min); // cheaper -> higher t -> brighter green
+  const lightness = 88 - t*30; // 88% (cheap/bright) .. 58% (expensive)
+  return `hsl(142 45% ${lightness}%)`;
+}
+
+function render(){
+  const filtered = APARTMENTS.filter(matches);
+  $('#foundCount').textContent = filtered.length;
+
+  if (!filtered.length){
+    $('#chessContainer').innerHTML = '<div class="empty-state">Квартир по заданным условиям не найдено. Попробуйте расширить диапазон фильтров.</div>';
+    $('#listBody').innerHTML = '';
+    $('#plansGrid').innerHTML = '';
+    return;
+  }
+
+  if (state.view === 'chess') renderChess(filtered);
+  if (state.view === 'list') renderList(filtered);
+  if (state.view === 'plans') renderPlans(filtered);
+}
+
+function renderChess(filtered){
+  const byComplex = {};
+  filtered.forEach(a=>{ (byComplex[a.complex] = byComplex[a.complex]||[]).push(a); });
+  const container = $('#chessContainer');
+  container.innerHTML = '';
+  Object.keys(byComplex).forEach(cid=>{
+    const c = CX[cid];
+    const apts = byComplex[cid];
+    const freeApts = APARTMENTS.filter(a=>a.complex===cid && effectiveStatus(a)==='free');
+    const byFloor = {};
+    apts.forEach(a=>{ (byFloor[a.floor] = byFloor[a.floor]||[]).push(a); });
+    const floors = Object.keys(byFloor).map(Number).sort((a,b)=>b-a);
+    const block = document.createElement('div');
+    block.className = 'chess-block';
+    const head = document.createElement('div');
+    head.className = 'chess-block__head';
+    head.innerHTML = `<h4>${c.name}</h4><span>${c.address} · ${c.floors} этажей · сдача ${c.deadline}</span>`;
+    block.appendChild(head);
+    floors.forEach(fl=>{
+      const row = document.createElement('div');
+      row.className = 'chess-floor';
+      row.innerHTML = `<div class="chess-floor__n">${fl}</div>`;
+      const cells = document.createElement('div');
+      cells.className = 'chess-floor__cells';
+      byFloor[fl].sort((a,b)=>a.number-b.number).forEach(apt=>{
+        const st = effectiveStatus(apt);
+        const cell = document.createElement('button');
+        cell.type = 'button';
+        cell.className = 'cell cell--'+st;
+        cell.dataset.id = apt.id;
+        if (st === 'free') cell.style.background = priceGradient(apt, freeApts);
+        cell.innerHTML = `${apt.number}<span class="cell__rooms">${apt.roomsKey==='studio'?'Ст':apt.roomsKey+'к'}</span>`;
+        cell.title = `Кв. ${apt.number} · ${apt.roomsLabel} · ${apt.area} м² · ${fmtRub(apt.price)}`;
+        cells.appendChild(cell);
+      });
+      row.appendChild(cells);
+      block.appendChild(row);
+    });
+    container.appendChild(block);
+  });
+}
+
+function renderList(filtered){
+  const tbody = $('#listBody');
+  tbody.innerHTML = '';
+  filtered.slice().sort((a,b)=>a.price-b.price).forEach(apt=>{
+    const st = effectiveStatus(apt);
+    const stLabel = st==='free' ? 'Свободна' : st==='booked' ? 'Бронь' : 'Продана';
+    const tr = document.createElement('tr');
+    tr.dataset.id = apt.id;
+    tr.innerHTML = `
+      <td>${CX[apt.complex].name}</td>
+      <td>№ ${apt.number}</td>
+      <td>${apt.roomsLabel}</td>
+      <td>${apt.area} м²</td>
+      <td>${apt.floor} / ${apt.floorsTotal}</td>
+      <td>${fmtRub(apt.price)}</td>
+      <td>${fmtRub(apt.ppm)}</td>
+      <td>${apt.deadline}</td>
+      <td><span class="status-pill ${st}">${stLabel}</span></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function planSvg(roomsKey, opts){
+  opts = opts || {};
+  const w = opts.w || 160, h = opts.h || 120;
+  const cfgs = {
+    studio: [[6,6,w-12,h-12]],
+    "1": [[6,6,w*0.6,h-12],[w*0.62,6,w*0.36,h*0.45-6],[w*0.62,h*0.48,w*0.36,h*0.5]],
+    "2": [[6,6,w*0.42,h*0.46],[w*0.46,6,w*0.5,h*0.46],[6,h*0.5,w*0.42,h*0.46],[w*0.46,h*0.5,w*0.5,h*0.46]],
+    "3": [[6,6,w*0.4,h*0.44],[w*0.44,6,w*0.5,h*0.3],[w*0.44,h*0.34,w*0.5,h*0.2],[6,h*0.5,w*0.4,h*0.44],[w*0.44,h*0.56,w*0.5,h*0.4]],
+    "4": [[6,6,w*0.32,h*0.44],[w*0.36,6,w*0.3,h*0.44],[w*0.68,6,w*0.28,h*0.44],[6,h*0.5,w*0.44,h*0.44],[w*0.5,h*0.5,w*0.46,h*0.44]]
+  };
+  const rects = cfgs[roomsKey] || cfgs.studio;
+  const inner = rects.map(r=>`<rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}" fill="#f1ece3" stroke="#c9c2b0" stroke-width="1.5" rx="2"/>`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схематичная планировка">
+    <rect x="1" y="1" width="${w-2}" height="${h-2}" fill="#fff" stroke="#e1dbcd" stroke-width="2" rx="6"/>
+    ${inner}
+  </svg>`;
+}
+
+function renderPlans(filtered){
+  const grid = $('#plansGrid');
+  grid.innerHTML = '';
+  ROOM_TYPES.forEach(rt=>{
+    const examples = filtered.filter(a=>a.roomsKey===rt.key);
+    if (!examples.length) return;
+    const areas = examples.map(a=>a.area);
+    const minA = Math.min(...areas).toFixed(1), maxA = Math.max(...areas).toFixed(1);
+    const card = document.createElement('div');
+    card.className = 'plan-card';
+    card.innerHTML = `${planSvg(rt.key)}<h4>${rt.label}</h4><span>${minA}–${maxA} м² · ${examples.length} в наличии</span>`;
+    grid.appendChild(card);
+  });
+  if (!grid.children.length){
+    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1">Нет планировок по заданным фильтрам.</div>';
+  }
+}
+
+/* click handling: chess cells + list rows */
+$('#chessContainer').addEventListener('click', e=>{
+  const cell = e.target.closest('.cell'); if(!cell) return;
+  openApartment(cell.dataset.id);
+});
+$('#listBody').addEventListener('click', e=>{
+  const tr = e.target.closest('tr'); if(!tr) return;
+  openApartment(tr.dataset.id);
+});
+
+/* ================= APARTMENT MODAL ================= */
+const aptOverlay = $('#aptOverlay');
+let currentApt = null;
+
+function openApartment(id){
+  const apt = APARTMENTS.find(a=>a.id===id);
+  if (!apt) return;
+  currentApt = apt;
+  const c = CX[apt.complex];
+  const st = effectiveStatus(apt);
+  const stLabel = st==='free' ? 'Свободна' : st==='booked' ? 'Бронь' : 'Продана';
+
+  $('#aptTitle').textContent = `${c.name} · квартира № ${apt.number}`;
+  $('#aptLoc').textContent = `${c.address} · ${apt.building}, подъезд ${apt.entrance}`;
+  $('#aptPrice').textContent = fmtRub(apt.price);
+  $('#aptPpm').textContent = fmtRub(apt.ppm) + ' за м²';
+  $('#aptArea').textContent = apt.area + ' м²';
+  $('#aptFloor').textContent = apt.floor + ' из ' + apt.floorsTotal;
+  $('#aptStatus').textContent = stLabel;
+  $('#aptDeadline').textContent = apt.deadline;
+  $('#aptPlan').innerHTML = planSvg(apt.roomsKey, {w:190,h:150});
+
+  const bookBtn = $('#aptBookBtn');
+  bookBtn.disabled = st !== 'free';
+  bookBtn.textContent = st === 'free' ? 'Забронировать квартиру' : (st==='booked' ? 'Уже забронирована' : 'Продана');
+  $('#bookingForm').classList.remove('is-open');
+  $('#bookingSuccess').classList.remove('is-open');
+  $('#bName').value=''; $('#bPhone').value='';
+
+  renderPriceChart(apt, c);
+
+  aptOverlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function closeApartment(){
+  aptOverlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+$('#aptClose').addEventListener('click', closeApartment);
+aptOverlay.addEventListener('click', e=>{ if (e.target === aptOverlay) closeApartment(); });
+document.addEventListener('keydown', e=>{ if (e.key==='Escape' && aptOverlay.classList.contains('is-open')) closeApartment(); });
+
+$('#aptBookBtn').addEventListener('click', ()=>{
+  $('#bookingForm').classList.add('is-open');
+  $('#bName').focus();
+});
+$('#aptMortgageBtn').addEventListener('click', ()=>{
+  closeApartment();
+  $('#mPriceRange').value = currentApt.price;
+  $('#mPriceNum').value = currentApt.price;
+  updateMortgage(true);
+  document.getElementById('mortgage').scrollIntoView({behavior:'smooth'});
+});
+
+$('#bookingForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = $('#bName').value.trim();
+  const phone = $('#bPhone').value.trim();
+  if (!name || !phone) return;
+  bookings[currentApt.id] = { name, phone, date: new Date().toISOString(), aptId: currentApt.id, complex: currentApt.complex, number: currentApt.number, price: currentApt.price };
+  try { localStorage.setItem('km_bookings', JSON.stringify(bookings)); } catch(e){}
+  $('#bookingForm').classList.remove('is-open');
+  $('#bookingSuccess').classList.add('is-open');
+  $('#aptBookBtn').disabled = true;
+  $('#aptBookBtn').textContent = 'Уже забронирована';
+  $('#aptStatus').textContent = 'Бронь';
+  showToast('Заявка сохранена. Мы свяжемся с вами.');
+  render();
+  updateHeroStats();
+});
+
+function updateHeroStats(){
+  $('#statFree').textContent = APARTMENTS.filter(a=>effectiveStatus(a)==='free').length;
+}
+
+/* ================= PRICE GROWTH CHART ================= */
+function renderPriceChart(apt, c){
+  const w = 560, h = 190, pad = {l:52,r:16,t:16,b:28};
+  const months = 24; // period from start of sales to deadline (illustrative)
+  const monthlyRate = Math.pow(1 + c.growth/100, 1/12) - 1;
+  const startPrice = apt.price / Math.pow(1+monthlyRate, months*0.62); // apt currently mid-construction
+  const points = [];
+  for (let i=0;i<=months;i++){
+    points.push(startPrice * Math.pow(1+monthlyRate, i));
+  }
+  const currentIdx = Math.round(months*0.62);
+  const maxV = Math.max(...points), minV = Math.min(...points);
+  const x = i => pad.l + (i/(months)) * (w-pad.l-pad.r);
+  const y = v => h-pad.b - ((v-minV)/(maxV-minV||1)) * (h-pad.t-pad.b);
+  const linePts = points.map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const areaPts = `${x(0).toFixed(1)},${(h-pad.b)} ${linePts} ${x(months).toFixed(1)},${(h-pad.b)}`;
+  const finalPrice = points[months];
+  const growthPct = Math.round((finalPrice/startPrice - 1)*100);
+
+  const svg = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="График роста стоимости квартиры">
+    <line x1="${pad.l}" y1="${h-pad.b}" x2="${w-pad.r}" y2="${h-pad.b}" stroke="#e1dbcd" stroke-width="1"/>
+    <text x="${pad.l}" y="14" font-size="11" fill="#6b6a62" font-family="Inter,sans-serif">${fmtRubShort(maxV)}</text>
+    <text x="${pad.l}" y="${h-pad.b+2}" font-size="11" fill="#6b6a62" font-family="Inter,sans-serif">${fmtRubShort(minV)}</text>
+    <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f3a5f" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#1f3a5f" stop-opacity="0.02"/>
+    </linearGradient></defs>
+    <polygon points="${areaPts}" fill="url(#areaGrad)"/>
+    <polyline points="${linePts}" fill="none" stroke="#1f3a5f" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${x(0).toFixed(1)}" cy="${y(points[0]).toFixed(1)}" r="3.5" fill="#1f3a5f"/>
+    <circle cx="${x(currentIdx).toFixed(1)}" cy="${y(points[currentIdx]).toFixed(1)}" r="4.5" fill="#b8893f" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="${x(months).toFixed(1)}" cy="${y(points[months]).toFixed(1)}" r="3.5" fill="#1f3a5f"/>
+    <text x="${x(0).toFixed(1)}" y="${h-6}" font-size="10.5" fill="#6b6a62" font-family="Inter,sans-serif">старт продаж</text>
+    <text x="${x(currentIdx).toFixed(1)-18}" y="${(y(points[currentIdx])-10).toFixed(1)}" font-size="10.5" fill="#b8893f" font-weight="700" font-family="Inter,sans-serif">сейчас</text>
+    <text x="${(x(months)-52).toFixed(1)}" y="${h-6}" font-size="10.5" fill="#6b6a62" font-family="Inter,sans-serif">сдача дома</text>
+  </svg>
+  <p style="font-size:13px;color:var(--text-secondary);margin-top:8px">Ориентировочный рост с начала продаж до сдачи: <b style="color:var(--text)">+${growthPct}%</b> при заявленном темпе ${c.growth}% в год по проекту «${c.name}».</p>`;
+  $('#aptChart').innerHTML = svg;
+}
+
+/* ================= MORTGAGE CALCULATOR ================= */
+const mPriceRange=$('#mPriceRange'), mPriceNum=$('#mPriceNum'), mDownRange=$('#mDownRange'), mDownNum=$('#mDownNum'),
+      mTermRange=$('#mTermRange'), mTermVal=$('#mTermVal'), mDownPct=$('#mDownPct'), mPriceApt=$('#mPriceApt');
+let mRate = 6;
+
+mPriceRange.value = 6000000; mPriceNum.value = 6000000;
+mDownRange.value = 20; mTermRange.value = 20;
+
+function annuity(loan, annualRatePct, years){
+  const r = annualRatePct/100/12;
+  const n = years*12;
+  if (loan<=0) return 0;
+  if (r===0) return loan/n;
+  return loan * (r*Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+}
+
+function updateMortgage(fromApt){
+  const price = Math.max(500000, parseFloat(mPriceNum.value)||0);
+  mPriceRange.max = Math.max(20000000, price);
+  mPriceRange.value = price;
+
+  let downPct = parseFloat(mDownRange.value);
+  let down = fromApt ? Math.round(price*downPct/100/10000)*10000 : parseFloat(mDownNum.value);
+  if (isNaN(down)) down = Math.round(price*downPct/100);
+  down = Math.min(Math.max(down,0), price*0.9);
+  downPct = Math.round(down/price*100);
+  mDownRange.value = downPct;
+  mDownNum.value = down;
+  mDownPct.textContent = downPct + '%';
+
+  const years = parseInt(mTermRange.value,10);
+  mTermVal.textContent = years + (years===1?' год': (years<5?' года':' лет'));
+
+  const loan = Math.max(price - down, 0);
+  const monthly = annuity(loan, mRate, years);
+  const total = monthly*years*12;
+  const overpay = Math.max(total - loan, 0);
+
+  $('#rMonthly').textContent = fmtRub(Math.round(monthly));
+  $('#rLoan').textContent = fmtRub(Math.round(loan));
+  $('#rOverpay').textContent = fmtRub(Math.round(overpay));
+  $('#rTotal').textContent = fmtRub(Math.round(total));
+
+  const instMonths = 24;
+  const instMonthly = loan/instMonths;
+  $('#rInstMonthly').textContent = fmtRub(Math.round(instMonthly));
+  const saving = Math.max(overpay,0);
+  $('#rSaving').textContent = fmtRub(Math.round(saving));
+
+  mPriceApt.textContent = currentApt ? `(из карточки: № ${currentApt.number}, ${CX[currentApt.complex].name})` : '';
+}
+
+[mPriceRange, mPriceNum, mDownRange, mDownNum, mTermRange].forEach(el=>{
+  el.addEventListener('input', ()=>{
+    if (el===mPriceRange) mPriceNum.value = mPriceRange.value;
+    if (el===mDownRange){ mDownNum.value = Math.round(parseFloat(mPriceNum.value)*mDownRange.value/100); }
+    updateMortgage(el===mPriceRange||el===mDownRange);
+  });
+});
+$('#rateFamily').addEventListener('click', ()=>{ mRate=6; $('#rateFamily').classList.add('is-active'); $('#rateBase').classList.remove('is-active'); updateMortgage(); });
+$('#rateBase').addEventListener('click', ()=>{ mRate=19; $('#rateBase').classList.add('is-active'); $('#rateFamily').classList.remove('is-active'); updateMortgage(); });
+
+updateMortgage();
+
+/* ================= PORTFOLIO ================= */
+const pfGrid = $('#pfGrid');
+DONE_COMPLEXES.forEach(c=>{
+  const totalGrowth = Math.round((Math.pow(1+c.growth/100, c.years)-1)*100);
+  const el = document.createElement('div');
+  el.className = 'pf-card';
+  el.innerHTML = `
+    <div class="pf-card__art" style="background:${c.color}">КМ</div>
+    <div>
+      <h3>${c.name}</h3>
+      <p>${c.district} · ${c.deadline}</p>
+      <div class="pf-stat">Рост цены за ${c.years} года стройки: +${totalGrowth}%</div>
+    </div>`;
+  pfGrid.appendChild(el);
+});
+
+/* ================= INIT ================= */
+syncComplexSelect();
+render();
+
+})();
+</script>
+</body>
+</html>
