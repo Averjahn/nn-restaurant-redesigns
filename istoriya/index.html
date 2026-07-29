@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отель «История» — атриум-отель у Кремля · Нижний Новгород</title>
+<meta name="description" content="Атриум-отель «История» на Кожевенной, 14а — у подножия Кремля, на пешеходной улице-музее. Просторный атриум под стеклянной крышей, номера Стандарт, завтрак «шведский стол», подземный паркинг.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f2ec; --paper2:#efe6da; --card:#fffdf9;
+    --ink:#2a211c; --muted:#6f6156; --faint:#a89984; --line:#e2d5c3;
+    --rose:#a85d54; --rose-d:#7a3f39; --rose-l:#c98077; --gold:#a9822f;
+    --serif:'Cormorant',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .lbl{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose-d);font-weight:600}
+  #motes{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+  nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:20px;height:78px;position:relative;z-index:2}
+  .brand{font-family:var(--serif);font-weight:700;font-size:27px;letter-spacing:.03em;display:flex;align-items:center;gap:10px}
+  .brand .col{width:3px;height:22px;background:var(--rose)}
+  .navlinks{margin-left:auto;display:flex;gap:26px;align-items:center}
+  .navlinks a{font-size:14px;color:var(--muted);font-weight:600;transition:color .15s}
+  .navlinks a:hover{color:var(--rose-d)}
+  .navlinks .cta{background:var(--rose);color:#fff;padding:10px 20px;border-radius:2px;font-weight:700}
+  .navlinks .cta:hover{background:var(--rose-d)}
+  @media(max-width:780px){.navlinks a:not(.cta){display:none}}
+
+  .hero{position:relative;height:min(90vh,760px);min-height:520px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(30,20,15,.15) 0%,rgba(30,20,15,.08) 35%,rgba(30,20,15,.78) 100%)}
+  .hero .in{position:relative;z-index:2;color:#f8f0e6;padding-bottom:clamp(42px,7vw,82px)}
+  .hero .lbl{color:var(--rose-l)}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(46px,8.4vw,102px);line-height:1.0;margin-top:14px;text-shadow:0 3px 26px rgba(0,0,0,.4)}
+  .hero p{font-size:clamp(16px,2vw,19px);max-width:560px;margin-top:18px;color:#f0e5d5;line-height:1.55}
+  .hero .ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+  .btn{font-weight:700;font-size:14.5px;letter-spacing:.01em;padding:15px 26px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;transition:.18s}
+  .btn.primary{background:var(--rose);color:#fff;box-shadow:0 10px 26px -10px rgba(168,93,84,.6)}
+  .btn.primary:hover{background:var(--rose-d);transform:translateY(-2px)}
+  .btn.ghost{border:2px solid #f0e5d5;color:#f0e5d5}
+  .btn.ghost:hover{background:#f0e5d5;color:var(--rose-d)}
+
+  section{padding:clamp(56px,9vw,102px) 0;position:relative;z-index:2}
+  .sechead{max-width:660px;margin-bottom:clamp(30px,5vw,50px)}
+  .sechead h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.8vw,54px);line-height:1.05;margin-top:10px}
+  .sechead p{color:var(--muted);margin-top:14px;font-size:16px}
+
+  .story .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
+  @media(max-width:820px){.story .grid{grid-template-columns:1fr}}
+  .story p.big{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.35;font-weight:600;color:var(--rose-d)}
+  .story p.body{color:var(--muted);margin-top:16px;font-size:15.5px;line-height:1.72}
+  .story figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+
+  .location{background:var(--rose-d);color:#f5e9dc;text-align:center}
+  .location .lbl{color:#e0b6ac}
+  .location h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.4vw,46px)}
+  .location p{margin-top:12px;color:#e6cfc5;font-size:16px;max-width:600px;margin-left:auto;margin-right:auto}
+  .location .pts{display:flex;gap:14px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+  .location .pt{border:1.5px solid rgba(245,233,220,.35);border-radius:999px;padding:9px 20px;font-weight:600;font-size:13.5px}
+
+  .rooms .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,22px)}
+  @media(max-width:860px){.rooms .rgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.rooms .rgrid{grid-template-columns:1fr}}
+  .room{background:var(--card);border:1px solid var(--line);border-radius:2px;overflow:hidden;transition:.25s}
+  .room:hover{transform:translateY(-4px);box-shadow:0 20px 44px -26px rgba(60,30,25,.35)}
+  .room .ph{aspect-ratio:4/3;overflow:hidden}
+  .room .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .room:hover .ph img{transform:scale(1.05)}
+  .room .rb{padding:18px 20px 22px}
+  .room h3{font-family:var(--serif);font-weight:600;font-size:21px}
+  .room .rp{margin-top:6px;color:var(--rose-d);font-weight:700;font-size:15px}
+  .room .rd{margin-top:6px;color:var(--muted);font-size:13.5px}
+
+  .amen{background:var(--paper2)}
+  .agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  @media(max-width:720px){.agrid{grid-template-columns:1fr 1fr}}
+  .a{background:var(--card);padding:26px 22px}
+  .a .ic{font-size:22px}
+  .a b{display:block;font-family:var(--serif);font-size:19px;font-weight:600;margin:12px 0 5px}
+  .a span{font-size:13px;color:var(--muted)}
+
+  .contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px)}
+  @media(max-width:760px){.contact .grid{grid-template-columns:1fr}}
+  .contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.8vw,52px);line-height:1.05;margin-top:10px}
+  .contact .rows{margin-top:6px}
+  .contact .row{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .contact .row .k{width:110px;flex-shrink:0;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding-top:3px}
+  .contact .row .v{font-size:16.5px;font-weight:600}
+  .contact .row .v a{border-bottom:1px solid var(--line)}
+  .contact .row .v a:hover{color:var(--rose-d);border-color:var(--rose-d)}
+  .contact .bookbig{margin-top:26px;display:inline-flex;background:var(--ink);color:var(--paper);font-weight:700;padding:15px 30px;border-radius:2px;transition:.2s}
+  .contact .bookbig:hover{background:var(--rose-d)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0}
+  .ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(22px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  ::selection{background:var(--rose);color:#fff}
+</style>
+</head>
+<body>
+<canvas id="motes" aria-hidden="true"></canvas>
+
+<nav><div class="wrap nav">
+  <span class="brand"><span class="col"></span>История</span>
+  <div class="navlinks">
+    <a href="#about">Отель</a>
+    <a href="#rooms">Номера</a>
+    <a href="#contact">Контакты</a>
+    <a href="#contact" class="cta">Забронировать</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <img src="img/web_atrium1.jpg" alt="Атриум отеля «История» под стеклянной крышей" fetchpriority="high">
+  <div class="scrim"></div>
+  <div class="wrap in">
+    <span class="lbl">Атриум-отель · ул. Кожевенная, 14а · у Кремля</span>
+    <h1>История</h1>
+    <p>Свет большого атриума под стеклянной крышей, тишина пешеходной улицы-музея и Кремль в пяти минутах ходьбы.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn primary">Забронировать номер →</a>
+      <a href="#rooms" class="btn ghost">Смотреть номера</a>
+    </div>
+  </div>
+</header>
+
+<section class="story" id="about">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="lbl">Об отеле</span>
+      <p class="big">Элегантный отель на улице, где хранится подлинный Нижний.</p>
+      <p class="body">Отель «История» стоит у подножия Кремля, на Кожевенной — пешеходной улице-музее в двух шагах от Рождественской и площади Минина и Пожарского. Главное здание на 40 номеров построено вокруг просторного атриума, который заливает светом стеклянная крыша — редкая для исторического центра архитектурная деталь.</p>
+    </div>
+    <figure class="reveal">
+      <img src="img/web_about.jpg" alt="Фасад отеля «История»">
+    </figure>
+  </div>
+</section>
+
+<section class="location">
+  <div class="wrap reveal">
+    <span class="lbl">Расположение</span>
+    <h2>В пяти минутах от главных достопримечательностей</h2>
+    <p>Кремль, улица Рождественская, площадь Минина и Пожарского — исторический центр открыт для прогулок пешком.</p>
+    <div class="pts">
+      <span class="pt">🏰 Кремль — 5 мин пешком</span>
+      <span class="pt">🚶 Рождественская рядом</span>
+      <span class="pt">🅿️ Подземный паркинг</span>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <span class="lbl">Номера</span>
+      <h2>Стандарт — с видом в атриум или на улицу</h2>
+      <p>15–18 м², до 2–3 гостей, кондиционер, мини-холодильник, Smart TV.</p>
+    </div>
+    <div class="rgrid reveal">
+      <div class="room"><div class="ph"><img src="img/web_room_a.jpg" alt="Стандарт, вид в атриум"></div><div class="rb"><h3>Вид в атриум</h3><div class="rp">от 6 480 ₽/ночь</div><div class="rd">15 м², двуспальная кровать, окна во внутренний атриум</div></div></div>
+      <div class="room"><div class="ph"><img src="img/web_room_b.jpg" alt="Стандарт, вид на улицу"></div><div class="rb"><h3>Вид на улицу</h3><div class="rp">от 7 110 ₽/ночь</div><div class="rd">15 м², окна на пешеходную Кожевенную</div></div></div>
+      <div class="room"><div class="ph"><img src="img/web_cafe2.jpg" alt="Кафе отеля"></div><div class="rb"><h3>С диваном, до 3 гостей</h3><div class="rp">от 7 380 ₽/ночь</div><div class="rd">18 м², две кровати и диван, вид в атриум</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="amen">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <span class="lbl">Удобства</span>
+      <h2>Всё продумано для гостя</h2>
+    </div>
+    <div class="agrid reveal">
+      <div class="a"><div class="ic">🍽</div><b>Завтрак «шведский стол»</b><span>Будни 7:00–10:00, выходные 8:00–11:00</span></div>
+      <div class="a"><div class="ic">🅿️</div><b>Подземный паркинг</b><span>По запросу, 700 ₽/сутки</span></div>
+      <div class="a"><div class="ic">📶</div><b>Wi-Fi по всему отелю</b><span>Бесплатно</span></div>
+      <div class="a"><div class="ic">☕</div><b>Чайный стол в кафе</b><span>Питьевая вода в номере</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="lbl">Контакты</span>
+      <h2>Забронировать номер</h2>
+      <a href="tel:+78312248877" class="bookbig">Позвонить и забронировать</a>
+    </div>
+    <div class="rows reveal">
+      <div class="row"><div class="k">Адрес</div><div class="v">Нижний Новгород,<br>ул. Кожевенная, 14а</div></div>
+      <div class="row"><div class="k">Телефон</div><div class="v"><a href="tel:+78312248877">+7 (831) 224-88-77</a></div></div>
+      <div class="row"><div class="k">Почта</div><div class="v"><a href="mailto:booking.history@yandex.ru">booking.history@yandex.ru</a></div></div>
+      <div class="row"><div class="k">VK</div><div class="v"><a href="https://vk.com/historynino" target="_blank" rel="noopener">vk.com/historynino</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <span>© Отель «История» — атриум-отель у Кремля</span>
+    <span>Нижний Новгород, ул. Кожевенная, 14а</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Пылинки света под стеклянной крышей атриума — редкие, тёплые, медленные */
+  var c=document.getElementById('motes'), ctx=c.getContext('2d'), W=0,H=0,P=[];
+  function sv(i){return ((Math.sin(i*12.9898)*43758.5453)%1+1)%1;}
+  function resize(){ W=c.width=window.innerWidth; H=c.height=window.innerHeight;
+    var n=Math.min(24, Math.round(W/70)); P=[];
+    for(var i=0;i<n;i++) P.push({x:sv(i)*W,y:sv(i+7)*H,r:.8+sv(i+3)*1.8,vy:.1+sv(i+5)*.22,ph:sv(i+11)*6.28,sw:.3+sv(i+13)*.6});
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='rgba(169,130,47,0.5)';
+    for(var i=0;i<P.length;i++){ var p=P[i];
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fill();
+      p.y+=p.vy; p.ph+=0.005; p.x+=Math.sin(p.ph)*p.sw*0.2;
+      if(p.y>H+6){ p.y=-6; } if(p.x>W+6)p.x=-6; if(p.x<-6)p.x=W+6;
+    }
+    requestAnimationFrame(draw);
+  }
+  if(!reduce){ resize(); window.addEventListener('resize',resize); draw(); } else { c.style.display='none'; }
+
+  var rv=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el);});
+    setTimeout(function(){rv.forEach(function(el){el.classList.add('in');});},2000);
+  } else { rv.forEach(function(el){el.classList.add('in');}); }
+})();
+</script>
+</body>
+</html>
