@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Админка — все редизайны</title>
+<title>Платформа студии — админка</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="theme-color" content="#000000">
@@ -12,30 +12,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#000;--fg:#fff;--muted:#8a8a8a;--line:#232323;--surface:#0d0d0d;--good:#3fb950;--warn:#e8a03c;--maxw:1180px}
+  :root{--bg:#000;--fg:#fff;--muted:#8a8a8a;--line:#232323;--surface:#0d0d0d;--surface2:#141418;--good:#3fb950;--warn:#e8a03c;--blue:#4d8df0;--maxw:1180px}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:80px}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
-  .hd{display:flex;align-items:center;height:68px;gap:16px}
+  .hd{display:flex;align-items:center;height:64px;gap:16px}
   .mark{width:16px;height:16px;background:var(--fg);flex-shrink:0}
   .hd .lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .hd .back{margin-left:auto;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:8px 14px;transition:.15s}
   .hd .back:hover{color:var(--fg);border-color:var(--fg)}
-  main{padding:40px 0 120px}
-  h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-  .sub{color:var(--muted);font-size:15px;margin-bottom:36px}
-  .summary{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:36px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+  /* tabs */
+  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:64px;z-index:49}
+  .tabs button{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font:600 14.5px 'Inter',sans-serif;padding:14px 4px;margin-right:22px;cursor:pointer;transition:.15s;display:flex;align-items:center;gap:7px}
+  .tabs button:hover{color:var(--fg)}
+  .tabs button.on{color:var(--fg);border-bottom-color:var(--fg)}
+  .tabs .pill{font-size:11px;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);font-weight:700}
+  main{padding:34px 0 40px}
+  .panelview{display:none}
+  .panelview.on{display:block}
+  h1{font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:28px;max-width:760px}
+  /* summary tiles */
+  .summary{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:28px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
   .summary .s{display:flex;flex-direction:column;gap:2px}
   .summary .s b{font-size:22px;font-weight:800}
-  .summary .s span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
-  .filters button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
-  .filters button.on{background:var(--fg);color:#000;border-color:var(--fg)}
+  .summary .s span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  /* filters */
+  .filterbar{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+  .filterrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .filterrow .flabel{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;width:74px;flex-shrink:0}
+  .chip{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s;white-space:nowrap}
+  .chip:hover{color:var(--fg)}
+  .chip.on{background:var(--fg);color:#000;border-color:var(--fg)}
+  .chip .c{opacity:.6;font-weight:700;margin-left:5px}
+  /* groups */
   .groups{display:flex;flex-direction:column;gap:14px}
   .group{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
-  .group.is-hidden-row{display:none}
   .g-thumbs{display:flex;gap:8px;flex-shrink:0}
   .g-thumb{position:relative;width:120px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#1a1a1a;border:1px solid var(--line)}
   .g-thumb img{width:100%;height:100%;object-fit:cover;display:block}
@@ -43,10 +57,11 @@
   .g-info{flex:1;min-width:220px}
   .g-name{font-size:18px;font-weight:800;margin-bottom:2px}
   .g-cat{font-size:13px;color:var(--muted)}
-  .g-badges{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .g-badges{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
   .badge{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line)}
   .badge.pub{color:var(--good);border-color:var(--good)}
   .badge.hid{color:var(--warn);border-color:var(--warn)}
+  .badge.type{color:var(--blue);border-color:rgba(77,141,240,.4)}
   .g-links{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   .g-links a{font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 11px;transition:.15s}
   .g-links a:hover{border-color:var(--fg)}
@@ -58,17 +73,60 @@
   .g-check.on{border-color:var(--good);color:var(--good)}
   .g-check input{accent-color:var(--good);width:15px;height:15px;cursor:pointer}
   .g-price{font-size:13px;font-weight:700;color:var(--warn)}
-  #panel{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#101014;border-top:2px solid var(--fg);padding:14px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px}
+  .empty{color:var(--muted);padding:40px 0;text-align:center;font-size:14px}
+  /* skills tab */
+  .skwrap{margin-top:4px}
+  .skfilters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 16px}
+  .skfilters input{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--fg);font-size:14px}
+  .skfilters select{padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--fg);font-size:13.5px}
+  .tablebox{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .tscroll{max-height:600px;overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{position:sticky;top:0;background:var(--surface2);text-align:left;padding:9px 12px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line)}
+  td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr.srow{cursor:pointer;transition:background .12s}
+  tr.srow:hover>td{background:var(--surface2)}
+  tr.srow.open>td{background:var(--surface2)}
+  .caret{display:inline-block;width:12px;color:var(--muted);transition:transform .15s;margin-right:5px;font-size:10px}
+  tr.srow.open .caret{transform:rotate(90deg);color:var(--fg)}
+  td .sl{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--fg)}
+  td .ds{color:var(--muted);font-size:12.5px}
+  .src{font-size:10.5px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  tr.drow>td{padding:0;border-bottom:1px solid var(--line);background:var(--surface2)}
+  .detail{padding:14px 16px 16px 30px;display:flex;flex-direction:column;gap:10px}
+  .detail .full{font-size:13.5px;line-height:1.6;color:var(--fg);max-width:820px}
+  .detail .meta{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+  .detail .chip2{font-size:11.5px;padding:3px 9px;border-radius:99px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+  .detail .chip2 b{color:var(--fg);font-weight:600}
+  .detail .role-note{font-size:12.5px;color:var(--muted);max-width:820px}
+  .detail .invoke{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--fg)}
+  .loading{color:var(--muted);padding:30px 0;font-size:14px}
+  .count-note{color:var(--muted);font-size:12.5px;margin-top:8px}
+  /* dev tab */
+  .devgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+  .devcard{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px;display:flex;flex-direction:column;gap:8px}
+  .devcard h3{font-size:16px;font-weight:800}
+  .devcard .dv-tag{font-size:12px;color:var(--muted)}
+  .devcard p{font-size:13px;color:var(--muted);line-height:1.5}
+  .devcard .dv-foot{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px;align-items:center}
+  .dv-st{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+  .dv-st.live{color:var(--good);border-color:var(--good)}
+  .dv-st.build{color:var(--warn);border-color:var(--warn)}
+  .dv-st.wait{color:var(--muted)}
+  .devcard a.dv-link{font-size:12.5px;font-weight:700;color:var(--blue)}
+  /* approve panel */
+  #panel{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#101014;border-top:2px solid var(--fg);padding:12px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:14px}
+  #panel.hide{display:none}
   #panel .sum{font-weight:800;color:var(--good);font-size:16px}
   #panel .cnt{color:var(--muted)}
-  #panel input[type=password]{background:#1a1a20;border:1px solid #333;border-radius:8px;color:#eee;padding:8px 12px;font-size:13px;width:220px}
+  #panel input[type=password]{background:#1a1a20;border:1px solid #333;border-radius:8px;color:#eee;padding:8px 12px;font-size:13px;width:200px}
   #panel button{background:var(--fg);border:none;border-radius:8px;color:#000;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
   #panel button.ghost{background:transparent;border:1px solid #444;color:#aaa}
   #panel .status{font-size:12px;color:var(--muted)}
-  body{padding-bottom:80px}
   @media(max-width:640px){
     .group{flex-direction:column}
     .g-approve{align-items:flex-start;margin-left:0;width:100%}
+    .tabs button{margin-right:14px}
   }
 </style>
 </head>
@@ -76,24 +134,45 @@
 <header>
   <div class="wrap hd">
     <span class="mark"></span>
-    <span class="lbl">Веб-студия / Админка</span>
+    <span class="lbl">Веб-студия / Платформа</span>
     <a class="back" href="index.html">← На сайт</a>
   </div>
 </header>
-<main>
-  <div class="wrap">
+<div class="tabs wrap" role="tablist">
+  <button class="on" data-tab="redesigns">Редизайны <span class="pill" id="pill-rd">—</span></button>
+  <button data-tab="skills">Скиллы <span class="pill" id="pill-sk">—</span></button>
+  <button data-tab="dev">Разработка <span class="pill" id="pill-dev">—</span></button>
+</div>
+
+<main class="wrap">
+  <!-- ===== РЕДИЗАЙНЫ ===== -->
+  <section class="panelview on" id="tab-redesigns">
     <h1>Все редизайны</h1>
-    <p class="sub">Полный список проектов студии — опубликованные на сайте и черновики, которые пока не показываем клиентам.</p>
+    <p class="sub">Полный список проектов студии — опубликованные и черновики. Фильтры по типу заведения, локации и статусу.</p>
     <div class="summary" id="summary"></div>
-    <div class="filters">
-      <button class="on" data-f="all">Все</button>
-      <button data-f="pub">Опубликованные</button>
-      <button data-f="hid">Черновики</button>
-      <button data-f="app">Одобренные</button>
+    <div class="filterbar">
+      <div class="filterrow"><span class="flabel">Статус</span><div id="f-status"></div></div>
+      <div class="filterrow"><span class="flabel">Тип</span><div id="f-type"></div></div>
+      <div class="filterrow"><span class="flabel">Локация</span><div id="f-loc"></div></div>
     </div>
     <div class="groups" id="groups"></div>
-  </div>
+  </section>
+
+  <!-- ===== СКИЛЛЫ ===== -->
+  <section class="panelview" id="tab-skills">
+    <h1>Каталог скиллов</h1>
+    <p class="sub">Все скиллы компании из всех источников. Нажмите на строку, чтобы раскрыть подробное описание. Данные подгружаются при первом открытии вкладки — чтобы админка оставалась лёгкой.</p>
+    <div id="sk-host"><div class="loading">Откройте вкладку — каталог загрузится…</div></div>
+  </section>
+
+  <!-- ===== РАЗРАБОТКА ===== -->
+  <section class="panelview" id="tab-dev">
+    <h1>Разработка</h1>
+    <p class="sub">Проекты студии вне редизайн-конвейера: приложения, порталы, платформы, бэкенды.</p>
+    <div class="devgrid" id="devgrid"></div>
+  </section>
 </main>
+
 <div id="panel">
   <span class="cnt">Одобрено: <b id="count">0</b> из <b id="total">0</b></span>
   <span class="sum" id="sumTotal">0 ₽</span>
@@ -103,149 +182,292 @@
   <button class="ghost" id="copy">Скопировать JSON</button>
   <span class="status" id="status"></span>
 </div>
+
 <script>
+/* ================= РАЗРАБОТКА (статичный список dev-проектов) ================= */
+const DEV = [
+  {name:"RouteDiary — iOS",tag:"Приложение · Swift",st:"build",stl:"код готов · ждёт Xcode",desc:"Дневник GPS-маршрутов: 33 Swift-файла, 5 экранов, трекинг, бензин/калории/расходники/планер. Цель — iPhone SE (iOS 15).",link:""},
+  {name:"RouteDiary — Android",tag:"Приложение · Kotlin",st:"build",stl:"код готов · ждёт SDK",desc:"osmdroid + Room + foreground-трекинг, 5 экранов, Gradle wrapper готов.",link:""},
+  {name:"Sim Racers НН — портал",tag:"Fastify + SQLite",st:"live",stl:"на сервере",desc:"Портал сим-рейсеров: регистрация, запись кругов, загрузка реплеев, лидерборды с фильтрами. Развёрнут на VPS.",link:"https://averjahn.github.io/simracing-nn"},
+  {name:"Laptracker (APEX)",tag:"SPA · localStorage",st:"live",stl:"GitHub Pages",desc:"Трекер кругов: 179 машин Assetto Corsa, поиск, силуэты-заглушки, статистика.",link:"https://averjahn.github.io/laptracker"},
+  {name:"OzonGame",tag:"Vite · мини-игры",st:"live",stl:"dev/тест-контуры",desc:"Кот-тамагочи в аптеке + клиентские мини-игры, магазин, лидерборд; подготовка миграции на прод.",link:""},
+  {name:"Adaptive Learning / Course Factory",tag:"EdTech",st:"live",stl:"у заказчиков",desc:"Фабрика адаптивных курсов: организация + пользователи + курс одним запросом; база контента; медтесты.",link:""},
+  {name:"Coach Timer",tag:"SPA",st:"live",stl:"GitHub Pages",desc:"Несколько независимых секундомеров для тренера + история результатов.",link:"https://averjahn.github.io/coach-timer"},
+  {name:"Skateschool — сайт + CMS",tag:"Node/Express",st:"live",stl:"на сервере",desc:"Сайт скейт-школы со встроенной админкой (Q+W+E), правка контента и фото, карточки тренеров.",link:"https://averjahn.github.io/skateschool-redesign"},
+  {name:"NMBC — редизайн колледжа",tag:"Статика · build.py",st:"live",stl:"GitHub Pages",desc:"Редизайн сайта мед. колледжа: 22 страницы, светлая палитра, реальный контент.",link:"https://averjahn.github.io/nmbc-redesign"},
+  {name:"Aromi Pizza",tag:"Ordering-сайт",st:"live",stl:"GitHub Pages",desc:"Сайт пиццерии с онлайн-заказом.",link:"https://averjahn.github.io/aromi-pizza"},
+  {name:"Grillwood",tag:"Ordering-сайт",st:"live",stl:"GitHub Pages",desc:"Сайт доставки еды с корзиной.",link:"https://averjahn.github.io/grillwood"},
+  {name:"R-Design HQ",tag:"Дашборд",st:"live",stl:"GitHub Pages",desc:"Панель управления ИИ-компанией: команды, каталог 566 скиллов, операции, пульт.",link:"https://averjahn.github.io/rdesign-hq"},
+  {name:"Crypto Wallet (TON)",tag:"Expo · Fastify",st:"wait",stl:"фаза MVP",desc:"Кошелёк на Expo + TON: дизайн-фаза на моках готова, MVP-бэкенд — следующий шаг.",link:""},
+  {name:"Coursework DOCX Pipeline",tag:"docx-js",st:"live",stl:"конвейер",desc:"Генерация курсовых в Word: структура методички, картинки с Wikimedia, верификация.",link:""},
+  {name:"Портфолио редизайнов",tag:"Витрина",st:"live",stl:"GitHub Pages",desc:"Галерея работ студии со снегопадом + эта админка (Q+W+E).",link:"https://averjahn.github.io/nn-restaurant-redesigns"}
+];
+
+/* ================= МАКРО-ТИПЫ (группировка 70 категорий) ================= */
+const TYPE_OF = (function(){
+  const G = {
+    "🏨 Отели и отдых":["Загородный отдых","Отель","Гостиница","Бутик-отель","Апарт-отель","База отдыха","Санаторий","Глэмпинг","Загородный отель"],
+    "🍽 Еда и напитки":["Кофейня","Ресторан","Кондитерская","Доставка","Доставка · суши и пицца","Клуб-ресторан","Крафтовый бар","Грузинская кухня · караоке","Узбекская кухня · плов и тандыр"],
+    "🚗 Авто":["Автосалон","Автозапчасти","Автошкола","Автоэлектрик/диагностика","Детейлинг","Кузовной ремонт/покраска","Ремонт АКПП","Тонировка авто","Чип-тюнинг","Эвакуатор","Порошковая покраска дисков","Служба такси","Аренда спецтехники"],
+    "💅 Красота и здоровье":["Косметология","Ногтевой сервис/маникюр","Солярий/салон красоты","Стоматология","Стоматология эконом","Оптика · сеть салонов","Реабилитация/остеопатия","Психолог","Логопед/дефектолог"],
+    "🏗 Строительство и дом":["Заборы и ворота","Камины и печи","Кровельные работы","Отопление и котлы","Сантехнические услуги","Фасады и утепление","Бурение скважин на воду","Электромонтажные работы","Корпусная мебель и шкафы-купе","Изделия из камня / столешницы","Художественная ковка","Сварка / металлоконструкции","Сварочные работы","Резинотехника (РТИ) / металлообработка","Промышленное оборудование","Багетная мастерская / рамы","Вывески и наружная реклама"],
+    "🎓 Дети и образование":["Детский развивающий центр","Частный детский сад","Частная музыкальная школа","Художественная студия","Шахматный клуб / школа для детей","Конный клуб / прокат лошадей"],
+    "🐾 Животные":["Ветклиника","Ветаптека","Зоогостиница / передержка"],
+    "🏠 Недвижимость":["Недвижимость"],
+    "🧩 Услуги и бизнес":["Юридические услуги","Нотариус","Печати и штампы","Охранное предприятие (ЧОП)","Вывоз мусора / грузчики","Организация мероприятий","Свадебное агентство","Ремонт бытовой техники","Тир / стрелковый клуб","Памятники и ритуальные изделия"]
+  };
+  const map={};
+  for(const t in G) G[t].forEach(c=>map[c]=t);
+  return function(cat){ return map[cat] || "🧩 Услуги и бизнес"; };
+})();
+
+/* ================= РЕДИЗАЙНЫ ================= */
 (function(){
   const REPO = 'Averjahn/nn-restaurant-redesigns';
   const fmt = n => (n||0).toLocaleString('ru-RU') + ' ₽';
   let projects = [], approvals = {}, groups = {};
-  let filter = 'all';
+  let fStatus='all', fType='', fLoc='';
 
   Promise.all([
     fetch('projects.json', {cache:'no-store'}).then(r=>r.json()),
     fetch('approvals.json', {cache:'no-store'}).then(r=>r.json()).catch(()=>({}))
   ]).then(([proj, appr]) => {
     projects = proj; approvals = appr;
-    try {
-      const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
-      for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]);
-    } catch (e) {}
-    groupProjects();
-    render();
+    try { const local = JSON.parse(localStorage.getItem('rd_approvals') || '{}');
+      for (const k in local) if (approvals[k]) Object.assign(approvals[k], local[k]); } catch (e) {}
+    groupProjects(); buildFilters(); render();
+    document.getElementById('pill-rd').textContent = Object.keys(groups).length;
+    document.getElementById('pill-dev').textContent = DEV.length;
   });
 
-  function groupProjects() {
+  function groupProjects(){
     groups = {};
     projects.forEach(p => {
-      if (!groups[p.group]) groups[p.group] = { group: p.group, name: p.name, cat: p.cat, variants: [] };
+      if (!groups[p.group]) groups[p.group] = { group:p.group, name:p.name, cat:p.cat, type:TYPE_OF(p.cat), loc:(p.loc||p.city||'Нижний Новгород'), variants:[] };
       groups[p.group].variants.push(p);
     });
   }
+  const groupPublished = g => g.variants.some(v => v.published);
 
-  function groupPublished(g) { return g.variants.some(v => v.published); }
+  function chip(label,count,active,cls){ return `<button class="chip ${active?'on':''}" data-v="${label.val}">${label.txt}${count!=null?`<span class="c">${count}</span>`:''}</button>`; }
 
-  function render() {
-    const box = document.getElementById('groups');
-    box.innerHTML = '';
-    const list = Object.values(groups);
-    let shownCount = 0;
+  function buildFilters(){
+    // status
+    const list=Object.values(groups);
+    const st=[['all','Все'],['pub','Опубликованные'],['hid','Черновики'],['app','Одобренные']];
+    document.getElementById('f-status').innerHTML = st.map(([v,t])=>`<button class="chip ${v==='all'?'on':''}" data-v="${v}">${t}</button>`).join('');
+    // types (with counts)
+    const tc={}; list.forEach(g=>tc[g.type]=(tc[g.type]||0)+1);
+    const types=Object.keys(tc).sort((a,b)=>tc[b]-tc[a]);
+    document.getElementById('f-type').innerHTML = `<button class="chip on" data-v="">Все типы</button>`+
+      types.map(t=>`<button class="chip" data-v="${t}">${t}<span class="c">${tc[t]}</span></button>`).join('');
+    // locations
+    const lc={}; list.forEach(g=>lc[g.loc]=(lc[g.loc]||0)+1);
+    const locs=Object.keys(lc).sort((a,b)=>lc[b]-lc[a]);
+    document.getElementById('f-loc').innerHTML = `<button class="chip on" data-v="">Все локации</button>`+
+      locs.map(l=>`<button class="chip" data-v="${l}">${l}<span class="c">${lc[l]}</span></button>`).join('');
+    // wire
+    wireChips('f-status', v=>{fStatus=v;render();});
+    wireChips('f-type', v=>{fType=v;render();});
+    wireChips('f-loc', v=>{fLoc=v;render();});
+  }
+  function wireChips(id,cb){
+    const box=document.getElementById(id);
+    box.addEventListener('click',e=>{
+      const b=e.target.closest('.chip'); if(!b)return;
+      box.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on'); cb(b.dataset.v);
+    });
+  }
+
+  function render(){
+    const box = document.getElementById('groups'); box.innerHTML='';
+    const list = Object.values(groups); let shown=0;
     list.forEach(g => {
-      const a = approvals[g.group] || { approved: false, price: 0 };
+      const a = approvals[g.group] || { approved:false, price:0 };
       const pub = groupPublished(g);
-      const match = filter === 'all' || (filter === 'pub' && pub) || (filter === 'hid' && !pub) || (filter === 'app' && a.approved);
-      if (!match) return;
-      shownCount++;
-      const row = document.createElement('div');
-      row.className = 'group';
-      row.dataset.group = g.group;
+      if(!(fStatus==='all' || (fStatus==='pub'&&pub) || (fStatus==='hid'&&!pub) || (fStatus==='app'&&a.approved))) return;
+      if(fType && g.type!==fType) return;
+      if(fLoc && g.loc!==fLoc) return;
+      shown++;
+      const row = document.createElement('div'); row.className='group';
       const thumbs = g.variants.map(v => `
-        <div class="g-thumb">
-          <img src="assets/thumbs/${v.slug}.jpg" alt="${v.name}${v.variant ? ' ' + v.variant : ''}" loading="lazy"
-               onerror="this.parentElement.style.background='#1a1a1a'; this.remove()">
-          ${v.variant ? `<span class="v">${v.variant}</span>` : ''}
-        </div>`).join('');
-      const links = g.variants.map(v => `<a href="${v.slug}/" target="_blank" rel="noopener">Открыть${v.variant ? ' ' + v.variant : ''}</a>`).join('');
+        <div class="g-thumb"><img src="assets/thumbs/${v.slug}.jpg" alt="${v.name}" loading="lazy"
+          onerror="this.parentElement.style.background='#1a1a1a'; this.remove()">${v.variant?`<span class="v">${v.variant}</span>`:''}</div>`).join('');
+      const links = g.variants.map(v => `<a href="${v.slug}/" target="_blank" rel="noopener">Открыть${v.variant?' '+v.variant:''}</a>`).join('');
       const original = g.variants[0].original;
-      const origLink = original
-        ? `<a href="${original}" target="_blank" rel="noopener" class="g-orig">Оригинал ↗</a>`
-        : `<span class="g-orig--none">Своего сайта нет</span>`;
+      const origLink = original ? `<a href="${original}" target="_blank" rel="noopener" class="g-orig">Оригинал ↗</a>` : `<span class="g-orig--none">Своего сайта нет</span>`;
       row.innerHTML = `
         <div class="g-thumbs">${thumbs}</div>
         <div class="g-info">
           <div class="g-name">${g.name}</div>
           <div class="g-cat">${g.cat}</div>
           <div class="g-badges">
-            ${pub ? '<span class="badge pub">На сайте</span>' : '<span class="badge hid">Черновик · скрыт</span>'}
-            <span class="badge" style="color:var(--muted)">${g.variants.length} вариант${g.variants.length>1?(g.variants.length<5?'а':'ов'):''}</span>
+            ${pub?'<span class="badge pub">На сайте</span>':'<span class="badge hid">Черновик</span>'}
+            <span class="badge type">${g.type}</span>
+            <span class="badge" style="color:var(--muted)">${g.loc}</span>
           </div>
           <div class="g-links">${links}${origLink}</div>
         </div>
         <div class="g-approve">
-          <label class="g-check ${a.approved ? 'on' : ''}">
-            <input type="checkbox" ${a.approved ? 'checked' : ''}> одобрено
-          </label>
+          <label class="g-check ${a.approved?'on':''}"><input type="checkbox" ${a.approved?'checked':''}> одобрено</label>
           <span class="g-price">${fmt(a.price)}</span>
         </div>`;
-      row.querySelector('.g-check').addEventListener('click', e => {
-        e.preventDefault();
-        toggle(g.group);
-      });
+      row.querySelector('.g-check').addEventListener('click', e=>{e.preventDefault();toggle(g.group);});
       box.appendChild(row);
     });
+    if(!shown) box.innerHTML='<div class="empty">Под выбранные фильтры ничего не нашлось.</div>';
     recount();
   }
-
-  function toggle(group) {
-    const a = approvals[group];
-    if (!a) return;
-    a.approved = !a.approved;
-    a.approvedAt = a.approved ? new Date().toISOString().slice(0,10) : null;
-    localStorage.setItem('rd_approvals', JSON.stringify(approvals));
-    render();
+  function toggle(group){
+    const a=approvals[group]; if(!a)return;
+    a.approved=!a.approved; a.approvedAt=a.approved?new Date().toISOString().slice(0,10):null;
+    localStorage.setItem('rd_approvals', JSON.stringify(approvals)); render();
   }
-
-  function recount() {
-    let n = 0, sum = 0, total = 0;
-    for (const k in approvals) { total++; if (approvals[k].approved) { n++; sum += approvals[k].price; } }
-    document.getElementById('count').textContent = n;
-    document.getElementById('total').textContent = total;
-    document.getElementById('sumTotal').textContent = fmt(sum);
-    const pubCount = projects.filter(p => p.published).length;
-    const hidCount = Object.values(groups).filter(g => !groupPublished(g)).length;
-    document.getElementById('summary').innerHTML = `
+  function recount(){
+    let n=0,sum=0,total=0;
+    for(const k in approvals){total++;if(approvals[k].approved){n++;sum+=approvals[k].price;}}
+    document.getElementById('count').textContent=n;
+    document.getElementById('total').textContent=total;
+    document.getElementById('sumTotal').textContent=fmt(sum);
+    const pubCount=projects.filter(p=>p.published).length;
+    const hidCount=Object.values(groups).filter(g=>!groupPublished(g)).length;
+    document.getElementById('summary').innerHTML=`
       <div class="s"><b>${Object.keys(groups).length}</b><span>Проектов всего</span></div>
       <div class="s"><b>${pubCount}</b><span>Публичных страниц</span></div>
-      <div class="s"><b>${hidCount}</b><span>Черновиков / скрыто</span></div>
+      <div class="s"><b>${hidCount}</b><span>Черновиков</span></div>
       <div class="s"><b>${n}</b><span>Одобрено клиентом</span></div>`;
   }
-
-  document.querySelectorAll('.filters button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      filter = btn.dataset.f;
-      render();
-    });
+  function status(msg){const el=document.getElementById('status');el.textContent=msg;setTimeout(()=>{if(el.textContent===msg)el.textContent='';},6000);}
+  document.getElementById('token').value=localStorage.getItem('rd_token')||'';
+  document.getElementById('copy').addEventListener('click',()=>{navigator.clipboard.writeText(JSON.stringify(approvals,null,2));status('JSON в буфере — пришли его Claude');});
+  document.getElementById('save').addEventListener('click',async()=>{
+    const token=document.getElementById('token').value.trim();
+    if(!token){status('Нужен GitHub token (contents:write)');return;}
+    localStorage.setItem('rd_token',token);status('Сохраняю…');
+    try{
+      const api=`https://api.github.com/repos/${REPO}/contents/approvals.json`;
+      const head={'Authorization':`Bearer ${token}`,'Accept':'application/vnd.github+json'};
+      const cur=await fetch(api,{headers:head}).then(r=>r.json());
+      const body={message:'update approvals via admin panel',content:btoa(unescape(encodeURIComponent(JSON.stringify(approvals,null,2)))),sha:cur.sha};
+      const res=await fetch(api,{method:'PUT',headers:head,body:JSON.stringify(body)});
+      if(res.ok){localStorage.removeItem('rd_approvals');status('Сохранено в репо');}
+      else{const e=await res.json();status('Ошибка: '+(e.message||res.status));}
+    }catch(err){status('Ошибка сети: '+err.message);}
   });
+})();
 
-  function status(msg) {
-    const el = document.getElementById('status');
-    el.textContent = msg;
-    setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 6000);
+/* ================= РАЗРАБОТКА render ================= */
+(function(){
+  document.getElementById('devgrid').innerHTML = DEV.map(d=>`
+    <div class="devcard">
+      <h3>${d.name}</h3>
+      <div class="dv-tag">${d.tag}</div>
+      <p>${d.desc}</p>
+      <div class="dv-foot">
+        <span class="dv-st ${d.st}">${d.stl}</span>
+        ${d.link?`<a class="dv-link" href="${d.link}" target="_blank" rel="noopener">Открыть ↗</a>`:''}
+      </div>
+    </div>`).join('');
+})();
+
+/* ================= СКИЛЛЫ (ленивая загрузка) ================= */
+const DEPTS = {
+  lead:{name:"Руководство и стратегия",icon:"🏛️",role:"Советники C-level: стратегия, найм, инвест-решения."},
+  web:{name:"Производство: Web",icon:"⚙️",role:"Фулстек: архитектура, API, базы, DevOps, фреймворки."},
+  mobile:{name:"Производство: Mobile (iOS)",icon:"📱",role:"Скиллы по фреймворкам Apple: MapKit, Core Data, SwiftUI."},
+  design:{name:"Дизайн и редизайн",icon:"🎨",role:"Конвейер: сбор данных → 3 концепта → QA → деплой."},
+  mkt:{name:"Маркетинг и рост",icon:"📈",role:"Копирайтинг, SEO/AI-SEO, CRO, реклама, запуски, цены."},
+  sales:{name:"Продажи и CRM",icon:"🤝",role:"Лидогенерация, питчи, холодные письма, CRM."},
+  research:{name:"Исследования",icon:"🔬",role:"Ресёрч с проверкой фактов, конкурентная разведка."},
+  qa:{name:"Качество и безопасность",icon:"🛡️",role:"Код-ревью, Playwright-тесты, TDD, секьюрити."},
+  pm:{name:"Продукт и проекты",icon:"📋",role:"Продакт-менеджмент, управление проектами, требования."},
+  office:{name:"Бэк-офис: документы и финансы",icon:"🗂️",role:"Word/Excel/PPT/PDF, курсовые, финансы, акции."},
+  edtech:{name:"EdTech и медицина",icon:"🎓",role:"Фабрика адаптивных курсов, база контента, мед-тесты."}
+};
+const SRC_LABEL = {own:"собственные",anthropic:"Anthropic",alireza:"alirezarezvani","claudeskills.ru":"claudeskills.ru","marketing-pack":"маркетинг-пак","swift-ios":"swift-ios-skills"};
+let skillsLoaded=false;
+function esc(x){return (x||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function loadSkills(){
+  if(skillsLoaded) return; skillsLoaded=true;
+  const host=document.getElementById('sk-host');
+  host.innerHTML='<div class="loading">Загружаю каталог скиллов…</div>';
+  const sc=document.createElement('script');
+  sc.src='skills-data.js';
+  sc.onload=renderSkills;
+  sc.onerror=()=>{host.innerHTML='<div class="loading">Не удалось загрузить каталог. Проверьте сеть.</div>';skillsLoaded=false;};
+  document.head.appendChild(sc);
+}
+function renderSkills(){
+  const host=document.getElementById('sk-host');
+  const DETAIL=(typeof SKILL_DETAIL!=='undefined')?SKILL_DETAIL:{};
+  document.getElementById('pill-sk').textContent=SKILLS.length;
+  const deptCounts={}; SKILLS.forEach(s=>deptCounts[s.dept]=(deptCounts[s.dept]||0)+1);
+  const order=Object.keys(deptCounts).sort((a,b)=>deptCounts[b]-deptCounts[a]);
+  host.innerHTML=`
+    <div class="skfilters">
+      <input id="skq" type="search" placeholder="Поиск: seat, запись, seo, swift…">
+      <select id="skdept"><option value="">Все отделы</option>${order.map(d=>`<option value="${d}">${DEPTS[d]?DEPTS[d].name:d}</option>`).join('')}</select>
+      <select id="sksrc"><option value="">Все источники</option>${Object.keys(SRC_LABEL).map(s=>`<option value="${s}">${SRC_LABEL[s]}</option>`).join('')}</select>
+    </div>
+    <div class="tablebox"><div class="tscroll"><table>
+      <thead><tr><th style="width:220px">Скилл</th><th>Что делает</th><th style="width:130px">Отдел</th><th style="width:120px">Источник</th></tr></thead>
+      <tbody id="skrows"></tbody></table></div></div>
+    <div class="count-note" id="skcnt"></div>`;
+  const q=document.getElementById('skq'),fdp=document.getElementById('skdept'),fsr=document.getElementById('sksrc'),rows=document.getElementById('skrows'),cnt=document.getElementById('skcnt');
+  function detailHTML(s){
+    const dept=DEPTS[s.dept]||{name:s.dept,icon:'',role:''}, d=DETAIL[s.slug];
+    const trig=d&&d.trig;
+    return `<div class="detail">
+      <div class="full">${esc((d&&d.full)||s.desc)}</div>
+      ${trig?`<div class="role-note"><b>Срабатывает на:</b> ${esc(trig)}</div>`:''}
+      <div class="meta">
+        <span class="chip2"><b>Отдел:</b> ${dept.icon} ${esc(dept.name)}</span>
+        <span class="chip2"><b>Источник:</b> ${esc(SRC_LABEL[s.source]||s.source)}</span>
+        <span class="chip2"><b>Вызов:</b></span><span class="invoke">/${esc(s.slug)}</span>
+        ${d?'':'<span class="role-note">кратко — полного SKILL.md нет локально</span>'}
+      </div>
+      <div class="role-note">Отдел «${esc(dept.name)}»: ${esc(dept.role)}</div>
+    </div>`;
   }
-
-  document.getElementById('token').value = localStorage.getItem('rd_token') || '';
-  document.getElementById('copy').addEventListener('click', () => {
-    navigator.clipboard.writeText(JSON.stringify(approvals, null, 2));
-    status('JSON в буфере — пришли его Claude');
+  function draw(){
+    const term=q.value.toLowerCase(),dep=fdp.value,src=fsr.value; let shown=0,html='';
+    for(const s of SKILLS){
+      if(dep&&s.dept!==dep)continue; if(src&&s.source!==src)continue;
+      const _d=DETAIL[s.slug];
+      const hay=(s.slug+' '+s.name+' '+s.desc+' '+((_d&&_d.full)||'')+' '+((_d&&_d.trig)||'')).toLowerCase();
+      if(term&&!hay.includes(term))continue;
+      shown++;
+      if(shown<=400){
+        const dept=DEPTS[s.dept]||{name:s.dept,icon:''};
+        html+=`<tr class="srow"><td><span class="caret">▶</span><span class="sl">${esc(s.slug)}</span>${s.name!==s.slug?`<div class="ds" style="margin-left:17px">${esc(s.name)}</div>`:''}</td><td class="ds">${esc(s.desc)}</td><td class="ds">${dept.icon} ${esc(dept.name.split(':')[0])}</td><td><span class="src">${esc(SRC_LABEL[s.source]||s.source)}</span></td></tr>`;
+        html+=`<tr class="drow" hidden><td colspan="4">${detailHTML(s)}</td></tr>`;
+      }
+    }
+    rows.innerHTML=html;
+    cnt.textContent=`Показано ${Math.min(shown,400)} из ${shown} (всего ${SKILLS.length}). Нажмите на строку — раскроется описание.`+(shown>400?' Уточните поиск.':'');
+  }
+  rows.addEventListener('click',e=>{
+    const tr=e.target.closest('tr.srow'); if(!tr)return;
+    const dr=tr.nextElementSibling; const open=tr.classList.toggle('open');
+    if(dr&&dr.classList.contains('drow')) dr.hidden=!open;
   });
-  document.getElementById('save').addEventListener('click', async () => {
-    const token = document.getElementById('token').value.trim();
-    if (!token) { status('Нужен GitHub token (contents:write)'); return; }
-    localStorage.setItem('rd_token', token);
-    status('Сохраняю…');
-    try {
-      const api = `https://api.github.com/repos/${REPO}/contents/approvals.json`;
-      const head = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
-      const cur = await fetch(api, { headers: head }).then(r => r.json());
-      const body = {
-        message: 'update approvals via admin panel',
-        content: btoa(unescape(encodeURIComponent(JSON.stringify(approvals, null, 2)))),
-        sha: cur.sha
-      };
-      const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify(body) });
-      if (res.ok) { localStorage.removeItem('rd_approvals'); status('Сохранено в репо'); }
-      else { const e = await res.json(); status('Ошибка: ' + (e.message || res.status)); }
-    } catch (err) { status('Ошибка сети: ' + err.message); }
+  [q,fdp,fsr].forEach(el=>el.addEventListener('input',draw));
+  draw();
+}
+
+/* ================= ВКЛАДКИ ================= */
+(function(){
+  const panel=document.getElementById('panel');
+  document.querySelectorAll('.tabs button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const tab=btn.dataset.tab;
+      document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b===btn));
+      document.querySelectorAll('.panelview').forEach(p=>p.classList.toggle('on',p.id==='tab-'+tab));
+      panel.classList.toggle('hide', tab!=='redesigns'); // CRM-панель только на редизайнах
+      if(tab==='skills') loadSkills();
+      window.scrollTo({top:0,behavior:'instant'});
+    });
   });
 })();
 </script>
