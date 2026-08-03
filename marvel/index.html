@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pizza Marvel — пицца из дровяной печи · Нижний Новгород</title>
+<meta name="description" content="Pizza Marvel — пицца из дровяной печи в Нижнем Новгороде. Соберите пиццу из двух половинок, закажите доставку или заберите сами. Тел. +7 (831) 262 15 00.">
+<meta name="theme-color" content="#17120f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coal:#17120f; --coal-2:#241c17; --cream:#fbf7f0; --card:#fff;
+    --ink:#1c1613; --muted:#7a6f66; --faint:#a89c92; --line:#eae2d7;
+    --fire:#e04a17; --fire-d:#b83a10; --ember:#e8a33d; --green:#2f7d44;
+    --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --r:14px; --shadow:0 12px 34px -18px rgba(40,20,10,.5);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:132px;-webkit-text-size-adjust:100%}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3.5vw,32px)}
+  .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);font-weight:700}
+
+  /* ── шапка ── */
+  header{position:sticky;top:0;z-index:60;background:var(--coal);color:#fff}
+  .hd{display:flex;align-items:center;gap:clamp(12px,2vw,26px);height:72px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em;flex-shrink:0}
+  .logo .pie{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--ember) 0 50%,var(--fire) 0 100%);flex-shrink:0;box-shadow:0 0 0 2px rgba(255,255,255,.15)}
+  .search{flex:1;position:relative;min-width:0}
+  .search input{width:100%;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;padding:0 18px 0 44px;font-size:15px;outline:none;transition:.2s}
+  .search input::placeholder{color:rgba(255,255,255,.5)}
+  .search input:focus{border-color:var(--ember);background:rgba(255,255,255,.13)}
+  .search .ic{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.55;font-size:15px}
+  .hd .tel{font-weight:700;font-size:15px;white-space:nowrap}
+  .cartBtn{display:flex;align-items:center;gap:9px;background:var(--fire);color:#fff;font-weight:700;font-size:14.5px;padding:11px 18px;border-radius:999px;transition:.18s;white-space:nowrap}
+  .cartBtn:hover{background:var(--fire-d)}
+  .cartBtn .cnt{background:rgba(0,0,0,.22);border-radius:999px;padding:1px 8px;font-size:12.5px;min-width:24px;text-align:center}
+  @media(max-width:900px){.hd .tel{display:none}}
+  @media(max-width:620px){
+    .hd{height:64px;gap:10px}
+    .logo span{display:none}
+    .cartBtn{padding:11px 14px}
+    .cartBtn .txt{display:none}
+  }
+
+  /* ── навигация по категориям ── */
+  .catnav{position:sticky;top:72px;z-index:55;background:var(--cream);border-bottom:1px solid var(--line)}
+  .catnav .in{display:flex;gap:6px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+  .catnav .in::-webkit-scrollbar{display:none}
+  .catnav a{padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--muted);white-space:nowrap;transition:.16s;border:1px solid transparent}
+  .catnav a:hover{color:var(--ink);background:#fff}
+  .catnav a.on{background:var(--coal);color:#fff}
+  @media(max-width:620px){.catnav{top:64px}html{scroll-padding-top:120px}}
+
+  /* ── конструктор ── */
+  .builder{background:var(--coal);color:#fff;padding:clamp(28px,5vw,52px) 0;position:relative;overflow:hidden}
+  .builder::after{content:"";position:absolute;inset:auto -10% -60% 40%;height:420px;background:radial-gradient(closest-side,rgba(224,74,23,.28),transparent);pointer-events:none}
+  .bWrap{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(24px,4vw,54px);align-items:start;position:relative;z-index:2}
+  .bHead h1{font-size:clamp(26px,3.6vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:10px 0 10px}
+  .bHead p{color:rgba(255,255,255,.62);font-size:15px;max-width:44ch}
+
+  /* круг пиццы */
+  .pie-stage{position:relative;width:min(100%,420px);aspect-ratio:1;margin:18px auto 0;filter:drop-shadow(0 24px 40px rgba(0,0,0,.5))}
+  .pie-half{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#2a211b}
+  .pie-half img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+  .pie-half.L{clip-path:inset(0 50% 0 0)}
+  .pie-half.R{clip-path:inset(0 0 0 50%)}
+  .pie-stage .seam{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-1px);background:linear-gradient(180deg,transparent,rgba(255,255,255,.5),transparent);z-index:3;pointer-events:none}
+  .pie-empty{position:absolute;inset:0;display:grid;place-items:center;border-radius:50%;border:2px dashed rgba(255,255,255,.22);color:rgba(255,255,255,.5);font-size:13.5px;text-align:center;padding:20px;pointer-events:none}
+  .pie-half.filled + .pie-empty{display:none}
+  .sideTag{position:absolute;top:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:rgba(0,0,0,.55);padding:5px 11px;border-radius:999px;z-index:4;backdrop-filter:blur(4px)}
+  .sideTag.l{left:12px} .sideTag.r{right:12px}
+
+  /* выбор половинок */
+  .sides{display:grid;gap:18px}
+  .side{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:16px}
+  .side > h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .side > h3 .dotm{width:9px;height:16px;border-radius:9px 0 0 9px;background:var(--ember)}
+  .side > h3 .dotm.r{border-radius:0 9px 9px 0}
+  .opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px;max-height:264px;overflow-y:auto;padding-right:4px}
+  .opts::-webkit-scrollbar{width:6px}
+  .opts::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:99px}
+  .opt{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.18);text-align:left;transition:.15s;width:100%}
+  .opt:hover{border-color:rgba(255,255,255,.34);background:rgba(0,0,0,.3)}
+  .opt.sel{border-color:var(--ember);background:rgba(232,163,61,.16)}
+  .opt img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .opt > span{display:block;min-width:0}
+  .opt .nm{display:block;font-size:13.5px;font-weight:600;line-height:1.2}
+  .opt .pr{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-top:2px}
+  .opt.sel .pr{color:var(--ember)}
+
+  .extra{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;cursor:pointer;user-select:none}
+  .extra input{width:18px;height:18px;accent-color:var(--fire);cursor:pointer}
+  .extra .p{margin-left:auto;color:var(--ember);font-weight:700;font-size:13.5px}
+
+  .bTotal{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+  .bTotal .sum{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .bTotal .sum small{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);display:block;letter-spacing:0}
+  .btn{background:var(--fire);color:#fff;font-weight:700;font-size:15px;padding:14px 26px;border-radius:999px;transition:.18s;display:inline-flex;align-items:center;gap:9px}
+  .btn:hover:not(:disabled){background:var(--fire-d);transform:translateY(-1px)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.28)}
+  .btn.ghost:hover{background:rgba(255,255,255,.1);transform:none}
+
+  /* ── меню ── */
+  main section{padding:clamp(30px,4.5vw,54px) 0 0}
+  .secHead{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  .secHead h2{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.025em}
+  .secHead .n{font-size:13px;color:var(--faint);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:clamp(12px,1.6vw,20px)}
+  .pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+  .pc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#ded2c2}
+  .pc .ph{aspect-ratio:1;background:#f6f1e8;overflow:hidden}
+  .pc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .pc:hover .ph img{transform:scale(1.05)}
+  .pc .b{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1;gap:6px}
+  .pc h3{font-size:16.5px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+  .pc .d{font-size:12.8px;color:var(--muted);line-height:1.45;flex:1}
+  .pc .tip{font-size:11.5px;color:var(--green);font-weight:600}
+  .pc .foot{display:flex;align-items:center;gap:10px;margin-top:6px}
+  .pc .price{font-size:19px;font-weight:800;letter-spacing:-.02em}
+  .pc .add{margin-left:auto;background:var(--coal);color:#fff;font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;transition:.16s}
+  .pc .add:hover{background:var(--fire)}
+  .pc .add.added{background:var(--green)}
+  .empty{padding:40px 0;color:var(--muted);text-align:center;grid-column:1/-1}
+
+  /* ── корзина ── */
+  .backdrop{position:fixed;inset:0;background:rgba(20,12,8,.5);backdrop-filter:blur(3px);z-index:80;opacity:0;visibility:hidden;transition:.25s}
+  .backdrop.on{opacity:1;visibility:visible}
+  .cart{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:90;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+  .cart.on{transform:none}
+  .cart .ch{display:flex;align-items:center;gap:12px;padding:20px 22px;border-bottom:1px solid var(--line)}
+  .cart .ch h3{font-size:19px;font-weight:800;letter-spacing:-.02em}
+  .cart .ch .x{margin-left:auto;font-size:22px;color:var(--muted);line-height:1;padding:4px 8px;border-radius:8px}
+  .cart .ch .x:hover{background:#fff;color:var(--ink)}
+  .cart .body{flex:1;overflow-y:auto;padding:14px 22px}
+  .ci{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .ci img{width:58px;height:58px;border-radius:10px;object-fit:cover;flex-shrink:0;background:#f2ece2}
+  .ci .halfPie{width:58px;height:58px;border-radius:50%;flex-shrink:0;position:relative;overflow:hidden;background:#eee}
+  .ci .halfPie i{position:absolute;inset:0;display:block}
+  .ci .halfPie i img{width:100%;height:100%;border-radius:0}
+  .ci .halfPie i.L{clip-path:inset(0 50% 0 0)} .ci .halfPie i.R{clip-path:inset(0 0 0 50%)}
+  .ci .inf{flex:1;min-width:0}
+  .ci .nm{font-size:14.5px;font-weight:700;line-height:1.25}
+  .ci .sub{font-size:12px;color:var(--muted);margin-top:2px}
+  .ci .qty{display:flex;align-items:center;gap:9px;margin-top:8px}
+  .ci .qty button{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--line);font-weight:700;font-size:15px;line-height:1;display:grid;place-items:center}
+  .ci .qty button:hover{border-color:var(--fire);color:var(--fire)}
+  .ci .qty b{font-size:14px;min-width:18px;text-align:center}
+  .ci .pr{font-weight:800;font-size:15px;white-space:nowrap}
+  .cart .foot{padding:18px 22px 24px;border-top:1px solid var(--line);background:#fff}
+  .cart .row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;font-size:14px;color:var(--muted)}
+  .cart .row.tot{font-size:20px;font-weight:800;color:var(--ink);margin:10px 0 14px}
+  .cart .row .v{margin-left:auto;font-weight:700;color:var(--ink)}
+  .cart .foot .btn{width:100%;justify-content:center}
+  .cart .note{font-size:12px;color:var(--faint);text-align:center;margin-top:10px}
+  .cartEmpty{text-align:center;color:var(--muted);padding:50px 20px;font-size:14.5px}
+
+  /* ── подвал ── */
+  footer{background:var(--coal);color:rgba(255,255,255,.62);margin-top:clamp(40px,6vw,72px);padding:clamp(32px,5vw,54px) 0 34px}
+  .fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:26px}
+  footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  footer a:hover{color:#fff}
+  footer .big{color:#fff;font-size:19px;font-weight:800}
+  .fbot{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:rgba(255,255,255,.4);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--coal);color:#fff;padding:13px 22px;border-radius:999px;font-size:14.5px;font-weight:600;z-index:100;opacity:0;pointer-events:none;transition:.28s;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  /* мобильная раскладка — после базовых правил, чтобы каскад не перебил */
+  @media(max-width:900px){
+    .bWrap{grid-template-columns:1fr}
+    .pie-stage{max-width:330px}
+    .opts{max-height:none;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+  }
+  @media(max-width:520px){
+    .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .pc h3{font-size:14.5px}
+    .pc .d{display:none}
+    .pc .b{padding:11px 12px 13px}
+    .pc .price{font-size:17px}
+    .pc .add{padding:8px 12px;font-size:12.5px}
+  }
+  ::selection{background:var(--fire);color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a href="#top" class="logo"><span class="pie"></span><span>Pizza&nbsp;Marvel</span></a>
+    <div class="search">
+      <span class="ic">🔍</span>
+      <input id="q" type="search" placeholder="Найти пиццу, соус, напиток…" autocomplete="off" spellcheck="false">
+    </div>
+    <a class="tel" href="tel:+78312621500">+7 (831) 262 15 00</a>
+    <button class="cartBtn" id="openCart"><span class="txt">Корзина</span><span class="cnt" id="cCnt">0</span></button>
+  </div>
+</header>
+
+<nav class="catnav"><div class="wrap in" id="catnav"><a href="#c-half" data-cat="half">Половинки</a><a href="#c-big" data-cat="big">Пицца 30 см</a><a href="#c-small" data-cat="small">Пицца 25 см</a><a href="#c-sets" data-cat="sets">Сеты и комбо</a><a href="#c-sauce" data-cat="sauce">Соусы</a><a href="#c-drink" data-cat="drink">Напитки</a></div></nav>
+
+<section class="builder" id="c-half">
+  <div class="wrap bWrap">
+    <div>
+      <span class="lbl">50 / 50</span>
+      <div class="bHead">
+        <h1>Соберите пиццу<br>из двух половинок</h1>
+        <p>Выберите начинку для каждой стороны — увидите, что получится, ещё до заказа. Диаметр 30 см.</p>
+      </div>
+      <div class="pie-stage">
+        <div class="pie-half L" id="halfL"><img id="imgL" alt=""></div>
+        <div class="pie-half R" id="halfR"><img id="imgR" alt=""></div>
+        <div class="pie-empty" id="pieHint">Выберите обе половинки —<br>пицца соберётся здесь</div>
+        <span class="seam"></span>
+        <span class="sideTag l">Левая</span>
+        <span class="sideTag r">Правая</span>
+      </div>
+    </div>
+    <div class="sides">
+      <div class="side">
+        <h3><span class="dotm"></span> Первая половина</h3>
+        <div class="opts" id="optsL"></div>
+      </div>
+      <div class="side">
+        <h3><span class="dotm r"></span> Вторая половина</h3>
+        <div class="opts" id="optsR"></div>
+      </div>
+      <label class="extra">
+        <input type="checkbox" id="basil">
+        <span>Добавить базилик</span>
+        <span class="p">+50 ₽</span>
+      </label>
+      <div class="bTotal">
+        <div class="sum" id="bSum">— <small>выберите обе половинки</small></div>
+        <button class="btn" id="addHalf" disabled>В корзину</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap" id="top">
+  <div id="menu"></div>
+  <div class="empty" id="noRes" style="display:none">Ничего не нашлось. Попробуйте другое слово.</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <h4>Заказать</h4>
+        <a class="big" href="tel:+78312621500">+7 (831) 262 15 00</a>
+        <p style="margin-top:8px;font-size:13.5px">Доставка и самовывоз<br>Нижний Новгород</p>
+      </div>
+      <div>
+        <h4>Адреса</h4>
+        <p style="font-size:13.5px;line-height:1.6">Сахарный Дол-1, д. 1<br><span style="color:rgba(255,255,255,.42)">Медицинская, напротив БЦ «Орбита»</span></p>
+        <p style="font-size:13.5px;line-height:1.6;margin-top:8px">Казанское шоссе, 10В к1<br><span style="color:rgba(255,255,255,.42)">ТЦ «Лагуна»</span></p>
+      </div>
+      <div>
+        <h4>Меню</h4>
+        <p style="font-size:13.5px;line-height:1.9">
+          <a href="#c-half">Половинки</a><br>
+          <a href="#c-big">Пицца 30 см</a><br>
+          <a href="#c-small">Пицца 25 см</a><br>
+          <a href="#c-sets">Сеты и комбо</a>
+        </p>
+      </div>
+      <div>
+        <h4>Печь</h4>
+        <p style="font-size:13.5px;line-height:1.6">Пицца из настоящей дровяной печи — тонкое тесто, высокая температура, живой огонь.</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© Pizza Marvel · Нижний Новгород</span>
+      <span>ИП Шебеко С. С.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="backdrop" id="bd"></div>
+<aside class="cart" id="cart" aria-label="Корзина">
+  <div class="ch">
+    <h3>Корзина</h3>
+    <button class="x" id="closeCart" aria-label="Закрыть">×</button>
+  </div>
+  <div class="body" id="cartBody"></div>
+  <div class="foot">
+    <div class="row">Товаров <span class="v" id="fCnt">0</span></div>
+    <div class="row tot">Итого <span class="v" id="fSum">0 ₽</span></div>
+    <a class="btn" href="tel:+78312621500">Заказать по телефону</a>
+    <div class="note">Заказ подтвердит оператор — уточнит адрес и время</div>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var DATA = {"items":[{"cat":"Сеты и комбо","name":"Гурман сет","desc":"4 пиццы 30 см: морское цунами, буффало, чиз-чиз, маргарита","tip":"","price":2990,"img":"gurman-set.jpg"},{"cat":"Сеты и комбо","name":"Мясной сет","desc":"4 мясные пиццы 30 см: сливочный цыплёнок, домашняя, фахитос, пепперони","tip":"","price":2950,"img":"myasnoy-set.jpg"},{"cat":"Сеты и комбо","name":"Популярный микс","desc":"3 популярные пиццы 30 см и 4 напитка: чиз-чиз, маргарита, пепперони + чай, квас, морс, тархун","tip":"","price":2199,"img":"populyarnyy-miks.jpg"},{"cat":"Сеты и комбо","name":"Комбо №1","desc":"2 пиццы по 30 см: Пепперони и Сливочный цыпленок, и 2 соуса \"Айоли\" для корочек в подарок","tip":"","price":1590,"img":"kombo-1.jpg"},{"cat":"Сеты и комбо","name":"Комбо Герою","desc":"2 пиццы по 30 см: Пепперони и Домашняя и 2 напитка на выбор","tip":"","price":1580,"img":"kombo-geroyu.jpg"},{"cat":"Сеты и комбо","name":"Марвел комбо","desc":"2 пиццы по 30 см: Сливочный цыплёнок и Маргарита","tip":"","price":1299,"img":"marvel-kombo.jpg"},{"cat":"Сеты и комбо","name":"Топ Комбо","desc":"2 топовые пиццы по 25 см: чиз-чиз, пепперони и напиток на выбор","tip":"","price":1290,"img":"top-kombo.jpg"},{"cat":"Пицца 30 см","name":"Римская","desc":"В составе: томатная основа, сыр чеддер, рубленное филе баранины и говядины, соус чипотле, свежая руккола, томаты, лук","tip":"","price":990,"img":"rimskaya-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Мясной Архар","desc":"Томатно-сливочная основа, сыр «моцарелла», рубленое филе баранины и говядина, запечённый перец, азиатский лук","tip":"Без соуса — вкус самодостаточен","price":990,"img":"myasnoy-arhar-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Морское цунами","desc":"Нежный сыр \"филадельфия\", сыр \"моцарелла\", треска, тунец, креветки, шпинат, лимон, пикантная черри","tip":"Без соуса — вкус самодостаточен","price":990,"img":"morskoe-cunami-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Италика","desc":"Томатная основа, запечённый болгарский перец, сливочная моцарелла (буффало), свежая руккола, соус бальзамический. Легкая пицца, сладкий перец и сливочный сыр, мягкая сладкая кислинка бальзамика соуса подчёркивает свежесть рукколы и пиццы","tip":"","price":890,"img":"italika-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Чикен Азия","desc":"Соус азия (томатно-сливочный), курица карри, сыр чеддер, сыр моцарелла, маринованный ананас, лайм","tip":"Без соуса — вкус самодостаточен","price":850,"img":"chiken-aziya-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Сливочный цыплёнок","desc":"Сливочная основа, запечённая куриная грудка, варёно-копчёный бекон, сыр «моцарелла», свежие «черри»","tip":"Советуем соус: сырным","price":850,"img":"slivochnyy-cyplenok-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Чиз-чиз","desc":"Сырная основа, сыр «Чеддер, сыр «пармезан», сыр «рокфорти», сыр «моцарелла»","tip":"Советуем соус: песто","price":850,"img":"chiz-chiz-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Фахитос","desc":"Томатная основа, свинина, соус «чипотле», сыр «чеддер», сыр «моцарелла», капуста свежая","tip":"Советуем соус: чипотле","price":850,"img":"fahitos-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Грибная","desc":"Сливочная основа, сыр «моцарелла» , шампиньоны, лесные грибы, куриный бульон, лук","tip":"","price":790,"img":"gribnaya-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Домашняя","desc":"Сливочная основа, лук, солёный огурчик, картофель, сыр «моцарелла», слайсы бекона","tip":"Советуем соус: чесночный","price":790,"img":"domashnyaya-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Пепперони","desc":"Томатная основа, сырокопчёные колбаски «пепперони», сыр «моцарелла»","tip":"Советуем соус: барбекю","price":790,"img":"pepperoni-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Буффало","desc":"Томатная основа, сыр «моцарелла буффало»","tip":"Советуем соус: песто","price":750,"img":"buffalo-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Маргарита","desc":"Томатная основа, лук, грибы шампиньоны, сыр «моцарелла», томаты","tip":"Советуем соус: Песто","price":690,"img":"margarita-bolshaya.jpg"},{"cat":"Пицца 30 см","name":"Постная","desc":"Томатная основа, картошка, огурец, лук, грибы, томаты","tip":"Советуем соус: барбекю","price":650,"img":"postnaya-bolshaya.jpg"},{"cat":"Пицца 25 см","name":"Мясной Архар","desc":"Томатно-сливочная основа, сыр «моцарелла», рубленое филе баранины и говядина, запечённый перец, азиатский лук","tip":"Без соуса — вкус самодостаточен","price":790,"img":"myasnoy-arhar-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Морское цунами","desc":"Нежный сыр \"филадельфия\", сыр \"моцарелла\", треска, тунец, креветки, шпинат, лимон, пикантная черри","tip":"Без соуса — вкус самодостаточен","price":790,"img":"morskoe-cunami-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Италика","desc":"Томатная основа, запечённый болгарский перец, сливочная моцарелла (буффало), свежая руккола, соус бальзамический. Легкая пицца, сладкий перец и сливочный сыр, мягкая сладкая кислинка бальзамика соуса подчёркивает свежесть рукколы и пиццы","tip":"","price":710,"img":"italika-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Чиз-чиз","desc":"Сырная основа, сыр «Чеддер, сыр «пармезан», сыр «рокфорти», сыр «моцарелла»","tip":"Советуем соус: Песто","price":690,"img":"chiz-chiz-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Римская","desc":"В составе: томатная основа, сыр чеддер, рубленное филе баранины и говядины, соус чипотле, свежая руккола, томаты, лук","tip":"","price":690,"img":"rimskaya-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Фахитос","desc":"Томатная основа, свинина, соус «чипотле», сыр «чеддер», сыр «моцарелла», капуста свежая","tip":"Советуем соус: Чипотле","price":650,"img":"fahitos-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Домашняя","desc":"Сливочная основа, лук, солёный огурчик, картофель, сыр «моцарелла», слайсы бекона","tip":"Советуем соус: Чесночным","price":650,"img":"domashnyaya-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Чикен Азия","desc":"Соус азия (томатно-сливочный), курица карри, сыр чеддер, сыр моцарелла, маринованный ананас, лайм","tip":"Без соуса — вкус самодостаточен","price":590,"img":"chiken-aziya-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Грибная","desc":"Сливочная основа, сыр «моцарелла» , шампиньоны, лесные грибы, куриный бульон, лук","tip":"","price":590,"img":"gribnaya-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Буффало","desc":"Томатная основа, сыр «моцарелла буффало»","tip":"Советуем соус: Песто","price":590,"img":"buffalo-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Пепперони","desc":"Томатная основа, сырокопчёные колбаски «пепперони», сыр «моцарелла»","tip":"Советуем соус: Барбекю","price":590,"img":"pepperoni-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Сливочный цыплёнок","desc":"Сливочная основа, запечённая куриная грудка, варёно-копчёный бекон, сыр «моцарелла», свежие «черри»","tip":"Советуем соус: Сырным","price":590,"img":"slivochnyy-cyplenok-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Маргарита","desc":"Томатная основа, лук, грибы шампиньоны, сыр «моцарелла», томаты","tip":"Советуем соус: Песто","price":490,"img":"margarita-malenkaya.jpg"},{"cat":"Пицца 25 см","name":"Постная ","desc":"Томатная основа, картошка, огурец, лук, грибы, томаты","tip":"Советуем соус: Барбекю","price":450,"img":"postnaya-malenkaya.jpg"},{"cat":"Соусы","name":"Соус Сырный","desc":"","tip":"","price":50,"img":"sous-syrnyy.jpg"},{"cat":"Соусы","name":"Соус Барбекю","desc":"","tip":"","price":50,"img":"sous-barbekyu.jpg"},{"cat":"Соусы","name":"Соус Чипотле","desc":"","tip":"","price":50,"img":"sous-chipotle.jpg"},{"cat":"Соусы","name":"Соус \"Айоли\" для корочек","desc":"В состав соуса входит: мёд, сыр пармезан,, тунец, чеснок, сок лимона, соль, масло оливковое, горчица, яичный желток","tip":"","price":50,"img":"sous-ayoli-dlya-korochek.jpg"},{"cat":"Соусы","name":"Соус Песто","desc":"","tip":"","price":50,"img":"sous-pesto.jpg"},{"cat":"Соусы","name":"Соус Чесночный","desc":"","tip":"","price":50,"img":"sous-chesnochnyy.jpg"},{"cat":"Напитки","name":"морс Облепиха","desc":"Облепиховый морс собственного производства","tip":"","price":120,"img":"mors-oblepiha.jpg"},{"cat":"Напитки","name":"морс Клюква","desc":"Клюквенный морс собственного производства","tip":"","price":120,"img":"mors-klyukva.jpg"},{"cat":"Напитки","name":"Лысково Дюшес [AT]","desc":"Газированный напиток, содержит сироп, сделанный на настое десертной сладкой сочной южной груши сорта Дюшес, что придаёт ему винно-сладкий с чуть вяжущей кислинкой вкус. Обладает тонизирующим эффектом","tip":"","price":90,"img":"lyskovo-dyushes-at.jpg"},{"cat":"Напитки","name":"Лысково Барбарис [AT]","desc":"Газированный напиток","tip":"","price":90,"img":"lyskovo-barbaris-at.jpg"},{"cat":"Напитки","name":"Лысково Экстра-ситро [AT]","desc":"Газированный напиток, в состав входит три цитрусовых настоя: апельсиновый, лимонный, мандариновый. Согласно традиционной рецептуре ещё добавляется ванилин, что придаёт лимонаду неповторимый вкус и удивительный аромат","tip":"","price":90,"img":"lyskovo-ekstra-sitro-at.jpg"},{"cat":"Напитки","name":"Лысково Саган-гора [AT]","desc":"Газированный напиток, обладает неповторимым ароматом высокогорных трав и нежным цитрусовым послевкусием. Оригинальный вкус напитку придает настой левзеи, обладающий лечебными и тонизирующими свойствами","tip":"","price":90,"img":"lyskovo-sagan-gora-at.jpg"},{"cat":"Напитки","name":"Лысково Сказочная тайга [AT]","desc":"Основой состава является оригинальная композиция из натуральных эфирных масел и экстрактов пряных трав зверобоя, левзеи, эвкалипта, лавра благородного, лимона и пихты, которые придают оригинальные вкусовые и тонизирующие свойства напитку","tip":"","price":90,"img":"lyskovo-skazochnaya-tayga-at.jpg"},{"cat":"Напитки","name":"Лысково Крем-сода [AT]","desc":"Газированный напиток, один из известных напитков в советские времена, имеет приятный сливочный вкус с нежной ноткой ванили, комбинация из сладких элементов делают общую вкусовую гамму нежной и освежающей","tip":"","price":90,"img":"lyskovo-krem-soda-at.jpg"},{"cat":"Напитки","name":"Лысково Лимонад [AT]","desc":"Газированный напиток","tip":"","price":90,"img":"lyskovo-limonad-at.jpg"},{"cat":"Напитки","name":"Лысково Тархун [AT]","desc":"Газированный напиток, содержит экстракт тархуна (эстрагона). Прекрасно утолит жажду в знойную погоду и подарит глоток летней свежести зимой","tip":"","price":90,"img":"lyskovo-tarhun-at.jpg"},{"cat":"Напитки","name":"Вода питьевая негазированная","desc":"","tip":"","price":50,"img":"voda-pitevaya-negazirovannaya.jpg"},{"cat":"Напитки","name":"Вода питьевая газированная","desc":"","tip":"","price":50,"img":"voda-pitevaya-gazirovannaya.jpg"},{"cat":"Напитки","name":"Квас темный (1,5 л)","desc":"Нефильтрованный, неосветленный квас производства ИП Молодова И.В","tip":"","price":200,"img":"kvas-temnyy-15-l.jpg"},{"cat":"Напитки","name":"Квас окрошечный (1,5 л)","desc":"Нефильтрованный, неосветленный квас производства ИП Молодова И.В","tip":"","price":200,"img":"kvas-okroshechnyy-15-l.jpg"},{"cat":"Напитки","name":"Квас домашний (1,5 л)","desc":"Нефильтрованный, неосветленный квас производства ИП Молодова И.В","tip":"","price":200,"img":"kvas-domashniy-15-l.jpg"},{"cat":"Напитки","name":"Квас домашний (0,5 л)","desc":"Нефильтрованный, неосветленный квас производства ИП Молодова И.В","tip":"","price":120,"img":"kvas-domashniy-05-l.jpg"},{"cat":"Напитки","name":"Квас тёмный (0,5 л)","desc":"Нефильтрованный, неосветленный квас производства ИП Молодова И.В","tip":"","price":120,"img":"kvas-temnyy-05-l.jpg"}],"halves":[{"name":"Морское цунами","price":570,"img":"morskoe-cunami-bolshaya.jpg"},{"name":"Мясной архар","price":570,"img":"myasnoy-arhar-bolshaya.jpg"},{"name":"Римская","price":570,"img":"rimskaya-bolshaya.jpg"},{"name":"Италика","price":520,"img":"italika-bolshaya.jpg"},{"name":"Сливочный цыплёнок","price":500,"img":"slivochnyy-cyplenok-bolshaya.jpg"},{"name":"Фахитос","price":500,"img":"fahitos-bolshaya.jpg"},{"name":"Чиз-чиз","price":500,"img":"chiz-chiz-bolshaya.jpg"},{"name":"Чикен Азия","price":500,"img":"chiken-aziya-bolshaya.jpg"},{"name":"Грибная","price":470,"img":"gribnaya-bolshaya.jpg"},{"name":"Домашняя","price":470,"img":"domashnyaya-bolshaya.jpg"},{"name":"Пепперони","price":470,"img":"pepperoni-bolshaya.jpg"},{"name":"Буффало","price":450,"img":"buffalo-bolshaya.jpg"},{"name":"Маргарита","price":420,"img":"margarita-bolshaya.jpg"},{"name":"Постная","price":400,"img":"postnaya-bolshaya.jpg"}],"basil":{"name":"Базилик","price":50}};
+(function(){
+  "use strict";
+  var CATS = [{"cat":"Пицца Половинки","label":"Половинки","key":"half"},{"cat":"Пицца 30 см","label":"Пицца 30 см","key":"big"},{"cat":"Пицца 25 см","label":"Пицца 25 см","key":"small"},{"cat":"Сеты и комбо","label":"Сеты и комбо","key":"sets"},{"cat":"Соусы","label":"Соусы","key":"sauce"},{"cat":"Напитки","label":"Напитки","key":"drink"}];
+  var fmt = function(n){ return n.toLocaleString('ru-RU') + ' ₽'; };
+  var esc = function(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); };
+
+  /* ─────── меню ─────── */
+  var menuEl = document.getElementById('menu');
+  function cardHTML(it, idx){
+    return '<article class="pc" data-i="'+idx+'">' +
+      '<div class="ph"><img src="img/'+esc(it.img)+'" alt="'+esc(it.name)+'" loading="lazy"></div>' +
+      '<div class="b">' +
+        '<h3>'+esc(it.name)+'</h3>' +
+        (it.desc ? '<div class="d">'+esc(it.desc)+'</div>' : '<div class="d"></div>') +
+        (it.tip ? '<div class="tip">'+esc(it.tip)+'</div>' : '') +
+        '<div class="foot"><span class="price">'+fmt(it.price)+'</span>' +
+        '<button class="add" data-add="'+idx+'">В корзину</button></div>' +
+      '</div></article>';
+  }
+  function renderMenu(filter){
+    var f = (filter||'').trim().toLowerCase();
+    var html = '', shown = 0;
+    CATS.forEach(function(c){
+      if(c.key === 'half') return;
+      var list = [];
+      DATA.items.forEach(function(it, i){
+        if(it.cat !== c.cat) return;
+        if(f && (it.name+' '+it.desc).toLowerCase().indexOf(f) === -1) return;
+        list.push(cardHTML(it, i));
+      });
+      if(!list.length) return;
+      shown += list.length;
+      html += '<section id="c-'+c.key+'"><div class="secHead"><h2>'+esc(c.label)+'</h2>' +
+              '<span class="n">'+list.length+'</span></div><div class="grid">'+list.join('')+'</div></section>';
+    });
+    menuEl.innerHTML = html;
+    document.getElementById('noRes').style.display = shown ? 'none' : 'block';
+  }
+  renderMenu('');
+
+  var q = document.getElementById('q');
+  var qt = null;
+  q.addEventListener('input', function(){
+    clearTimeout(qt);
+    qt = setTimeout(function(){ renderMenu(q.value); }, 120);
+  });
+
+  /* ─────── конструктор половинок ─────── */
+  var pick = {L:null, R:null};
+  function optHTML(h, side, i){
+    return '<button class="opt" data-side="'+side+'" data-h="'+i+'">' +
+      '<img src="img/'+esc(h.img)+'" alt="" loading="lazy">' +
+      '<span><span class="nm">'+esc(h.name)+'</span><span class="pr">'+fmt(h.price)+'</span></span></button>';
+  }
+  ['L','R'].forEach(function(side){
+    document.getElementById('opts'+side).innerHTML =
+      DATA.halves.map(function(h,i){ return optHTML(h, side, i); }).join('');
+  });
+
+  function updBuilder(){
+    ['L','R'].forEach(function(s){
+      var half = document.getElementById('half'+s);
+      var img = document.getElementById('img'+s);
+      if(pick[s] !== null){
+        img.src = 'img/' + DATA.halves[pick[s]].img;
+        half.classList.add('filled');
+      } else {
+        img.removeAttribute('src');
+        half.classList.remove('filled');
+      }
+    });
+    var both = pick.L !== null && pick.R !== null;
+    document.getElementById('pieHint').style.display = both ? 'none' : 'grid';
+    var sum = 0;
+    if(pick.L !== null) sum += DATA.halves[pick.L].price;
+    if(pick.R !== null) sum += DATA.halves[pick.R].price;
+    if(document.getElementById('basil').checked) sum += DATA.basil.price;
+    var el = document.getElementById('bSum');
+    if(both){
+      el.innerHTML = fmt(sum) + '<small>' + esc(DATA.halves[pick.L].name) + ' + ' + esc(DATA.halves[pick.R].name) + '</small>';
+    } else if(pick.L !== null || pick.R !== null){
+      el.innerHTML = fmt(sum) + '<small>выберите вторую половинку</small>';
+    } else {
+      el.innerHTML = '— <small>выберите обе половинки</small>';
+    }
+    document.getElementById('addHalf').disabled = !both;
+  }
+  document.addEventListener('click', function(e){
+    var o = e.target.closest('.opt');
+    if(!o) return;
+    var side = o.dataset.side, i = +o.dataset.h;
+    pick[side] = (pick[side] === i) ? null : i;
+    document.getElementById('opts'+side).querySelectorAll('.opt').forEach(function(b){
+      b.classList.toggle('sel', +b.dataset.h === pick[side]);
+    });
+    updBuilder();
+  });
+  document.getElementById('basil').addEventListener('change', updBuilder);
+  updBuilder();
+
+  /* ─────── корзина ─────── */
+  var cart = [];
+  try { cart = JSON.parse(localStorage.getItem('pm_cart') || '[]'); } catch(e){ cart = []; }
+  function save(){ try{ localStorage.setItem('pm_cart', JSON.stringify(cart)); }catch(e){} }
+
+  function addItem(entry){
+    var same = cart.find(function(c){ return c.key === entry.key; });
+    if(same) same.qty += 1; else cart.push(entry);
+    save(); renderCart(); toast('Добавлено в корзину');
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-add]');
+    if(!b) return;
+    var it = DATA.items[+b.dataset.add];
+    addItem({key:'i'+b.dataset.add, name:it.name, price:it.price, img:it.img, qty:1});
+    b.textContent = 'Добавлено'; b.classList.add('added');
+    setTimeout(function(){ b.textContent = 'В корзину'; b.classList.remove('added'); }, 1100);
+  });
+  document.getElementById('addHalf').addEventListener('click', function(){
+    if(pick.L === null || pick.R === null) return;
+    var a = DATA.halves[pick.L], b = DATA.halves[pick.R];
+    var basil = document.getElementById('basil').checked;
+    addItem({
+      key: 'h'+pick.L+'_'+pick.R+(basil?'_b':''),
+      name: a.name + ' + ' + b.name,
+      sub: '30 см · половинки' + (basil ? ' · базилик' : ''),
+      price: a.price + b.price + (basil ? DATA.basil.price : 0),
+      imgL: a.img, imgR: b.img, qty: 1
+    });
+  });
+
+  function renderCart(){
+    var body = document.getElementById('cartBody');
+    var cnt = cart.reduce(function(s,c){ return s + c.qty; }, 0);
+    var sum = cart.reduce(function(s,c){ return s + c.price * c.qty; }, 0);
+    document.getElementById('cCnt').textContent = cnt;
+    document.getElementById('fCnt').textContent = cnt;
+    document.getElementById('fSum').textContent = fmt(sum);
+    if(!cart.length){ body.innerHTML = '<div class="cartEmpty">Пока пусто.<br>Соберите пиццу или выберите из меню.</div>'; return; }
+    body.innerHTML = cart.map(function(c, i){
+      var pic = c.imgL
+        ? '<span class="halfPie"><i class="L"><img src="img/'+esc(c.imgL)+'" alt=""></i><i class="R"><img src="img/'+esc(c.imgR)+'" alt=""></i></span>'
+        : '<img src="img/'+esc(c.img)+'" alt="">';
+      return '<div class="ci">' + pic +
+        '<div class="inf"><div class="nm">'+esc(c.name)+'</div>' +
+        (c.sub ? '<div class="sub">'+esc(c.sub)+'</div>' : '') +
+        '<div class="qty"><button data-q="-" data-i="'+i+'">−</button><b>'+c.qty+'</b>' +
+        '<button data-q="+" data-i="'+i+'">+</button></div></div>' +
+        '<div class="pr">'+fmt(c.price * c.qty)+'</div></div>';
+    }).join('');
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-q]');
+    if(!b) return;
+    var i = +b.dataset.i;
+    if(b.dataset.q === '+') cart[i].qty += 1;
+    else { cart[i].qty -= 1; if(cart[i].qty <= 0) cart.splice(i,1); }
+    save(); renderCart();
+  });
+  renderCart();
+
+  var bd = document.getElementById('bd'), cartEl = document.getElementById('cart');
+  function openCart(o){ cartEl.classList.toggle('on', o); bd.classList.toggle('on', o); }
+  document.getElementById('openCart').addEventListener('click', function(){ openCart(true); });
+  document.getElementById('closeCart').addEventListener('click', function(){ openCart(false); });
+  bd.addEventListener('click', function(){ openCart(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') openCart(false); });
+
+  var tt = null;
+  function toast(msg){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('on');
+    clearTimeout(tt); tt = setTimeout(function(){ t.classList.remove('on'); }, 1800);
+  }
+
+  /* ─────── подсветка активной категории ─────── */
+  var navLinks = [].slice.call(document.querySelectorAll('#catnav a'));
+  function syncNav(){
+    var best = null, bestTop = -1e9;
+    navLinks.forEach(function(a){
+      var sec = document.querySelector(a.getAttribute('href'));
+      if(!sec) return;
+      var top = sec.getBoundingClientRect().top - 150;
+      if(top <= 0 && top > bestTop){ bestTop = top; best = a; }
+    });
+    navLinks.forEach(function(a){ a.classList.toggle('on', a === best); });
+  }
+  window.addEventListener('scroll', syncNav, {passive:true});
+  syncNav();
+})();
+</script>
+</body>
+</html>
