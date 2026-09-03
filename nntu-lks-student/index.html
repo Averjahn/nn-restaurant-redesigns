@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Личный кабинет студента НГТУ — доступ, пароль, поддержка</title>
+<meta name="description" content="Как получить доступ в личный кабинет студента НГТУ им. Р.Е. Алексеева: логин и временный пароль, восстановление пароля, требования к паролю, контакты технической поддержки.">
+<meta name="theme-color" content="#1868b1">
+<meta property="og:title" content="Личный кабинет студента НГТУ — инструкция">
+<meta property="og:description" content="Пошаговая памятка: получение доступа в ЛКС, восстановление пароля и связь с технической поддержкой.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="img/ngtu-logo.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <img src="img/ngtu-logo.png" alt="">
+      <span>
+        <b>База знаний НГТУ</b>
+        <span>им. Р.Е. Алексеева</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Разделы страницы">
+      <a href="#start">Получить доступ</a>
+      <a href="#problems">Решение проблем</a>
+      <a href="#password">Пароль</a>
+      <a href="#reset">Восстановление</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Поддержка</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Переключить тёмную тему" title="Тёмная тема">◐</button>
+      <a class="btn btn-primary btn-sm" href="https://lks.nntu.ru" target="_blank" rel="noopener">Войти<span class="cta-long">&nbsp;в ЛКС</span></a>
+      <button class="icon-btn burger" id="burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <p class="eyebrow">Памятка для студентов · обновлено к учебному году</p>
+      <h1>Личный кабинет студента НГТУ</h1>
+      <p class="hero-sub">Как получить логин, сменить пароль и что делать, если войти не удаётся. Всё в одном месте — без хождения по инструкциям.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://lks.nntu.ru" target="_blank" rel="noopener">Открыть lks.nntu.ru →</a>
+        <a class="btn btn-outline" href="#problems">Не получается войти</a>
+      </div>
+
+      <div class="searchbar">
+        <span class="s-icon" aria-hidden="true">🔍</span>
+        <label class="skip-link" for="search">Поиск по странице</label>
+        <input type="search" id="search" placeholder="Поиск: пароль, e-mail, академ, логин…" autocomplete="off">
+        <button class="s-clear" id="searchClear" aria-label="Очистить поиск">×</button>
+        <div class="search-results" id="searchResults" role="listbox"></div>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h2>Техническая поддержка</h2>
+      <div class="status-row">
+        <span class="dot" id="statusDot" aria-hidden="true"></span>
+        <span id="statusText">Проверяем время работы…</span>
+      </div>
+      <dl>
+        <dt>Доступ в ЛК</dt><dd><a href="mailto:lks.auth@nntu.ru">lks.auth@nntu.ru</a></dd>
+        <dt>Прочие вопросы</dt><dd><a href="mailto:lks.support@nntu.ru">lks.support@nntu.ru</a></dd>
+        <dt>Часы работы</dt><dd>Пн–Пт, 8:30 – 17:00</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<div class="container layout">
+  <nav class="toc" aria-label="Содержание">
+    <h4>Содержание</h4>
+    <ol id="tocList">
+      <li><a href="#start">Как получить доступ</a></li>
+      <li><a href="#problems">Решение проблем</a></li>
+      <li><a href="#password">Требования к паролю</a></li>
+      <li><a href="#reset">Восстановление пароля</a></li>
+      <li><a href="#video">Видеоинструкции</a></li>
+      <li><a href="#faq">Частые вопросы</a></li>
+      <li><a href="#contacts">Поддержка</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <!-- 1 -->
+    <section class="section" id="start">
+      <h2><span class="section-num">1</span> Как получить доступ</h2>
+      <p class="section-lead">Учётная запись создаётся автоматически после зачисления. Всё, что нужно сделать студенту — пять шагов.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-n">1</span>
+          <div>
+            <h3>Проверьте доступ к своей почте</h3>
+            <p>Нужен тот e-mail, который вы указали при поступлении. Все письма с доступом уходят только на него.</p>
+            <p class="step-meta">Почта изменилась или доступа к ней нет? → <a href="#faq-email">Смена e-mail через дирекцию</a></p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-n">2</span>
+          <div>
+            <h3>Дождитесь письма с логином и временным паролем</h3>
+            <p>Письмо приходит автоматически после зачисления. Первокурсникам доступ в ЛКС открывается <b>после 1 сентября</b>.</p>
+            <p class="step-meta">Письма нет? → <a href="#problems">Перейти к разбору проблемы</a></p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-n">3</span>
+          <div>
+            <h3>Откройте ЛКС</h3>
+            <p>Адрес кабинета — <a href="https://lks.nntu.ru" target="_blank" rel="noopener">https://lks.nntu.ru</a>. Работает в любом современном браузере, на компьютере и телефоне.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-n">4</span>
+          <div>
+            <h3>Смените временный пароль на постоянный</h3>
+            <p>При первом входе система попросит задать свой пароль. Проверить его на соответствие требованиям можно <a href="#password">в конструкторе ниже</a>.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-n">5</span>
+          <div>
+            <h3>Сохраните учётные данные на весь срок обучения</h3>
+            <p>Логин остаётся с вами до выпуска — даже при смене формы обучения, направления или уровня подготовки.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout callout--info">
+        <span aria-hidden="true">ℹ️</span>
+        <div>
+          <b>Логин выдаётся один раз</b>
+          <p>Если вы учитесь в нескольких группах, перешли с бакалавриата в магистратуру или сменили направление — вход выполняется под логином, полученным при <b>первом</b> поступлении в НГТУ. Нужную учебную группу выбирают уже внутри кабинета.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="section" id="problems">
+      <h2><span class="section-num">2</span> Что делать, если не получается войти</h2>
+      <p class="section-lead">Ответьте на пару вопросов — покажем нужный порядок действий и соберём готовое письмо в поддержку с правильной темой и составом данных.</p>
+
+      <div class="card wizard" id="wizard">
+        <p class="wizard-progress" id="wizProgress">Шаг 1 из 2</p>
+        <div id="wizBody"></div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="section" id="password">
+      <h2><span class="section-num">3</span> Требования к паролю</h2>
+      <p class="section-lead">Придумайте пароль и проверьте его прямо здесь. Проверка выполняется в браузере — пароль никуда не отправляется.</p>
+
+      <div class="card pw-grid">
+        <div>
+          <div class="field pw-input-wrap">
+            <label for="pw">Новый пароль</label>
+            <input type="password" id="pw" placeholder="Введите пароль для проверки" autocomplete="new-password" spellcheck="false">
+            <button class="pw-toggle" id="pwToggle" type="button" aria-label="Показать пароль">👁</button>
+          </div>
+          <div class="meter"><i id="pwMeter"></i></div>
+          <p class="meter-label" id="pwLabel">Надёжность: —</p>
+
+          <div class="callout callout--warn" style="margin-bottom:0">
+            <span aria-hidden="true">⚠️</span>
+            <div>
+              <b>Запрещено</b>
+              <p>Легко вычисляемые сочетания: имена, фамилии, номера телефонов, даты рождения, а также общепринятые сокращения (ЭВМ, ЛВС, USER и т.п.).</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:16px">Проверка требований</h3>
+          <ul class="rules" id="pwRules">
+            <li data-rule="len"><span class="rmark">•</span><span>Длина не менее 8 символов</span></li>
+            <li data-rule="upper"><span class="rmark">•</span><span>Есть заглавные буквы</span></li>
+            <li data-rule="lower"><span class="rmark">•</span><span>Есть строчные буквы</span></li>
+            <li data-rule="digsym"><span class="rmark">•</span><span>Есть цифры или спецсимволы</span></li>
+            <li data-rule="common"><span class="rmark">•</span><span>Не содержит запрещённых сочетаний (user, эвм, лвс, qwerty, 12345, password…)</span></li>
+            <li data-rule="date"><span class="rmark">•</span><span>Не похож на дату рождения или номер телефона</span></li>
+          </ul>
+          <p class="step-meta" style="font-size:13.5px;color:var(--text-muted);margin-top:14px">Пользователь обязан обеспечить сохранность личного пароля и его недоступность для других пользователей.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="section" id="reset">
+      <h2><span class="section-num">4</span> Восстановление и смена пароля</h2>
+      <p class="section-lead">Пароль меняется самостоятельно на <a href="https://lks.nntu.ru" target="_blank" rel="noopener">lks.nntu.ru</a> — кнопка «Восстановить пароль». Код подтверждения придёт на почту, указанную в личном кабинете.</p>
+
+      <div class="shots">
+        <button class="shot" data-img="img/step-1.png" data-cap="Шаг 1 — ввести логин и нажать «Восстановить пароль»">
+          <img src="img/step-1.png" alt="Форма входа в ЛКС с кнопкой «Восстановить пароль»">
+          <span class="cap"><i>1</i> Ввести логин и нажать «Восстановить пароль»</span>
+        </button>
+        <button class="shot" data-img="img/step-2.png" data-cap="Шаг 2 — письмо с кодом подтверждения на личной почте">
+          <img src="img/step-2.png" alt="Письмо с кодом подтверждения">
+          <span class="cap"><i>2</i> Получить письмо с кодом подтверждения</span>
+        </button>
+        <button class="shot" data-img="img/step-3.png" data-cap="Шаг 3 — ввести код и задать новый пароль">
+          <img src="img/step-3.png" alt="Форма ввода кода подтверждения и нового пароля">
+          <span class="cap"><i>3</i> Ввести код и задать новый пароль</span>
+        </button>
+      </div>
+
+      <div class="callout callout--warn">
+        <span aria-hidden="true">⏳</span>
+        <div>
+          <b>Если e-mail меняли через дирекцию</b>
+          <p>Самостоятельный сброс пароля на новый адрес заработает <b>через 24 часа</b>. Нужно раньше — напишите на <a href="mailto:lks.auth@nntu.ru">lks.auth@nntu.ru</a>, вам вышлют логин, пароль и инструкцию.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="section" id="video">
+      <h2><span class="section-num">5</span> Видеоинструкции</h2>
+      <p class="section-lead">Короткие ролики от университета — если удобнее посмотреть, чем читать.</p>
+      <div class="videos">
+        <a class="video-card" href="https://vkvideo.ru/video-227233178_456239033" target="_blank" rel="noopener">
+          <span class="play" aria-hidden="true">▶</span>
+          <span>
+            <b>Первый вход в личный кабинет</b>
+            <span>VK Видео · доступ по логину и временному паролю</span>
+          </span>
+        </a>
+        <a class="video-card" href="https://vk.com/video-227233178_456239027" target="_blank" rel="noopener">
+          <span class="play" aria-hidden="true">▶</span>
+          <span>
+            <b>Восстановление пароля</b>
+            <span>VK Видео · сброс через код подтверждения</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="section" id="faq">
+      <h2><span class="section-num">6</span> Частые вопросы</h2>
+      <div class="faq">
+        <details id="faq-email">
+          <summary>Как сменить e-mail в личном кабинете?</summary>
+          <div class="faq-body">
+            <p>Обратитесь в дирекцию своего института — лично, с документом для идентификации личности: студенческим билетом, зачётной книжкой или паспортом. Сотрудник дирекции изменит адрес в профиле студента.</p>
+            <p>После смены адреса самостоятельный сброс пароля с нового e-mail станет доступен спустя 24 часа.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Письмо с логином не пришло. Куда писать?</summary>
+          <div class="faq-body">
+            <p>На <a href="mailto:lks.auth@nntu.ru">lks.auth@nntu.ru</a> с темой «Нет логина и пароля для доступа в ЛК студента». В теле письма укажите ФИО, учебную группу и e-mail, на который должно было прийти письмо. Готовый текст письма можно собрать в <a href="#problems">разделе 2</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary>С какого адреса писать в поддержку?</summary>
+          <div class="faq-body">
+            <p>Исключительно с актуального e-mail — того, что указан при поступлении или изменён через дирекцию института. Письма с других адресов не обрабатываются: по ним невозможно подтвердить, что вы — это вы.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Я учусь в двух группах / сменил уровень подготовки. Какой логин использовать?</summary>
+          <div class="faq-body">
+            <p>Тот, что был получен при первом поступлении в НГТУ. Внутри личного кабинета можно переключаться между учебными группами.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Я в академическом отпуске — почему не пускает?</summary>
+          <div class="faq-body">
+            <p>Доступ к ЛКС блокируется на время академического отпуска и открывается после выхода приказа о допуске к занятиям.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Когда открывается доступ первокурсникам?</summary>
+          <div class="faq-body">
+            <p>После 1 сентября. Письмо с логином и временным паролем формируется автоматически после зачисления, но вход в кабинет открывается с началом учебного года.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="section" id="contacts">
+      <h2><span class="section-num">7</span> Куда обращаться</h2>
+      <p class="section-lead">Два разных адреса — выберите правильный, так ответ придёт быстрее.</p>
+
+      <div class="contacts">
+        <div class="card contact-card">
+          <span class="tag tag--auth">Доступ в кабинет</span>
+          <a class="mail" href="mailto:lks.auth@nntu.ru">lks.auth@nntu.ru</a>
+          <ul>
+            <li>не пришло письмо с логином и паролем;</li>
+            <li>не удаётся авторизоваться;</li>
+            <li>нужен сброс пароля раньше 24 часов после смены e-mail.</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn btn-outline btn-sm" href="mailto:lks.auth@nntu.ru">Написать</a>
+            <button class="btn btn-ghost btn-sm" data-copy="lks.auth@nntu.ru">Скопировать адрес</button>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <span class="tag tag--supp">Работа кабинета</span>
+          <a class="mail" href="mailto:lks.support@nntu.ru">lks.support@nntu.ru</a>
+          <ul>
+            <li>вход выполняется, но что-то не работает;</li>
+            <li>ошибки в расписании, оценках, документах;</li>
+            <li>прочие вопросы по личному кабинету.</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn btn-outline btn-sm" href="mailto:lks.support@nntu.ru">Написать</a>
+            <button class="btn btn-ghost btn-sm" data-copy="lks.support@nntu.ru">Скопировать адрес</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hours">
+        <div>
+          <div class="h-title">Время работы технической поддержки</div>
+          <div style="color:var(--text-muted);font-size:14.5px">Понедельник — пятница, с 8:30 до 17:00</div>
+        </div>
+        <div class="h-status">
+          <span class="dot" id="statusDot2" aria-hidden="true"></span>
+          <span id="statusText2">—</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>База знаний НГТУ</h4>
+        <p style="font-size:14.5px;max-width:42ch">Памятка по получению доступа в личный кабинет студента (ЛКС) НГТУ им. Р.Е. Алексеева.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="#start">Как получить доступ</a></li>
+          <li><a href="#problems">Решение проблем</a></li>
+          <li><a href="#reset">Восстановление пароля</a></li>
+          <li><a href="#faq">Частые вопросы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ссылки</h4>
+        <ul>
+          <li><a href="https://lks.nntu.ru" target="_blank" rel="noopener">Личный кабинет — lks.nntu.ru</a></li>
+          <li><a href="mailto:lks.auth@nntu.ru">lks.auth@nntu.ru</a></li>
+          <li><a href="mailto:lks.support@nntu.ru">lks.support@nntu.ru</a></li>
+          <li><a href="https://help.nntu.ru/ru/Public/Account-Student" target="_blank" rel="noopener">Оригинал страницы</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Демонстрационный редизайн страницы help.nntu.ru. Не является официальным сайтом университета.</span>
+      <span>Контент — НГТУ им. Р.Е. Алексеева</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">×</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
