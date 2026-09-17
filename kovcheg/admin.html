@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ковчег — панель владельца</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#F2913D;--teal:#2E7D7D;--bg:#141210;--surface:#1D1A17;--surface-2:#262220;
+  --line:#332D28;--text:#F5EFE8;--muted:#A79C91;--bad:#E05A4A;--ok:#7FB069}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,sans-serif;font-size:15px}
+a{color:var(--orange)}
+h1,h2{font-family:Oswald,sans-serif;font-weight:600;text-transform:uppercase;margin:0}
+h1{font-size:26px}h2{font-size:19px;margin-bottom:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 18px 60px}
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.top .sp{margin-left:auto;display:flex;gap:9px;flex-wrap:wrap}
+.btn{border:none;cursor:pointer;font:inherit;font-weight:600;font-size:14px;
+  padding:10px 17px;border-radius:999px;transition:.15s}
+.btn-p{background:var(--orange);color:#1b1512}
+.btn-o{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn-o:hover{border-color:var(--orange);color:var(--orange)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:26px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi b{display:block;font-family:Oswald,sans-serif;font-size:27px;color:var(--orange)}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:22px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--muted);font-weight:500;font-size:12.5px;text-transform:uppercase;
+  padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr.off{opacity:.55}
+.thumb{width:40px;height:40px;border-radius:8px;object-fit:cover;background:var(--surface-2)}
+input[type=number],input[type=text],input[type=time]{background:var(--surface-2);border:1px solid var(--line);
+  color:var(--text);border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;width:110px}
+input:focus{outline:none;border-color:var(--orange)}
+.sw{position:relative;display:inline-block;width:46px;height:26px;flex:0 0 auto}
+.sw input{opacity:0;width:0;height:0}
+.sl{position:absolute;inset:0;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:999px;cursor:pointer;transition:.18s}
+.sl:before{content:"";position:absolute;width:19px;height:19px;left:3px;top:2.5px;
+  background:var(--muted);border-radius:50%;transition:.18s}
+.sw input:checked + .sl{background:rgba(127,176,105,.28);border-color:var(--ok)}
+.sw input:checked + .sl:before{transform:translateX(20px);background:var(--ok)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.f{background:var(--surface-2);border:1px solid var(--line);color:var(--muted);padding:7px 14px;
+  border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px}
+.f.on{background:var(--orange);border-color:var(--orange);color:#1b1512;font-weight:600}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld label{font-size:12.5px;color:var(--muted)}
+.hint{color:var(--muted);font-size:13px;margin:0 0 14px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:11px 20px;
+  font-size:14px;opacity:0;pointer-events:none;transition:.2s}
+.toast.on{opacity:1;transform:translateX(-50%)}
+textarea{width:100%;min-height:140px;background:var(--surface-2);border:1px solid var(--line);
+  color:var(--text);border-radius:10px;padding:12px;font:13px/1.5 ui-monospace,Menlo,monospace;resize:vertical}
+@media(max-width:640px){
+  .hide-s{display:none}
+  td,th{padding:8px 6px}
+  input[type=number]{width:84px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <h1>Панель владельца</h1>
+    <span class="muted" style="color:var(--muted);font-size:13px">«Ковчег» · демо</span>
+    <div class="sp">
+      <button class="btn btn-o" id="reset">Сбросить</button>
+      <button class="btn btn-o" id="copy">Скопировать JSON</button>
+      <a class="btn btn-p" href="index.html">← На сайт</a>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="kpi"><b id="kTotal">0</b><span>позиций в меню</span></div>
+    <div class="kpi"><b id="kOff">0</b><span>в стоп-листе</span></div>
+    <div class="kpi"><b id="kAvg">0 ₽</b><span>средний чек позиции</span></div>
+    <div class="kpi"><b id="kCats">0</b><span>категорий</span></div>
+  </div>
+
+  <div class="panel">
+    <h2>Стоп-лист и цены</h2>
+    <p class="hint">Выключили тумблер — блюдо сразу помечается «закончилось» на сайте
+      и его нельзя положить в корзину. Цену можно поправить прямо здесь.</p>
+    <div class="filters" id="filters"></div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th style="width:52px"></th><th>Блюдо</th><th class="hide-s">Категория</th>
+          <th class="hide-s">Вес</th><th style="width:120px">Цена</th><th style="width:90px">В наличии</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Часы работы и зоны</h2>
+    <p class="hint">Вне этих часов сайт не отказывает клиенту, а принимает предзаказ к открытию.</p>
+    <div class="row" style="margin-bottom:18px">
+      <div class="fld"><label for="hOpen">Открытие</label><input type="time" id="hOpen" value="10:00"></div>
+      <div class="fld"><label for="hClose">Закрытие</label><input type="time" id="hClose" value="22:00"></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Район</th><th style="width:150px">Минимальный заказ</th></tr></thead>
+        <tbody id="zrows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Выгрузка</h2>
+    <p class="hint">Готовый JSON с изменениями — его можно отдать разработчику
+      или загрузить в кассовую систему.</p>
+    <textarea id="out" readonly></textarea>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+const KEY='kovcheg_admin';
+const DEF_ZONES=[
+ {id:'center',name:'Нижегородский, Приокский, Советский',min:1000},
+ {id:'west',name:'Московский, Ленинский, Канавинский',min:1500},
+ {id:'far',name:'Автозавод, Сормово',min:1500},
+ {id:'kstovo',name:'Кстово',min:1500}];
+
+let state = load();
+let filter = 'Все';
+
+function load(){
+  try{ const s=JSON.parse(localStorage.getItem(KEY)); if(s&&s.items) return s; }catch(e){}
+  return { items:{}, zones:DEF_ZONES.map(z=>({...z})), open:'10:00', close:'22:00' };
+}
+function persist(){ localStorage.setItem(KEY, JSON.stringify(state)); renderOut(); }
+const el=s=>document.querySelector(s);
+const money=n=>Number(n).toLocaleString('ru-RU')+' ₽';
+
+/* Текущее состояние блюда = каталог + правка владельца. */
+function eff(p){ const o=state.items[p.id]||{}; return { price: o.price??p.price, sold: o.sold??p.sold }; }
+
+function renderKpi(){
+  const off=MENU.filter(p=>eff(p).sold).length;
+  const avg=Math.round(MENU.reduce((s,p)=>s+eff(p).price,0)/MENU.length);
+  el('#kTotal').textContent=MENU.length;
+  el('#kOff').textContent=off;
+  el('#kAvg').textContent=money(avg);
+  el('#kCats').textContent=new Set(MENU.map(p=>p.cat)).size;
+}
+
+function renderFilters(){
+  const cats=['Все',...new Set(MENU.map(p=>p.cat))];
+  el('#filters').innerHTML=cats.map(c=>
+    `<button class="f${c===filter?' on':''}" data-c="${c}">${c}</button>`).join('');
+  el('#filters').querySelectorAll('.f').forEach(b=>b.onclick=()=>{filter=b.dataset.c;renderFilters();renderRows();});
+}
+
+function renderRows(){
+  const list = filter==='Все'?MENU:MENU.filter(p=>p.cat===filter);
+  el('#rows').innerHTML = list.map(p=>{
+    const e=eff(p);
+    return `<tr class="${e.sold?'off':''}" data-id="${p.id}">
+      <td><img class="thumb" src="${p.img}" alt="" loading="lazy"></td>
+      <td>${p.name}</td>
+      <td class="hide-s" style="color:var(--muted)">${p.cat}</td>
+      <td class="hide-s" style="color:var(--muted)">${p.weight||'—'}</td>
+      <td><input type="number" min="0" step="10" value="${e.price}" data-price="${p.id}"></td>
+      <td><label class="sw"><input type="checkbox" ${e.sold?'':'checked'} data-sold="${p.id}"><span class="sl"></span></label></td>
+    </tr>`;}).join('');
+
+  el('#rows').querySelectorAll('[data-price]').forEach(i=>i.onchange=()=>{
+    const id=+i.dataset.price, v=Math.max(0,+i.value||0);
+    state.items[id]={...(state.items[id]||{}), price:v}; persist(); renderKpi(); toast('Цена обновлена');
+  });
+  el('#rows').querySelectorAll('[data-sold]').forEach(i=>i.onchange=()=>{
+    const id=+i.dataset.sold, sold=!i.checked;
+    state.items[id]={...(state.items[id]||{}), sold}; persist(); renderKpi(); renderRows();
+    toast(sold?'Убрано из продажи':'Вернули в продажу');
+  });
+}
+
+function renderZones(){
+  el('#zrows').innerHTML = state.zones.map((z,i)=>
+    `<tr><td>${z.name}</td><td><input type="number" min="0" step="100" value="${z.min}" data-z="${i}"></td></tr>`).join('');
+  el('#zrows').querySelectorAll('[data-z]').forEach(i=>i.onchange=()=>{
+    state.zones[+i.dataset.z].min=Math.max(0,+i.value||0); persist(); toast('Минимум обновлён');
+  });
+}
+
+function renderOut(){
+  const changed=Object.entries(state.items).filter(([id,o])=>{
+    const p=MENU.find(x=>x.id==id); return p && (o.price!==undefined&&o.price!==p.price || o.sold!==undefined&&o.sold!==p.sold);
+  }).map(([id,o])=>{ const p=MENU.find(x=>x.id==id); return {id:+id,name:p.name,...o}; });
+  el('#out').value=JSON.stringify({hours:{open:state.open,close:state.close},zones:state.zones,changed},null,2);
+}
+
+let tt=null;
+function toast(m){ const t=el('#toast'); t.textContent=m; t.classList.add('on');
+  clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),1600); }
+
+el('#hOpen').value=state.open; el('#hClose').value=state.close;
+el('#hOpen').onchange=e=>{state.open=e.target.value;persist();toast('Часы обновлены')};
+el('#hClose').onchange=e=>{state.close=e.target.value;persist();toast('Часы обновлены')};
+el('#reset').onclick=()=>{ if(!confirm('Сбросить все правки?'))return;
+  localStorage.removeItem(KEY); state=load(); renderAll(); toast('Сброшено'); };
+el('#copy').onclick=()=>{ el('#out').select(); document.execCommand('copy'); toast('JSON скопирован'); };
+
+function renderAll(){ renderKpi(); renderFilters(); renderRows(); renderZones(); renderOut();
+  el('#hOpen').value=state.open; el('#hClose').value=state.close; }
+renderAll();
+</script>
+</body>
+</html>
