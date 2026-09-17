@@ -64,7 +64,7 @@ function renderFilters() {
   const box = $("#filters"); box.innerHTML = "";
   categories().forEach((cat) => {
     const b = document.createElement("button");
-    b.className = "filter" + (cat === activeFilter ? " active" : "");
+    b.className = "tab" + (cat === activeFilter ? " on" : "");
     b.textContent = cat;
     b.onclick = () => { activeFilter = cat; renderFilters(); renderMenu(); };
     box.appendChild(b);
@@ -77,36 +77,32 @@ function renderMenu() {
   list.forEach((p) => {
     const inCart = cart[p.id] || 0;
     const card = document.createElement("article");
-    card.className = "card" + (p.sold ? " card--sold" : "");
-    // Вес — отдельной строкой: на оригинале «180 ₽» у шашлыка означало
-    // цену за 100 г, и это выяснялось только в корзине.
-    const weight = p.weight ? `<span class="card__weight">${p.weight}</span>` : "";
-    const btn = p.sold
-      ? `<button class="card__add card__add--off" disabled>Нет в наличии</button>`
+    card.className = "it" + (p.sold ? " it--out" : "");
+    // Вес отдельной строкой: на оригинале «180 ₽» у шашлыка означало цену
+    // за 100 г, и это выяснялось только в корзине.
+    const weight = p.weight ? `<div class="it__w">${p.weight}</div>` : "";
+    const act = p.sold
+      ? `<button class="it__add" disabled>Закончилось</button>`
       : (inCart > 0
-        ? `<div class="card__counter">
-             <button class="qty-btn" data-id="${p.id}" data-d="-1" aria-label="Убрать одну порцию">−</button>
-             <span class="qty-val">${inCart}</span>
-             <button class="qty-btn" data-id="${p.id}" data-d="1" aria-label="Добавить порцию">+</button>
+        ? `<div class="it__qty">
+             <button class="q" data-id="${p.id}" data-d="-1" aria-label="Убрать порцию">−</button>
+             <span>${inCart}</span>
+             <button class="q" data-id="${p.id}" data-d="1" aria-label="Добавить порцию">+</button>
            </div>`
-        : `<button class="card__add" data-id="${p.id}">В корзину</button>`);
+        : `<button class="it__add" data-id="${p.id}">В корзину</button>`);
     card.innerHTML = `
-      <div class="card__media">
-        <img class="card__img" src="${p.img}" alt="${p.name}" loading="lazy" width="600" height="600"
-             onerror="this.closest('.card__media').classList.add('noimg')">
-        <span class="card__price">${money(p.price)}</span>
-        ${p.sold ? '<span class="card__sold">закончилось</span>' : ""}
+      <div class="it__ph">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" width="600" height="600">
+        ${p.sold ? '<span class="it__flag">нет в наличии</span>' : ""}
       </div>
-      <div class="card__body">
-        <h3 class="card__name">${p.name}</h3>
-        <div class="card__meta"><span class="tag">${p.cat}</span>${weight}</div>
-        ${btn}
-      </div>`;
+      <div class="it__top"><span class="it__nm">${p.name}</span><span class="it__pr">${money(p.price)}</span></div>
+      ${weight}
+      <div class="it__act">${act}</div>`;
     grid.appendChild(card);
   });
-  grid.querySelectorAll(".card__add:not([disabled])").forEach((b) =>
+  grid.querySelectorAll(".it__add:not([disabled])").forEach((b) =>
     b.onclick = () => { addToCart(+b.dataset.id); renderMenu(); });
-  grid.querySelectorAll(".qty-btn").forEach((b) =>
+  grid.querySelectorAll(".q").forEach((b) =>
     b.onclick = () => { changeQty(+b.dataset.id, +b.dataset.d); renderMenu(); });
 }
 
@@ -126,39 +122,40 @@ function updateCart() {
 
   const box = $("#cartItems"), list = entries();
   if (!list.length) {
-    box.innerHTML = `<p class="cart-empty">Корзина пуста<br>Выберите что-нибудь с мангала</p>`;
+    box.innerHTML = `<p class="cart__empty">Пока пусто.<br>Выберите что-нибудь с мангала.</p>`;
     $("#checkoutBtn").disabled = true;
   } else {
     $("#checkoutBtn").disabled = left > 0;
     box.innerHTML = "";
     list.forEach(({ item, qty }) => {
-      const r = document.createElement("div"); r.className = "ci";
+      const r = document.createElement("div"); r.className = "ln";
       r.innerHTML = `
-        <img class="ci__img" src="${item.img}" alt="${item.name}" onerror="this.style.visibility='hidden'">
-        <div class="ci__info">
-          <div class="ci__name">${item.name}${item.weight ? ` <span class="ci__w">${item.weight}</span>` : ""}</div>
-          <div class="ci__price">${money(item.price * qty)}</div>
-          <div class="ci__controls">
-            <button class="qty-btn" data-id="${item.id}" data-d="-1">−</button>
-            <span class="ci__qty">${qty}</span>
-            <button class="qty-btn" data-id="${item.id}" data-d="1">+</button>
-            <button class="ci__remove" data-id="${item.id}" aria-label="Удалить">✕</button>
+        <img class="ln__ph" src="${item.img}" alt="" onerror="this.style.visibility='hidden'">
+        <div class="ln__bd">
+          <div class="ln__nm">${item.name}</div>
+          ${item.weight ? `<div class="ln__w">${item.weight}</div>` : ""}
+          <div class="ln__qty">
+            <button class="q" data-id="${item.id}" data-d="-1" aria-label="Меньше">−</button>
+            <span>${qty}</span>
+            <button class="q" data-id="${item.id}" data-d="1" aria-label="Больше">+</button>
+            <button class="ln__x" data-id="${item.id}" aria-label="Удалить">Убрать</button>
           </div>
-        </div>`;
+        </div>
+        <div class="ln__pr">${money(item.price * qty)}</div>`;
       box.appendChild(r);
     });
-    box.querySelectorAll(".qty-btn").forEach((b) => b.onclick = () => { changeQty(+b.dataset.id, +b.dataset.d); updateCart(); });
-    box.querySelectorAll(".ci__remove").forEach((b) => b.onclick = () => { removeItem(+b.dataset.id); updateCart(); });
+    box.querySelectorAll(".q").forEach((b) => b.onclick = () => { changeQty(+b.dataset.id, +b.dataset.d); updateCart(); });
+    box.querySelectorAll(".ln__x").forEach((b) => b.onclick = () => { removeItem(+b.dataset.id); updateCart(); });
   }
 
   /* Сколько осталось добрать до минимума — считаем сразу, а не в момент отказа. */
   const hint = $("#minHint");
   if (!list.length) { hint.hidden = true; }
   else if (left > 0) {
-    hint.hidden = false; hint.className = "min-hint min-hint--warn";
+    hint.hidden = false; hint.className = "hint hint--no";
     hint.innerHTML = `До минимального заказа в район «${z.name}» не хватает <b>${money(left)}</b>`;
   } else {
-    hint.hidden = false; hint.className = "min-hint min-hint--ok";
+    hint.hidden = false; hint.className = "hint hint--ok";
     hint.innerHTML = `Минимум для района «${z.name}» набран`;
   }
 
@@ -173,17 +170,17 @@ function renderZones() {
   sel.onchange = () => { zone = sel.value; localStorage.setItem("kovcheg_zone", zone); updateCart(); };
 }
 
-const openCart = () => { $("#cart").classList.add("open"); $("#overlay").classList.add("open"); };
-const closeCart = () => { $("#cart").classList.remove("open"); $("#overlay").classList.remove("open"); };
+const openCart = () => { $("#cart").classList.add("on"); $("#overlay").classList.add("on"); };
+const closeCart = () => { $("#cart").classList.remove("on"); $("#overlay").classList.remove("on"); };
 const openOrder = () => {
   $("#orderTotal").textContent = money(total());
   $("#orderWhen").textContent = isOpenNow()
     ? "Привезём в течение 90 минут"
     : `Кухня откроется в ${OPEN_H}:00 — заказ примем первым и привезём к открытию`;
   $("#orderForm").hidden = false; $("#orderSuccess").hidden = true;
-  $("#orderModal").classList.add("open");
+  $("#orderModal").classList.add("on");
 };
-const closeOrder = () => $("#orderModal").classList.remove("open");
+const closeOrder = () => $("#orderModal").classList.remove("on");
 
 document.addEventListener("DOMContentLoaded", () => {
   renderFilters(); renderMenu(); renderZones(); updateCart();
