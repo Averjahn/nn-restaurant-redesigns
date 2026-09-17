@@ -197,6 +197,21 @@ select:focus{outline:none;border-color:var(--ink)}
 .map{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
 .map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1) contrast(1.06)}
 
+/* точки на карте и маршрут */
+.pts{list-style:none;margin:22px 0 18px;padding:0}
+.pts li{display:flex;align-items:baseline;gap:14px;padding:15px 0;
+  border-bottom:1px solid var(--line);font-size:14.5px}
+.pts li:first-child{border-top:1px solid var(--line)}
+.pts li.near .pts__a{font-weight:500}
+.pts li.near .pts__a:after{content:"ближайшая";margin-left:9px;font-size:11px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.pts__a{flex:1;min-width:0}
+.pts__d{color:var(--ink-3);font-size:13.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pts__r{color:var(--ink-2);font-size:13.5px;white-space:nowrap;
+  border-bottom:1px solid var(--line-2);transition:.15s}
+.pts__r:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.geonote{font-size:12.5px;color:var(--ink-3);margin:12px 0 0;max-width:430px;line-height:1.55}
+
 /* ---------- подвал ---------- */
 .ftr{border-top:1px solid var(--line);padding:34px 0 40px}
 .ftr__in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
@@ -333,8 +348,28 @@ select:focus{outline:none;border-color:var(--ink)}
       <div>
         <p class="label">Контакты</p>
         <h2 style="margin-top:14px">Где нас искать</h2>
-        <ul class="al">
-          <li><em>Адреса</em>ул. Горная, 9А<br>ул. Германа Лопатина, 3Б<br>ул. Генерала И. Д. Ивлеева, 39А</li>
+        <ul class="pts" id="pts">
+          <li data-lat="56.257022" data-lon="43.978827" data-addr="Нижний Новгород, Горная улица, 9А">
+            <div class="pts__a">ул. Горная, 9А</div>
+            <div class="pts__d"></div>
+            <a class="pts__r" target="_blank" rel="noopener">На карте</a>
+          </li>
+          <li data-lat="56.294522" data-lon="44.073291" data-addr="Нижний Новгород, улица Германа Лопатина, 3Б">
+            <div class="pts__a">ул. Германа Лопатина, 3Б</div>
+            <div class="pts__d"></div>
+            <a class="pts__r" target="_blank" rel="noopener">На карте</a>
+          </li>
+          <li data-addr="Нижний Новгород, улица Генерала Ивлеева, 39А">
+            <div class="pts__a">ул. Генерала И. Д. Ивлеева, 39А</div>
+            <div class="pts__d"></div>
+            <a class="pts__r" target="_blank" rel="noopener">На карте</a>
+          </li>
+        </ul>
+        <button class="btn btn--ghost" id="geoBtn">Показать ближайшую</button>
+        <p class="geonote" id="geoNote">Браузер спросит доступ к геопозиции. Координаты
+          никуда не отправляются — по ним считается только расстояние и ссылка на маршрут.</p>
+
+        <ul class="al" style="margin-top:34px">
           <li><em>Телефоны</em><a href="tel:+79108728889">+7 910 872-88-89</a><br><a href="tel:+79040478700">+7 904 047-87-00</a></li>
           <li><em>Часы</em>Ежедневно с 10:00 до 22:00</li>
         </ul>
@@ -409,6 +444,68 @@ select:focus{outline:none;border-color:var(--ink)}
   b.onclick=function(){ var o=n.classList.toggle('open'); b.setAttribute('aria-expanded',o); };
   n.querySelectorAll('a').forEach(function(a){ a.onclick=function(){ n.classList.remove('open'); }; });
 })();
+/* Маршрут до ближайшей точки.
+   Геопозицию спрашиваем ТОЛЬКО по нажатию кнопки и никуда не передаём:
+   по ней считается расстояние и собирается ссылка на Яндекс.Карты,
+   которую пользователь открывает сам. */
+(function(){
+  var list=document.getElementById('pts'), btn=document.getElementById('geoBtn'),
+      note=document.getElementById('geoNote'), items=[].slice.call(list.children);
+
+  function routeUrl(li, from){
+    // точка задаётся координатами, а где их нет — текстом адреса: Яндекс его геокодирует
+    var to = li.dataset.lat ? li.dataset.lat+','+li.dataset.lon : li.dataset.addr;
+    // Без известной точки отправления маршрут не строим: пустой сегмент в rtext
+    // Яндекс обрабатывает ненадёжно. Показываем само место — оттуда маршрут в один клик.
+    if(!from) return 'https://yandex.ru/maps/?text='+encodeURIComponent(li.dataset.addr);
+    return 'https://yandex.ru/maps/?rtext='+
+      encodeURIComponent(from.lat.toFixed(6)+','+from.lon.toFixed(6)+'~'+to)+'&rtt=auto';
+  }
+  function km(a,b){                    // расстояние по прямой, формула гаверсинуса
+    var R=6371, p=Math.PI/180;
+    var dLat=(b.lat-a.lat)*p, dLon=(b.lon-a.lon)*p;
+    var h=Math.sin(dLat/2)*Math.sin(dLat/2)+
+          Math.cos(a.lat*p)*Math.cos(b.lat*p)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+  function paint(from){
+    var withCoords=[];
+    items.forEach(function(li){
+      var a=li.querySelector('.pts__r');
+      a.href = routeUrl(li, from);
+      a.textContent = from ? 'Маршрут' : 'На карте';
+      if(from && li.dataset.lat){
+        var d=km(from,{lat:+li.dataset.lat, lon:+li.dataset.lon});
+        li.querySelector('.pts__d').textContent = (d<1? Math.round(d*1000)+' м' : d.toFixed(1)+' км');
+        withCoords.push({li:li, d:d});
+      }
+    });
+    items.forEach(function(li){ li.classList.remove('near'); });
+    if(withCoords.length){
+      withCoords.sort(function(a,b){ return a.d-b.d; });
+      withCoords[0].li.classList.add('near');
+      withCoords.forEach(function(x){ list.appendChild(x.li); });
+      items.forEach(function(li){ if(!li.dataset.lat) list.appendChild(li); });
+    }
+  }
+  paint(null);                          // без геопозиции ссылки всё равно рабочие
+
+  btn.onclick=function(){
+    if(!navigator.geolocation){ note.textContent='Браузер не умеет определять положение — откройте точку по ссылке «На карте» и постройте маршрут там.'; return; }
+    btn.disabled=true; var was=btn.textContent; btn.textContent='Определяем…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      paint({lat:pos.coords.latitude, lon:pos.coords.longitude});
+      btn.hidden=true;
+      note.textContent='Расстояние — по прямой. Нажмите «Маршрут», чтобы проложить путь в Яндекс.Картах.';
+    }, function(err){
+      btn.disabled=false; btn.textContent=was;
+      note.textContent = err.code===1
+        ? 'Доступ к геопозиции не дан — это нормально. Ссылки «На карте» работают и так: Яндекс.Карты сами спросят точку отправления.'
+        : 'Не удалось определить положение. Ссылки «На карте» работают и без него.';
+    }, {enableHighAccuracy:false, timeout:10000, maximumAge:300000});
+  };
+})();
+
 /* Панель владельца: наберите q w e подряд */
 (function(){
   var buf=[],t=null;
